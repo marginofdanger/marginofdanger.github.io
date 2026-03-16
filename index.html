@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Research Tools</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  background: #0d1117; color: #e6edf3; min-height: 100vh;
+  display: flex; align-items: center; justify-content: center;
+}
+.container { max-width: 720px; width: 100%; padding: 40px 24px; }
+h1 { font-size: 1.6rem; font-weight: 700; margin-bottom: 8px; color: #fff; }
+.subtitle { font-size: 0.85rem; color: #7d8590; margin-bottom: 36px; }
+.grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+a.card {
+  display: block; background: #161b22; border: 1px solid #30363d;
+  border-radius: 8px; padding: 20px; text-decoration: none;
+  transition: border-color 0.15s, transform 0.15s, box-shadow 0.15s;
+}
+a.card:hover {
+  border-color: #58a6ff; transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(88,166,255,0.15);
+}
+.card-icon { font-size: 1.5rem; margin-bottom: 10px; }
+.card-title { font-size: 0.95rem; font-weight: 600; color: #e6edf3; margin-bottom: 4px; }
+.card-desc { font-size: 0.78rem; color: #7d8590; line-height: 1.45; }
+.card-tag {
+  display: inline-block; margin-top: 10px; font-size: 0.65rem;
+  padding: 2px 8px; border-radius: 10px; font-weight: 600;
+  text-transform: uppercase; letter-spacing: 0.03em;
+}
+.tag-live { background: #1a3a2a; color: #3fb950; }
+.tag-tool { background: #1a2a3a; color: #58a6ff; }
+@media (max-width: 560px) { .grid { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+<div class="container">
+  <h1>Research Tools</h1>
+  <p class="subtitle">Investment research dashboards and data tools</p>
+  <div class="grid">
+    <a class="card" href="https://marginofdanger.github.io/call-extraction/">
+      <div class="card-icon">&#128196;</div>
+      <div class="card-title">Call Extraction</div>
+      <div class="card-desc">Earnings call transcript analysis — guidance extraction, multi-quarter comparisons, and actuals-vs-guidance scorecards.</div>
+      <span class="card-tag tag-live">Dashboard</span>
+    </a>
+    <a class="card" href="https://marginofdanger.github.io/proxy-tool/">
+      <div class="card-icon">&#128202;</div>
+      <div class="card-title">Proxy Comp Tool</div>
+      <div class="card-desc">Executive compensation analysis from proxy filings — peer benchmarking, pay-for-performance, and comp structure breakdowns.</div>
+      <span class="card-tag tag-tool">Tool</span>
+    </a>
+    <a class="card" href="https://marginofdanger.github.io/Taiwan/">
+      <div class="card-icon">&#127470;&#127481;</div>
+      <div class="card-title">Taiwan Semis</div>
+      <div class="card-desc">Monthly revenue tracker for TSMC and 10 supply chain companies — YoY/MoM heatmaps, FX, correlations, and indexed views.</div>
+      <span class="card-tag tag-live">Dashboard</span>
+    </a>
+    <a class="card" href="https://marginofdanger.github.io/Jobs/">
+      <div class="card-icon">&#128188;</div>
+      <div class="card-title">Jobs Tracker</div>
+      <div class="card-desc">Weekly job posting scrapes with trend analysis — track hiring momentum and org changes at target companies.</div>
+      <span class="card-tag tag-live">Dashboard</span>
+    </a>
+    <a class="card" href="https://marginofdanger.github.io/BDC-flows/">
+      <div class="card-icon">&#128176;</div>
+      <div class="card-title">BDC Flows</div>
+      <div class="card-desc">Non-traded BDC and alternative vehicle flow analysis — gross inflows, outflows, and NAV tracking from SEC filings.</div>
+      <span class="card-tag tag-live">Dashboard</span>
+    </a>
+  </div>
+</div>
+</body>
+</html>
