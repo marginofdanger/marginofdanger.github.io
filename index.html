@@ -10,12 +10,12 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
   background: #0d1117; color: #e6edf3; min-height: 100vh; padding: 32px 24px;
 }
-h1 { font-size: 1.5rem; font-weight: 700; margin-bottom: 4px; color: #fff; }
-.subtitle { font-size: 0.8rem; color: #7d8590; margin-bottom: 28px; }
+h1 { font-size: 1.8rem; font-weight: 700; margin-bottom: 6px; color: #fff; }
+.subtitle { font-size: 0.9rem; color: #7d8590; margin-bottom: 28px; }
 .columns { display: flex; gap: 16px; align-items: flex-start; }
 .column { flex: 1; min-width: 0; }
 .category-title {
-  font-size: 0.7rem; font-weight: 600; color: #58a6ff; text-transform: uppercase;
+  font-size: 0.8rem; font-weight: 600; color: #58a6ff; text-transform: uppercase;
   letter-spacing: 0.08em; margin-bottom: 10px; padding-left: 2px;
   border-bottom: 1px solid #21262d; padding-bottom: 6px;
 }
@@ -28,11 +28,12 @@ a.card:hover {
   border-color: #58a6ff; transform: translateY(-1px);
   box-shadow: 0 3px 10px rgba(88,166,255,0.12);
 }
-.card-title { font-size: 0.85rem; font-weight: 600; color: #e6edf3; margin-bottom: 4px; }
-.card-desc { font-size: 0.72rem; color: #7d8590; line-height: 1.4; }
+.card-icon { font-size: 1.3rem; margin-bottom: 6px; }
+.card-title { font-size: 0.95rem; font-weight: 600; color: #e6edf3; margin-bottom: 4px; }
+.card-desc { font-size: 0.8rem; color: #7d8590; line-height: 1.45; }
 .card-tag {
-  display: inline-block; margin-top: 6px; font-size: 0.55rem;
-  padding: 1px 6px; border-radius: 8px; font-weight: 600;
+  display: inline-block; margin-top: 8px; font-size: 0.6rem;
+  padding: 2px 7px; border-radius: 8px; font-weight: 600;
   text-transform: uppercase; letter-spacing: 0.03em;
 }
 .tag-live { background: #1a3a2a; color: #3fb950; }
@@ -48,6 +49,7 @@ a.card:hover {
   <div class="column">
     <div class="category-title">Earnings & Returns</div>
     <a class="card" href="https://marginofdanger.github.io/BBG/dashboard.html">
+      <div class="card-icon">&#128200;</div>
       <div class="card-title">Estimate Tracker</div>
       <div class="card-desc">BBG consensus EPS estimate revisions — portfolio, watchlist, 700+ stocks with sparklines, sector aggregates, and revision-vs-return analysis.</div>
       <span class="card-tag tag-live">Dashboard</span>
@@ -57,16 +59,19 @@ a.card:hover {
   <div class="column">
     <div class="category-title">Fundamentals</div>
     <a class="card" href="https://marginofdanger.github.io/call-extraction/">
+      <div class="card-icon">&#128196;</div>
       <div class="card-title">Call Extraction</div>
       <div class="card-desc">Earnings call transcript analysis — guidance extraction, multi-quarter comparisons, and actuals-vs-guidance scorecards.</div>
       <span class="card-tag tag-live">Dashboard</span>
     </a>
     <a class="card" href="https://marginofdanger.github.io/10K-redlines/">
+      <div class="card-icon">&#128209;</div>
       <div class="card-title">10-K Redlines</div>
       <div class="card-desc">Year-over-year textual analysis of SEC filings — wording changes, ordering shifts, additions and deletions.</div>
       <span class="card-tag tag-live">Dashboard</span>
     </a>
     <a class="card" href="https://github.com/marginofdanger/Call-reader">
+      <div class="card-icon">&#127908;</div>
       <div class="card-title">Call Summarizer</div>
       <div class="card-desc">Chrome extension + local server that summarizes earnings calls and expert transcripts via Claude CLI.</div>
       <span class="card-tag tag-tool">Tool</span>
@@ -76,11 +81,13 @@ a.card:hover {
   <div class="column">
     <div class="category-title">Intra-Quarter</div>
     <a class="card" href="https://marginofdanger.github.io/Taiwan/">
+      <div class="card-icon">&#127470;&#127481;</div>
       <div class="card-title">Taiwan Semis</div>
       <div class="card-desc">Monthly revenue tracker for TSMC and 10 supply chain companies — YoY/MoM heatmaps, FX, correlations.</div>
       <span class="card-tag tag-live">Dashboard</span>
     </a>
     <a class="card" href="https://marginofdanger.github.io/BDC-flows/bdc_flow_comparison.html">
+      <div class="card-icon">&#128176;</div>
       <div class="card-title">BDC Flows</div>
       <div class="card-desc">Non-traded BDC and alternative vehicle flow analysis — gross inflows, outflows, and NAV tracking from SEC filings.</div>
       <span class="card-tag tag-live">Dashboard</span>
@@ -90,11 +97,13 @@ a.card:hover {
   <div class="column">
     <div class="category-title">People</div>
     <a class="card" href="https://marginofdanger.github.io/Jobs/">
+      <div class="card-icon">&#128188;</div>
       <div class="card-title">Jobs Tracker</div>
       <div class="card-desc">Weekly job posting scrapes with trend analysis — track hiring momentum and org changes at target companies.</div>
       <span class="card-tag tag-live">Dashboard</span>
     </a>
     <a class="card" href="https://marginofdanger.github.io/Glassdoor/">
+      <div class="card-icon">&#11088;</div>
       <div class="card-title">Glassdoor Tracker</div>
       <div class="card-desc">Portfolio company Glassdoor ratings — overall scores, sentiment metrics, peer comparisons.</div>
       <span class="card-tag tag-live">Dashboard</span>
@@ -104,16 +113,19 @@ a.card:hover {
   <div class="column">
     <div class="category-title">Ownership</div>
     <a class="card" href="http://3.149.115.185/">
+      <div class="card-icon">&#128200;</div>
       <div class="card-title">13-F Tracker</div>
       <div class="card-desc">Institutional holdings tracker — monitor 13-F filings, position changes, and portfolio composition across funds.</div>
       <span class="card-tag tag-live">Dashboard</span>
     </a>
     <a class="card" href="https://marginofdanger.github.io/insider-ownership/ownership_dashboard.html">
+      <div class="card-icon">&#128081;</div>
       <div class="card-title">Insider Ownership</div>
       <div class="card-desc">NEO and director equity ownership — shares, RSUs, options, PSUs with Form 3/4 activity.</div>
       <span class="card-tag tag-live">Dashboard</span>
     </a>
     <a class="card" href="https://marginofdanger.github.io/proxy-tool/">
+      <div class="card-icon">&#128202;</div>
       <div class="card-title">Proxy Comp Tool</div>
       <div class="card-desc">Executive compensation analysis from proxy filings — peer benchmarking and comp structure breakdowns.</div>
       <span class="card-tag tag-tool">Tool</span>
