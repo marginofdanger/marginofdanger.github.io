@@ -225,7 +225,7 @@ const PRESETS = [
 let configData = null;
 let configSha = null;
 
-const STATUS_URL = 'https://raw.githubusercontent.com/marginofdanger/automation-hub/main/status.json';
+const STATUS_URL = 'https://api.github.com/repos/marginofdanger/automation-hub/contents/status.json';
 const CONFIG_URL = 'https://api.github.com/repos/marginofdanger/automation-hub/contents/config.yaml';
 
 function getToken() {
@@ -531,18 +531,22 @@ async function init() {
   const lastUpdated = document.getElementById('lastUpdated');
   const errorBanner = document.getElementById('errorBanner');
 
-  // Load status and config in parallel
+  // Load status and config in parallel (both need auth for private repo)
+  const token = localStorage.getItem('gh_pat');
+  const authHeaders = { 'Accept': 'application/vnd.github+json' };
+  if (token) authHeaders['Authorization'] = 'Bearer ' + token;
+
   let statusData = { projects: {} };
   try {
-    const resp = await fetch(STATUS_URL + '?_=' + Date.now());
-    if (resp.ok) statusData = await resp.json();
+    const resp = await fetch(STATUS_URL + '?_=' + Date.now(), { headers: authHeaders });
+    if (resp.ok) {
+      const file = await resp.json();
+      statusData = JSON.parse(decodeURIComponent(escape(atob(file.content.replace(/\s/g, '')))));
+    }
   } catch (e) {}
 
   try {
-    const token = localStorage.getItem('gh_pat');
-    const hdrs = { 'Accept': 'application/vnd.github+json' };
-    if (token) hdrs['Authorization'] = 'Bearer ' + token;
-    const resp = await fetch(CONFIG_URL, { headers: hdrs });
+    const resp = await fetch(CONFIG_URL, { headers: authHeaders });
     if (resp.ok) {
       const file = await resp.json();
       const yaml = decodeURIComponent(escape(atob(file.content.replace(/\s/g, ''))));
