@@ -228,6 +228,15 @@ let configSha = null;
 const STATUS_URL = 'https://raw.githubusercontent.com/marginofdanger/automation-hub/main/status.json';
 const CONFIG_URL = 'https://api.github.com/repos/marginofdanger/automation-hub/contents/config.yaml';
 
+function getToken() {
+  let token = sessionStorage.getItem('gh_pat');
+  if (!token) {
+    token = prompt('Enter your GitHub PAT (saved for this browser session only):');
+    if (token) sessionStorage.setItem('gh_pat', token);
+  }
+  return token;
+}
+
 function fmt(iso) {
   if (!iso) return '<span class="metric-empty">—</span>';
   const d = new Date(iso);
@@ -406,7 +415,7 @@ async function saveSchedule(key) {
   }
 
   const btn = document.querySelector('#editor-' + key + ' .btn-save');
-  const token = prompt('Enter your GitHub PAT to save (stored nowhere):');
+  const token = getToken();
   if (!token) return;
 
   btn.disabled = true;
@@ -478,7 +487,7 @@ async function runNow(key) {
 
   if (!repo) { alert('No repo configured for ' + key + ' (local only)'); return; }
 
-  const token = prompt('Enter your GitHub PAT to trigger ' + meta.label + ':');
+  const token = getToken();
   if (!token) return;
 
   // Find the button and disable it
