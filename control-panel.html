@@ -169,9 +169,13 @@
 <div class="error-banner" id="errorBanner"></div>
 <div class="save-banner" id="saveBanner"></div>
 
-<div class="grid" id="grid">
+<h2 class="section-header" style="font-size:14px;font-weight:700;margin-bottom:10px;color:#16a34a;">Fully Automated</h2>
+<div class="grid" id="gridAuto">
   <div class="loading">Loading status data...</div>
 </div>
+
+<h2 class="section-header" style="font-size:14px;font-weight:700;margin:24px 0 10px;color:#d97706;">Requires Human Step</h2>
+<div class="grid" id="gridHuman"></div>
 
 <div class="notif-section">
   <h2>Notification Preferences</h2>
@@ -205,7 +209,7 @@ const PROJECT_META = {
   '10k-redlines':      { label: '10K Redlines',      desc: 'Year-over-year 10-K analysis',     human: true, humanAction: 'Run LLM redline analysis', schedule: '0 8 1 3,4,5 *', repo: 'marginofdanger/10K-redlines' },
   'glassdoor':         { label: 'Glassdoor',         desc: 'Playwright scraper → ratings',     human: false, schedule: '0 7 * * 1', repo: 'marginofdanger/Glassdoor' },
   'jobs-pages':        { label: 'Jobs Tracker',      desc: 'Multi-company job scraper',        human: false, schedule: '0 9 * * 0', repo: 'marginofdanger/Jobs' },
-  'bbg':               { label: 'Bloomberg',         desc: 'Earnings, prices, estimates',      human: false, schedule: '0 7 * * 1-5', repo: null },
+  'bbg':               { label: 'Bloomberg',         desc: 'Earnings, prices, estimates',      human: true, humanAction: 'Log into Bloomberg terminal', schedule: '0 7 * * 1-5', repo: null },
 };
 
 // Schedule presets for the editor
@@ -241,8 +245,8 @@ function fmt(iso) {
   if (!iso) return '<span class="metric-empty">—</span>';
   const d = new Date(iso);
   if (isNaN(d)) return iso;
-  return d.toLocaleDateString('en-US', { month:'short', day:'numeric' })
-    + ' ' + d.toLocaleTimeString('en-US', { hour:'numeric', minute:'2-digit', hour12:true });
+  return d.toLocaleDateString('en-US', { month:'short', day:'numeric', timeZone:'America/New_York' })
+    + ' ' + d.toLocaleTimeString('en-US', { hour:'numeric', minute:'2-digit', hour12:true, timeZone:'America/New_York' }) + ' ET';
 }
 
 function dur(s) {
@@ -262,6 +266,13 @@ function statusIcon(s) {
   }
 }
 
+function utcToET(h) {
+  // UTC to ET: subtract 4 (EDT) or 5 (EST). Use 4 for simplicity (EDT most of year).
+  let et = h - 4;
+  if (et < 0) et += 24;
+  return et === 0 ? '12am' : et < 12 ? et + 'am' : et === 12 ? '12pm' : (et-12) + 'pm';
+}
+
 function cronToHuman(cron) {
   if (!cron) return '—';
   if (cron === 'DISABLED') return 'Disabled';
@@ -269,17 +280,16 @@ function cronToHuman(cron) {
   if (p.length !== 5) return cron;
   const [min, hour, dom, mon, dow] = p;
   const h = parseInt(hour);
-  const hStr = h === 0 ? '12am' : h <= 12 ? h + (h===12?'pm':'am') : (h-12) + 'pm';
-  const utc = hStr + ' UTC';
+  const et = utcToET(h) + ' ET';
 
-  if (dom === '*' && mon === '*' && dow === '*') return 'Daily at ' + utc;
-  if (dom === '*' && mon === '*' && dow === '1-5') return 'Weekdays at ' + utc;
-  if (dom === '*' && mon === '*' && dow === '1') return 'Weekly Mon at ' + utc;
-  if (dom === '*' && mon === '*' && dow === '0') return 'Weekly Sun at ' + utc;
-  if (dom === '*' && mon === '*' && dow === '1,4') return 'Mon & Thu at ' + utc;
-  if (mon === '*' && dow === '*' && dom === '1') return '1st of month at ' + utc;
-  if (mon === '*' && dow === '*') return dom + ' of month at ' + utc;
-  if (dow === '*') return dom + ' of ' + mon.replace(/1,4,7,10/,'Jan/Apr/Jul/Oct').replace(/3,4,5/,'Mar-May') + ' at ' + utc;
+  if (dom === '*' && mon === '*' && dow === '*') return 'Daily at ' + et;
+  if (dom === '*' && mon === '*' && dow === '1-5') return 'Weekdays at ' + et;
+  if (dom === '*' && mon === '*' && dow === '1') return 'Weekly Mon at ' + et;
+  if (dom === '*' && mon === '*' && dow === '0') return 'Weekly Sun at ' + et;
+  if (dom === '*' && mon === '*' && dow === '1,4') return 'Mon & Thu at ' + et;
+  if (mon === '*' && dow === '*' && dom === '1') return '1st of month at ' + et;
+  if (mon === '*' && dow === '*') return dom + ' of month at ' + et;
+  if (dow === '*') return dom + ' of ' + mon.replace(/1,4,7,10/,'Jan/Apr/Jul/Oct').replace(/3,4,5/,'Mar-May') + ' at ' + et;
   return cron;
 }
 
@@ -327,7 +337,7 @@ function renderCard(key, proj, meta) {
             PRESETS.map(p => '<option value="' + (p.cron||'') + '">' + p.label + '</option>').join('') +
           '</select>' +
         '</div>' +
-        '<div><label>Hour (UTC)</label>' +
+        '<div><label>Hour (ET)</label>' +
           '<select id="hour-' + key + '" onchange="presetChanged(\'' + key + '\')">' +
             Array.from({length:24}, (_,i) => {
               const label = i === 0 ? '12am' : i < 12 ? i+'am' : i === 12 ? '12pm' : (i-12)+'pm';
@@ -372,16 +382,17 @@ function syncEditor(key, cron) {
   }
   const parts = cron.split(' ');
   if (parts.length !== 5) return;
-  const hour = parseInt(parts[1]);
+  const utcHour = parseInt(parts[1]);
+  const etHour = (utcHour - 4 + 24) % 24;
   const hourSel = document.getElementById('hour-' + key);
-  if (hourSel) hourSel.value = hour;
+  if (hourSel) hourSel.value = etHour;
 
   // Try to match a preset
   const presetSel = document.getElementById('preset-' + key);
   if (!presetSel) return;
   let matched = false;
   PRESETS.forEach(p => {
-    if (p.cron && p.cron.replace('{h}', hour) === cron) {
+    if (p.cron && p.cron.replace('{h}', utcHour) === cron) {
       presetSel.value = p.cron;
       matched = true;
     }
@@ -394,6 +405,11 @@ function toggleEditor(key) {
   if (ed) ed.classList.toggle('open');
 }
 
+function etToUTC(h) {
+  // ET to UTC: add 4 (EDT)
+  return (parseInt(h) + 4) % 24;
+}
+
 function presetChanged(key) {
   const presetSel = document.getElementById('preset-' + key);
   const hourSel = document.getElementById('hour-' + key);
@@ -402,7 +418,7 @@ function presetChanged(key) {
   if (template === 'DISABLED') {
     cronInput.value = 'DISABLED';
   } else if (template) {
-    cronInput.value = template.replace('{h}', hourSel.value);
+    cronInput.value = template.replace('{h}', etToUTC(hourSel.value));
   }
 }
 
@@ -526,7 +542,6 @@ async function runNow(key) {
 }
 
 async function init() {
-  const grid = document.getElementById('grid');
   const summaryBar = document.getElementById('summaryBar');
   const lastUpdated = document.getElementById('lastUpdated');
   const errorBanner = document.getElementById('errorBanner');
@@ -589,8 +604,19 @@ async function init() {
     '<span class="summary-badge awaiting">' + awaiting + ' Awaiting</span>' +
     '<span class="summary-badge failed">' + failed + ' Failed</span>';
 
-  grid.innerHTML = '';
-  keys.forEach(k => grid.appendChild(renderCard(k, projects[k] || {}, PROJECT_META[k])));
+  const gridAuto = document.getElementById('gridAuto');
+  const gridHuman = document.getElementById('gridHuman');
+  gridAuto.innerHTML = '';
+  gridHuman.innerHTML = '';
+  keys.forEach(k => {
+    const meta = PROJECT_META[k];
+    const card = renderCard(k, projects[k] || {}, meta);
+    if (meta.human) {
+      gridHuman.appendChild(card);
+    } else {
+      gridAuto.appendChild(card);
+    }
+  });
 }
 
 init();
