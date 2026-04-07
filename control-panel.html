@@ -11,36 +11,29 @@
     background: #f8f9fa; color: #1a1a1a; font-size: 13px; padding: 20px 24px;
   }
 
-  /* Header */
   .header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; }
   .header h1 { font-size: 20px; font-weight: 700; }
   .header .updated { font-size: 11px; color: #888; margin-top: 2px; }
-
-  /* Summary badges */
   .summary-bar { display: flex; gap: 6px; }
-  .summary-badge {
-    font-size: 11px; font-weight: 600; padding: 4px 12px; border-radius: 4px;
-  }
+  .summary-badge { font-size: 11px; font-weight: 600; padding: 4px 12px; border-radius: 4px; }
   .summary-badge.healthy { background: #f0fdf4; color: #16a34a; }
   .summary-badge.awaiting { background: #fffbeb; color: #d97706; }
   .summary-badge.failed { background: #fef2f2; color: #dc2626; }
 
-  /* Error banner */
   .error-banner {
     background: #fef2f2; border: 1px solid #fecaca; color: #991b1b;
-    padding: 8px 12px; border-radius: 6px; margin-bottom: 16px;
-    display: none; font-size: 11px;
+    padding: 8px 12px; border-radius: 6px; margin-bottom: 16px; display: none; font-size: 11px;
+  }
+  .save-banner {
+    background: #f0fdf4; border: 1px solid #bbf7d0; color: #166534;
+    padding: 8px 12px; border-radius: 6px; margin-bottom: 16px; display: none; font-size: 11px;
   }
 
-  /* Grid */
   .grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-    gap: 10px;
-    margin-bottom: 24px;
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+    gap: 10px; margin-bottom: 24px;
   }
 
-  /* Cards — matching earnings calendar style */
   .card {
     background: #fff; border-radius: 8px; padding: 14px;
     border: 1px solid #e2e5e9; box-shadow: 0 1px 3px rgba(0,0,0,0.04);
@@ -48,17 +41,11 @@
   }
   .card:hover { border-color: #93c5fd; box-shadow: 0 2px 8px rgba(37,99,235,0.08); }
 
-  .card-head {
-    display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;
-  }
+  .card-head { display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px; }
   .card-title { font-weight: 700; font-size: 15px; color: #111; }
-  .card-desc { font-size: 10px; color: #888; margin-bottom: 10px; }
-
-  /* Status + runner badges */
   .card-badges { display: flex; align-items: center; gap: 6px; }
-  .status-dot {
-    width: 8px; height: 8px; border-radius: 50%; display: inline-block;
-  }
+
+  .status-dot { width: 8px; height: 8px; border-radius: 50%; display: inline-block; }
   .status-dot.success { background: #22c55e; }
   .status-dot.failed { background: #ef4444; }
   .status-dot.awaiting_human { background: #f59e0b; }
@@ -72,7 +59,17 @@
   .runner-badge.local { background: #f5f3ff; color: #7c3aed; }
   .runner-badge.external { background: #fff7ed; color: #ea580c; }
 
-  /* Metrics table — matching earnings calendar */
+  /* Automation type badge */
+  .auto-badge {
+    font-size: 9px; font-weight: 600; padding: 2px 8px; border-radius: 4px;
+    letter-spacing: 0.3px;
+  }
+  .auto-badge.full { background: #f0fdf4; color: #16a34a; }
+  .auto-badge.human { background: #fffbeb; color: #d97706; }
+
+  .card-desc { font-size: 10px; color: #888; margin-bottom: 10px; }
+
+  /* Metrics table */
   .metrics-table { width: 100%; font-size: 11px; border-collapse: collapse; }
   .metrics-table th {
     text-align: left; color: #999; font-weight: 600; font-size: 10px;
@@ -86,6 +83,33 @@
   .metric-value { color: #111; font-weight: 600; }
   .metric-empty { color: #ccc; }
 
+  /* Schedule row — clickable to edit */
+  .schedule-row { cursor: pointer; }
+  .schedule-row:hover .metric-value { color: #2563eb; text-decoration: underline; }
+  .schedule-edit {
+    display: none; margin-top: 8px; padding: 10px; background: #f8f9fa;
+    border-radius: 6px; border: 1px solid #e2e5e9;
+  }
+  .schedule-edit.open { display: block; }
+  .schedule-edit label { display: block; font-size: 10px; color: #666; font-weight: 600; text-transform: uppercase; letter-spacing: 0.3px; margin-bottom: 4px; }
+  .schedule-edit select, .schedule-edit input {
+    font-size: 12px; padding: 4px 8px; border: 1px solid #d1d5db; border-radius: 4px;
+    background: #fff; color: #111; margin-right: 6px;
+  }
+  .schedule-edit .row { display: flex; align-items: center; gap: 8px; margin-bottom: 8px; flex-wrap: wrap; }
+  .schedule-edit .cron-raw { font-family: monospace; font-size: 11px; color: #666; margin-top: 4px; }
+  .btn-save {
+    font-size: 11px; font-weight: 600; padding: 4px 14px; border-radius: 4px;
+    border: none; cursor: pointer; background: #2563eb; color: #fff;
+  }
+  .btn-save:hover { background: #1d4ed8; }
+  .btn-save:disabled { background: #93c5fd; cursor: default; }
+  .btn-cancel {
+    font-size: 11px; font-weight: 600; padding: 4px 14px; border-radius: 4px;
+    border: 1px solid #d1d5db; cursor: pointer; background: #fff; color: #555;
+    margin-left: 6px;
+  }
+
   /* Status message */
   .status-row {
     margin-top: 10px; padding-top: 8px; border-top: 1px solid #f0f0f0;
@@ -96,7 +120,7 @@
   .status-row.awaiting_human { color: #d97706; }
   .status-row.unknown { color: #999; }
 
-  /* Notifications section */
+  /* Notifications */
   .notif-section { margin-top: 8px; }
   .notif-section h2 { font-size: 14px; font-weight: 700; margin-bottom: 10px; }
   .notif-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
@@ -104,10 +128,7 @@
     background: #fff; border: 1px solid #e2e5e9; border-radius: 8px;
     padding: 12px; box-shadow: 0 1px 3px rgba(0,0,0,0.04);
   }
-  .notif-label {
-    font-size: 9px; font-weight: 700; text-transform: uppercase;
-    letter-spacing: 0.5px; margin-bottom: 4px;
-  }
+  .notif-label { font-size: 9px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 4px; }
   .notif-label.red { color: #dc2626; }
   .notif-label.amber { color: #d97706; }
   .notif-label.green { color: #16a34a; }
@@ -115,7 +136,6 @@
   .notif-detail { font-size: 10px; color: #999; margin-top: 2px; }
 
   .loading { text-align: center; color: #999; padding: 40px; }
-
   @media (max-width: 768px) {
     .grid { grid-template-columns: 1fr; }
     .notif-grid { grid-template-columns: 1fr; }
@@ -134,6 +154,7 @@
 </div>
 
 <div class="error-banner" id="errorBanner"></div>
+<div class="save-banner" id="saveBanner"></div>
 
 <div class="grid" id="grid">
   <div class="loading">Loading status data...</div>
@@ -162,19 +183,36 @@
 
 <script>
 const PROJECT_META = {
-  'taiwan':             { label: 'Taiwan Revenue',    desc: 'Monthly MOPS + FRED → dashboard' },
-  'insider-ownership':  { label: 'Insider Ownership', desc: 'Form 3/4 → ownership dashboard' },
-  '13f':                { label: '13F Holdings',      desc: '13F + Form 4 + FCA + EDINET' },
-  'bdc':                { label: 'BDC Flows',         desc: '8-K filings → credit metrics' },
-  'proxy':              { label: 'Proxy',             desc: 'DEF 14A → compensation analysis' },
-  'call-extraction':    { label: 'Call Extraction',   desc: 'EDGAR earnings downloads' },
-  '10k-redlines':       { label: '10K Redlines',      desc: 'Year-over-year 10-K analysis' },
-  'glassdoor':          { label: 'Glassdoor',         desc: 'Playwright scraper → ratings' },
-  'jobs-pages':         { label: 'Jobs Tracker',      desc: 'Multi-company job scraper' },
-  'bbg':                { label: 'Bloomberg',         desc: 'Earnings, prices, estimates' },
+  'taiwan':            { label: 'Taiwan Revenue',    desc: 'Monthly MOPS + FRED → dashboard',  human: false },
+  'insider-ownership': { label: 'Insider Ownership', desc: 'Form 3/4 → ownership dashboard',   human: false },
+  '13f':               { label: '13F Holdings',      desc: '13F + Form 4 + FCA + EDINET',      human: false },
+  'bdc':               { label: 'BDC Flows',         desc: '8-K filings → credit metrics',     human: true, humanAction: 'Run /extract-credit-metrics' },
+  'proxy':             { label: 'Proxy',             desc: 'DEF 14A → compensation analysis',  human: true, humanAction: 'Run compensation analysis' },
+  'call-extraction':   { label: 'Call Extraction',   desc: 'EDGAR earnings downloads',         human: true, humanAction: 'Summarize transcripts' },
+  '10k-redlines':      { label: '10K Redlines',      desc: 'Year-over-year 10-K analysis',     human: true, humanAction: 'Run LLM redline analysis' },
+  'glassdoor':         { label: 'Glassdoor',         desc: 'Playwright scraper → ratings',     human: false },
+  'jobs-pages':        { label: 'Jobs Tracker',      desc: 'Multi-company job scraper',        human: false },
+  'bbg':               { label: 'Bloomberg',         desc: 'Earnings, prices, estimates',      human: false },
 };
 
+// Schedule presets for the editor
+const PRESETS = [
+  { label: 'Daily', cron: '0 {h} * * *' },
+  { label: 'Weekdays', cron: '0 {h} * * 1-5' },
+  { label: 'Weekly Mon', cron: '0 {h} * * 1' },
+  { label: 'Weekly Sun', cron: '0 {h} * * 0' },
+  { label: 'Mon & Thu', cron: '0 {h} * * 1,4' },
+  { label: 'Monthly 1st', cron: '0 {h} 1 * *' },
+  { label: 'Monthly 5-12th', cron: '0 {h} 5-12 * *' },
+  { label: 'Custom', cron: null },
+];
+
+// Current schedules (loaded from config via GitHub API)
+let configData = null;
+let configSha = null;
+
 const STATUS_URL = 'https://raw.githubusercontent.com/marginofdanger/automation-hub/main/status.json';
+const CONFIG_URL = 'https://api.github.com/repos/marginofdanger/automation-hub/contents/config.yaml';
 
 function fmt(iso) {
   if (!iso) return '<span class="metric-empty">—</span>';
@@ -201,32 +239,209 @@ function statusIcon(s) {
   }
 }
 
+function cronToHuman(cron) {
+  if (!cron) return '—';
+  const p = cron.split(' ');
+  if (p.length !== 5) return cron;
+  const [min, hour, dom, mon, dow] = p;
+  const h = parseInt(hour);
+  const hStr = h === 0 ? '12am' : h <= 12 ? h + (h===12?'pm':'am') : (h-12) + 'pm';
+  const utc = hStr + ' UTC';
+
+  if (dom === '*' && mon === '*' && dow === '*') return 'Daily at ' + utc;
+  if (dom === '*' && mon === '*' && dow === '1-5') return 'Weekdays at ' + utc;
+  if (dom === '*' && mon === '*' && dow === '1') return 'Weekly Mon at ' + utc;
+  if (dom === '*' && mon === '*' && dow === '0') return 'Weekly Sun at ' + utc;
+  if (dom === '*' && mon === '*' && dow === '1,4') return 'Mon & Thu at ' + utc;
+  if (mon === '*' && dow === '*' && dom === '1') return '1st of month at ' + utc;
+  if (mon === '*' && dow === '*') return dom + ' of month at ' + utc;
+  if (dow === '*') return dom + ' of ' + mon.replace(/1,4,7,10/,'Jan/Apr/Jul/Oct').replace(/3,4,5/,'Mar-May') + ' at ' + utc;
+  return cron;
+}
+
 function renderCard(key, proj, meta) {
   const s = proj.status || 'unknown';
   const runner = (proj.runner || 'github').toLowerCase();
+  const schedule = (configData && configData.projects && configData.projects[key])
+    ? configData.projects[key].schedule : null;
+
   const el = document.createElement('div');
   el.className = 'card';
+
+  const autoBadge = meta.human
+    ? '<span class="auto-badge human">HUMAN STEP</span>'
+    : '<span class="auto-badge full">AUTOMATED</span>';
+
   el.innerHTML =
     '<div class="card-head">' +
       '<span class="card-title">' + meta.label + '</span>' +
       '<div class="card-badges">' +
         '<span class="status-dot ' + s + '"></span>' +
+        autoBadge +
         '<span class="runner-badge ' + runner + '">' + runner.toUpperCase() + '</span>' +
       '</div>' +
     '</div>' +
-    '<div class="card-desc">' + meta.desc + '</div>' +
+    '<div class="card-desc">' + meta.desc +
+      (meta.human ? ' <span style="color:#d97706;">→ ' + meta.humanAction + '</span>' : '') +
+    '</div>' +
     '<table class="metrics-table">' +
       '<thead><tr><th>Metric</th><th>Value</th></tr></thead>' +
       '<tbody>' +
         '<tr><td class="metric-name">Last Run</td><td class="metric-value">' + fmt(proj.last_run) + '</td></tr>' +
         '<tr><td class="metric-name">Next Run</td><td class="metric-value">' + fmt(proj.next_run) + '</td></tr>' +
+        '<tr class="schedule-row" onclick="toggleEditor(\'' + key + '\')">' +
+          '<td class="metric-name">Schedule</td>' +
+          '<td class="metric-value">' + cronToHuman(schedule) + ' ✎</td>' +
+        '</tr>' +
         '<tr><td class="metric-name">Duration</td><td class="metric-value">' + dur(proj.duration_seconds) + '</td></tr>' +
       '</tbody>' +
     '</table>' +
+    '<div class="schedule-edit" id="editor-' + key + '">' +
+      '<div class="row">' +
+        '<div><label>Frequency</label>' +
+          '<select id="preset-' + key + '" onchange="presetChanged(\'' + key + '\')">' +
+            PRESETS.map(p => '<option value="' + (p.cron||'') + '">' + p.label + '</option>').join('') +
+          '</select>' +
+        '</div>' +
+        '<div><label>Hour (UTC)</label>' +
+          '<select id="hour-' + key + '" onchange="presetChanged(\'' + key + '\')">' +
+            Array.from({length:24}, (_,i) => {
+              const label = i === 0 ? '12am' : i < 12 ? i+'am' : i === 12 ? '12pm' : (i-12)+'pm';
+              return '<option value="'+i+'">'+label+'</option>';
+            }).join('') +
+          '</select>' +
+        '</div>' +
+      '</div>' +
+      '<div class="row">' +
+        '<div style="flex:1"><label>Cron Expression</label>' +
+          '<input type="text" id="cron-' + key + '" style="width:100%;font-family:monospace;" value="' + (schedule||'') + '">' +
+        '</div>' +
+      '</div>' +
+      '<div class="row" style="margin-top:4px;">' +
+        '<button class="btn-save" onclick="saveSchedule(\'' + key + '\')">Save</button>' +
+        '<button class="btn-cancel" onclick="toggleEditor(\'' + key + '\')">Cancel</button>' +
+      '</div>' +
+    '</div>' +
     '<div class="status-row ' + s + '">' +
       statusIcon(s) + '&nbsp;&nbsp;' + (proj.message || s) +
     '</div>';
+
+  // After rendering, set the preset/hour selectors to match current cron
+  setTimeout(() => syncEditor(key, schedule), 0);
+
   return el;
+}
+
+function syncEditor(key, cron) {
+  if (!cron) return;
+  const parts = cron.split(' ');
+  if (parts.length !== 5) return;
+  const hour = parseInt(parts[1]);
+  const hourSel = document.getElementById('hour-' + key);
+  if (hourSel) hourSel.value = hour;
+
+  // Try to match a preset
+  const presetSel = document.getElementById('preset-' + key);
+  if (!presetSel) return;
+  let matched = false;
+  PRESETS.forEach(p => {
+    if (p.cron && p.cron.replace('{h}', hour) === cron) {
+      presetSel.value = p.cron;
+      matched = true;
+    }
+  });
+  if (!matched) presetSel.value = '';  // Custom
+}
+
+function toggleEditor(key) {
+  const ed = document.getElementById('editor-' + key);
+  if (ed) ed.classList.toggle('open');
+}
+
+function presetChanged(key) {
+  const presetSel = document.getElementById('preset-' + key);
+  const hourSel = document.getElementById('hour-' + key);
+  const cronInput = document.getElementById('cron-' + key);
+  const template = presetSel.value;
+  if (template) {
+    cronInput.value = template.replace('{h}', hourSel.value);
+  }
+}
+
+async function saveSchedule(key) {
+  const cronInput = document.getElementById('cron-' + key);
+  const newCron = cronInput.value.trim();
+  if (!newCron || newCron.split(' ').length !== 5) {
+    alert('Invalid cron expression');
+    return;
+  }
+
+  const btn = document.querySelector('#editor-' + key + ' .btn-save');
+  btn.disabled = true;
+  btn.textContent = 'Saving...';
+
+  try {
+    // Fetch current config to get latest SHA
+    const resp = await fetch(CONFIG_URL, {
+      headers: { 'Accept': 'application/vnd.github+json' }
+    });
+    const file = await resp.json();
+    const content = atob(file.content.replace(/\n/g, ''));
+
+    // Update the schedule line for this project
+    const lines = content.split('\n');
+    let inProject = false;
+    let updated = false;
+    for (let i = 0; i < lines.length; i++) {
+      const trimmed = lines[i].trimStart();
+      // Check if we're entering the target project section
+      if (trimmed === key + ':') { inProject = true; continue; }
+      // Check if we've left the project section (next project at same indent)
+      if (inProject && /^\s{2}\w/.test(lines[i]) && !lines[i].startsWith('    ')) { inProject = false; }
+      // Find and replace the schedule line
+      if (inProject && trimmed.startsWith('schedule:')) {
+        const indent = lines[i].match(/^(\s*)/)[1];
+        lines[i] = indent + 'schedule: "' + newCron + '"';
+        updated = true;
+        break;
+      }
+    }
+
+    if (!updated) throw new Error('Could not find schedule for ' + key);
+
+    const newContent = lines.join('\n');
+    const token = prompt('Enter your GitHub PAT to save (stored nowhere):');
+    if (!token) { btn.disabled = false; btn.textContent = 'Save'; return; }
+
+    const putResp = await fetch(CONFIG_URL, {
+      method: 'PUT',
+      headers: {
+        'Accept': 'application/vnd.github+json',
+        'Authorization': 'Bearer ' + token,
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        message: 'auto: update ' + key + ' schedule to ' + newCron,
+        content: btoa(unescape(encodeURIComponent(newContent))),
+        sha: file.sha,
+      }),
+    });
+
+    if (!putResp.ok) throw new Error('GitHub API: ' + putResp.status);
+
+    document.getElementById('saveBanner').textContent = 'Schedule for ' + PROJECT_META[key].label + ' updated to: ' + cronToHuman(newCron);
+    document.getElementById('saveBanner').style.display = 'block';
+    setTimeout(() => document.getElementById('saveBanner').style.display = 'none', 5000);
+
+    toggleEditor(key);
+    // Refresh the page to show new schedule
+    setTimeout(() => location.reload(), 1000);
+  } catch (e) {
+    alert('Failed to save: ' + e.message);
+  } finally {
+    btn.disabled = false;
+    btn.textContent = 'Save';
+  }
 }
 
 async function init() {
@@ -235,21 +450,40 @@ async function init() {
   const lastUpdated = document.getElementById('lastUpdated');
   const errorBanner = document.getElementById('errorBanner');
 
-  let data;
+  // Load status and config in parallel
+  let statusData = { projects: {} };
   try {
     const resp = await fetch(STATUS_URL + '?_=' + Date.now());
-    if (!resp.ok) throw new Error('HTTP ' + resp.status);
-    data = await resp.json();
+    if (resp.ok) statusData = await resp.json();
+  } catch (e) {}
+
+  try {
+    const resp = await fetch(CONFIG_URL, { headers: { 'Accept': 'application/vnd.github+json' } });
+    if (resp.ok) {
+      const file = await resp.json();
+      const yaml = atob(file.content.replace(/\n/g, ''));
+      configSha = file.sha;
+      // Minimal YAML parse for schedules — just extract project schedule lines
+      configData = { projects: {} };
+      let currentProject = null;
+      yaml.split('\n').forEach(line => {
+        const projMatch = line.match(/^  (\S+):/);
+        if (projMatch) currentProject = projMatch[1];
+        const schedMatch = line.match(/^\s+schedule:\s*"([^"]+)"/);
+        if (schedMatch && currentProject) {
+          if (!configData.projects[currentProject]) configData.projects[currentProject] = {};
+          configData.projects[currentProject].schedule = schedMatch[1];
+        }
+      });
+    }
   } catch (e) {
-    errorBanner.textContent = 'Failed to load status.json: ' + e.message;
+    errorBanner.textContent = 'Could not load config: ' + e.message;
     errorBanner.style.display = 'block';
-    data = { projects: {} };
   }
 
-  const projects = data.projects || {};
-  lastUpdated.textContent = data.last_updated
-    ? 'Last updated: ' + fmt(data.last_updated)
-    : 'No runs yet';
+  const projects = statusData.projects || {};
+  lastUpdated.textContent = statusData.last_updated
+    ? 'Last updated: ' + fmt(statusData.last_updated) : 'No runs yet';
 
   let healthy = 0, awaiting = 0, failed = 0;
   const keys = Object.keys(PROJECT_META);
