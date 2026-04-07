@@ -196,16 +196,16 @@
 
 <script>
 const PROJECT_META = {
-  'taiwan':            { label: 'Taiwan Revenue',    desc: 'Monthly MOPS + FRED → dashboard',  human: false },
-  'insider-ownership': { label: 'Insider Ownership', desc: 'Form 3/4 → ownership dashboard',   human: false },
-  '13f':               { label: '13F Holdings',      desc: '13F + Form 4 + FCA + EDINET',      human: false },
-  'bdc':               { label: 'BDC Flows',         desc: '8-K filings → credit metrics',     human: true, humanAction: 'Run /extract-credit-metrics' },
-  'proxy':             { label: 'Proxy',             desc: 'DEF 14A → compensation analysis',  human: true, humanAction: 'Run compensation analysis' },
-  'call-extraction':   { label: 'Call Extraction',   desc: 'EDGAR earnings downloads',         human: true, humanAction: 'Summarize transcripts' },
-  '10k-redlines':      { label: '10K Redlines',      desc: 'Year-over-year 10-K analysis',     human: true, humanAction: 'Run LLM redline analysis' },
-  'glassdoor':         { label: 'Glassdoor',         desc: 'Playwright scraper → ratings',     human: false },
-  'jobs-pages':        { label: 'Jobs Tracker',      desc: 'Multi-company job scraper',        human: false },
-  'bbg':               { label: 'Bloomberg',         desc: 'Earnings, prices, estimates',      human: false },
+  'taiwan':            { label: 'Taiwan Revenue',    desc: 'Monthly MOPS + FRED → dashboard',  human: false, schedule: '0 8 5-12 * *', repo: 'marginofdanger/Taiwan' },
+  'insider-ownership': { label: 'Insider Ownership', desc: 'Form 3/4 → ownership dashboard',   human: false, schedule: '0 6 * * 1', repo: 'marginofdanger/insider-ownership' },
+  '13f':               { label: '13F Holdings',      desc: '13F + Form 4 + FCA + EDINET',      human: false, schedule: '0 6 * * *', repo: 'marginofdanger/13F' },
+  'bdc':               { label: 'BDC Flows',         desc: '8-K filings → credit metrics',     human: true, humanAction: 'Run /extract-credit-metrics', schedule: '0 14 * * *', repo: 'marginofdanger/BDC-flows' },
+  'proxy':             { label: 'Proxy',             desc: 'DEF 14A → compensation analysis',  human: true, humanAction: 'Run compensation analysis', schedule: '0 9 * * *', repo: 'marginofdanger/proxy-tool' },
+  'call-extraction':   { label: 'Call Extraction',   desc: 'EDGAR earnings downloads',         human: true, humanAction: 'Summarize transcripts', schedule: '0 9 15-28 1,4,7,10 *', repo: 'marginofdanger/call-extraction' },
+  '10k-redlines':      { label: '10K Redlines',      desc: 'Year-over-year 10-K analysis',     human: true, humanAction: 'Run LLM redline analysis', schedule: '0 8 1 3,4,5 *', repo: 'marginofdanger/10K-redlines' },
+  'glassdoor':         { label: 'Glassdoor',         desc: 'Playwright scraper → ratings',     human: false, schedule: '0 7 * * 1', repo: 'marginofdanger/Glassdoor' },
+  'jobs-pages':        { label: 'Jobs Tracker',      desc: 'Multi-company job scraper',        human: false, schedule: '0 9 * * 0', repo: 'marginofdanger/Jobs' },
+  'bbg':               { label: 'Bloomberg',         desc: 'Earnings, prices, estimates',      human: false, schedule: '0 7 * * 1-5', repo: null },
 };
 
 // Schedule presets for the editor
@@ -277,8 +277,8 @@ function cronToHuman(cron) {
 function renderCard(key, proj, meta) {
   const s = proj.status || 'unknown';
   const runner = (proj.runner || 'github').toLowerCase();
-  const schedule = (configData && configData.projects && configData.projects[key])
-    ? configData.projects[key].schedule : null;
+  const schedule = (configData && configData.projects && configData.projects[key] && configData.projects[key].schedule)
+    ? configData.projects[key].schedule : meta.schedule;
 
   const el = document.createElement('div');
   el.className = 'card';
@@ -406,14 +406,18 @@ async function saveSchedule(key) {
   }
 
   const btn = document.querySelector('#editor-' + key + ' .btn-save');
+  const token = prompt('Enter your GitHub PAT to save (stored nowhere):');
+  if (!token) return;
+
   btn.disabled = true;
   btn.textContent = 'Saving...';
 
   try {
-    // Fetch current config to get latest SHA
+    // Fetch current config to get latest SHA (needs auth — private repo)
     const resp = await fetch(CONFIG_URL, {
-      headers: { 'Accept': 'application/vnd.github+json' }
+      headers: { 'Accept': 'application/vnd.github+json', 'Authorization': 'Bearer ' + token }
     });
+    if (!resp.ok) throw new Error('Failed to fetch config: HTTP ' + resp.status);
     const file = await resp.json();
     const content = decodeURIComponent(escape(atob(file.content.replace(/\s/g, ''))));
 
@@ -423,11 +427,8 @@ async function saveSchedule(key) {
     let updated = false;
     for (let i = 0; i < lines.length; i++) {
       const trimmed = lines[i].trimStart();
-      // Check if we're entering the target project section
       if (trimmed === key + ':') { inProject = true; continue; }
-      // Check if we've left the project section (next project at same indent)
       if (inProject && /^\s{2}\w/.test(lines[i]) && !lines[i].startsWith('    ')) { inProject = false; }
-      // Find and replace the schedule line
       if (inProject && trimmed.startsWith('schedule:')) {
         const indent = lines[i].match(/^(\s*)/)[1];
         lines[i] = indent + 'schedule: "' + newCron + '"';
@@ -439,8 +440,6 @@ async function saveSchedule(key) {
     if (!updated) throw new Error('Could not find schedule for ' + key);
 
     const newContent = lines.join('\n');
-    const token = prompt('Enter your GitHub PAT to save (stored nowhere):');
-    if (!token) { btn.disabled = false; btn.textContent = 'Save'; return; }
 
     const putResp = await fetch(CONFIG_URL, {
       method: 'PUT',
@@ -475,10 +474,9 @@ async function saveSchedule(key) {
 
 async function runNow(key) {
   const meta = PROJECT_META[key];
-  const proj = configData && configData.projects && configData.projects[key];
-  const repo = proj && proj.repo;
+  const repo = meta.repo;
 
-  if (!repo) { alert('No repo configured for ' + key); return; }
+  if (!repo) { alert('No repo configured for ' + key + ' (local only)'); return; }
 
   const token = prompt('Enter your GitHub PAT to trigger ' + meta.label + ':');
   if (!token) return;
