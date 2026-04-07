@@ -539,7 +539,10 @@ async function init() {
   } catch (e) {}
 
   try {
-    const resp = await fetch(CONFIG_URL, { headers: { 'Accept': 'application/vnd.github+json' } });
+    const token = sessionStorage.getItem('gh_pat');
+    const hdrs = { 'Accept': 'application/vnd.github+json' };
+    if (token) hdrs['Authorization'] = 'Bearer ' + token;
+    const resp = await fetch(CONFIG_URL, { headers: hdrs });
     if (resp.ok) {
       const file = await resp.json();
       const yaml = decodeURIComponent(escape(atob(file.content.replace(/\s/g, ''))));
