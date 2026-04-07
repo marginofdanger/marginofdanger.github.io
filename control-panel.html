@@ -148,6 +148,19 @@
     margin-top: 10px; padding-top: 8px; border-top: 1px solid #f0f0f0;
   }
 
+  .changes-section {
+    margin-top: 8px; padding-top: 8px; border-top: 1px solid #f0f0f0;
+  }
+  .changes-label {
+    font-size: 9px; font-weight: 700; color: #999; text-transform: uppercase;
+    letter-spacing: 0.3px; margin-bottom: 4px;
+  }
+  .change-item { font-size: 11px; color: #444; padding: 1px 0; }
+  .changes-more {
+    font-size: 10px; color: #2563eb; cursor: pointer; margin-top: 2px;
+  }
+  .changes-more:hover { text-decoration: underline; }
+
   .loading { text-align: center; color: #999; padding: 40px; }
   @media (max-width: 768px) {
     .grid { grid-template-columns: 1fr; }
@@ -306,6 +319,25 @@ function renderCard(key, proj, meta) {
     ? '<span class="auto-badge human">HUMAN STEP</span>'
     : '<span class="auto-badge full">AUTOMATED</span>';
 
+  // Build changes HTML
+  let changesHtml = '';
+  const changes = proj.changes || [];
+  if (changes.length > 0) {
+    const visible = changes.slice(0, 3);
+    const hidden = changes.slice(3);
+    changesHtml = '<div class="changes-section">' +
+      '<div class="changes-label">Recent Changes</div>' +
+      visible.map(function(c) { return '<div class="change-item">&rarr; ' + c + '</div>'; }).join('') +
+      (hidden.length > 0
+        ? '<div class="changes-more" onclick="this.nextElementSibling.style.display=\'block\';this.style.display=\'none\';">' +
+          '+ ' + hidden.length + ' more</div>' +
+          '<div style="display:none">' +
+          hidden.map(function(c) { return '<div class="change-item">&rarr; ' + c + '</div>'; }).join('') +
+          '</div>'
+        : '') +
+      '</div>';
+  }
+
   el.innerHTML =
     '<div class="card-head">' +
       '<span class="card-title">' + meta.label + '</span>' +
@@ -356,6 +388,7 @@ function renderCard(key, proj, meta) {
         '<button class="btn-cancel" onclick="toggleEditor(\'' + key + '\')">Cancel</button>' +
       '</div>' +
     '</div>' +
+    changesHtml +
     '<div class="card-actions">' +
       '<div class="status-row ' + s + '" style="margin:0;padding:0;border:none;">' +
         statusIcon(s) + '&nbsp;&nbsp;' + (proj.message || s) +
