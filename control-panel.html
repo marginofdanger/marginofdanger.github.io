@@ -229,10 +229,10 @@ const STATUS_URL = 'https://raw.githubusercontent.com/marginofdanger/automation-
 const CONFIG_URL = 'https://api.github.com/repos/marginofdanger/automation-hub/contents/config.yaml';
 
 function getToken() {
-  let token = sessionStorage.getItem('gh_pat');
+  let token = localStorage.getItem('gh_pat');
   if (!token) {
     token = prompt('Enter your GitHub PAT (saved for this browser session only):');
-    if (token) sessionStorage.setItem('gh_pat', token);
+    if (token) localStorage.setItem('gh_pat', token);
   }
   return token;
 }
@@ -539,7 +539,7 @@ async function init() {
   } catch (e) {}
 
   try {
-    const token = sessionStorage.getItem('gh_pat');
+    const token = localStorage.getItem('gh_pat');
     const hdrs = { 'Accept': 'application/vnd.github+json' };
     if (token) hdrs['Authorization'] = 'Bearer ' + token;
     const resp = await fetch(CONFIG_URL, { headers: hdrs });
