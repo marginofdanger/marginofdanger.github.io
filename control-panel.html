@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Automation Control Panel</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background: #f8fafc;
+    color: #1e293b;
+    line-height: 1.5;
+    padding: 24px;
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 4px;
+  }
+
+  .subtitle {
+    color: #64748b;
+    font-size: 0.875rem;
+    margin-bottom: 20px;
+  }
+
+  /* Error banner */
+  .error-banner {
+    background: #fef2f2;
+    border: 1px solid #fecaca;
+    color: #991b1b;
+    padding: 12px 16px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    display: none;
+    font-size: 0.875rem;
+  }
+
+  /* Summary bar */
+  .summary-bar {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-bottom: 24px;
+  }
+
+  .summary-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 14px;
+    border-radius: 9999px;
+    font-size: 0.875rem;
+    font-weight: 600;
+  }
+
+  .summary-badge.healthy { background: #dcfce7; color: #166534; }
+  .summary-badge.awaiting { background: #fef9c3; color: #854d0e; }
+  .summary-badge.failed { background: #fee2e2; color: #991b1b; }
+
+  /* Grid */
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+    gap: 16px;
+    margin-bottom: 40px;
+  }
+
+  /* Card */
+  .card {
+    background: #fff;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+    padding: 16px 18px;
+    border-left: 4px solid #94a3b8;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .card.status-success   { border-left-color: #22c55e; }
+  .card.status-awaiting_human { border-left-color: #f59e0b; }
+  .card.status-failed    { border-left-color: #ef4444; }
+  .card.status-unknown,
+  .card.status-skipped   { border-left-color: #94a3b8; }
+
+  .card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  .card-header h3 {
+    font-size: 1rem;
+    font-weight: 600;
+  }
+
+  .card-desc {
+    color: #64748b;
+    font-size: 0.8rem;
+    margin-top: 2px;
+  }
+
+  /* Runner badges */
+  .runner-badge {
+    font-size: 0.675rem;
+    font-weight: 700;
+    padding: 2px 8px;
+    border-radius: 4px;
+    text-transform: uppercase;
+    white-space: nowrap;
+    letter-spacing: 0.03em;
+  }
+
+  .runner-badge.github   { background: #dbeafe; color: #1d4ed8; }
+  .runner-badge.local    { background: #ede9fe; color: #6d28d9; }
+  .runner-badge.external { background: #ffedd5; color: #c2410c; }
+
+  /* Stats grid */
+  .stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6px 16px;
+    font-size: 0.8rem;
+  }
+
+  .stats dt {
+    color: #94a3b8;
+    font-weight: 500;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+
+  .stats dd {
+    margin-bottom: 4px;
+  }
+
+  /* Status message */
+  .status-msg {
+    font-size: 0.8rem;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding-top: 6px;
+    border-top: 1px solid #f1f5f9;
+  }
+
+  .status-msg .icon-success { color: #22c55e; }
+  .status-msg .icon-failed  { color: #ef4444; }
+  .status-msg .icon-awaiting { color: #f59e0b; }
+  .status-msg .icon-unknown  { color: #94a3b8; }
+
+  /* Notifications section */
+  .notifications-section {
+    margin-top: 16px;
+  }
+
+  .notifications-section h2 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 12px;
+  }
+
+  .notif-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 12px;
+  }
+
+  .notif-box {
+    background: #fff;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    padding: 16px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+  }
+
+  .notif-box .notif-label {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    margin-bottom: 6px;
+  }
+
+  .notif-box .notif-label.red    { color: #ef4444; }
+  .notif-box .notif-label.amber  { color: #f59e0b; }
+  .notif-box .notif-label.green  { color: #22c55e; }
+
+  .notif-box .notif-text {
+    font-size: 0.875rem;
+    color: #475569;
+  }
+
+  /* Loading */
+  .loading {
+    text-align: center;
+    color: #94a3b8;
+    padding: 40px;
+    font-size: 0.9rem;
+  }
+</style>
+</head>
+<body>
+
+<h1>Automation Control Panel</h1>
+<p class="subtitle" id="lastUpdated">Loading...</p>
+
+<div class="error-banner" id="errorBanner"></div>
+
+<div class="summary-bar" id="summaryBar"></div>
+
+<div class="grid" id="grid">
+  <div class="loading">Loading status data...</div>
+</div>
+
+<div class="notifications-section">
+  <h2>Notification Preferences</h2>
+  <div class="notif-grid">
+    <div class="notif-box">
+      <div class="notif-label red">Failures</div>
+      <div class="notif-text">Email immediately</div>
+    </div>
+    <div class="notif-box">
+      <div class="notif-label amber">Human Needed</div>
+      <div class="notif-text">Email with action items</div>
+    </div>
+    <div class="notif-box">
+      <div class="notif-label green">Notable Events</div>
+      <div class="notif-text">Daily digest (8am ET)</div>
+    </div>
+  </div>
+</div>
+
+<script>
+const PROJECT_META = {
+  'taiwan':             { label: 'Taiwan Revenue',      desc: 'Monthly MOPS + FRED → dashboard' },
+  'insider-ownership':  { label: 'Insider Ownership',   desc: 'Form 3/4 → ownership dashboard' },
+  '13f':                { label: '13F Holdings',        desc: '13F + Form 4 + FCA + EDINET' },
+  'bdc':                { label: 'BDC Flows',           desc: '8-K filings → credit metrics' },
+  'proxy':              { label: 'Proxy',               desc: 'DEF 14A → compensation analysis' },
+  'call-extraction':    { label: 'Call Extraction',     desc: 'EDGAR earnings downloads' },
+  '10k-redlines':       { label: '10K Redlines',        desc: 'Year-over-year 10-K analysis' },
+  'glassdoor':          { label: 'Glassdoor',           desc: 'Playwright scraper → ratings' },
+  'jobs-pages':         { label: 'Jobs Tracker',        desc: 'Multi-company job scraper' },
+  'bbg':                { label: 'Bloomberg',           desc: 'Earnings, prices, estimates' },
+};
+
+const STATUS_URL = 'https://raw.githubusercontent.com/marginofdanger/automation-hub/main/status.json';
+
+function formatDate(iso) {
+  if (!iso) return '—';
+  const d = new Date(iso);
+  if (isNaN(d)) return iso;
+  return d.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })
+    + ' ' + d.toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit', hour12: true });
+}
+
+function formatDuration(seconds) {
+  if (seconds == null) return '—';
+  const s = Math.round(seconds);
+  if (s < 60) return s + 's';
+  const m = Math.floor(s / 60);
+  const rem = s % 60;
+  return rem > 0 ? m + 'm ' + rem + 's' : m + 'm';
+}
+
+function statusIcon(status) {
+  switch (status) {
+    case 'success': return '<span class="icon-success">✓</span>';
+    case 'failed':  return '<span class="icon-failed">✗</span>';
+    case 'awaiting_human': return '<span class="icon-awaiting">⏳</span>';
+    default: return '<span class="icon-unknown">—</span>';
+  }
+}
+
+function runnerBadge(runner) {
+  if (!runner) return '';
+  const r = runner.toLowerCase();
+  let cls = 'github';
+  if (r === 'local') cls = 'local';
+  else if (r === 'external') cls = 'external';
+  return '<span class="runner-badge ' + cls + '">' + runner.toUpperCase() + '</span>';
+}
+
+function renderCard(key, proj, meta) {
+  const status = proj.status || 'unknown';
+  const card = document.createElement('div');
+  card.className = 'card status-' + status;
+  card.innerHTML =
+    '<div class="card-header">' +
+      '<div><h3>' + meta.label + '</h3><div class="card-desc">' + meta.desc + '</div></div>' +
+      runnerBadge(proj.runner || '') +
+    '</div>' +
+    '<dl class="stats">' +
+      '<div><dt>Last Run</dt><dd>' + formatDate(proj.last_run) + '</dd></div>' +
+      '<div><dt>Next Run</dt><dd>' + formatDate(proj.next_run) + '</dd></div>' +
+      '<div><dt>Schedule</dt><dd>' + (proj.schedule || '—') + '</dd></div>' +
+      '<div><dt>Duration</dt><dd>' + formatDuration(proj.duration_seconds) + '</dd></div>' +
+    '</dl>' +
+    '<div class="status-msg">' + statusIcon(status) + ' ' + (proj.message || status) + '</div>';
+  return card;
+}
+
+async function init() {
+  const grid = document.getElementById('grid');
+  const summaryBar = document.getElementById('summaryBar');
+  const lastUpdated = document.getElementById('lastUpdated');
+  const errorBanner = document.getElementById('errorBanner');
+
+  let data;
+  try {
+    const resp = await fetch(STATUS_URL + '?_=' + Date.now());
+    if (!resp.ok) throw new Error('HTTP ' + resp.status);
+    data = await resp.json();
+  } catch (e) {
+    errorBanner.textContent = 'Failed to load status.json: ' + e.message;
+    errorBanner.style.display = 'block';
+    grid.innerHTML = '';
+    lastUpdated.textContent = 'Unable to fetch status';
+    // Still render cards with unknown status
+    data = { projects: {} };
+  }
+
+  const projects = data.projects || {};
+
+  // Update timestamp
+  if (data.last_updated) {
+    lastUpdated.textContent = 'Last updated: ' + formatDate(data.last_updated);
+  } else {
+    lastUpdated.textContent = 'Status data loaded';
+  }
+
+  // Count statuses
+  let healthy = 0, awaiting = 0, failed = 0;
+  const keys = Object.keys(PROJECT_META);
+  keys.forEach(function(key) {
+    const s = (projects[key] && projects[key].status) || 'unknown';
+    if (s === 'success') healthy++;
+    else if (s === 'awaiting_human') awaiting++;
+    else if (s === 'failed') failed++;
+  });
+
+  summaryBar.innerHTML =
+    '<span class="summary-badge healthy">' + healthy + ' Healthy</span>' +
+    '<span class="summary-badge awaiting">' + awaiting + ' Awaiting</span>' +
+    '<span class="summary-badge failed">' + failed + ' Failed</span>';
+
+  // Render cards
+  grid.innerHTML = '';
+  keys.forEach(function(key) {
+    const proj = projects[key] || {};
+    const meta = PROJECT_META[key];
+    grid.appendChild(renderCard(key, proj, meta));
+  });
+}
+
+init();
+</script>
+</body>
+</html>
