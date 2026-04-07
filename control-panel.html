@@ -400,7 +400,7 @@ function presetChanged(key) {
 async function saveSchedule(key) {
   const cronInput = document.getElementById('cron-' + key);
   const newCron = cronInput.value.trim();
-  if (!newCron || newCron.split(' ').length !== 5) {
+  if (!newCron || (newCron !== 'DISABLED' && newCron.split(' ').length !== 5)) {
     alert('Invalid cron expression');
     return;
   }
@@ -415,7 +415,7 @@ async function saveSchedule(key) {
       headers: { 'Accept': 'application/vnd.github+json' }
     });
     const file = await resp.json();
-    const content = atob(file.content.replace(/\n/g, ''));
+    const content = decodeURIComponent(escape(atob(file.content.replace(/\s/g, ''))));
 
     // Update the schedule line for this project
     const lines = content.split('\n');
@@ -535,7 +535,7 @@ async function init() {
     const resp = await fetch(CONFIG_URL, { headers: { 'Accept': 'application/vnd.github+json' } });
     if (resp.ok) {
       const file = await resp.json();
-      const yaml = atob(file.content.replace(/\n/g, ''));
+      const yaml = decodeURIComponent(escape(atob(file.content.replace(/\s/g, ''))));
       configSha = file.sha;
       // Minimal YAML parse for schedules — just extract project schedule lines
       configData = { projects: {} };
