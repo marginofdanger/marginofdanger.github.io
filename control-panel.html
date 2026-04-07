@@ -135,6 +135,19 @@
   .notif-text { font-size: 12px; color: #444; }
   .notif-detail { font-size: 10px; color: #999; margin-top: 2px; }
 
+  /* Run Now button */
+  .btn-run {
+    font-size: 11px; font-weight: 600; padding: 5px 14px; border-radius: 4px;
+    border: 1px solid #d1d5db; cursor: pointer; background: #fff; color: #555;
+    transition: all 0.15s;
+  }
+  .btn-run:hover { background: #2563eb; color: #fff; border-color: #2563eb; }
+  .btn-run:disabled { background: #f3f4f6; color: #9ca3af; cursor: default; border-color: #e5e7eb; }
+  .card-actions {
+    display: flex; justify-content: space-between; align-items: center;
+    margin-top: 10px; padding-top: 8px; border-top: 1px solid #f0f0f0;
+  }
+
   .loading { text-align: center; color: #999; padding: 40px; }
   @media (max-width: 768px) {
     .grid { grid-template-columns: 1fr; }
@@ -197,6 +210,7 @@ const PROJECT_META = {
 
 // Schedule presets for the editor
 const PRESETS = [
+  { label: 'None (disabled)', cron: 'DISABLED' },
   { label: 'Daily', cron: '0 {h} * * *' },
   { label: 'Weekdays', cron: '0 {h} * * 1-5' },
   { label: 'Weekly Mon', cron: '0 {h} * * 1' },
@@ -241,6 +255,7 @@ function statusIcon(s) {
 
 function cronToHuman(cron) {
   if (!cron) return '—';
+  if (cron === 'DISABLED') return 'Disabled';
   const p = cron.split(' ');
   if (p.length !== 5) return cron;
   const [min, hour, dom, mon, dow] = p;
@@ -322,8 +337,13 @@ function renderCard(key, proj, meta) {
         '<button class="btn-cancel" onclick="toggleEditor(\'' + key + '\')">Cancel</button>' +
       '</div>' +
     '</div>' +
-    '<div class="status-row ' + s + '">' +
-      statusIcon(s) + '&nbsp;&nbsp;' + (proj.message || s) +
+    '<div class="card-actions">' +
+      '<div class="status-row ' + s + '" style="margin:0;padding:0;border:none;">' +
+        statusIcon(s) + '&nbsp;&nbsp;' + (proj.message || s) +
+      '</div>' +
+      (runner !== 'local'
+        ? '<button class="btn-run" onclick="runNow(\'' + key + '\')">Run Now</button>'
+        : '<button class="btn-run" disabled title="Local runner only">Local</button>') +
     '</div>';
 
   // After rendering, set the preset/hour selectors to match current cron
@@ -334,6 +354,13 @@ function renderCard(key, proj, meta) {
 
 function syncEditor(key, cron) {
   if (!cron) return;
+  if (cron === 'DISABLED') {
+    const presetSel = document.getElementById('preset-' + key);
+    if (presetSel) presetSel.value = 'DISABLED';
+    const cronInput = document.getElementById('cron-' + key);
+    if (cronInput) cronInput.value = 'DISABLED';
+    return;
+  }
   const parts = cron.split(' ');
   if (parts.length !== 5) return;
   const hour = parseInt(parts[1]);
@@ -363,7 +390,9 @@ function presetChanged(key) {
   const hourSel = document.getElementById('hour-' + key);
   const cronInput = document.getElementById('cron-' + key);
   const template = presetSel.value;
-  if (template) {
+  if (template === 'DISABLED') {
+    cronInput.value = 'DISABLED';
+  } else if (template) {
     cronInput.value = template.replace('{h}', hourSel.value);
   }
 }
@@ -444,6 +473,51 @@ async function saveSchedule(key) {
   }
 }
 
+async function runNow(key) {
+  const meta = PROJECT_META[key];
+  const proj = configData && configData.projects && configData.projects[key];
+  const repo = proj && proj.repo;
+
+  if (!repo) { alert('No repo configured for ' + key); return; }
+
+  const token = prompt('Enter your GitHub PAT to trigger ' + meta.label + ':');
+  if (!token) return;
+
+  // Find the button and disable it
+  const btns = document.querySelectorAll('.btn-run');
+  let btn = null;
+  btns.forEach(b => { if (b.onclick && b.onclick.toString().includes(key)) btn = b; });
+
+  try {
+    if (btn) { btn.disabled = true; btn.textContent = 'Triggering...'; }
+
+    const resp = await fetch('https://api.github.com/repos/' + repo + '/dispatches', {
+      method: 'POST',
+      headers: {
+        'Accept': 'application/vnd.github+json',
+        'Authorization': 'Bearer ' + token,
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        event_type: 'automation-hub-trigger',
+        client_payload: { project_name: key, manual: true },
+      }),
+    });
+
+    if (resp.status === 204) {
+      document.getElementById('saveBanner').textContent = meta.label + ' triggered successfully. Check back in a few minutes for results.';
+      document.getElementById('saveBanner').style.display = 'block';
+      setTimeout(() => document.getElementById('saveBanner').style.display = 'none', 5000);
+      if (btn) { btn.textContent = 'Triggered'; setTimeout(() => { btn.disabled = false; btn.textContent = 'Run Now'; }, 5000); }
+    } else {
+      throw new Error('HTTP ' + resp.status);
+    }
+  } catch (e) {
+    alert('Failed to trigger: ' + e.message);
+    if (btn) { btn.disabled = false; btn.textContent = 'Run Now'; }
+  }
+}
+
 async function init() {
   const grid = document.getElementById('grid');
   const summaryBar = document.getElementById('summaryBar');
@@ -469,10 +543,12 @@ async function init() {
       yaml.split('\n').forEach(line => {
         const projMatch = line.match(/^  (\S+):/);
         if (projMatch) currentProject = projMatch[1];
-        const schedMatch = line.match(/^\s+schedule:\s*"([^"]+)"/);
-        if (schedMatch && currentProject) {
+        if (currentProject) {
           if (!configData.projects[currentProject]) configData.projects[currentProject] = {};
-          configData.projects[currentProject].schedule = schedMatch[1];
+          const schedMatch = line.match(/^\s+schedule:\s*"([^"]+)"/);
+          if (schedMatch) configData.projects[currentProject].schedule = schedMatch[1];
+          const repoMatch = line.match(/^\s+repo:\s*(\S+)/);
+          if (repoMatch) configData.projects[currentProject].repo = repoMatch[1];
         }
       });
     }
