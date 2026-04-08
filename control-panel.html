@@ -161,10 +161,59 @@
   }
   .changes-more:hover { text-decoration: underline; }
 
+  /* Tabs */
+  .tabs { display: flex; gap: 0; margin-bottom: 16px; border-bottom: 2px solid #e2e5e9; }
+  .tab {
+    padding: 8px 20px; font-size: 13px; font-weight: 600; cursor: pointer;
+    border-bottom: 2px solid transparent; margin-bottom: -2px; color: #666;
+    transition: all 0.15s;
+  }
+  .tab:hover { color: #111; }
+  .tab.active { color: #2563eb; border-bottom-color: #2563eb; }
+  .tab-content { display: none; }
+  .tab-content.active { display: block; }
+
+  /* Notification settings table */
+  .notif-table { width: 100%; border-collapse: collapse; font-size: 12px; }
+  .notif-table th {
+    text-align: left; color: #999; font-weight: 600; font-size: 10px;
+    text-transform: uppercase; letter-spacing: 0.3px; padding: 8px 12px;
+    border-bottom: 1px solid #e2e5e9;
+  }
+  .notif-table td { padding: 10px 12px; border-bottom: 1px solid #f0f0f0; }
+  .notif-table tr:hover { background: #f8f9fa; }
+  .notif-table .project-name { font-weight: 600; color: #111; }
+  .notif-table .project-type { font-size: 10px; color: #888; }
+  .notif-table select {
+    font-size: 12px; padding: 3px 8px; border: 1px solid #d1d5db; border-radius: 4px;
+    background: #fff; color: #111;
+  }
+  .toggle {
+    position: relative; display: inline-block; width: 36px; height: 20px;
+  }
+  .toggle input { opacity: 0; width: 0; height: 0; }
+  .toggle .slider {
+    position: absolute; cursor: pointer; inset: 0; background: #d1d5db;
+    border-radius: 20px; transition: 0.2s;
+  }
+  .toggle .slider:before {
+    content: ""; position: absolute; height: 14px; width: 14px;
+    left: 3px; bottom: 3px; background: #fff; border-radius: 50%; transition: 0.2s;
+  }
+  .toggle input:checked + .slider { background: #2563eb; }
+  .toggle input:checked + .slider:before { transform: translateX(16px); }
+  .notif-global {
+    background: #fff; border: 1px solid #e2e5e9; border-radius: 8px;
+    padding: 14px; margin-bottom: 16px; display: flex; justify-content: space-between;
+    align-items: center; box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+  }
+  .notif-global .label { font-size: 12px; color: #444; }
+  .notif-global .email { font-weight: 600; color: #111; }
+  .notif-save-row { margin-top: 16px; display: flex; gap: 8px; }
+
   .loading { text-align: center; color: #999; padding: 40px; }
   @media (max-width: 768px) {
     .grid { grid-template-columns: 1fr; }
-    .notif-grid { grid-template-columns: 1fr; }
     .header { flex-direction: column; gap: 8px; align-items: flex-start; }
   }
 </style>
@@ -182,32 +231,44 @@
 <div class="error-banner" id="errorBanner"></div>
 <div class="save-banner" id="saveBanner"></div>
 
-<h2 class="section-header" style="font-size:14px;font-weight:700;margin-bottom:10px;color:#16a34a;">Fully Automated</h2>
-<div class="grid" id="gridAuto">
-  <div class="loading">Loading status data...</div>
+<div class="tabs">
+  <div class="tab active" onclick="switchTab('projects')">Projects</div>
+  <div class="tab" onclick="switchTab('notifications')">Notifications</div>
 </div>
 
-<h2 class="section-header" style="font-size:14px;font-weight:700;margin:24px 0 10px;color:#d97706;">Requires Human Step</h2>
-<div class="grid" id="gridHuman"></div>
+<div class="tab-content active" id="tab-projects">
+  <h2 class="section-header" style="font-size:14px;font-weight:700;margin-bottom:10px;color:#16a34a;">Fully Automated</h2>
+  <div class="grid" id="gridAuto">
+    <div class="loading">Loading status data...</div>
+  </div>
 
-<div class="notif-section">
-  <h2>Notification Preferences</h2>
-  <div class="notif-grid">
-    <div class="notif-box">
-      <div class="notif-label red">Failures</div>
-      <div class="notif-text">Email immediately</div>
-      <div class="notif-detail">+ shown on dashboard</div>
+  <h2 class="section-header" style="font-size:14px;font-weight:700;margin:24px 0 10px;color:#d97706;">Requires Human Step</h2>
+  <div class="grid" id="gridHuman"></div>
+</div>
+
+<div class="tab-content" id="tab-notifications">
+  <div class="notif-global">
+    <div>
+      <div class="label">Email Recipient</div>
+      <div class="email">aow@chieftaincapital.com</div>
     </div>
-    <div class="notif-box">
-      <div class="notif-label amber">Human Needed</div>
-      <div class="notif-text">Email with action items</div>
-      <div class="notif-detail">e.g. "4 BDC filings ready for extraction"</div>
+    <div style="display:flex;align-items:center;gap:12px;">
+      <span style="font-size:11px;color:#666;">Master Email</span>
+      <label class="toggle"><input type="checkbox" id="masterToggle" checked><span class="slider"></span></label>
     </div>
-    <div class="notif-box">
-      <div class="notif-label green">Notable Events</div>
-      <div class="notif-text">Daily digest (8am ET)</div>
-      <div class="notif-detail">New filings, new data, insider transactions</div>
-    </div>
+  </div>
+
+  <div style="background:#fff;border:1px solid #e2e5e9;border-radius:8px;box-shadow:0 1px 3px rgba(0,0,0,0.04);overflow:hidden;">
+    <table class="notif-table">
+      <thead>
+        <tr><th>Project</th><th>Enabled</th><th>Frequency</th><th>Status</th></tr>
+      </thead>
+      <tbody id="notifTableBody"></tbody>
+    </table>
+  </div>
+
+  <div class="notif-save-row">
+    <button class="btn-save" id="notifSaveBtn" onclick="saveNotifSettings()">Save Notification Settings</button>
   </div>
 </div>
 
@@ -574,6 +635,150 @@ async function runNow(key) {
   }
 }
 
+function switchTab(name) {
+  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+  document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
+  document.querySelector('.tab[onclick*="' + name + '"]').classList.add('active');
+  document.getElementById('tab-' + name).classList.add('active');
+}
+
+function renderNotifTable(statusData) {
+  const tbody = document.getElementById('notifTableBody');
+  tbody.innerHTML = '';
+  const keys = Object.keys(PROJECT_META);
+  keys.forEach(k => {
+    const meta = PROJECT_META[k];
+    const proj = (statusData.projects || {})[k] || {};
+    const s = proj.status || 'unknown';
+    // Get notification settings from config or defaults
+    const cfg = (configData && configData.projects && configData.projects[k]) || {};
+    const notifEnabled = cfg.notif_enabled !== false;  // default true
+    const notifFreq = cfg.notif_frequency || 'every_run';
+
+    const statusColor = s === 'success' ? '#16a34a' : s === 'failed' ? '#dc2626' :
+      s === 'awaiting_human' ? '#d97706' : '#999';
+
+    const tr = document.createElement('tr');
+    tr.innerHTML =
+      '<td><span class="project-name">' + meta.label + '</span><br>' +
+        '<span class="project-type">' + (meta.human ? 'Human step' : 'Automated') + '</span></td>' +
+      '<td><label class="toggle"><input type="checkbox" data-key="' + k + '" data-field="enabled" ' +
+        (notifEnabled ? 'checked' : '') + '><span class="slider"></span></label></td>' +
+      '<td><select data-key="' + k + '" data-field="frequency">' +
+        '<option value="every_run"' + (notifFreq === 'every_run' ? ' selected' : '') + '>Every Run</option>' +
+        '<option value="daily_digest"' + (notifFreq === 'daily_digest' ? ' selected' : '') + '>Daily Digest</option>' +
+        '<option value="off"' + (notifFreq === 'off' ? ' selected' : '') + '>Off</option>' +
+      '</select></td>' +
+      '<td><span style="color:' + statusColor + ';font-weight:600;font-size:11px;">' + s + '</span></td>';
+    tbody.appendChild(tr);
+  });
+}
+
+async function saveNotifSettings() {
+  const token = getToken();
+  if (!token) return;
+
+  const btn = document.getElementById('notifSaveBtn');
+  btn.disabled = true;
+  btn.textContent = 'Saving...';
+
+  try {
+    // Collect settings from the table
+    const settings = {};
+    document.querySelectorAll('#notifTableBody input[data-field="enabled"]').forEach(el => {
+      const k = el.dataset.key;
+      if (!settings[k]) settings[k] = {};
+      settings[k].enabled = el.checked;
+    });
+    document.querySelectorAll('#notifTableBody select[data-field="frequency"]').forEach(el => {
+      const k = el.dataset.key;
+      if (!settings[k]) settings[k] = {};
+      settings[k].frequency = el.value;
+    });
+
+    // Fetch current config
+    const resp = await fetch(CONFIG_URL, {
+      headers: { 'Accept': 'application/vnd.github+json', 'Authorization': 'Bearer ' + token }
+    });
+    if (!resp.ok) throw new Error('Failed to fetch config: HTTP ' + resp.status);
+    const file = await resp.json();
+    let content = decodeURIComponent(escape(atob(file.content.replace(/\s/g, ''))));
+
+    // For each project, add or update notification settings
+    const lines = content.split('\n');
+    for (const [key, cfg] of Object.entries(settings)) {
+      // Find the project section and add/update notifications block
+      let inProject = false;
+      let insertIdx = -1;
+      let hasNotifBlock = false;
+      let notifBlockStart = -1;
+      let notifBlockEnd = -1;
+
+      for (let i = 0; i < lines.length; i++) {
+        const trimmed = lines[i].trimStart();
+        if (trimmed === key + ':') { inProject = true; continue; }
+        if (inProject && /^\s{2}\S/.test(lines[i]) && !lines[i].startsWith('    ')) {
+          // Left the project section
+          if (!hasNotifBlock) insertIdx = i;
+          inProject = false;
+          break;
+        }
+        if (inProject && trimmed === 'notifications:') {
+          hasNotifBlock = true;
+          notifBlockStart = i;
+        }
+        if (hasNotifBlock && notifBlockStart >= 0 && i > notifBlockStart) {
+          if (trimmed.startsWith('enabled:') || trimmed.startsWith('frequency:')) {
+            notifBlockEnd = i;
+          }
+        }
+        if (inProject) insertIdx = i + 1;
+      }
+      // Handle last project in file
+      if (inProject && !hasNotifBlock) insertIdx = lines.length;
+
+      const notifLines = [
+        '    notifications:',
+        '      enabled: ' + cfg.enabled,
+        '      frequency: "' + cfg.frequency + '"',
+      ];
+
+      if (hasNotifBlock && notifBlockStart >= 0) {
+        // Replace existing block
+        const end = notifBlockEnd >= 0 ? notifBlockEnd + 1 : notifBlockStart + 1;
+        lines.splice(notifBlockStart, end - notifBlockStart, ...notifLines);
+      } else if (insertIdx >= 0) {
+        lines.splice(insertIdx, 0, ...notifLines);
+      }
+    }
+
+    const newContent = lines.join('\n');
+    const putResp = await fetch(CONFIG_URL, {
+      method: 'PUT',
+      headers: {
+        'Accept': 'application/vnd.github+json',
+        'Authorization': 'Bearer ' + token,
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        message: 'auto: update notification settings',
+        content: btoa(unescape(encodeURIComponent(newContent))),
+        sha: file.sha,
+      }),
+    });
+    if (!putResp.ok) throw new Error('GitHub API: ' + putResp.status);
+
+    document.getElementById('saveBanner').textContent = 'Notification settings saved.';
+    document.getElementById('saveBanner').style.display = 'block';
+    setTimeout(() => document.getElementById('saveBanner').style.display = 'none', 5000);
+  } catch (e) {
+    alert('Failed to save: ' + e.message);
+  } finally {
+    btn.disabled = false;
+    btn.textContent = 'Save Notification Settings';
+  }
+}
+
 async function init() {
   const summaryBar = document.getElementById('summaryBar');
   const lastUpdated = document.getElementById('lastUpdated');
@@ -611,6 +816,10 @@ async function init() {
           if (schedMatch) configData.projects[currentProject].schedule = schedMatch[1];
           const repoMatch = line.match(/^\s+repo:\s*(\S+)/);
           if (repoMatch) configData.projects[currentProject].repo = repoMatch[1];
+          const enabledMatch = line.match(/^\s+enabled:\s*(true|false)/);
+          if (enabledMatch) configData.projects[currentProject].notif_enabled = enabledMatch[1] === 'true';
+          const freqMatch = line.match(/^\s+frequency:\s*"([^"]+)"/);
+          if (freqMatch) configData.projects[currentProject].notif_frequency = freqMatch[1];
         }
       });
     }
@@ -650,6 +859,9 @@ async function init() {
       gridAuto.appendChild(card);
     }
   });
+
+  // Render notification settings table
+  renderNotifTable(statusData);
 }
 
 init();
