@@ -12,12 +12,12 @@ body {
 }
 h1 { font-size: 1.8rem; font-weight: 700; margin-bottom: 6px; color: #fff; }
 .subtitle { font-size: 0.9rem; color: #7d8590; margin-bottom: 28px; }
-.columns { display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px 16px; align-items: stretch; }
-.column { display: contents; }
+.columns { display: flex; gap: 16px; align-items: flex-start; }
+.column { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 10px; }
 .category-title {
   font-size: 0.8rem; font-weight: 600; color: #58a6ff; text-transform: uppercase;
   letter-spacing: 0.08em; padding-left: 2px;
-  border-bottom: 1px solid #21262d; padding-bottom: 6px; align-self: end;
+  border-bottom: 1px solid #21262d; padding-bottom: 6px;
 }
 a.card {
   display: flex; flex-direction: column; background: #161b22; border: 1px solid #30363d;
@@ -38,7 +38,7 @@ a.card:hover {
 }
 .tag-live { background: #1a3a2a; color: #3fb950; }
 .tag-tool { background: #1a2a3a; color: #58a6ff; }
-@media (max-width: 800px) { .columns { grid-template-columns: 1fr; } .column { display: block; } }
+@media (max-width: 800px) { .columns { flex-direction: column; } }
 </style>
 </head>
 <body>
@@ -144,5 +144,19 @@ a.card:hover {
     </a>
   </div>
 </div>
+<script>
+function equalizeRows() {
+  const cols = document.querySelectorAll('.column');
+  const maxRows = Math.max(...[...cols].map(c => c.querySelectorAll('.card').length));
+  for (let r = 0; r < maxRows; r++) {
+    const cards = [...cols].map(c => c.querySelectorAll('.card')[r]).filter(Boolean);
+    cards.forEach(c => c.style.height = 'auto');
+    const maxH = Math.max(...cards.map(c => c.offsetHeight));
+    cards.forEach(c => c.style.height = maxH + 'px');
+  }
+}
+equalizeRows();
+window.addEventListener('resize', equalizeRows);
+</script>
 </body>
 </html>
