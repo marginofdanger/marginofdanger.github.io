@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Anthropic’s $30B Ramp, Mythos Doomsday, OpenClaw Ankled, Iran War Ceasefire, Israel&#39;s Influence</title>
+  <style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background: #faf8f5;
+  color: #2c2418;
+  line-height: 1.7;
+  padding: 0 1rem 2rem;
+}
+header {
+  position: sticky;
+  top: 0;
+  background: #faf8f5;
+  z-index: 100;
+  border-bottom: 2px solid #c4956a;
+  box-shadow: 0 2px 8px rgba(44,36,24,0.08);
+  padding: 0.6rem 1rem;
+}
+.header-inner {
+  max-width: 78ch;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header-title { font-size: 1rem; color: #2c2418; }
+.header-title strong { font-size: 1.1rem; }
+.header-link {
+  font-size: 0.85rem;
+  color: #8b6d4e;
+  text-decoration: none;
+  border: 1px solid #c4956a;
+  padding: 0.2rem 0.7rem;
+  border-radius: 4px;
+}
+.header-link:hover { background: #f0ebe3; }
+main {
+  max-width: 78ch;
+  margin: 0 auto;
+  padding-top: 0.5rem;
+}
+h2 {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #2c2418;
+  margin-top: 2rem;
+  margin-bottom: 0.5rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 2px solid #c4956a;
+}
+h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #3d3225;
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+section { margin-bottom: 1.5rem; }
+ul { margin: 0.5rem 0 0.5rem 1.5rem; }
+li { margin-bottom: 0.4rem; }
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0.75rem 0;
+  font-size: 0.92rem;
+}
+thead th {
+  background: #3d3225;
+  color: #faf8f5;
+  text-transform: uppercase;
+  font-size: 0.78rem;
+  letter-spacing: 0.05em;
+  padding: 0.5rem 0.75rem;
+  text-align: left;
+  font-weight: 600;
+}
+tbody td {
+  padding: 0.45rem 0.75rem;
+  border-bottom: 1px solid #e8e0d4;
+}
+tbody tr:nth-child(even) { background: #f0ebe3; }
+tbody tr:nth-child(odd) { background: #faf8f5; }
+.key-insight {
+  border-left: 4px solid #c4956a;
+  background: #f5efe8;
+  padding: 0.75rem 1rem;
+  margin: 0.75rem 0;
+  font-size: 0.93rem;
+  border-radius: 0 6px 6px 0;
+}
+.qa-pair { margin-bottom: 1.25rem; }
+.question-box {
+  background: #f0ebe3;
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+  margin-bottom: 0.5rem;
+}
+.analyst-label {
+  display: block;
+  font-size: 0.8rem;
+  color: #8b6d4e;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  margin-bottom: 0.25rem;
+}
+.answer { padding-left: 0.25rem; }
+.loading-section { opacity: 0.5; }
+.loading-indicator {
+  font-size: 1.2rem;
+  padding: 2rem;
+  text-align: center;
+  color: #8b6d4e;
+}
+
+/* YouTube transcript reader */
+
+/* Legacy .yt-meta-card -- kept so old output files still render cleanly.
+   New output uses .header-title.yt below instead. */
+.yt-meta-card {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  margin-bottom: 1.5rem;
+  background: #f5efe8;
+  border-left: 4px solid #c4956a;
+  border-radius: 0 6px 6px 0;
+  padding: 0.9rem 1rem;
+}
+.yt-meta-card img {
+  flex: 0 0 180px;
+  height: 101px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+.yt-meta-body { flex: 1; font-size: 0.93rem; }
+.yt-meta-title { font-weight: 700; font-size: 1rem; margin-bottom: 0.25rem; }
+.yt-meta-sub { color: #8b6d4e; margin-bottom: 0.35rem; }
+.yt-meta-url { font-size: 0.85rem; color: #3d3225; }
+
+/* YouTube sticky header uses the default 78ch-capped centered
+   container so it aligns with the body text column below. The
+   buttons sit at the right edge of that centered container. */
+header:has(.header-inner.yt) { padding: 0.75rem 1rem; }
+.header-inner.yt { gap: 1rem; }
+.header-title.yt {
+  display: flex;
+  gap: 0.9rem;
+  align-items: center;
+  min-width: 0;
+  flex: 1;
+}
+.yt-header-thumb { flex: 0 0 88px; line-height: 0; }
+.yt-header-thumb img {
+  width: 88px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 3px;
+  display: block;
+}
+.yt-header-text { min-width: 0; flex: 1; }
+.yt-header-text strong {
+  display: block;
+  font-size: 1rem;
+  line-height: 1.3;
+  color: #2c2418;
+  /* Allow wrapping to 2 lines so long podcast titles show in full. */
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.yt-header-sub {
+  font-size: 0.8rem;
+  margin-top: 0.2rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.yt-header-sub .yt-channel { color: #8b6d4e; }
+.yt-header-sub .yt-date,
+.yt-header-sub .yt-dur { color: #3d3225; font-weight: 600; }
+.yt-header-sub .yt-sep { color: #c4956a; margin: 0 0.5rem; }
+
+.yt-header-actions {
+  display: flex;
+  gap: 0.4rem;
+  align-items: center;
+  flex: 0 0 auto;
+}
+/* Shared box shape for the star + share + YT buttons so they're
+   visually identical. Applies to both the <button>s and the <a> link. */
+.yt-header-actions .yt-bookmark-btn,
+.yt-header-actions .yt-share-btn,
+.yt-header-actions .header-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font: inherit;
+  font-size: 0.85rem;
+  line-height: 1;
+  color: #8b6d4e;
+  background: transparent;
+  border: 1px solid #c4956a;
+  border-radius: 4px;
+  padding: 0;
+  box-sizing: border-box;
+  width: 2.2rem;
+  height: 2.2rem;
+  white-space: nowrap;
+  text-decoration: none;
+  cursor: pointer;
+}
+.yt-header-actions .yt-bookmark-btn { font-size: 1rem; }
+.yt-header-actions .yt-share-btn { font-size: 1.05rem; }
+.yt-header-actions .yt-share-btn:disabled { opacity: 0.6; cursor: default; }
+.yt-header-actions .yt-bookmark-btn:hover,
+.yt-header-actions .yt-share-btn:hover,
+.yt-header-actions .header-link:hover {
+  background: #f0ebe3;
+  color: #3d3225;
+}
+.yt-header-actions .yt-bookmark-btn.is-bookmarked {
+  background: #c4956a;
+  color: #faf8f5;
+  border-color: #a87d5a;
+}
+.yt-header-actions .yt-bookmark-btn.is-bookmarked:hover {
+  background: #a87d5a;
+  color: #faf8f5;
+}
+
+h3.chapter {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #3d3225;
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+h3.chapter a {
+  font-size: 0.8rem;
+  color: #8b6d4e;
+  text-decoration: none;
+  font-weight: 400;
+}
+
+.yt-body p {
+  margin-bottom: 1.15rem;
+}
+.yt-body p.q {
+  background: #f0ebe3;
+  border-left: 3px solid #c4956a;
+  border-radius: 0 6px 6px 0;
+  padding: 0.6rem 0.9rem;
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+  color: #3d3225;
+  font-style: italic;
+  font-size: 0.96rem;
+}
+.yt-body p.q::before {
+  content: "Q";
+  display: inline-block;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 0.72rem;
+  color: #8b6d4e;
+  letter-spacing: 0.05em;
+  margin-right: 0.5rem;
+  padding: 0.05rem 0.4rem;
+  border: 1px solid #c4956a;
+  border-radius: 3px;
+  vertical-align: 0.1em;
+}
+
+</style>
+</head>
+<body>
+  <header>
+    <div class="header-inner yt">
+      <div class="header-title yt">
+        <a class="yt-header-thumb" href="https://www.youtube.com/watch?v=DVBJQQCjgXU" target="_blank"><img src="https://i.ytimg.com/vi/DVBJQQCjgXU/maxresdefault.jpg" alt=""></a>
+        <div class="yt-header-text">
+          <strong>Anthropic’s $30B Ramp, Mythos Doomsday, OpenClaw Ankled, Iran War Ceasefire, Israel&#39;s Influence</strong>
+          <div class="yt-header-sub">
+            <span class="yt-channel">All-In Podcast</span>
+            <span class="yt-sep">&middot;</span>
+            <span class="yt-date">Apr 10, 2026</span>
+            <span class="yt-sep">&middot;</span>
+            <span class="yt-dur">1h 29m</span>
+          </div>
+        </div>
+      </div>
+      <div class="yt-header-actions">
+        <button id="yt-bookmark-btn"
+                class="yt-bookmark-btn"
+                title="Bookmark"
+                aria-label="Bookmark"
+                data-filename="yt-2026-04-14-anthropic-s-30b-ramp-mythos-doomsday-openclaw-ankled-iran.html"
+                data-title="Anthropic’s $30B Ramp, Mythos Doomsday, OpenClaw Ankled, Iran War Ceasefire, Israel&#39;s Influence"
+                data-url="https://www.youtube.com/watch?v=DVBJQQCjgXU"
+                data-date="2026-04-10T15:38:57-07:00"
+                data-channel="All-In Podcast"
+                onclick="toggleYtBookmark(this)">&#9734;</button>
+        <button id="yt-share-btn"
+                class="yt-share-btn"
+                title="Share"
+                aria-label="Share"
+                data-filename="yt-2026-04-14-anthropic-s-30b-ramp-mythos-doomsday-openclaw-ankled-iran.html"
+                onclick="shareYtPage(this)">&#8599;</button>
+        <a class="header-link" href="https://www.youtube.com/watch?v=DVBJQQCjgXU" target="_blank" title="Watch on YouTube" aria-label="Watch on YouTube">YT</a>
+      </div>
+    </div>
+  </header>
+  <main>
+    <div class="yt-body">
+    <h3 class="chapter"><span>Bestie intros: Brad Gerstner joins the show!</span><a href="https://www.youtube.com/watch?v=DVBJQQCjgXU&t=0s">↪ 0:00</a></h3>
+
+<p class="q">How many PRs do you think are going to get pushed to the core structural internet in 100 days? What's the over-under number?</p>
+
+<p>I'll say roughly 10,000, but it'll be immediate. If it prevents your browser history from being released to everybody in the world, that may be something you're willing to let a hundred days pass on.</p>
+
+<p class="q">What about the dickpicks?</p>
+
+<p>Chamath's going to release them himself. We'll let your winners ride. We open sourced it to the fans and they've just gone crazy with it.</p>
+
+<p>All right, everybody. Welcome back to the number one podcast in the world. David Freeberg is out this week, but in his place, the one, the only, our fifth bestie, Brad Gerstner.</p>
+
+<p class="q">Why don't you ever give me a little namaste in your payday anymore? You used to be the greatest moderator, but now it's just kind of off.</p>
+
+<p>These guys beat me up. They beat the joy out of me doing this program.</p>
+
+<p class="q">It's because you're a Roana apologist now?</p>
+
+<p>No. I said they've stopped maxing and started doing logical things. That's all.</p>
+
+<p>It's great to be here. And of course, David Sax is back. Everybody wants to hear from David Sax. We missed you last week, bestie. We didn't beat the joy out of you—we just try to beat some of the hot air.</p>
+
+<p class="q">Chamath, how's your maxing going since last week? Did you have a good weekend of smoking cigars and not ruminating about the chaos you've caused?</p>
+
+<p>I think I've done generally more good than not. But there's been some chaotic moments.</p>
+
+<p>You can't have ups without downs. You're in the arena. Have you stopped going to therapy after realizing ruminating is the problem?</p>
+
+<p class="q">What's this sudden interest in maxing? Are you the clavvicular for maxing?</p>
+
+<p>No, the world finally caught up with me. I've been maxing this whole time—they just didn't have a name for it.</p>
+
+<p class="q">Eli's videos are really good. I watched two more this week. What's so appealing about not ruminating, smoking a cigar, and just living your life?</p>
+
+<p>What he says actually works at every level of society and every sort of thing you may want to achieve. The more you want something, the less you're going to get it. His real message is to let go, live life, and try stuff or don't try stuff. That detachment is really healthy for people.</p>
+
+<p class="q">Who's the guy who says this?</p>
+
+<p>Elisha Long. He goes by Eli. Mark Andre found him and said this guy is a modern-day philosopher. He gives you a road map for how to live your life.</p>
+
+<p>The basic point is build something and don't ruminate. Stop blathering in your own head. Just do stuff.</p>
+
+<h3 class="chapter"><span>Anthropic blocks Mythos release for security concerns: major threat or marketing stunt?</span><a href="https://www.youtube.com/watch?v=DVBJQQCjgXU&t=262s">↪ 4:22</a></h3>
+
+<p>Anthropic is withholding its newest model, Mythos, saying it's far too dangerous for any of us to have access to it. According to the company, the model autonomously found thousands of vulnerabilities, including bugs in every major operating system and web browser. They found a 27-year-old vulnerability in OpenBSD used in firewalls and critical infrastructure, and a 16-year-old bug in FFmpeg that was missed by automated tools after 5 million scans.</p>
+
+<p>They released a hype video explaining why they were not going to share this model. As a side effect of being good at code, it's also good at cyber. The model we're experimenting with is by and large as good as a professional human at identifying bugs. It's good for us because we can find more vulnerabilities sooner and fix them. It has the ability to chain together vulnerabilities, so it can create exploits out of three, four, or sometimes five vulnerabilities that in sequence give you a very sophisticated outcome.</p>
+
+<p class="q">Brad, you're an investor in this company. Is this virtue signaling or reality? Is this a good move by them to not release this model and be thoughtful before releasing it to the public?</p>
+
+<p>They deserve tremendous credit. The company could have just released Mythos and broken a lot of core things on the internet. Instead, they ran vulnerability testing, saw it would allow offensive hacking, and realized it would wreak havoc. They didn't need government to hold their hand on this. They set up Project Glass Wing, an AI-driven cyber coalition with Apple, Microsoft, Google, Amazon, JP Morgan, and 40 of the most important companies. Their goal is simple: spend 100 days using advanced AI to find, fix, and harden software vulnerabilities before hackers exploit them.</p>
+
+<p>This represents a threshold we're crossing. Mythos and Spud from OpenAI represent the beginning of what I'd call AGI models. These are models with massive step-function improvements in intelligence, and they're too smart to be released immediately. They set up this idea of sandboxing and building defensive alliances instead of relying on top-down regulation. I think you can trust the industry and market forces in coordination with government to do this responsibly.</p>
+
+<p class="q">David, we had Emil Michael on a few weeks ago discussing whether if the government has these tools, what's the proper relationship? Game theory suggests they must have told the government, "This is so powerful it can create novel attack vectors." If it's this powerful, this is equivalent to the Manhattan Project. Are the chances China already has this and is using it?</p>
+
+<p>Anthropic has proven to be very good at two things: product releases and scaring people. There's been a pattern where at the same time they roll out a new model, they also roll out some study showing the worst possible implication. We saw this a year ago with their blackmail study where they prompted the model over 200 times to get the result they wanted. That result was reverse engineered, and we're now a year later with no examples of blackmail in the wild. So when Anthropic scares people, you have to ask: is this a tactic or is it real?</p>
+
+<p>On the cyber hacking example, I think this one is more legitimate. As coding models become more capable, they're more capable of finding bugs and vulnerabilities. They're more capable of stringing together multiple vulnerabilities into exploits. Over the next six months, we're going to have a period of AI-driven cyber catching up where we detect bugs dormant over 20 years. Having this pre-release period makes sense so software companies can patch vulnerabilities before these capabilities are widely available.</p>
+
+<p>Chinese open-source models like Kimi K2 are about six months behind, so we have a window here of maybe six months. Every company managing code bases should take this seriously and detect vulnerabilities to roll out patches. If everybody reacts right, I don't think it will be the doomsday scenario Anthropic is portraying. But the fear might drive correct behavior. We're going to get into a big arms race between AI for cyber offense and defense, but it'll be a more normal period.</p>
+
+<p class="q">Chamath, these companies have it both ways: "This shouldn't be regulated" but also "This is cataclysmic." If the Chinese have this capability, wouldn't that speak to more government coordination? Is this The Boy Who Cried Wolf or is it real?</p>
+
+<p>I think it's mostly theater. In February 2019, when Dario was at OpenAI, they did the same thing with GPT-2. That 1.5 billion parameter model was supposed to be the end of days, unleashing torrents of spam and misinformation. What happened? They methodically rolled it out over six to nine months, starting with smaller models and scaling up. At the end, it was a huge nothing burger.</p>
+
+<p>If Mythos is capable of what it says, two things are true. One: a sophisticated hacker can probably do those things right now with Opus. Two: if these exploits are this easy to find, you'd have to shut down the internet for five years to patch them all. When a large multi-trillion-dollar gang does this, it's theater. What do you actually accomplish in two months? Capitalism moves forward, funding moves forward, and the need to build adoption moves forward. That's going to supersede this.</p>
+
+<p>Anthropic has figured out a very clever go-to-market motion that activates hyper attention and hyper usage. I give them tremendous credit. Anthropic is shooting the lights out right now. These guys are hunking threes from everywhere. But we've seen it before. We saw it when these folks were at OpenAI. I think what we'll say is two things. One: if we really patch all these security holes, we need to shut down the internet for some number of years. Two: an advanced hacker can probably do this today with Opus if they wanted to.</p>
+
+<p class="q">Maybe they did cry wolf before, but based on what I see with these models advancing, I think this is code red. We should take this deadly seriously. These companies need to coordinate with the CIA. Don't you think this means nationalization of AI?</p>
+
+<p>No. But these companies need to build a group that works and coordinates with the CIA. I assume they're already doing this. I'm certain Dario went to them and said, "Look what we found. This is the real deal." The frontier model forum is cooperating on adversarial distillation stuff as we speak. Anthropic, Google, and OpenAI are coordinating on this.</p>
+
+<p>Dario could have easily called for a government moratorium. Instead, he said, "Okay, what should we do? I'm going to get 40 leading companies together, spend 100 days sandboxing and hardening systems, then we're going to keep pushing forward." What do you honestly think gets accomplished in a hundred days? My answer is roughly 10,000 PRs, but it's going to be immediate. If it prevents browser history from being released to everybody in the world, that's something worth letting a hundred days pass on.</p>
+
+<p class="q">Saxs is saying we need to treat this seriously whether it's real or performative. It does logically make sense that as these models get better at coding, they'll get better at cyber. And there's a one-time period moving from pre-AI to post-AI where you need a patch.</p>
+
+<p>I'm going to give them the benefit of the doubt. The blackmail study was embarrassing, but in this case, I think it's legit. We have no choice but to treat it that way. Even if two things can be true at the same time—they could be performative and it could make logical sense—the one company who made the biggest bet on code would discover this quickest.</p>
+
+<p>The most important thing people haven't talked about is the amount of code being pushed is 10x or 100x in most organizations because of these tools. We need security embedded in these coding tools to do it in real time. If this was real, they picked the wrong companies. They didn't include energy companies that control nuclear reactors or airplane companies flying hundreds of thousands of people. Those weren't included in this.</p>
+
+<p class="q">Brad, will you get Dario to come on the program? I've invited him three times and got ghosted. I don't know why.</p>
+
+<p>Dario's podcast with Dwarkish is exceptional. I've listened four or five times and taken notes every time. It's really exceptional work.</p>
+
+<h3 class="chapter"><span>Are OpenAI and Anthropic trying to kill OpenClaw? Does Anthropic already have market dominance in AI coding?</span><a href="https://www.youtube.com/watch?v=DVBJQQCjgXU&t=1447s">↪ 24:07</a></h3>
+
+<p class="q">There was an interesting tweet from the founder of OpenClaw, Peter Steinberger, about Anthropic cutting off his access. What exactly did they do?</p>
+
+<p>When you buy subscriptions, companies blend usage across many users. Nine out of ten users use fewer tokens than they pay for, and the top ten percent use much more. When OpenClaw became a phenomenon, the number one open-source project in GitHub history, people were using $2,000 to $20,000 worth of tokens with a $200 subscription. Anthropic said you can no longer use your subscription for professional or enterprise use. You now have to go to the API and pay per usage.</p>
+
+<p>They essentially killed OpenClaw, and then 10 days later, they announced their own agent technology, a safer and better version of OpenClaw. They systematically copied feature by feature of OpenClaw and then cut off OpenClaw. This is bundling or price dumping in antitrust terms. When you price something under market price, that's price dumping. If you bundle, that's a bundling issue.</p>
+
+<p class="q">Brad, when you use Anthropic's competitor to OpenClaw, correct? Are they subsidizing it? Are you paying?</p>
+
+<p>It's in closed beta, so we don't know yet. If they charge for API usage on their own agent harness but charge metered rates for third-party stuff, you could make a bundling argument. You could say it's anti-competitive assuming Anthropic has dominant market share in coding, which most would say they do. Most enterprises will use the Anthropic version because it meets all your security parameters. Altimeter runs a lot on Anthropic, already integrated with our data warehouse.</p>
+
+<p>I'm not saying this is a permanent monopoly, but I am asking about market share. I think Anthropic has 50 to 60 percent market share because Codex is also broadly used. But the more important point is AI-enabled coding is still five percent of the broad market, so it's a nothing burger. Yes, they're leading, but in something that isn't that big yet.</p>
+
+<p class="q">Brad, is Anthropic trying to kill OpenClaw?</p>
+
+<p>OpenClaw is so powerful and has so much momentum that I believe Anthropic is trying to ankle it. I believe when Sam Altman hired Peter, it was to subvert the open-source project to get his genius inside OpenAI rather than letting it go there. This is the number one focus: who is trying to kill OpenClaw? Anthropic has Claude managed agents. Perplexity Computer launched. Hermes agent was released. Alibaba's coming with one based on their Quinn model. Elon's got Rock Computer coming out. Amazon and Apple are preparing new releases of Alexa and Siri. Nothing yet from SAT and Microsoft.</p>
+
+<p>I believe the number one goal in the frontier model space is to kill this open-source product. They're building multi-functioning agents because that's what consumers and enterprises want. But I believe this is a giant movement to stop OpenClaw because it's like having an open-source Android player in the market. Open source is going to win the day on large language models and take 90 percent of token usage. The entire frontier model space could be undercut by open source. Smaller language models that are verticalized will run on desktops and laptops. That's the biggest competitive threat.</p>
+
+<p>I hope this happens. All due respect to investments, Brad, I think you shouldn't put your entire business and all your knowledge into anthropic or OpenAI. That's your entire business and life. It's foolish unless you're just boosting your investment in those companies.</p>
+
+<p class="q">Do you believe Anthropic has dominant market share in coding right now?</p>
+
+<p>Yes. No, they had the lead, but not dominating. It's a trillion-dollar market, and they have less than ten percent today. What percent of coding tokens do you think Anthropic is providing right now? Greater than fifty percent. That's called dominant market share. You have to look at the TAM. There are a lot of people who provide coding before we move on. If Anthropic is delivering over half of coding tokens, that's clearly a dominant position for coding.</p>
+
+<p>It's an early market that could change. Nine months ago, everybody called us out of the game. Now they say we have dominant market position. This is the fastest changing, most competitive market in the world. It would be hard to walk into district court and make a case that Anthropic somehow already formed a monopoly against Amazon, Google, Microsoft, and OpenAI.</p>
+
+<p class="q">Do you guys all agree Anthropic probably has fifty to sixty percent market share?</p>
+
+<p>I think CodeX is quite broadly used as well, but that belies the more important point. AI-enabled coding is still five percent of the broad market. The ugly truth is that the long-horizon ability for any of these models to actually build enterprise-grade software is still not there. Half a trillion-dollar banks and hundred billion-dollar insurance companies don't say, "Wow, it just works." It doesn't work. Most of it is still hand-tuned.</p>
+
+<p>We have fifty years of accumulated tech debt as a world. When you enumerate the number of lines that represents, it's hundreds of trillions of lines of mediocre, marginal, or bad code. We have legacy languages where customers have to get sixty-year-old pensioners to interpret Cobol. This is a hundred billion-dollar revenue company solving it that way. Opus doesn't just solve it. Most of the tech debt in the world, ninety-nine percent of it, is still poorly addressed by these models. We're untying a Gordian knot that's going to take decades.</p>
+
+<p>The core things your lived experience sits on today is a mess of tech debt that will get very slowly replaced. There are competitors that are extremely disruptive. Bit Tensor Tao has a subnet called Ridges AI. They spent about a million dollars in Tao rewards and in 45 days hit eighty percent of what Claude 4 is. The way that works is they give rewards for people who make that coding product better. That flywheel is racing right now with participation like Bitcoin.</p>
+
+<p class="q">But I assume the probability is zero that any company will outsource their production code to an open-source project?</p>
+
+<p>That's true. No important company worth anything will outsource their production code to open source. However, when you look at the cost of training a 10 trillion parameter model on Blackwell and when you look at the future, a 15 or 20 trillion parameter model trained on Vera Rubin, I think you're right. I have zero in that.</p>
+
+<p>Another project someone mentioned to me is Venice. The concept of open-source training and orchestration is a hugely disruptive idea because if the capital markets run out of 10 and 20 billion-dollar checks, the only solution is to be totally distributed. There's going to be at some point a very successful open-source project for pre-training.</p>
+
+<p>If you look at the history of open source, Brad, you had a lot of bets in this space. Linux, Kubernetes, Apache, Postgres, Terraform. These open-source projects are deep inside enterprises. We said the same thing fifteen or twenty years ago: nobody will adopt these in the enterprise. Fair enough, many people do. But this 29-dollar Ridges subscription versus 200 dollars is starting to take hold in startups. That's where I always look at the tip of the spear.</p>
+
+<p>I invest in things that have a ninety percent chance of going to zero. Just do your own research. Let me make a final few points. Number one: with respect to this market for coding tokens, it might be five percent today, but I think it's going to ninety-five percent. I'd bet any amount of money on that. The only question is when, probably over the next few years. Point number two: if you're the early leader in coding with fifty to sixty percent market share, you have the most developers using it, so you have the most access to code bases. You get the most training tokens. There's a potential flywheel where the early leader consolidates its lead because it's generating the most code tokens and getting access to the most existing code.</p>
+
+<p>I do believe the market for coding tokens could be monopolized. Third: Anthropic's revenue run rate is the fastest growing revenue run rate at scale we've ever seen. They're ramping at a rate we've never seen before. Point four: where we go from here is agents. Coding gives you a huge step up on agents because one of the main things agents need to do is write code. If coding is this huge market dominated by one or two companies, that leads to another huge market: agents. All these companies need to behave in a very clean way and not engage in tactics the government might say was anti-competitive. Everyone should play fair. Don't discriminate against other people's products. Engage in fair pricing.</p>
+
+<h3 class="chapter"><span>Anthropic $30B run rate, fastest revenue ramp ever, the TAM for intelligence</span><a href="https://www.youtube.com/watch?v=DVBJQQCjgXU&t=2540s">↪ 42:20</a></h3>
+
+<p>Let's talk about Anthropic's revenue ramp. This is unprecedented. Anthropic's revenue run rate has topped 30 billion. Early 2023, they started charging for API access. End of 2024, they were at a billion-dollar run rate. February 25th, they launched Claude Code. Mid-2025, they were at four billion. End of 2025, nine billion. Just a couple months later in April, 30 billion. They added four billion in January, seven billion in February, eleven billion in March. To put that in perspective, that's Databricks plus Palanteer combined in a single month.</p>
+
+<p>Enterprise customers are a major part of the spend. Dario announced there are over a thousand enterprises paying over a million annually. These are the most coveted customers in the world. Slack dreamed of getting these million-dollar customers. Salesforce dreams of getting them.</p>
+
+<p class="q">Brad, you're an investor in both Anthropic and OpenAI. Sam famously asked you to sell your OpenAI stock back to him. You didn't. How shocking is it to place both bets and see one come from so far behind?</p>
+
+<p>ChatGPT has 900 million users. They're the verb, the Uber, the Xerox, the Polaroid of AI. But they didn't go after the enterprise. Dario made that bet and it worked. Dario was a co-founder at OpenAI who left because of disgust in working with Sam Altman.</p>
+
+<p>Before we go down the OpenAI rabbit hole, let's contextualize what's going on here. They added revenue at a rate we've never seen. We've all been wringing our hands asking whether AI revenues would show up to justify the investment. Now the largest revenue explosion in the history of technology has arrived. The company planned to end the year at a 30 billion run rate. They got there by end of March, and I suspect it's continuing in April.</p>
+
+<p>Model and product capability just hit a threshold near AGI, whatever you want to call it. Every company like Altimeter said, "Damn, this is so good I have to have it." This is no longer about IT budget—it's about labor augmentation and labor replacement. Codex is growing even faster than Claude at the same stage of development. We have a near-infinite TAM. The TAM for intelligence is radically different than anything we've seen before.</p>
+
+<p>This is millions of self-interested parties: consumers, enterprises, a thousand now, over a million dollars. It's not that there was some great go-to-market that snuck up and blew everybody away. Companies are demanding the product. They're getting throttled on the product because it's so good. It makes them better at their business. We are all self-interested actors. When millions of people make the same decision, there's a huge tell. The tell here is that the TAM is as big as Dario and Sam have been saying.</p>
+
+<p>Intelligence was going to scale exponentially. The question was whether revenue would scale exponentially. That's what we're seeing. They're doing this with only 1.5 to 2 gigawatts of compute. They're massively compute constrained. They're each going to add 3 gigawatts of compute this year. That'll unlock even faster growth. Sixty-five to seventy percent of token consumption is open-source models. So these revenue ramps are happening while the world is already using open source. This is frontier plus open source. We're going to see massive token optimization.</p>
+
+<p>The unit cost of intelligence is plummeting, not the cost of tokens. The unit cost is plummeting because model capabilities are so much better. I look at what it does for Altimeter day in and day out. I talked to a major company yesterday doing a run rate of a hundred million token consumption this year on about five billion in opex. They think they're nearing peak employment, but their intelligence consumption is going to go up a lot.</p>
+
+<p>We're early. We have low penetration of the Global 2000. We have low penetration of use cases. We have low penetration within use cases already using it. Models are only getting better. I wouldn't be shocked if you see Anthropic exiting the year at 80 to 100 billion in revenue run rate. OpenAI is also on the wave and will be releasing an incredible model imminently. You're going to see an inflection in their revenues as well.</p>
+
+<p class="q">Chamath, question one: does this stuff have utility? That went from a question mark to an exclamation point. Question two: the revenue ramp was a big question. That's now an exclamation point. The final question: can this be profitable? These companies are burning through large amounts of cash. When do they get out of the J-curve?</p>
+
+<p>I estimated we're looking at 450 to 500 billion in data center investment at minimum, then they have to climb out to get to profitability. Do you remember the investor who published a list where when you can't talk about profit, you talk about EBITDA? When you can't talk about that, you talk about margin. When you can't talk about that, you talk about revenue. When you can't talk about revenue, you talk about gross revenue bookings. You can figure out where we are in any cycle by indexing into what everybody talks about. Where we are is between gross revenue and net revenue. That's where the discussion is.</p>
+
+<p>There was an article in The Information distinguishing that Anthropic presents gross and OpenAI presents net. They're different. We don't know what the various take rates are. If it's not true, there's been no clarity. We're at the point where people don't even know the difference between actual recognized revenue and run rate revenue. We can quibble about details, but we're not at the point where people are looking at steadystate free cash flow margins and EBITDA. We're years from that.</p>
+
+<p class="q">Brad, do you know what their gross margins are? What are their big cost inputs?</p>
+
+<p>The number one cost input is the cost of compute. Right now, they only have 1.5 gigawatts of compute whether they have a billion in revenue or 80 billion in revenue. So you'd expect these companies' gross margins to be exploding higher. I think we're seeing the fastest increase in gross margins probably ever in a technology company. This is not gross margin negative. They may have accidental profitability because they can't spend this revenue fast enough on compute. Remember, they're only 2,500 people. Google crossed this revenue threshold with 120,000 people. These guys have 2,500 people. The only thing you can spend on is compute, and they can't stand it up fast enough.</p>
+
+<p class="q">That doesn't foot to me. If you're at ninety percent-plus gross margin, wouldn't you be hugely profitable?</p>
+
+<p>I'm not saying it's ninety percent-plus. I'm saying it's gone from meaningfully negative 18 months ago to very positive. I've seen fifty percent rumored. The trend is there. If you're an incumbent like Meta, Google, or SpaceX, you want compute costs to go down. If you're not an incumbent, you want this to be a compute problem because you'll control the field conditions.</p>
+
+<p>Meta's models today have okay quality but incredible performance. That speaks to Meta's huge advantage—they have massive compute infrastructure. If you're Anthropic or OpenAI, you want this to be as efficient as possible. We're in early innings, bumbling around about gross margins and revenues. We're not at profitability yet. But what was true for Facebook and Google was that they were profitable by year three and never looked back. This is a radically more expensive problem, but there's a lot of FUD about negative gross margins.</p>
+
+<p>People are going to be shocked at how low the burn levels are at these companies. Anthropic or OpenAI, if they do 50 billion this year, look at revenue per person. It's pretty low. Inference cost is down ninety percent year-over-year. On the gross versus net debate, there's a small percentage of Anthropic's revenue they distribute through hyperscalers. You pay a commission on that, like Snowflake or Databricks. It's single-digit percentage of total revenue. The gross versus net thing isn't what's being reported. The apples-to-apples is pretty easy. Take down Anthropic's revenue by five to ten percent if you want to be conservative. Either way, it's a distraction from what's really going on here.</p>
+
+<p class="q">Do you have any thoughts on this massive revenue ramp?</p>
+
+<p>I want to go back to where we were at the beginning of the year. Everybody was saying AI was a big bubble and the evidence was that hundreds of billions was going into capex with no evidence of significant revenue to justify it. The same doomers saying AI was in a bubble also said it's so powerful it'll put everyone out of work and take over from humanity. They couldn't decide if AI was too powerful or too weak. But they clearly made the case that there was no payoff for the capex being spent. We're starting to see justification for it. We're seeing the fastest revenue growth in history. This is just one vertical: AI for coding. Agents are coming next, and enterprise adoption will be massive.</p>
+
+<p>This is what makes Silicon Valley special. We're willing to bet on things we know intuitively are the next big thing. We're not spreadsheet-driven. Silicon Valley believes if you build it, they will come. We finance that build out. The top four hyperscalers expect 350 billion in capex this year, on the way to a trillion by 2030. Silicon Valley bets on the next big thing. They don't need specialists to tell them where to go. They know where technology is going and make bets based on that. That's going to make our economy and the United States remain extremely dynamic and in the lead. We're willing to make those kinds of bets and it's going to pay off big time.</p>
+
+<h3 class="chapter"><span>Major vibe shift: Anthropic ripping, OpenAI reeling</span><a href="https://www.youtube.com/watch?v=DVBJQQCjgXU&t=3481s">↪ 58:01</a></h3>
+
+<p class="q">Brad, you didn't answer my question about the vibes at OpenAI versus Claude.</p>
+
+<p>I wouldn't say reeling, but there's a lot of hand-wringing. There are a lot of employees leaving. People are wondering: is consumer-first the winning strategy? They shut down Sora, unwound the Disney deal, and are trying to focus the company. A lot of great founders and co-founders are now at Anthropic and other large language model companies. In the secondary market, OpenAI is trading lower than the last valuation. Anthropic is trading significantly above 380 billion.</p>
+
+<p>Immense credit to Anthropic—they were literally counted out last year. Over the last 12 months, they've kicked OpenAI's ass. What did they do? They made choices. No multimodal, no video, no hardware, no chips, no data centers. They said: "We're just going to focus on coding and co-work. That's the path to AGI." They executed. They took the lead with 2,500 people tight on the oar in the same direction.</p>
+
+<p>But be seriously foolish to count out OpenAI. We're at peak OpenAI FUD. It starts with great researchers and great models. The Spud model is about ready for release. It's an excellent model showing they're firmly on the wave. Codex has an incredible ramp. The fastest ramping model with 5.4 or 5.5, Spud is going to be even faster. People are using Spud and previewing it. People tell us it's an incredible model on par with Mythos and very usable in terms of packaging.</p>
+
+<p>This is not zero-sum. The TAM for intelligence is dramatically larger than any TAM we've seen in our investing careers. If you're on the wave, which OpenAI is, you're going to be selling into the world's biggest TAM. They're going to build a very big company. I'm a buyer of the shares today. Notwithstanding the vibes you describe, these companies are firmly on the wave. They're sitting there asking: "What did we do wrong? How do we get our mojo back?" They want to compete. It's embarrassing to the research and product teams. That's what's occurring there.</p>
+
+<p>Do not count out Meta or Google. They're absolutely in this game. Elon's got stuff dropping shortly that's going to be very impressive. If you're team America, we have five frontier models competing and David made sure they weren't throttled by excessive government regulation. We have Mythos. It's a self-imposed safe harbor to harden our system. We have the type of competition causing us to accelerate our lead. We need to stop adversarial distillation and distribute our products around the world. This is really good for team America.</p>
+
+<p>Here is the Poly Market: SpaceX at ninety-five percent for IPO before 2027. Cerebras at ninety-four percent. Anthropic at fifty-one percent. OpenAI at forty-four percent. Anthropic on Poly Market is at 158,000 in volume. There's a seventy-eight percent chance it's above 600 billion at IPO. Nineteen percent it doesn't go out.</p>
+
+<p class="q">Brad, what valuation did you get into Anthropic at?</p>
+
+<p>We first invested in the 150 billion-dollar round. This will be a seven-ex or five-ex for Altimeter L depending on where it lands. I mean, lots of people were there before us and are on the board and will do much better than that. What did you put in? Billions in both companies.</p>
+
+<p>There's this existential thing in venture today. People are extraordinarily nervous. Look at the IGV stock index down thirty percent year to date, down five percent today. All software stocks plummeting. Venture capitalists are terrified to invest in anything other than frontier models and things like SpaceX or military modernization. Finding something out of harm's way of AI where you can count on terminal value is very difficult. That's why you see this crowding. We've taken a barbell approach. We've got a lot in what we think are the most important frontier companies and then we're betting on really small teams with very defensible businesses in a world of AGI.</p>
+
+<p class="q">What happens to all these enterprise software companies? Do they become PE takeouts? Do they get consolidated? Do they adopt these AI technologies and solve the problem that the frontier models just solve for whatever niche software does?</p>
+
+<p>The market is probably being too pessimistic with respect to at least some of these companies. There's going to be big differences in quality and models of these companies. Software is going to be cheaper and easier to generate, but that wasn't the competitive advantage of a lot of these companies. There's probably baby being thrown out with the bathwater. There probably are value buys in enterprise software.</p>
+
+<p>The interesting question is where you see AI value capture being in terms of layer of the stack. Where we started was the chip layer. Nvidia was basically the first company worth multiple trillions of dollars because of AI. For a while, that's where all value capture was because OpenAI was losing money. Now we're seeing the hyperscalers benefit and at the model layer, Anthropic and OpenAI will be huge beneficiaries. The next question is at the application layer. Does all that value capture get eaten by the model companies or are there applications that get turbocharged? Palanteer is already one, turbocharged by model capabilities. Who else will be a big beneficiary? Will all the value be at the model layer or will you see an explosion at the application layer?</p>
+
+<p class="q">David, Chamath, your thoughts on the layers and where the value is captured.</p>
+
+<p>Too early to tell. Energy we put into data centers as well, but that's obviously been a clear winner.</p>
+
+<h3 class="chapter"><span>Iran War: Ceasefire, Israel's influence, market impact</span><a href="https://www.youtube.com/watch?v=DVBJQQCjgXU&t=4212s">↪ 1:10:12</a></h3>
+
+<p>Two weeks into a ceasefire that just started two days ago. VP JD Vance and special consultants Wikoff and Jared Kushner are headed to Islamabad this weekend for talks. Trump posted that he would deliver a ceasefire if Iran opens the strait. He said there might be a toll booth, and they'd take the majority and split it with Iran. They received a 10-point proposal from Iran and believe it's a workable basis to negotiate. Netanyahu apparently took the ceasefire to mean level Lebanon, dropping 160 bombs in 10 minutes yesterday.</p>
+
+<p class="q">Saxs, you were out last week. What are your thoughts on the ceasefire and everything that's happened?</p>
+
+<p>I have to preface this: I'm not part of the foreign policy team at the White House. The last time I commented on the war, it somehow made international headlines that Trump advisor says XYZ. I'm not a Trump adviser on this issue. Whatever I say is personal opinion, but the media will portray it as coming from the White House. I feel limited in what I say except that it's terrific we have the ceasefire. It's great there's going to be this meeting in Islamabad. I think what the president accomplished with the ceasefire is great because wars take on a life of their own. They tend to go up the escalation ladder. There are podcasts discussing the escalation trap with stages based on historical patterns. It's very hard to pull out of these, so I give the president tremendous credit for negotiating this ceasefire and sending the team to work it out.</p>
+
+<p class="q">Brad, my first trip to the Middle East with you was four years ago. What's your take on where we're at?</p>
+
+<p>I tweeted the Trump doctrine in Iran on March 4th: massively destroy all military capabilities, kill the people building lethal weapons, and get out. Reserve the right to do it again if needed. Zero effort to build Missonian democracy. Iran will build what comes next. If you look back at last year on tariffs, the top to bottom draw down was fifteen percent on the NASDAQ. Intraday it's down twenty-two percent. The draw down during this period on the Iran situation was only five to seven percent on the S&P and NASDAQ.</p>
+
+<p>The market has said: trust Trump at his words. He said he's not getting into an entangled war and he'll get out. People terrify at his tweets about destroying civilization, but they've resolved for themselves that when he says he'll get out, he will. There was a lot of hand-wringing, but the markets today basically bounced all the way back. If we land the plane on these two things and JD lands the plane, I think it's off to the races. While everybody's focused on Iran, a deal on Ukraine-Russia is coming. Venezuela is going well. There's going to be news on Cuba. You could envision a world where if you land the plane on those things heading into America 250 on July 4th, the market could really take off.</p>
+
+<p class="q">Why are we in this war to begin with? That's the big discussion among both sides. On Tuesday, the New York Times dropped an inside-the-room piece on how Trump decided to follow Netanyahu into this war. Netanyahu met Trump on February 11th with a four-part pitch on attacking Iran. JD Vance warned that it could cause regional chaos and break apart the MAGA 2.0 coalition. That turned out to be true. There's been hand-wringing from Megan Kelly, Tucker Carlson. Rubio was anti-regime change but largely ambivalent about the bombing. Susie Wilds had concerns about gas prices before elections. General Dan Kane said Netanyahu was standard operating procedure for the Israelis: they oversell and know they need us, so they hard sell. If we know there was going to be an Israeli action that would precipitate an attack on American forces, why did we do it? The underpinning is that US foreign policy is being driven by Netanyahu. Every Jewish American I've talked to feels Netanyahu is not doing Jewish Americans or the diaspora any favors. What are your thoughts?</p>
+
+<p>The person that decides is the president of the United States. Some foreign leader isn't calling the shots. Practically speaking, the markets are effectively pricing in that this was a small blip. The best prediction market is telling us that. I think we're in the endgame. Second, if I was Israel, I'd be concerned that unless I help find an offramp quickly, the risk that Israel loses America as a predictably steadfast ally could go down. That's more problematic for Israel than for the United States. Economically and geopolitically, that tells me we'll find an offramp because Israel will want to make sure this doesn't burn a long-standing relationship.</p>
+
+<p class="q">Americans do not want to be in this war. They believe we're being dragged into this by Israel. Netanyahu specifically has too much influence. And anti-semitism is occurring as a result. Josh Shapiro gave pushback, but every Jewish American I've talked to says Netanyahu is causing it with his actions in Gaza, Lebanon, Iran. He's gone too far. Brad, any final thoughts on American foreign policy being influenced too much by Israel?</p>
+
+<p>I think we'll ultimately be judged by outcomes. Everybody's an armchair pundit today on the approach in these two places. We could be on the verge of a massive transformation of the Gulf States. I've talked to Saudis, Qataris, Kuwaitis, Emiratis this week. They're hopeful and optimistic. You could bring Iran into the fold. I'm an optimist. But doing nothing in Iran had tremendous risks. Doing nothing in Venezuela had tremendous risks. I don't think this wasn't well calculated. We have to let the cards play and let history be the judge. There's risk in both directions, but I'm going to remain optimistic.</p>
+
+<p class="q">You said in the Gaza situation we should have wide birth for criticism of Israel and Netanyahu. What are your thoughts on this belief in the United States that Israel has far too much influence over foreign policy?</p>
+
+<p>I noticed Naftali Bennett, a major Israeli politician and former prime minister, tweeted polling showing Israel becoming very unpopular in the US. He was expressing concern and the need to address that. So Israeli politicians are raising this as an issue. That's probably a good thing. They would improve their popularity if they got behind the ceasefire. I have no indication they won't, but that would be a good place to start.</p>
+
+<p>The auto-translate feature on X has done more for understanding across borders than anything I've seen. It's the most impressive tech feature I've seen released in years. For AI aside, because Grok is really good at auto-translating, they've surfaced the best of what's happening in Japan, Israel, France. When you reply to someone in Japan, they see it auto-translated as well. People who don't speak the same language engage on X in nuanced, fun, interesting ways. For a truth mechanism, it's absolutely extraordinary. This could have such a profound effect. Maybe Elon and the X team should get a Nobel Peace Prize for this.</p>
+
+<p class="q">Has this been coming up in your feed, Chamath? Which language is up in your feed right now?</p>
+
+<p>English. So you're not part of the translation thing.</p>
+
+<p class="q">Brad, has this hit your feed? Which regions are you seeing it in?</p>
+
+<p>Definitely on Middle East stuff. I've seen it on Chinese, Russian, Japanese. Super helpful. Base Japanese is a whole other level. It's much more intense than most places. You see groups like immigrants and they say this is unacceptable behavior, not Japanese culture, get out of Japan. It's wild. If you don't have an X account, you're missing out. Journalists aren't taking time to translate what's happening in those areas. This is happening automatically in real time. If Ukraine and Russia were doing this, it would be wild.</p>
+
+<p>You're such a good hype man that you hype buttered bread the same way you hype a nuclear reactor. It's hard to tell what you're really hyping because your excitement level and intonation are exactly the same. There's nothing better than a slice of great toast.</p>
+
+<p>This is like sliced bread. It's simple but so powerful in the experience. X is better today than it's ever been. They have seventy percent fewer employees than they had when Elon walked in. Everybody said it would tip over and be a crappy experience. We're a few years later with seventy percent fewer employees and every other Silicon Valley company is looking at that. We've hit peak employment. We're going to create tremendous numbers of new jobs, but for existing jobs, companies are realizing they can do more with less. Nikita Beer just tweeted they're about to go ham on bot accounts that auto reply. Those literally ruined my feed, which is why I went to subscriber mode for replies. It's worked out great.</p>
+
+<p>I do fifty-fifty. Sometimes I let it rip and get chaos. Other times I have 2,000 paid subscribers. I give all the money to charity, about thirty grand a year. It's wonderful to get to know the same 2,000 people out of my million followers. Sometimes I don't have time to deal with 100 or 200 or 300 replies. How many followers do you have now? You getting popular? I'm at 1.4 million. Did I surpass you? I think so. I'm at 1.1. What did it cost you to get your real name, Jason? I know a guy.</p>
+
+<p>I made it to 1.4. I don't know exactly how that happened. Just having the number one podcast in the world. Chamath has two million, but that's because he engages so well with his haters. The replies Chamath drops are so great. I light them up. He lights them up. Someone told him they bet black because of him and lost money, and you funded their kids' college. It was hilarious and made you happy because it angers all the goofball dorks living in their mom's basement who take no responsibility for their lives.</p>
+
+<p>For those folks in their mom's basement: the Hot Pockets and Fish Sticks are ready and you get one more hour of Xbox from mom. We missed you, Freeberg, but this is the best episode in two years. We'll see you at the Liquidity summit except for the 400 people on the wait list who aren't getting in. We got an email from Athena because they're going to hire 500 new assistants. They had a thousand people after last week. Go to Athena.com. Those are 500 hardworking people working in the Philippines with great jobs. Sax, I'm going to get you Athena assistants as a birthday present.</p>
+
+<p>Congratulations to our friends over there. We'll see you next time. Love you boys. Let your winners ride.</p>
+    </div>
+  </main>
+  <script>
+  async function toggleYtBookmark(btn) {
+    const payload = {
+      title: btn.dataset.title,
+      url: btn.dataset.url,
+      filename: btn.dataset.filename,
+      interviewDate: btn.dataset.date,
+      source: 'YT',
+      expert: btn.dataset.channel,
+    };
+    try {
+      const resp = await fetch('/bookmark', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload),
+      });
+      const result = await resp.json();
+      setYtBookmarkState(btn, !!result.bookmarked);
+    } catch (e) {
+      console.error('Bookmark toggle failed:', e);
+    }
+  }
+  function setYtBookmarkState(btn, on) {
+    btn.classList.toggle('is-bookmarked', on);
+    btn.innerHTML = on ? '&#9733;' : '&#9734;';
+    btn.title = on ? 'Bookmarked' : 'Bookmark';
+    btn.setAttribute('aria-label', on ? 'Bookmarked' : 'Bookmark');
+  }
+  (async function initYtBookmarkState() {
+    const btn = document.getElementById('yt-bookmark-btn');
+    if (!btn || !btn.dataset.filename) return;
+    try {
+      const resp = await fetch('/bookmarks');
+      if (!resp.ok) return;
+      const list = await resp.json();
+      if (Array.isArray(list) && list.some(b => b && b.filename === btn.dataset.filename)) {
+        setYtBookmarkState(btn, true);
+      }
+    } catch (e) { /* offline -- leave default state */ }
+  })();
+
+  async function shareYtPage(btn) {
+    const original = btn.innerHTML;
+    btn.disabled = true;
+    btn.innerHTML = '&hellip;';
+    try {
+      const resp = await fetch('/share', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ filename: btn.dataset.filename }),
+      });
+      const result = await resp.json();
+      if (!result.ok) throw new Error(result.error || 'Share failed');
+      try { await navigator.clipboard.writeText(result.url); } catch (e) {}
+      btn.innerHTML = '&#10003;';
+      btn.title = 'Copied ' + result.url;
+      setTimeout(() => { btn.innerHTML = original; btn.disabled = false; btn.title = 'Share'; }, 2500);
+    } catch (e) {
+      console.error('Share failed:', e);
+      btn.innerHTML = '!';
+      btn.title = 'Share failed: ' + (e && e.message || e);
+      setTimeout(() => { btn.innerHTML = original; btn.disabled = false; btn.title = 'Share'; }, 3000);
+    }
+  }
+
+  // When the page is viewed from somewhere other than the local Reader
+  // server (e.g. a shared copy on GitHub Pages), hide the interactive
+  // buttons whose endpoints only exist on localhost.
+  (function hideLocalOnlyControls() {
+    const host = location.hostname;
+    const isLocal = host === 'localhost' || host === '127.0.0.1' || host === '';
+    if (isLocal) return;
+    const actions = document.querySelector('.yt-header-actions');
+    if (!actions) return;
+    const bookmark = actions.querySelector('#yt-bookmark-btn');
+    const share = actions.querySelector('#yt-share-btn');
+    if (bookmark) bookmark.remove();
+    if (share) share.remove();
+  })();
+  </script>
+</body>
+</html>
