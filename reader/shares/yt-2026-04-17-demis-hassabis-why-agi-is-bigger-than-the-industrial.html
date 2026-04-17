@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Demis Hassabis: Why AGI is Bigger than the Industrial Revolution &amp; Where Are The Bottlenecks in AI</title>
+  <style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background: #faf8f5;
+  color: #2c2418;
+  line-height: 1.7;
+  padding: 0 1rem 2rem;
+}
+header {
+  position: sticky;
+  top: 0;
+  background: #faf8f5;
+  z-index: 100;
+  border-bottom: 2px solid #c4956a;
+  box-shadow: 0 2px 8px rgba(44,36,24,0.08);
+  padding: 0.6rem 1rem;
+}
+.header-inner {
+  max-width: 78ch;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header-title { font-size: 1rem; color: #2c2418; }
+.header-title strong { font-size: 1.1rem; }
+.header-link {
+  font-size: 0.85rem;
+  color: #8b6d4e;
+  text-decoration: none;
+  border: 1px solid #c4956a;
+  padding: 0.2rem 0.7rem;
+  border-radius: 4px;
+}
+.header-link:hover { background: #f0ebe3; }
+main {
+  max-width: 78ch;
+  margin: 0 auto;
+  padding-top: 0.5rem;
+}
+h2 {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #2c2418;
+  margin-top: 2rem;
+  margin-bottom: 0.5rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 2px solid #c4956a;
+}
+h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #3d3225;
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+section { margin-bottom: 1.5rem; }
+ul { margin: 0.5rem 0 0.5rem 1.5rem; }
+li { margin-bottom: 0.4rem; }
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0.75rem 0;
+  font-size: 0.92rem;
+}
+thead th {
+  background: #3d3225;
+  color: #faf8f5;
+  text-transform: uppercase;
+  font-size: 0.78rem;
+  letter-spacing: 0.05em;
+  padding: 0.5rem 0.75rem;
+  text-align: left;
+  font-weight: 600;
+}
+tbody td {
+  padding: 0.45rem 0.75rem;
+  border-bottom: 1px solid #e8e0d4;
+}
+tbody tr:nth-child(even) { background: #f0ebe3; }
+tbody tr:nth-child(odd) { background: #faf8f5; }
+.key-insight {
+  border-left: 4px solid #c4956a;
+  background: #f5efe8;
+  padding: 0.75rem 1rem;
+  margin: 0.75rem 0;
+  font-size: 0.93rem;
+  border-radius: 0 6px 6px 0;
+}
+.qa-pair { margin-bottom: 1.25rem; }
+.question-box {
+  background: #f0ebe3;
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+  margin-bottom: 0.5rem;
+}
+.analyst-label {
+  display: block;
+  font-size: 0.8rem;
+  color: #8b6d4e;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  margin-bottom: 0.25rem;
+}
+.answer { padding-left: 0.25rem; }
+.loading-section { opacity: 0.5; }
+.loading-indicator {
+  font-size: 1.2rem;
+  padding: 2rem;
+  text-align: center;
+  color: #8b6d4e;
+}
+
+/* YouTube transcript reader */
+
+/* Legacy .yt-meta-card -- kept so old output files still render cleanly.
+   New output uses .header-title.yt below instead. */
+.yt-meta-card {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  margin-bottom: 1.5rem;
+  background: #f5efe8;
+  border-left: 4px solid #c4956a;
+  border-radius: 0 6px 6px 0;
+  padding: 0.9rem 1rem;
+}
+.yt-meta-card img {
+  flex: 0 0 180px;
+  height: 101px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+.yt-meta-body { flex: 1; font-size: 0.93rem; }
+.yt-meta-title { font-weight: 700; font-size: 1rem; margin-bottom: 0.25rem; }
+.yt-meta-sub { color: #8b6d4e; margin-bottom: 0.35rem; }
+.yt-meta-url { font-size: 0.85rem; color: #3d3225; }
+
+/* YouTube sticky header uses the default 78ch-capped centered
+   container so it aligns with the body text column below. The
+   buttons sit at the right edge of that centered container. */
+header:has(.header-inner.yt) { padding: 0.75rem 1rem; }
+.header-inner.yt { gap: 1rem; }
+.header-title.yt {
+  display: flex;
+  gap: 0.9rem;
+  align-items: center;
+  min-width: 0;
+  flex: 1;
+}
+.yt-header-thumb { flex: 0 0 88px; line-height: 0; }
+.yt-header-thumb img {
+  width: 88px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 3px;
+  display: block;
+}
+.yt-header-text { min-width: 0; flex: 1; }
+.yt-header-text strong {
+  display: block;
+  font-size: 1rem;
+  line-height: 1.3;
+  color: #2c2418;
+  /* Allow wrapping to 2 lines so long podcast titles show in full. */
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.yt-header-sub {
+  font-size: 0.8rem;
+  margin-top: 0.2rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.yt-header-sub .yt-channel { color: #8b6d4e; }
+.yt-header-sub .yt-date,
+.yt-header-sub .yt-dur { color: #3d3225; font-weight: 600; }
+.yt-header-sub .yt-sep { color: #c4956a; margin: 0 0.5rem; }
+
+.yt-header-actions {
+  display: flex;
+  gap: 0.4rem;
+  align-items: center;
+  flex: 0 0 auto;
+}
+/* Shared box shape for the star + share + YT buttons so they're
+   visually identical. Applies to both the <button>s and the <a> link. */
+.yt-header-actions .yt-bookmark-btn,
+.yt-header-actions .yt-share-btn,
+.yt-header-actions .header-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font: inherit;
+  font-size: 0.85rem;
+  line-height: 1;
+  color: #8b6d4e;
+  background: transparent;
+  border: 1px solid #c4956a;
+  border-radius: 4px;
+  padding: 0;
+  box-sizing: border-box;
+  width: 2.2rem;
+  height: 2.2rem;
+  white-space: nowrap;
+  text-decoration: none;
+  cursor: pointer;
+}
+.yt-header-actions .yt-bookmark-btn { font-size: 1rem; }
+.yt-header-actions .yt-share-btn { font-size: 1.05rem; }
+.yt-header-actions .yt-share-btn:disabled { opacity: 0.6; cursor: default; }
+.yt-header-actions .yt-bookmark-btn:hover,
+.yt-header-actions .yt-share-btn:hover,
+.yt-header-actions .header-link:hover {
+  background: #f0ebe3;
+  color: #3d3225;
+}
+.yt-header-actions .yt-bookmark-btn.is-bookmarked {
+  background: #c4956a;
+  color: #faf8f5;
+  border-color: #a87d5a;
+}
+.yt-header-actions .yt-bookmark-btn.is-bookmarked:hover {
+  background: #a87d5a;
+  color: #faf8f5;
+}
+
+h3.chapter {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #3d3225;
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+h3.chapter a {
+  font-size: 0.8rem;
+  color: #8b6d4e;
+  text-decoration: none;
+  font-weight: 400;
+}
+
+.yt-body p {
+  margin-bottom: 1.15rem;
+}
+.yt-body p.q {
+  background: #f0ebe3;
+  border-left: 3px solid #c4956a;
+  border-radius: 0 6px 6px 0;
+  padding: 0.6rem 0.9rem;
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+  color: #3d3225;
+  font-style: italic;
+  font-size: 0.96rem;
+}
+.yt-body p.q::before {
+  content: "Q";
+  display: inline-block;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 0.72rem;
+  color: #8b6d4e;
+  letter-spacing: 0.05em;
+  margin-right: 0.5rem;
+  padding: 0.05rem 0.4rem;
+  border: 1px solid #c4956a;
+  border-radius: 3px;
+  vertical-align: 0.1em;
+}
+
+</style>
+</head>
+<body>
+  <header>
+    <div class="header-inner yt">
+      <div class="header-title yt">
+        <a class="yt-header-thumb" href="https://www.youtube.com/watch?v=SSya123u9Yk" target="_blank"><img src="https://i.ytimg.com/vi_webp/SSya123u9Yk/maxresdefault.webp" alt=""></a>
+        <div class="yt-header-text">
+          <strong>Demis Hassabis: Why AGI is Bigger than the Industrial Revolution &amp; Where Are The Bottlenecks in AI</strong>
+          <div class="yt-header-sub">
+            <span class="yt-channel">20VC with Harry Stebbings</span>
+            <span class="yt-sep">&middot;</span>
+            <span class="yt-date">Apr 7, 2026</span>
+            <span class="yt-sep">&middot;</span>
+            <span class="yt-dur">32m</span>
+          </div>
+        </div>
+      </div>
+      <div class="yt-header-actions">
+        <button id="yt-bookmark-btn"
+                class="yt-bookmark-btn"
+                title="Bookmark"
+                aria-label="Bookmark"
+                data-filename="yt-2026-04-17-demis-hassabis-why-agi-is-bigger-than-the-industrial.html"
+                data-title="Demis Hassabis: Why AGI is Bigger than the Industrial Revolution &amp; Where Are The Bottlenecks in AI"
+                data-url="https://www.youtube.com/watch?v=SSya123u9Yk"
+                data-date="2026-04-07T07:04:57-07:00"
+                data-channel="20VC with Harry Stebbings"
+                onclick="toggleYtBookmark(this)">&#9734;</button>
+        <button id="yt-share-btn"
+                class="yt-share-btn"
+                title="Share"
+                aria-label="Share"
+                data-filename="yt-2026-04-17-demis-hassabis-why-agi-is-bigger-than-the-industrial.html"
+                onclick="shareYtPage(this)">&#8599;</button>
+        <a class="header-link" href="https://www.youtube.com/watch?v=SSya123u9Yk" target="_blank" title="Watch on YouTube" aria-label="Watch on YouTube">YT</a>
+      </div>
+    </div>
+  </header>
+  <main>
+    <div class="yt-body">
+    <h3 class="chapter"><span>Intro</span><a href="https://www.youtube.com/watch?v=SSya123u9Yk&t=0s">↪ 0:00</a></h3>
+
+<p>About 90% of the breakthroughs that underpin the modern AI industry were done by either Google Brain, Google Research, or DeepMind. The returns are still very substantial, although a bit less than they were at the start of all this scaling.</p>
+
+<p>We have amazing guests on the show, but very few will be considered in the same realm as Newton, Turing, or Einstein. Our guest today is one of the greatest minds on the planet, and I consider myself incredibly lucky to have had the chance to sit down with him.</p>
+
+<p>Those labs that have the capability to invent new algorithmic ideas are going to have bigger advantages over the next few years as the last set of ideas gets exhausted. This is a truly special conversation, one I'll remember for a very long time.</p>
+
+<p>We could probably get 30-40% more efficiency out of our national grids. I'm so grateful for the time we had with a very special human being. I sometimes quantify the coming of AGI as 10 times the industrial revolution at 10 times the speed.</p>
+
+<h3 class="chapter"><span>What Actually Counts as AGI & Where Are We Today?</span><a href="https://www.youtube.com/watch?v=SSya123u9Yk&t=81s">↪ 1:21</a></h3>
+
+<p class="q">Demis, I'm so excited to be doing this. Thank you so much for joining me.</p>
+
+<p>Great to be here.</p>
+
+<p class="q">I was watching the documentary you did, which was fantastic, and I wanted to start on AGI. Definitions vary quite a bit. You've been very thoughtful about what it means to you. Can you explain how you think about it today so we have that as a grounding point?</p>
+
+<p>We've always defined AGI consistently as basically a system that exhibits all the cognitive capabilities the human mind has. That's important because the brain is the only existence proof we have that general intelligence is possible. So that's the bar for what AGI should be.</p>
+
+<p class="q">It's the hardest question. How close are we? Everyone says different things, and it's very difficult when you have prominent figures saying it could be as early as 2026 or 2027.</p>
+
+<p>I have a probability distribution around the timings, but I'd say there's a very good chance of it being within the next 5 years.</p>
+
+<p class="q">Is that closer than you thought? Has that changed over time?</p>
+
+<p>Not really. When we started DeepMind back in 2010, my co-founder Shane Legg, who's chief scientist here, used to write blog posts predicting when AGI would happen. In 2010, almost nobody was working in AI; everyone thought it was a dead end. Those posts are still on the internet for people to check. We did an extrapolation of compute and algorithmic progress and basically predicted it would take around 20 years from when we started. I think we're pretty much on track.</p>
+
+<h3 class="chapter"><span>What Are the Biggest Bottlenecks Holding AI Back Today?</span><a href="https://www.youtube.com/watch?v=SSya123u9Yk&t=178s">↪ 2:58</a></h3>
+
+<p class="q">What are the biggest bottlenecks when you look at where we are today? In the documentary you said you just never have enough compute.</p>
+
+<p>Compute is the big one. Not just for the obvious reason of scaling up your ideas and systems—keeping on building bigger architectures with more parameters—but the other thing you need a lot of compute for is doing experiments. The cloud is basically our workbench. If you have a new algorithmic idea but want to test it, you have to test it at reasonable scale, or it won't hold when you put it into the main system. So you need quite a lot of compute if you have many researchers with lots of new ideas.</p>
+
+<h3 class="chapter"><span>Have We Hit the Limits of Scaling Laws?</span><a href="https://www.youtube.com/watch?v=SSya123u9Yk&t=228s">↪ 3:48</a></h3>
+
+<p class="q">A lot of people suggest that we're hitting scaling laws and starting to see that plateauing effect. Do you think that's true?</p>
+
+<p>No, I don't think so. It's a bit more nuanced than that. When the leading companies started building large language models, they got enormous jumps with each generation of new system—maybe almost doubling in performance. At some point that had to slow down. It's not continuing to be exponential, but that doesn't mean there aren't great returns still for scaling the existing systems up further. We and the other frontier labs are getting a lot of great returns on compute expansion. The returns are still very substantial, although they're a bit less than they were at the start of all this scaling.</p>
+
+<h3 class="chapter"><span>Where Is AI Ahead of Expectations & What's Still Missing?</span><a href="https://www.youtube.com/watch?v=SSya123u9Yk&t=280s">↪ 4:40</a></h3>
+
+<p class="q">Where are we behind where you thought we would be?</p>
+
+<p>Actually, in most areas we are ahead of where I thought we would be. If you think about the video models or even now with our newest systems like Genie—they're interactive world models—that's kind of incredible if you step back and think about it. I think if you'd shown me that 5 or 10 years ago, I would have been pretty amazed. In most domains we're ahead of where the field thought. There's still some big things missing though, like continual learning. These systems don't learn after you finish training them and put them out into the world. They're not very good at learning further things.</p>
+
+<h3 class="chapter"><span>Why Can't AI Systems Learn Continuously Like Humans?</span><a href="https://www.youtube.com/watch?v=SSya123u9Yk&t=324s">↪ 5:24</a></h3>
+
+<p class="q">Why do we not have continuous learning today?</p>
+
+<p>Well, people haven't quite figured out how to integrate new learning into existing systems that you spent months training. The brain does this very elegantly through things like sleep reinforcement learning. Your memories during the day are replayed, and that information is incorporated into your existing knowledge base. I thought for a while maybe we need something like that to incorporate new information along with the existing information base.</p>
+
+<h3 class="chapter"><span>How Did DeepMind Go from Behind to Leading the Pack?</span><a href="https://www.youtube.com/watch?v=SSya123u9Yk&t=370s">↪ 6:10</a></h3>
+
+<p class="q">You mentioned video models and media and image. It seems DeepMind has progressed very quickly and caught up or overtaken other providers. You're my number one for research now. What has led to the acceleration and progression of DeepMind in a way that wasn't there 2 to 3 years ago?</p>
+
+<p>We made some organizational changes. I think we've always had the deepest and broadest research bench at Google and DeepMind. If you look at the last 15 years, I'd say about 90% of the breakthroughs that underpin the modern AI industry were done by either Google Brain, Google Research, or DeepMind—things like AlphaGo, reinforcement learning, and transformers. I would back us to make those breakthroughs in the future if there are missing ones.</p>
+
+<p>I think we basically brought together all the talent from around the company, pushing in one direction. We combined all our resources so we could build the biggest models rather than having two or three versions around the company. A lot of it was assembling all the ingredients we already had and pushing with relentless focus and pace, acting almost like a startup to get back to the frontier and be ahead in many areas.</p>
+
+<p class="q">When you think about that, is continuous learning the next breakthrough that you're most excited by?</p>
+
+<p>I think there are quite a few things missing. There's continual learning, and there's a lot of mileage in looking at different memory systems. At the moment we have these long context windows which are kind of brute force—you just put everything in them. I think there are interesting architectures to be invented there. There's also long-term planning and hierarchical planning. These systems aren't very good at planning at long time horizons, many years into the future. We can do that with our minds.</p>
+
+<p>Maybe one of the biggest is consistency. I sometimes call these systems jagged intelligences because they're really amazing at certain things when you pose a question in a certain way, but if you pose a question slightly differently they can fail at quite elementary things. A general intelligence shouldn't have those kinds of holes in it. When you reposition files and set up agents to perform in certain ways and then everything falls over completely, that's a disaster.</p>
+
+<h3 class="chapter"><span>Are We Heading Toward Model Commoditization?</span><a href="https://www.youtube.com/watch?v=SSya123u9Yk&t=550s">↪ 9:10</a></h3>
+
+<p class="q">Everyone talks about commoditization of models in terms of capabilities. Do you think we see that or do you think we see one or two continuously accelerate ahead of the others?</p>
+
+<p>I feel like the three or four leading labs now—of which we're one—the gap is starting to pull away. A lot of these tools help you build the next generation. Things like coding tools and math tools. It's getting harder to eke out the same gains from just the same ideas. Those labs that have the capability to invent new algorithmic ideas are going to start having bigger advantages over the next few years as the last set of ideas gets exhausted.</p>
+
+<h3 class="chapter"><span>What Does the Future of Open Source Really Look Like?</span><a href="https://www.youtube.com/watch?v=SSya123u9Yk&t=599s">↪ 9:59</a></h3>
+
+<p class="q">You were very open with a lot of your research for years, and we see many very good quality open models. How do you think about the future of open? I have many portfolio companies that use frontier models to set a benchmark and then use open models to get as close as possible but with more cost effectiveness. What does that future look like?</p>
+
+<p>I think it's probably similar to what we're seeing today. We're big supporters of open science and open models. We've done many things from the original Transformers to AlphaFold—things we've given out into the world to help the research community. We plan to continue that, especially in applied domains and scientific domains applying AI to science, which is my passion.</p>
+
+<p>What you're increasingly going to see is open source models probably one step back from the absolute frontier. It usually takes about 6 months for the open source community to reimplement and figure out what those ideas are. We're pushing hard on a suite of open source models called Gemma. We're determined to make them best-in-class for their sizes—perfect for small developers, academics, or the beginnings of startups, and also for edge computing.</p>
+
+<h3 class="chapter"><span>What Does a Post LLM World Look Like?</span><a href="https://www.youtube.com/watch?v=SSya123u9Yk&t=685s">↪ 11:25</a></h3>
+
+<p class="q">How do you think about a world post-LLMs? You and Yann LeCun have very different views.</p>
+
+<p>For me, I don't think it's going to be that different. I kind of disagree with Yann on a few things. I think there's maybe a 50-50 chance there are some things missing that we still need to make breakthroughs in—perhaps world models or other approaches. But my betting is pretty strongly that we've seen how successful these foundation models have been. They can do incredibly impressive things. I don't think that's going to go away. We're still seeing gains from the returns from scaling laws.</p>
+
+<p>I think the only question really is when you think about a future AGI system: is an LLM foundation model going to be the key component only, or is it the total system? I don't think it's going to get replaced. I think it's going to get built on top of, just like the way we do with our world models.</p>
+
+<p class="q">When we think about that future 5 years out, as you said potentially with AGI, what does that world look like to you?</p>
+
+<p>I think on the positive side, the things I've spent my whole career and life building towards AGI is that I think it will be the ultimate tool for science and medicine. In terms of advancing scientific discovery and finding cures to diseases, I think we need that kind of technology. I'm hoping in 5 years plus time we'll be entering a new golden age of scientific discovery. My mother has multiple sclerosis, so it's the thing I'm always most excited about.</p>
+
+<h3 class="chapter"><span>Can AI Really Fix Drug Discovery?</span><a href="https://www.youtube.com/watch?v=SSya123u9Yk&t=783s">↪ 13:03</a></h3>
+
+<p>The thing I worry about is drug discovery—the process of getting it through all the trials. It takes a decade before my mother will actually get any benefits from it. How do we solve that?</p>
+
+<p>I think we'll get to that point soon. First, after we did the AlphaFold project for protein folding, we spun out a company called Isomorphic Labs, which is doing extremely well. The idea is we're focusing on solving the rest of the drug discovery process—a lot of chemistry, designing compounds, checking it's not toxic, and all the different properties you need for drugs to be safe. I think we'll have that whole drug design engine ready in the next 5 to 10 years.</p>
+
+<p>Then you're right—the next problem is that clinical trials still take many years. But AI can help there in terms of simulating parts of human metabolism and stratifying patients to make sure certain patients get exactly the right drug suitable for their genomic makeup.</p>
+
+<p>I think the real revolution will come when a few dozen or so AI drugs get through the whole process. Then the government and regulatory bodies see that and have enough data to back-test the predictions of those models. Maybe in the future, maybe 10 years further, we can really trust the predictions the models are making and skip out some steps—perhaps animal testing isn't needed anymore. Maybe we can go up the dosage ladder quicker because we can rely on these models. So we've got to do this in two steps: solve the drug design problem first, then look at the regulatory length of time it takes.</p>
+
+<h3 class="chapter"><span>What Does "Good" AI Regulation Actually Look Like?</span><a href="https://www.youtube.com/watch?v=SSya123u9Yk&t=901s">↪ 15:01</a></h3>
+
+<p class="q">AI safety is a big topic and a big concern. I think Stephen Hawking said we must get it right because we might not get another chance. Do you think that's right?</p>
+
+<p>I do think that's right. That's the stakes we have to deal with. There are two things I worry about. One is the misuse of these systems by bad actors. These are dual-purpose technologies. They can be used for incredible good in science and health, but they can also be repurposed for harmful ends. Second is a technical one: making sure these systems, as they get more powerful—not today's systems but maybe in a year or two when they become more agentic and autonomous as we get towards AGI—can be kept on the guardrails we want.</p>
+
+<p>Regulation, the right kind of regulation, could help in terms of making sure there are minimum standards from all the leading providers. But it needs to be international standards.</p>
+
+<p class="q">What is the right kind of regulation? You said in the documentary that you think we need more global coordination, which worries me because we're getting worse at it.</p>
+
+<p>That's an unwavering truth. It's crazy the timing we're in, right—with the most consequential technology the world's ever seen at the same time as a very fragmented international system. It's not ideal, but I think we're going to have to do the best we can to come up with a set of minimum standards and benchmarks that test for undesirable properties. For example, deception. Nobody should be building systems capable of deception because they could get around other safeguards.</p>
+
+<p>I imagine if things go well, some kind of certification process—almost like a kite mark of quality. This model has certain safeguards and certain guarantees so consumers and companies can safely build on top of it. That's how it should go ideally. But it has to be international because these systems are cross-border and cross-territory.</p>
+
+<h3 class="chapter"><span>Who Should Be the Ultimate Arbiter of Truth in an AI World?</span><a href="https://www.youtube.com/watch?v=SSya123u9Yk&t=1051s">↪ 17:31</a></h3>
+
+<p class="q">Who is that ultimate verification system? You obviously started with Theme Park. But as a media company, I go through every media platform saying I don't know what's real or fake. Who is that arbiter of verification?</p>
+
+<p>I think ultimately it's got to be government, but the technical bodies that would be able to do the technical work would be like the AI safety institutes. There's a very good one in the UK set up under Prime Minister Sunak, and I think it's doing great work. There's one in the US. Maybe some of the leading countries that have the best research should also have an equivalent body staffed with high-quality researchers that can actually evaluate and audit these kinds of systems against certain benchmarks and independently check whether they're meeting the right standards.</p>
+
+<h3 class="chapter"><span>If Demis Had One Shot to Fix AI Safety, What Would He Do?</span><a href="https://www.youtube.com/watch?v=SSya123u9Yk&t=1116s">↪ 18:36</a></h3>
+
+<p class="q">If I could give you a magic wand that was only applicable to AI safety, what would be your implementation idea or program that you would put in place with this magic wand?</p>
+
+<p>I think we need some kind of international body, maybe similar to the atomic agency, that the AI safety institutes sort of feed into. The research community has to be involved in determining what are the right set of benchmarks to check, what types of traits and capabilities. There are other safeguards too—it wouldn't be desirable to have AI systems output tokens that are not human readable, in some kind of machine language we couldn't understand. That would introduce a new vulnerability.</p>
+
+<p>There are quite a few things like that which I think most of the leading labs would agree are probably not best to do. These bodies would test against those things, and I think that would give the public confidence. Academia could be involved as well as civil society, so these systems which are going to get incredibly powerful have been independently checked and audited.</p>
+
+<h3 class="chapter"><span>Is This Time Different for Jobs or Will History Repeat Itself?</span><a href="https://www.youtube.com/watch?v=SSya123u9Yk&t=1198s">↪ 19:58</a></h3>
+
+<p class="q">Science is one of the most exciting areas in 5 years. But I have to ask: the labor displacement problem is one of the biggest concerns. How do you think about the labor displacement problem when you look at how truly capable these systems are and what that does to labor markets?</p>
+
+<p>Certainly, in the past with every new revolutionary technology there's been a lot of job disruption. That's definitely going to happen. A lot of old jobs will go away or not be viable anymore. But historically, a whole set of new jobs arrive that maybe one can't even imagine before, and those are high-quality, higher-paying. That's the normal course. Of course you have to be careful to say this time is different, which is what people like Mark are claiming—that it's the same as the last 10 massive breakthroughs like the internet and mobile.</p>
+
+<p>I do think this is going to be bigger than all of those previous technological breakthroughs. I sometimes quantify the coming of AGI as like 10 times the industrial revolution at 10 times the speed—unfolding over a decade instead of a century. I've been reading a lot about the industrial revolution, and that caused a huge amount of upheaval as well as advances. We wouldn't have modern medicine today. Child mortality was at 40% pre-industrial revolution. Things you wouldn't want not to have happened, but ideally this time around we mitigate some of the downsides a bit better than we did during the industrial revolution.</p>
+
+<p class="q">I get very excited by how fast it's coming, and then I try to stop myself from being too useful and think I should be more wise. I'm told we always overestimate what can be done in a year and underestimate what can be done in 10. Is that the truth here or is it actually coming faster than we think?</p>
+
+<p>I think that's still the truth. Maybe both time scales of short-term and long-term are nearer than other technologies. But I do think literally today, as of today, things in the next year are a bit overhyped in AI. There couldn't be any more hyped in some ways. On the other hand, I still think it's very underappreciated how revolutionary this is going to be in about 10 years. So there's still that dichotomy even today.</p>
+
+<p class="q">There's also a concern around income inequality and the concentration of wealth to few players. How do you see that shaping out with the industrial revolution comment and what happens there?</p>
+
+<p>I think there are different ways that could play out. Maybe pension funds should be buying into all the big AI companies and making sure that everyone has a piece of that, or sovereign funds—maybe every country should have a sovereign wealth fund that does that. That would be an investment way of doing it. I think there also needs to be thinking about if there is a massive productivity gain but it's narrow where that occurs, how do we redistribute so that everyone benefits from those huge gains. I can see all sorts of ways that could be done, including providing infrastructure and other things with that additional productivity gain.</p>
+
+<p>There could be unbelievable things happening in the 5 to 10 year timeframe, including a breakthrough in some kind of renewable fusion energy. We're working on that with our partners at Commonwealth Fusion. AI is going to usher in maybe amazing new superconductors, better batteries, material science advances. There are all sorts of ways that could completely change the nature of the economy.</p>
+
+<h3 class="chapter"><span>How Do We Solve the Energy Crisis Created by AI?</span><a href="https://www.youtube.com/watch?v=SSya123u9Yk&t=1446s">↪ 24:06</a></h3>
+
+<p class="q">How do we solve the energy crisis that comes with an AI revolution? The energy requirements are unprecedented. How do we solve that unprecedented need for new energy?</p>
+
+<p>I think actually AI will, in the medium to long run, more than pay for itself in terms of energy costs. We work on all these projects like optimizing existing infrastructure and optimizing the grid. I think we could probably get 30-40% more efficiency out of our national grids. There's also modeling the climate and weather. We have some of the best weather modeling systems in the world, which helps us work out where the effects are really happening to mitigate that.</p>
+
+<p>The most exciting maybe is these new breakthrough technologies like fusion, new batteries, and superconductors that I think AI will be essential for helping us reach. Then I think we'll be in a completely new energy situation than we've ever been as humanity, and that will help with things like climate and environment. It will eventually also help us get into space much more cheaply because if you have an incredible energy source like fusion, then you have effectively unlimited rocket fuel—you can just distill and catalyze seawater.</p>
+
+<h3 class="chapter"><span>Why Stay in the UK Instead of Moving to Silicon Valley?</span><a href="https://www.youtube.com/watch?v=SSya123u9Yk&t=1534s">↪ 25:34</a></h3>
+
+<p class="q">My question is about being in the UK. You're in London. I'm in London. You must have been pushed or prodded at every turn to move to the US. Why have you stayed?</p>
+
+<p>I should ask you that question too. I think I saw in London when we started DeepMind a place that, and the UK in general and Europe to some degree, has incredible talent. We've always had three or four of the top 10 universities in the world with Cambridge, Oxford, Imperial, and UCL. We're producing amazing graduates and PhD students. We have incredible scientists here—a rich heritage all the way from Turing and Hawking and Darwin and Newton. We have this incredible history of scientific breakthroughs and having great thinkers.</p>
+
+<p>I felt we had all the ingredients—the talent and great engineers—but it just hadn't been galvanized into an ambitious deep tech startup idea. I felt it was possible, and I felt there was actually less competition here for that sort of talent. We could even draw in the best talent from the top European universities. That's what it was like in the early days of DeepMind. I think it was a huge structural advantage for us.</p>
+
+<p>There is some disadvantage in being away from the Valley—you're not plugged into the network, the gossip, the latest trends. We're a little bit out of it here, but it does I think it's very conducive to thinking deeply about things and being more original about how you think. That's great for deep tech where you don't want to be distracted by the latest fad. You want to focus on something that's going to be a 20-year mission, which is what we knew from the beginning of DeepMind. Being a little away from that maelstrom is quite good.</p>
+
+<h3 class="chapter"><span>Will Europe Ever Build a Trillion-Dollar Tech Giant?</span><a href="https://www.youtube.com/watch?v=SSya123u9Yk&t=1658s">↪ 27:38</a></h3>
+
+<p class="q">Will Europe have a trillion dollar company? You see the Americans always bash us for our lack of large companies.</p>
+
+<p>Not yet. I mean, Daniel Ek may well get there with one of his companies. Spotify and Klarna, I think those are two good options. I think there's no reason why we can't have that. I'm going to try and do that with Isomorphic, which is headquartered here, and I think has the potential to be that. But I think that's one of the disadvantages of Europe—we're a combination of smaller markets, which is something we have to overcome. Maybe this EU Inc thing could be a good innovation.</p>
+
+<p class="q">You've got a magic wand, but this time applied to European technology. What would you do to implement a growth mindset and ability to build that trillion dollar company we don't have today?</p>
+
+<p>I think in the UK, which may apply to other European countries too, I think unlocking what pension funds can invest in at the growth stage. I think we're brilliant at doing the startup idea and getting it to a certain level—we did that with DeepMind. But if you really want to cross that chasm into the trillion dollar global player, where are the billion dollar rounds going to come from? Where you can really take on the existing incumbents. I think that certainly was missing 10 years ago when I was doing fundraising for DeepMind, and I think it's still kind of missing today—just that level of ambition and the amount the capital markets can support.</p>
+
+<h3 class="chapter"><span>Meeting Elon Musk for the First Time?</span><a href="https://www.youtube.com/watch?v=SSya123u9Yk&t=1760s">↪ 29:20</a></h3>
+
+<p class="q">Let's do a quick fire round. Meeting Elon for the first time—how was that?</p>
+
+<p>It was amazing. It was at a Founders Fund conference because both SpaceX and DeepMind were part of the same portfolio that Peter Thiel had at Founders Fund. We were both invited. I think I was invited to my first portfolio conference—it must have been back in 2011 or 2012, very early days. We were the small little upcoming thing, and I had a small speaking slot. Elon was the big thing in that portfolio, so he had the keynote. We met afterwards. I think Elon says it was like we were passing each other in the bathroom or something, and we said hi and immediately hit it off—sort of as people that were almost too ambitious in their thinking perhaps and love sci-fi.</p>
+
+<p>I really wanted to visit his rocket factory. I was trying to get an informal invite to SpaceX in LA, and I think he invited me at the end of that meeting. That was our second meeting in the SpaceX factory.</p>
+
+<h3 class="chapter"><span>What Big Questions About AI Is No One Talking About?</span><a href="https://www.youtube.com/watch?v=SSya123u9Yk&t=1863s">↪ 31:03</a></h3>
+
+<p class="q">What are you thinking about that you're not reading about or seeing anyone talk about?</p>
+
+<p>I think a lot of people are worrying about the economic questions around AGI, which we talked about earlier. But I worry a lot about the philosophical questions around it. Let's say assume we get the technical right, assume we get the economics part right—both of those are hard. Then there's the philosophical question: what is meaning? What is purpose? What is consciousness? What does it mean to be human? I think that's what's coming down the road, and I think we need some great new philosophers to help us navigate that.</p>
+
+<h3 class="chapter"><span>What Does Demis Want His Legacy to Be?</span><a href="https://www.youtube.com/watch?v=SSya123u9Yk&t=1902s">↪ 31:42</a></h3>
+
+<p class="q">There are many different ways you could describe what you do. What would you most like to be remembered for? What do you want your legacy to be?</p>
+
+<p>I would like my legacy to be remembered for advancing science and building technologies that bring incredible benefits into the world—like curing terrible diseases.</p>
+    </div>
+  </main>
+  <script>
+  async function toggleYtBookmark(btn) {
+    const payload = {
+      title: btn.dataset.title,
+      url: btn.dataset.url,
+      filename: btn.dataset.filename,
+      interviewDate: btn.dataset.date,
+      source: 'YT',
+      expert: btn.dataset.channel,
+    };
+    try {
+      const resp = await fetch('/bookmark', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload),
+      });
+      const result = await resp.json();
+      setYtBookmarkState(btn, !!result.bookmarked);
+    } catch (e) {
+      console.error('Bookmark toggle failed:', e);
+    }
+  }
+  function setYtBookmarkState(btn, on) {
+    btn.classList.toggle('is-bookmarked', on);
+    btn.innerHTML = on ? '&#9733;' : '&#9734;';
+    btn.title = on ? 'Bookmarked' : 'Bookmark';
+    btn.setAttribute('aria-label', on ? 'Bookmarked' : 'Bookmark');
+  }
+  (async function initYtBookmarkState() {
+    const btn = document.getElementById('yt-bookmark-btn');
+    if (!btn || !btn.dataset.filename) return;
+    try {
+      const resp = await fetch('/bookmarks');
+      if (!resp.ok) return;
+      const list = await resp.json();
+      if (Array.isArray(list) && list.some(b => b && b.filename === btn.dataset.filename)) {
+        setYtBookmarkState(btn, true);
+      }
+    } catch (e) { /* offline -- leave default state */ }
+  })();
+
+  async function shareYtPage(btn) {
+    const original = btn.innerHTML;
+    btn.disabled = true;
+    btn.innerHTML = '&hellip;';
+    try {
+      const resp = await fetch('/share', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ filename: btn.dataset.filename }),
+      });
+      const result = await resp.json();
+      if (!result.ok) throw new Error(result.error || 'Share failed');
+      try { await navigator.clipboard.writeText(result.url); } catch (e) {}
+      btn.innerHTML = '&#10003;';
+      btn.title = 'Copied ' + result.url;
+      setTimeout(() => { btn.innerHTML = original; btn.disabled = false; btn.title = 'Share'; }, 2500);
+    } catch (e) {
+      console.error('Share failed:', e);
+      btn.innerHTML = '!';
+      btn.title = 'Share failed: ' + (e && e.message || e);
+      setTimeout(() => { btn.innerHTML = original; btn.disabled = false; btn.title = 'Share'; }, 3000);
+    }
+  }
+
+  // When the page is viewed from somewhere other than the local Reader
+  // server (e.g. a shared copy on GitHub Pages), hide the interactive
+  // buttons whose endpoints only exist on localhost.
+  (function hideLocalOnlyControls() {
+    const host = location.hostname;
+    const isLocal = host === 'localhost' || host === '127.0.0.1' || host === '';
+    if (isLocal) return;
+    const actions = document.querySelector('.yt-header-actions');
+    if (!actions) return;
+    const bookmark = actions.querySelector('#yt-bookmark-btn');
+    const share = actions.querySelector('#yt-share-btn');
+    if (bookmark) bookmark.remove();
+    if (share) share.remove();
+  })();
+  </script>
+</body>
+</html>
