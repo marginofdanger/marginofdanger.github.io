@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>OpenAI President Greg Brockman: AI Self-Improvement, The Superapp Bet, Path To AGI, Scaling Compute</title>
+  <style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background: #faf8f5;
+  color: #2c2418;
+  line-height: 1.7;
+  padding: 0 1rem 2rem;
+}
+header {
+  position: sticky;
+  top: 0;
+  background: #faf8f5;
+  z-index: 100;
+  border-bottom: 2px solid #c4956a;
+  box-shadow: 0 2px 8px rgba(44,36,24,0.08);
+  padding: 0.6rem 1rem;
+}
+.header-inner {
+  max-width: 78ch;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header-title { font-size: 1rem; color: #2c2418; }
+.header-title strong { font-size: 1.1rem; }
+.header-link {
+  font-size: 0.85rem;
+  color: #8b6d4e;
+  text-decoration: none;
+  border: 1px solid #c4956a;
+  padding: 0.2rem 0.7rem;
+  border-radius: 4px;
+}
+.header-link:hover { background: #f0ebe3; }
+main {
+  max-width: 78ch;
+  margin: 0 auto;
+  padding-top: 0.5rem;
+}
+h2 {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #2c2418;
+  margin-top: 2rem;
+  margin-bottom: 0.5rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 2px solid #c4956a;
+}
+h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #3d3225;
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+section { margin-bottom: 1.5rem; }
+ul { margin: 0.5rem 0 0.5rem 1.5rem; }
+li { margin-bottom: 0.4rem; }
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0.75rem 0;
+  font-size: 0.92rem;
+}
+thead th {
+  background: #3d3225;
+  color: #faf8f5;
+  text-transform: uppercase;
+  font-size: 0.78rem;
+  letter-spacing: 0.05em;
+  padding: 0.5rem 0.75rem;
+  text-align: left;
+  font-weight: 600;
+}
+tbody td {
+  padding: 0.45rem 0.75rem;
+  border-bottom: 1px solid #e8e0d4;
+}
+tbody tr:nth-child(even) { background: #f0ebe3; }
+tbody tr:nth-child(odd) { background: #faf8f5; }
+.key-insight {
+  border-left: 4px solid #c4956a;
+  background: #f5efe8;
+  padding: 0.75rem 1rem;
+  margin: 0.75rem 0;
+  font-size: 0.93rem;
+  border-radius: 0 6px 6px 0;
+}
+.qa-pair { margin-bottom: 1.25rem; }
+.question-box {
+  background: #f0ebe3;
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+  margin-bottom: 0.5rem;
+}
+.analyst-label {
+  display: block;
+  font-size: 0.8rem;
+  color: #8b6d4e;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  margin-bottom: 0.25rem;
+}
+.answer { padding-left: 0.25rem; }
+.loading-section { opacity: 0.5; }
+.loading-indicator {
+  font-size: 1.2rem;
+  padding: 2rem;
+  text-align: center;
+  color: #8b6d4e;
+}
+
+/* YouTube transcript reader */
+
+/* Legacy .yt-meta-card -- kept so old output files still render cleanly.
+   New output uses .header-title.yt below instead. */
+.yt-meta-card {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  margin-bottom: 1.5rem;
+  background: #f5efe8;
+  border-left: 4px solid #c4956a;
+  border-radius: 0 6px 6px 0;
+  padding: 0.9rem 1rem;
+}
+.yt-meta-card img {
+  flex: 0 0 180px;
+  height: 101px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+.yt-meta-body { flex: 1; font-size: 0.93rem; }
+.yt-meta-title { font-weight: 700; font-size: 1rem; margin-bottom: 0.25rem; }
+.yt-meta-sub { color: #8b6d4e; margin-bottom: 0.35rem; }
+.yt-meta-url { font-size: 0.85rem; color: #3d3225; }
+
+/* YouTube sticky header uses the default 78ch-capped centered
+   container so it aligns with the body text column below. The
+   buttons sit at the right edge of that centered container. */
+header:has(.header-inner.yt) { padding: 0.75rem 1rem; }
+.header-inner.yt { gap: 1rem; }
+.header-title.yt {
+  display: flex;
+  gap: 0.9rem;
+  align-items: center;
+  min-width: 0;
+  flex: 1;
+}
+.yt-header-thumb { flex: 0 0 88px; line-height: 0; }
+.yt-header-thumb img {
+  width: 88px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 3px;
+  display: block;
+}
+.yt-header-text { min-width: 0; flex: 1; }
+.yt-header-text strong {
+  display: block;
+  font-size: 1rem;
+  line-height: 1.3;
+  color: #2c2418;
+  /* Allow wrapping to 2 lines so long podcast titles show in full. */
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.yt-header-sub {
+  font-size: 0.8rem;
+  margin-top: 0.2rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.yt-header-sub .yt-channel { color: #8b6d4e; }
+.yt-header-sub .yt-date,
+.yt-header-sub .yt-dur { color: #3d3225; font-weight: 600; }
+.yt-header-sub .yt-sep { color: #c4956a; margin: 0 0.5rem; }
+
+.yt-header-actions {
+  display: flex;
+  gap: 0.4rem;
+  align-items: center;
+  flex: 0 0 auto;
+}
+/* Shared box shape for the star + share + YT buttons so they're
+   visually identical. Applies to both the <button>s and the <a> link. */
+.yt-header-actions .yt-bookmark-btn,
+.yt-header-actions .yt-share-btn,
+.yt-header-actions .header-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font: inherit;
+  font-size: 0.85rem;
+  line-height: 1;
+  color: #8b6d4e;
+  background: transparent;
+  border: 1px solid #c4956a;
+  border-radius: 4px;
+  padding: 0;
+  box-sizing: border-box;
+  width: 2.2rem;
+  height: 2.2rem;
+  white-space: nowrap;
+  text-decoration: none;
+  cursor: pointer;
+}
+.yt-header-actions .yt-bookmark-btn { font-size: 1rem; }
+.yt-header-actions .yt-share-btn { font-size: 1.05rem; }
+.yt-header-actions .yt-share-btn:disabled { opacity: 0.6; cursor: default; }
+.yt-header-actions .yt-bookmark-btn:hover,
+.yt-header-actions .yt-share-btn:hover,
+.yt-header-actions .header-link:hover {
+  background: #f0ebe3;
+  color: #3d3225;
+}
+.yt-header-actions .yt-bookmark-btn.is-bookmarked {
+  background: #c4956a;
+  color: #faf8f5;
+  border-color: #a87d5a;
+}
+.yt-header-actions .yt-bookmark-btn.is-bookmarked:hover {
+  background: #a87d5a;
+  color: #faf8f5;
+}
+
+h3.chapter {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #3d3225;
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+h3.chapter a {
+  font-size: 0.8rem;
+  color: #8b6d4e;
+  text-decoration: none;
+  font-weight: 400;
+}
+
+.yt-body p {
+  margin-bottom: 1.15rem;
+}
+.yt-body p.q {
+  background: #f0ebe3;
+  border-left: 3px solid #c4956a;
+  border-radius: 0 6px 6px 0;
+  padding: 0.6rem 0.9rem;
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+  color: #3d3225;
+  font-style: italic;
+  font-size: 0.96rem;
+}
+.yt-body p.q::before {
+  content: "Q";
+  display: inline-block;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 0.72rem;
+  color: #8b6d4e;
+  letter-spacing: 0.05em;
+  margin-right: 0.5rem;
+  padding: 0.05rem 0.4rem;
+  border: 1px solid #c4956a;
+  border-radius: 3px;
+  vertical-align: 0.1em;
+}
+
+</style>
+</head>
+<body>
+  <header>
+    <div class="header-inner yt">
+      <div class="header-title yt">
+        <a class="yt-header-thumb" href="https://www.youtube.com/watch?v=J6vYvk7R190" target="_blank"><img src="https://i.ytimg.com/vi_webp/J6vYvk7R190/maxresdefault.webp?v=69d983c3" alt=""></a>
+        <div class="yt-header-text">
+          <strong>OpenAI President Greg Brockman: AI Self-Improvement, The Superapp Bet, Path To AGI, Scaling Compute</strong>
+          <div class="yt-header-sub">
+            <span class="yt-channel">Alex Kantrowitz</span>
+            <span class="yt-sep">&middot;</span>
+            <span class="yt-date">Apr 1, 2026</span>
+            <span class="yt-sep">&middot;</span>
+            <span class="yt-dur">1h 13m</span>
+          </div>
+        </div>
+      </div>
+      <div class="yt-header-actions">
+        <button id="yt-bookmark-btn"
+                class="yt-bookmark-btn"
+                title="Bookmark"
+                aria-label="Bookmark"
+                data-filename="yt-2026-04-17-openai-president-greg-brockman-ai-self-improvement-the.html"
+                data-title="OpenAI President Greg Brockman: AI Self-Improvement, The Superapp Bet, Path To AGI, Scaling Compute"
+                data-url="https://www.youtube.com/watch?v=J6vYvk7R190"
+                data-date="2026-04-01T10:30:06-07:00"
+                data-channel="Alex Kantrowitz"
+                onclick="toggleYtBookmark(this)">&#9734;</button>
+        <button id="yt-share-btn"
+                class="yt-share-btn"
+                title="Share"
+                aria-label="Share"
+                data-filename="yt-2026-04-17-openai-president-greg-brockman-ai-self-improvement-the.html"
+                onclick="shareYtPage(this)">&#8599;</button>
+        <a class="header-link" href="https://www.youtube.com/watch?v=J6vYvk7R190" target="_blank" title="Watch on YouTube" aria-label="Watch on YouTube">YT</a>
+      </div>
+    </div>
+  </header>
+  <main>
+    <div class="yt-body">
+    <h3 class="chapter"><span>Intro and Highlights</span><a href="https://www.youtube.com/watch?v=J6vYvk7R190&t=0s">↪ 0:00</a></h3>
+
+<p>I think it's extremely clear that we're going to have AGI within the next couple years in a way that is still going to be jagged, but the floor of what tasks the AI will be able to do for any intellectual task on your computer is almost everything. The scariest moment at OpenAI was actually after we launched ChatGPT. I remember being at the holiday party and just feeling this vibe of we won, and I have never felt that. I was like, no—we are the underdog and we always have been.</p>
+
+<p>From the moment we launched ChatGPT, I remember talking with my team having this exact conversation where they said, "How much compute should we buy?" I said, "All of it." They said, "No, no, no. Really, how much compute should we buy?" I said, "No matter how much we try to build, I know we're not going to be able to keep up with the demand."</p>
+
+<p class="q">OpenAI co-founder and president Greg Brockman joins us to talk about AI's most promising opportunities, how OpenAI plans to capitalize on them, and what the Super App is all about. Greg, great to see you.</p>
+
+<p>Thank you for having me.</p>
+
+<p class="q">Well, we're speaking at a time where OpenAI is shutting down video generation and focusing its energies on a super app which is going to combine business and coding use cases. From the outside, it looks like OpenAI is winning in consumer and now it's shifting its resources. What is happening?</p>
+
+<p>The way I would think about this is that we've been in a world where we're developing this technology—deep learning—to really see if it can have the positive impact that we always pictured. Can it be used to build applications that help people in their lives? And we've separately had an arm saying let's actually try to deploy this technology to help sustain the business, to start getting real-world impact for the time when this technology actually comes to fruition.</p>
+
+<p>I think we're at a moment now where we've really seen this technology is going to work and we're moving out of testing on benchmarks and cerebral demonstrations of capability to actually needing to see it in the real world and get feedback from how people are using it in knowledge work. This is a bigger strategic shift because of the phase of the technology. It's not that we're moving from consumer to B2B—it's that we're asking what are the most important applications we can focus on because we can't focus on everything.</p>
+
+<p>When we look at the list, there's a personal assistant—something that knows you, that's aligned with your goals. There's also creative expression and entertainment. On the business side, you have hard tasks and the question is whether AI can do them with full context. For us, it's very clear that the top two things are the personal assistant and the AI that can solve hard problems for you. When we look at the compute we have, we're not even going to have enough to fund those two things, let alone many other useful applications.</p>
+
+<p>This is a recognition of the maturation of the technology and the incredible impact it's going to have very quickly. We need to prioritize and pick the set of applications we want to shine and really bring to the world.</p>
+
+<p class="q">I've heard you describe OpenAI as being like Disney—you have this core compelling advantage at the center and then farm it out in different ways. Mickey Mouse becomes movies, theme parks, Disney Plus. For OpenAI, it's the model: video generation, an assistant, enterprise. Is it no longer possible to have that central advantage and farm it out in all sorts of ways? Have you decided it's time to pick or choose?</p>
+
+<p>I actually think that story is even more true than it's been. But the thing that's important to realize is that the Sora models—which are incredible models, by the way—are a different branch of the tech tree than the core reasoning GPT series. They're built in a very different way, and pursuing both branches is very hard for us to do.</p>
+
+<p>We are continuing the Sora research program in the context of robotics, which will clearly be a transformative application. But robotics is still in the research phase—it's not yet mature like the real takeoff we're going to see in knowledge work over the next year. So we need to put primary focus on developing the GPT series. That doesn't just mean text—it means things like bidirectional communication and speech-to-speech interfaces. Those aren't a different branch of the tech tree. They're all kind of one model with slight tweaks.</p>
+
+<p>If you branch too far and have two different artifacts, it's very hard to sustain in a world with limited compute. And there's limited compute because there's so much demand. There's so much people want to do with every single model we create.</p>
+
+<h3 class="chapter"><span>Why OpenAI Pulled Back From Sora</span><a href="https://www.youtube.com/watch?v=J6vYvk7R190&t=246s">↪ 4:06</a></h3>
+
+<p class="q">Why is your bet on the GPT reasoning model tree rather than world models where the video understands where things go—obviously useful for robotics. You saw enormous progress with Sora 1, 2, 3. Why is your bet where it is?</p>
+
+<p>The problem in this field is too much opportunity. Everything we could imagine works now. There are different levels of friction, engineering effort, compute requirements—but every mathematically sound idea gets pretty good results. That shows the power of deep learning: the ability to take any problem and understand the underlying rules that generated the data.</p>
+
+<p>There's been this debate about how far text models can go and whether they can have a real conception of how the world operates. I think we've definitively answered that—it's going to go to AGI. We see line of sight. We have much better models coming this year, and the amount of compute allocation pain at OpenAI goes up, not down, over time.</p>
+
+<p>It's about sequencing and timing. The kinds of applications we've always dreamed of are starting to come into reach. We recently had a physicist working on an unsolved problem. He gave it to our model—12 hours later we have a solution. He said this was the first time he felt like a model was actually thinking, like it was solving a problem humanity might never solve. You have to double down and triple down because we can really unlock all of this potential for humanity.</p>
+
+<p>For me, it's not about the relative importance of these things. It's about our mission of delivering AGI to the world, our vision of how it benefits everyone, and the fact that we have a tech tree we know how to push through engineering and research.</p>
+
+<p class="q">Demis Sabis from Google DeepMind said the thing closest to AGI for him was Gemini Nano, the image generator. For a video generator to create what it makes, it has to understand interaction between objects and have some conception of how the world works. Doesn't OpenAI potentially miss something by doubling down on the other tree?</p>
+
+<p>Absolutely, yes. In this field you have to make choices and make a bet about the path to AGI you believe in. But here's the important part: image generation has been very popular within ChatGPT and we're continuing to invest in it. The reason we can is that it's not on the diffusion model world model tech branch—it's actually based on GPT architecture. Even though it's a different data distribution, the core technology is all one thing.</p>
+
+<p>That's actually the wild thing about AGI: sometimes very different looking applications between speech-to-speech, image generation, and text can all be done in one technological envelope. A lot of what we're looking at from a technological perspective is having as much unification of our efforts as possible, because we see this technology as something that's going to uplift and power the whole economy. We can't possibly do all of it, but we can do our part.</p>
+
+<h3 class="chapter"><span>The OpenAI Superapp Plan</span><a href="https://www.youtube.com/watch?v=J6vYvk7R190&t=684s">↪ 11:24</a></h3>
+
+<p class="q">What is this super app going to be?</p>
+
+<p>The super app is going to bring together coding, browser, and ChatGPT. We want to build an endpoint application that really lets you experience the power of AGI. ChatGPT is going to become your personal assistant—your personal AGI. An AI that's looking out for you, that knows a lot about you, that's aligned with your goals, that's trustworthy, that represents you in the digital world.</p>
+
+<p>Codex used to be a tool we built for software engineers, but it's becoming Codex for everyone. Anyone can use it to get the computer to do what they want. It's not just about software anymore—it's about the use of your computer. I use it to set settings on my laptop when I forget how to do things. Computers were always supposed to conform to the human, not the other way around.</p>
+
+<p>Imagine one application where anything you want your computer to do, you can ask it. There's computer use and browsing built in so an AI can actually use a web browser and you can oversee what it's doing. All your conversations—whether for chat, code, or general knowledge work—are unified. The AI has memory, knows about you.</p>
+
+<p>But it's really an iceberg because what's actually more important is the technological unification. It's no longer just about the model. It's about the harness—how the model gets context, how it's connected to the world, what actions it can take. All of that was something we had multiple implementations of that were slightly different. We're converging to one version and almost getting this AI layer that can be pointed at specific applications in a very thin way.</p>
+
+<p>You could build a little plugin, a little scale, a little UI if you want something great for finance or legal. But you generally won't have to because this one super app will be very broad. It's for business use cases, personal use cases. Just like your laptop—it's not just for personal or business, it's both. It's your personal machine that gives you an interface to the digital world.</p>
+
+<p class="q">From a personal standpoint, if I'm using the super app in my personal life, what am I using it for and how does my life change?</p>
+
+<p>Just the way you use ChatGPT right now. People use it for such a diversity of amazing applications—drafting a wedding speech, getting feedback on an idea, or brainstorming for a small business. Those are things you should be able to go to the super app for, and it answers.</p>
+
+<p>ChatGPT has already been evolving. It used to not have any memory—it's like talking to a stranger. It's much more powerful if it remembers your interactions. It's much more powerful if it has access to context—if it's hooked up to your email and calendar, knows your preferences, and has deeper past experiences it can leverage to achieve your goals. We have a feature called Pulse where every day it surfaces things you might be interested in based on what ChatGPT knows about you.</p>
+
+<p>In the personal capacity, the super app will be doing all of that and much deeper and richer.</p>
+
+<h3 class="chapter"><span>When The Superapp Will Ship</span><a href="https://www.youtube.com/watch?v=J6vYvk7R190&t=954s">↪ 15:54</a></h3>
+
+<p class="q">When do you plan to ship it?</p>
+
+<p>We're taking incremental steps over the next couple months. We should have shipped the complete vision of what we're talking about here, but it's going to come in pieces. We're starting with the Codex app today—it's two things in one. It's a general agent harness that can use tools and an agent that knows how to write software. That general agent harness can be used for so many different things. You hook it up to spreadsheets, to word documents, and it's able to help you with knowledge work.</p>
+
+<p>We're going to make the Codex app much more usable for general knowledge work because we've already seen organic adoption of people within OpenAI using it for that. That'll be the first step, and there are many to come.</p>
+
+<p class="q">One of your colleagues mentioned that someone using Codex had instructed it to help with video editing. It built a plugin for Adobe Premiere, started separating it into chapters, and started the edit. That's what we're looking at.</p>
+
+<p>I love hearing that. That's exactly the kind of thing we want this system to be useful for. It's been really interesting seeing that Codex was originally built for software engineers, but the current usability for non-software engineers is quite low because when you set things up, you run into errors that a developer knows what to do with. But if you're not a developer, you're like, "What is this?" Despite that, we're seeing people who've never programmed before building websites and automating interactions with different software to get lots of leverage.</p>
+
+<p>Someone on our communications team uses it hooked up to Slack and their email, going through feedback and synthesizing it very well. These kinds of tasks—people who are very motivated can jump through the hoops and get great returns. We did the super hard part: an AI that's really smart and capable and can accomplish your task. Now we have to do the much easier part: make it broadly useful and remove barriers to entry.</p>
+
+<h3 class="chapter"><span>Brockman on OpenAI's</span><a href="https://www.youtube.com/watch?v=J6vYvk7R190&t=1115s">↪ 18:35</a></h3>
+
+<p class="q">Looking at the competitive landscape, Anthropic has the Claude app—Claude the chatbot, Claude for work, Claude Code. They have a version of a super app of their own. What do you think they saw that got them there earlier, and what are your chances of catching up?</p>
+
+<p>If you rewind 12, 18 months, we've always been focused on coding as a domain. We always had the best numbers on different programming competitions—very cerebral things. But we didn't invest as much in that last mile of usability. We didn't think about the fact that our AI is so smart it can solve programming competitions, but it's never seen someone's real-world codebase, which is messy and not pristine.</p>
+
+<p>Mid last year is when we got very serious about it. We had a team focused on what gaps do we have, what messiness of the real world haven't we encountered? How do we get training data? How do we build environments that let the AI experience what it's like to do real software engineering with interruptions and weird ways? At this point, we're caught up. When people go head-to-head with us versus competitors, people tend to prefer us.</p>
+
+<p>The general motion we've been taking is thinking about product end-to-end, not just a model and then building something separate. Really think of it as one product. When we're doing research, we're thinking about how it will be used. We have incredible step-up models coming this whole year. The roadmap is truly inspiring. And we've been really focusing on getting the last mile usability.</p>
+
+<p class="q">Since 2022, OpenAI has been the undisputed leader. Obviously competition is now intense. You just used the phrase "we're caught up." Is there a different vibe within the company—instead of being far ahead on something like ChatGPT, you're now in a real fight? I mean, there are reports that there are no more side quests at OpenAI. It's all focus. How has the environment or vibe changed?</p>
+
+<p>For me personally, the scariest moment at OpenAI was actually after we launched ChatGPT. I remember being at the holiday party and just feeling this vibe of we won, and I have never felt that. I was like, no—we are the underdog and we always have been.</p>
+
+<p>The competitors in this space are established companies with much more capital, human resources, data. Why is OpenAI able to compete at all? The answer is only because we never feel complacent. We always feel like we're the challenger. It's been a very healthy thing to see other competitors emerge and do a good job. You can never fixate on competitors. If you focus on where they are, you'll be where they are and they'll have already moved.</p>
+
+<p>This gives us alignment and unification of the company. We used to think of research and deployment as separate things, and now we really want to integrate them. That's such a wonderful thing. I think the world we're in is one where you're never as good as they say you are and never as bad as they say you are. I feel extremely confident in our roadmap, the research investments we've made, and the great energy on the product side coming together to deliver this to the world.</p>
+
+<h3 class="chapter"><span>What OpenAI's "Spud" Model Really Is</span><a href="https://www.youtube.com/watch?v=J6vYvk7R190&t=1379s">↪ 22:59</a></h3>
+
+<p class="q">You've foreshadowed a couple times that you have good models on the way. What is Spud? The Information said you finished pre-training Spud and Sam Altman has told staff they should expect a very strong model in a few weeks. The team believes it can really accelerate the economy. So what is Spud?</p>
+
+<p>I think it's really not about any one model. The way our development process works is you have pre-training where you produce a new base model that's the foundation for further improvements. That's always a huge effort across many people. I've actually been spending most of my efforts over the past 18 months focused on our GPU infrastructure and supporting the teams that do training frameworks to scale up at these big runs.</p>
+
+<p>Then there's a reinforcement learning process where the AI that has learned lots of things about the world applies that knowledge, and we do a post-training process where you practice solving problems in different contexts and get the last mile of behavior and usability right. I think of Spud as a new base model, a new pre-train, and we have maybe two years worth of research coming to fruition in this model. It's going to be very exciting.</p>
+
+<p>The way the world will experience it is just improved capabilities. For me, it's never about any one release because as soon as we have this one, it'll be an early version of what's coming. We'll do much more of each step of the improvement process. We have this engine of progress that just moves faster and faster, and Spud is just one step along the way.</p>
+
+<h3 class="chapter"><span>What the Next OpenAI Models Will Unlock</span><a href="https://www.youtube.com/watch?v=J6vYvk7R190&t=1499s">↪ 24:59</a></h3>
+
+<p class="q">So what do you think it'll be able to do that today's models can't?</p>
+
+<p>It's going to be able to solve much harder problems. It will be much more nuanced, understand instructions better, understand context much better. There's this thing called "big model smell"—when models are just much smarter and much more capable, they bend to you much more. You feel it. When an AI doesn't quite get what you're asking, it's disappointing. You think it really should be able to figure this out. With smarter models, qualitatively there will just be new things where you'd be frustrated before and never use an AI for it, and now you just use it without thinking very much.</p>
+
+<p>I'm super excited to see how it raises the ceiling. We've already seen physics applications. I think we'll be able to solve way more open-ended problems with way longer time horizons. And I'm excited to see how it raises the floor—for anything you want to do, it's just so much more useful for you. It can be tough for everyday users to really feel the change. There was a lot of buildup before GPT-4 came out, and then there was some disappointment initially, but then people realized that for certain tasks it was really good.</p>
+
+<p class="q">With these next series of models, do you expect it'll be felt in the trenches in certain occupations, or a broadly tangible improvement for everyone?</p>
+
+<p>It will be a similar story. When you release it, there will be people who try it and say this is night and day different. There will be applications where we weren't necessarily intelligence bottlenecked, so you won't feel it. But I think over time you will because the fundamental thing that shifts is how much you rely on the system. We have a mental model for what we think it can do, and that shifts fairly slowly.</p>
+
+<p>As you get more experience and the AI does something magical for you, you think, "Oh, wow. It can do that. I never imagined that." We see this in health information access. I have a friend who used ChatGPT to understand different treatments for his cancer. He was told by doctors he was terminal with nothing they could do. He researched different ideas with ChatGPT and was able to get treatment that way.</p>
+
+<p>You need to have some level of belief that the AI will be helpful to really put in the effort to get something out of the machine. What we're going to see is that for any application like that, it becomes much more evident that the AI can help you. So it's both the technology getting better and our understanding of it shifting and catching up.</p>
+
+<h3 class="chapter"><span>OpenAI's Plan for an Automated AI Researcher</span><a href="https://www.youtube.com/watch?v=J6vYvk7R190&t=1693s">↪ 28:13</a></h3>
+
+<p class="q">Inside OpenAI, you have an automated AI researcher in the works. It's supposed to come out this fall. What is that?</p>
+
+<p>Right now we're in this early phase of takeoff of this technology. What does takeoff mean? It's as the AI gets better and better on an exponential, and in part because we can use the AI to make the AI better, our development process speeds up. But takeoff is also about real-world impact. Every technology is an S-curve, or if you zoom out, some S-curves end up being exponential. That's what we're encountering right now.</p>
+
+<p>Technology development is moving with increasing speed as an engine picking up momentum. In the world, there are tailwinds because chip developers are getting more resources, there's an economy of people building on top of it figuring out how it fits into every application. All that energy is accumulating into this takeoff phase of AI becoming the main driver of economic growth. It's not just about what we're doing in these walls—it's about how the whole world and economy come together to push this technology forward.</p>
+
+<p class="q">And the researcher will do what exactly?</p>
+
+<p>The researcher will be a moment where the AI we're building right now is doing a larger percentage of tasks we should be able to let it run autonomously. There's a lot of thought about what that means. It doesn't mean we just let it off on its own and come back later. We're going to be very involved in managing it. Right now, if you have a junior researcher and leave them on their own too long, they'll probably go down an unproductive path.</p>
+
+<p>But if you have a senior researcher or someone with a vision, they don't necessarily need to know mechanical skills. They can provide feedback, review plots, and provide direction about what you want them to accomplish. We're building a system that will massively accelerate our ability to produce models, make research breakthroughs, and make models more useful and usable in the real world at increasing speed.</p>
+
+<p class="q">At a practical level, you're saying go find AGI and it will just try to?</p>
+
+<p>Something like that to first order. At a practical level, it's taking the full end-to-end of what one of our research scientists does and being able to do that in silicon.</p>
+
+<h3 class="chapter"><span>Brockman on AI Risk, Safety, and Takeoff</span><a href="https://www.youtube.com/watch?v=J6vYvk7R190&t=1872s">↪ 31:12</a></h3>
+
+<p class="q">Another way to think about takeoff is that progress in AI goes from incremental to gathering momentum to this unstoppable march to an intelligence smarter than humans. Do you worry that there are possibilities for things to go wrong in that process?</p>
+
+<p>Absolutely, yes. The way to get benefits from this technology is to really think about the risks. We invest a lot in safety and security. A good example is prompt injections. If you have an AI that's very smart and capable and hooked up to lots of tools, you want to make sure it can't be subverted by someone giving it a weird instruction. That's something we've invested in quite a lot and have really incredible results.</p>
+
+<p>It's interesting to think about some of these problems where you can make analogies to humans. Humans are also susceptible to phishing attacks, deception, not understanding full context. We bring those analogies into our development process. Whenever we release or develop a model, we think about how to ensure it's aligned with people and actually helpful.</p>
+
+<p>There are bigger questions about the world and economy—how does everything change, how does everyone benefit from this technology—that aren't purely technical and aren't something OpenAI alone can solve. But yes, I think quite a lot about not just pushing forward the technology but ensuring we have the positive impact it has potential for.</p>
+
+<p class="q">The worry is that this is a race. What's being done within OpenAI is also being copied by many open-source players with much fewer boundaries and protections on the safety side. You said that it takes many people getting lots of things right to be creative, but one person with bad intent to be destructive. That's where the concern lies. This is clearly a race going fast. Many of your counterparts have said if everybody agreed to stop, they'd stop. It doesn't seem like it's going to slow. Is the reward worth the risk?</p>
+
+<p>I think the reward is worth the risk, but that's too coarse-grained an answer. From the beginning of OpenAI, we've asked what does a great future look like? How can this technology uplift everyone? There are two different angles here.</p>
+
+<p>One is the centralization view: the way to make this technology safe is to have only one actor building it so you don't have pressures and can really get it right. That's a tough pill, but there's a lot you can approach differently, which we call resilience. Think of it as an open system where lots of players develop the technology, but it's not just about the technology—it's about building societal infrastructure that helps it go well.</p>
+
+<p>Look at electricity: lots of people produce it and it has dangers and risks, but we build safety infrastructure in diverse ways—safety standards, different ways of harnessing it, scaling it, regulations at massive scales, democratized access, inspectors. There's a whole system built around the needs and proclivities of that technology.</p>
+
+<p>With AI, we need this broad conversation. If the technology is going to change everything for everyone, people need to participate. It can't be done in secret by one centralized group. This has been a very core question to how this technology should play out. We really believe in this resilience ecosystem that should emerge around AI development.</p>
+
+<h3 class="chapter"><span>Has AGI Basically Already Happened?</span><a href="https://www.youtube.com/watch?v=J6vYvk7R190&t=2158s">↪ 35:58</a></h3>
+
+<p class="q">You said we're in takeoff and all of humanity is experiencing this. Nvidia's CEO Jensen Huang recently said he believes AGI has been achieved. Do you agree?</p>
+
+<p>I think AGI has a different definition to many people. Many people would say what we have right now is AGI. You can debate it. But the interesting thing is that AGI like the technology we have right now is very jagged. It's absolutely superhuman at many tasks. With writing code, the AI can just do it right and really remove friction to creating things. But there are some very basic tasks that humans can do that our AI still struggles with.</p>
+
+<p>It's a little bit more of a vibe and a feeling than science at the moment. For myself, we're definitely going through that moment. If you showed me five years ago the systems we have today, I'd say, "Oh yeah, that's what we're talking about." But it's just different—so different from anything we ever pictured. We need to adjust our mental models appropriately.</p>
+
+<p class="q">So you're not there yet?</p>
+
+<p>I'd say I'm basically 70-80% there. We're quite close. I think it's extremely clear that we're going to have AGI within the next couple years in a way that is still going to be jagged, but the floor of tasks will be almost everything—for any intellectual task about how you use your computer, the AI will be able to do it. Right now I have to give an uncertain answer because there's something almost like an uncertainty principle where you can debate it. For my own personal definition, I think we're almost there, and with maybe a little bit more, we will absolutely be.</p>
+
+<h3 class="chapter"><span>The Moment Coding Agents Really Took Off</span><a href="https://www.youtube.com/watch?v=J6vYvk7R190&t=2325s">↪ 38:45</a></h3>
+
+<p class="q">Let me just ask: what happened in December 2025? It seems like an inflection point where the idea of letting a machine code for hours uninterrupted went from theory to a moment where everyone said, I think I can trust this to keep going for a while. What exactly happened?</p>
+
+<p>New model releases really went from the AI being able to do about 20% of your tasks to about 80%. That was a massive shift because it went from being a nice thing to do to absolutely needing to retool your workflow around these AIs. I've had a test prompt for years: build a website for me. I built that website back when I was learning to code—it took me months. Over the course of 2025, it took like four hours and bunch of different prompts to get it right. In December, one shot—I asked the AI one time and it produced it and did a great job.</p>
+
+<p class="q">How did those models make the leap?</p>
+
+<p>A lot of it is about better base models. We've been working on improving our pre-training technology for quite some time. In that moment, we got to see a little taste of what's coming for the rest of this year. But it's also really about constantly pushing on every single axis of innovation. The thing that's very interesting about these models is that in some ways you get leaps, and in some ways it's all continuous. It didn't go from 0% to 80%—it went from 20% to 80%.</p>
+
+<p>We've actually seen this improvement continue with every single point release. Between v5.2 and v5.3, one of my engineers went from not being able to get it to do low-level systems engineering to it absolutely creating design docs, implementing, adding metrics and observability, running profilers, improving to the exact thing he wanted to produce. It's slowly, slowly, slowly all at once. But it's all indicated by what's working right now—certainly within a year, sometimes much sooner, it's going to be incredibly reliable.</p>
+
+<p class="q">It surprised you because I heard you talking not long ago about how Codex was just for software developers. Earlier in this conversation you said everyone can use this stuff. What led you to change your perspective?</p>
+
+<p>I'd been focusing on Codex and thinking about it as being for coders. Many of us at OpenAI are software engineers building for ourselves, so it's very natural to think that way. But as this technology has been progressing, we've realized that the underlying technology we produced is mostly not about code at all. It's mostly about solving problems, about managing context and harnesses and how an AI should integrate and do work.</p>
+
+<p>That's something that becomes accessible to everyone for code suddenly, because you can manage something that's going to go do work. If you have a vision, something you want to accomplish, you can describe your intent and the AI can execute and get it done. But then it becomes why am I just focused on coding? There's so much mechanical skill with Excel spreadsheets and presentations. If the AI has the context and the raw intelligence to do these things at a great level, we can just make it more accessible.</p>
+
+<p>Codex goes from being for coders to being for everyone. Soon after this improvement, there was another phenomenon in Silicon Valley with OpenClaw—where people started trusting it in ways that suggested giving an AI bot access to their desktop or a Mac Mini with access to mail, calendar, files, and just letting it run their life. OpenAI brought the founder of OpenClaw in-house.</p>
+
+<h3 class="chapter"><span>The Vision for AI Agents Running Your Life</span><a href="https://www.youtube.com/watch?v=J6vYvk7R190&t=2539s">↪ 42:19</a></h3>
+
+<p class="q">You talked about getting autonomous AI agents to work on your behalf. You said you become this CEO of a fleet of hundreds of thousands of agents completing your objectives and goals, and you're not in the weeds on how different things are solved. In some ways, this new way of work can make you feel like you're losing your pulse on the problem. Is that good?</p>
+
+<p>I think it's a mixed bag. We need to acknowledge the strengths of what these tools can deliver and mitigate the weaknesses. Giving people leverage and agency so if you have a vision and something you want to accomplish, you can have a fleet of agents to do it for you—that's powerful. But at the end of the day, there's an accountable party.</p>
+
+<p>If you're trying to build a website and your agent messes it up and your user is affected, it's not the agent's fault—it's your fault. You need to care. For people to use these tools, you need to realize that human agency and human accountability are core parts of the system. How the human uses the AI is deeply fundamental. As a user of these agents, you cannot abdicate responsibility. You cannot just say the AI is going to do stuff.</p>
+
+<p class="q">But you said you're losing your pulse on the problem itself. That's different than an accountability layer. Is there tension there?</p>
+
+<p>To me they're actually linked together. If you're a CEO and you're too far from the details, running a company or team and you've lost your finger on the pulse, that's not going to lead to great results. I'm not saying it's desirable for humans to not know what's going on. There are some details you can trust like with a general contractor building a house—a bunch of details there you probably don't need to worry about.</p>
+
+<p>But at the end of the day, if details are wrong, you should care and be aware. This is an important nuance: you cannot just blindly say you're okay with losing your finger on the pulse. You need to say, I need to keep it there to understand the strengths and weaknesses. As you disengage from lower-level mechanical things, you should do it because you've built trust that the system will do a good job.</p>
+
+<p class="q">One last question about the models. You've talked about the evolutions: pre-training and fine-tuning, reinforcement learning to solve problems step-by-step, and now models have learned to use tools. What is next in that progression?</p>
+
+<p>The world we're in is one of increasing capability and depth of what the machine can do. We've got tool use, but now we need to actually build really great tools. Computer use—an AI that can actually use a desktop—means it can really do anything you can do. But we also have to build things. How does enterprise credentialing work? How do audit trails and observability work? There's a lot of technology to build to catch up with what the core model capability is.</p>
+
+<p>The overall direction includes a really great speech interface so you can just talk to your computer naturally, as natural as this conversation, and it understands and does what you need. It has good advice. It surfaces that you've been working on something and you have a problem. You wake up in the morning and it says here's your daily report of how much progress your agents made overnight. Maybe it's running a business for you—that's going to be a huge application. The democratization of entrepreneurship is absolutely coming.</p>
+
+<p>It'll say here are these problems, there's this upset customer who wants to talk to a real human—you should go talk to them. The raising of the ceiling of ambition and challenges humanity can solve is also a next step. I'm very excited to see that if you remember AlphaGo move 37—a move no human would have come up with that was creative and changed humanity's understanding of the game. That's going to happen in every single domain: science, math, physics, chemistry, material science, biology, healthcare, drug discovery. It might even happen in literature and poetry. They're going to unlock human creative understanding and ideation in ways we can't imagine right now.</p>
+
+<p class="q">Why do you think that hasn't happened yet given how strong you say the models are?</p>
+
+<p>I think there's an overhang of what the models are capable of and how people are using them. It's almost our understanding of what is in these models. That's something still emerging. Even with no further progress, there's still a massive shift that will happen—the economy being powered by compute and AI. But there's something where what we've gotten very good at is training models on tasks that could be measured.</p>
+
+<p>We started with math problems and programming problems where you have a perfect verifier. A lot of progress in bringing us to more open-ended problems has been expanding the space of what can be created. The AI itself can help with that. If the AI is smart and understands things, you give it a rubric for how well a task goes. But for creative writing—is this a good poem?—that's much harder to grade. We've had less ability to teach the AI to experience and try things out. But all of that is changing and we have line of sight for it.</p>
+
+<p class="q">Peter Thiel has mentioned that if you're a math person, you're probably in deeper trouble from these models than if you're a words person. You were a member of math club back in the day. Aren't you concerned about that?</p>
+
+<p>I think it's much easier to see what we lose than what we gain. We understand deeply: I used to do things this way, I used to do this math competition, now the AI can do it. But it was never really about the math competition. That's not really what drives humanity. If you think about how we do work right now—there's a box, we type behind a box. We weren't doing that 100 years ago. That's not natural. That's not really what being human is about.</p>
+
+<p>Being human is about being here, being present, connecting with other humans. What we're going to see is that AI is going to free up so much time to increase human connection and build more bonds across people. That's something I'm extremely excited about.</p>
+
+<h3 class="chapter"><span>The Logic Behind OpenAI's Compute Spending</span><a href="https://www.youtube.com/watch?v=J6vYvk7R190&t=3315s">↪ 55:15</a></h3>
+
+<p class="q">As we shift to more agentic use cases, there's been discussion about whether bigger training runs really need to happen. If you get the model good enough, you could let it go out in the world and get much of the uplift in areas that aren't pre-training, which is what these big data centers are needed for. You work on scaling and led that process. What do you think about that argument?</p>
+
+<p>I think it misses something very important for how technology development goes. Every single step of the model production pipeline multiplies, so you want to improve all of them. What we see is that improving pre-training makes all the other steps much easier. It makes sense because a model able to learn faster is a model that's already more capable when it's trying out different ideas and learning from mistakes. That process is faster and needs fewer mistakes.</p>
+
+<p>The big shift has been from thinking you're just training a cerebral system and making it bigger and bigger to also thinking about trying things out, understanding how people are using it in the real world, and connecting that back into training. But it doesn't remove the value and importance of continuing that research. What's also shifted is we used to focus on raw pre-training capability but not as much on inference ability. Over the past 24 months, we've realized it's a balance.</p>
+
+<p>You can have a model with great base properties, but then it really needs to be inferrable because you need reinforcement learning and to serve it to the world. You don't necessarily go as big as you possibly could because you really think about all the downstream use and you want the thing that has the best intelligence times the cost, optimizing both together.</p>
+
+<p class="q">Do you still need Nvidia GPUs if things move mostly to inference?</p>
+
+<p>We absolutely do. Why? There are multiple reasons, but one is that even as the balance of inference versus training changes, you cannot get massive-scale training through any other way besides concentrating compute on one problem. There will be a deployment footprint that goes up quite a lot, but sometimes you have a particular pre-training run where you really want to concentrate compute. The Nvidia team is just incredible and does really amazing work, so we partner very closely with them.</p>
+
+<p class="q">Isn't there going to be a time where people just say we've pre-trained enough, the models are smart enough?</p>
+
+<p>I think that's a little bit like once humanity has solved all problems in front of us, maybe we can say that. But I think the ceiling of what we want to accomplish is something we've backed off from over the past 50 years. Even problems that seem clear—can we have healthcare for everyone that's actually preventative, not just targeting when people have a problem, really thinking about lifestyle and detecting potential diseases before they happen? That's a problem I think we can achieve through more intelligent models.</p>
+
+<p>There's probably some level where you totally solve that problem and then ask, do I need a model two times smarter? But there are other problems that demand that.</p>
+
+<p class="q">Let's talk about the math of building these data centers. OpenAI raised $110 billion earlier this year. What's the math behind that? Does that money go right into data centers? How do you think about returning money to investors? Talk about those calculations.</p>
+
+<p>It's as simple as this: the massive expense in front of us is compute. But you can think of compute not as a cost center but as a revenue center. Think of it like hiring salespeople. How many salespeople do you want to hire? As long as you can sell your product and have a scalable way to sell it, the more salespeople you have, the more revenue you make.</p>
+
+<p>We have continually found we cannot build compute fast enough to keep up with demand. I see this very concretely. Right now we have to make very painful decisions about what we're launching and where compute goes. I think we're going to experience this more broadly within the economy as we shift to an AI-powered economy. The question will be what problems get that massive compute. How do you scale so everyone can have a personal agent running for them? How can everyone be using systems like Codex? There just isn't enough compute in the world to do that, so we're trying to get ahead of that problem.</p>
+
+<p class="q">You're doing this with real confidence. I mean, sums of money the world has never seen put towards a project like this. When you're building a new category, how do you do it with certainty that it's going to work out?</p>
+
+<p>I think there's several components. The first is there's historical precedent at this point. From the moment we launched ChatGPT, I remember talking with my team saying, "How much compute should we buy?" I said, "All of it." They said, "No, really, how much?" I said, "No matter how much we try to build, I know we're not going to be able to keep up with the demand." That has been true every year since then.</p>
+
+<p>These compute purchases have to be locked in 18 months, sometimes 24 months, sometimes longer in advance of delivery. You really need to project forward. To date, most of our revenue has come from consumer subscriptions and will always be important. But the opportunity that's emerging now is knowledge work. We're seeing every single enterprise realize this technology actually works and to be competitive they need to adopt it. You can see the organic energy of software engineers using it and people using it for knowledge work inside enterprises.</p>
+
+<p>The willingness to pay and revenue growth is very clear right now. You just project that forward. We get to see line of sight to how these models will improve, which the world doesn't see. All of this together says the economy is massive—its growth will be about AI, about how well you leverage AI and computational power available to power it. You said consumer subscriptions are your biggest revenue source right now. Is the projection that that will flip and business will be biggest?</p>
+
+<p>I think it's very clear how quickly enterprise is moving. But it's not just enterprise because enterprise is changing what it means—really people using it for productive knowledge work. When we think about pricing, if you look at how Codex works now, if you have a ChatGPT consumer subscription you can use Codex. So I think it won't be as well defined as one category or another. It will really be about you as a user having a portal to the digital world like your laptop, and that's what revenue fundamentally comes from.</p>
+
+<p class="q">Dario said there are some players who are "yoloing," who pull the risk dial too far and you're concerned. I think he's referencing your infrastructure bets. What do you think about that?</p>
+
+<p>I just disagree. I think we've been very thoughtful and very much seeing what's coming. I think we will see even this year how everyone who is participating is going to be compute strapped. I think we have been the most forward in realizing this is coming and building in anticipation of how this technology is playing out.</p>
+
+<p>What we've seen is that other players kind of realized this probably late last year and started scrambling for compute and there really wasn't any. It's very easy to make statements like that, but I think everyone has realized this technology is working, it's here, it's real. Software engineering is just the first example of it and we're fundamentally limited by computational power available.</p>
+
+<p class="q">He said that if he's off by a little bit on his prediction, his company could potentially go bankrupt. Is that the same case for you?</p>
+
+<p>I think there's actually more degrees of offramp here. If you start to worry about the downside case—which is a very reasonable question—but the bet isn't about any one company. It's really about the sector. Do you believe this technology can be produced and deliver this massive amount of value that we see coming? I'll point to proof points. Software engineering—if you haven't tried Codex, the degree to which it's different is just hard to describe.</p>
+
+<p>Six months ago, we saw this internally but there were fewer proof points out there. Now there are proof points. Six months from now, I think everyone will feel it, and we will all feel the pain of having an awesome model with no availability because there's not enough compute.</p>
+
+<p class="q">As we looked at predictions for 2026, we had Ron Jon Roy say 2026 is going to be the year where everybody uses agents. I said, I'll believe that when I see it. And now I'm using agents. Here we go. What do you use it for?</p>
+
+<p>I use it to build tools internally for the people I work with to get on the same page about when videos are coming and what thumbnails need to look like. I'm also integrating things from YouTube so we can rank how videos are doing based on thumbnail. It's a custom-built piece of software I never would have paid for. That's one of the interesting things about this moment—software scales and is used by the masses, but when you use it, there are so many things not made for you. This allows us to interact with software in a much more natural way.</p>
+
+<p>I think a lot about the fact that how we've built computers has pulled us into this digital world. Think about how much time you spend scrolling through your phone, clicking buttons, connecting this thing to that thing. Why do you have to do that? Instead, the AI brings the machine closer to you, personalizes to you, understands what you're trying to accomplish. We have pop culture of computers you can talk to that go do stuff for you. It's starting to become real—something you can actually do. The amazingness of that is something where you just have to try it to understand. I definitely think it's a very special moment we're in.</p>
+
+<h3 class="chapter"><span>Why So Many People Still Distrust AI</span><a href="https://www.youtube.com/watch?v=J6vYvk7R190&t=3804s">↪ 1:03:24</a></h3>
+
+<p class="q">Why is AI so unpopular with the public? Pew says three times as many Americans expect the effects of AI on society to be negative as expect it to be positive. What do you think the reasoning is? Are you concerned about AI's brand?</p>
+
+<p>I think we need to show the country why AI is good for them, not just for the broad economy and GDP, but how it helps them in their lives. There are actually many very concrete stories I hear every day. There's a family where their child had headaches and medical issues, was denied an MRI. They researched symptoms with ChatGPT and realized they could make an argument to insurance to get the MRI. Turns out the child had a brain tumor. They were able to save his life because they used ChatGPT to get the right information.</p>
+
+<p>There are so many more stories like that—people whose lives have been deeply profoundly improved or saved through using this technology in a real way. That's a story that doesn't get out there. This is happening in so many people's lives but somehow the story isn't being told. There's certainly a lot of pop culture from the '90s and historical context that's very negative on AI, worrying about what could go wrong. But when people actually use AI, they find utility in it, they find value in it.</p>
+
+<p>I'm definitely very concerned that we haven't successfully helped people understand why this technology wave will improve their lives and help improve human connection. If you think about the opportunity and why AI is so important, I think it will be the source of economic and national security going forward. It's going to be about national competitiveness. There are other countries like China where AI pulls in the exact opposite direction. So yes, it's very important that we acknowledge that and understand how to get benefits for everyone.</p>
+
+<p>But we're also in a time that's politically unstable. There are concerns about work. Every time I speak with someone about AI, they ask, "How long do I have left to work in my job?" When I think about data centers, the polling is even worse. Pew says far more people say data centers are mostly bad for the environment, home energy costs, and quality of life nearby. We're at a moment where good jobs are tough to come by and people see data centers in their communities and say they're not good for the environment, energy, and quality of life. I mean, are they wrong?</p>
+
+<h3 class="chapter"><span>The Backlash Over Data Centers and Jobs</span><a href="https://www.youtube.com/watch?v=J6vYvk7R190&t=3943s">↪ 1:05:43</a></h3>
+
+<p>There's definitely a lot of misinformation about data centers. A good example is water usage. If you actually look at our Abilene facility, which is one of—if not the biggest supercomputers in the world, the amount of water it uses is the same as a household over the course of a year. So it's really negligible. Yet there's a lot of misinformation that these data centers consume a lot.</p>
+
+<p>Similar with power, we have a commitment that we're going to pay our own way to not drive up energy prices for people. That's something the industry is making as commitments now because it's very important we improve local communities. When we build data centers, we really try to go into those local communities, understand what's happening on the ground, and figure out how we can help.</p>
+
+<p>There's tax revenue associated with these data centers and jobs they create. There's a lot of benefits that come from them. So it's about how we show up, and that's a responsibility we take very seriously.</p>
+
+<p class="q">But if their power costs aren't going to go up, you have to bring in power, which means potentially more pollution. Isn't that a concern?</p>
+
+<p>I think there's much more nuance. If you look at how the grid works today, there's actually a lot of just stranded power—power that's there but not being utilized. You need to upgrade transmission systems. Putting that on us rather than on ratepayers is very important. There's lots of places where they have clean power that's actually being underutilized and just being thrown away.</p>
+
+<p>There's a lot of benefit from having real reasons for the grid—which is aging and obsolete in many places—to upgrade. That's something that actually has real benefits to the community. We've seen, for example, in North Dakota that people's rates have gone down because a data center showed up and helped with improving utilities for everyone.</p>
+
+<p class="q">One last question on politics. You gave $25 million to MAGA Inc., a pro-Trump PAC. You spoke with Wired about it and said anything you can do to support this technology benefiting everyone is a thing you will do. Does that make you a one-issue voter or supporter? I wonder: doesn't a stronger country make your goals much more feasible, even if a candidate isn't fully in support of what you're doing? Shouldn't a stronger country no matter what be the north star of any political activity? If that's the case, is that part of the donation?</p>
+
+<p>My wife and I made that donation. We've donated to bipartisan super PACs as well. I think this technology is coming quickly within the next couple years—really going to transform everything, going to be the underpinning of the economy—and it's not popular. We really want to support politicians who really lean into this technology and really engage with it.</p>
+
+<p>Certainly this technology is about uplifting us as a country. I am a one-issue donor. This is something where I feel like I have a unique contribution to make. It's really about expressing support for this technology as something we should be leaning into as a country.</p>
+
+<p class="q">What would you tell someone who's scared of AI? If you have a moment to speak directly to them, they might think it's going to take my job, pollute my community, change the world too fast. What's your message?</p>
+
+<p>The number one thing is try the tools. To really understand what it can do for you is something that only by experiencing AI that exists now will really hit home. We see so much opportunity, potential, and empowerment from this technology today.</p>
+
+<p>You can build things now. People who've never built a website before can build a website. If you want to start a small business and think about backend processing and management, the AI can help you right now. In your life, thinking about how it can help you with your health, help your loved ones, help you make or save money—these are all going to be on the table. It's much easier to see what's going to change than what you're going to gain. But it's worth giving it a fair shot to really try to understand both sides of the equation.</p>
+
+<p>That's one thing that doesn't get talked about in polling data. The people who've seen AI used but haven't tried it themselves, or people who've never tried AI, are much more negative. Power users and even people who use it casually are generally pretty positive about the technology.</p>
+
+<p>For myself, we've been thinking about this technology for a long time. What I see playing out in front of us is more amazing, more beneficial, and going to have a much more positive impact than we ever imagined. That's a special moment we're in.</p>
+
+<p class="q">How would you advise someone to prepare themselves for the future? It has to be more than just getting the tools. I have friends who come to me saying they don't know what's going to happen with their job or the world and just need to know what to do.</p>
+
+<p>The number one thing is understanding the technology. The people who get the most out of it approach it with curiosity, try it in their workflows, and get over that initial hump of having a blank box. They develop this sense of agency—I can be the manager, I can set direction, I can delegate, I can provide oversight.</p>
+
+<p>Developing that skill is going to be fundamental because we're building this technology for humans to help humans, foster human connection, and let humans spend more time doing what they want. The question is well, what do you want? Really trying to crystallize that and realize it with the help of this technology is going to be the most important thing.</p>
+    </div>
+  </main>
+  <script>
+  async function toggleYtBookmark(btn) {
+    const payload = {
+      title: btn.dataset.title,
+      url: btn.dataset.url,
+      filename: btn.dataset.filename,
+      interviewDate: btn.dataset.date,
+      source: 'YT',
+      expert: btn.dataset.channel,
+    };
+    try {
+      const resp = await fetch('/bookmark', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload),
+      });
+      const result = await resp.json();
+      setYtBookmarkState(btn, !!result.bookmarked);
+    } catch (e) {
+      console.error('Bookmark toggle failed:', e);
+    }
+  }
+  function setYtBookmarkState(btn, on) {
+    btn.classList.toggle('is-bookmarked', on);
+    btn.innerHTML = on ? '&#9733;' : '&#9734;';
+    btn.title = on ? 'Bookmarked' : 'Bookmark';
+    btn.setAttribute('aria-label', on ? 'Bookmarked' : 'Bookmark');
+  }
+  (async function initYtBookmarkState() {
+    const btn = document.getElementById('yt-bookmark-btn');
+    if (!btn || !btn.dataset.filename) return;
+    try {
+      const resp = await fetch('/bookmarks');
+      if (!resp.ok) return;
+      const list = await resp.json();
+      if (Array.isArray(list) && list.some(b => b && b.filename === btn.dataset.filename)) {
+        setYtBookmarkState(btn, true);
+      }
+    } catch (e) { /* offline -- leave default state */ }
+  })();
+
+  async function shareYtPage(btn) {
+    const original = btn.innerHTML;
+    btn.disabled = true;
+    btn.innerHTML = '&hellip;';
+    try {
+      const resp = await fetch('/share', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ filename: btn.dataset.filename }),
+      });
+      const result = await resp.json();
+      if (!result.ok) throw new Error(result.error || 'Share failed');
+      try { await navigator.clipboard.writeText(result.url); } catch (e) {}
+      btn.innerHTML = '&#10003;';
+      btn.title = 'Copied ' + result.url;
+      setTimeout(() => { btn.innerHTML = original; btn.disabled = false; btn.title = 'Share'; }, 2500);
+    } catch (e) {
+      console.error('Share failed:', e);
+      btn.innerHTML = '!';
+      btn.title = 'Share failed: ' + (e && e.message || e);
+      setTimeout(() => { btn.innerHTML = original; btn.disabled = false; btn.title = 'Share'; }, 3000);
+    }
+  }
+
+  // When the page is viewed from somewhere other than the local Reader
+  // server (e.g. a shared copy on GitHub Pages), hide the interactive
+  // buttons whose endpoints only exist on localhost.
+  (function hideLocalOnlyControls() {
+    const host = location.hostname;
+    const isLocal = host === 'localhost' || host === '127.0.0.1' || host === '';
+    if (isLocal) return;
+    const actions = document.querySelector('.yt-header-actions');
+    if (!actions) return;
+    const bookmark = actions.querySelector('#yt-bookmark-btn');
+    const share = actions.querySelector('#yt-share-btn');
+    if (bookmark) bookmark.remove();
+    if (share) share.remove();
+  })();
+  </script>
+</body>
+</html>
