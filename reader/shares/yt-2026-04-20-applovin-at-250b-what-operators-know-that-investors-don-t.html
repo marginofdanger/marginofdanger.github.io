@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>AppLovin at $250B: What Operators Know That Investors Don&#39;t | Pixels &amp; Profits</title>
+  <style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background: #faf8f5;
+  color: #2c2418;
+  line-height: 1.7;
+  padding: 0 1rem 2rem;
+}
+header {
+  position: sticky;
+  top: 0;
+  background: #faf8f5;
+  z-index: 100;
+  border-bottom: 2px solid #c4956a;
+  box-shadow: 0 2px 8px rgba(44,36,24,0.08);
+  padding: 0.6rem 1rem;
+}
+.header-inner {
+  max-width: 78ch;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header-title { font-size: 1rem; color: #2c2418; }
+.header-title strong { font-size: 1.1rem; }
+.header-link {
+  font-size: 0.85rem;
+  color: #8b6d4e;
+  text-decoration: none;
+  border: 1px solid #c4956a;
+  padding: 0.2rem 0.7rem;
+  border-radius: 4px;
+}
+.header-link:hover { background: #f0ebe3; }
+main {
+  max-width: 78ch;
+  margin: 0 auto;
+  padding-top: 0.5rem;
+}
+h2 {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #2c2418;
+  margin-top: 2rem;
+  margin-bottom: 0.5rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 2px solid #c4956a;
+}
+h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #3d3225;
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+section { margin-bottom: 1.5rem; }
+ul { margin: 0.5rem 0 0.5rem 1.5rem; }
+li { margin-bottom: 0.4rem; }
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0.75rem 0;
+  font-size: 0.92rem;
+}
+thead th {
+  background: #3d3225;
+  color: #faf8f5;
+  text-transform: uppercase;
+  font-size: 0.78rem;
+  letter-spacing: 0.05em;
+  padding: 0.5rem 0.75rem;
+  text-align: left;
+  font-weight: 600;
+}
+tbody td {
+  padding: 0.45rem 0.75rem;
+  border-bottom: 1px solid #e8e0d4;
+}
+tbody tr:nth-child(even) { background: #f0ebe3; }
+tbody tr:nth-child(odd) { background: #faf8f5; }
+.key-insight {
+  border-left: 4px solid #c4956a;
+  background: #f5efe8;
+  padding: 0.75rem 1rem;
+  margin: 0.75rem 0;
+  font-size: 0.93rem;
+  border-radius: 0 6px 6px 0;
+}
+.qa-pair { margin-bottom: 1.25rem; }
+.question-box {
+  background: #f0ebe3;
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+  margin-bottom: 0.5rem;
+}
+.analyst-label {
+  display: block;
+  font-size: 0.8rem;
+  color: #8b6d4e;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  margin-bottom: 0.25rem;
+}
+.answer { padding-left: 0.25rem; }
+.loading-section { opacity: 0.5; }
+.loading-indicator {
+  font-size: 1.2rem;
+  padding: 2rem;
+  text-align: center;
+  color: #8b6d4e;
+}
+
+/* YouTube transcript reader */
+
+/* Legacy .yt-meta-card -- kept so old output files still render cleanly.
+   New output uses .header-title.yt below instead. */
+.yt-meta-card {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  margin-bottom: 1.5rem;
+  background: #f5efe8;
+  border-left: 4px solid #c4956a;
+  border-radius: 0 6px 6px 0;
+  padding: 0.9rem 1rem;
+}
+.yt-meta-card img {
+  flex: 0 0 180px;
+  height: 101px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+.yt-meta-body { flex: 1; font-size: 0.93rem; }
+.yt-meta-title { font-weight: 700; font-size: 1rem; margin-bottom: 0.25rem; }
+.yt-meta-sub { color: #8b6d4e; margin-bottom: 0.35rem; }
+.yt-meta-url { font-size: 0.85rem; color: #3d3225; }
+
+/* YouTube sticky header uses the default 78ch-capped centered
+   container so it aligns with the body text column below. The
+   buttons sit at the right edge of that centered container. */
+header:has(.header-inner.yt) { padding: 0.75rem 1rem; }
+.header-inner.yt { gap: 1rem; }
+.header-title.yt {
+  display: flex;
+  gap: 0.9rem;
+  align-items: center;
+  min-width: 0;
+  flex: 1;
+}
+.yt-header-thumb { flex: 0 0 88px; line-height: 0; }
+.yt-header-thumb img {
+  width: 88px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 3px;
+  display: block;
+}
+.yt-header-text { min-width: 0; flex: 1; }
+.yt-header-text strong {
+  display: block;
+  font-size: 1rem;
+  line-height: 1.3;
+  color: #2c2418;
+  /* Allow wrapping to 2 lines so long podcast titles show in full. */
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.yt-header-sub {
+  font-size: 0.8rem;
+  margin-top: 0.2rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.yt-header-sub .yt-channel { color: #8b6d4e; }
+.yt-header-sub .yt-date,
+.yt-header-sub .yt-dur { color: #3d3225; font-weight: 600; }
+.yt-header-sub .yt-sep { color: #c4956a; margin: 0 0.5rem; }
+
+.yt-header-actions {
+  display: flex;
+  gap: 0.4rem;
+  align-items: center;
+  flex: 0 0 auto;
+}
+/* Shared box shape for the star + share + YT buttons so they're
+   visually identical. Applies to both the <button>s and the <a> link. */
+.yt-header-actions .yt-bookmark-btn,
+.yt-header-actions .yt-share-btn,
+.yt-header-actions .header-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font: inherit;
+  font-size: 0.85rem;
+  line-height: 1;
+  color: #8b6d4e;
+  background: transparent;
+  border: 1px solid #c4956a;
+  border-radius: 4px;
+  padding: 0;
+  box-sizing: border-box;
+  width: 2.2rem;
+  height: 2.2rem;
+  white-space: nowrap;
+  text-decoration: none;
+  cursor: pointer;
+}
+.yt-header-actions .yt-bookmark-btn { font-size: 1rem; }
+.yt-header-actions .yt-share-btn { font-size: 1.05rem; }
+.yt-header-actions .yt-share-btn:disabled { opacity: 0.6; cursor: default; }
+.yt-header-actions .yt-bookmark-btn:hover,
+.yt-header-actions .yt-share-btn:hover,
+.yt-header-actions .header-link:hover {
+  background: #f0ebe3;
+  color: #3d3225;
+}
+.yt-header-actions .yt-bookmark-btn.is-bookmarked {
+  background: #c4956a;
+  color: #faf8f5;
+  border-color: #a87d5a;
+}
+.yt-header-actions .yt-bookmark-btn.is-bookmarked:hover {
+  background: #a87d5a;
+  color: #faf8f5;
+}
+
+h3.chapter {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #3d3225;
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+h3.chapter a {
+  font-size: 0.8rem;
+  color: #8b6d4e;
+  text-decoration: none;
+  font-weight: 400;
+}
+
+.yt-body p {
+  margin-bottom: 1.15rem;
+}
+.yt-body p.q {
+  background: #f0ebe3;
+  border-left: 3px solid #c4956a;
+  border-radius: 0 6px 6px 0;
+  padding: 0.6rem 0.9rem;
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+  color: #3d3225;
+  font-style: italic;
+  font-size: 0.96rem;
+}
+.yt-body p.q::before {
+  content: "Q";
+  display: inline-block;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 0.72rem;
+  color: #8b6d4e;
+  letter-spacing: 0.05em;
+  margin-right: 0.5rem;
+  padding: 0.05rem 0.4rem;
+  border: 1px solid #c4956a;
+  border-radius: 3px;
+  vertical-align: 0.1em;
+}
+
+</style>
+</head>
+<body>
+  <header>
+    <div class="header-inner yt">
+      <div class="header-title yt">
+        <a class="yt-header-thumb" href="https://www.youtube.com/watch?v=wLcJQccpfhY" target="_blank"><img src="https://i.ytimg.com/vi_webp/wLcJQccpfhY/maxresdefault.webp" alt=""></a>
+        <div class="yt-header-text">
+          <strong>AppLovin at $250B: What Operators Know That Investors Don&#39;t | Pixels &amp; Profits</strong>
+          <div class="yt-header-sub">
+            <span class="yt-channel">GameMakers</span>
+            <span class="yt-sep">&middot;</span>
+            <span class="yt-date">Dec 30, 2025</span>
+            <span class="yt-sep">&middot;</span>
+            <span class="yt-dur">1h 51m</span>
+          </div>
+        </div>
+      </div>
+      <div class="yt-header-actions">
+        <button id="yt-bookmark-btn"
+                class="yt-bookmark-btn"
+                title="Bookmark"
+                aria-label="Bookmark"
+                data-filename="yt-2026-04-20-applovin-at-250b-what-operators-know-that-investors-don-t.html"
+                data-title="AppLovin at $250B: What Operators Know That Investors Don&#39;t | Pixels &amp; Profits"
+                data-url="https://www.youtube.com/watch?v=wLcJQccpfhY"
+                data-date="2025-12-29T17:02:34-08:00"
+                data-channel="GameMakers"
+                onclick="toggleYtBookmark(this)">&#9734;</button>
+        <button id="yt-share-btn"
+                class="yt-share-btn"
+                title="Share"
+                aria-label="Share"
+                data-filename="yt-2026-04-20-applovin-at-250b-what-operators-know-that-investors-don-t.html"
+                onclick="shareYtPage(this)">&#8599;</button>
+        <a class="header-link" href="https://www.youtube.com/watch?v=wLcJQccpfhY" target="_blank" title="Watch on YouTube" aria-label="Watch on YouTube">YT</a>
+      </div>
+    </div>
+  </header>
+  <main>
+    <div class="yt-body">
+    <h3 class="chapter"><span>Introduction & Panel Overview</span><a href="https://www.youtube.com/watch?v=wLcJQccpfhY&t=0s">↪ 00:00</a></h3>
+
+<p>Hello and welcome to Pixels and Profits. Today we're reviewing AppLovin, one of the most controversial companies in gaming, discussing its performance and outlook for 2026 and beyond. We have an expert panel here to go in depth.</p>
+
+<p>Joining me are Matthew Contraman and Brian Pegengh, the original Pixel Brothers. And our guest host is Josh Chanley, president and COO at Wildcard Games. Josh brings actual hands-on experience operating AppLovin products and is one of the leading experts in mobile ad monetization and user acquisition.</p>
+
+<p>Here's how we'll structure today: we'll recap AppLovin's financial performance, present both the bull and bear cases, discuss the competitive landscape, and end with each of our takes on AppLovin's future outlook.</p>
+
+<h3 class="chapter"><span>AppLovin Financial Recap: 127% YTD, 82% EBITDA Margins</span><a href="https://www.youtube.com/watch?v=wLcJQccpfhY&t=82s">↪ 01:22</a></h3>
+
+<p>The stock is up 127% year to date and roughly 8 to 10 times from the IPO. Revenue and EBITDA are up 72% in the first three quarters of 2025. Whether you're looking at stock performance or underlying fundamentals, they're absolutely killing it. It's been a losing bet for the last three years to bet against AppLovin.</p>
+
+<p>The EBIT margin rose to 82% in Q3 versus 77% a year ago, adjusted for the sale of their games business. They sold that fledgling games business nobody really wanted for $400 million and a 20% stake in Triple Dot—an excellent trade for AppLovin.</p>
+
+<p>For 2026, consensus expects 35 to 40% revenue growth and roughly 40% EBITDA growth. For 2027, analysts expect both revenue and EBITDA to grow around 25 and 30% respectively. On a valuation basis, the stock trades at 32 times forward revenue and 39 times forward EBITDA. The forward PE is 50 times, and the PEG ratio is basically one, meaning the premium valuation is justified by the growth.</p>
+
+<p>Relative to peers, AppLovin trades at the premium of the valuation comp set for adtech companies, but it's growing the fastest and is effectively a pure SaaS company now. When you compare it against broader SaaS companies rather than just adtech, its valuation, especially on an EV/EBITDA basis, is much more comparable.</p>
+
+<p>This is a tremendous growth story with fundamentally strong numbers. They got rid of the low-hanging fruit that was holding them back. The valuation rerating has already happened. Now the question is what's next.</p>
+
+<p>To the point about justified valuation: it's justified by expected future growth. If that growth slows or anything happens with it, we may see multiple compression. Their business model is also much more SaaS-like than other adtech companies, making them more immune to macro ad spending weakness that other companies face.</p>
+
+<p>There's also the market's infatuation with AI. The market loves clean AI stories, and companies that appropriately layer that into their narrative get premium multiples on top of the growth story. Companies like Micron and Asaco are trading at extended multiples because they have AI credibility and are executing.</p>
+
+<p>Beyond growth, the margins tell another story. Because AppLovin dominates gaming, they have enormous pricing power. The question is whether they can maintain those margins as they expand into ecommerce.</p>
+
+<h3 class="chapter"><span>Valuation Analysis: Is the Growth Priced In?</span><a href="https://www.youtube.com/watch?v=wLcJQccpfhY&t=292s">↪ 04:52</a></h3>
+
+<p>Understanding AppLovin's margins requires distinguishing between profit margin and take rate. Their revenue is the net amount—what demand side pays them minus what they pay the supply side. If a UA buyer gives AppLovin a dollar and AppLovin gives publishers 30 cents, their revenue is 70 cents. They don't report their take rate publicly, so nobody actually knows what it is, but that's an interesting area of expansion.</p>
+
+<p>The real question is whether they can continue that net revenue growth in the medium term, and the answer is yes. The bull case has three main parts: infrastructure lock-in, ecommerce expansion, and structurally disadvantaged competitors.</p>
+
+<h3 class="chapter"><span>The Bull Case: Infrastructure Lock-In Explained</span><a href="https://www.youtube.com/watch?v=wLcJQccpfhY&t=435s">↪ 07:15</a></h3>
+
+<p>When a single platform controls both the largest ad network and the mediator ensuring fair transactions between networks and publishers, those publishers lose leverage. Apple is that platform. They own mediation, charge competing networks a 5% fee, and exempt themselves. Competing networks have to be at least 95% as good as Apple's offering just to win auctions. That's a pretty low bar.</p>
+
+<p>The magic of machine learning isn't making predictions 50 times better—it's edging everybody out by 0.1% to win entire impressions. A 5% friction cost compounds into massive disadvantage over thousands of auctions.</p>
+
+<p>On top of the structural pricing advantage, Axon is supercharged by first-party data directly from MAX, their SSP. This makes ad ROAS campaigns the best in the world. For ad-monetized games, it's completely normal for over half of users to come from Axon.</p>
+
+<h3 class="chapter"><span>How MAX & Axon Create Publisher Dependency</span><a href="https://www.youtube.com/watch?v=wLcJQccpfhY&t=630s">↪ 10:30</a></h3>
+
+<p>AppLovin gates Axon behind MAX. If you want to monetize with ads, you can only use Axon if you use MAX. Publishers are locked in because if you leave MAX, you lose the ROAS that brings in half your users. That's why AppLovin has doubled revenue publicly without significantly increasing share of voice. Their take rate is doing the work.</p>
+
+<p>AppLovin is the apex predator in mobile right now. It puts game and app publishers in a tough position if they monetize with ads. Their supplier has tremendous negotiating power, though that doesn't mean publishers can't grow. AppLovin's pricing isn't so high that it constrains the market. Their business proves they're not prohibitively priced, but there is a loss of independence.</p>
+
+<p>The second bullish point: can they continue expanding pricing and take rates? With ecommerce expansion, the answer is yes. It's either an open secret or about to be one. Their ecommerce has been incredibly successful, especially through November. Three data points from their portfolio: AppLovin is the number one in-app ad ecommerce network, bigger than Meta and Google by both impressions and revenue. At one point, all 10 top creatives in their iOS games were AppLovin ecommerce ads. Around Black Friday, AppLovin passed Google on Android with ecommerce on Google's home turf.</p>
+
+<p>Most importantly for the stock, despite this massive inflow of new demand, AppLovin's share of voice is barely changing. This implies incredible margin expansion—they're not paying publishers more, but they're clearly charging advertisers much more.</p>
+
+<h3 class="chapter"><span>E-Commerce Expansion: AppLovin Beating Google on Android</span><a href="https://www.youtube.com/watch?v=wLcJQccpfhY&t=945s">↪ 15:45</a></h3>
+
+<p>Share of voice is the percentage of ad revenue a network wins. If a game earns a dollar in ad revenue and AppLovin is 25 cents of that, their share of voice is 25%. When it goes down, other networks are winning those auctions.</p>
+
+<p>New demand is flowing in at scale while AppLovin's share of voice barely changes, which means they're having an incredible margin expansion moment. That's a powerful argument for their growth. They're charging advertisers more while not paying developers more, unlike other networks.</p>
+
+<p>Google and Meta would need to step up their in-app game. AppLovin has shown it takes more than a year of success to build this kind of demand. Unity doesn't have the supply, and it takes years to build up. So unless Meta and Google bring their existing demand into the space, AppLovin will keep growing in the medium term.</p>
+
+<h3 class="chapter"><span>Why Meta & Google Can't Compete on iOS</span><a href="https://www.youtube.com/watch?v=wLcJQccpfhY&t=1330s">↪ 22:10</a></h3>
+
+<p>The final bull case point: Meta and Google are poorly positioned to counter. On iOS, AppLovin is a stronghold. If their share of voice is 30% on Android, it's 55 to 60% on iOS. They take the lion's share of ad revenue. This was gifted to them by Apple when they introduced ATT in 2021, making it very hard for Meta and Google to bid.</p>
+
+<p>Meta and Google combined have about 40% share on Android but bounce between 6 and 7% on iOS—a 33% gap. AppLovin typically performs about 30% better on iOS, a conveniently consistent number. Even if they shipped improvements in April next year, it would have taken Meta and Google five years to respond to ATT.</p>
+
+<p>The reason is higher regulatory standards. The DOJ and FTC aggressively investigate and litigate these two companies, making probabilistic attribution and fingerprinting much harder outside their owned and operated properties. Meta's owned and operated includes Instagram and Facebook. Google's includes search, YouTube, and other properties. When you own the property, you can fingerprint cleanly without passing data to strangers.</p>
+
+<p>Meta has launched probabilistic buying on their O&O since June, and they can run UA with fingerprinting on iOS. But neither is probabilistically buying on MAX, and AppLovin isn't incentivized to make it easy for them.</p>
+
+<p>The other challenge is creative relevancy. When an ecommerce advertiser gives money to Meta, ads appear in the feed or on Reels—like buying a candy bar at checkout. You're scrolling and need to stop and look. AppLovin's biggest source is rewarded video, a 30-second infomercial where attention is guaranteed. The most performant creative is very different.</p>
+
+<p>Third, there's the organizational DNA issue. Meta and Google are trillion-dollar businesses built on walled gardens with insanely clean first-party data. Meta's audience network has been an afterthought for years from development and account management perspectives. AppLovin and Unity don't have that problem.</p>
+
+<p>To summarize: AppLovin owns the infrastructure, they're successfully raising prices quickly, and there's no competitor well positioned to build and scale competing infrastructure. That's a pretty good moat.</p>
+
+<h3 class="chapter"><span>The Bear Case: Five Risks to Consider</span><a href="https://www.youtube.com/watch?v=wLcJQccpfhY&t=1720s">↪ 28:40</a></h3>
+
+<p>The bear case isn't about a broken company—AppLovin has earned credibility over the past few years. The bear case comes down to five things: valuation already reflecting success, growth durability, expansion optionality, scale effects, and competitive convergence.</p>
+
+<p>First, valuation reflects success. At $250 billion market cap, the stock isn't expensive because of a stretched multiple—it's expensive because earnings assume a lot goes right. The risk is disappointment, not multiple compression.</p>
+
+<p>Second, growth durability is doing all the work. Upside depends on self-serve adoption, Axon performance gains, and advertiser wallet share continuing to compound. If that flywheel slows even modestly, operating leverage flips from tailwind to limiter.</p>
+
+<p>Third, expansion is optional but not yet proven. Ecommerce and connected TV are attractive but not scaled or transparent enough to underwrite as core drivers yet. Failure to translate gaming-grade performance outside mobile would cap upside rather than break the business. Big disclosures could be a breakout even from here.</p>
+
+<p>Fourth, scale raises the bar. The last two years benefited from simplification and low-hanging improvements. As AppLovin gets larger, those gains are harder to find. This raises the bar for earnings surprises, which has been the main driver of upside.</p>
+
+<p>Fifth, competition only needs to narrow the gap. Google, Meta, Amazon, or Trade Desk don't need to beat AppLovin—they just need to get closer. That would compress differentiation without anything going operationally wrong. The downside isn't collapse; it's that expectations are already too damn high.</p>
+
+<h3 class="chapter"><span>SEC Investigation & Deplatforming Risk</span><a href="https://www.youtube.com/watch?v=wLcJQccpfhY&t=2120s">↪ 35:20</a></h3>
+
+<p>Some people think this is a binary bet, focusing on deplatforming risk. Since October, the SEC has been investigating AppLovin for data collection practices—fingerprinting and silent installs. If AppLovin gets deplatformed by Apple, that's about 60% of revenue. Most experts think this risk is negligible, around 2 to 3%, though some believe it's higher, maybe 20 to 30%.</p>
+
+<p>Whenever an adtech platform performs this well, people ask where the data is coming from. AppLovin's edge isn't just covert data harvesting—it's optimization across advertisers using platform compliance signals. Apple already redrew those ATT lines, and if this were non-compliant, it would have been broken by now. The platform risk isn't zero, but this looks more like modeling and execution advantage than a data loophole.</p>
+
+<p>On short seller reports, fingerprinting is the only real complaint. The challenge is everyone's doing it. Meta and Google are doing it now. Based on adtech legal strategies, AppLovin would be doing it as aggressively as possible and waiting for Meta and Google to get hit first. They're not going to make an example out of AppLovin first.</p>
+
+<p>The other issue raised is silent installs without app store sign. AppLovin experimented with this, but two publicly traded companies already do this at massive scale. Digital Turbine and Unity, through their acquisition of IronSource, both have pre-install products. They skip the app store through carrier relationships and factory preloads.</p>
+
+<p>When you talk about what adtech companies do, it's terrifying to hear. But Meta and Google operate inside their own properties, so it's contained. AppLovin works with external parties and is more transparent, so stuff leaks out more. The short sellers aren't material. What is material is deplatforming risk, but from an investment perspective, do you need to lose sleep? If you're concerned, you buy long-dated puts.</p>
+
+<p>This quarter, CEO Adam Farugi and chief administrative and legal officer Victoria Valenuela both sold over $50 million in stock. That's one point people bring up about insider selling indicating possible risk awareness.</p>
+
+<p>Short sellers also mention overattribution on the ecommerce side. AppLovin's click-through rates of 30 to 40% versus industry average of 3 to 5% suggests possible fraud or deception. The reality is more nuanced. AppLovin has replaced the X button with "open store," forcing clicks through to the app store. This isn't intentional fraud—it's how publishers and MMPs have chosen to attribute impact.</p>
+
+<p>Attribution uses impressions and clicks as signals. If Unity got an impression a week ago but AppLovin got an impression a minute ago with a click 45 seconds ago, Unity clearly caused the install. But if you own the platform and can see clicks, you can game last-click attribution. AppLovin partially pioneered this, and other networks do it too. There are no laws against this—it's how the industry measures incremental impact. This is definitely a challenge, but it's the current best option.</p>
+
+<p>When cherry-picking deplatforming percentages—whether 2 to 3% or 30%—you need to specify the timeframe. Fundamental tech investors work on quarters and years. If there's a 30% chance for the next five years, that's inconsequential because AppLovin will beat and raise numbers quarterly. They'll be a top-two holding everywhere, and not owning them means underperforming peers.</p>
+
+<h3 class="chapter"><span>The Infrastructure Risk Nobody's Discussing</span><a href="https://www.youtube.com/watch?v=wLcJQccpfhY&t=2535s">↪ 42:15</a></h3>
+
+<p>The real binary risk is if they lose their grip on supply. Publishers stay because they want access to MAX's ROAS campaigns. They could lose that grip if another platform increases LTV enough to overcome the loss of Axon ROAS, or if Axon's advantage shrinks enough to be overcome.</p>
+
+<p>AppLovin's take rates are extremely high because they've earned it. It's also a direct drag on LTV for ad-monetized games. If they take 50% and decrease to 30%, publishers going from 50 to 70 cents would see a 40% LTV increase. That would let them scale aggressively. If another platform like LevelPlay, AdMob, or new entrants increase LTV significantly, AppLovin would have to lower take rates or improve features.</p>
+
+<p>MAX is aging and largely underdeveloped. Some networks are taking advantage of open auctions causing problems for publishers and dragging down LTV. There are holes in the product offering. Unity opened their LevelPlay ad quality tool to work with MAX—why would they deliberately make MAX better? Because it gave them direct access to data flowing through AppLovin. By underdeveloping MAX, other parties create offerings that nibble away at AppLovin's data advantage.</p>
+
+<p>Ad-monetized publishers are using Axon ROAS less by scaling ecommerce. Their share of voice isn't exploding. Games are seeing fewer impressions from Axon, meaning publishers are literally less locked in. This quarter, Wildcard spent less on AppLovin than expected, and competitors are starting to overtake them on certain platforms.</p>
+
+<p>Unity, Moloco, and Mint Integral improved performance dramatically in 2025. In 2026, those trends should continue, and Meta and Google should likely enter the fray on iOS. Adding them together, publishers could monetize better, get better pricing terms, or face much lower take rates from demand brought by competitors.</p>
+
+<p>If AppLovin was 50% of spend last year and now is 30%, becoming 25% as ecommerce scales, and publishers are growing LTV, then Unity, Moloco, and Mint Integral could make up that quarter by buying the traffic Axon was buying. The structural risk is whether they can scale ecommerce without threatening the ROAS moat. AppLovin is running relatively lean—roughly 1,500 employees versus 5,000 at Unity. Does that restrict ability to invest in multiple growth projects simultaneously?</p>
+
+<p>When you're public, you prioritize based on short-term rewards. Longer-term bets that might not become material in a year or two may not get prioritized. They're looking at triple the revenue with a third of the employees.</p>
+
+<h3 class="chapter"><span>Competitive Landscape: Unity, Moloco, Google, Meta</span><a href="https://www.youtube.com/watch?v=wLcJQccpfhY&t=2910s">↪ 48:30</a></h3>
+
+<p>The competitive landscape breaks into three segments: core mobile gaming and mediation, ecommerce and open web, and connected TV. For core mobile gaming, Unity should theoretically be doing better. With Iron Source, they have a data advantage beyond just mediation and an ad network—they have the game engine.</p>
+
+<p>AppLovin tried to merge with Unity because they felt the engine would give them an advantage. That hasn't happened so far. It's unclear how much Vector leverages engine data. People hear mixed things about Vector performance. The killer instinct and operational execution aren't at the same level as AppLovin.</p>
+
+<p>Studios don't want to spend 100% of money with one company—it's bad practice. That's really the only thing giving hope for Unity. But the most important point is that they always have a chance because ad networks run two auctions: figuring out how much to charge demand side and how little to pay the supply side. AppLovin crushes both. The reason they can't crush it more is publishers buy through several networks. If you price too high on AppLovin, they'll buy cheaper elsewhere with Unity, Moloco, Google, Meta, or Liftoff.</p>
+
+<p>Even at seven-figure to low eight-figure UA budgets, there's enough signal to run multiple buyers across networks. So competition will always be in the running. But none are set up to fundamentally challenge AppLovin's core business. They are improving though, and some pricing power will probably be challenged. Moloco is rolling out new campaigns and models quickly but shows zero threat on mediation specifically.</p>
+
+<p>In gaming generally, Moloco has always been incredibly strong but structurally weak on in-app advertising—the inverse of AppLovin. Their execution is strong, they're patient, and they're private, so they have a different time horizon and are less aggressive.</p>
+
+<p>Google and Apple platforms could theoretically give themselves home field advantage but don't seem to. AppLovin has been trying to do this since Apple gave them an exemption to use IDFA exclusively. In five years, they haven't done anything with that. Whether unable, unwilling, or not caring isn't clear, but they've basically stopped there. People feared Apple would build a real ad network and invest in it, but it hasn't happened.</p>
+
+<p>Everyone wants someone to compete with AppLovin. But they don't just need to be better—they need to be better by enough to cover switching costs. AppLovin owns special, unique, valuable data. The only networks that could compete are ones with that special data: Google, Meta, and Unity if they execute on passing back engine data. Engine data on who purchases in what games is to IAP games as MAX data is to IAA gaming. In-app purchase gaming is probably 3 times the size of in-app ad gaming.</p>
+
+<p>Even with execution gaps compared to AppLovin, the opportunity is much larger. Unity Grow's team is developing well and handling Vector execution picture-perfectly. Communication hasn't always been perfect, but that isn't a product problem. Account management issues have happened, but not core product development. The team building this is excellent. They've more than doubled share this year and even recently show sequential growth—without engine data yet.</p>
+
+<p>The timeline question is critical. It took about six months to hit 40% share for Unity 6.0. How long for Unity 6.2? How long from critical mass of having that data pipe to actually executing? Shipping data pipelines always reveals things you didn't implement and critical things you need to ship next. That creates timeline risks. But the team may have crushed it, or maybe 6.0 was the actual goal and it took until 6.2 for data to be good enough.</p>
+
+<p>For ecommerce and open web, Meta and Google have owned and operated networks. As an investor, I don't care until they break out ecommerce numbers. It's a show-me story, not a demanding part of valuation. The growth rate is so incredibly high that you're dramatically expanding the TAM, but competitively, how far has AppLovin gone in pulling data and advantages before Google and Meta execute, especially on iOS?</p>
+
+<p>Most ecommerce money in North America is on iOS, where it's a more affluent customer. Meta and Google face two problems: getting correct creative in-app because their O&O is mostly pre-roll and mid-roll, and overcoming probabilistic attribution. We've seen what happens on Android where they have one of those problems, and AppLovin still wins. There will be more competition, but also more time for development because there's no iOS competition yet. That's clearly where AppLovin's development focus is now.</p>
+
+<h3 class="chapter"><span>Connected TV: Wild Card or Dead End?</span><a href="https://www.youtube.com/watch?v=wLcJQccpfhY&t=3500s">↪ 58:20</a></h3>
+
+<p>For connected TV, Trade Desk is the current leader in programmatic CTV. Trade Desk had execution issues last year, broadly attributed to Amazon taking their lunch. Entering that market means competing with an entrenched competitor with a decade of experience and Amazon. You can't fundamentally underwrite it as a given that AppLovin will win.</p>
+
+<p>If they can apply the same practices from mobile games to that market, the TAM is extremely bigger than mobile games—the entire TV advertising market. It's a call option. Interestingly, AppLovin has six times the EBITDA of Trade Desk with little more than double the revenue. On one hand, they have money to invest and could outcompete. On the other hand, they're extremely diligent financially and won't hurt margins chasing something that might be eaten by Amazon.</p>
+
+<p>Gaming demand is very attribution and performance focused, which is traditionally harder for CTV. It's much fuzzier, so targeting advantage is less. Over a 10-year view, connected TV ads will likely be way more targeted to individual household viewers—a huge area where multiple companies can win. Amazon, Meta, and Google have really hard problems: users start at the same point and must magically figure out what they want based on what they know about them.</p>
+
+<p>AppLovin's tech is different. They know what you're doing right now—are you playing Clash of Clans or an ad-monetized music app? It's like saying you're in a bookstore, then a car dealership. What do you need? That's a different machine learning problem. When you just open Facebook or turn on TV, it's way different. I wonder if in three years the technology AppLovin builds will be competitive with Amazon, where they do very well.</p>
+
+<h3 class="chapter"><span>Panel Predictions: AppLovin in 2026</span><a href="https://www.youtube.com/watch?v=wLcJQccpfhY&t=3940s">↪ 65:40</a></h3>
+
+<p>Directionally, the outlook is positive, but we're aware of market dynamics. The valuation tension isn't unique to AppLovin. Across TMT, the market pays for businesses combining real earnings, high incremental margins, and AI-enabled operating leverage. In that context, AppLovin is one of the cleaner expressions of that trade.</p>
+
+<p>What makes this constructive is that scale has reduced risk, not increased it. It's simpler than two years ago. Margins are real and execution is consistent. You're not underwriting a new strategy or management—just continuation. But it's not a stock where we're pounding the table like two years ago on multiple expansion. Expectations are high, so upside must come from earnings surprises, not from paying more for the same dollar of profit.</p>
+
+<p>In this environment, it'll work as a quality compounder, not a momentum trade. If the market stays constructive and fundamentals deliver, it'll grind higher. If the market derates broadly, AppLovin comes with it but probably from a position of strength.</p>
+
+<p>AppLovin has a beta of three with significant negative downside skew. If something bad happens or there's market liquidity drain, the last few drawdowns have been violent. Then it continues the upward trend because fundamentals don't change much. The macro is crazy right now. We're one tweet away from something that sends the market down 20%, and you can't account for that.</p>
+
+<p>AppLovin is an incredible business. Everyone at that company is exceptional. They've taken huge margins and returned huge value to customers simultaneously—something you don't see every day. 2026 will start with a victory lap they've earned.</p>
+
+<p>The ecommerce story is going to look really good, and nobody is ready to push back in Q1 with results. If there is a real competitor, 2026 is when it becomes clear. That's when the next chapter emerges. What will Google and Meta do on iOS? 2025 was the year they figured out operating an ad network for performance at scale on iOS. 2026, you have to assume, is when they creep out of their O&O.</p>
+
+<p>Unity has shown that Vector is really good but lacks unique data. LevelPlay isn't enough—too small. If Unity executes and gets special data, it enters the fray in gaming. AppLovin is expanding in ecommerce, but gaming secures supply. If they crush ecommerce but fall behind on gaming, they'll start losing supply. They have to do it all.</p>
+
+<p>Moloco is expanding aggressively into in-app ad customers, which could weaken Axon strength. New SSPs like CloudEx could also have implications. But the likelihood of material impact in 2026 is extremely low. The prediction is a victory lap for AppLovin, but the fog will lift on what competitive threats actually exist.</p>
+
+<h3 class="chapter"><span>Key Takeaways for Operators & Investors</span><a href="https://www.youtube.com/watch?v=wLcJQccpfhY&t=4530s">↪ 75:30</a></h3>
+
+<p>In the short term, AppLovin continues to roll. The opportunity on the IAP side might be for someone to roll up, maybe not. I can easily see AppLovin getting to a $500 billion-plus market cap. There are obvious macro factors, but the outlook is fundamentally positive.</p>
+
+<p>The caveat is that ecommerce within games is the real story, not ecommerce outside games. If AppLovin successfully takes 5% of ecommerce ad spend into games, that's massively successful for them. That money isn't coming from Google and Meta—it's coming from Snap, Yahoo, and other tertiary websites. Google and Meta won't move money from core business to AppLovin.</p>
+
+<p>When macro worsens, smaller ad tech stocks get hit harder because advertisers keep spending on what they know and trust while pulling back on ancillary players. Even if AppLovin succeeds in ecommerce, Google and Meta may not notice. The impact will hurt Snap and others much more than Google and Meta.</p>
+
+</body>
+    </div>
+  </main>
+  <script>
+  async function toggleYtBookmark(btn) {
+    const payload = {
+      title: btn.dataset.title,
+      url: btn.dataset.url,
+      filename: btn.dataset.filename,
+      interviewDate: btn.dataset.date,
+      source: 'YT',
+      expert: btn.dataset.channel,
+    };
+    try {
+      const resp = await fetch('/bookmark', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload),
+      });
+      const result = await resp.json();
+      setYtBookmarkState(btn, !!result.bookmarked);
+    } catch (e) {
+      console.error('Bookmark toggle failed:', e);
+    }
+  }
+  function setYtBookmarkState(btn, on) {
+    btn.classList.toggle('is-bookmarked', on);
+    btn.innerHTML = on ? '&#9733;' : '&#9734;';
+    btn.title = on ? 'Bookmarked' : 'Bookmark';
+    btn.setAttribute('aria-label', on ? 'Bookmarked' : 'Bookmark');
+  }
+  (async function initYtBookmarkState() {
+    const btn = document.getElementById('yt-bookmark-btn');
+    if (!btn || !btn.dataset.filename) return;
+    try {
+      const resp = await fetch('/bookmarks');
+      if (!resp.ok) return;
+      const list = await resp.json();
+      if (Array.isArray(list) && list.some(b => b && b.filename === btn.dataset.filename)) {
+        setYtBookmarkState(btn, true);
+      }
+    } catch (e) { /* offline -- leave default state */ }
+  })();
+
+  async function shareYtPage(btn) {
+    const original = btn.innerHTML;
+    btn.disabled = true;
+    btn.innerHTML = '&hellip;';
+    try {
+      const resp = await fetch('/share', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ filename: btn.dataset.filename }),
+      });
+      const result = await resp.json();
+      if (!result.ok) throw new Error(result.error || 'Share failed');
+      try { await navigator.clipboard.writeText(result.url); } catch (e) {}
+      btn.innerHTML = '&#10003;';
+      btn.title = 'Copied ' + result.url;
+      setTimeout(() => { btn.innerHTML = original; btn.disabled = false; btn.title = 'Share'; }, 2500);
+    } catch (e) {
+      console.error('Share failed:', e);
+      btn.innerHTML = '!';
+      btn.title = 'Share failed: ' + (e && e.message || e);
+      setTimeout(() => { btn.innerHTML = original; btn.disabled = false; btn.title = 'Share'; }, 3000);
+    }
+  }
+
+  // When the page is viewed from somewhere other than the local Reader
+  // server (e.g. a shared copy on GitHub Pages), hide the interactive
+  // buttons whose endpoints only exist on localhost.
+  (function hideLocalOnlyControls() {
+    const host = location.hostname;
+    const isLocal = host === 'localhost' || host === '127.0.0.1' || host === '';
+    if (isLocal) return;
+    const actions = document.querySelector('.yt-header-actions');
+    if (!actions) return;
+    const bookmark = actions.querySelector('#yt-bookmark-btn');
+    const share = actions.querySelector('#yt-share-btn');
+    if (bookmark) bookmark.remove();
+    if (share) share.remove();
+  })();
+  </script>
+</body>
+</html>
