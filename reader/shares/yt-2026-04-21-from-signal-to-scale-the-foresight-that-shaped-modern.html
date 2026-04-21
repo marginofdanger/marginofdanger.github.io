@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>From Signal to Scale: The Foresight that Shaped Modern Finance | Tony James with Declan Kelly</title>
+  <style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background: #faf8f5;
+  color: #2c2418;
+  line-height: 1.7;
+  padding: 0 1rem 2rem;
+}
+header {
+  position: sticky;
+  top: 0;
+  background: #faf8f5;
+  z-index: 100;
+  border-bottom: 2px solid #c4956a;
+  box-shadow: 0 2px 8px rgba(44,36,24,0.08);
+  padding: 0.6rem 1rem;
+}
+.header-inner {
+  max-width: 78ch;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header-title { font-size: 1rem; color: #2c2418; }
+.header-title strong { font-size: 1.1rem; }
+.header-link {
+  font-size: 0.85rem;
+  color: #8b6d4e;
+  text-decoration: none;
+  border: 1px solid #c4956a;
+  padding: 0.2rem 0.7rem;
+  border-radius: 4px;
+}
+.header-link:hover { background: #f0ebe3; }
+main {
+  max-width: 78ch;
+  margin: 0 auto;
+  padding-top: 0.5rem;
+}
+h2 {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #2c2418;
+  margin-top: 2rem;
+  margin-bottom: 0.5rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 2px solid #c4956a;
+}
+h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #3d3225;
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+section { margin-bottom: 1.5rem; }
+ul { margin: 0.5rem 0 0.5rem 1.5rem; }
+li { margin-bottom: 0.4rem; }
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0.75rem 0;
+  font-size: 0.92rem;
+}
+thead th {
+  background: #3d3225;
+  color: #faf8f5;
+  text-transform: uppercase;
+  font-size: 0.78rem;
+  letter-spacing: 0.05em;
+  padding: 0.5rem 0.75rem;
+  text-align: left;
+  font-weight: 600;
+}
+tbody td {
+  padding: 0.45rem 0.75rem;
+  border-bottom: 1px solid #e8e0d4;
+}
+tbody tr:nth-child(even) { background: #f0ebe3; }
+tbody tr:nth-child(odd) { background: #faf8f5; }
+.key-insight {
+  border-left: 4px solid #c4956a;
+  background: #f5efe8;
+  padding: 0.75rem 1rem;
+  margin: 0.75rem 0;
+  font-size: 0.93rem;
+  border-radius: 0 6px 6px 0;
+}
+.qa-pair { margin-bottom: 1.25rem; }
+.question-box {
+  background: #f0ebe3;
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+  margin-bottom: 0.5rem;
+}
+.analyst-label {
+  display: block;
+  font-size: 0.8rem;
+  color: #8b6d4e;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  margin-bottom: 0.25rem;
+}
+.answer { padding-left: 0.25rem; }
+.loading-section { opacity: 0.5; }
+.loading-indicator {
+  font-size: 1.2rem;
+  padding: 2rem;
+  text-align: center;
+  color: #8b6d4e;
+}
+
+/* YouTube transcript reader */
+
+/* Legacy .yt-meta-card -- kept so old output files still render cleanly.
+   New output uses .header-title.yt below instead. */
+.yt-meta-card {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  margin-bottom: 1.5rem;
+  background: #f5efe8;
+  border-left: 4px solid #c4956a;
+  border-radius: 0 6px 6px 0;
+  padding: 0.9rem 1rem;
+}
+.yt-meta-card img {
+  flex: 0 0 180px;
+  height: 101px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+.yt-meta-body { flex: 1; font-size: 0.93rem; }
+.yt-meta-title { font-weight: 700; font-size: 1rem; margin-bottom: 0.25rem; }
+.yt-meta-sub { color: #8b6d4e; margin-bottom: 0.35rem; }
+.yt-meta-url { font-size: 0.85rem; color: #3d3225; }
+
+/* YouTube sticky header uses the default 78ch-capped centered
+   container so it aligns with the body text column below. The
+   buttons sit at the right edge of that centered container. */
+header:has(.header-inner.yt) { padding: 0.75rem 1rem; }
+.header-inner.yt { gap: 1rem; }
+.header-title.yt {
+  display: flex;
+  gap: 0.9rem;
+  align-items: center;
+  min-width: 0;
+  flex: 1;
+}
+.yt-header-thumb { flex: 0 0 88px; line-height: 0; }
+.yt-header-thumb img {
+  width: 88px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 3px;
+  display: block;
+}
+.yt-header-text { min-width: 0; flex: 1; }
+.yt-header-text strong {
+  display: block;
+  font-size: 1rem;
+  line-height: 1.3;
+  color: #2c2418;
+  /* Allow wrapping to 2 lines so long podcast titles show in full. */
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.yt-header-sub {
+  font-size: 0.8rem;
+  margin-top: 0.2rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.yt-header-sub .yt-channel { color: #8b6d4e; }
+.yt-header-sub .yt-date,
+.yt-header-sub .yt-dur { color: #3d3225; font-weight: 600; }
+.yt-header-sub .yt-sep { color: #c4956a; margin: 0 0.5rem; }
+
+.yt-header-actions {
+  display: flex;
+  gap: 0.4rem;
+  align-items: center;
+  flex: 0 0 auto;
+}
+/* Shared box shape for the star + share + YT buttons so they're
+   visually identical. Applies to both the <button>s and the <a> link. */
+.yt-header-actions .yt-bookmark-btn,
+.yt-header-actions .yt-share-btn,
+.yt-header-actions .header-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font: inherit;
+  font-size: 0.85rem;
+  line-height: 1;
+  color: #8b6d4e;
+  background: transparent;
+  border: 1px solid #c4956a;
+  border-radius: 4px;
+  padding: 0;
+  box-sizing: border-box;
+  width: 2.2rem;
+  height: 2.2rem;
+  white-space: nowrap;
+  text-decoration: none;
+  cursor: pointer;
+}
+.yt-header-actions .yt-bookmark-btn { font-size: 1rem; }
+.yt-header-actions .yt-share-btn { font-size: 1.05rem; }
+.yt-header-actions .yt-share-btn:disabled { opacity: 0.6; cursor: default; }
+.yt-header-actions .yt-bookmark-btn:hover,
+.yt-header-actions .yt-share-btn:hover,
+.yt-header-actions .header-link:hover {
+  background: #f0ebe3;
+  color: #3d3225;
+}
+.yt-header-actions .yt-bookmark-btn.is-bookmarked {
+  background: #c4956a;
+  color: #faf8f5;
+  border-color: #a87d5a;
+}
+.yt-header-actions .yt-bookmark-btn.is-bookmarked:hover {
+  background: #a87d5a;
+  color: #faf8f5;
+}
+
+h3.chapter {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #3d3225;
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+h3.chapter a {
+  font-size: 0.8rem;
+  color: #8b6d4e;
+  text-decoration: none;
+  font-weight: 400;
+}
+
+.yt-body p {
+  margin-bottom: 1.15rem;
+}
+.yt-body p.q {
+  background: #f0ebe3;
+  border-left: 3px solid #c4956a;
+  border-radius: 0 6px 6px 0;
+  padding: 0.6rem 0.9rem;
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+  color: #3d3225;
+  font-style: italic;
+  font-size: 0.96rem;
+}
+.yt-body p.q::before {
+  content: "Q";
+  display: inline-block;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 0.72rem;
+  color: #8b6d4e;
+  letter-spacing: 0.05em;
+  margin-right: 0.5rem;
+  padding: 0.05rem 0.4rem;
+  border: 1px solid #c4956a;
+  border-radius: 3px;
+  vertical-align: 0.1em;
+}
+.yt-body p.q a {
+  font-style: normal;
+  font-size: 0.8rem;
+  color: #8b6d4e;
+  text-decoration: none;
+  margin-left: 0.4rem;
+  white-space: nowrap;
+}
+.yt-body p.q a:hover {
+  text-decoration: underline;
+}
+
+</style>
+</head>
+<body>
+  <header>
+    <div class="header-inner yt">
+      <div class="header-title yt">
+        <a class="yt-header-thumb" href="https://www.youtube.com/watch?v=MIMiXpn9Gsg" target="_blank"><img src="https://i.ytimg.com/vi_webp/MIMiXpn9Gsg/maxresdefault.webp" alt=""></a>
+        <div class="yt-header-text">
+          <strong>From Signal to Scale: The Foresight that Shaped Modern Finance | Tony James with Declan Kelly</strong>
+          <div class="yt-header-sub">
+            <span class="yt-channel">Consello</span>
+            <span class="yt-sep">&middot;</span>
+            <span class="yt-date">Apr 9, 2026</span>
+            <span class="yt-sep">&middot;</span>
+            <span class="yt-dur">46m</span>
+          </div>
+        </div>
+      </div>
+      <div class="yt-header-actions">
+        <button id="yt-bookmark-btn"
+                class="yt-bookmark-btn"
+                title="Bookmark"
+                aria-label="Bookmark"
+                data-filename="yt-2026-04-21-from-signal-to-scale-the-foresight-that-shaped-modern.html"
+                data-title="From Signal to Scale: The Foresight that Shaped Modern Finance | Tony James with Declan Kelly"
+                data-url="https://www.youtube.com/watch?v=MIMiXpn9Gsg"
+                data-date="2026-04-09T02:00:24-07:00"
+                data-channel="Consello"
+                onclick="toggleYtBookmark(this)">&#9734;</button>
+        <button id="yt-share-btn"
+                class="yt-share-btn"
+                title="Share"
+                aria-label="Share"
+                data-filename="yt-2026-04-21-from-signal-to-scale-the-foresight-that-shaped-modern.html"
+                onclick="shareYtPage(this)">&#8599;</button>
+        <a class="header-link" href="https://www.youtube.com/watch?v=MIMiXpn9Gsg" target="_blank" title="Watch on YouTube" aria-label="Watch on YouTube">YT</a>
+      </div>
+    </div>
+  </header>
+  <main>
+    <div class="yt-body">
+    <h3 class="chapter"><span>Leadership Built on Grit and Discipline</span><a href="https://www.youtube.com/watch?v=MIMiXpn9Gsg&t=0s">↪ 0:00</a></h3>
+<p>The biggest decisions are hard to analyze. You can make a lot of pros and cons when you look at it, and it doesn't always lead to a clear answer. A lot of times when I face big decisions, it's not a question of sitting down and deciding. By the time that decision is in front of me, I already know what I think the answer is.</p>
+<p>Welcome to Grey Matter. I'm Declan Kelly, Founder, Chairman and CEO of Consello. I've spent the last 30+ years advising the CEOs who are leading the world's top companies. If there's one thing I've learned in that time, the best leaders think differently. That wiring—that gray matter—separates the truly exceptional leaders from everyone else. Understanding it is what allows us to help the best in the world be even better.</p>
+<p>This podcast exists because the most accomplished leaders agreed to sit down and talk about something they rarely discussed publicly: how their minds actually work. Over four decades at the highest levels of finance, Tony James has made a career of spotting high growth opportunities before anybody else. At DLJ, he created leveraged buyout and private capital businesses that became the model for the entire industry.</p>
+<h3 class="chapter"><span>Welcome to Grey Matter: Tony James at Home in New York</span><a href="https://www.youtube.com/watch?v=MIMiXpn9Gsg&t=56s">↪ 0:56</a></h3>
+<p>While leading Blackstone, he built entirely new investment businesses and transformed that firm into the world's largest alternative asset manager. As Chairman of Costco, he has safeguarded the membership model that made it one of the most distinct and successful retailers in the entire world. Each time, his instincts have led to significant growth and reshaped how entire industries operate. His mark on the business world has been profound and long lasting. This is Tony's story. This is Grey Matter.</p>
+<p>Tony James. Good morning, and welcome to Grey Matter.</p>
+<p>Thank you, Declan. Nice to see you. Thank you for inviting us into your wonderful home.</p>
+<p>We're looking out on Central Park here. Even though you were born in Michigan and grew up in Boston and went to school at Harvard, New York has always been central to your story. I guess this resonates with you when you look out that window. I know you can't help but feel really lucky to look at that every day. There's the city right at your feet—the biggest city in America and, I would argue, one of the most vibrant in the world. I just love it.</p>
+<h3 class="chapter"><span>The College Soccer Player Nobody Knew About</span><a href="https://www.youtube.com/watch?v=MIMiXpn9Gsg&t=139s">↪ 2:19</a></h3>
+<p class="q">The thing I didn't realize about you when I was looking into your history, even though we know each other so well, is that you were a soccer player. When you went to college, you were a walk-on on the soccer team and got to the NCAA Final Four three times. Nobody knows that about you. So how did that all come about? <a href="https://www.youtube.com/watch?v=MIMiXpn9Gsg&t=139s">&#x21AA; 2:19</a></p>
+<p>Well, I grew up in a small town, and we had one sport: soccer. I loved it. I went to Chote, hoped to play, but got very sick my first year and never got on that track. Then I decided maybe the better route to college was tutoring handicapped kids. When I got to college, I think we all struggle in our first few years finding our way. Who am I? Am I going to make it? Things like that. Soccer was an antidote to that. I could go out there on that field, play my heart out with those guys. It was simple, one-dimensional. I never thought about failing out of Harvard or what kind of person I was going to be. That really helped. And it gave me a whole new set of friends. It served a lot of purposes other than just playing soccer. But when you cut through it, it was just fun.</p>
+<p class="q">You don't like to talk about yourself. In fact, I know you don't do interviews like this, which I really appreciate. But you grew up in a very interesting household where your dad was the president of Arthur D. Little. So you had a front seat looking straight into the world of corporate America from a young age. That must have been extremely formative in terms of how you thought of the world. <a href="https://www.youtube.com/watch?v=MIMiXpn9Gsg&t=179s">&#x21AA; 2:59</a></p>
+<p>It certainly oriented me towards business from the start because he was a management consultant and he traveled all over the world. We talked a lot about business problems, and I found that interesting. I would say my dad was a tough guy. He was known at Arthur Little as the Prussian Army General. I think part of that was his nature—some of that I have and sometimes need to be mindful of—but some of it also came from World War II. He went into the war at nineteen and was a forward observer for Patton. Always behind enemy lines, directing troops and artillery.</p>
+<h3 class="chapter"><span>Growing Up With a Father Who Served Under Patton</span><a href="https://www.youtube.com/watch?v=MIMiXpn9Gsg&t=255s">↪ 4:15</a></h3>
+<p>Three times when he was in a jeep, the driver next to him was killed. Three times. Once he got into Germany, he liberated concentration camps. He was in the Battle of the Bulge. He saw the worst of the worst of the worst. He came out of there with what I think today we would call PTSD, which made him kind of aggressive and angry and difficult. I loved him, I respected him, but we butted heads.</p>
+<p class="q">I guess you learned yourself by watching that how not to be that, because you are known for being tough in business but also being empathetic. <a href="https://www.youtube.com/watch?v=MIMiXpn9Gsg&t=305s">&#x21AA; 5:05</a></p>
+<p>I did try to learn from that. I think his over-toughness capped his career. He got right up below the CEO but didn't make it to CEO. That was a great disappointment to him. But more than that, I dealt with the consequences of it, and I didn't want to be exactly that person. There was a lot to admire about him, but I keep trying to mitigate my own personality and make sure I don't fall into some of the same traps.</p>
+<h3 class="chapter"><span>Baker Scholar, John Harvard Scholar</span><a href="https://www.youtube.com/watch?v=MIMiXpn9Gsg&t=344s">↪ 5:44</a></h3>
+<p class="q">When you look at your academic record and your history—which not many people may be aware of—it's astounding. You were a Baker Scholar at HBS, a John Harvard Scholar, first in your class, a walk-on to the football team, and all the things you've done in your career. This academic aspect and the ability to parse through things that matter and get to the point has really been there since you were quite young. <a href="https://www.youtube.com/watch?v=MIMiXpn9Gsg&t=374s">↪ 6:14</a></p>
+<p>That was never my self-image, actually. Up until high school, I thought I was okay. There were smarter kids. All the girls seemed smarter than all the guys—they probably were. I was content to do my thing. I always felt my secret power was just grit and willingness to put up with more pain than just about anyone else.</p>
+<p>When I played football, it was tackle football but pickup with no pads. I would hit as hard as I possibly could, barely be able to get up. But the big guy I hit didn't want to get hit again. It didn't hurt him as much as it hurt me. But I always felt I had the ability just to grind it out. Whenever I got really threatened or had real problems, I fell back on that.</p>
+<h3 class="chapter"><span>Stay Calm. Stay Positive. Never Give Up.</span><a href="https://www.youtube.com/watch?v=MIMiXpn9Gsg&t=405s">↪ 6:45</a></h3>
+<p>My successor at Blackstone, John Gray, says it really well. He says: stay calm, stay positive, never give up. It's kind of a mantra. I didn't articulate it that well, but I lived that, and it always served me well. I never get overwhelmed. And I'm competitive, let's face it. But you also are very patient, even though you don't think of yourself as patient. If you look at all the various things you've done over an extended period of time, you showed great patience.</p>
+<p class="q">When you left college, you could have gone anywhere. You were offered jobs by everybody and you chose DLJ, which was an unusual choice. Why did you choose DLJ? <a href="https://www.youtube.com/watch?v=MIMiXpn9Gsg&t=477s">&#x21AA; 7:57</a></p>
+<p>That's a good question. Part of it was ignorance, candidly. But what I liked about DLJ was that it was young, it was growing. The people were down to earth. The big banks—Morgan Stanley, Goldman Sachs—felt so stiff and regimented. When I got out of school, my biggest fear was not being able to fully utilize my brain and creativity. I didn't see how slotting into one of those big, regimented organizations would be conducive to that.</p>
+<p>I was never someone that had great respect for authority. I liked doing my own thing or being my own boss. Those regimented organizations with layers and layers of authority and central control just didn't feel like a good fit. But with a young, growing, fluid company, I could have immediate impact beyond what I deserved and get opportunities driven by the growth of the firm, not just my own personal growth. So I made an instant choice. I make pretty much instant gut choices.</p>
+<h3 class="chapter"><span>The Gut-Decision Maker: How Tony Approaches Life's Biggest Choices</span><a href="https://www.youtube.com/watch?v=MIMiXpn9Gsg&t=540s">↪ 9:00</a></h3>
+<p class="q">Do you do that a lot? <a href="https://www.youtube.com/watch?v=MIMiXpn9Gsg&t=553s">&#x21AA; 9:13</a></p>
+<p>I do. Is there an emotional aspect to how you think about these things at all? The biggest decisions are hard to analyze. You can make a lot of pros and cons when you look at it, and it doesn't always lead to a clear answer. Investment decisions, I'm very analytical. But life decisions—should I get married, take that job, get into a new business—a lot of times when I face these decisions, it's not a question of sitting down and deciding. By the time that decision is in front of me, I already know what the answer is.</p>
+<h3 class="chapter"><span>The 1986 "M&A Whiz Kid" and the Culture That Made DLJ Special</span><a href="https://www.youtube.com/watch?v=MIMiXpn9Gsg&t=585s">↪ 9:45</a></h3>
+<p class="q">I came across an article from 1986 from the Wall Street Journal that described you at the time as an up-and-coming M&A whiz kid. Not long afterwards, you were running the entire M&A group. There was something about the culture. When I came to New York first in 2000, people talked about DLJ as the model. That was the business that differentiated itself and became the standard bearer for so many cultural aspects of how you run these businesses. You were right there in the middle of that. What was it like? <a href="https://www.youtube.com/watch?v=MIMiXpn9Gsg&t=596s">&#x21AA; 9:56</a></p>
+<p>That's a very insightful comment. Before I answer, just to reinforce that: even now, DLJ people get together at least a couple times a year in big groups and just celebrate the old firm. I've never seen anything quite like it. There's still just a love of that firm. I think it partly stemmed from Dick Jenrette, who was a wonderful gentleman and cared about his people—deeply and authentically.</p>
+<p>But partly it was just the way that culture developed and was built. I'm not sure anyone necessarily mapped it out, but it happened and it worked, and we kept reinforcing it. It was all about team. It was all about empowering your people, pushing down authority. One hundred percent of our people's time was out there trying to beat the competition and serve the client. Never internal politics. We had a reputation for being well paid. But actually, we were like seven out of eight. People wanted to believe they were well paid because they loved the firm and wanted an excuse to say it, and they convinced themselves of that. We had very low turnover. Our people just felt really good about their lives. And it's amazing what you can do if you have a group of people that play like a team, believe in themselves, and always want to do the right thing.</p>
+<p class="q">What I find really interesting is that you in many ways are the father of an entire industry. The way you approached what you did at DLJ and then subsequently at Blackstone—everybody else has copied the model that you personally created. Inside DLJ, the CEO and all the leaders used to go to the canteen and eat sandwiches with the people. I remember when you sold to Credit Suisse First Boston, two years later you left. But I think one of the reasons people think you left is that entire specialness went away because you replaced it with a very big company. Is that fair? <a href="https://www.youtube.com/watch?v=MIMiXpn9Gsg&t=685s">↪ 11:25</a></p>
+<h3 class="chapter"><span>Selling DLJ for $12 Billion at the All-Time Peak</span><a href="https://www.youtube.com/watch?v=MIMiXpn9Gsg&t=690s">↪ 11:30</a></h3>
+<p>Yeah, that is fair. When we sold DLJ, I was the one employee where, as part of the merger agreement, I had to agree to stay for two years. I don't mean to say I was forced to do that because I would have done it anyway for my people. By then I had become the number two person at DLJ, and I lived for my team. I felt such a burden to take care of them.</p>
+<p>This merger was brilliant in one way: we picked the all-time peak of the market. We sold DLJ for twelve billion dollars. Morgan Stanley sold a much bigger firm a few years later for eight billion. We got all cash. DLJ did not have the capabilities to survive and succeed as an independent company. I saw that, but a lot of the people didn't. So they kind of blamed me for selling them down the river into a merger. But we had to take that price. It was by far the best price for our shareholders. Above all else, we owed our shareholders the best price.</p>
+<p>But the culture differences were so different. Instead of empowerment and believing in your people and playing like a team, it was central control. Don't trust your people to do anything. Don't even trust the people that watch them. They need watchers to watch the watchers. And politics reigns. It was just so different. Even though on paper Credit Suisse was the fourth largest securities firm and DLJ was the fifth, together they were number one. But this was one plus one equals one at the end of the day.</p>
+<p>When I started, right after the merger, I had forty-two hundred people in investment banking. I had responsibility for investment banking and derivatives and international and merchant banking, all the alternatives businesses. Two years later, twenty-two hundred people. That was a lot of bloodletting. While that happened, the good thing about selling at the peak was we got a great price. The bad thing was we had a very severe downturn going into the 2000s with bloodletting everywhere. We weren't prepared for that. We were still trying to figure out the merger, much less preparing for a very severe downturn. It was brutal.</p>
+<h3 class="chapter"><span>Building the Merchant Banking Model Wall Street Would Copy</span><a href="https://www.youtube.com/watch?v=MIMiXpn9Gsg&t=840s">↪ 14:00</a></h3>
+<p class="q">Before all that happened, when you built DLJ and did what you did with the team, you took what was a traditional banking business and turned it into a merchant bank. You started doing things nobody expected, investing your own capital, proprietary deals, expanding into all the other things that now become the normal model. When you were doing that, were you conscious of the fact that you were building something that didn't exist on Wall Street? <a href="https://www.youtube.com/watch?v=MIMiXpn9Gsg&t=849s">↪ 14:09</a></p>
+<p>One hundred percent conscious. But I wouldn't give myself credit for being prescient so much as necessity. I was at DLJ, it was a nothing of a firm. There were hundreds of bigger brokerage firms. Think about Lehman Brothers, Loeb Rhoades, E.F. Hutton, PaineWebber—not to mention Morgan Stanley, Goldman Sachs, and Merrill Lynch. We were trying to compete against giants that had been in business since the '30s with embedded relationships. The challenge was: how do we find a way to win?</p>
+<p>We're not going to beat Goldman Sachs or Morgan Stanley by being more corporate or traditional or bigger, or beat Merrill Lynch with bigger balance sheets or more brokers. We had less of everything than everyone else. So to me it was all about how do we win? This funny little business started up about nineteen eighty. There were a couple of leveraged buyouts. I was running the M&A group, and DLJ had a little venture capital business. So we'd seen the power of investing our own capital. I put up my hand and said to the leaders of the firm, I'd like to get us into this business.</p>
+<p>This is an interesting thing for us. I mean, I'd much rather compete against KKR—they had like five people—than Goldman Sachs. The management said no, you're an M&A guy. We're going to give this to the venture capital people because they're the principals. I kept showing them deals and they kept saying no. Then someone else would do the deal. Finally the firm said okay, you can have it.</p>
+<p>We built that right away. We couldn't necessarily win clients if we had that competition. But if we owned them, guess who got the business? Then to facilitate the leveraged buyout business, we needed to build a high yield business. When the downturn came, DLJ became a dominant high yield firm for a dozen years, accounting for forty percent of all the trading volume. There's very few firms that are as dominant a niche as we were.</p>
+<p>Then there was another credit crisis in '87, so we created the restructuring business—restructuring advisory—which didn't really exist except for boutique firms. And one thing led to another, and we created all these businesses around the ecosystem. Then we created new private capital businesses: real estate, private credit, funds of funds, and so on. It was our end run around the entrenched big guys that allowed us to win.</p>
+<p class="q">When you're walking around the Upper East Side or anywhere else and you're sitting looking at all these storied firms that now basically took the entire playbook and said we're going to do it just like that, in your private moments when you think about how it all came about, you created an architecture that the rest of Wall Street copied. That's almost more true of Blackstone than DLJ. Because at DLJ, other firms did try to have embedded inside their firms these principal businesses. But then in 2007, they all melted. So not many firms actually sustain that model anymore. <a href="https://www.youtube.com/watch?v=MIMiXpn9Gsg&t=1079s">↪ 17:59</a></p>
+<p>They have pieces of it. They have the high yield, they have restructuring, and pieces of the business. This was one of the things that made the Credit Suisse deal not work so well. When the traditional bankers with all these corporates merged with the DLJ bankers, they hated the fact that DLJ brought ownership of companies because they didn't want Credit Suisse to own a piece of a company that competed with a client. The weight of employees was heavily Credit Suisse, maybe eighty-twenty. Profits were about equal, but employees were eighty-twenty. We couldn't win that weight of resistance against the principal business. One after another, they just cut and dismantled it.</p>
+<h3 class="chapter"><span>Joining Blackstone: The Unicorn Fit With Steve Schwarzman</span><a href="https://www.youtube.com/watch?v=MIMiXpn9Gsg&t=1020s">↪ 17:00</a></h3>
+<p class="q">When you left and went to Blackstone, again an unusual choice—could have gone to lots of places—and you've described your relationship with Steve Schwarzman as one in a gazillion where you were basically the yin and yang perfectly to each other. What was your reasoning for going there in the first place? <a href="https://www.youtube.com/watch?v=MIMiXpn9Gsg&t=1019s">↪ 16:59</a></p>
+<p>First of all, Blackstone had had its struggles for a couple of years. Steve had been trying to change it, and he wanted to make change. So he reached out to me when I decided to leave. It was almost a perfect match. Blackstone's range of businesses—they had advisory businesses and principal businesses. I had run and built every single one of those businesses. There's no one else in the world that had done that. So I was a unique fit.</p>
+<p>They had the perfect portfolio of businesses. I was the only one out there that had really built all those businesses from M&A, restructuring, all the principal businesses—all of them. That was kind of a unicorn. Steve and I are very different in terms of personality types and how we arrive at decisions. But we were a great team. We almost always agreed. We got along very well, and he was the best boss I've ever had, actually. The combination of empowerment, which he did for me, and engagement—not being divorced from the key business decisions. Always there when we needed him. Setting the ambition, setting the intensity, setting the tone of the firm. He was a great partner and great boss.</p>
+<h3 class="chapter"><span>From $20 Billion to a Trillion: The Run Nobody Expected</span><a href="https://www.youtube.com/watch?v=MIMiXpn9Gsg&t=1170s">↪ 19:30</a></h3>
+<p>You ended up creating an entire palette, a smorgasbord of businesses—the entire combination of all the things that you wanted to do. That was the first time in financial services that the word trillion was ever used. When I went to Blackstone, it was more like going to a law firm. A small partnership. We had twenty billion of assets under management scattered around a few businesses—some of which were shrinking and some were growing—and some advisory businesses that had fallen sixty or seventy percent over the last five years. It was kind of a nice little boutique. It was different from some other firms in that it had a mix of businesses. The firm had just taken one hundred million from AIG that valued the firm at a billion dollars.</p>
+<p>When I left, it was a hundred fifty billion dollar business. We'd gone from twenty billion of AUM to a trillion. It was a run that was wildly more than we expected. But the whole economy and markets changed. It wasn't just Blackstone succeeding alone. There was a titanic shift from public to private capital markets. A lot of it, honestly, we were in the right place at the right time. And we had our surfboard. We were on top of the wave. And we rode it.</p>
+<h3 class="chapter"><span>Going Public, Buying GSO, and the Contrarian Bet During the Financial Crisis</span><a href="https://www.youtube.com/watch?v=MIMiXpn9Gsg&t=1320s">↪ 22:00</a></h3>
+<p class="q">Speaking of top of the wave, you of course went public. The IPO was very successful. Interestingly, I read that Steve wasn't in the New York Stock Exchange that day. You were. He was in the office. And you guys were communicating. The financial crisis occurred. And you did something completely counter-intuitive yet again when you did the GSO deal—which got you into credit, private credit and so forth—at a time when everybody else was losing their minds. The stock went down forty percent. Everybody thought, "Oh my God." And all of a sudden you're buying up distressed assets all over the place. And that really was one of the makings of the company. Again, intentional? <a href="https://www.youtube.com/watch?v=MIMiXpn9Gsg&t=1370s">↪ 22:50</a></p>
+<p>Going public wasn't the end of the journey. It was the beginning of a whole new leg. If we hadn't gone public, we could do pretty well as a private company. But we wouldn't create a great financial institution, a global financial institution that aspired to be more respected than Morgan Stanley or Goldman Sachs, to take our place with J.P. Morgan and so on. Going public was an enabler of that. One of the ways it enabled that was the ability to have currency to do acquisitions.</p>
+<p>That was the first big one: a billion dollars to buy a fairly small business and a talented team. But it was not the easiest decision in the world. What people don't really appreciate is that Blackstone did maybe fifteen acquisitions. It wasn't just one or two. And they all worked out in terms of economic return. They weren't all equally strategically impactful. But we got a great return on all of them. That's unusual in our industry. The history of firms merging, there wasn't much to start with, or big firms buying boutique firms was not good at all. So we had to be mindful of that.</p>
+<h3 class="chapter"><span>Operating Style: Culture, Robust Debate, and Reading Every Memo</span><a href="https://www.youtube.com/watch?v=MIMiXpn9Gsg&t=1440s">↪ 24:00</a></h3>
+<p class="q">What was your operating style over all those years? How do you think about how you ran the firm? Because everybody credits you with doing so many amazing things and you've left a great legacy. And Jon is now doing an amazing job himself, and obviously Steve who's been there through it all. But your operating style, people have told me, you'll argue over a comma for an hour. <a href="https://www.youtube.com/watch?v=MIMiXpn9Gsg&t=1485s">↪ 24:45</a></p>
+<p>Especially a decimal point. I'm not sure that's good. Over the years you've obviously changed a lot, but maybe you didn't change that much. What do you think? I think culture is really critical. That's the key determination of whether a company succeeds or fails in the very long term. It's about the only enduring competitive advantage as you get. DLJ had it. Costco has it. I think Blackstone has it.</p>
+<p>But when I came to Blackstone, I felt I needed to rehabilitate the culture. We'd gone in the wrong direction. So I'm a big believer in culture. Some of those tenets are: teams beat individual talent every time. True teams, where you really root for each other and help each other without asking, without incentives. That true team mentality. Share information. Share relationships seamlessly. So teams beat individuals. I'm a huge believer in robust debate. We could argue and debate a point, but I'm never attacking you. We're just trying to get to the right answer, to truth together.</p>
+<p>That's a trick because so many people sometimes feel personally attacked and then the whole process breaks down. So you have to establish that we're just trying to get to truth. And whatever we decide, we own it together. If it doesn't work, it's a joint decision. That's a big one for me. I don't think there's any substitute for hard work. I always lead by example on that. No corner cutting. So the comma point—yeah, I read all the memos, every time, every exhibit. Not to catch commas, but to make sure that the rigor and quality of the work was the highest it could possibly be because someone was looking.</p>
+<p>You learn things in that. But more importantly than what you learn is the message it sends to the teams that they have to be that good because they never know when the boss is going to really dig into something they didn't think rigorously about. That gets to them. Maybe the last one is intellectual rigor and intellectual honesty—looking hard at facts, not opinions, not people that think they have the answer and pontificate. What do the facts say? When it's an investment, that's one thing. But when it's looking at your own business, that makes you very self-critical sometimes. We're not as good as we think. No one ever is. Reinventing our business was always something I wanted to push because it's very easy for the industry leader to get complacent. But in financial markets, they change fast. You've got to be reinventing all the time.</p>
+<h3 class="chapter"><span>Telling Steve Schwarzman He'd Retire — 18 Years Early</span><a href="https://www.youtube.com/watch?v=MIMiXpn9Gsg&t=1650s">↪ 27:30</a></h3>
+<p class="q">I was looking at a lot of the different things you've worked on in Blackstone, and I was fascinated about the day you walked into Steve's office and told him you were going to retire. Nobody realizes that you did it fifteen years ahead of time. So you told him you were going to retire at seventy, but you were only fifty-five? <a href="https://www.youtube.com/watch?v=MIMiXpn9Gsg&t=1680s">↪ 28:00</a></p>
+<p>Well, I would say the seventy was somewhat arbitrary. Obviously it's a round number, but the point was I'm not a short-termer, but I'm not a forever person either. That had certain implications right away. Steve will be there forever. Essentially, Pete Peterson was there till very near the end. I didn't want that expectation in Steve's mind. Which meant I was never going to be Steve's successor because he's only four years older than I am and he's going to be there forever.</p>
+<p>But more than that, I'd already done DLJ. I had a great run. I felt I had the energy, intellectual and physical, to do other things and make differences in other spheres, and I didn't want to not do that. After twenty years running a company, if you haven't put your strengths into that organization, you're probably not going to do it. I'm kind of a believer that CEOs should maybe change after ten or twenty years. CEOs should change. It brings vibrancy and renewal to the organization. At Blackstone, I was lucky because I had a great successor, and he's doing things differently than I did and doing it well. Everyone wins on that. But yeah, I wanted to go on and do other things and conquer other worlds.</p>
+<h3 class="chapter"><span>Four Decades With Costco: The $1.50 Hot Dog and Customer-First Culture</span><a href="https://www.youtube.com/watch?v=MIMiXpn9Gsg&t=1800s">↪ 30:00</a></h3>
+<p class="q">Well, you've conquered one in Costco because when you met the two founders, that was a really small little business in Seattle. I think the cultural phenomenon that you all have created in that business is extraordinary. And you've been associated with that business now for five decades and still are today as the chair of the business. What first attracted you to Costco? <a href="https://www.youtube.com/watch?v=MIMiXpn9Gsg&t=1852s">↪ 30:52</a></p>
+<p>The two founders, and particularly Jim Sinegal, was absolutely one of the best businesspeople I've ever come in contact with—and I've come in contact with thousands. He is a remarkable combination of passion and leadership and execution and strategy and principles and maniacal attention to detail. Relentless work ethic. He traveled two hundred seventy days a year. He was an amazing man and he could do anything.</p>
+<p>There was another company called Price Club that had opened a couple of these units. So it's not like, is this a new semiconductor technology? Will it work? It was shown that it could work. If it could work anywhere, Jim would make it better. He was number two at Price Club, which didn't hurt. If anyone in the world could make it work, he would, and he would make it better and better and better. So to me, this is great. The concept was powerful. It was new. It was completely self-reinforcing. Yeah, there was a lot to like about it.</p>
+<p class="q">And what about the decision to have a culture in the company that you protect management from having to worry about the share price? In other words, you do the right thing, share price will take care of itself. But actually, very few people do that. So to have a culture where from the top you say, do it this way, don't worry about that—it's going to be totally fine. Is quite rare in actuality. <a href="https://www.youtube.com/watch?v=MIMiXpn9Gsg&t=1907s">↪ 31:47</a></p>
+<p>Well, we tried to have that at Blackstone too. If you look at the cover of our prospectus at Blackstone, it says to the shareholders: "You shouldn't buy these shares because we don't care about you. We're only going to manage this for our LPs, for our customers." That's only the second time one of these notices has ever been on the cover of a prospectus. Warren Buffett put one on Berkshire Hathaway when it went public. It's my orientation. But it's also the orientation of Jim Sinegal and Steve Schwarzman. They're owners. None of them have ever sold a share. They want to build something great. They have that ambition. So did I.</p>
+<p>I think the best companies in the world are run that way. If you start worrying about the short term, you start making suboptimal decisions. Costco competes every day against Amazon. The history of both businesses couldn't be more different. You take that culture and evolve it so rapidly and so quickly so that it becomes competitive. What have you learned watching that business that's different than any of the other businesses you've overseen, bought, run, et cetera?</p>
+<p>I've never seen a company that sticks as religiously to just exactly one thing and doing it really, really, really well. Where Costco beats the competition, it just executes much better. No one else is as efficient, as driven. They never get fancy. They never think about what other businesses could I add. And they have these really strong principles: customer first, customer first, customer first. We call them members, but members first. And then employees. And then if we do a really good job for our customers and our employees, the shareholders will do fine over time. But if you want to sell tomorrow, great—go sell tomorrow because you're not a shareholder anymore.</p>
+<p>And the one-fifty hot dog—that's legendary. Jim has said if the price ever goes above one-fifty, then he's going to kill somebody. Whoever does it. I think it was, what will it mean if the price goes up from one-fifty? And I think Jim said, it'll mean I'm dead. I don't think he said to kill anyone. That's kind of odd, because it never used to be that way and has taken on this cult, almost like a meme in the last few years.</p>
+<p class="q">At some point we'll probably have to raise the price. But not on your watch? <a href="https://www.youtube.com/watch?v=MIMiXpn9Gsg&t=2006s">↪ 33:26</a></p>
+<p>Not on my watch. I don't want to face Jim or I don't want to face the press storm.</p>
+<h3 class="chapter"><span>A Bipartisan Plan to Fix America's Retirement Crisis</span><a href="https://www.youtube.com/watch?v=MIMiXpn9Gsg&t=2100s">↪ 35:00</a></h3>
+<p class="q">You also care an awful lot about retirement and people in this country having enough money in their old age. So on one hand, you're a capitalist, but on the other side, you're obviously a lifelong Democrat, and you've devoted yourself to a lot of public service elements that we'll talk about in a moment. But you wrote a book in 2016 which you believe is a solution for retirement for people in this country. Can you talk a little bit about your philosophy on that and what you see going on around you today? <a href="https://www.youtube.com/watch?v=MIMiXpn9Gsg&t=2127s">↪ 35:27</a></p>
+<p>When you're lucky enough to have the access and the influence and the resources that I fell into, I feel like it's everyone's obligation to give some of that back and to try to make the rest of the world better. When it came to retirement, because we do manage pension funds and 401(k)s and people's savings, the problem of retirement security was front and center for us. We watched pension funds dwindle and defined contribution plans—401(k)s—grow up. But people weren't investing well. Retirement security was the number one worry of people in America.</p>
+<p>Eighty percent of Americans worried about that, including people right out of college that have huge student loans, but they worried more about their retirement security. That says something. And we were not on a good trajectory. Social Security isn't necessarily running out of money, but it's certainly wheezing. Savings rates are going down. The boom in the stock market that really went from World War II into the '90s may not continue. So no one was talking about it. I felt we needed to call attention to the issue, politically and in Washington.</p>
+<p>The best way to do that was to come up with a plan that worked. But that wasn't so offensive to Republicans or Democrats that one side or the other just completely rejects it, because then you have nothing. There's no dialogue. So our challenge was to come up with a plan that could appeal to both sides so they'd be talking about it. And we had both Republicans and Democrats support. We came up with a plan that really made a big difference to the problem over time, with no new taxes, no increase in the deficit and no new bureaucracy. It just repurposed a lot of what's there.</p>
+<p>And it worked. It worked partly by changing some flows, but partly also by investing better, investing capital better. In a way costless to the taxpayer or to the government. And good for the economy because there's more capital that goes into growing the economy. So I found a labor economist, and her ideas and mine kind of dovetailed. She had half the loaf, I had half the loaf. We put it together and wrote this book.</p>
+<p>Most importantly, we wrote it so that a senator or a congressman could skim through the whole thing on the train from New York to Washington. If it's some big policy tome, they're never going to get through it. So I wanted them to get the whole thing and get the big ideas. But at the same time, be academically rigorous. I think it accomplished that. It certainly called attention to the area. And a number of the ideas in there have been embedded in new legislation, although not taken as a whole. But we didn't expect that, honestly.</p>
+<h3 class="chapter"><span>Why He Turned Down President Obama's Cabinet Offer</span><a href="https://www.youtube.com/watch?v=MIMiXpn9Gsg&t=2310s">↪ 38:30</a></h3>
+<p class="q">It would be remiss of me if I didn't ask you a question about your thoughts generally about the country and the world going on. Obviously, AI is a huge part of it. But I know you study this thing intensely. And you still, obviously, have your own company that does investing day to day. So what are your thoughts? <a href="https://www.youtube.com/watch?v=MIMiXpn9Gsg&t=2325s">↪ 38:45</a></p>
+<p>Well, I'm a huge believer in America, honestly. I think it's got remarkable entrepreneurialism and creativity. Capitalism can be excessive at times, maybe, but it's a foundation for growth. If you look at incomes in constant dollars, in 1967, five percent of the population earned over one hundred fifty thousand dollars. Over thirty percent in 2024. So many more affluent people. At the low end, thirty-eight percent of people earned less than fifty thousand dollars in 1967. It's twenty-one percent today. So people are better off.</p>
+<p>If we talk about income inequality, sure, you've got tons of tech wealth. Look at Elon Musk. There's never been a richer person. But a lot of people are getting better off. And I think that can continue. And I think AI is going to be fuel that drives that further and faster.</p>
+<p class="q">You're an optimist about AI? <a href="https://www.youtube.com/watch?v=MIMiXpn9Gsg&t=2428s">↪ 40:28</a></p>
+<p>I see risks, and I see some economic considerations. I'm not talking about values, but I think AI can significantly juice productivity and welfare—people's welfare in America.</p>
+<p class="q">Public service, which we haven't really talked about—you obviously served at the port authority here. You were asked by President Obama to be Secretary of Commerce, and you turned it down to stay with Blackstone. You're the chair of the Met. You're on the board of multiple things that are for non-profit status. That whole point you made about giving back, I think, is central to what you believe as well. I think you've lived that mantra for your entire life. Why did you decide not to go into government? <a href="https://www.youtube.com/watch?v=MIMiXpn9Gsg&t=2475s">↪ 41:15</a></p>
+<p>Part of it was the job. The key task they wanted for that job was to reorganize the Commerce Department with other departments. That seemed awful bureaucratic and frankly like tilting at windmills—pull tax out of here, put trade in there and stuff like that. What a waste of time.</p>
+<p>And then when I tried to figure out whether I would be the face of the administration to business, which I thought I could be good at, that wasn't really what they wanted. And then when I tried to see if I would have a seat at the table when the key decisions were being made in the White House about the economy and business, I'm not sure that's what they wanted either. So the job had its issues, but beyond that, I decided ultimately I wasn't going to be as effective in Washington just as a personality type. I try to be very direct all the time. I try to never pull punches. I have no power base down there. I could see the country bumpkin getting shredded down there.</p>
+<p>But probably more important than all of that stuff, I had not groomed the successor yet at Blackstone. So the good thing about that is it started me on that process. Right away when I realized, gee, even if I'd wanted the job, I really couldn't take it without abandoning my responsibilities to Blackstone. I said, okay, maybe next time I'll get a different offer, or my circumstances will be different. But I'd better have a successor. And I started grooming Jon. And I was really lucky to have such a remarkable person.</p>
+<h3 class="chapter"><span>AI, the American Economy, and Why He's an Optimist</span><a href="https://www.youtube.com/watch?v=MIMiXpn9Gsg&t=2460s">↪ 41:00</a></h3>
+<h3 class="chapter"><span>The Uncharted Path: Mentors, Cowboys, and the Best Advice He Ever Got</span><a href="https://www.youtube.com/watch?v=MIMiXpn9Gsg&t=2550s">↪ 42:30</a></h3>
+<p class="q">So when you look back on this amazing life, which hopefully has many years to run, what are your reflections? What are your learnings? What do you think about that kid that grew up in Boston and lived in that family, and all the things that you have been through in your life? You've lived a thousand lives. <a href="https://www.youtube.com/watch?v=MIMiXpn9Gsg&t=2620s">↪ 43:40</a></p>
+<p>Well, you're nice to say that. I guess for me, I have to be busy. I think it's a bit compulsive. But I also so like contributing to building great institutions—not just DLJ and Costco and Blackstone, but the Met, Mount Sinai Hospital system, a charity I started to start HBCUs in America. I just love building things that make a difference. And it's the ultimate ego gratification, I guess, in a way, to look back and say, I'm proud of that. And it'll live beyond me.</p>
+<p>I know from my own happiness and mental acuity and group of friends and so on, being in the world and being engaged with all these things—some of them are hard—but it feeds on itself. And that's where I get everything.</p>
+<p class="q">This part of the show is called the Uncharted Walk. We're going to give you questions that you haven't heard before, and you have to give me quick responses. Give me an example of a decision that you've made that you thought at the time you had doubts about, might have been the wrong decision, but turned out to be okay because you listened to people around you. <a href="https://www.youtube.com/watch?v=MIMiXpn9Gsg&t=2702s">↪ 45:02</a></p>
+<p>Right after we went public, we bought GSO. We spent a billion dollars on a small team, a small fund with no tangible assets, when the market was declining. Other than that, it worked out all right. They built an eighty-billion-dollar business. So it did work out okay. But it was a hairy decision.</p>
+<p class="q">What person in your life has been the most influence? <a href="https://www.youtube.com/watch?v=MIMiXpn9Gsg&t=2750s">↪ 45:50</a></p>
+<p>I'm not sure there's any one person, but a few people jump to mind. Steve Schwarzman, just his ambition, his ability to dream big and his belief—like Steve Jobs or Elon Musk—that one person can change the world. I didn't used to think that. But I've learned from him it can. Charlie Munger was a great mentor of mine for thirty years. I loved Charlie. He had such clarity of vision. So often I would call him up and say, Charlie, I think I'm getting confused here. And he was never confused. Never confused. He was great. Jim Sinegal, as I mentioned, I think one of the greatest CEOs I've ever seen. The purity of his vision and sticking to principles, I've never seen anything like that.</p>
+<p class="q">When was the last time you changed your mind about something, and it turned out to be a very important decision that you didn't expect to make, and then all of a sudden you changed your mind and something else happened? <a href="https://www.youtube.com/watch?v=MIMiXpn9Gsg&t=2803s">↪ 46:43</a></p>
+<p>I think if I've changed my mind to correct judgment errors, more often than not it's about hiring people. They've disappointed in one way or another. That's a tricky thing. You hire all the people that you do hire when you're building an organization, and you never get it one hundred percent right. It's hard to go back on that. I believe that changing one's mind is a strength. You've got to make decisions fast and clearly. But they're not all right. So you've got to fix them. And when facts change, when you see new ideas, you should change your mind. And I think being nimble about that is one of the things that's made us so good.</p>
+<p class="q">What is one or two things about you that people watching this would never expect, would never know? <a href="https://www.youtube.com/watch?v=MIMiXpn9Gsg&t=2843s">↪ 47:23</a></p>
+<p>Well, here we are in New York City wearing blazers. Where I really love to be is wearing my chaps and my cowboy hat and my cowboy boots and riding horses and moving cows from one pasture to another. It's just fantastic.</p>
+<p class="q">And how often do you get to do that now? <a href="https://www.youtube.com/watch?v=MIMiXpn9Gsg&t=2867s">↪ 47:47</a></p>
+<p>Oh, three or four times a year.</p>
+<h3 class="chapter"><span>Reflections on Building Institutions That Outlast You</span><a href="https://www.youtube.com/watch?v=MIMiXpn9Gsg&t=2700s">↪ 45:00</a></h3>
+<p class="q">What part of your personality have you worked to keep in check or develop over the course of your career? <a href="https://www.youtube.com/watch?v=MIMiXpn9Gsg&t=2873s">↪ 47:53</a></p>
+<p>Well, I have a tendency to be quick to have an opinion and blunt in terms of articulating it. And I learned the hard way that those can be characteristics which come across as threatening or intimidating. So being softer, keeping my counsel, letting people have their say, being sure to mix a lot of compliments and reinforcement and recognition into the mix. Just softening the whole picture.</p>
+<p class="q">Okay, last one. Best piece of advice you ever received and piece of advice you outright rejected and were glad you did? <a href="https://www.youtube.com/watch?v=MIMiXpn9Gsg&t=2912s">↪ 48:32</a></p>
+<p>The latter, I would say is, many, many times in my career or when I'm dealing with speeches or other things, dealing with people, broad groups of employees, I've been told to dumb it down. Are you able to do that? I don't think so. I'm definitely, I would do that. I make plenty of dumb mistakes. But I always feel: no, I'm going to set a high bar and I'm going to have the confidence that the audience will rise to the occasion and will understand it and will appreciate it. And I've always found that works better.</p>
+<p>I don't know best piece of advice, but one that stands out is from when I was really early in my career. I worked with a great lawyer and we went down and we had a drafting session. He said, Tony, you can't win a war if you try to win every battle. He was right. Turns out he was. Well, you've won a lot of battles and you've won a lot of wars, and I know you will in the future, too. Thank you for spending the morning with me. I really enjoyed it. You're a great man. Thank you, Tony.</p>
+    </div>
+  </main>
+  <script>
+  async function toggleYtBookmark(btn) {
+    const payload = {
+      title: btn.dataset.title,
+      url: btn.dataset.url,
+      filename: btn.dataset.filename,
+      interviewDate: btn.dataset.date,
+      source: 'YT',
+      expert: btn.dataset.channel,
+    };
+    try {
+      const resp = await fetch('/bookmark', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload),
+      });
+      const result = await resp.json();
+      setYtBookmarkState(btn, !!result.bookmarked);
+    } catch (e) {
+      console.error('Bookmark toggle failed:', e);
+    }
+  }
+  function setYtBookmarkState(btn, on) {
+    btn.classList.toggle('is-bookmarked', on);
+    btn.innerHTML = on ? '&#9733;' : '&#9734;';
+    btn.title = on ? 'Bookmarked' : 'Bookmark';
+    btn.setAttribute('aria-label', on ? 'Bookmarked' : 'Bookmark');
+  }
+  (async function initYtBookmarkState() {
+    const btn = document.getElementById('yt-bookmark-btn');
+    if (!btn || !btn.dataset.filename) return;
+    try {
+      const resp = await fetch('/bookmarks');
+      if (!resp.ok) return;
+      const list = await resp.json();
+      if (Array.isArray(list) && list.some(b => b && b.filename === btn.dataset.filename)) {
+        setYtBookmarkState(btn, true);
+      }
+    } catch (e) { /* offline -- leave default state */ }
+  })();
+
+  async function shareYtPage(btn) {
+    const original = btn.innerHTML;
+    btn.disabled = true;
+    btn.innerHTML = '&hellip;';
+    try {
+      const resp = await fetch('/share', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ filename: btn.dataset.filename }),
+      });
+      const result = await resp.json();
+      if (!result.ok) throw new Error(result.error || 'Share failed');
+      try { await navigator.clipboard.writeText(result.url); } catch (e) {}
+      btn.innerHTML = '&#10003;';
+      btn.title = 'Copied ' + result.url;
+      setTimeout(() => { btn.innerHTML = original; btn.disabled = false; btn.title = 'Share'; }, 2500);
+    } catch (e) {
+      console.error('Share failed:', e);
+      btn.innerHTML = '!';
+      btn.title = 'Share failed: ' + (e && e.message || e);
+      setTimeout(() => { btn.innerHTML = original; btn.disabled = false; btn.title = 'Share'; }, 3000);
+    }
+  }
+
+  // When the page is viewed from somewhere other than the local Reader
+  // server (e.g. a shared copy on GitHub Pages), hide the interactive
+  // buttons whose endpoints only exist on localhost.
+  (function hideLocalOnlyControls() {
+    const host = location.hostname;
+    const isLocal = host === 'localhost' || host === '127.0.0.1' || host === '';
+    if (isLocal) return;
+    const actions = document.querySelector('.yt-header-actions');
+    if (!actions) return;
+    const bookmark = actions.querySelector('#yt-bookmark-btn');
+    const share = actions.querySelector('#yt-share-btn');
+    if (bookmark) bookmark.remove();
+    if (share) share.remove();
+  })();
+  </script>
+</body>
+</html>
