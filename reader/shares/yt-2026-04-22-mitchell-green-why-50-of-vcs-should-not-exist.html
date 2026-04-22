@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Mitchell Green: Why 50% of VCs Should Not Exist</title>
+  <style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background: #faf8f5;
+  color: #2c2418;
+  line-height: 1.7;
+  padding: 0 1rem 2rem;
+}
+header {
+  position: sticky;
+  top: 0;
+  background: #faf8f5;
+  z-index: 100;
+  border-bottom: 2px solid #c4956a;
+  box-shadow: 0 2px 8px rgba(44,36,24,0.08);
+  padding: 0.6rem 1rem;
+}
+.header-inner {
+  max-width: 78ch;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header-title { font-size: 1rem; color: #2c2418; }
+.header-title strong { font-size: 1.1rem; }
+.header-link {
+  font-size: 0.85rem;
+  color: #8b6d4e;
+  text-decoration: none;
+  border: 1px solid #c4956a;
+  padding: 0.2rem 0.7rem;
+  border-radius: 4px;
+}
+.header-link:hover { background: #f0ebe3; }
+main {
+  max-width: 78ch;
+  margin: 0 auto;
+  padding-top: 0.5rem;
+}
+h2 {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #2c2418;
+  margin-top: 2rem;
+  margin-bottom: 0.5rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 2px solid #c4956a;
+}
+h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #3d3225;
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+section { margin-bottom: 1.5rem; }
+ul { margin: 0.5rem 0 0.5rem 1.5rem; }
+li { margin-bottom: 0.4rem; }
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0.75rem 0;
+  font-size: 0.92rem;
+}
+thead th {
+  background: #3d3225;
+  color: #faf8f5;
+  text-transform: uppercase;
+  font-size: 0.78rem;
+  letter-spacing: 0.05em;
+  padding: 0.5rem 0.75rem;
+  text-align: left;
+  font-weight: 600;
+}
+tbody td {
+  padding: 0.45rem 0.75rem;
+  border-bottom: 1px solid #e8e0d4;
+}
+tbody tr:nth-child(even) { background: #f0ebe3; }
+tbody tr:nth-child(odd) { background: #faf8f5; }
+.key-insight {
+  border-left: 4px solid #c4956a;
+  background: #f5efe8;
+  padding: 0.75rem 1rem;
+  margin: 0.75rem 0;
+  font-size: 0.93rem;
+  border-radius: 0 6px 6px 0;
+}
+.qa-pair { margin-bottom: 1.25rem; }
+.question-box {
+  background: #f0ebe3;
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+  margin-bottom: 0.5rem;
+}
+.analyst-label {
+  display: block;
+  font-size: 0.8rem;
+  color: #8b6d4e;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  margin-bottom: 0.25rem;
+}
+.answer { padding-left: 0.25rem; }
+.loading-section { opacity: 0.5; }
+.loading-indicator {
+  font-size: 1.2rem;
+  padding: 2rem;
+  text-align: center;
+  color: #8b6d4e;
+}
+
+/* YouTube transcript reader */
+
+/* Legacy .yt-meta-card -- kept so old output files still render cleanly.
+   New output uses .header-title.yt below instead. */
+.yt-meta-card {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  margin-bottom: 1.5rem;
+  background: #f5efe8;
+  border-left: 4px solid #c4956a;
+  border-radius: 0 6px 6px 0;
+  padding: 0.9rem 1rem;
+}
+.yt-meta-card img {
+  flex: 0 0 180px;
+  height: 101px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+.yt-meta-body { flex: 1; font-size: 0.93rem; }
+.yt-meta-title { font-weight: 700; font-size: 1rem; margin-bottom: 0.25rem; }
+.yt-meta-sub { color: #8b6d4e; margin-bottom: 0.35rem; }
+.yt-meta-url { font-size: 0.85rem; color: #3d3225; }
+
+/* YouTube sticky header uses the default 78ch-capped centered
+   container so it aligns with the body text column below. The
+   buttons sit at the right edge of that centered container. */
+header:has(.header-inner.yt) { padding: 0.75rem 1rem; }
+.header-inner.yt { gap: 1rem; }
+.header-title.yt {
+  display: flex;
+  gap: 0.9rem;
+  align-items: center;
+  min-width: 0;
+  flex: 1;
+}
+.yt-header-thumb { flex: 0 0 88px; line-height: 0; }
+.yt-header-thumb img {
+  width: 88px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 3px;
+  display: block;
+}
+.yt-header-text { min-width: 0; flex: 1; }
+.yt-header-text strong {
+  display: block;
+  font-size: 1rem;
+  line-height: 1.3;
+  color: #2c2418;
+  /* Allow wrapping to 2 lines so long podcast titles show in full. */
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.yt-header-sub {
+  font-size: 0.8rem;
+  margin-top: 0.2rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.yt-header-sub .yt-channel { color: #8b6d4e; }
+.yt-header-sub .yt-date,
+.yt-header-sub .yt-dur { color: #3d3225; font-weight: 600; }
+.yt-header-sub .yt-sep { color: #c4956a; margin: 0 0.5rem; }
+
+.yt-header-actions {
+  display: flex;
+  gap: 0.4rem;
+  align-items: center;
+  flex: 0 0 auto;
+}
+/* Shared box shape for the star + share + YT buttons so they're
+   visually identical. Applies to both the <button>s and the <a> link. */
+.yt-header-actions .yt-bookmark-btn,
+.yt-header-actions .yt-share-btn,
+.yt-header-actions .header-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font: inherit;
+  font-size: 0.85rem;
+  line-height: 1;
+  color: #8b6d4e;
+  background: transparent;
+  border: 1px solid #c4956a;
+  border-radius: 4px;
+  padding: 0;
+  box-sizing: border-box;
+  width: 2.2rem;
+  height: 2.2rem;
+  white-space: nowrap;
+  text-decoration: none;
+  cursor: pointer;
+}
+.yt-header-actions .yt-bookmark-btn { font-size: 1rem; }
+.yt-header-actions .yt-share-btn { font-size: 1.05rem; }
+.yt-header-actions .yt-share-btn:disabled { opacity: 0.6; cursor: default; }
+.yt-header-actions .yt-bookmark-btn:hover,
+.yt-header-actions .yt-share-btn:hover,
+.yt-header-actions .header-link:hover {
+  background: #f0ebe3;
+  color: #3d3225;
+}
+.yt-header-actions .yt-bookmark-btn.is-bookmarked {
+  background: #c4956a;
+  color: #faf8f5;
+  border-color: #a87d5a;
+}
+.yt-header-actions .yt-bookmark-btn.is-bookmarked:hover {
+  background: #a87d5a;
+  color: #faf8f5;
+}
+
+h3.chapter {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #3d3225;
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+h3.chapter a {
+  font-size: 0.8rem;
+  color: #8b6d4e;
+  text-decoration: none;
+  font-weight: 400;
+}
+
+.yt-body p {
+  margin-bottom: 1.15rem;
+}
+.yt-body p.q {
+  background: #f0ebe3;
+  border-left: 3px solid #c4956a;
+  border-radius: 0 6px 6px 0;
+  padding: 0.6rem 0.9rem;
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+  color: #3d3225;
+  font-style: italic;
+  font-size: 0.96rem;
+}
+.yt-body p.q::before {
+  content: "Q";
+  display: inline-block;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 0.72rem;
+  color: #8b6d4e;
+  letter-spacing: 0.05em;
+  margin-right: 0.5rem;
+  padding: 0.05rem 0.4rem;
+  border: 1px solid #c4956a;
+  border-radius: 3px;
+  vertical-align: 0.1em;
+}
+.yt-body p.q a {
+  display: block;
+  text-align: right;
+  margin-top: 0.3rem;
+  font-style: normal;
+  font-size: 0.8rem;
+  color: #8b6d4e;
+  text-decoration: none;
+  white-space: nowrap;
+}
+.yt-body p.q a:hover {
+  text-decoration: underline;
+}
+
+</style>
+</head>
+<body>
+  <header>
+    <div class="header-inner yt">
+      <div class="header-title yt">
+        <a class="yt-header-thumb" href="https://www.youtube.com/watch?v=rPaWW0IDurI" target="_blank"><img src="https://i.ytimg.com/vi_webp/rPaWW0IDurI/maxresdefault.webp" alt=""></a>
+        <div class="yt-header-text">
+          <strong>Mitchell Green: Why 50% of VCs Should Not Exist</strong>
+          <div class="yt-header-sub">
+            <span class="yt-channel">20VC with Harry Stebbings</span>
+            <span class="yt-sep">&middot;</span>
+            <span class="yt-date">Mar 7, 2026</span>
+            <span class="yt-sep">&middot;</span>
+            <span class="yt-dur">1h 4m</span>
+          </div>
+        </div>
+      </div>
+      <div class="yt-header-actions">
+        <button id="yt-bookmark-btn"
+                class="yt-bookmark-btn"
+                title="Bookmark"
+                aria-label="Bookmark"
+                data-filename="yt-2026-04-22-mitchell-green-why-50-of-vcs-should-not-exist.html"
+                data-title="Mitchell Green: Why 50% of VCs Should Not Exist"
+                data-url="https://www.youtube.com/watch?v=rPaWW0IDurI"
+                data-date="2026-03-07T06:59:07-08:00"
+                data-channel="20VC with Harry Stebbings"
+                onclick="toggleYtBookmark(this)">&#9734;</button>
+        <button id="yt-share-btn"
+                class="yt-share-btn"
+                title="Share"
+                aria-label="Share"
+                data-filename="yt-2026-04-22-mitchell-green-why-50-of-vcs-should-not-exist.html"
+                onclick="shareYtPage(this)">&#8599;</button>
+        <a class="header-link" href="https://www.youtube.com/watch?v=rPaWW0IDurI" target="_blank" title="Watch on YouTube" aria-label="Watch on YouTube">YT</a>
+      </div>
+    </div>
+  </header>
+  <main>
+    <div class="yt-body">
+    <p data-t="0">ByteDance is the most advanced AI company in the world, very underappreciated by the Western world. Today we have Mitchell Green from Lead Edge joining us. In a world of fluff and framework thinking investors, Mitchell Green is a money maker.</p>
+
+<p data-t="14">Mitchell has co-led or led investments in extraordinary companies like Alibaba, Benchling, ByteDance, and Grafana, among many others.</p>
+
+<p data-t="21">I think 50% of people in the venture business should not actually be in this business. There's too much money and there are too many tourists. Fifty to 60% of people in this industry probably add negative value to companies. People spinning out of Anthropic or OpenAI and raising $2 billion for a freaking idea with nothing more than an idea on a napkin seems complete lunacy.</p>
+
+<p data-t="41">There's going to be a really big downturn. Markets just don't go up forever, and I think it's going to happen in the next 10 years. Buying is glamorous. Selling is the job. Don't count China out. I bet they win the AI war.</p>
+
+<p data-t="62">Mitchell, dude, it is so good to have you back in the studio. I love doing these with you. You and Larry are my favorites.</p>
+
+<p data-t="68">It would be great to have you both on together. If you're in London together, we should do it over a dinner and mic everyone up. That would be amazing.</p>
+
+<p class="q" data-t="80">I want to start with something that's disarming for a lot of investors: the SaaS apocalypse. The markets are in the gutter, and a lot of people are questioning whether they're actually good investors or whether we were just in a bullish cycle. Is this downturn justified, or is it an overreaction to AI and product releases?</p>
+
+<p data-t="103">We are buyers. We're buying software stocks right now. Our funds can invest in public equities, so we're buying companies like Procore, Workday, Appian. We love ClearWater Analytics, but it's in the process of being taken private, so the stock doesn't move. We're big investors in Toast—we were early, sold, and now we're buying back. These companies aren't going anywhere. The incumbents have distribution, data, and balance sheets. It's a fool's errand to think all these companies will disappear.</p>
+
+<p data-t="134">In any period of big disruption, there will be new companies created, incumbents that thrive and adapt, and some that blow up. The pattern repeats every time.</p>
+
+<p class="q" data-t="158">Help me understand. I don't get it. Workday is at 6.8% growth. We're seeing cannibalization of the seat model and no impressive use of agent products within the incumbent set.</p>
+
+<p data-t="175">Workday's AI business is growing super fast inside of it. Keep in mind they're a $10 billion revenue company with $3 billion of free cash flow. There's law of large numbers for a lot of these companies. It's not normal for companies to grow like Anthropic or OpenAI, but Workday does it with serious profits. ByteDance grows 30% a year with massive profits. Let's see what these companies would do if they had actual profits.</p>
+
+<p data-t="213">The real issue is that street numbers were too high at the end of last year. Analysts didn't show enough deceleration. A company forecasted to grow 19.5% when it grew 20% last year—these are huge numbers. As companies get really big, they deselerate. Street numbers across software were too high overall.</p>
+
+<p data-t="243">Wall Street analysts are like pigeons. As stocks go down, they lower their numbers. You don't want to own stocks when numbers need to come down. You want to own them when numbers are about to go up. So what you'll see is they take numbers down at a bunch of companies. Give it a quarter or two, companies start to beat numbers, they raise estimates, and stocks work. But it's probably dead money for a while.</p>
+
+<p data-t="303">I've always been a fan of Howard Marks and his investor letters. One of his big things is never try to catch a falling knife. I see the opportunity you see, but I have no idea where this is going. A month ago, I was looking at Duolingo as a buying opportunity. The lesson there is if you don't have earnings or EBITDA, there is no floor in many of these things.</p>
+
+<p data-t="328">If you want to own them, buy over a month-long period or on down days. If you think you want a $200,000 position, buy $50,000 every time it dips hard. Maybe you'll never get fully filled, but you won't catch the bottom. The funny thing is, if you look at long-term data for buying indexes like the NASDAQ or S&P, it turns out that buying on big down days is nearly impossible to time.</p>
+
+<p class="q" data-t="363">We also saw Anil Bhaskar, the founder, come back to Workday. I'm unwaveringly negative on companies where the founder isn't the CEO, especially in an AI transformation. Do you share that view?</p>
+
+<p data-t="383">I'd agree with that partially. There are very good CEOs, but you need a growth mindset. Some companies are run for growth, some for margins. During big technological transformations, you want the management team focused on growth. Those are often entrepreneurs.</p>
+
+<p data-t="406">Another way to think about it: when companies are run for margins or earnings, they're often heavily levered. That's where the biggest opportunity to disrupt incumbents lies today—any levered company lacks the cash flow to innovate. Look at 1999 and 2000. If we'd sat here then, we would have debated whether traditional retailers would go bust and e-commerce companies would be gigantic.</p>
+
+<p data-t="439">Looking today at the 10 largest e-commerce companies in the US, six or seven are traditional retailers that existed before 1999: Walmart, Target, Home Depot, Lowe's. But some did go bust—Sears, Kmart, Montgomery Ward, Bed Bath and Beyond. They all had huge amounts of leverage, so they couldn't innovate. Walmart had no leverage and went all in. You'll see the same thing today with AI.</p>
+
+<p class="q" data-t="493">You said a company runs for growth or for margins. Mark Zuckerberg is running for growth, which is why free cash flow is in the drain. He's valued at 100x free cash flow. The capex burn is insane. Is it right to pummel him for it, or is he in the right mindset for growth?</p>
+
+<p data-t="516">This is the million-dollar question: Is Apple right, or are Google, Microsoft, and Meta right? Apple is spending very little right now, while those other three are spending insane amounts. Time will tell. It's probably somewhere in between. I would argue Mark Zuckerberg deserves to go for it. It's his business—he built it. I don't think you have much to say. He kind of has to because his competitors are doing the same thing.</p>
+
+<p data-t="561">Our view is that ByteDance is the most advanced AI company in the world, and it's very underappreciated by the Western world. Look at how much AI they use and how much they're investing in it. AI is going to change the world, it's incredible. But we sat here in 1999 and social media wasn't a word. We'd never have talked about Facebook. Now it's worth $3 trillion.</p>
+
+<p data-t="597">AI isn't going to be about the next call center company or the next Workday. What we're seeing in AI investment across the board—some companies will be gigantic, a bunch will bust. But I actually think the biggest businesses will start over the next two to five years, and I don't even know what they'll be. We keep coming back to ByteDance.</p>
+
+<p class="q" data-t="616">Do you agree with "play the game on the field," or do you think there's so much uncertainty that an optimal strategy is to be conservative, not invest a ton right now, and wait for a new equilibrium?</p>
+
+<p data-t="633">That's a great question. It depends on what business you're in. If you're an early-stage venture fund making 100x returns or zeros, you should be invested now. We always ask: if I make an investment and it grows for 18 months and hits my numbers, am I in the money? The problem is when you invest at 100x revenue, even after crazy growth for 18 months, you might not be close to in the money.</p>
+
+<p data-t="668">We're trying to make 2 to 5x our money in three to seven years for a 25% IRR. We don't drive zeros and don't have 20x returns. We've had maybe two 10xs ever but only one or two zeros. This environment is weird and different. It's definitely harder to invest today than in 2017.</p>
+
+<p data-t="692">There are different pockets of opportunity though. The secondary market for us is exploding. Our special situations business did a deal where we put $200 million to work in a company that's now raising at 2x the price we invested at. This happened a month ago.</p>
+
+<p class="q" data-t="722">When you look at growth equity investments you and others made in the last few years, aren't they more vulnerable in the current environment?</p>
+
+<p data-t="738">One of our companies is Grafana Labs. It's a giant business growing crazy fast and benefiting from AI spend. Their customers are big AI companies. I would say that's a straight fairway Silicon Valley deal. But when we invested, nobody knew what the company was. It was a bootstrapped $12 million software company. We and Lightseed were the first two investors.</p>
+
+<p class="q" data-t="762">How did you find it?</p>
+
+<p data-t="765">We cold called the CEO. We have a team of 18 to 24-year-olds pounding phones calling companies all day. If the company calls you back, that's it—hang up the phone. You want cold calls every two days for a month. That's who you want to get on the phone.</p>
+
+<p data-t="785">We have amazing companies built this way. One in Florida called PaceMate makes cardiac monitoring software. If you have a pacemaker or defibrillator, it pulls data off the device and sends it to the manufacturer's website. This is single-pane-of-glass software for cardiac clinics with 99% gross dollar retention.</p>
+
+<p data-t="813">When we first invested, they had $20 million revenue, had only raised $8 million and burned $3, growing 50% a year. They probably did $45 million revenue a few years after we invested. We're using AI to help—they have huge customer service teams analyzing data. The company can continue growing without cutting people, just making everyone more productive. That's what people are missing.</p>
+
+<p class="q" data-t="855">Are you worried we might see the Cathie Wood research report effect where some random person writes a report and billions get wiped off the market?</p>
+
+<p data-t="875">That's more incredible—think what it would have been if Twitter existed in 2008. It's amazing people listen to random research firms instead of Stan Druckenmiller, Howard Marks, Ken Griffin, Steve Cohen, Mark Benioff, Mark Zuckerberg, Jensen Huang—people saying software is not dead. Yet some random research report gets 25 million views and moves the market. It's crazy. Is this the ultimate sign we're seeing the casinoization of public markets?</p>
+
+<p class="q" data-t="916">That's the opportunity for long-term investors. You buy when people are scared, like Warren Buffett said. Or you don't want to take part in entirely irrational markets. I was at a hedge fund seated by Julian Robertson in 2008 and 2009. This is nothing like that.</p>
+
+<p data-t="936">This is amateur hour. It isn't even volatile compared to then. Indexes were whipping up and down 8% intraday, with 15% swings. That presents the opportunity. Had you bought early in 2009 or late 2008 and bought great companies, you could make tons of money. This is the opportunity to buy on sale.</p>
+
+<p class="q" data-t="974">I'll push back: there was no fundamental technology inflection point in 2008 that could render an incumbent set redundant. Today there is. The mainframe business is still $5.5 billion. Mainframes came out in 1950 and most banks run off them. Oracle, Microsoft, SAP are legacy software companies and some of the biggest in the world.</p>
+
+<p data-t="1004">These companies aren't going away. I'll bet any amount of money. Focus on companies with 90%, 95%, 98% gross dollar retention. There will be new giant companies created, but most incumbents won't disappear. Some will innovate and become exponentially bigger, some will grow 5-10% a year. There are tons of software companies around 20-30 years old that are still growing.</p>
+
+<p data-t="1050">The biggest disruption will be in manufacturing, healthcare, and companies that figure out how to get drugs to market faster. AI could potentially solve cancer and dementia by running drug trials faster. In manufacturing, if AI and robotics work, a company with no leverage can invest in resources better than a levered one.</p>
+
+<p class="q" data-t="1088">Going back to the casinoization, you mentioned productivity. Are you worried we'll see productivity gains but fewer consumers with jobs and weakening consumer wallets?</p>
+
+<p data-t="1108">Not really. There were a couple million switchboard operators in 1980. Lots of jobs have been lost over the years, retailers have gone bust. People innovate. I was just talking to a senior person at one of the world's largest banks. They have hundreds of thousands in back and middle office trained over five to 25 years. They're not getting rid of all of them—they're retraining them.</p>
+
+<p data-t="1146">People that don't want to be retrained can go work for the government doing old school jobs. Lots of companies will retrain people to do different things. It's remarkable throughout history—lots of technological disruption over the last hundred years and people find new things. If everyone's worried about losing jobs, don't invest in these companies because it would be a complete disaster.</p>
+
+<p data-t="1194">If you're worried about China invading Taiwan, don't worry about your ByteDance position because you'll have bigger things to worry about. The government would get very involved if jobs suddenly disappeared and unemployment hit 10-20-30%. It's not happening. People think change comes faster than it does.</p>
+
+<p data-t="1232">Most big, financially regulated companies can't even get on Claude or ChatGPT. You can't get on the system to do work. We're still five years in. A month and a half ago people woke up thinking all these companies would go away and unemployment would hit 30%. It's nonsense, it's silly. We'll sit here in 10 years and it'll be an amazing time to invest.</p>
+
+<p class="q" data-t="1277">You're saying the world is being memeified, turning into a full on casino. Is that momentary or a new normal of social media dopamine junkies?</p>
+
+<p data-t="1293">It's a great question. I've joked for years that social media is the demise of society. Jonathan Haidt has done amazing research on this and it needs to be regulated. It will be regulated. It's incredible how fast information moves. Imagine if Twitter had been big in 2008 and 2009. It's absolutely incredible. But the makeup of the stock market is different today than 20 years ago. Passive ETFs are much bigger, retail comes and goes, but you just have to buy good businesses when they're on sale.</p>
+
+<p data-t="1351">Buy good businesses at multiples of earnings. If you don't have earnings, there's no floor. But if you have earnings and free cash flow, you know another thing people miss: stock-based comp in a lot of these companies is totally nuts. The amount of equity compensation and shareholder dilution is very high. I'm surprised more people don't talk about it.</p>
+
+<p class="q" data-t="1385">Why aren't we talking about it? What should we know? Are we in a new norm where Snapchat and OpenAI have unreasonably high SBC and nobody questions it?</p>
+
+<p data-t="1405">Some big public market investors have questioned it, but it's surprising more don't. Look at stock option dilution in big Silicon Valley companies. It's not as bad outside Silicon Valley, but the dilution is real. I'm surprised more people don't talk about it. What should happen?</p>
+
+<p class="q" data-t="1434">If you're a Snap holder, Evan is running a gifting program. What do you think should happen?</p>
+
+<p data-t="1443">I have a lot of respect for entrepreneurs like Larry Ellison who did a levered recap of Oracle. He had all this free cash flow, borrowed debt, and bought back an enormous amount of stock without selling any of his own. He kept making the share count go down, not up. People forget market cap equals shares times price. Companies that respect discipline on that are powerful.</p>
+
+<p data-t="1483">We've seen so many well-known names be in the dumps, and people question whether CEOs are buying when stocks are down. ServiceNow's CEO bought $3 million worth. Salesforce said they're going to buy $50 billion of stock. Companies should be buying back stock. Those that aren't, you should question why.</p>
+
+<p class="q" data-t="1523">ServiceNow bought $3 million, which is less than his car collection. Is the company buying a lot of stock back? How much stock does the CEO already own?</p>
+
+<p data-t="1538">That should tell you something. The companies where founders are buying or companies buying huge amounts of stock back make us more bullish versus other companies. I would suspect over time you'll see more like Salesforce put in place big buyback programs to buy back stock.</p>
+
+<p class="q" data-t="1573">We spoke about ByteDance a little. Everyone for years has said the ByteDance discount is so cheap. It's the China discount on the China discount. That sounds great, but it only helps you as an investor if that discount shrinks. What will it take?</p>
+
+<p data-t="1593">I think it already is, to some degree. Private market implied valuations should be determined by public market investments. Software companies today should be getting done cheaper in private markets than public markets. That doesn't always occur. Alibaba and Tencent should represent how ByteDance trades. They were trading at mid-teens earnings multiples—not revenue, earnings—and they don't really grow.</p>
+
+<p data-t="1633">ByteDance grows 25-30% plus per year and generates tremendous earnings. You can stick an earnings multiple on it and get to a very big number. Facebook trades at 25-30x earnings. Stick that multiple on ByteDance, but maybe that's too high because it's a Western company. Use China company multiples. I think it's possible to see this company do $70, $80, $100 billion of earnings in the next five years. That's worth $2 trillion.</p>
+
+<p class="q" data-t="1695">In a deglobalized Trump world, it's not going to list in the US, is it?</p>
+
+<p data-t="1708">Zero percent chance it'll list in the US. It'll list in Hong Kong, where a lot of these companies list. People have been saying for years they're going to delist all these Chinese companies off the US. They never did. Keep in mind, Alibaba stock has doubled off the lows over the last year. Sentiment on China is a lot better than 18 months ago.</p>
+
+<p data-t="1746">We were buying ByteDance stock around $200 billion when we thought the risk-adjusted reward was incredible given the earnings power. I think don't count China out. I bet they win the AI war. I bet they win it, not right now but eventually.</p>
+
+<p class="q" data-t="1795">Why do you think they win the AI war?</p>
+
+<p data-t="1803">Power consumption, number of PhDs, how much they value science and technology. I think power is real. In China, you can build a nuclear power plant in a couple years and build power plants no problem. We in the US will run into major issues around power. There are things that could totally change it though, like quantum.</p>
+
+<p data-t="1840">Nobody's really talking about quantum and we're not quantum experts. Is that something that could make things exponentially more efficient? How does that realization change how you invest? I completely hear you and agree. We still dramatically underestimate China's capability or choose not to think about it. If that's the realization, how does that impact your forward mindset on investing?</p>
+
+<p data-t="1884">That's why we own a lot of ByteDance. But it's not winner-take-all. ByteDance winning doesn't mean Google and Facebook lose. A year ago on the show, everybody thought Google was dead. Nobody's gonna search Google. The stock has doubled. Now it's going to beat everyone. No, they're both going to be fine. The biggest question on LLM model companies is can they ever turn a real profit? I just don't know the answer. Nobody really does right now.</p>
+
+<p data-t="1951">I think another thing you'll see in the US related to power—and you really haven't seen much of it yet—is local communities getting upset. You're a small local town in Iowa or Kansas or Ohio or Virginia. They build a giant data center, employ tons of people locally to build it, then 50 people work there and local power prices triple. It's polluting the environment and it's just a big ugly building. I think you'll see real pushback, and not only in the US but probably Europe too.</p>
+
+<p data-t="2029">These people aren't better off than 20 years ago and this thing is in their backyard while people in Silicon Valley make tens of billions of dollars. There's going to be real pushback and there needs to be regulation on it.</p>
+
+<p class="q" data-t="2063">Don't you think climate is a luxury problem? We worried about it the last three to five years and now nobody cares. Climate investing is in the dumps.</p>
+
+<p data-t="2083">We should worry about it, it's probably important. We've always struggled with how to invest in it because of how capital inefficient many of those businesses are. China has some advantages though. Whether it's giant solar farms or other things, they can do things we can't do. I would expect that if you look at the internet, the biggest innovation over the last decade or 15 years has come out of China.</p>
+
+<p data-t="2139">If you actually want to look at where e-commerce is going and social media is going, look at China. Don't underestimate Chinese creativity and ingenuity to reverse-engineer and engineer things in much cheaper ways than Americans can do.</p>
+
+<p class="q" data-t="2175">Going back to ByteDance, there are many opportunities to sell in these names. Not specifically ByteDance, but how do you think about sizing positions over time? You're 3x up after four years. How do you think about taking chips off the table?</p>
+
+<p data-t="2196">Buying is glamorous. Selling is the job. That is what it really is. We're trying to make 2 to 5x in three to seven years. That's a 25% IRR. We tell our investors we're going to make 2x to 2.5x net funds. We're constantly asking if we sold a bunch of ByteDance today at $550, which is what some people are selling at, what's the probability it can double?</p>
+
+<p data-t="2243">Looking at fundamental earnings, doubling is no problem. If somebody came to us today and offered $1.3 trillion, we'd sell some. Not because I don't think the company's worth it. I think it'll do $100 billion of earnings in the next five years. At 20x that's worth $2 trillion. What does it trade at on a multiple basis? How far ahead are you paying for growth? There's a really valuable moment when you say you're paying four years out.</p>
+
+<p data-t="2295">What we like to say is, are we in the money 18 months out? That's how we think. With a reasonable multiple, are we in the money 18 months out? If we invest today and revenue is $20 million with a reasonable model, at 18 months are we in the money with a reasonable multiple, not 50x revenue?</p>
+
+<p class="q" data-t="2343">With your companies like PaceMate going from $20 to $45 million, who's going to buy that company?</p>
+
+<p data-t="2358">There's a line of strategics that would buy it, and private equity firms that would buy it at a good multiple. We'd make great money. Good investment and good company are two fundamentally different things. You're trying to get the union of both. There are lots of A+ companies at D-minus prices.</p>
+
+<p data-t="2388">You don't want to buy a D-minus company at A+ price. If you can buy a B+ company at an A+ price, we have over 20 years made amazing risk-adjusted returns. We also buy A+ companies. You can do structured secondaries or unique things. Can you buy an A or A+ company at a B-minus to C+ price? Those are incredible deals. Can you get in cheap by buying out old LPs from old funds that need liquidity?</p>
+
+<p data-t="2434">We joke that we're an Nvidia earnings miss away from a recession. If that happens, a bunch of old funds will have horrible DPIs. LPs will sell interests in their 2013 or 2015 funds to get liquidity and you can buy stuff super cheap. But look, there are different beliefs. A lot of people in the venture business will pay anything because they're trying to find the next Google. Would you not advise that when you have a world with uncapped upside and trillion-dollar companies, you should be more elastic on pre-billion dollar entry price and pay $300 to $600 million?</p>
+
+<p data-t="2493">Most companies don't become that. The vast majority depends on what you tell your LPs. We tell our LPs make 2 to 5x in three to seven years. Rinse and repeat. Generate 2 to 2.25x to 2.5x net funds with 25% IRRs. If you can do that over 20 years, you're the best of the best.</p>
+
+<p class="q" data-t="2534">I'm very good friends with Jason Lemkin from SaaS, who recently said he's done with picking winners early-stage. He just wants to do an Anthropic SPV. It's much easier. You don't think it's easy to do this stuff?</p>
+
+<p data-t="2560">I think 50% of people in the venture business should not actually be in the business. There's 50% too many VCs, maybe 70%. It's not only VCs—it's private equity and alternative assets. What makes you say that? There's too much money and too many tourists. There are people that don't show discipline on price. Go talk to the greatest venture investors on the planet and they'll say price matters at the end of the day.</p>
+
+<p data-t="2610">Let's see what all these companies get out at that are valued in the trillions of dollars. There aren't that many to be clear. Look at how much earnings companies like Facebook, Google, Microsoft, Amazon, and Nvidia generate. I think there's a lot of companies way ahead of themselves on valuations and what their profit numbers will be.</p>
+
+<p class="q" data-t="2652">Do you think we'll have more or less money in venture in three years?</p>
+
+<p data-t="2668">Probably less. I don't know if it's three, five, or seven years, but for sure people will wake up in 2030 or 2032 and realize they're still in stuff from 2012 and 2015. If you weren't selling, when will you sell? That's the best advice I'd give to young fund managers—liquidity windows open and close. When they are open, take advantage. You should be selling even if you're winners. Sell 20%, 30%, 5%. Continue to get money back. Your job is to return money.</p>
+
+<p data-t="2738">Companies are bought, not sold. Marks are opinions, DPI is math. You don't have to sell the whole company. If there's a round in a company you're invested in, especially if you're a small new fund, you can go to the founder and say, "Founder, you've taken some money off the table. I won't be in business in five years if I can't get some liquidity back." You can do the math—if you build the next giant company and sell some at $500 million or a billion, who cares? You still own 80-90% of the whole thing.</p>
+
+<p data-t="2818">LPs want money back and the people that will be in business 10, 15, 20 years from now are people that continue to give money back to their investors.</p>
+
+<p class="q" data-t="2844">Are you seeing LP sentiment change around what they care about?</p>
+
+<p data-t="2856">Absolutely. We've always cared about DPI but I think investors are very focused on DPI now. It is possible with a small early-stage fund as a new upcomer in the first couple of funds to generate amazing KPIs. It's a game you can play. Have you had Boris Grindum or Jose Marin from FJ Labs on? Those guys are 10-15 year LPs of ours and friends. They've played the game extremely well. They understand not every company goes to the moon. Take some chips off the table, give it back to investors, rinse and repeat.</p>
+
+<p data-t="2914">The advantage of small funds is they can sell much easier without disturbing customers. If you're Sequoia, it's hard—negative signaling. That's why I tell younger funds: you can tell the entrepreneur, "You're selling some stock. I really need to sell some stock. Why? Because if I don't return money to my investors, I won't be talking in three years because I'll need a new job. I won't have my second fund."</p>
+
+<p class="q" data-t="2975">Do you worry about being a trader and not being attractive to founders?</p>
+
+<p data-t="2987">Nope. If you help founders and do what you say you're going to do—and a lot of investors don't—that matters. I think 50-60% of people in this industry probably add negative value to companies. The simplest lesson I learned early in life is if you say you're going to do something, actually do it. The number of people that overpromise and underdeliver is incredible. Be the reverse: underpromise, overdeliver.</p>
+
+<p data-t="3036">If you've been really helpful to an entrepreneur, helped them recruit, helped with customers, and you sell 20% of your holdings, who cares? Keep helping them. We have companies we've sold 100% of that we still help drive customers to. You're helping me make five times my money. Nobody else on the cap table is liquid. We sold all our stock. I keep helping you. Please.</p>
+
+<p class="q" data-t="3075">What are the most common ways you see investors provide negative value to companies? What should founders watch out for?</p>
+
+<p data-t="3091">Burn money at all costs. Recruiting. They act like they know how to run the business. I've never run a company in my life, by the way. I know that 98% of venture or private equity investors get people around the table that have done what the entrepreneur is trying to do. If you're a $20 million AI or software company, find entrepreneurs around the table and help the founder recruit people that have built businesses from $20 million to $200 million. Get them around the table and get out of the way.</p>
+
+<p data-t="3155">That's the advice. There are too many knuckleheads. The worst is somebody who went to Stanford business school, worked 18 months at a startup, and now they're a venture investor and they're experts. Be humble and don't act like you know. Most of us, including myself, have never actually run a company. If you want to start a venture fund, I can give advice on that. But if you're trying to build a great sales team, talk to great sales leaders.</p>
+
+<p data-t="3210">That's the best way VCs and private equity people can help founders: connect them with people who have done it before and help them recruit. That's why Sequoia and Benchmark and Index are great—they help founders recruit amazing talent and people want to work for their portfolio companies.</p>
+
+<p class="q" data-t="3256">I just say I'm a switchboard, honestly feel like the women in the 1960s connecting people all day. I have no idea how to do anything else, but I speak to my friend and CPO. I think that's what the best entrepreneurs want.</p>
+
+<p data-t="3284">Here's my midview from seeing loads of companies: you said a negative is burn money, burn money. They say burn money because they need to see growth. They're looking at markets and thinking to get my next round of funding, the game's changed. It's no longer triple, triple, double, double. I need you to go from zero to 30-40 for this to be interesting. That's because of the price they paid in the deal. If you paid asinine prices on the way in, of course you need that growth.</p>
+
+<p class="q" data-t="3343">What's really interesting to me right now is people spinning out of Anthropic or OpenAI and raising $2 billion or a billion dollars for a freaking idea, with nothing more than an idea on a napkin. That seems complete lunacy. Have any of those ever actually worked? Has anybody ever raised at a crazy price initially for just an idea on a napkin and if any of those things worked?</p>
+
+<p data-t="3374">I don't know Anthropic. What was their first round? When did Dustin Moscowitz invest? I think it was pretty small. No, it was billions. I think the original seed deal was much lower than that. I don't know. When Dustin and some of these guys invested in the seed, it was much lower.</p>
+
+<p class="q" data-t="3402">The astonishing thing is Dustin will make more money from his Anthropic investment than from Facebook?</p>
+
+<p data-t="3412">I'm not sure about that. We've talked about burn money and they want growth with triple, triple, double, double. There are so many SaaS founders pinging me every day saying they've been told for 10 years triple, triple, double, double and they'll be in a good place to raise their next round. They're in their third year where they've doubled and gone from 10 to 20, and no investor wants them. I think those are actually interesting because we can get them at potentially good prices.</p>
+
+<p class="q" data-t="3465">What matters is gross dollar retention. What do you mean? You ended 2024 with $20 million revenue. What did those same customers do in 2025? No upsells, just downsells. You're looking for 90%?</p>
+
+<p data-t="3498">Gross dollar retention is the most important metric in tech companies. Gross is what those same customers from last year's ending brought back this year. No upsells, just net of downells. Eighteen is good, you're looking for 90%. Anything less than 90%, we won't touch. Ninety percent is good, 95% is great, 98% is amazing.</p>
+
+<p data-t="3538">The reason there's so much dead wood in venture and living dead companies is many have 60-70-80% gross dollar retention. When you're at $10 million revenue, that's the problem. But when you get to $150 million in revenue with 70% gross dollar retention, you're just churning. That's why a company with 95% gross dollar retention can grow really fast without burning much money—they're not spending on sales and marketing to fill the bucket.</p>
+
+<p class="q" data-t="3592">If you're Thoma Bravo with your Cooper's and Aloplan where companies grow at best mid-teens, what happens to this generation of growth equity PE investors in tech?</p>
+
+<p data-t="3618">I think growth equity and buyouts are very different. People like Hellman and Friedman and Promera are probably slightly more growth-oriented while others are more margin-focused. It's probably a function of how much debt they have. I haven't spent tons of time studying Koopa Software or Aloplan financials. If I was them, I know these companies drive margins from 5% to 40%. The question is how are they doing it?</p>
+
+<p data-t="3676">I would hope they've done it mainly by cutting inefficient go-to-market, sales, marketing, and GNA. I would hope they haven't taken engineering and sales headcount from 200 to 20. I suspect they haven't, but that would worry me. These are really smart people. If those companies had been bought with no debt, they would be investing hugely in AI. They probably already are. For me, that's why what I said at the beginning—we worry about any company during big technological disruption that is levered with a lot of debt.</p>
+
+<p data-t="3734">Regardless of whether it's a software company, manufacturing, accounting services, or industrial services, with debt you're hamstrung in what you can do because you have massive interest payments.</p>
+
+<p class="q" data-t="3760">Don't you worry that given the casinoization and volatility—Figma rides up then down, Atlassian with accelerating numbers is down 76%—you should buy Atlassian?</p>
+
+<p data-t="3784">Absolutely, I agree. I think Mike is amazing. I also think about Canva—I'm looking at this going there's no way I'm going public. Stripe, I'm going thank you. I feel very vindicated in my decision to stay private. Does this memeified stock market not make the liquidity problem worse?</p>
+
+<p class="q" data-t="3822">What will change it?</p>
+
+<p data-t="3828">When LPs go to the biggest venture and private equity funds and say, "We're not investing in your next fund until you get liquidity in these names." That's the reality. I agree with founders though. There is something to be said for going public. I'm friends with guys who run big public companies. There's this equipment rental company we did as a derivative play on AI for data centers. You need a shovel and dump truck. It was a company in 2020-21 that everybody thought was a tech company. It's an equipment rentals business run by awesome founders.</p>
+
+<p data-t="3892">We were able to buy a bunch of secondary from people desperate to sell. It's been awesome. How did you get into that business? We bought tons of secondary from people who wanted to sell. They were like, "This is a tech company." No, it's an equipment rentals business that uses some technology, driving higher EBITDA margins and better utilization rates. They went public because they want brand awareness.</p>
+
+<p data-t="3941">There are lots of companies—Veeva, Datadog—that went public because big enterprise companies ask, "How big are you? Are you survivable?" Because Microsoft tells people "This company is going out of business." You're like, "It's a $30 billion company." Being public helps with credibility. But I get why they don't go public. They have a billion or $2 billion of cash. For us, we want to back entrepreneurs we're very confident will be public companies.</p>
+
+<p class="q" data-t="4006">We talk to them upfront: "If your plan is to stay private forever, you're not for us. Why?" Given the fluidity of secondary markets, if Collison said, "Yeah, we absolutely want to stay private forever," and you said, "Great, I can sell in secondary markets," wouldn't that solve it?</p>
+
+<p data-t="4033">That's true, there is now. Our view is we want to back entrepreneurs who think the thing has a very good shot at going public. We want to hear from the entrepreneur, "I want to go public." How many more public companies would there be right now if they didn't have $600 million or a billion of cash on the balance sheet? If they only had $30 million, they'd all be public companies. The amount of money available is incredible. Now, who knows if Stripe is trying to buy PayPal, but if they were, they'd probably rather be public to do it unless they have a sovereign wealth fund writing a $40 billion check.</p>
+
+<p class="q" data-t="4095">Why would Stripe being public help them buy PayPal?</p>
+
+<p data-t="4102">How are they going to pay for it now? If Stripe is worth $150 billion and PayPal's worth $50 billion, they'd have a liquid publicly traded stock they could merge together. PayPal shareholders get liquid stock and sell it. That's an all-stock merger that happens all the time with public companies. PayPal shareholders aren't taking private Stripe stock. Public companies don't do all-cash offers. Could they go public via reverse merger into PayPal? Maybe, but there's no freaking way. The only way a deal like that happens is with a sovereign wealth fund or private equity funds don't have enough money to write $40 billion checks.</p>
+
+<p data-t="4182">If Stripe was a public company with $150 billion or $100 billion market cap, they could do a public-to-public merger, giving them flexibility for big M&A. They have access to lots of cash so they can buy a billion-dollar company no problem.</p>
+
+<p class="q" data-t="4220">Is there a massive disconnect between publics and privates when Stripe is at $150 billion and Aden at $45 billion with similar transaction volume?</p>
+
+<p data-t="4245">We see rounds get done. Wix is at $4.5 billion and Raptor is at $9 billion. Yes, exactly. It's kind of silly. Do these private market investors look at the public markets? Should venture investors have more flexible mandates to adjust to asset classes where there's most opportunity?</p>
+
+<p class="q" data-t="4278">I think it surprises me more growth and PE investors can't do public equities inside their funds opportunistically. TCV can, Iconic can, GA probably can. Most probably can. I might surprise a minute more people don't, but early-stage venture is extremely different from buying Atlassian, Workday, Salesforce, or Toast. What surprises me is if you were an early investor in Toast and you're fully out and love the company and the stock's down 60%, why not go buy it again?</p>
+
+<p data-t="4356">Going back to equipment share you mentioned, you said about three-to-ten billion dollar IPO range—too small for anyone to care, not meaningful size. Is that true in a world where ETFs and passives are huge and fundamental investors are shrinking?</p>
+
+<p data-t="4382">You ideally don't want to be a two-to-three billion company, but I don't think there's any reason you can't be a seven-to-ten billion company. Those are legit. When you get sub-billion or two billion, it's just a pain to be a public investor. But you can do it. Actually, we wish probably more would. Why? Because they'd be great small-cap stocks and you can hold them for 10 years and make tons of money.</p>
+
+<p data-t="4428">Look at Portfolio—I think it was a billion, two billion, public at $700 million market cap, and it was like a 10x. Shopify was a two-billion public company. Exactly. That's what we'd hope for—find those next companies. If you apply that to funds, we see $15 billion Andre and $10 billion Thrive. I think it's insane, way too much. Just do the math on how they clearly need the next OpenAI or effectively the next Google or the math doesn't work.</p>
+
+<p data-t="4495">You could have two or three of them. The amount of money thrown at some of these funds is astonishing. I hope they prove me wrong because if they get so big, these companies get so big that they can buy our companies. But I respect Benchmark and Index. Index is growing but it's still tiny compared to these others. Those guys are the best in the world. I think it gets really hard.</p>
+
+<p class="q" data-t="4552">There's $9 billion in Thrive's growth fund. If they can't put $2-3 billion into Cursor or Databricks, you can break the math?</p>
+
+<p data-t="4570">You have to write like a $150 billion company. That's really big. Steady-state companies trade at 10x earnings. At steady state when they don't really grow, that's what companies trade at. If you invest in something worth $100 billion, you're saying to make a double with dilution, it's probably $250 billion. That's betting it does $2 billion of earnings. There aren't that many companies doing $25 billion of earnings. It's freaking hard. You can't make a lot of money between now and steady state. If they grow 50% a year, there's too much money chasing too few things. But AI will create great new companies and these guys will probably find if anybody finds the next giant company, the social media equivalent in the next five years, it'll be one of these funds.</p>
+
+<p class="q" data-t="4658">Everyone says you need to be big or boutique. Do you agree that you die in the middle?</p>
+
+<p data-t="4673">I wouldn't bet against Benchmark or Index. I think you can stay nimble. They'll invest earlier and their percentage ownership will get diluted over time, but I'd give Index or Benchmark just as much probability to find the next OpenAI or Anthropic as Thrive or anybody else. You seem very focused on praising Index. I have no idea. I love Danny and Danny's friend.</p>
+
+<p class="q" data-t="4718">What specifically about Index is impressive?</p>
+
+<p data-t="4726">Just looking at the returns, it's the returns in their funds. It's math. Look at their DPIs. They are amazing investors. Lots of people get lucky once or twice, but if you do this over 20-30 years and consistently put up worldclass returns, you're doing something unique. Does kingmaking exist?</p>
+
+<p data-t="4772">Kingmaking is when Sequoia, Andreessen, Benchmark, and Draper have such good names and money that you make the winner. Nobody else wants in because Sequoia funded it, then Iconic funded it, then everything else. What you're seeing now is there's so much money. There'll be multiple players in that space. But I give the guys at Menlo huge credit. Matt Murphy is a buddy. When they did Anthropic, it was not obvious. It was highly—are you nuts? But he was right. Totally agree.</p>
+
+<p class="q" data-t="4833">Quick fire round. What have you changed your mind on in the last 12 months?</p>
+
+<p data-t="4841">That AI is even going to be bigger than we thought. It's going to change the world in so many more areas we're not even thinking about.</p>
+
+<p class="q" data-t="4860">What's the single most memorable first founder meeting you've had?</p>
+
+<p data-t="4867">Nat Friedman, founder of Zookeeper. We whiteboarded how to save money with Starwood Hotel points and Delta Airline points. He's a great, humble, normal guy. He obviously runs AI at Facebook now.</p>
+
+<p class="q" data-t="4906">You can invest in one seed firm, one Series A firm, and one growth firm. Which do you choose?</p>
+
+<p data-t="4920">Series A would be Benchmark. Growth fund would be myself because that's what I invest in. I have huge respect for Iconic, though we don't really compete because they're more Silicon Valley. We're outside Silicon Valley. On the seed fund stuff, I don't have much experience, but the Founder Fund guys have totally nuts returns. That would be another really good fund.</p>
+
+<p class="q" data-t="4980">What's the hardest decision you've made in your career?</p>
+
+<p data-t="4988">Hiring people with the same view on how to generate returns so it's a cohesive group. That's like the hardest thing because yours isn't the sexy way. The hardest decision was in 2016-2017-2018 when everyone was paying 5-7x revenues for software companies and Iconic came in paying 10x and winning the best deals and prices. We're like, we know these are the best companies. Should we do these deals? We did not. We were wrong.</p>
+
+<p class="q" data-t="5042">What was the biggest miss and how did that change your mindset?</p>
+
+<p data-t="5052">Procore, we were in it a tiny amount. We did the deal with Bessemer, put a tiny amount in and were in a position to lead the next round. We kind of did and then two rounds later we sold. The decision to sell wasn't that big a deal because it wasn't that big a position. We also got $2 million in the Shopify IPO because we knew the founders. That would have returned our second fund 2x if we'd just not sold and done nothing.</p>
+
+<p class="q" data-t="5102">What investor do you most respect who doesn't get spotlight?</p>
+
+<p data-t="5110">Probably my partner Nect. He's insanely disciplined. His loss ratios are amazing. I don't think he's lost money, maybe in one deal ever. He's never had 10x or 20x returns. He's probably my partner.</p>
+
+<p class="q" data-t="5147">Final one. What are you most excited for when you think about the next 10 years?</p>
+
+<p data-t="5153">There's going to be a really bad downturn that's different than 1999-2000 but really big. Markets don't go up forever, economies don't go up forever. There's a lot of policies in the government right now that might end really bad. I think it's going to happen in the next 10 years. That'll be the best time ever to invest. Combined with productivity booms from AI, avoid the Gen 1 AI companies like you'd avoid 1.0 internet companies. Think about internet companies started in 2003-2006. The same could happen with AI, which could benefit Anthropic, Thrive, and Andreessen who are raising these new giant funds and could invest during those periods. Always have money to play the game. If you don't have money, you're out of the game.</p>
+
+<p data-t="5258">Dude, this has been such a pleasure. Thank you so much.</p>
+
+<p data-t="5264">Thanks for having me.</p>
+    </div>
+  </main>
+  <script>
+  async function toggleYtBookmark(btn) {
+    const payload = {
+      title: btn.dataset.title,
+      url: btn.dataset.url,
+      filename: btn.dataset.filename,
+      interviewDate: btn.dataset.date,
+      source: 'YT',
+      expert: btn.dataset.channel,
+    };
+    try {
+      const resp = await fetch('/bookmark', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload),
+      });
+      const result = await resp.json();
+      setYtBookmarkState(btn, !!result.bookmarked);
+    } catch (e) {
+      console.error('Bookmark toggle failed:', e);
+    }
+  }
+  function setYtBookmarkState(btn, on) {
+    btn.classList.toggle('is-bookmarked', on);
+    btn.innerHTML = on ? '&#9733;' : '&#9734;';
+    btn.title = on ? 'Bookmarked' : 'Bookmark';
+    btn.setAttribute('aria-label', on ? 'Bookmarked' : 'Bookmark');
+  }
+  (async function initYtBookmarkState() {
+    const btn = document.getElementById('yt-bookmark-btn');
+    if (!btn || !btn.dataset.filename) return;
+    try {
+      const resp = await fetch('/bookmarks');
+      if (!resp.ok) return;
+      const list = await resp.json();
+      if (Array.isArray(list) && list.some(b => b && b.filename === btn.dataset.filename)) {
+        setYtBookmarkState(btn, true);
+      }
+    } catch (e) { /* offline -- leave default state */ }
+  })();
+
+  async function shareYtPage(btn) {
+    const original = btn.innerHTML;
+    btn.disabled = true;
+    btn.innerHTML = '&hellip;';
+    try {
+      const resp = await fetch('/share', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ filename: btn.dataset.filename }),
+      });
+      const result = await resp.json();
+      if (!result.ok) throw new Error(result.error || 'Share failed');
+      try { await navigator.clipboard.writeText(result.url); } catch (e) {}
+      btn.innerHTML = '&#10003;';
+      btn.title = 'Copied ' + result.url;
+      setTimeout(() => { btn.innerHTML = original; btn.disabled = false; btn.title = 'Share'; }, 2500);
+    } catch (e) {
+      console.error('Share failed:', e);
+      btn.innerHTML = '!';
+      btn.title = 'Share failed: ' + (e && e.message || e);
+      setTimeout(() => { btn.innerHTML = original; btn.disabled = false; btn.title = 'Share'; }, 3000);
+    }
+  }
+
+  // When the page is viewed from somewhere other than the local Reader
+  // server (e.g. a shared copy on GitHub Pages), hide the interactive
+  // buttons whose endpoints only exist on localhost.
+  (function hideLocalOnlyControls() {
+    const host = location.hostname;
+    const isLocal = host === 'localhost' || host === '127.0.0.1' || host === '';
+    if (isLocal) return;
+    const actions = document.querySelector('.yt-header-actions');
+    if (!actions) return;
+    const bookmark = actions.querySelector('#yt-bookmark-btn');
+    const share = actions.querySelector('#yt-share-btn');
+    if (bookmark) bookmark.remove();
+    if (share) share.remove();
+  })();
+  </script>
+</body>
+</html>
