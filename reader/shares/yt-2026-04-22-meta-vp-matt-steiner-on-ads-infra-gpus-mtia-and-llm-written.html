@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Meta VP Matt Steiner on Ads Infra, GPUs, MTIA, and LLM-Written Kernels</title>
+  <style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background: #faf8f5;
+  color: #2c2418;
+  line-height: 1.7;
+  padding: 0 1rem 2rem;
+}
+header {
+  position: sticky;
+  top: 0;
+  background: #faf8f5;
+  z-index: 100;
+  border-bottom: 2px solid #c4956a;
+  box-shadow: 0 2px 8px rgba(44,36,24,0.08);
+  padding: 0.6rem 1rem;
+}
+.header-inner {
+  max-width: 78ch;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header-title { font-size: 1rem; color: #2c2418; }
+.header-title strong { font-size: 1.1rem; }
+.header-link {
+  font-size: 0.85rem;
+  color: #8b6d4e;
+  text-decoration: none;
+  border: 1px solid #c4956a;
+  padding: 0.2rem 0.7rem;
+  border-radius: 4px;
+}
+.header-link:hover { background: #f0ebe3; }
+main {
+  max-width: 78ch;
+  margin: 0 auto;
+  padding-top: 0.5rem;
+}
+h2 {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #2c2418;
+  margin-top: 2rem;
+  margin-bottom: 0.5rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 2px solid #c4956a;
+}
+h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #3d3225;
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+section { margin-bottom: 1.5rem; }
+ul { margin: 0.5rem 0 0.5rem 1.5rem; }
+li { margin-bottom: 0.4rem; }
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0.75rem 0;
+  font-size: 0.92rem;
+}
+thead th {
+  background: #3d3225;
+  color: #faf8f5;
+  text-transform: uppercase;
+  font-size: 0.78rem;
+  letter-spacing: 0.05em;
+  padding: 0.5rem 0.75rem;
+  text-align: left;
+  font-weight: 600;
+}
+tbody td {
+  padding: 0.45rem 0.75rem;
+  border-bottom: 1px solid #e8e0d4;
+}
+tbody tr:nth-child(even) { background: #f0ebe3; }
+tbody tr:nth-child(odd) { background: #faf8f5; }
+.key-insight {
+  border-left: 4px solid #c4956a;
+  background: #f5efe8;
+  padding: 0.75rem 1rem;
+  margin: 0.75rem 0;
+  font-size: 0.93rem;
+  border-radius: 0 6px 6px 0;
+}
+.qa-pair { margin-bottom: 1.25rem; }
+.question-box {
+  background: #f0ebe3;
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+  margin-bottom: 0.5rem;
+}
+.analyst-label {
+  display: block;
+  font-size: 0.8rem;
+  color: #8b6d4e;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  margin-bottom: 0.25rem;
+}
+.answer { padding-left: 0.25rem; }
+.loading-section { opacity: 0.5; }
+.loading-indicator {
+  font-size: 1.2rem;
+  padding: 2rem;
+  text-align: center;
+  color: #8b6d4e;
+}
+
+/* YouTube transcript reader */
+
+/* Legacy .yt-meta-card -- kept so old output files still render cleanly.
+   New output uses .header-title.yt below instead. */
+.yt-meta-card {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  margin-bottom: 1.5rem;
+  background: #f5efe8;
+  border-left: 4px solid #c4956a;
+  border-radius: 0 6px 6px 0;
+  padding: 0.9rem 1rem;
+}
+.yt-meta-card img {
+  flex: 0 0 180px;
+  height: 101px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+.yt-meta-body { flex: 1; font-size: 0.93rem; }
+.yt-meta-title { font-weight: 700; font-size: 1rem; margin-bottom: 0.25rem; }
+.yt-meta-sub { color: #8b6d4e; margin-bottom: 0.35rem; }
+.yt-meta-url { font-size: 0.85rem; color: #3d3225; }
+
+/* YouTube sticky header uses the default 78ch-capped centered
+   container so it aligns with the body text column below. The
+   buttons sit at the right edge of that centered container. */
+header:has(.header-inner.yt) { padding: 0.75rem 1rem; }
+.header-inner.yt { gap: 1rem; }
+.header-title.yt {
+  display: flex;
+  gap: 0.9rem;
+  align-items: center;
+  min-width: 0;
+  flex: 1;
+}
+.yt-header-thumb { flex: 0 0 88px; line-height: 0; }
+.yt-header-thumb img {
+  width: 88px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 3px;
+  display: block;
+}
+.yt-header-text { min-width: 0; flex: 1; }
+.yt-header-text strong {
+  display: block;
+  font-size: 1rem;
+  line-height: 1.3;
+  color: #2c2418;
+  /* Allow wrapping to 2 lines so long podcast titles show in full. */
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.yt-header-sub {
+  font-size: 0.8rem;
+  margin-top: 0.2rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.yt-header-sub .yt-channel { color: #8b6d4e; }
+.yt-header-sub .yt-date,
+.yt-header-sub .yt-dur { color: #3d3225; font-weight: 600; }
+.yt-header-sub .yt-sep { color: #c4956a; margin: 0 0.5rem; }
+
+.yt-header-actions {
+  display: flex;
+  gap: 0.4rem;
+  align-items: center;
+  flex: 0 0 auto;
+}
+/* Shared box shape for the star + share + YT buttons so they're
+   visually identical. Applies to both the <button>s and the <a> link. */
+.yt-header-actions .yt-bookmark-btn,
+.yt-header-actions .yt-share-btn,
+.yt-header-actions .header-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font: inherit;
+  font-size: 0.85rem;
+  line-height: 1;
+  color: #8b6d4e;
+  background: transparent;
+  border: 1px solid #c4956a;
+  border-radius: 4px;
+  padding: 0;
+  box-sizing: border-box;
+  width: 2.2rem;
+  height: 2.2rem;
+  white-space: nowrap;
+  text-decoration: none;
+  cursor: pointer;
+}
+.yt-header-actions .yt-bookmark-btn { font-size: 1rem; }
+.yt-header-actions .yt-share-btn { font-size: 1.05rem; }
+.yt-header-actions .yt-share-btn:disabled { opacity: 0.6; cursor: default; }
+.yt-header-actions .yt-bookmark-btn:hover,
+.yt-header-actions .yt-share-btn:hover,
+.yt-header-actions .header-link:hover {
+  background: #f0ebe3;
+  color: #3d3225;
+}
+.yt-header-actions .yt-bookmark-btn.is-bookmarked {
+  background: #c4956a;
+  color: #faf8f5;
+  border-color: #a87d5a;
+}
+.yt-header-actions .yt-bookmark-btn.is-bookmarked:hover {
+  background: #a87d5a;
+  color: #faf8f5;
+}
+
+h3.chapter {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #3d3225;
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+h3.chapter a {
+  font-size: 0.8rem;
+  color: #8b6d4e;
+  text-decoration: none;
+  font-weight: 400;
+}
+
+.yt-body p {
+  margin-bottom: 1.15rem;
+}
+.yt-body p.q {
+  background: #f0ebe3;
+  border-left: 3px solid #c4956a;
+  border-radius: 0 6px 6px 0;
+  padding: 0.6rem 0.9rem;
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+  color: #3d3225;
+  font-style: italic;
+  font-size: 0.96rem;
+}
+.yt-body p.q::before {
+  content: "Q";
+  display: inline-block;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 0.72rem;
+  color: #8b6d4e;
+  letter-spacing: 0.05em;
+  margin-right: 0.5rem;
+  padding: 0.05rem 0.4rem;
+  border: 1px solid #c4956a;
+  border-radius: 3px;
+  vertical-align: 0.1em;
+}
+.yt-body p.q a {
+  display: block;
+  text-align: right;
+  margin-top: 0.3rem;
+  font-style: normal;
+  font-size: 0.8rem;
+  color: #8b6d4e;
+  text-decoration: none;
+  white-space: nowrap;
+}
+.yt-body p.q a:hover {
+  text-decoration: underline;
+}
+
+</style>
+</head>
+<body>
+  <header>
+    <div class="header-inner yt">
+      <div class="header-title yt">
+        <a class="yt-header-thumb" href="https://www.youtube.com/watch?v=5dWovJ4YHTY" target="_blank"><img src="https://i.ytimg.com/vi_webp/5dWovJ4YHTY/maxresdefault.webp" alt=""></a>
+        <div class="yt-header-text">
+          <strong>Meta VP Matt Steiner on Ads Infra, GPUs, MTIA, and LLM-Written Kernels</strong>
+          <div class="yt-header-sub">
+            <span class="yt-channel">Semi Doped</span>
+            <span class="yt-sep">&middot;</span>
+            <span class="yt-date">Apr 20, 2026</span>
+            <span class="yt-sep">&middot;</span>
+            <span class="yt-dur">39m</span>
+          </div>
+        </div>
+      </div>
+      <div class="yt-header-actions">
+        <button id="yt-bookmark-btn"
+                class="yt-bookmark-btn"
+                title="Bookmark"
+                aria-label="Bookmark"
+                data-filename="yt-2026-04-22-meta-vp-matt-steiner-on-ads-infra-gpus-mtia-and-llm-written.html"
+                data-title="Meta VP Matt Steiner on Ads Infra, GPUs, MTIA, and LLM-Written Kernels"
+                data-url="https://www.youtube.com/watch?v=5dWovJ4YHTY"
+                data-date="2026-04-20T14:25:28-07:00"
+                data-channel="Semi Doped"
+                onclick="toggleYtBookmark(this)">&#9734;</button>
+        <button id="yt-share-btn"
+                class="yt-share-btn"
+                title="Share"
+                aria-label="Share"
+                data-filename="yt-2026-04-22-meta-vp-matt-steiner-on-ads-infra-gpus-mtia-and-llm-written.html"
+                onclick="shareYtPage(this)">&#8599;</button>
+        <a class="header-link" href="https://www.youtube.com/watch?v=5dWovJ4YHTY" target="_blank" title="Watch on YouTube" aria-label="Watch on YouTube">YT</a>
+      </div>
+    </div>
+  </header>
+  <main>
+    <div class="yt-body">
+    <p data-t="0">This is the weirdest, wackiest, most fun time to be a software engineer ever. Today we have a special guest, Matt Steiner, VP of monetization, infrastructure, ranking, and AI foundations at Meta. Welcome, Matt.</p>
+
+<p data-t="18">Hi, thanks. Yeah, great to be here with you, Austin. Thanks for having me.</p>
+
+<p class="q" data-t="24">So what I wanted to get out of this conversation is to better understand Meta's core advertising business and then how that drives infrastructure decisions. So I'm going to assume that listeners know nothing and we'll just walk through from first principles. So can you take us at the highest level—how do ads work? What are the back-end models that power Meta's ad stack?</p>
+
+<p data-t="48">Yeah, great. Maybe let's start with a quick overview of how the ad system works. So on a very high level, an advertiser shows up and they say, "Okay, I have some creatives with some copy and I want to show them to some people." And sometimes they pick explicitly who they want to show them to, and sometimes they say to our ad system, "Hey, show them to whoever is most likely to convert for the objective that I specify."</p>
+
+<p data-t="76">Whether the objective is the person visits my website, the person adds something to a shopping cart on my website, or the person actually clicks buy, those are all different objectives. Advertisers can optimize for different things. Once the ads are created, our job is to record who these ads should be shown to. So we produce a big database that says, "Here are all the people that the advertiser would have wanted their ad to be shown to," and we record in each person's mini database that this is an ad that could be shown to them the next time they log in.</p>
+
+<p data-t="112">Of course, that list of ads that could be shown to any person is very long. So when a person logs in and our front end asks for an ad—whether that's on your mobile device on Instagram, on your Facebook, or on the web—each front end queries our backend system and says, "Give me the best ads to show this person next." The request goes through our systems and arrives at our indexing system, which fetches all the ads that could be shown to that person. That's where a piece of technology we've talked about recently called Meta Andromeda comes into play.</p>
+
+<p data-t="133">A long time ago we had just a much shorter list of ads that could be shown to any person. Today that list is extremely long, and to process all of those ads we need to use a fairly powerful system. We worked with our hardware partners at NVIDIA and designed a custom hardware skew with some GPUs in it, and we co-designed a machine learning model that runs specifically on that hardware skew for assessing which ads are the top ads to rank for each person.</p>
+
+<p data-t="184">So in the ad serving process, the two main steps are basically finding ads that could be shown to a person and then ranking them to produce the top ads to be shown. Andromeda operates in the first stage, which we call retrieval. It uses a powerful machine learning model that has embedded some of a person's interests and past interactions to personalize which ads should be retrieved for them, because not every product advertised is going to be interesting to them. We're basically subsetting the products and creatives that might be interesting in order to return them to the ranking system.</p>
+
+<p data-t="217">So the next step is ranking, where we apply large and powerful machine learning models to figure out what is the right order of ads in terms of highest conversion probability times expected value for advertisers. The ad system has a number of ranking models that rank different ads based on the objective functions for the user or the advertiser. We've been on a long journey to consolidate those into a single ranking model using a technology we call Lattice.</p>
+
+<p data-t="260">The advantage of combining ads ranking models into a single larger model is cost savings. You don't have to keep multiple copies of user interests in each machine learning model. You can keep one copy of a person's interests in that model, which saves memory. You can compute the subnets for a machine learning model once instead of repeatedly computing the same subnets across different models. It's more computationally efficient to have a single model.</p>
+
+<p data-t="290">The other advantage is performance. A machine learning model trained on more data with more varied objectives performs better than a smaller machine learning model trained on all the data for one objective. Partly because of the compute advantages, partly because of the memory pressure advantages, and partly because each piece of data has some additional signal associated with it that the model can use to improve its own performance.</p>
+
+<p data-t="319">So Lattice consolidation is one piece, and then further along in the consolidation journey, we have built GEM, our generative ads recommendation model, which is our foundation model that we've tried to train on all of the data available for Meta's ad system. We use it to improve the probability of accurately predicting what somebody's going to be interested in and what they're going to convert when we show an ad to achieve an advertiser's objective.</p>
+
+<p data-t="357">This large foundation model was then used to distill into smaller models that we could serve for specific purposes, encoding as much information as we can from the larger foundation model. Now, like with any system, some people use it less and some people use it more. There are people that are very interactive with brands and content and ads. They're commenting on ads, liking ads, interacting with the brand, buying things from the brand. Those power users have much longer interaction histories with a brand or all the brands together.</p>
+
+<p data-t="389">It turns out that in our original architecture design, we did not have enough compute available to process all of those interactions given our extremely limited latency budget. For example, when a person shows up in a Meta property, we want to make sure their feed and their ads load in a certain fixed latency budget—let's call it roughly one second. We want subsecond latency for all of our ad retrieval requests. That means we can only process so many interactions when evaluating or inferring that machine learning model.</p>
+
+<p data-t="420">Recently, we've built a new ranking model called the adaptive ranking model that substantially varies the amount of compute used to evaluate the model based on how long a sequence a user's interaction history is with a brand or all the brands advertising on Meta systems. That way we can use a dramatic amount more compute for users with longer interaction histories and substantially increase the accuracy of our predictions about what they're going to interact with next.</p>
+
+<p data-t="460">That of course drives better results for our advertising partners and much better experiences for the people seeing those ads. And it's all through the magic of right-sizing the compute and memory associated with each request and right-sizing the model based on the amount of data available to evaluate for a particular person.</p>
+
+<p class="q" data-t="479">Oh man, okay. This is so good. This is so fascinating. There's so much here. So at the highest level, you broke it down to retrieval and ranking, and retrieval was Andromeda and ranking was Lattice. With Lattice, you talked about having lots of models but trying to simplify that down into one model for many reasons. And meanwhile, the whole backdrop here is something—what kind of scale are we talking about again?</p>
+
+<p data-t="510">It's something like three plus billion daily active users or something?</p>
+
+<p data-t="518">That's exactly right. More than three billion daily active users across Meta's properties worldwide. So a lot of people seeing a lot of organic content in their feed, a lot of paid content in their feed, and interacting with both.</p>
+
+<p class="q" data-t="542">Yeah, wow. Take me back to GEM and remind me—so we have retrieval and ranking, and where does GEM fit in again?</p>
+
+<p data-t="556">So GEM is our foundation model. It's the model that we train with all of the data that we can use for training to produce the largest, most sophisticated, most prediction-accurate model possible. At the same time, the model is so large it's not servable effectively. And so the model has to go through a distillation stage where a lot of the core learnings are distilled into smaller models that are servable.</p>
+
+<p data-t="586">And then the next step after that was to try and make the largest possible servable model on the most powerful inference hardware we have available to produce the most accurate predictions specifically for those users who are power users. They have long interaction histories with brands and content and interests that we can really do a lot better for, deliver them much better experiences, and deliver advertisers much better predictions and consequently return on advertiser spend.</p>
+
+<p class="q" data-t="615">Nice, nice. And that's where the adaptive ranking fit into this. So this is really interesting because I think people are starting to get used to the idea of a foundation model that's so big you can't serve it and then also the consequences and tradeoffs of having smaller models that are servable. But of course, for listeners thinking of generative AI, they might be thinking of smaller models that respond faster but aren't as intelligent.</p>
+
+<p class="q" data-t="645">Now of course, broadly when people are thinking about generative AI, they're thinking about optimizing for intelligence or interactivity—how quickly does it respond? You talked about latency, but you also talked about being willing to spend more compute time to get a better outcome for the advertiser and a better experience for the user. Can you talk to us more about the outcomes—why adaptive ranking and spending more compute because you have that longer history yields a better outcome?</p>
+
+<p data-t="660">Yep, yep, that's great. Maybe one way to think about this is: let's imagine that you're married and you have an anniversary, and every year you buy something for your spouse, something that they like that's in their interest set but not necessarily in your interest set. If you can look at a long interaction history for a particular person and you see like, "Hey, every September they buy this particular class of item"—you don't have to even know that it's their anniversary, but you can see in that long interaction history—every September they buy something in this category. Then you can use that information to make a better prediction for what they're likely to purchase in September.</p>
+
+<p data-t="702">Now, that's one example. Maybe you have a history of purchasing specific things in specific months corresponding to your children's birthdays or a holiday or an anniversary. You can see how looking at longer sequences of interactions can deliver much improved predictions about what a person is likely to want and then what a person is likely to purchase based on those longer interaction sequences.</p>
+
+<p data-t="738">But you can only process those longer interaction sequences if first you've stored longer interaction sequences and second you have the computational power available at serve time to process that whole interaction sequence when a person logs in. Not everybody has long interaction sequences. Not everybody interacts every month with an advertiser, but some people do. And where the data is available to deliver dramatically improved experiences for those people, you of course want to give them the best possible experience you can. But that is a function of whether you have the compute available to process all that information within that latency budget through parallelization and all that. GPUs and large-scale GPUs in the inference stack allow us to provide. And of course, better matching products and services with people who are interested delivers better results for our advertising partners as well, because we are just matchmaking—matching the person who wants to purchase a thing with an advertiser who has the thing to purchase.</p>
+
+<p class="q" data-t="813">Yes, that makes a ton of sense. So yes, like for me, you're saying, "Okay, well, if I only look temporally at the last month of what you've been doing, I could give you some ads." But yes, you've been on Facebook since back when you had to get invited. So if I could look all the way back, maybe there's interesting trends. But of course, the tradeoff—I'm thinking about an analogy of generative AI, which everyone can relate to. It's kind of like context: I want a big model, I want to give it a ton of context, but that's expensive and that takes time.</p>
+
+<p class="q" data-t="847">And obviously with user-centric social apps, you're thinking a lot about latency. And so you've got that constraint of what is the most context I can give it, the biggest model I can give it, but still do it subsecond, you know, under one second. And so that's actually kind of a perfect segue to ask you more. You talked about co-designing with NVIDIA, you talked about GPUs. Take me back—did this stuff run on CPUs at one point in time and how has that sort of evolved?</p>
+
+<p data-t="880">Yeah, that's a great question. Back in the day, retrieval of course ran on CPUs, and back in the day even ranking ran on CPUs. And of course, there was always a push to deliver more compute for both retrieval and ranking, because the more compute available, the larger and more complex the machine learning model we can evaluate, and the larger the user history and long sequence context windows that can be passed into those models, delivering better predictions.</p>
+
+<p data-t="914">So we've been on a kind of long march through smaller CPUs, medium-sized CPUs, larger CPUs, custom A6 GPUs, more sophisticated and powerful GPUs, more sophisticated and powerful custom A6. This is all in service of delivering better results for our customers at a reasonable cost to our business so that the ROI works out on both ends for both our advertising partners and Meta.</p>
+
+<p class="q" data-t="960">Okay, that's amazing. So what I heard you saying was like it's been a long history for Meta of asking how can we get more compute to serve better ads, which is a win-win for everyone. And you're kind of in a marketplace with users and businesses and you're kind of sitting in the middle. And so this idea of using compute to do predictions better has been the story of Meta's business for quite some time.</p>
+
+<p data-t="984">Yeah, at least the last ten years, we've been investing really deeply in performance-optimizing the hardware, the networks, the data center designs, the silicon chips themselves, the machine learning models, the software infrastructure, and the tooling associated with them. It's a very large, complex optimization problem that we have to satisfy to deliver the best results for our customers and for the people that use our products and services. It's a really fascinating technology problem in addition to a business problem.</p>
+
+<p class="q" data-t="1008">Yes, indeed. It's definitely an intersection of both. So then what did the practical process of hardware and software co-design look like when you were developing the retrieval engine like with the NVIDIA GraceHopper?</p>
+
+<p data-t="1020">Yeah, so we sit down with our partners and we say, "All right, this is the amount of compute that we want to target for this particular use case. This is the latency budget. And what are the kind of configurable blocks you have in your portfolio that you could consider making into a skew—whether it's on a chip level or a hardware level—that would work for this particular use case?" And of course our hardware partners have various configurations of machines and chips and boards available that they are willing to build in certain configurations.</p>
+
+<p data-t="1048">So we looked at that and we said, "Okay, well, given the retrieval problem itself, it's going to require a huge amount of memory. It's maybe a little bit more memory-bound than compute-bound. So we need a lot of memory, specifically high-bandwidth memory. So there's enough memory channels to keep those GPUs saturated when they're doing computation." And we end up with a skew design that is optimized for the retrieval space where it has the right amount of memory, the right amount of high-bandwidth channels between the memory and the compute, and the right amount of compute that is effectively balancing that for that particular use case.</p>
+
+<p data-t="1077">That design is maybe different than the hardware SKUs that you would use in ranking broadly or in serving a web page. But we had some great partners to work with on the hardware side. And of course, we have truly brilliant AI researchers on the modeling side and software engineers for distributed systems that are optimizing the software infrastructure layer, and networking engineers who are optimizing how these machines talk to each other so that we can minimize end-to-end latency while maximizing the parallelism and compute we have available to deliver the best results for people and businesses.</p>
+
+<p class="q" data-t="1108">Yeah. Yes. So you sit down with your partner and you say, "Hey, we are a large customer. We have particular workloads that we run at scale, and we know the shape of those workloads really well." And this particular one with retrieval, it has these characteristics—memory-bound, need high memory capacity and bandwidth, and so on. Then does that lead you to look at those certain workloads that you have and sort of ask, yeah, what is the right shape of compute, what is the right skew for retrieval versus ranking versus GEM training versus adaptive ranking, and so on?</p>
+
+<p data-t="1141">Yeah, yeah, that's exactly right. I mean, we are always trying to work both sides of this problem. One problem is how do we influence evolution of the hardware to better meet the needs of the software stack and where we anticipate the software and AI stack is evolving over the next couple of years, because you're probably familiar that hardware has relatively long lead times compared to software. And then on the other side of the problem, we are trying to influence the software stack evolution in a direction that is going to meet the hardware and maximize the potential of the hardware that's going to be delivered to us this half, this quarter, this year, next year, and the following year.</p>
+
+<p data-t="1172">So we're always trying to evolve them in similar directions. Sometimes there are hardware breakthroughs and we evolve our software stack to take advantage of those breakthroughs. Sometimes there's new software breakthroughs and we try to influence the hardware design in that direction to support those breakthroughs. But there's a kind of big discussion about this constantly across the industry. It's particularly important given the rapid pace of innovation in the AI space, how quickly machine learning models are evolving, how quickly they are improving their performance and cost characteristics. So it's a wild time to work in the hardware-software intersection space.</p>
+
+<p class="q" data-t="1199">Oh yeah, totally. And obviously with transformers coming into existence, I know you've probably gone from more traditional ML into evolving toward transformer-based ones. And we'll get there, but first take me to—you talked about CPUs, you talked about GPUs and how with the GraceHopper that fit nicely into particular workloads. So then what leads Meta toward MTIA? I know there's been a lot of announcements on that front lately with showing a roadmap, partnering with Broadcom, but yeah, can you tell us like the business and economic rationale for moving in that direction?</p>
+
+<p data-t="1233">Yeah, so it's a great question. Generally, we tend to think about this in terms of the evolution of our heterogeneous hardware fleet over time. We can see the offerings that are available from our hardware partners that have various configurations of memory and compute, memory channels, and different ratios. And of course, some of them work really well for a particular use case, some of them work really well for a different use case. And there are different tradeoffs with running different machine learning models on each of those hardware configurations. Sometimes the tradeoff is latency, sometimes the tradeoff is cost, sometimes the tradeoff is power.</p>
+
+<p data-t="1273">So in this very complex constraint satisfaction and optimization space, you're trying to figure out what is the best offering that maximizes your returns for your advertising partners and for your business as well. And that's where sometimes we have a use case that is different from the standard use case in the space, and I think that was the initial impetus for the Meta Training and Inference Accelerators. Ads is a recommender systems class of problem, which is a little bit different domain than your large language model class of problems.</p>
+
+<p data-t="1307">The large language model problem is what's known in the industry as an embarrassingly parallel problem. You can process a bunch of stuff in parallel. It doesn't have to have super-effective high-bandwidth communication to sync up the weights at periodic intervals. At the same time, in the recommender systems space, all of the data is personalized. So in the large language model space, if I was to say to somebody, "Complete the sentence: to be or not to,"  there's an objective, highest-probability answer that almost everybody who speaks English and has taken high school English classes could guess what the next word is going to be.</p>
+
+<p data-t="1341">A machine learning model similarly can learn there's an objective, highest-probability answer to that blank in that sentence. Now in recommender systems, the world is not objective and highest-probability like that. The question is: what is the next best ad to show Matt? And that's not what is the next best ad to show, because who's looking at the ad slot dramatically determines whether the ad is going to matter to them or not. So there's no objectively correct answer to what is the next ad to show, but there is a highest-probability answer to what is the next ad to show Matt.</p>
+
+<p data-t="1384">So every example that is fed into our training systems for recommender systems has to have that personalization attached to it. What does that personalization look like? That personalization looks like, "You know, Matt likes gardening and cycling and seems to buy a lot of stuff for toddlers, a lot of cleaning products." And as a result, things that fit in those domains may be much more appealing to Matt than things that are outside of those domains. I used to have hobbies, now I have young children. That's changed what I purchase quite a bit.</p>
+
+<p data-t="1420">And so the machine learning model can encode that, and it changes what the correct answer is to that question of what ad should be shown to Matt next. Now, of course, that changes the size of the data packet associated with each of those examples. You have to pass in this personalization blob for the example of "We showed this ad to Matt and Matt clicked on it" or "We showed this ad to Matt and Matt didn't click on it. Here's Matt's big personalization blob of things he's interested in."</p>
+
+<p data-t="1452">And then the machine learning model can learn, "Well, with this kind of personalization blob associated with Matt, he likes cycling and toddler toys and gardening equipment. These kinds of ads are good ads to show Matt, and these kinds of ads are not good ads to show Matt." But that literally changes the hardware characteristics that you want when you have a very different I/O ratio associated with each example. If your examples carry a lot more data with each example, then you have to have a much fatter network pipe to keep the chip fed. You have to have more memory on the hardware skew to keep the chip fed.</p>
+
+<p data-t="1488">You have to have a lower ratio of compute to memory and high-bandwidth memory at that—to be able to effectively utilize compute. So the optimal hardware skew for training a recommender systems model may not be the same as a GPU that is optimized for training large language models. There's obviously pros and cons there, but you may want to build a skew that fits that particular workload really well.</p>
+
+<p data-t="1519">Now, that's not all of our workloads. We obviously use GPUs in a lot of places. We use them for a lot of different parts of the recommender systems problem, but for some types of models, we have a use case for a hardware skew that has a different configuration than what's commonly offered as a GPU package skew. So for some circumstances, a custom skew with a different compute-to-memory ratio makes a lot of sense. For other applications, the GPU skew is much more performant or much more cost-effective for that workload.</p>
+
+<p data-t="1555">And so we're really trying to optimize the available compute and memory to the available models that need to be trained and the data size with each of those models. So it's a fascinating, challenging technology optimization problem.</p>
+
+<p class="q" data-t="1576">Yeah, yeah, that was really helpful. I like how you illustrated the problem to show that there's specific I/O requirements and memory requirements and how that could lead you to thinking about what of all the possibilities out there, what skew would fit best for this particular type of workload, and that might involve making your own. Okay, so now that's talking about recommendation systems, which is really useful. So again, that's a good reminder that a large part of Meta's business involves training and inferencing recommendation systems.</p>
+
+<p class="q" data-t="1598">Now, you did talk about GEM as a foundation model and needing to train that and it being so big that it's not cost-effective to serve. Can you tell us more about the compute challenges and the infrastructure demands on creating GEM and serving GEM?</p>
+
+<p data-t="1608">Yeah, so GEM as our foundation model is the largest model that we train in the ads recommender space. We try to feed it as much of our data as we can feed into the model to produce the largest, most complex and best-predicting model that we have available. Now, some of those parts of the model are not super-efficient. And that makes it not very effective to serve, particularly if you're latency-constrained. That's why we had previously done this distillation process, and now we're using this distilled GEM variant that we're calling the adaptive ranking model, where it's distilled to be efficient enough to be served, but it's not nearly as distilled as prior models, which were much smaller.</p>
+
+<p data-t="1640">The adaptive ranking model is an LLM-scale and complexity recommender model for Meta with roughly one trillion parameters in this inference-time model, and it gets evaluated at subsecond latencies, which is a pretty fun and interesting software and hardware challenge.</p>
+
+<p class="q" data-t="1659">Yeah, subsecond latencies. That's amazing. So then you're talking about different SKUs and different workloads, and I'm tracking all that. And you mentioned that at the end of the day you have a heterogeneous silicon environment—different vendors, some homebrew, some off-the-shelf, some custom. You talked about software and obviously having to work internally to make sure that your software is going to work with the hardware and vice versa. Can you tell me just a little bit more about how you manage software across all that hardware? Because I think to the layman that sounds like a lot of added complexity, but I don't know how many different levels of abstraction you can have that makes it easier.</p>
+
+<p data-t="1682">Yeah, that's a really great question. So in general, heterogeneous hardware is a challenging problem to solve because you have to make sure that each of your binaries not only is capable of running on that hardware, but is performant and cost-effective on that hardware. And this is where folks have historically been forced to choose between custom optimization of a binary on a particular hardware type or translation layers, which abstract away a lot of the custom features of the hardware but also abstract away a lot of the performance improvements of the hardware as well.</p>
+
+<p data-t="1708">So there was a very clear spectrum of performance tradeoffs between abstraction layers, which make it simpler to deploy hardware but less cost-effective, and customization of binaries for hardware, which is of course slow and costly to implement but much more performant and cost-effective once implementation is done.</p>
+
+<p data-t="1729">Recently, machine learning models have enabled really cool abilities to customize specific binaries for hardware such that you can now at scale deploy binaries that are custom-modified and performance-optimized for specific types of hardware rapidly and easily without having an expert software engineer do those performance optimizations for you. We recently put out a paper I believe we called it AlphaEvolve or AlphaKernel, where a machine learning model, a large language model, will write a custom, performance-optimized kernel for a particular binary or machine learning model and a particular hardware pair.</p>
+
+<p data-t="1758">And you can imagine, if we have a large number of machine learning models and a large number of heterogeneous hardware types, writing the custom hardware kernel that would optimize the performance of this binary on the hardware was very time-consuming before, and it's effectively a matrix of custom software that had to be written and hand-tuned by an expert software engineer. Now we've entered an era where large language models with coding capabilities can produce these optimized kernels at extremely low cost—way cheaper than having someone sit there and meticulously pick through the various optimizations necessary to make this binary or model run on this particular type of hardware.</p>
+
+<p data-t="1793">It's a real breakthrough in the technology industry, and it's going to enable a lot more of that cost-effective optimization that allows you to take much more advantage of all of the hardware available to you. So now we're thinking through all of our deployments of all of our binaries to all of our hardware. Whereas before we wouldn't necessarily move a binary that was adapted to a particular type of hardware to another type of hardware because that would be high-cost and maybe it wouldn't be worth it. Now we can ask a machine learning model to produce an optimized kernel for this binary or machine learning model on this hardware.</p>
+
+<p data-t="1830">And we can do a lot, a lot more active management of software running on hardware, which is going to lead to better performance for our advertising partners, better experiences for people, and of course lower costs for Meta as we get to take more advantage of the hardware we have available to us and really right-size the hardware and software use cases together.</p>
+
+<p data-t="1856">Now, it's a long journey. We're not done by any stretch, but some of the new breakthroughs here in AI are having really beneficial effects on our ability to optimize our hardware and our software for our business.</p>
+
+<p class="q" data-t="1876">Amazing. What a world we live in. It is. It's wild. So thinking this through and reflecting it back a bit, like where my head is at is like, okay, back in the day it used to be you know, software engineers are very expensive. And you know, obviously Meta probably has always bought a lot of compute. But I could see the rationale for not having a heterogeneous silicon because then you have to have a bunch of software engineers.</p>
+
+<p class="q" data-t="1903">If you want to optimize it for every different piece of silicon, on the other hand you just say, well, software engineering is expensive and so we're not going to perfectly optimize. But of course, at your scale you want to perfectly optimize everything to eke out lower latency or better results or whatever. And then interestingly, now we're in a world where you need to buy lots and lots and lots of hardware for your business, but the cost of software engineering has gone down to some extent with the help of generative AI and LLMs, letting you still have a fleet of different tasks and different hardware, and yet you can use LLM to help optimize and fill out that spreadsheet in a cost-effective way, which is very awesome.</p>
+
+<p class="q" data-t="1932">So then that leads me to the question about generative AI. How is Meta thinking about the relationship between its core recommendation systems and infrastructure and the investments in generative AI? Not only using generative AI in your core business, which that alone is really cool and interesting, but also I know that you are training generative AI and offering that to customers.</p>
+
+<p data-t="1944">Yeah, I mean there is a lot of cross-talk between our various AI experts in the generative AI, large language model world and in our recommender systems world. Not only is there cross-talk and collaboration on hardware and data center design and performance optimization for the distributed systems, including things like the model trainer, we are both really focused on optimizing the machine learning model trainer and optimizing various aspects of the performance that the system needs to be able to train much larger models and serve much larger models.</p>
+
+<p data-t="1976">So there is a huge amount of joint investment that effectively benefits both sides of the house—the large language model side of the house and the recommender systems side of the house. And of course, we have experts in both types of ranking on both sides of the house so that we can improve the performance using both domain techniques and capabilities, as evidenced by the pace of breakthroughs that we're able to deploy in our services here. We're really seeing the benefits of the innovation in the AI space across both parts of the business today, and that's obviously very exciting.</p>
+
+<p data-t="2016">This is the weirdest, wackiest, most fun time to be a software engineer ever.</p>
+
+<p class="q" data-t="2034">Yes, seriously, yeah. It's fascinating to think about those different sides of the house and how they cross-pollinate and impact each other and just how fast both are moving. So I think what an awesome time to be at Meta and what a crazy time. So last question—looking forward maybe two years, because the rate of change is so fast it's hard to say looking forward any further than that. But like, what do you see as the primary infrastructure needs for the next generation of AI-driven advertising?</p>
+
+<p data-t="2053">Yeah, I mean you can see we are all investing very heavily in building out data centers and purchasing large quantities of compute, memory, and storage so that we can build better machine learning models and find better machine learning models. The process of identifying performance improvements is really training a lot of machine learning models, tweaking various optimization parameters, coming up with new architectures, and testing those to really drive maximal performance benefits.</p>
+
+<p data-t="2083">So of course, you know, large investments in machine learning model training and machine learning model research that leads to performance improvements for training that of course lead to performance improvements at inference time. Substantial investments to make sure that we can infer these large language models and other generative models and ranking models both more cost-effectively but also driving more compute available at serve time and more memory available at serve time so we can feed things like longer sequence histories and larger context windows into these models.</p>
+
+<p data-t="2121">But really, the kind of overarching theme here is end-to-end optimization. We're trying to optimize the data center designs with the networking designs and the skew designs and the software infrastructure designs for the distributed systems and the machine learning model infrastructure, the machine learning models themselves, the data that goes into them, all jointly so we can drive maximum performance together.</p>
+
+<p data-t="2153">And maybe to your point earlier, the demand for software engineering has effectively gone through the roof as the price has gone down. Whereas before we would invest in a limited number of hardware optimization kernels to run software on, we want one-hundred times as many software optimization kernels for each piece of hardware because it's available now. We can have machine learning models produce that. And now we have our expert hardware performance tuners supervising these models instead of writing the optimizations themselves.</p>
+
+<p data-t="2190">The same thing is true at every layer of the stack where we're doing this optimization. Now the demand for custom software that is more performant than a generic abstraction layer has gone through the roof. And every team at every layer is trying to do much better optimization to produce better results per dollar, better results per watt of power used in these data centers, etc.</p>
+
+<p data-t="2216">And that's really leading to these meaningful breakthroughs that you're seeing in terms of performance across the industry but particularly for the business as well.</p>
+
+<p class="q" data-t="2240">Wow, yeah. What a wild cross-optimization problem, being sort of vertically integrated in some respects, from hardware through data center design all the way to the software, to the training and the inference, and then of course being able to use LLMs to help with all this. Super fascinating. What I like about what you're talking about here is you have to make all of these tradeoff decisions, but there's kind of a clear optimization function that you're solving for. When you're thinking of an ads-based business and ROI, how much are you willing to spend, how much are they willing to pay, and how can better results lead to potentially paying more or the pie growing bigger or whatever.</p>
+
+<p class="q" data-t="2277">And I'm just thinking out loud, contrasting that to maybe other players in the general AI space where the economics aren't quite as straightforward in making these decisions. But anyway, I'm just thinking out loud—like wow, you guys have a lot to think through. So my very final question for you personally is just like, how do you stay on top of it all as it's changing so fast up and down the stack?</p>
+
+<p data-t="2299">That's a great question. I don't think I have a fantastic answer. The rate of change is amazing. You know, I try to use all of the AI tools available, including large language models, to summarize papers and produce a list of all the latest papers that have come out with breakthroughs that are relevant to the domain that I work in. I rely on a brilliant team of expert AI researchers to summarize the progress that's happening in the space and how that should influence the roadmap that we're building for the future.</p>
+
+<p data-t="2331">But the amount of information and the progress in the space is just wild. It's really amazing and something to behold.</p>
+
+<p class="q" data-t="2339">Yes, totally. Well, you don't sound bored, that's for sure.</p>
+
+<p data-t="2343">Definitely not.</p>
+
+<p class="q" data-t="2345">Awesome. All right, that's it for today. Thanks so much, Matt, for taking the time to educate us. I learned a lot and I know that everyone will really get something out of this. So thank you.</p>
+
+<p data-t="2359">Thank you for having me, Austin. Great to chat with you.</p>
+    </div>
+  </main>
+  <script>
+  async function toggleYtBookmark(btn) {
+    const payload = {
+      title: btn.dataset.title,
+      url: btn.dataset.url,
+      filename: btn.dataset.filename,
+      interviewDate: btn.dataset.date,
+      source: 'YT',
+      expert: btn.dataset.channel,
+    };
+    try {
+      const resp = await fetch('/bookmark', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload),
+      });
+      const result = await resp.json();
+      setYtBookmarkState(btn, !!result.bookmarked);
+    } catch (e) {
+      console.error('Bookmark toggle failed:', e);
+    }
+  }
+  function setYtBookmarkState(btn, on) {
+    btn.classList.toggle('is-bookmarked', on);
+    btn.innerHTML = on ? '&#9733;' : '&#9734;';
+    btn.title = on ? 'Bookmarked' : 'Bookmark';
+    btn.setAttribute('aria-label', on ? 'Bookmarked' : 'Bookmark');
+  }
+  (async function initYtBookmarkState() {
+    const btn = document.getElementById('yt-bookmark-btn');
+    if (!btn || !btn.dataset.filename) return;
+    try {
+      const resp = await fetch('/bookmarks');
+      if (!resp.ok) return;
+      const list = await resp.json();
+      if (Array.isArray(list) && list.some(b => b && b.filename === btn.dataset.filename)) {
+        setYtBookmarkState(btn, true);
+      }
+    } catch (e) { /* offline -- leave default state */ }
+  })();
+
+  async function shareYtPage(btn) {
+    const original = btn.innerHTML;
+    btn.disabled = true;
+    btn.innerHTML = '&hellip;';
+    try {
+      const resp = await fetch('/share', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ filename: btn.dataset.filename }),
+      });
+      const result = await resp.json();
+      if (!result.ok) throw new Error(result.error || 'Share failed');
+      try { await navigator.clipboard.writeText(result.url); } catch (e) {}
+      btn.innerHTML = '&#10003;';
+      btn.title = 'Copied ' + result.url;
+      setTimeout(() => { btn.innerHTML = original; btn.disabled = false; btn.title = 'Share'; }, 2500);
+    } catch (e) {
+      console.error('Share failed:', e);
+      btn.innerHTML = '!';
+      btn.title = 'Share failed: ' + (e && e.message || e);
+      setTimeout(() => { btn.innerHTML = original; btn.disabled = false; btn.title = 'Share'; }, 3000);
+    }
+  }
+
+  // When the page is viewed from somewhere other than the local Reader
+  // server (e.g. a shared copy on GitHub Pages), hide the interactive
+  // buttons whose endpoints only exist on localhost.
+  (function hideLocalOnlyControls() {
+    const host = location.hostname;
+    const isLocal = host === 'localhost' || host === '127.0.0.1' || host === '';
+    if (isLocal) return;
+    const actions = document.querySelector('.yt-header-actions');
+    if (!actions) return;
+    const bookmark = actions.querySelector('#yt-bookmark-btn');
+    const share = actions.querySelector('#yt-share-btn');
+    if (bookmark) bookmark.remove();
+    if (share) share.remove();
+  })();
+  </script>
+</body>
+</html>
