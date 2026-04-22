@@ -1,0 +1,824 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>How a16z Growth Invests</title>
+  <style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background: #faf8f5;
+  color: #2c2418;
+  line-height: 1.7;
+  padding: 0 1rem 2rem;
+}
+header {
+  position: sticky;
+  top: 0;
+  background: #faf8f5;
+  z-index: 100;
+  border-bottom: 2px solid #c4956a;
+  box-shadow: 0 2px 8px rgba(44,36,24,0.08);
+  padding: 0.6rem 1rem;
+}
+.header-inner {
+  max-width: 78ch;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header-title { font-size: 1rem; color: #2c2418; }
+.header-title strong { font-size: 1.1rem; }
+.header-link {
+  font-size: 0.85rem;
+  color: #8b6d4e;
+  text-decoration: none;
+  border: 1px solid #c4956a;
+  padding: 0.2rem 0.7rem;
+  border-radius: 4px;
+}
+.header-link:hover { background: #f0ebe3; }
+main {
+  max-width: 78ch;
+  margin: 0 auto;
+  padding-top: 0.5rem;
+}
+h2 {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #2c2418;
+  margin-top: 2rem;
+  margin-bottom: 0.5rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 2px solid #c4956a;
+}
+h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #3d3225;
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+section { margin-bottom: 1.5rem; }
+ul { margin: 0.5rem 0 0.5rem 1.5rem; }
+li { margin-bottom: 0.4rem; }
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0.75rem 0;
+  font-size: 0.92rem;
+}
+thead th {
+  background: #3d3225;
+  color: #faf8f5;
+  text-transform: uppercase;
+  font-size: 0.78rem;
+  letter-spacing: 0.05em;
+  padding: 0.5rem 0.75rem;
+  text-align: left;
+  font-weight: 600;
+}
+tbody td {
+  padding: 0.45rem 0.75rem;
+  border-bottom: 1px solid #e8e0d4;
+}
+tbody tr:nth-child(even) { background: #f0ebe3; }
+tbody tr:nth-child(odd) { background: #faf8f5; }
+.key-insight {
+  border-left: 4px solid #c4956a;
+  background: #f5efe8;
+  padding: 0.75rem 1rem;
+  margin: 0.75rem 0;
+  font-size: 0.93rem;
+  border-radius: 0 6px 6px 0;
+}
+.qa-pair { margin-bottom: 1.25rem; }
+.question-box {
+  background: #f0ebe3;
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+  margin-bottom: 0.5rem;
+}
+.analyst-label {
+  display: block;
+  font-size: 0.8rem;
+  color: #8b6d4e;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  margin-bottom: 0.25rem;
+}
+.answer { padding-left: 0.25rem; }
+.loading-section { opacity: 0.5; }
+.loading-indicator {
+  font-size: 1.2rem;
+  padding: 2rem;
+  text-align: center;
+  color: #8b6d4e;
+}
+
+/* YouTube transcript reader */
+
+/* Legacy .yt-meta-card -- kept so old output files still render cleanly.
+   New output uses .header-title.yt below instead. */
+.yt-meta-card {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  margin-bottom: 1.5rem;
+  background: #f5efe8;
+  border-left: 4px solid #c4956a;
+  border-radius: 0 6px 6px 0;
+  padding: 0.9rem 1rem;
+}
+.yt-meta-card img {
+  flex: 0 0 180px;
+  height: 101px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+.yt-meta-body { flex: 1; font-size: 0.93rem; }
+.yt-meta-title { font-weight: 700; font-size: 1rem; margin-bottom: 0.25rem; }
+.yt-meta-sub { color: #8b6d4e; margin-bottom: 0.35rem; }
+.yt-meta-url { font-size: 0.85rem; color: #3d3225; }
+
+/* YouTube sticky header uses the default 78ch-capped centered
+   container so it aligns with the body text column below. The
+   buttons sit at the right edge of that centered container. */
+header:has(.header-inner.yt) { padding: 0.75rem 1rem; }
+.header-inner.yt { gap: 1rem; }
+.header-title.yt {
+  display: flex;
+  gap: 0.9rem;
+  align-items: center;
+  min-width: 0;
+  flex: 1;
+}
+.yt-header-thumb { flex: 0 0 88px; line-height: 0; }
+.yt-header-thumb img {
+  width: 88px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 3px;
+  display: block;
+}
+.yt-header-text { min-width: 0; flex: 1; }
+.yt-header-text strong {
+  display: block;
+  font-size: 1rem;
+  line-height: 1.3;
+  color: #2c2418;
+  /* Allow wrapping to 2 lines so long podcast titles show in full. */
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.yt-header-sub {
+  font-size: 0.8rem;
+  margin-top: 0.2rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.yt-header-sub .yt-channel { color: #8b6d4e; }
+.yt-header-sub .yt-date,
+.yt-header-sub .yt-dur { color: #3d3225; font-weight: 600; }
+.yt-header-sub .yt-sep { color: #c4956a; margin: 0 0.5rem; }
+
+.yt-header-actions {
+  display: flex;
+  gap: 0.4rem;
+  align-items: center;
+  flex: 0 0 auto;
+}
+/* Shared box shape for the star + share + YT buttons so they're
+   visually identical. Applies to both the <button>s and the <a> link. */
+.yt-header-actions .yt-bookmark-btn,
+.yt-header-actions .yt-share-btn,
+.yt-header-actions .header-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font: inherit;
+  font-size: 0.85rem;
+  line-height: 1;
+  color: #8b6d4e;
+  background: transparent;
+  border: 1px solid #c4956a;
+  border-radius: 4px;
+  padding: 0;
+  box-sizing: border-box;
+  width: 2.2rem;
+  height: 2.2rem;
+  white-space: nowrap;
+  text-decoration: none;
+  cursor: pointer;
+}
+.yt-header-actions .yt-bookmark-btn { font-size: 1rem; }
+.yt-header-actions .yt-share-btn { font-size: 1.05rem; }
+.yt-header-actions .yt-share-btn:disabled { opacity: 0.6; cursor: default; }
+.yt-header-actions .yt-bookmark-btn:hover,
+.yt-header-actions .yt-share-btn:hover,
+.yt-header-actions .header-link:hover {
+  background: #f0ebe3;
+  color: #3d3225;
+}
+.yt-header-actions .yt-bookmark-btn.is-bookmarked {
+  background: #c4956a;
+  color: #faf8f5;
+  border-color: #a87d5a;
+}
+.yt-header-actions .yt-bookmark-btn.is-bookmarked:hover {
+  background: #a87d5a;
+  color: #faf8f5;
+}
+
+h3.chapter {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #3d3225;
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+h3.chapter a {
+  font-size: 0.8rem;
+  color: #8b6d4e;
+  text-decoration: none;
+  font-weight: 400;
+}
+
+.yt-body p {
+  margin-bottom: 1.15rem;
+}
+.yt-body p.q {
+  background: #f0ebe3;
+  border-left: 3px solid #c4956a;
+  border-radius: 0 6px 6px 0;
+  padding: 0.6rem 0.9rem;
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+  color: #3d3225;
+  font-style: italic;
+  font-size: 0.96rem;
+}
+.yt-body p.q::before {
+  content: "Q";
+  display: inline-block;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 0.72rem;
+  color: #8b6d4e;
+  letter-spacing: 0.05em;
+  margin-right: 0.5rem;
+  padding: 0.05rem 0.4rem;
+  border: 1px solid #c4956a;
+  border-radius: 3px;
+  vertical-align: 0.1em;
+}
+.yt-body p.q a {
+  display: block;
+  text-align: right;
+  margin-top: 0.3rem;
+  font-style: normal;
+  font-size: 0.8rem;
+  color: #8b6d4e;
+  text-decoration: none;
+  white-space: nowrap;
+}
+.yt-body p.q a:hover {
+  text-decoration: underline;
+}
+
+</style>
+</head>
+<body>
+  <header>
+    <div class="header-inner yt">
+      <div class="header-title yt">
+        <a class="yt-header-thumb" href="https://www.youtube.com/watch?v=cZB-0TVRsO8" target="_blank"><img src="https://i.ytimg.com/vi/cZB-0TVRsO8/maxresdefault.jpg" alt=""></a>
+        <div class="yt-header-text">
+          <strong>How a16z Growth Invests</strong>
+          <div class="yt-header-sub">
+            <span class="yt-channel">Invest Like The Best</span>
+            <span class="yt-sep">&middot;</span>
+            <span class="yt-date">Dec 2, 2025</span>
+            <span class="yt-sep">&middot;</span>
+            <span class="yt-dur">1h 14m</span>
+          </div>
+        </div>
+      </div>
+      <div class="yt-header-actions">
+        <button id="yt-bookmark-btn"
+                class="yt-bookmark-btn"
+                title="Bookmark"
+                aria-label="Bookmark"
+                data-filename="yt-2026-04-22-how-a16z-growth-invests.html"
+                data-title="How a16z Growth Invests"
+                data-url="https://www.youtube.com/watch?v=cZB-0TVRsO8"
+                data-date="2025-12-02T05:01:17-08:00"
+                data-channel="Invest Like The Best"
+                onclick="toggleYtBookmark(this)">&#9734;</button>
+        <button id="yt-share-btn"
+                class="yt-share-btn"
+                title="Share"
+                aria-label="Share"
+                data-filename="yt-2026-04-22-how-a16z-growth-invests.html"
+                onclick="shareYtPage(this)">&#8599;</button>
+        <a class="header-link" href="https://www.youtube.com/watch?v=cZB-0TVRsO8" target="_blank" title="Watch on YouTube" aria-label="Watch on YouTube">YT</a>
+      </div>
+    </div>
+  </header>
+  <main>
+    <div class="yt-body">
+    <p data-t="0">One of the elements of people judgment is what is the right founder for the right market. I really like a certain archetype of founder. I call them the technical terminator. The thing that I like about these technical terminators is they start technical and then you never know if these people are going to become commercially minded, excellent business people. And then over time they learn the business side.</p>
+
+<p class="q" data-t="34">I think early stage investors can often give you an interesting opinion about what the distant future looks like. Probably great growth stage investors like you can give a really interesting view on what the near to medium-term future looks like. The companies that you've backed are sort of a who's who of leaders across different technology sectors. If you had to think about three to five years out, what are some of the most interesting ways you think the future will be different than the present based on your experience with the companies that you've backed?</p>
+
+<p data-t="65">Obviously, the big topic that we're tackling and trying to figure out in the near future is the impact of AI. We've backed a ton of really exciting companies at every layer of the stack, and that's been part of our strategy. From the model layer, infrastructure and tools, applications—I would break it apart into what do consumers do and what do enterprises do in the AI world. And then I have a bunch of views on how the world's going to be different as it relates to American dynamism: hardware plus software, robotics, autonomy.</p>
+
+<p data-t="102">On the AI side for consumers, I think we need to be really humble about where we are right now. But I don't think we have yet found the dominant AI product. OpenAI and ChatGPT have grown faster than anything in the history of technology. I think they reached the same scale as Google about four times faster—a billion people using it. And they're only monetizing a tiny piece of that, which I think is a really exciting dynamic.</p>
+
+<p data-t="150">But I don't think the future of how we interact with AI is going to be a chatbot. I just think that's way too limiting. I think the big shift will be from what is reactive today to something that's proactive in the future. ChatGPT may be able to capture that, and I think they probably have the best chance of doing so. But I think the way that we interact with all this stuff is going to change dramatically.</p>
+
+<p data-t="202">It's going to have long-form memory. It's going to be multimodal. It's going to be proactive. It's going to offer us solutions for how we do things. So I'm super excited about that. But I think the open-ended upside of what companies can capture in economics from that is kind of endless in size.</p>
+
+<p data-t="249">I like to look at the history of consumer internet companies and what were our perceptions versus what actually ended up happening. So I think it's instructive to look back at Facebook and Google. I remember when we were in the private markets looking at investments in things like Snap and Twitter ten-plus years ago, and we would always sit and say, "Well, Facebook and Google only monetize at X certain amount." And all consumer internet businesses are sort of P times Q businesses.</p>
+
+<p data-t="318">We always said, "Facebook or Google, they make 20 bucks a user. So that's kind of the upper bound." Fast forward ten years later and Facebook and Google make like 200 bucks a user in the developed world. So when we look at things like ChatGPT, it's really fun to think about this. How much time do people spend? What kind of value do they get? How much consumer surplus is there? And how do we think about valuing that?</p>
+
+<p data-t="395">The really interesting thing is if you look at ChatGPT and the consumer stuff, there's like a billion users. They monetize less than 50 million of them. And how will they monetize the rest? That's a really fun problem to try to tackle.</p>
+
+<p data-t="407">I think it'll be some form of an affiliate thing. It's like a new native thing. The thing I always say to people is we got to be humble in how we think about this. We never would have predicted what a feed-based advertisement is. No one would have known what that is because we didn't even know what the feed-based product was. It turns out it's probably the best advertisement format in history.</p>
+
+<p data-t="447">So it's not surprising that it monetizes really high and people actually really like it. I really like Instagram ads. About a year ago—maybe six months ago—a light bulb went off for me. I did deep research on a new baseball bat for my son. He's nine years old, and it's pretty complicated. It needs to be a certain length and drop and all these certain specifications.</p>
+
+<p data-t="505">There's this year's version and last year's version. If I had to do that on Google, it would be a total mess. I would struggle with it. Amazon, no chance because of the ads. Deep Research was really good at it, and it kind of solved my problem for me. So a light bulb went off for me at that moment.</p>
+
+<p data-t="524">One, the models are going to get so much better. And two, to me, it's sort of an execution problem of building the capabilities to go execute that stuff on your behalf on the web. So I think that's a really exciting future. There's going to need to be tons of guardrails built into it. You got to build a ton of product and piping to do so. It's really hard.</p>
+
+<p data-t="550">Instagram famously tried to do shopping kind of natively and it's just too hard. But I think that's a pretty exciting future, and shopping is just one category.</p>
+
+<p data-t="555">If I take a step back and think about AI today, really active users spend almost 30 minutes a day in the products. For context, users spend like 50 minutes a day on Instagram and like 70 minutes a day on TikTok. They're monetizing only a slight few of them today. Consumers get a ton of value. There's going to be a ton of consumer surplus available, and I think that could lend itself to the creation of a huge, massive company.</p>
+
+<p data-t="623">And I think ChatGPT is in the lead today. But it's early in that specific area of the world—the sort of pure AI part of the world.</p>
+
+<p class="q" data-t="628">Where do you feel the most different than your peers in what you think matters, what you think is exciting or not exciting, worries you have? Like where do you feel most divergent from your friends?</p>
+
+<p data-t="641">I feel like I'm probably reasonably consensus on the excitement on the consumer side. I can put it into context around the sort of upside around price that you get—price times quantity—especially if time spent continues to go up, which I think it will as the models get better and they have memory. I think on the enterprise side, one of the lessons I learned from SaaS and cloud—which by the way, the advancements of SaaS and cloud are tiny compared to the advancements of what AI is going to do—is I think maybe a little bit more expansively on what the companies can become on the enterprise side.</p>
+
+<p data-t="719">But maybe I'm slightly more skeptical about what their ultimate business models will be. So one of the really fun topics that people debate with high degrees of confidence that I have very low confidence in is what is the ultimate business model of these companies. People put up these super compelling slides that are like, "Hey, the whole software industry is only whatever four hundred billion dollars, but look at how big white collar labor is, and we're going to go get a ton of that." And to me, that's like a little bit hand-wavy.</p>
+
+<p data-t="750">There's a couple of areas where the business model has progressed in a compelling way to go tackle that directly. So customer support is one, but because there's a very discrete task with very simple completion analysis that you can do, it's kind of simple to price it on that. Like you can shift a business model from a seat-based thing for Zendesk or something to a new business model where if you successfully complete the task, you can charge on that.</p>
+
+<p data-t="824">Maybe the next furthest developed area is coding. But it's not completion of a task. It's consumption driven. And especially in the developer world, that whole world is used to paying things on consumption. Like it's kind of how it has all shifted over the last ten years. Everything else I think is pretty TBD. It's going to be very hard.</p>
+
+<p data-t="838">When you see major technological shifts, it's very tempting to say, "Oh my gosh, there is so much economic value that all these companies are going to capture, top down." The reality of doing it is much harder. I always say to people: ninety percent of the technological surplus is going to go to the end users. Just start with that as the assumption. Whether it's consumer or enterprise, a funny analogy that I heard from somebody else is, how is the steam engine ultimately priced?</p>
+
+<p data-t="910">It wasn't priced based on replacing fifty laborers. The competitive forces drove it to a certain price where there was an appropriate return on capital. But the vast majority of those productivity gains went to the end users of those machines, not the maker of the machines. So I think something similar will probably happen in the enterprise. Even with that, you can create the biggest businesses in the world.</p>
+
+<p data-t="940">An analogy would be Apple. What would you pay for your iPhone? A lot more. The sky's the limit. Ninety percent consumer surplus is probably low if the iPhone costs a thousand bucks or something like that. I'd say the same for Google. I'd say the same for Facebook. Consumers are going to be the ones who realize the surplus. The same is going to happen in business, but I think the next generation of business companies can still be much bigger than the previous generation given the capability gains.</p>
+
+<p class="q" data-t="1003">When I last ran into you a couple years ago in person in San Francisco, we were talking about Waymo and you were sort of in the mode of like intensely studying that company and thinking about it, which makes me very interested in this class of companies where you heard about Waymo and self-driving as a service for a really really long time with sort of nothing happening. And then all of a sudden, last time I was in San Francisco a couple weeks ago, it's just every other car. The explosive nature of Waymo as an example is really cool to watch. There's all these other technologies you might call them American dynamism—small modular reactors or really exciting big technology ideas. If we had an in-home robot, that would be awesome, but it's really hard to figure out how long it will take.</p>
+
+<p class="q" data-t="1056">How do you think about investing in those kinds of companies where it's incredibly exciting, clearly if we had it and it worked it would be really valuable, but it's really hard to know how long it's going to take to work?</p>
+
+<p data-t="1107">These are often the ones that are the biggest market opportunity, right? Like robotics is the biggest market opportunity. If you knew it was going to work in five years, you'd put all your money into it. I happen to think it will take a little bit longer. Part of that is informed by my experience with Waymo.</p>
+
+<p data-t="1136">If I contrast what Waymo does and increasingly Tesla and some others with what a robot needs to do, it's very different. A car needs to basically stay in a lane, avoid anomalies and collisions, go a certain speed limit, find places to park. Sounds simple. When I describe it that way, it's more complicated than that. But simply put, that's kind of what it has to do. I contrast that with what a robot has to do. What does a robot have to do in your home? Endless degrees of freedom. Make a cup of coffee, do your laundry.</p>
+
+<p data-t="1214">But it took Waymo ten years. If you go back to the DARPA challenge, the whole industry took decades to get to this point—roughly two decades. So my expectation is technology is advanced. Obviously the generative AI techniques can be applied to robotics to help it go much faster, but I think it's going to take a long time.</p>
+
+<p class="q" data-t="1227">So how do you invest in that?</p>
+
+<p data-t="1227">We have an early stage team that is studying all the robotics companies. We meet them all. We're learning a ton. We're waiting for them to find the team that they can do an early stage traditional kind of seed or Series A investment in. And then at the growth stage, ideally they find that and we can invest in it or one of these companies that we're not investors in really starts to work.</p>
+
+<p data-t="1240">We've debated what does it mean to work? I think we'll know it when we see it. There will be things that start happening and customers pulling their products that we will have not seen before.</p>
+
+<p class="q" data-t="1303">What's the lesson from Waymo there on what it means to start to work? Like, in the history of Waymo, was there a point at which you would have said, "Okay, now something happened and that makes this more investable"?</p>
+
+<p data-t="1316">So the interesting thing about Waymo for us—I'll tell you the history of our Waymo investment. We originally invested in 2020 in Waymo. They came to us to raise outside capital for the first time. So it was purely funded by Google over time. They thought it would be helpful for employees, for hiring, all that stuff—outside counsel, diversify the cap table, to bring on some outside investors.</p>
+
+<p data-t="1334">Some folks invested in it. We were the only VC firm that invested in it. We invested out of our first growth fund, and it was really fun because—this is seeing the future—taking the ride in 2019. It was doing some pretty amazing stuff in retrospect. It could do unprotected lefts, it could avoid construction sites. The thing it didn't know how to do was park. We got to a parking lot and it kind of stalled, and we had to override and drive up to the front.</p>
+
+<p data-t="1406">But you could see signs that it was going to be pretty interesting, but it wasn't on the road. We knew they were going to be conservative about rolling it out. So Mark and Ben came to me and said, "Hey, we got to do this Waymo investment." And I said, "No, like I don't like this at all. This is crazy. It's going to take ten years. The valuation that we come in at is going to be really high." And they said, "You know what? Don't care. This is autonomous driving. Are you kidding me? This is the mother of all markets. If they have the thing that can drive cars autonomously, it's going to be worth a ton. Stop overthinking it."</p>
+
+<p data-t="1447">My team had built all this analysis on why it would take forever and the economics were going to be strained. So we compromised and we made a small investment in Waymo at the time, and I was excited to be a part of it. I just thought the returns would be stretched. Fast forward five years later, at the end of 2024, they raised money again and at the end of 2024, they had cars on the road.</p>
+
+<p data-t="1512">And it turned out—to your question—consumer preference slapped you in the face. Like anyone who was in San Francisco who had the choice was taking a Waymo. At that time, we had the chance to invest more money, and it was working. We took that opportunity to write a much larger check and invest.</p>
+
+<p data-t="1529">By the way, one of the really interesting things about Waymo: you said you see it, you're in San Francisco, you see it everywhere. How many cars do you think they have on the road in San Francisco? They're everywhere, right?</p>
+
+<p class="q" data-t="1541">Ten thousand?</p>
+
+<p data-t="1541">They have like four hundred. Wow. So it turns out if your cars are driving optimal routes and sort of fully utilized and not running into some of the problems that drivers have, it's pretty good. And so you can have a lot of coverage. There are something like fifty thousand lift drivers in the San Francisco Bay area, and Waymo overtook them in market share.</p>
+
+<p data-t="1608">It feels like the appropriate time to disclose that you and I went to college together. The reason I mention that is usually when we get together we don't jump into talking about investing stuff, which makes me realize I don't think I've ever actually asked you: what is your investment philosophy or strategy or style or taste? Like, how did it develop?</p>
+
+<p data-t="1630">My style and taste is—if I were summarized in one line—I like to pay fair prices for great companies. Like everyone would say they would like to do that, right? The art in that I think is recognizing where greatness may lie where other people don't recognize that. And so unpriced greatness—it's priced but not to the fullest extent.</p>
+
+<p data-t="1659">I've studied the history of technology companies and why they outperform and how they outperform. Often in growth stage investing, it's always on the growth side. It's like, hey, the growth side is where you get things really right. I tell the team that we can make a lot of mistakes on forecasting margins and business models and unit economics and all that stuff, but lots of people know how to do that analysis. So where can you actually get edge? You can get edge from product insights, market insights, and people insights.</p>
+
+<p data-t="1734">How do we maximize our likelihood of doing that? On the people side, I'll start there because that's probably the hardest to do, and I've gotten it right a number of times, and I think I have reasonably good taste in people. I really like a certain archetype of founder. I call them the technical terminator. I'm very close with Ali from Databricks. Ali is the technical terminator. It's self-evident.</p>
+
+<p data-t="1757">It wasn't self-evident all along. He actually wasn't even the CEO. He became the CEO later. But he started the open source project, right? He was one of seven. So he was not the CEO. There was a much more established guy who we've partnered with on a lot of companies. He's been a co-founder of a lot of companies. Great companies have come out of his lab—Yan Stoka in Berkeley.</p>
+
+<p data-t="1817">The thing that I like about these technical terminators is they start technical and then you never know if these people are going to become commercially minded, excellent business people. And so you have the grounding, you have the products. Those are the people that are likely to figure out the next product area because they're technical, because they're in the products. Mark Zuckerberg is an example of this. Elon's a great example of this. And then over time they learn the business side.</p>
+
+<p data-t="1852">So it's been so fun to work with Ali because he knows more about sales ops, hiring processes, reporting lines, and all these things you have to do as a manager than probably any of our CEOs, but he learned them all. He's just been a sponge.</p>
+
+<p class="q" data-t="1905">Do you have a favorite counter-example to the technical terminator—somebody that is completely non-technical?</p>
+
+<p data-t="1910">Travis. Okay. Interesting. Yeah, at Uber. So one of the elements of people judgment is what is the right founder for the right market. And that market was just a pure battle. Like you fight mayors, you fight competitors. And by the way, there were competitors. So you just needed to be ruthlessly competitive and driven and operationally intense. And that's the perfect counter-example.</p>
+
+<p data-t="1946">We were investors in Uber at GA, and he's the archetype, but there's a lot more of these technical ones that become great business people in my life. George Curts from CrowdStrike is a great example. I'll tell you one more example which is not as obvious: Dave from Roblox. When we met him, maybe ten years ago or something, early days of whether it was actually kind of working—he was technically brilliant and so deep in the product.</p>
+
+<p data-t="2009">He's the kind of guy that on the surface, if you didn't really know him well, you would kind of be like, "Oh, is he a little bit?" He's a little quieter. And it turns out he's ruthlessly competitive and he really cares about market cap creation and his stock price going up and for the right reasons.</p>
+
+<p data-t="2027">Dylan from Figma is a great example of this. He's so nice. He's one of the nicest guys in our industry, but he is brutally ruthlessly competitive. The new AI guys and women—it's been really fun to see them develop this. Michael from Cursor. Shiv from Abridge, who's a practicing cardiologist who has then shifted his attention to building a technology company.</p>
+
+<p data-t="2050">He lives in Pittsburgh and he commutes to New York to work most of the time. I was with him in the office the other day and he said, showing me the office, "Yeah, I'm going to put a bed over there. I'm going to start sleeping in there." I'm like, "Man, you're like a doctor with kids and stuff." And he's like, "No, no, no. I just want to be working all the time when I'm in town."</p>
+
+<p data-t="2119">So I love that sort of relentlessness, intensity paired with technological capabilities, product understanding. And backing people like that—they're going to pour everything they have into winning, but they're also more likely to figure out the next things and navigate complex markets and changing environments.</p>
+
+<p class="q" data-t="2143">If I had access to your entire calendar for the last five years or something and saw all the companies and the debates where you ultimately didn't invest but almost did, what would I learn from like that batch of companies and founders?</p>
+
+<p data-t="2157">This is a very humbling job because we make so many mistakes. Errors of commission are really painful. Errors of omission are really, really painful too. And they're more costly just economically because you can lose one times your money if you get things wrong on an error of commission. But you can forego making really high returns if you get it wrong. There are no common patterns. I would say when we get it right on not doing an investment, it's typically for the right reasons. It's typically because we see something that we don't love about the business quality. We feel really, really strongly about market leadership.</p>
+
+<p data-t="2234">Do you know the Glengarry Glen Ross movie?</p>
+
+<p class="q" data-t="2234">Yeah, I know the movie. Yeah. The scene with Alec Baldwin?</p>
+
+<p data-t="2239">Okay, so Alec Baldwin comes in—there's the scene with Alec Baldwin where he's running like a sales contest. This like a boiler room setting. He comes in, he's running a sales contest and he walks in and he's like, "Okay guys, new contest. Here we go. First prize gets Cadillac. Second prize gets a set of steak knives. Third prize, you're fired." Right? And so we've adopted that as a way of describing most of the technology markets that we live in.</p>
+
+<p data-t="2301">So we happen to think—and I happen to think strongly, and my experience has been—the vast majority of market cap creation is going to go to the market leader. And this is probably underappreciated. Like we see this all the time with our peers in the growth investing industry where they say things like, "Yeah, even the number two player is going to be really viable." Maybe, but more often than not, that's not the case.</p>
+
+<p data-t="2322">That's kind of obvious in network effect driven businesses, consumer internet companies, Google, Facebook, etc. It's less obvious in enterprise companies, but it happens just as often. There's no number two to Salesforce. Like Salesforce is Salesforce. Workday is Workday. ServiceNow is ServiceNow. And you'd feel a lot of pain if you did the number two or, God forbid, the number three in those markets.</p>
+
+<p data-t="2355">In early days of technological shifts, markets tend to fragment in ways that we don't foresee and they end up being less competitive in certain areas and people kind of settle into different areas. So on the model side, so far the way it looks like it's played out is it will be more like the cloud industry—like it's not going to be a winner-take-all.</p>
+
+<p data-t="2408">Certain technical advantages seem limited in time frame. There's always this kind of constant leapfrogging in the model industry. So I think it will look like the cloud industry in the sense that there will be multiple players, there will be profit pools for them. It's sort of like, in early days we were saying, "Is this going to be aircraft manufacturing or is it going to be airlines?" Those are the two extreme ends of the spectrum.</p>
+
+<p data-t="2443">Aircraft manufacturing has high profit margins because there's really high capital intensity and it's extremely hard technically. So that would seem to mirror the model industry. Airlines, on the other hand, are horribly competitive industries and they all go bankrupt in the fullness of time. So it seems like the model industry is going to be like aircraft manufacturers or the cloud industry.</p>
+
+<p class="q" data-t="2504">Why did cloud play out the way it did? Like, is it just size of market?</p>
+
+<p data-t="2510">I think it's size of market. It's all size of market. It's just so vast. And cloud is such an interesting market because if you could just independently own AWS, Microsoft Azure, and GCP, those would be some of the most valuable companies in the world. Those would be awesome businesses to own.</p>
+
+<p data-t="2534">On the other side of it, one of my partners, Alex Rampel, has this statement that he likes to say: the best businesses in the world don't have customers, they have hostages. That's not actually the case in cloud. Sure, there are some things like egress fees. The clouds are anti-competitive with egress fees. They make it really hard to leave and get your data out. But that's kind of minor. Generally speaking, the customers in that market are well served. They're happy.</p>
+
+<p data-t="2603">And at the same time, the clouds are really good businesses. I think the same is likely to happen in the model space. So the market is going to be so big, it will fragment in ways that we don't yet expect. And even if you're in number two in terms of absolute revenue size or market awareness, that's okay. What's not okay probably is being in number two in something like the dominant consumer chat interface or something like that.</p>
+
+<p class="q" data-t="2638">I want to talk about competition in our industry for investment opportunities in the market leaders led by technical terminators or others. Across your career, it's become way more institutionalized. There's way more players. There's way more money. The people you're up against on a daily basis are probably more talented, sometimes by a lot. How does the competitive dynamic feel now when you're trying to make a big investment in a big exciting company led by a consensus amazing person in a big market? And how has it changed over time?</p>
+
+<p data-t="2724">Yeah. So Mark and Ben have told the stories about the origin of starting the firm and their experience with the venture capital product and why they built the firm the way they did. And whenever they tell those stories, I'm like, "That's great, and man, wouldn't it have been fun to compete in that time? That would have been awesome." The market is definitely more competitive now. It's become a lot more institutionalized for good reason though.</p>
+
+<p data-t="2750">The thing that I'm telling our team and I talk about with my partners now is we're a grown-up industry now. Like, this is no longer some little bespoke asset class. When I started my career, there were probably one or two technology companies in the largest ten market cap companies in the world. Now it's eight of ten. Eight of ten, and seven of the eight are West Coast technology venture-backed companies.</p>
+
+<p data-t="2810">I feel like that realization hasn't really fully hit the finance industry. If you look at that, tech has kind of overtaken all of the market cap creation and is driving the mostly driving force of the stock market and the economy. The private markets have become a real asset class. This is something I'm studying now. The venture industry is sort of seen as like this non-scalable thing. Turns out there's five trillion of private market cap that is, up ten-x in the last ten years, and it's honestly some of the best companies in the world.</p>
+
+<p data-t="2844">That market cap represents almost a quarter of the entire S&P 500. It's more than half of the Magnificent Seven. So I think that we now are in the big leagues and we need to start acting like it. So we've adapted our firm a lot to that realization.</p>
+
+<p data-t="2917">One other comment just on that industry and how it's changed: We just did this analysis. If you look at our public universe—where do we spend most of our time? It's like software, consumer, and fintech stuff. In the public universe in those sectors, there's less than five companies growing thirty percent. It's kind of staggering. That's a low number. Our portfolio, on average dollar-weighted, is growing one hundred twelve percent.</p>
+
+<p data-t="2954">Some of these companies are big enough to be large companies. If you look at the small cap universe in the public markets, first of all, public markets have shrunk by half in the last twenty years. And if you look at the composition of small cap public companies, the quality I would argue is so much lower than what is available in the private markets. So the industry is real. It shouldn't be a surprise that the competition has intensified.</p>
+
+<p data-t="3005">I think about the competition similar to how our venture folks think about it, which is the market has sort of become a barbell. We're faced with the large multi-stage firms that have very strong venture practices on the one hand, and those are the fiercest competitors for us. I respect my peers there. They're trying to play the same game as us, which is when we have something special at the Series A or the seed, like we want to hold it really tightly, and they want to do the same thing.</p>
+
+<p data-t="3036">Sometimes they're effective at it, sometimes we're effective at it, but we have to kind of battle that out. On the other side, on the venture side, it's sort of bespoke. In the retail analogy, there's like the superstore like Walmart and Amazon, which is sort of how we would get characterized, and then the other side is sort of like the Gucci store or the Prada store, which is like deep specialization.</p>
+
+<p data-t="3103">You know, Nat and Daniel would have been an example of that. Ilad is an example of that. And then there's many others that do a really good job at what they do. So I have respect for a lot of the crossover folks who are in our world and have built private businesses and have done a good job with it.</p>
+
+<p class="q" data-t="3124">So what do you do to beat these people? Like the actual extreme versions of the answer—like the lengths that you're willing to go to to win?</p>
+
+<p data-t="3129">I think you would love to have some story that's like sensational in the moment where we did something crazy. The reality of the growth stage business is we win deals based on years of relationship building. We recently did a deal where the founder, we had sort of worked the founder so hard that he called us and was like, "Hey, I'm ready to do this. I'll just talk to you." And I'm like, "Oh, wow. Okay, fruits of my labor. Like two years of this. This is good."</p>
+
+<p data-t="3204">At that point, he's one of the best companies in the market. And the dynamic that we are faced with is: okay, this is awesome, I got a clean look. I know for sure if he was going to market, he would get a higher price than what he just told me. But can I bear the price? And so that's often the exercise that we have to go through as growth investors: what do we know differently about the product or the market or what are our expectations that will allow us to do it that maybe aren't as obvious?</p>
+
+<p data-t="3237">And what are you doing in those two years that earns you that right? Maybe that's where the extreme measures are: helping them as if we were already investors in their company. So helping them with candidates, helping them with customers, spending quality time and showing that we understand their business. Like often that's the biggest thing. Honestly, for the companies where we're not existing investors, sometimes it's easier because our platform is so strong, our brand is so strong.</p>
+
+<p data-t="3302">I'll give you another fun example: Dylan at Figma. When we first invested in Dylan at Figma, I was considering joining the firm from GA. This was 2018. I knew all the guys already at the firm. I'm spending time with Peter Levine, who was one of our partners. I come in and I'm like, "Peter, what's top of mind? How are you thinking about the growth business? What can I tell you?" And he was like, "We need this tomorrow. We got to invest in Figma. Like we need this tomorrow."</p>
+
+<p data-t="3326">Like, "I don't know how we didn't miss it. We were late to it. Like, we just need a growth business, and it was a growth deal, and we should have done it. It's crazy. We did GitHub early. How did we not do this one?" And he was just like apoplectic. Like, "I need this."</p>
+
+<p data-t="3343">So that was very encouraging and exciting. So day one—you know, I told you I knew the six companies in the portfolio. I also knew like the five-ish companies that I really loved outside the portfolio. Roblox was one that I was close to. Figma was another. And so from the moment I joined, we had done the full court press on Dylan.</p>
+
+<p data-t="3402">Like, he came to our summit. It was Mark and Ben bear hugs. He was really into crypto. We bear hugged him on the crypto side. Like, we did everything we could with him—helping him with a board search, placing a person in our network onto his board. We were trying to do everything and trying to catalyze a deal. And he was like, "I'll let you know when." So crypto strikes, and he calls us and he's like, "Now's the time."</p>
+
+<p data-t="3431">Like, "Oh my God, this was in the moment of COVID where we all thought the world was going to end, everything was screwed, stock market was way down." I felt like, "Oh, great, good timing." So at least we got the luck, and so he came and pitched. We had done all the work, and we're having the debate as a team.</p>
+
+<p data-t="3449">My team and I were taking this traditional growth lens looking at it and we're like, "The market for designers is not that big. It's like really small. And if you do the math of the market size of designers and what they charge, I don't think the price makes sense at two billion dollars. Like, this is just too limiting." And our venture guys were losing their minds in this discussion.</p>
+
+<p data-t="3506">They're like, "You guys are totally missing the point. The ratio of designers to engineers is basically double for modern technology companies. So that's a leading indicator. Everyone is going to—that ratio is going to change. There's going to be double the designers in the world. More importantly, the whole engineering to design process is changing, and there's sort of a melding that's happening of front-end engineering and design. So thinking about this as the market for design is way too limiting, and you're just missing the point."</p>
+
+<p data-t="3545">We were debating it, and it was like speaking past each other. And finally Ben called it off. He's like, "Okay, all right. We're not going to solve this tonight." Ultimately, it was a call on the growth fund side, and I slept on it and I woke up and I was like, "Look, this is an exceptional business model and we're kind of squinting to believe enough on the market size. Great founder, great business model. Is the market good enough?" And I'm kind of happy to take that risk.</p>
+
+<p data-t="3608">The risk I don't want to take is quality of business, quality of founder. But you really had to have a nuanced view of the market in order to get there with a traditional growth investing lens. And so fortunately, we got there. It worked out really well.</p>
+
+<p data-t="3628">I bring up that story one to say that's an example of something where you kind of have to—the price is the price, and you kind of have to figure out if you can take it like if you're willing for the very best of the best companies. But two, I think it speaks to the advantage that we have and what you need to be successful in growth investing. Like, you need those product and market insights, or you're just going to live in a spreadsheet and die in a spreadsheet.</p>
+
+<p data-t="3654">So everything that we've done—or I've done—and our team has done to design a process of tightly integrating with our early stage teams has been in the spirit of optimizing insights around people, products, and markets, and I think that's where you actually get success.</p>
+
+<p class="q" data-t="3713">One thing that I'm trying to do more of because I'm just interested by it is to hear about like the minutia of your day and life—like in this incredibly competitive environment, how some of the best investors literally just run a given day. And what that looks like for you. And I think you'd be surprised like how in the weeds I'm interested in learning about. So air on the side of detail. I'm just curious what the actual life of your job feels and looks like.</p>
+
+<p data-t="3743">Bob Swan, who is a longtime mentor and friend of mine and an operating partner at our firm, gave me this really good advice that he and John Donahoe went through an exercise at the end of every year where they spent like two hours looking at their calendar from the year, and then they had an objective of cutting thirty percent of stuff that was on their calendar. And that way for them to make sure that they were giving responsibility down to the people on their teams but also that they would get leverage. So he's given me that, and then he reminds me of it when he can tell I'm too busy with things that I shouldn't be.</p>
+
+<p data-t="3815">I think I'm like not very good at this, but I'll answer the question anyway. I try to make sure I'm spending adequate time meeting companies. So right now, our investment business looks something like two-thirds relatively known companies and one-third like kind of newer stuff. But I want to make sure my time is spent pretty differently than that. Like, I want my time to be twenty percent on those known companies and spending time with people like Ali and the founders at Andabol, like whatever it may be—Flux Safety—but I want most of my time spent on the new stuff.</p>
+
+<p data-t="3855">Because I need to be learning about those new markets, so constantly meeting with AI founders, talking to smart AI employees, and making sure that I'm deep and conversational and have an understanding of those markets. So I spend a lot of my day on that. I've started to kind of move away from doing one-on-ones. I'm like, "You know what? I don't need to schedule one-on-ones. I talk to my team all the time. I'll call them after hours."</p>
+
+<p data-t="3919">I've started to very deliberately block off hours and days. So I block off two hours every Tuesday, two hours every Thursday. And then I also put an hour-and-a-half block twice a week in afternoons. And that often gets consumed with things that are pressing and I need to make calls or whatever it may be. But I find that I learn a lot and develop a lot of my own thinking just by having think time.</p>
+
+<p data-t="3952">I'm the kind of person that has twenty things open in the browser and I want to read them all and then I don't get to them. So unless I block off a bunch of time, I actually just don't find that I'm spending the time learning as much as I should.</p>
+
+<p data-t="4006">I'd say trying to learn about companies, spending time with entrepreneurs, I want to be eighty percent of my time. And then twenty percent is spending time with founders and internal management. That time shifts when we're fundraising.</p>
+
+<p class="q" data-t="4028">How many new companies do you think you meet a week?</p>
+
+<p data-t="4028">We as a growth fund probably meet thirty companies a week. Not new—probably thirty companies a week. I personally probably meet ten, maybe somewhere around.</p>
+
+<p class="q" data-t="4036">How do you run those meetings? Like if I came into one of those ten, what is the structure of the meeting?</p>
+
+<p data-t="4041">I keep the introduction super brief. I like to jump in and say, "Hey, why don't you please spend, you know, five minutes explaining to me the strategy and your vision?" Because I've read your website. I know a little bit about the company. I've talked to some customers maybe. But I need to hear the vision—the bigger thing. Like, what do you want to tell me? And then I just ask questions for twenty minutes.</p>
+
+<p data-t="4109">Like, "Okay, so what do you think about this? What do you think about that? This may be a stupid question, but can you tell me about this?" And I find that to be a lot more effective. And, you know, the ultimate compliment that we get from a founder is like, "Thanks, you've done your research" or "Hey, thanks for asking that question. That's pretty smart."</p>
+
+<p class="q" data-t="4122">If you think about the reasons why you do this versus something else, what are the most important ones? Like, why don't you be a founder? Why don't you work in some other industry? Why don't you have your own firm? Like, there's other things that you could do. What are the most important reasons why this is the thing you do?</p>
+
+<p data-t="4141">My wife would say that I have a low attention span. What she means by that is I'm interested in a lot of different things. And this is a really cool way of getting to learn about tons of new stuff. I suspect this is the same reason that you like to invest: how lucky are we? We get to sit and spend time with the entrepreneurs who are building the most interesting companies in the world right now.</p>
+
+<p data-t="4202">We get to learn about the most cutting edge technology stuff that if you were in the public markets or just in a job, you would never get a chance to learn about. So I love to learn and I love to be around great founders as they're exploring really interesting things. So that part of it is really, really attractive.</p>
+
+<p data-t="4223">There's another part that plays to a totally different side of me, which is this business is a scoreboard business. And I convey this to our team all the time. There's a scoreboard in this business and our expectation is that we win. Now, it's a very long-dated scoreboard—especially in the venture side, but on the growth side even, it's a pretty long-dated scoreboard.</p>
+
+<p data-t="4242">But at the end of the day, we have to put up returns. Our customers are our founders and our LPs. On the founder side, we need to make sure we do a great job with them, and they're sort of a virtuous flywheel if we do. On the LP side, it's pretty simple: Are we doing a good job generating returns?</p>
+
+<p data-t="4301">So at A16Z, we're known as sort of running ourselves a little bit differently as a firm. Mark and Ben really drive that. We do things like, you know, Ben runs every new employee onboarding and he runs through our culture document. When you sign an offer letter at our firm, you sign your offer letter, but you also have to sign our culture document, which lays out our cultural principles. I also created a subset of principles that I wanted to convey for our growth fund.</p>
+
+<p data-t="4328">The scoreboard and we expect to win is a very direct way of saying, "We better be competitive." I have one that is, "We are the Yankees and we're going to act like it." And what I mean by that is not that we're going to be arrogant or think we're the best team or something like that. What I mean by that is we're lucky enough to be a part of a firm that has an incredible brand. And so we're going to run our team very, very high performance.</p>
+
+<p data-t="4405">Like, if you're on the Yankees, you better be performing. This is the big stage. So our expectations for our team—we're very collaborative, we care about winning as a team, but you better be good. You better be doing your job really well. You better be working hard.</p>
+
+<p data-t="4418">This is one of the things that maybe is not as obvious to people. It wasn't as obvious to me actually until I joined the firm. It's so funny—when I was considering it, my perception from the outside before I really started the process was like, "Mark and Ben, I don't know, they're kind of celebrities, semi-celebrities. Do they really work hard? They got all these other interests." And I got in and man, it is a competitive place.</p>
+
+<p data-t="4442">Like, we are very intensely competitive. We want to win. And everybody works really, really hard. Like no one is resting on their laurels. We're all constantly chatting, non-stop, late at night. We're all working hard. We're kicking around ideas. And I love that. I love the dynamic of partnership. But high expectations around performance.</p>
+
+<p data-t="4455">You know, why am I at A16Z? Why don't I run my own firm? I always tell people I kind of have a dream job. Like, this is awesome. I got to join a firm that was on the top of their game. They were on the ascent. But there was a real latent opportunity for us to build a franchise on the growth side, and I came from a place with a really strong culture at GA.</p>
+
+<p data-t="4528">But I joined a place that is full of optimism, and I think you need that in growth investing. Like that is the number one ingredient: you got to be optimistic. You got to be able to see what can go right. But I also got a chance to hire the team. I got to set the strategy, set the investment process, take what I felt were some of the learnings that I had, which were great, and bring those things with me and leave some things behind.</p>
+
+<p data-t="4552">For example, one of the things that we set up at the outset was a bit of a different investment decision-making process than a traditional growth equity investment firm. Right? So most growth equity investment firms have an investment committee. It's central. You go, you present, you kind of battle to get the votes, they disappear, and then the smoke comes out and here's the decision.</p>
+
+<p data-t="4618">What we decided to do at the firm in the growth fund was do it totally differently. We were going to actually make the decision process just like our venture process, which is single-trigger puller. The expectation I have set with our team—and that Mark and Ben have sort of conveyed, and I think we do a pretty good job of—is you got to be intellectually honest. You've got to be transparent and we openly expect disagreement.</p>
+
+<p data-t="4641">But once you disagree, you disagree and then you commit. I think by doing it this way, you encourage people to fully explore the risks of investing and fully explore the rewards. You're never in this temptation to sell or to politic for a vote or try to influence someone's decision for the wrong reasons. Like, you really like something and you really want to push. We don't have that dynamic.</p>
+
+<p data-t="4701">So I think it allows us to more openly explore the merits of an investment, and I think it's been a reasonably good process. And we're small, so we move very fast. We do this very iteratively. It's not like we need to have a Monday investment committee process. Like, my first investment committee decision was before I even joined the firm, and it was Mark, Scott, and I having breakfast and we were deciding on an investment at breakfast.</p>
+
+<p data-t="4730">I like to keep it informal, but we want to make it rigorous at the same time. The other thing I did that's a little bit different is when we hired the team—by the way, I feel very lucky. It's one of the most special parts of the job for me. It's about ten investors. So it's pretty small. The reason we can be so small is because we have the early stage teams.</p>
+
+<p data-t="4757">But a cultural trait that I think we've done a pretty good job of building is just collaboration and the willingness to roll up your sleeves and help people as part of the team's sort of promotion criteria, evaluation, etc. I put in there: contribution to collective investment judgment. Like, entry level, from the start, this is part of your job. You better be contributing to our collective investment judgment, and it's something that we're going to evaluate you on from the start.</p>
+
+<p data-t="4822">So it's a little bit different—for a junior person to be faced with that. A lot of times the junior folks when they join have to find their footing and know when to chime in and when not to. But I think it's made us better as a team at making decisions.</p>
+
+<p class="q" data-t="4840">If you think about the environments that are better or worse for growth investing of the type that you do, what are those conditions like? If you could cook up in a kitchen the perfect environment for you to be deploying dollars, what are the features of it?</p>
+
+<p data-t="4854">Well, the optimal would be early product cycle, bad capital cycle. But those rarely happen—coincide with one another. If I had to pick, it's all early product cycle for the style of growth investing that we do.</p>
+
+<p class="q" data-t="4905">What does that mean, early product cycle?</p>
+
+<p data-t="4905">It means we're at the outset of a new technological change, beginning of that is going to propel a new market wave. And so maybe it's easiest to highlight in retrospect. It turns out that when you and I were starting our investing careers, like we started at a really good time. Like you—did I was in public markets.</p>
+
+<p class="q" data-t="4923">Well, you were in public markets and so you had to deal with GFC and stuff.</p>
+
+<p data-t="4929">Notwithstanding that—that's capital cycle. It turns out, and it's obvious in retrospect, it's really hard to feel it in the moment. Maybe less so because AI is so well covered, and the question is, are we in an AI bubble now? Not, is there a good product cycle ahead of us? But it turns out that we had at the same time we had mobile, we had cloud, SaaS, e-commerce, all at the same time. And that was a great setup for us.</p>
+
+<p data-t="4957">If you look at all the mistakes that we've made as an industry, 2021 is very well covered. I always tell people the biggest mistake from 2021 is that we were actually kind of late product cycle, and we just didn't realize it at the time. There was a bit of a head fake with COVID. We didn't realize we were late product cycle. And what that means, in practice, is the ideas are just worse. The market opportunities are worse. It's just harder to go be successful right now.</p>
+
+<p data-t="5020">You know, when I talk to our investors, our LPs, they all ask me like: are we in a bubble? Is the market too hot? How are you dealing with valuations? And I'm like, "Look, we're trying to be very balanced about this. At the same time, ten years from now, there's going to be a bunch of really, really great companies. So we got to be in the market on the field."</p>
+
+<p data-t="5040">It turns out that the last two years—coming out, you know, twenty-twenty-two to kind of early twenty-twenty-five—I think is a really good period. I think this is going to be a great vintage of time to have been investing. You know, we also have been surprised at how long the companies have stayed private. They've stayed on the bingo card for us longer than we expected. And that's been great because we've converted those in a really attractive way.</p>
+
+<p data-t="5104">You know, if you look at the last year of our activity, our portfolio dollar-weighted is growing one hundred twelve percent, and we entered at twenty-one times revenue. And so I'll have this debate. First of all, I recognize that revenue multiples are flawed and all that—especially for traditional investors. If I could invest for the rest of my career in one hundred twelve percent growing companies that are really, really great and good in markets at twenty-one times revenue, I would do it in a heartbeat.</p>
+
+<p data-t="5130">I would do it in a heartbeat. I think that's way less risky than something where you're buying a twelve percent grower in private equity for fifteen times EBITDA, because growth just takes care of so much for you. I think above thirty percent growth, the market still doesn't fully value the growth rate.</p>
+
+<p class="q" data-t="5148">Why is that the case?</p>
+
+<p data-t="5148">I think it's just hard to model. My conclusion: I've studied all these companies that I called the model busters. I've studied all these companies. It is just so hard for any investor to build a five or ten year model where high growth persists. It's just not natural.</p>
+
+<p data-t="5205">Like, the natural inclination—no one built a financial model for Google or Visa that had them growing twenty years into existence at fifteen or twenty percent. Like, that would just be totally unnatural to do. So, you know, if you look at the moment of the iPhone, and this goes back to the point about product cycles and how much you can get surprised—in 2009, if you looked at consensus estimates for Apple and then compared for 2013—so 2009 consensus estimate for the year 2013 compared it to actual performance in 2013—consensus estimates were off by three times.</p>
+
+<p data-t="5253">Like, that's a massive number. And that's like the most covered company in the world. So I think you can be surprised on growth on these things. Like, I get a big kick out of that. I try to learn a lot about it. But I think it's not natural to model anything that way. Like, it's so natural to just say, "Hey, this company's growing eighty percent. Then they're going to grow sixty-five, then fifty, then forty, then thirty, then a terminal growth rate."</p>
+
+<p data-t="5324">And it's very different than a company if it grows eighty and then the growth rate persists seventy-five, sixty-five—like, it's like a three-times difference in your valuation. And so you can just get it massively different. So that's why I love high growth. It's obvious that's the math behind why I love it. But, you know, again, it's actually just hard to appreciate it because it's not natural to build a model that way.</p>
+
+<p class="q" data-t="3542">You and I have talked before about this idea of like push versus pull companies. Can you describe that difference and how that's an idea that you care about when evaluating them?</p>
+
+<p data-t="3550">It's magic when you find a pull business. I have a post-it note on my computer in the office that says, "Is the market demanding more of your product?" It's the most special thing when it happens. And by the way, a lot of these AI companies—like, what's so magical about the way ChatGPT has grown? It's a billion users. Like, it's organic. It's all brand. And the shocking thing about that one, by the way, is it doesn't have a network effect.</p>
+
+<p data-t="3615">Like, that was one of the more surprising things for us. Is the market demanding more of your product? That's probably the most important question that we can answer, because when it happens, especially in consumer, it tends to create the most special companies in the world. So we've seen it in companies like Roblox, when it really works. And that one has sort of two network effects, so it's super special.</p>
+
+<p data-t="3640">We also see it in companies that aren't network effect consumer. Like, in the case of Andabol, it turns out the market really, really is demanding more of their product. And there's many reasons for that. We've sort of reached all at the same time this confluence of AI capabilities, autonomy, knowhow on how to navigate governments—mostly from alums of companies like Palantir and SpaceX—at the same time that we have a desperate geopolitical need. And so the market is demanding more of their product, and that's really special.</p>
+
+<p data-t="3715">One of the things that I say about push businesses—you got to go sell it. Like, sometimes those are really successful and there's industries where this is the case, like cybersecurity and things like that. They don't tend to get easier over time. Like, they tend to get harder. Like, if you have to go sell or market your product, the bigger you get, often it gets harder.</p>
+
+<p data-t="3745">So that's not always the case. Sometimes you get sort of increasing returns to scale from brand and things like that. But especially on the consumer side, it almost always gets harder if you're a push business. TikTok maybe is the exception to the rule where they pushed it early. They pushed it early and so aggressively. And obviously, you know, if you're Facebook, you probably sit around and think about that decision forever.</p>
+
+<p data-t="3751">Maybe it's not even a decision. I wasn't on the inside, obviously, but the growth of TikTok was fueled by advertising on Facebook in large part, which is kind of crazy to think about. But, you know, especially if you're a sort of Google or Facebook driven ad business, like it almost never gets easier. It always gets harder. And Google and Facebook are the ones who have kind of accumulated better economics over time, you know, at the expense of the people who advertise on them.</p>
+
+<p data-t="3820">So yeah, the push versus pull thing. Especially right now, we talk about this in the age of AI. If you gave us—I think there's sort of how do we assess AI businesses right now is an interesting thing. One is ease of customer acquisition. And we see this with the really, really special ones like Cursor, which is sort of been largely viral growth. It happens even with things that need to be sold, like Abridge. Like, you got to go sell to hospital systems. It turns out hospital systems are dying for this because the doctors love it. It's really good. It saves them a lot of time and it's really valuable.</p>
+
+<p data-t="3856">So ease of customer acquisition is something that is sort of a must for us in this AI wave. The second is customer behavior, customer retention, customer engagement. There are some head fakes that we've seen of things that grow really fast and then they kind of fall off and they're experimental. So the things that have sort of durable behavior—things like Cursor, where the users really, really use it, ideally or increasingly use it over time—Harvey is an example of a company where as the models have gotten better, customer engagement and usage has actually really grown.</p>
+
+<p data-t="3914">It actually took kind of a step change, which we've seen. Which is interesting to see because it kind of happened at the same time as reasoning—the reasoning breakthroughs. We were like, "Oh, that makes sense actually. Like, lawyers need to reason, and it turns out models got really good at reasoning, and people use the products a lot more."</p>
+
+<p data-t="3927">And then there's gross margins. And we kind of give a little bit of a pass on gross margins. Right now, we're in this funny environment where, you know, late-stage SaaS cloud—we would look at a company and it's like, "Oh man, if you're not seventy percent plus gross margin, you're not really a SaaS business or cloud business, whatever." And that's going to be a knock, and people will trade you differently.</p>
+
+<p data-t="4004">And that's when you get valued as revenue versus gross profit or whatever. Now, it's like a badge of honor to have low gross margins because we're like, "Oh, at least people are using your AI products." You know, if we see pitches and they're like, "I'm an AI thing and I got seventy-five percent gross margins," I'm like, "Well, no one's using the AI stuff then. Like, that doesn't really seem like an AI product to me." You know, we give a little bit of a pass on that.</p>
+
+<p data-t="4018">The expectation is the cost—the inference cost—is going to continue to go down over time. I mean, there's so many existential questions about market structure that will predict inference cost. But, you know, history of technology would suggest that it's going to go down over time. It's been the cost of inference has gone down at the same time that reasoning happened and so token usage has gone way up.</p>
+
+<p data-t="4038">So, you know, you haven't yet seen any improvement in gross margins, but I think over time that's likely to happen. You basically just not care—like, if a company has zero percent gross margin for example, but the revenue growth and the customer love and all this kind of stuff—the pull is all there. Does it round to we don't care?</p>
+
+<p data-t="4105">So there's a big difference between having thirty percent gross margins and seventy percent gross margins. So we do care. Our expectation is if you're producing a lot of customer value and if the models get a lot better over time, you're going to increasingly produce customer value that the cost is going to go down. There's not going to be so much market power from the model providers that it's going to settle out where these businesses are probably higher margin businesses.</p>
+
+<p data-t="4130">I think they'll be lower margin businesses than SaaS businesses. You know, maybe they end up as fifty percent margin companies as opposed to eighty. But the size of the impact and the usage and the amount that they'll be able to capture—to our point on business model earlier—is probably so high that it's fine.</p>
+
+<p class="q" data-t="4147">How much do you care that the way the product behaves and the way it's distributed is like truly singular and different than competitors versus just like the best of a class of company?</p>
+
+<p data-t="4155">There's sort of a foundational point: every great company either has unique product or unique distribution. The best companies in the world have both. The best companies in the world have such unique product that it leads to unique distribution. But if you don't have either of those, what's your favorite example of that?</p>
+
+<p class="q" data-t="4115">What's your favorite example of that?</p>
+
+<p data-t="4121">I'll use a recent one. The product is so good that people just naturally have gravitated to it: Cursor. And, you know, maybe in the fullness of time that'll get harder. But GitHub is a great example of this right. I'll tell a funny story about GitHub too. GitHub was so special of a company that for a long period of time they never actually talked to customers. The first time I ever met GitHub, they were like, "We got to tell you this. This is so awesome. We sold to Walmart and they're paying us four hundred thousand bucks, and no one ever talked to them on the phone."</p>
+
+<p data-t="4147">We were like, "Wow, this is an incredibly magical product and an incredibly magical market." Just imagine if you had talked to them on the phone. Like, what would they have paid you if you just called them on the phone? Like, they probably would have paid you four million dollars. You know, unique product that leads to unique distribution with a founder that wants to optimize the situation.</p>
+
+<p data-t="4117">So the AI founders—like, I'm not the one involved with Cursor—but Michael is a very special founder and his team. They recognize what they have, and then they are aggressively pursuing the enterprise at the same time. So that's a really good combination where you have unique product, you have great product people love, and that leads to some uniqueness of distribution. And then you can build on that advantage by saying, "Hey, we have all this bottoms-up use. We're going to go sell enterprises."</p>
+
+<p data-t="4148">So a big part of what we do as a firm is we help to facilitate customer introductions, customer new business. We call our go-to-market function EBCs, sometimes. And we get notes after everyone, and this is the most fun thing in the world of AI because we get these notes. And like, in the case of Cursor, every single time it's like, "Immediately POC, Immediately POC, proof concept, whatever. Immediately POC. Immediately, you know, full ACV."</p>
+
+<p data-t="4157">And like, the C—you can see that like that's actually incremental data for us in making decisions. But you can see it. Like, it is magic when it happens. So Martin led the A round of Cursor—one of my partners who leads our infrastructure fund. And after one of these emails, he chimed in, and it's a big list. It's like a hundred people on the list or something. He wrote, "Product market fit." And so now we're like, "Oh, you know, PMF is now PMFF."</p>
+
+<p data-t="4157">And so when you see that, you know, that's unique product, that's unique distribution, and like you have a founder, founding team, or full set of employees who really wants to optimize it.</p>
+
+<p class="q" data-t="4202">Like, what are the tradeoffs of the way that Andreessen Horowitz is structured? Like, no firm is perfect. There's choices for how you have structured and nested the team, lots of different groups, leaders of groups like you. What are the negative parts or the tradeoffs for how Andreessen is structured versus like a more monolithic structure or something that was just different?</p>
+
+<p data-t="4228">Our strategy for scaling is pretty well covered. But effectively, we think scale allows us to bring more power to the entrepreneurs and give them a greater chance to be successful in the market. That's the fundamental thesis behind the scaling for us. And with more resources, you can bring more resources to bear for the entrepreneur.</p>
+
+<p data-t="4249">So when I joined, every single Monday and every single Friday, we used to sit in the room together—all of us. And we'd hear all the pitches, and then we'd have long meetings to talk about each of them all as a group. So, you know, Dixon was leading our crypto fund. And we'd have bio fund pitches and we'd all listen to all of them and then we'd all debate. And then we realized at a point like that was not the optimal use of time.</p>
+
+<p data-t="4312">You know, like Dixon weighing in on a bio investment and vice versa like probably doesn't make sense. And you could extrapolate that out to a bunch of our investment processes. So we decided to decentralize. Ben and Mark decided to decentralize the firm, sort of put more power down into the investing teams that ran each investment fund. And the reasoning behind that is twofold.</p>
+
+<p data-t="4339">One, we thought it would allow us to have better expertise around the table. Like, if you're only just fully deep in infrastructure or applications or American dynamism or crypto or bio, that's an advantage. It's both an advantage in making decisions but also an advantage in go-to-market with the entrepreneurs. And then secondly, if we are going to scale, you can't scale an organization with like twenty-five or thirty decision makers around a table. It's too hard.</p>
+
+<p data-t="4358">Like, you can't make a trade-off between should we put an incremental dollar into a bio fund investment or a crypto investment or how should we think about reserving this versus that? It's too hard. So we shrank the size of decision makers by doing this to a smaller group who's in charge of their own funds.</p>
+
+<p data-t="4405">And so far, that's working really well. And I think that's mostly a function of the fact that our early stage folks are really good and we're all really collaborative. The only trade-off that we have at the growth fund is selfishly that process that I described where we all sit around the table. It's kind of valuable for me, you know? It's good for us to have access to all information at all times because we sit across all of our early stage funds. The way we operate is we invest across all of our sectors.</p>
+
+<p class="q" data-t="4451">What percent of the investments you make did the firm have a prior investment in?</p>
+
+<p data-t="4458">A little over half. And then if you take the number of investments—so if you just do it by dollars, it's a little over half that are pre-existing venture investments. And then if you add the dollars that we're investing in pre-existing investments that were pre-existing growth fund originated investments, it's something like follow-ons, it's something like seventy percent.</p>
+
+<p data-t="4512">So like seventy percent of the dollars that we're investing, we got deep knowledge on the companies. I call it game film. Like, we talk about game film all the time. You know, it's so important when assessing an investment, when assessing a founder—game film is not just numbers. Like, it's...</p>
+
+<p class="q" data-t="4533">How do you do reserving in the growth fund? Is it materially different than elsewhere?</p>
+
+<p data-t="4539">When we first started the growth fund, I was like, "Scott, zero reserves. Let's do it. Every single dollar is going to have to be scrutinized for literally every dollar." It turns out that's not really practical. Like, you need to reserve a little bit. So we reserve a tiny amount. And this is for small follow-ons where our participation is important but we're not a lead. We do zero reserving for large investment amounts that we think we're going to make in a company because I think that would lead to lazy decision-making.</p>
+
+<p data-t="4558">We'd say, "Oh, well, we reserved for it. Let's do it." So you just treat it as a new investment. Every single thing is a new investment. So if you look at our largest investments in the growth fund and just run down the list—Databricks, SpaceX, Andabol, OpenAI, XAI, Flux Safety, Figma, Stripe, Coinbase—like, they're across all—they're most of them are across multiple funds.</p>
+
+<p data-t="4626">That's kind of by design. Like, we want—we want to be flexible and say, "Hey, if we're super excited about a new investment, it's fine. Just keep going." We have no target metrics for inside the fund versus outside the fund. We have no target metrics for industry—like, infrastructure versus American dynamism versus crypto or whatever. It should always be best ideas. But I, you know, manage the fund, and so I closely track: how are we doing on those metrics? And, generally speaking, like, thematically, do we feel like the fund is a good reflection of what we see as the opportunity set for the next ten years?</p>
+
+<p class="q" data-t="4706">Can we talk about selling? This is such an interesting topic to me because you can ask lots of investors that invest in private markets: like, when and how they sell? And most of the answers you hear are fairly simple heuristics. Like one you hear a lot is: when there's a crystallization, you sell a third, hold a third, hold a third forever—Fred Wilson's sort of now-later model.</p>
+
+<p data-t="4723">There's lots of similar heuristics. How do you think about—especially because you're investing at the growth stage, probably closer to the opportunity to sell to another investor or the thing going public—talk about what you've learned about selling and just how you've done it so far?</p>
+
+<p data-t="4747">Selling is—it's so hard to do this job. We've tried a number of different variations. So I think it's different at the venture stage. So like your Fred Wilson model—the third, third, third—I think it's totally sensible, because he's coming in extremely early. So, you know, for him, that's relatively simple. You know, we have our own version. It's not algorithmic, but semi-algorithmic decision-making for the early stage.</p>
+
+<p data-t="4804">And we take some very simple qualitative things like: is the founder still running the company? Which we value a lot. And then a sort of qualitative: are they the market leader that we feel great about? And if so, we would buy bias to hold longer. And if not, we would buy bias to exit sooner. We also try to overlay an assessment of how it's valued versus performance, which is really, really hard. And so I would say we've been fortunate in that generally we've gotten it pretty right.</p>
+
+<p class="q" data-t="4841">Why don't you buy whole companies?</p>
+
+<p data-t="4848">One of our folks in IR asked me yesterday: why haven't we done a buyout fund? I think culturally it's totally different than what we do. Like, all that we want to do and all that we stand for is helping the next generation of companies go beat the incumbents. And so, culturally, buying the incumbent and trying to make them last as long as possible and squeeze as much as they can out of their customers or whatever it may be—it's just culturally antithetical to what we do.</p>
+
+<p class="q" data-t="4918">What are the most interesting strategies or things that upstarts do to beat incumbents? Like, what are your favorite ways that companies beat incumbents?</p>
+
+<p data-t="4925">Business model shift is a super powerful thing that's very hard for incumbents to react to. That's part of what is so exciting about the customer support industry and Decagon. It's like the odds are so stacked in their favor because the business model is going to be very hard for incumbents to react to. And it's on the customer side—better, faster, cheaper—by an order of magnitude in each case.</p>
+
+<p data-t="4948">So business model shift is one. The two simple components that I'm looking for—which generally we're not really seeing yet—is completely reimagined UI and then completely new sources of data. So we're large investors in Databricks. We're very optimistic about the data layer. I think they'll have some success in enabling applications built on top. But the UI/UX thing and the data thing, I think, are what—paired with a business model shift—I think are what are going to give the startups the best chance against the incumbents. The more dramatic the shift in those, the harder it's going to be for the incumbents.</p>
+
+<p data-t="5024">So take Salesforce.com. I use this as an example. It's a good company. I never would have thought it would be as big as it is. It's a good company. So maybe they'll be one of the incumbents that survives and reacts. What do people do in Salesforce.com? It's basically like a sophisticated form checker with some analysis, and it's like brutal. It's painful to use. The future with AI is not going to be anything like that. It's just going to be to my point earlier about proactive versus reactive. It's going to be a proactive thing. Yeah.</p>
+
+<p data-t="5051">Like, you a salesperson, you're going to log into your Salesforce and it's going to be like, "Hey, these are the five customers that you have business that you should be doing. Oh, by the way, I've been monitoring what they've been doing online. There's a shift in this group. You got to be aware of it. I've drafted, you know, a call script. This person actually likes to be talked to on the phone. This person wants just to engage via your AI email. I've drafted one for you. I've already taken a bunch of action on your behalf. Here's what you need to do."</p>
+
+<p data-t="4121">Like, that's going to be the future. I think the data that goes into informing that is no longer the database that makes Salesforce so powerful. It's all the unstructured data that's getting pulled from every interaction that everyone has everywhere. And so my hope is that the fullness of the new product has that entirely reimagined UI/UX.</p>
+
+<p data-t="4127">The fact that it's pulling all this new data from different places is an advantage to incumbent because Salesforce is so sticky because of the columnar database that they have. And then if you like on top of it have a new business model that's attached to it, like I think that's a really good shot for a startup to be able to finally go rip Salesforce out.</p>
+
+<p data-t="5000">I mean, if you look at the SaaS and cloud wave, basically the whole story was a seven-xing in the amount of revenue in the market. There's this question of like: who wins, the incumbents versus startups? It basically split like fifty-fifty. So seven-xed more revenue—incumbents grew a bunch. Like, they grew. They took half of the new share. Startups took half the new share. I think the more dramatic the shift—especially with the more dramatic the shift in potential business model—the more likely it favors the startups. That's the bets we're making.</p>
+
+<p data-t="5032">You know, my hope is that's what happens. But we'll see.</p>
+
+<p data-t="5038">It's incredibly fun to explore all this with you in like a formal way, having done it like so informally for twenty years or whatever it is. I think you might know my traditional closing question.</p>
+
+<p class="q" data-t="5043">What is the kindest thing that anyone's ever done for you?</p>
+
+<p data-t="5043">I do know that question, and I've thought a lot about it because there's a lot of things that I consider in my life that have kind of broken my way. I grew up in Kentucky, far away from this world. And a lot of lucky breaks kind of went my way. The thing that I reflect on the most is, you know, we spent the whole time talking about work. The other thing that I do in my life is my kids.</p>
+
+<p data-t="5114">And something has become really clear to me with my kids at the age that they are now, which is the sacrifices my parents made for me are extraordinary. They're incredible. My dad always brings up like, "Oh, I was on the sidelines in the rain watching you and driving you from, you know, soccer to baseball to basketball—you know, sports and all the activities that I was able to participate in as a kid. I think made me into the person I am in a lot of ways."</p>
+
+<p data-t="5137">And now I see it with my kids, because I have to do that work. And I have such a greater appreciation for what my parents gave to me and the sacrifices they made.</p>
+
+<p class="q" data-t="5143">Amazing. Simple thought. Thanks for your time, man.</p>
+
+<p data-t="5143">Yeah, great to be with you.</p>
+    </div>
+  </main>
+  <script>
+  async function toggleYtBookmark(btn) {
+    const payload = {
+      title: btn.dataset.title,
+      url: btn.dataset.url,
+      filename: btn.dataset.filename,
+      interviewDate: btn.dataset.date,
+      source: 'YT',
+      expert: btn.dataset.channel,
+    };
+    try {
+      const resp = await fetch('/bookmark', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload),
+      });
+      const result = await resp.json();
+      setYtBookmarkState(btn, !!result.bookmarked);
+    } catch (e) {
+      console.error('Bookmark toggle failed:', e);
+    }
+  }
+  function setYtBookmarkState(btn, on) {
+    btn.classList.toggle('is-bookmarked', on);
+    btn.innerHTML = on ? '&#9733;' : '&#9734;';
+    btn.title = on ? 'Bookmarked' : 'Bookmark';
+    btn.setAttribute('aria-label', on ? 'Bookmarked' : 'Bookmark');
+  }
+  (async function initYtBookmarkState() {
+    const btn = document.getElementById('yt-bookmark-btn');
+    if (!btn || !btn.dataset.filename) return;
+    try {
+      const resp = await fetch('/bookmarks');
+      if (!resp.ok) return;
+      const list = await resp.json();
+      if (Array.isArray(list) && list.some(b => b && b.filename === btn.dataset.filename)) {
+        setYtBookmarkState(btn, true);
+      }
+    } catch (e) { /* offline -- leave default state */ }
+  })();
+
+  async function shareYtPage(btn) {
+    const original = btn.innerHTML;
+    btn.disabled = true;
+    btn.innerHTML = '&hellip;';
+    try {
+      const resp = await fetch('/share', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ filename: btn.dataset.filename }),
+      });
+      const result = await resp.json();
+      if (!result.ok) throw new Error(result.error || 'Share failed');
+      try { await navigator.clipboard.writeText(result.url); } catch (e) {}
+      btn.innerHTML = '&#10003;';
+      btn.title = 'Copied ' + result.url;
+      setTimeout(() => { btn.innerHTML = original; btn.disabled = false; btn.title = 'Share'; }, 2500);
+    } catch (e) {
+      console.error('Share failed:', e);
+      btn.innerHTML = '!';
+      btn.title = 'Share failed: ' + (e && e.message || e);
+      setTimeout(() => { btn.innerHTML = original; btn.disabled = false; btn.title = 'Share'; }, 3000);
+    }
+  }
+
+  // When the page is viewed from somewhere other than the local Reader
+  // server (e.g. a shared copy on GitHub Pages), hide the interactive
+  // buttons whose endpoints only exist on localhost.
+  (function hideLocalOnlyControls() {
+    const host = location.hostname;
+    const isLocal = host === 'localhost' || host === '127.0.0.1' || host === '';
+    if (isLocal) return;
+    const actions = document.querySelector('.yt-header-actions');
+    if (!actions) return;
+    const bookmark = actions.querySelector('#yt-bookmark-btn');
+    const share = actions.querySelector('#yt-share-btn');
+    if (bookmark) bookmark.remove();
+    if (share) share.remove();
+  })();
+  </script>
+</body>
+</html>
