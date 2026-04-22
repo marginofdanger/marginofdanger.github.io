@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>How The U.S.-China Competition Will End | The Long Game</title>
+  <style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background: #faf8f5;
+  color: #2c2418;
+  line-height: 1.7;
+  padding: 0 1rem 2rem;
+}
+header {
+  position: sticky;
+  top: 0;
+  background: #faf8f5;
+  z-index: 100;
+  border-bottom: 2px solid #c4956a;
+  box-shadow: 0 2px 8px rgba(44,36,24,0.08);
+  padding: 0.6rem 1rem;
+}
+.header-inner {
+  max-width: 78ch;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header-title { font-size: 1rem; color: #2c2418; }
+.header-title strong { font-size: 1.1rem; }
+.header-link {
+  font-size: 0.85rem;
+  color: #8b6d4e;
+  text-decoration: none;
+  border: 1px solid #c4956a;
+  padding: 0.2rem 0.7rem;
+  border-radius: 4px;
+}
+.header-link:hover { background: #f0ebe3; }
+main {
+  max-width: 78ch;
+  margin: 0 auto;
+  padding-top: 0.5rem;
+}
+h2 {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #2c2418;
+  margin-top: 2rem;
+  margin-bottom: 0.5rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 2px solid #c4956a;
+}
+h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #3d3225;
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+section { margin-bottom: 1.5rem; }
+ul { margin: 0.5rem 0 0.5rem 1.5rem; }
+li { margin-bottom: 0.4rem; }
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0.75rem 0;
+  font-size: 0.92rem;
+}
+thead th {
+  background: #3d3225;
+  color: #faf8f5;
+  text-transform: uppercase;
+  font-size: 0.78rem;
+  letter-spacing: 0.05em;
+  padding: 0.5rem 0.75rem;
+  text-align: left;
+  font-weight: 600;
+}
+tbody td {
+  padding: 0.45rem 0.75rem;
+  border-bottom: 1px solid #e8e0d4;
+}
+tbody tr:nth-child(even) { background: #f0ebe3; }
+tbody tr:nth-child(odd) { background: #faf8f5; }
+.key-insight {
+  border-left: 4px solid #c4956a;
+  background: #f5efe8;
+  padding: 0.75rem 1rem;
+  margin: 0.75rem 0;
+  font-size: 0.93rem;
+  border-radius: 0 6px 6px 0;
+}
+.qa-pair { margin-bottom: 1.25rem; }
+.question-box {
+  background: #f0ebe3;
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+  margin-bottom: 0.5rem;
+}
+.analyst-label {
+  display: block;
+  font-size: 0.8rem;
+  color: #8b6d4e;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  margin-bottom: 0.25rem;
+}
+.answer { padding-left: 0.25rem; }
+.loading-section { opacity: 0.5; }
+.loading-indicator {
+  font-size: 1.2rem;
+  padding: 2rem;
+  text-align: center;
+  color: #8b6d4e;
+}
+
+/* YouTube transcript reader */
+
+/* Legacy .yt-meta-card -- kept so old output files still render cleanly.
+   New output uses .header-title.yt below instead. */
+.yt-meta-card {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  margin-bottom: 1.5rem;
+  background: #f5efe8;
+  border-left: 4px solid #c4956a;
+  border-radius: 0 6px 6px 0;
+  padding: 0.9rem 1rem;
+}
+.yt-meta-card img {
+  flex: 0 0 180px;
+  height: 101px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+.yt-meta-body { flex: 1; font-size: 0.93rem; }
+.yt-meta-title { font-weight: 700; font-size: 1rem; margin-bottom: 0.25rem; }
+.yt-meta-sub { color: #8b6d4e; margin-bottom: 0.35rem; }
+.yt-meta-url { font-size: 0.85rem; color: #3d3225; }
+
+/* YouTube sticky header uses the default 78ch-capped centered
+   container so it aligns with the body text column below. The
+   buttons sit at the right edge of that centered container. */
+header:has(.header-inner.yt) { padding: 0.75rem 1rem; }
+.header-inner.yt { gap: 1rem; }
+.header-title.yt {
+  display: flex;
+  gap: 0.9rem;
+  align-items: center;
+  min-width: 0;
+  flex: 1;
+}
+.yt-header-thumb { flex: 0 0 88px; line-height: 0; }
+.yt-header-thumb img {
+  width: 88px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 3px;
+  display: block;
+}
+.yt-header-text { min-width: 0; flex: 1; }
+.yt-header-text strong {
+  display: block;
+  font-size: 1rem;
+  line-height: 1.3;
+  color: #2c2418;
+  /* Allow wrapping to 2 lines so long podcast titles show in full. */
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.yt-header-sub {
+  font-size: 0.8rem;
+  margin-top: 0.2rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.yt-header-sub .yt-channel { color: #8b6d4e; }
+.yt-header-sub .yt-date,
+.yt-header-sub .yt-dur { color: #3d3225; font-weight: 600; }
+.yt-header-sub .yt-sep { color: #c4956a; margin: 0 0.5rem; }
+
+.yt-header-actions {
+  display: flex;
+  gap: 0.4rem;
+  align-items: center;
+  flex: 0 0 auto;
+}
+/* Shared box shape for the star + share + YT buttons so they're
+   visually identical. Applies to both the <button>s and the <a> link. */
+.yt-header-actions .yt-bookmark-btn,
+.yt-header-actions .yt-share-btn,
+.yt-header-actions .header-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font: inherit;
+  font-size: 0.85rem;
+  line-height: 1;
+  color: #8b6d4e;
+  background: transparent;
+  border: 1px solid #c4956a;
+  border-radius: 4px;
+  padding: 0;
+  box-sizing: border-box;
+  width: 2.2rem;
+  height: 2.2rem;
+  white-space: nowrap;
+  text-decoration: none;
+  cursor: pointer;
+}
+.yt-header-actions .yt-bookmark-btn { font-size: 1rem; }
+.yt-header-actions .yt-share-btn { font-size: 1.05rem; }
+.yt-header-actions .yt-share-btn:disabled { opacity: 0.6; cursor: default; }
+.yt-header-actions .yt-bookmark-btn:hover,
+.yt-header-actions .yt-share-btn:hover,
+.yt-header-actions .header-link:hover {
+  background: #f0ebe3;
+  color: #3d3225;
+}
+.yt-header-actions .yt-bookmark-btn.is-bookmarked {
+  background: #c4956a;
+  color: #faf8f5;
+  border-color: #a87d5a;
+}
+.yt-header-actions .yt-bookmark-btn.is-bookmarked:hover {
+  background: #a87d5a;
+  color: #faf8f5;
+}
+
+h3.chapter {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #3d3225;
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+h3.chapter a {
+  font-size: 0.8rem;
+  color: #8b6d4e;
+  text-decoration: none;
+  font-weight: 400;
+}
+
+.yt-body p {
+  margin-bottom: 1.15rem;
+}
+.yt-body p.q {
+  background: #f0ebe3;
+  border-left: 3px solid #c4956a;
+  border-radius: 0 6px 6px 0;
+  padding: 0.6rem 0.9rem;
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+  color: #3d3225;
+  font-style: italic;
+  font-size: 0.96rem;
+}
+.yt-body p.q::before {
+  content: "Q";
+  display: inline-block;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 0.72rem;
+  color: #8b6d4e;
+  letter-spacing: 0.05em;
+  margin-right: 0.5rem;
+  padding: 0.05rem 0.4rem;
+  border: 1px solid #c4956a;
+  border-radius: 3px;
+  vertical-align: 0.1em;
+}
+.yt-body p.q a {
+  display: block;
+  text-align: right;
+  margin-top: 0.3rem;
+  font-style: normal;
+  font-size: 0.8rem;
+  color: #8b6d4e;
+  text-decoration: none;
+  white-space: nowrap;
+}
+.yt-body p.q a:hover {
+  text-decoration: underline;
+}
+
+</style>
+</head>
+<body>
+  <header>
+    <div class="header-inner yt">
+      <div class="header-title yt">
+        <a class="yt-header-thumb" href="https://www.youtube.com/watch?v=nlEy2_yWCPs" target="_blank"><img src="https://i.ytimg.com/vi_webp/nlEy2_yWCPs/maxresdefault.webp" alt=""></a>
+        <div class="yt-header-text">
+          <strong>How The U.S.-China Competition Will End | The Long Game</strong>
+          <div class="yt-header-sub">
+            <span class="yt-channel">The Long Game Podcast</span>
+            <span class="yt-sep">&middot;</span>
+            <span class="yt-date">Feb 20, 2026</span>
+            <span class="yt-sep">&middot;</span>
+            <span class="yt-dur">1h 1m</span>
+          </div>
+        </div>
+      </div>
+      <div class="yt-header-actions">
+        <button id="yt-bookmark-btn"
+                class="yt-bookmark-btn"
+                title="Bookmark"
+                aria-label="Bookmark"
+                data-filename="yt-2026-04-22-how-the-u-s-china-competition-will-end-the-long-game.html"
+                data-title="How The U.S.-China Competition Will End | The Long Game"
+                data-url="https://www.youtube.com/watch?v=nlEy2_yWCPs"
+                data-date="2026-02-20T08:14:53-08:00"
+                data-channel="The Long Game Podcast"
+                onclick="toggleYtBookmark(this)">&#9734;</button>
+        <button id="yt-share-btn"
+                class="yt-share-btn"
+                title="Share"
+                aria-label="Share"
+                data-filename="yt-2026-04-22-how-the-u-s-china-competition-will-end-the-long-game.html"
+                onclick="shareYtPage(this)">&#8599;</button>
+        <a class="header-link" href="https://www.youtube.com/watch?v=nlEy2_yWCPs" target="_blank" title="Watch on YouTube" aria-label="Watch on YouTube">YT</a>
+      </div>
+    </div>
+  </header>
+  <main>
+    <div class="yt-body">
+    <p data-t="0">Most of the quality internet is from the west. If you're training on the internet, you're training on books—quality books are mainly from the west. So the smartest AIs are very western, very center-left, very impressive American polymaths. That is great news. But if that's what we're all using, if that's the smartest entity in the world, that is arguably the biggest soft power win in all of human history.</p>
+
+<p data-t="33">Welcome to the Long Game Podcast. I'm John Feiner and I'm Jake Sullivan, and we are very excited about our guest today, Tyler Cowan. We are looking forward to a conversation where he takes us beyond the headlines to the trend lines.</p>
+
+<p data-t="47">The name of the podcast is the long game, and the long game of geopolitics and national security is being shaped by a series of deep structural forces. Among these are the weaponization of economic interdependence, the eroding capacity of states to provide public goods, the AI revolution, and the rise of China.</p>
+
+<p data-t="65">So to understand the world today, we can't just talk to the traditional foreign policy crowd. We've got to seek out polymathic thinkers. There is frankly no more interesting or compelling thinker than Tyler Cowan—a genuine polymath. He's an economist, a professor at George Mason University, one of the most influential public intellectuals of the modern era.</p>
+
+<p data-t="90">He is co-author of the widely read economics blog Marginal Revolution. He is host of the Conversations with Tyler podcast and he's written or co-written more than twenty books.</p>
+
+<p data-t="101">His work spans a dizzying array of topics from technology and finance to Ethiopian cuisine and the search for undervalued talent. This is a man of unbounded and even radical curiosity.</p>
+
+<p data-t="118">We are just psyched to have him on. We want to use our time wisely, but we also want to do justice to the breadth of his thinking and insight. We're going to be ambitious and try to cover a wide range of topics from China to AI to geopolitics and yes, to UFOs.</p>
+
+<p data-t="130">We'll close this episode with Tyler's own underrated and overrated game from his podcast Conversations with Tyler, but this time he'll be on the hot seat. Tyler Cowan, welcome to the long game.</p>
+
+<p data-t="142">Thank you, Jake. Welcome, Tyler. We're glad to have you.</p>
+
+<p class="q" data-t="147">I'm going to start us off with a question that's a bit less high-minded than everything Jake laid out and a bit more self-serving for Jake and me. We spent four years sitting at the top of an information pyramid. We'd walk in to our offices every morning. There was a book with 200 pages of intelligence that came in overnight. All day every day, people were handing us memos and updates and emails about things going on in the world.</p>
+
+<p class="q" data-t="172">Since we've gotten out of government, we've become more sophisticated consumers of information and have to figure out where to seek it out. As someone who writes on, thinks about, and pronounces on as many topics of such staggering breadth as you do, how do you go about staying current in all of these areas?</p>
+
+<p data-t="196">I'm not sure anyone stays truly current. I travel about half my time. I try to meet with as many smart and informed people as I can. I'm in some very good WhatsApp groups. I do scroll Twitter quite a bit. I think that's highly useful if you avoid clicking on politics-related tweets. I try to read several books a day when I can. Just take in a diversity of experience. It's hard, right? The world outraces all of us, especially with AI. There's always a new model coming out. You've got to figure out how good the new model is. It's like having a new job.</p>
+
+<p class="q" data-t="235">Tyler, did you say several books a day?</p>
+
+<p data-t="239">Yes. My comparative advantage in life is that I read faster than other people. I'm what is called a hyperlexic.</p>
+
+<p class="q" data-t="241">That's a new one for me. Has the advent of LLMs—Chat GPT, Gemini, Claude—changed the way you consume information or try to absorb it?</p>
+
+<p data-t="271">Greatly. I'll pose in a typical workday twenty or thirty queries. I'm reading a book and there's always things I don't understand, and rather than have to go looking through some other book, you just ask the LLM. I typically use Chat GPT the pro model. When I'm reading about Mexico, there's different place names, who are these people? I keep querying the LLM and I can learn much more reading say a third of the books I used to because I'm always asking for additional information. It's a big change and improvement.</p>
+
+<p class="q" data-t="307">Can we turn to geopolitics for a minute? We wanted to start with China, which is at least for us the most consequential issue in the geopolitical realm and particularly the US-China relationship. We've been through a decade in which there has been a bipartisan consensus about the nature of the relationship with China, really launched by President Trump in his first term. It's a fundamentally competitive relationship—the United States and China are competing across technology, military affairs, and geopolitical influence. There does seem to be some indication that he is seeking to disrupt this consensus to some extent and maybe shift US-China relations back to something more akin to the engagement model that preceded the current moment. What do you think the national security community has gotten right and wrong on China?</p>
+
+<p data-t="361">We're not going to beat China in this competition and they're probably not going to beat us. The question will be on what terms the stalemate is defined—who's controlling the South China Sea, who's controlling Taiwan, what relations with South Korea and Japan are like. All of that is up in the air. Maybe has never been more uncertain. But I think my vision is a little more optimistic than what many people hold. Over the medium term, we will need to work with China to put down what you might call terror groups or middle-tier powers or countries that want to make trouble. It could even be North Korea. The more successful China is, the more small-c conservative they will become. The world will probably have two major AI networks—ours and China's. Countries will have to choose. And the actual troublemakers, when they pop up, the United States and China might have some harmony of interests that in a fairly rivalous, not entirely friendly way will get together and cooperate in the same way we did with the Soviet Union during World War II.</p>
+
+<p data-t="437">The future of the world may look like that more than just being defined by US-China rivalry. At some point, the key issues in Asia will be settled, perhaps not in our favor, and then we'll have to work with China. That would be the point I would stress.</p>
+
+<p class="q" data-t="457">I was struck by what you just said about the more successful China is, the more small-c conservative it will be. I want to focus on the flip side: if China hits a wall economically, faces a degree of stagnation—a japanification with Chinese characteristics—would that in turn make them more dangerous because the Chinese Communist Party might have to turn to nationalism and conflict in order to maintain legitimacy? Do you see that as a risk?</p>
+
+<p data-t="489">I think they've already turned to nationalism and conflict as a source of legitimacy. I don't know how much that escalates. China will be older, which probably also makes them more small-c conservative. You could claim they've already hit a wall. Real estate wealth for a typical household is a bigger chunk of what they own than would be the case in the United States. It's not clear how China really restarts growth with infrastructure or fiscal policy. That may just be the world we're in now, and those changes are already capitalized into the status quo.</p>
+
+<p class="q" data-t="528">How seriously should we take the risk of great power war?</p>
+
+<p data-t="529">It depends what the United States has in mind. I do believe China will in some way move on Taiwan. It does not have to be an outright attack, but it could be much more than the current status quo. It could be something like a blockade or just trying to prevent insurance companies from insuring ships going back and forth from Taiwan, which would be crippling. Internal subversion, bribery, intimidation—all of this is already in the works. How much is the US prepared to go to war over that? My guess is we are not. So I would bet against a great power war. But if you're asking me, do I bet against the US being pushed out of most of Asia? That's far less clear. And that to me is a much worse world than what we have right now.</p>
+
+<p class="q" data-t="575">Should the United States be willing to take military action to defend Taiwan?</p>
+
+<p data-t="581">This is what economists would call a mixed strategy. Exante, we should have strategic ambiguity and not just say we're not going to defend Taiwan. And when Joe Biden said we are going to defend Taiwan, I was quite happy—four times. So there are different versions of how it was talked about, but it should be unclear. That said, when push comes to shove, if China has made its move, you have to look at what are the terms of the deal. What are they going to do with TSMC? What's our domestic quality chip production in the United States? How do we feel about Japan and maybe South Korea getting nuclear weapons? Can South Korea remain an autonomous nation? Those are a lot of balls to juggle and they're all hard to judge at this moment. But I think exante we should definitely create some risk that we will go to war over Taiwan, but then make the best decision exposed.</p>
+
+<p class="q" data-t="639">China knows that too, right? They're not fools. They've studied game theory.</p>
+
+<p data-t="646">Correct. Yes. It may not be that different from your version. You've obviously been involved in these issues.</p>
+
+<p class="q" data-t="657">One more question on China. You were saying a minute ago China may have already hit a wall economically. A coherent US strategy to deal with China has to start with some assumptions about China's trajectory. There's a school of thought that we've reached peak China and China is going to get pulled down increasingly by structural factors like debt and demographics. Others say China is a juggernaut that's poised to seize the commanding heights of technology. Do you have an assessment on where China will be ten years from now?</p>
+
+<p data-t="693">Both of those two views you mentioned I think are correct. Keep in mind China is coming of age economically in an era where income inequality is much higher than when the United States or most of Western Europe came of age. So the Chinese top, in terms of companies and wealthy individuals and elites, will be extremely wealthy, and you see that already. But at the same time, the Chinese lower middle class might end up like the Mexican middle class. The country is large enough to contain both of those visions. They will never be in the kind of situation that the United States was in 1968 where growth is pretty high and the nation feels fairly egalitarian. They're just not growing up in that time, and you're shaped by the time you grow up in, just like human beings are.</p>
+
+<p class="q" data-t="753">Would a fair summation of that be that China will have a hard time escaping the middle income trap but nonetheless will still be a major geopolitical force in the world?</p>
+
+<p data-t="758">I would say ten to twenty percent of China already has escaped the middle income trap—or maybe now ten percent, but say it ends up fifteen or twenty percent. That's a very big country right there. The rest of China does not escape the middle income trap. But the part that does, pushing the boundaries of frontier technology, pushing the boundaries of military modernization—that's a very serious player, even if the bulk of the population is struggling economically.</p>
+
+<p data-t="793">China in the biosciences has not yet had the global impact it will have. You see all the inputs coming into place: better systems for clinical trials, lots of researchers want to move there, they do everything more quickly than we do. Speed really matters in that area. But there's not yet much in the way of what I want to buy for my health that's coming from China. And that's going to change.</p>
+
+<p class="q" data-t="819">One of the challenges I know we felt as policymakers is we don't understand each other particularly well. I don't think the United States understands China all that well, at least its inner workings. The Chinese government doesn't seem to understand US intentions very well. You took this problem on by writing a book intended for a Chinese audience to explain the United States. Could you talk about that project and whether you think that challenge has been met?</p>
+
+<p data-t="840">I finished this book in 2015, and I even had a contract from Xinhua, the Chinese state publisher. This was a book that would explain America to the Chinese in the same way that Tocqueville wanted to explain America to Europeans. I might even try to put the book out in some manner, but it's obviously out of date. The first term of Trump came along and the beginnings of some trade wars with China and more censorship in China. So Xinhua just has never published the book. I think it's a very interesting book trying to explain America to the Chinese.</p>
+
+<p class="q" data-t="875">What does China really want?</p>
+
+<p data-t="879">My model of them is they truly, deeply, really want Taiwan. They truly deeply want most of Asia to kowtow to them. They truly deeply want the United States completely out of Asia. They may not view the US out of Japan as realistic, but otherwise I think they will act as far as they can to get the US out of the rest of Asia. Beyond that, I think they will take any gains or homage or kowtowing they can get. They're not against it, but they do not realistically expect to be the dominant presence in the new world. They do not realistically expect Western Europe to be their ally.</p>
+
+<p data-t="911">They've learned the hard way that a lot of the world doesn't like them. When they do things like Belt and Road, they're taken advantage of. A lot of the money is not repaid. They're terrible at soft power. I think some parts of them have learned this, even though their system as a whole does not incorporate it. I think their focus will be on Asia, which is a hugely important part of the world and the global economy. But they know they're only going to make so much progress in the direction of India, so they will look in other directions. That's my model of what China wants.</p>
+
+<p data-t="944">But one final point I would stress: there's this old saying, China will always surprise us. Some countries—look at the history of India—you could almost say India never surprises you. What they do is more or less linear on the same path. History of India versus history of China: the Taiping rebellion, the Boxer rebellion, the communists, the reforms—not well-predicted events. Big things happen in China and few people are good at predicting them in advance. I would leave the door open for that as well.</p>
+
+<p class="q" data-t="977">If India's in one category and China's in the other—predictable and unpredictable—where's the US?</p>
+
+<p data-t="985">We are mostly predictable, but we've had one or two shifts. You could say the Civil War. You could say the shift toward being globally interventionist rather than just in the new world. Those were two big shifts, but mostly we're a nation of continuity.</p>
+
+<p class="q" data-t="1006">I hope you do put your book out, not least because these days I feel like I don't understand the United States as well as I could. So it might be useful for an American audience too. Is Xinhua still sitting on it?</p>
+
+<p data-t="1017">They have it and could publish it. They've just chosen not to do so for the last ten years. They own the rights and paid me a small advance. I don't think they'll ever put it out, but again, who knows? China will always surprise us.</p>
+
+<p class="q" data-t="1031">And obviously you have an English language version of it. Since you write other books with publishers that have contracts, it's not really a commercially feasible work. There's not a simple non-tricky way to put it out, but I do want to have it commence some. It's a great project. I want to read it someday.</p>
+
+<p data-t="1041">I'll send it to you.</p>
+
+<p data-t="1052">The rise of China has been a seismic event for geopolitics over the past few decades. The rise of AI has been a seismic event across the board over the last few years. Can you tell our listeners where you think this is all going in the next five years? What do things look like with AI at the end of 2030?</p>
+
+<p data-t="1091">Five years from now, I do not think the world will be that different because of AI. Ten to fifteen years from now, I think it will be very different. It will take us a long time to overcome the bottlenecks that make it hard to incorporate AI into real world institutions. Much of the AI use is by lone individuals who are freelancing with it at work and saving themselves time. That's fine. It's great. More leisure time, but it's not changing how the workplace works institutionally. It is done mainly in startups. That's great. But most of the United States economy is not startups.</p>
+
+<p data-t="1145">Startups will grow in relative terms because they can incorporate AI better and more rapidly. But if you ask a simple question—how much of our economy is government, universities, nonprofits?—add up the different parts of the economy that are hard to change rapidly, and that's almost half our economy right there. So that will slow down our advances. A key question will be how much more important can startups be relative to large established institutions. I would say you need a ten to fifteen year time horizon for the world to truly radically change in this country.</p>
+
+<p class="q" data-t="1191">How do you think about what is often referred to as the AI race between countries—largely the United States and China, but I guess there are some other players involved? How do you rate the importance of innovation at the frontier of AI versus AI adoption, where the Chinese seem to be far ahead? Is it possible to win the innovation race and lose the overall race because you cannot adopt rapidly enough?</p>
+
+<p data-t="1227">I think it's a key question. What does the Chinese Communist Party actually think about AI? We can read the words they put out, which I don't think are lies, but surely they feel threatened by AI. The notion that the smartest entity in China will not be the CCP makes them radically uncomfortable. The Chinese have a long-standing history of turning their backs on major technology in different ways. It's not the bet I would make, but I would give that a ten percent chance that the Chinese just decide not to do it. They think it's too subversive of their established order.</p>
+
+<p data-t="1274">In that scenario—ten percent likelihood—the US has a big lead. But in the more normal modal scenarios, China's always a year behind us, but they're ahead of us on energy. Is quality of the model, quality of implementation more important than energy? That's going to depend on a number of factors—how quickly will the US bypass NIMI constraints using states like Texas and Louisiana and maybe some deals with Saudi or possibly UAE? All that's up for grabs. I think it's one of the areas where the Trump people have been doing some good things. But if the advantage is in energy production, de facto China can be ahead of us with inferior models. They can distill from our models. It's hard to keep a big edge in this area.</p>
+
+<p data-t="1341">Just look at the domestic companies: Gemini from Google, Claude from Anthropic, GPT from OpenAI. None of those is that much better than the other because there's so much diffusion of the technology. That holds across China also. This coming weeks, people say Deep Seek 4 is coming out. Some people think it's pretty wonderful. They've certainly been hyping it. I'm curious to see how it performs. When the earlier version of Deep Seek came out, it sort of surprised the world. It was a stealth move on their part. This one they've been hyping for weeks.</p>
+
+<p class="q" data-t="1395">You've made a really interesting point that these large language models have what you call a western soul because of their training data and that even Chinese models kind of think like Americans. Can you explain what you mean by that and why it matters?</p>
+
+<p data-t="1418">Most of the quality internet is from the west. If you're training on the internet, you're training on books—quality books are mainly from the west. So the smartest AIs are very western. You could say they're center-left, very impressive American polymaths, which I think is great news. I'd be a bit more to the political right than that. But if that's what we're all using, if that's the smartest entity in the world, that is arguably the biggest soft power win in all of human history for any nation, any empire, any culture—that the smartest entities are made in our image.</p>
+
+<p data-t="1461">It's hard to make them very different without making them much stupider. If you imagine a North Korean AI, unless they're just going to distill from us or copy, that too will be the center-left intellectual American polymath who's very kind and gentle and does amazingly well as a doctor with patients or as a therapist. If that's what people in North Korea or China are consulting for their wisdom, for their advice over time, it's hard to predict what that adds up to. But you couldn't wish for more, I would say.</p>
+
+<p class="q" data-t="1516">You don't strike me as an alarmist about the impact of AI on the world, on the United States. But there have been in recent weeks a number of high-profile resignations from some of the AI labs by people who are positioning themselves as whistleblowers, saying essentially we're concerned that various safety issues, various risk factors are not being taken seriously enough. What do you put at the top of your list of important risks to be taken seriously with the development of this technology?</p>
+
+<p data-t="1573">Imagine you're in the time of Edison and people are working for electricity companies, which is a new thing then, and they decide the electricity companies have no plan to prevent electricity from being used to kill people. They might resign from the company, but that's silly, right? It's not effective. It doesn't actually solve the problem. Here's a way I like to put it: every now and then, whether you like it or not, societies need to rebuild themselves. Our country did this after the American Revolution. We were a British colony. We ended up with a war of independence and a new constitution. After the Articles of Confederation, that was a period of considerable turmoil. You don't have to be skeptical about the United States to see that was difficult. There was a lot of uncertainty along the way.</p>
+
+<p data-t="1640">You don't have to think AI is evil. But today we are in a situation—whether we like it or not—where we need to rebuild our world. We haven't done that in a long time. You could say Europe did it after World War II. I would say they did really a great job then, and now we need to do it and we're not psychologically prepared to do it. People run to all sorts of extreme theories that it's going to kill us or put everyone out of work. I don't think either of those are close to being true. But it is true that we're in this moment where big parts of our world will change and we need to get it right.</p>
+
+<p data-t="1700">Even if you're not worried about AI per se, you certainly ought to be concerned: do we have the cultural strength and resilience and sensibilities to get it right? There is real uncertainty there. Imagine we had to write a new constitution today—how good a job do you think we would do? Just very unclear. In a sense that's our position. We'd better get it right. But it is highly uncertain.</p>
+
+<p class="q" data-t="1745">We can't even amend our constitution, let alone write a whole new one. So we have to do a much bigger task. The difference is unlike amending the constitution, this task is put upon us by external events which cannot be reversed. We have to do it right. You posed the question: do we have the cultural resilience, the kind of qualities necessary to do this rebuilding? Do you have an answer to that? Are you ultimately optimistic that the United States will make AI work more for us than against us?</p>
+
+<p data-t="1801">The old Winston Churchill saying that in the final resort, the US finally does the right thing is my basic model of this country. But a lot of people will hate the path along the way. We'll get many things wrong. Your kids will live to age ninety-eight and die of old age. That alone will make it a much better world. There will be benefits that right now maybe are even difficult to dream of. I think it will be pretty fantastic sometime on a time horizon, and I hope the path along the way is not too terrible.</p>
+
+<p class="q" data-t="1867">I want to come back to the US-China AI race because this preoccupies a lot of strategists. A common mental model is that there will come a point—some capability threshold—where if the US gets there first, we end up with an intelligence explosion, a capability explosion, and we can obtain a decisive strategic advantage. It sounds to me based on your answer that you don't totally buy that. Can you talk about why you think that is the wrong mental model?</p>
+
+<p data-t="1918">I don't think there's any point where the AI is just based on self-improvement and doing its own thing at super rapid speed without human intervention, human steering, and human implementation. So it's always a bit of a messy slog. That said, let's say we did have this big advantage over China as we once had the atom bomb and the USSR did not. Well, it was a big advantage for a few years. It didn't last that long. Say we had this AI advantage over China. What would we do with it? Actually, not that much.</p>
+
+<p data-t="1968">There'd be a two, three-year window where maybe we felt for sure we could defend Taiwan. It's nice to have a two, three-year window, but once that window disappears and China catches up, then in a sense we're back to where we started, but at a higher level of destructiveness. Even if you accept all the premises behind that argument, all you're buying is a temporary window. If there's one thing we've learned about the US, when our country is temporary windows, we just sit on them. We don't invade our enemies, take them over or whatever, if they're powerful and have nuclear weapons. China, of course, has nuclear weapons and plenty of other weapons. What can we really do to them? We just be waiting for them to catch up to us.</p>
+
+<p class="q" data-t="2022">Proponents of this decisive strategic advantage theory say, actually, you know what you do with that window? You use your AI capability to ensure that no other country can achieve the same capability threshold you did through cyber means or other tools to poison data sets or disrupt training models. How does that strike you?</p>
+
+<p data-t="2048">Good luck with that. All China has to do is disconnect some of what it's doing from various global networks and I think our ability to reach it without attacking them is not that great. If you're asking does it mean we could do neat things in countries such as Venezuela with this AI advantage, that's a maybe. That's at least possible. That may have happened anyway. But stopping China from getting there, I don't see how we possibly could. We had nuclear weapons in the nineteen fifties. There were various plans to bomb China, to nuke China. We never did it. It's not what we do. It would have been a huge mistake. And I think we'll be in the same position again, even assuming we have that decisive an advantage.</p>
+
+<p class="q" data-t="2105">If this is not a winner-take-all technology and you don't rate the value of a two or three-year advantage in this AI race very highly at least in terms of geopolitical significance, does that mean the United States should not be trying to withhold our best technologies from the Chinese? Should we be withholding semiconductors and the machines that build them from China?</p>
+
+<p data-t="2139">I favored those policies when we put them in place. If I were in charge today, I would not get rid of them. But over time, the value of such policies inevitably decays. So we need to be realistic that over the next few years, it won't yield us that much. If we do give away those policies, again, it's not something I would do. But I'm not sure it's the end of the world. I think China will catch up to us anyway. If those policies in the past bought us a few years, I'm entirely happy with that. Limited gains are better than no gains.</p>
+
+<p data-t="2194">I think your kind of sober assessment is a reasonable one. I do think the US compute advantage right now is significant, and you mentioned China having this significant energy advantage. If they can marry compute and energy, I think their relative advantage over the United States would be really quite significant. Something for us to watch whether the Trump administration actually does roll these controls back further.</p>
+
+<p data-t="2227">Keep in mind China might cure cancer for us. So if China has the AI edge, I'm extremely uncomfortable about that world, but it could end up being great for a lot of Americans. We shouldn't dismiss that possibility.</p>
+
+<p class="q" data-t="2258">We cannot think about winning the race against China as just being, on its own terms, some good. A good would be anyone cures cancer, whether it's China or anyone else. We certainly have to take that factor into account. We also have to take into account the need for the US and China to work together to manage the risk of AI. It sounds to me like you discount some of the more extreme risks like loss of control scenarios and this massive, very fast-moving job disruption. Are there risks of AI that do keep you up at night?</p>
+
+<p data-t="2304">For loss of control, I would say humans have never controlled the world, for better or worse. For job displacement, new jobs always get created. The energy sector, biomedical trials—there'll be new jobs all over the place. There will be more leisure time. That's mostly a good thing. I think it will be quite bad for a lot of upper, upper middle-class white-collar workers. Politically, they're an extremely potent group, especially in the Democratic party. The political collision of people who used to think, "I can go to a top twenty or Ivy League school, become a law partner, consulting partner, or sort of not automatically but with hard work, make one and a half or two million a year"—that going away—I can't think through the politics of that, but I think it's more significant than just counting the numbers alone would indicate. So that worries me quite a bit: like what will happen to the Democrats when that interest group crashes?</p>
+
+<p data-t="2370">Those people—they're still smart, they'll work hard—but they basically learn, "I'm going to move to Houston instead of Manhattan and earn three hundred thousand a year working in the energy sector instead of being a law partner." I'm not worried about them as humans, but politics of that, I think it will be ugly.</p>
+
+<p class="q" data-t="2408">Will podcasters be okay, or do we need to start making plans?</p>
+
+<p data-t="2413">I write less and podcast more. My view is that listeners do not want AI-generated podcasts, even if the AIs are smarter, better, and funnier than we are. If I'm proven wrong, I'll do something else—work in the energy sector in Houston for three hundred thousand.</p>
+
+<p class="q" data-t="2444">Good tacos there.</p>
+
+<p data-t="2447">Exactly.</p>
+
+<p data-t="2453">We've been talking about a sexy topic—artificial intelligence. You have been known to criticize the intellectual class for obsessing over status topics like AI at the expense of focusing on the more boring physical realities that basically make our countries and societies run and drive national power. You've written about sand. Can you explain to our listeners why winning the long game means caring about sand?</p>
+
+<p data-t="2491">Sand is an input into information technology. Some people say the world has a shortage of sand or easily accessible sand. Sand and silicon—supply chains are always longer and more complex than you think. That's a good rule of thumb. That means there's more to worry about, but it also means your worrying is never going to be as effective as you think. There are limits on what policymakers can do. It doesn't mean they should do nothing, but it means if they expect like a result of eight out of ten, maybe they'll get a three out of ten. Marginal gains are better than nothing.</p>
+
+<p data-t="2537">I think we're learning with supply chains. We're living in that world once again. People are very offended that there's bad treatment of labor in these different supply chains. That's morally very understandable, but trying to get that out of the supply chain is very, very hard.</p>
+
+<p class="q" data-t="2579">You had a statistic in one of your articles that really struck me: the world may run out of construction-grade sand by around 2050. That struck me because I think it's before most estimates when the world will exhaust proven oil reserves. So we may actually run into this shortage of sand, which nobody's focused on, before the energy transition is required, which is obviously occupying tons of policy attention and economic attention. How do you get people to focus on topics that aren't sexy in the way AI is, and are so essential to the future?</p>
+
+<p data-t="2636">The price has to go up, right? And people hate that. But the same thing with beef and chicken today. The price is up. People hate it. But one of my favorite sayings is supply is elastic. The article on sand, I think I was critical of that. I think we will manage sand fine if we let the price go up and if we let supply respond. There's NIMI barriers everywhere in the United States. It's one of our biggest problems with energy, with AI, with people being able to afford housing in various cities.</p>
+
+<p data-t="2690">So we don't want our NIMI barriers to stop the supply of sand from being elastic. What we're learning is a bunch of NIMI barriers that were put up through the nineteen-sixties to recent times—they're a lot more costly than they seemed. You can live with them when the world isn't changing much. But the more radical your change becomes, the more poisonous those NIMI barriers are. We're going to need to learn that lesson. Federalism will harm us. I'm in general for federalism. I think it's a good thing. We need fifty states, counties, cities, and so on. But it will be very painful cutting through all the layers of regulation that create our NIMI restrictions.</p>
+
+<p class="q" data-t="2761">Jake and I are government people, at least we used to be in and out of government. One of the things that I always think about as we catalog these problems is the basic capacity of our government to deal with the challenges that the country faces. You've described yourself as a state capacity libertarian, arguing for basically limited government but for government that is highly competent and highly effective in core areas where the state has to function. Where do you see today the biggest failures in state capacity? The second Trump administration is in some ways going to war on some elements of state capacity. I think we've had ten thousand science STEM PhDs walk out the door of the federal government during the first year of this administration.</p>
+
+<p data-t="2810">In other areas, they're building up state capacity—I think we've hired ten thousand ICE agents during this period. How do you rate the net effect of this president's approach to state capacity?</p>
+
+<p data-t="2823">I think I agree with what's implied by your answer. We've lost a lot of talent in government. We're doing a much worse job keeping scientific talent and funding science. Those are big setbacks in state capacity. In terms of putting AI into government, the Trump people, I think, are better than the Biden people would have been, or the Harris people if they had won. There are a lot of good noises and not too many restrictions. I don't think we've seen any gains from that yet, but I prefer Trump AI policies to what we would have gotten from the Democrats.</p>
+
+<p data-t="2872">I'm very against the ICE expansion, just general corruption in government, unwillingness to keep Congress informed, attempts to intimidate people, push around the courts. The list is long. You probably could make it longer than I could. I'm basically against all those things. They harm our state capacity. We're in one or two key areas doing well. My hope, which I don't count on, is the one key area of AI matters more than all the bad things we're doing. I wouldn't bet that way, but there's some chance it works out that way. Basically, we're flushing some of our state capacity down the toilet.</p>
+
+<p class="q" data-t="2929">Are there particular concrete policies or reforms that you think would most improve America's state capacity? Are there things that if you were president for a day, you would say, "This is low-hanging fruit. We should just do this."</p>
+
+<p data-t="2955">A simple thing that even the Biden people talked about would be recognizing it's very hard to truly reform the NIH. To support healthcare innovation, you need to start a new agency and have it be more DARPA. That almost happened. People pushed back. It did not come to pass. But we could do that and we should do that. Reforming the National Science Foundation—actually, the Trump people are working on that. I hope that goes well. I don't personally know where that is at. There's plenty we could do in terms of healthcare policy where we spend a lot of money.</p>
+
+<p data-t="3009">I would basically always be willing to trade off a dollar of Medicare and turn it into a dollar of Social Security at pretty much all margins. That's not popular. We're older as a nation. Old people vote. Old people often don't vote ideologically. So messing with their gains is maybe not going to work. But I would love to turn Medicare into cash benefits and let older people use that cash on markets if they want, spend it on other things if they don't want or need the healthcare. But again, is that realistic? Probably not.</p>
+
+<p class="q" data-t="3076">You've somewhat disparagingly and I think accurately referred to American large defense contractors as essentially akin to state-owned enterprises in their ossified, low-innovation approach to business and also in terms of their ability to deliver capabilities on time and on a reasonable budget. To what extent do you think this is an inevitability in a large, complicated democracy like ours? To what extent do you think this problem could be fixed? We beat our heads against this particularly in the context of the Russian invasion of Ukraine, realizing we not only didn't have enough on the shelf but we didn't have the ability to produce anything close to what was needed to help Ukraine defend itself.</p>
+
+<p data-t="3145">We've done some great end runs with startups—most prominently Palantir and Anduril, but many others. That gives me hope. When I made those criticisms, those startups were less of a big thing. So it's striking that this is an area where our state capacity has turned out to be better than at least I had thought, or many people had thought. We need to do much, much more. I'm not sure how that will go. The Trump administration politicizing business so much, I think, has made that harder. It's just harder to survive in those spaces when your government contractor is demanding political loyalty from you. It's right now a big issue with the company Anthropic. So we might blow that.</p>
+
+<p data-t="3203">But going back to the Winston Churchill quotation, we don't have enough military shells. We might need an emergency to really gear up. But our ability to do that is probably somewhat better than we think. In the meantime, we've made more progress than I had been expecting. So I'm less pessimistic about that now than say five years ago.</p>
+
+<p class="q" data-t="3267">Before we get to the most important topic—which is aliens—I wanted to circle back to something you said about supply chains. You said supply chains are very long, which should worry us but also maybe we worry too much in a way because it's just a fact of life. If you look at rare earths, China used its choke point on rare earths to basically say to the United States, we can cut those off and have major impacts on both commercial and military supply chains. The Trump administration, building on work we did in the Biden administration, is actually trying to create resilience. But you could go down a list of ten, twenty, thirty, or forty other vital inputs into the economy. The question is: is true supply chain resilience just impossible to achieve?</p>
+
+<p data-t="3345">It's impossible to achieve. But the good news is there's a lot of changes we can make at the margin, and those changes are net pluses anyway. First of all, push back on NIMI. NIMI-ism actually restricts our ability, often through environmental law, to exploit our own rare earths or rare earths from our allies. So we should be doing that anyway. There's an extra collateral benefit: it makes our supply chains more resilient. The other thing we can do and should do—we've been doing the opposite—is be more cooperative with our allies who have plenty of rare earths. They often have their own NIMI problems, but they can help us out. The best thing for supply chain resiliency is to have a lot of good allies and be cooperative with them.</p>
+
+<p data-t="3411">We've been damaging that. But those are things you can do. They're not quite free lunches, but they bring a lot of other gains. They're not impossible tasks, but just be realistic. Don't think you're going to have fully resilient supply chains.</p>
+
+<p class="q" data-t="3439">In some ways, this entire conversation has been building to this moment. We've now had President Obama weigh in on the topic of aliens, sort of glibly answering yes, they exist, before then having to clarify that he actually didn't have such information. There have been some rumors recently that President Trump may give a speech on the topic of aliens. We may need to consult you again before too much longer. Jake and I sat through one entire edition of the president's daily brief that was entirely on this topic. I would not say we walked out of there any more enlightened than the general public.</p>
+
+<p class="q" data-t="3489">You've spoken and written about this and over time indicated that the probability, as you see it, that some of these unexplained phenomena are of alien origin could be as high as ten percent. I'm wondering what has led you to increase that probability over time. What indications are you seeing?</p>
+
+<p data-t="3539">President Obama tweeted recently something like there is no evidence of aliens having visited Earth. I completely agree with that. The problem is there are unexplained phenomena, and there's also no evidence for the alternative possible explanations. I've heard from a pretty large number of insiders that there's data from multiple sources—they can't always name the multiple sources, but it could be radar, infrared, satellite, and pilot observations. The data are consistent across each other, and there are things that move very fast and move in ways we cannot explain. None of that is evidence for aliens, but it is weird.</p>
+
+<p data-t="3610">If all politicians do is keep on saying there's no evidence for aliens, that is literally correct. We should not leap at alien drone probe conclusions. But the thing to do is not just to repeat that sentence but to sit down and say what you think it might be and assign probabilities to those options. The Nimitz incident was what, 2004? Well, that's probably not the Chinese. After the recent war in Ukraine, you could downgrade the capabilities of the Russians. They would have won that war in a day if they could command these very fast, powerful UAPs. So what is it then?</p>
+
+<p data-t="3675">We can say it could be many things, but let's have a list. I don't have a great list. When I realize I don't have a great list, then I have to assign some number to it being alien drone probes. It should be way below fifty percent, but it shouldn't be tiny. Keep in mind what's called the Fermi paradox: there are all these civilizations out there. We keep on discovering more and more apparently habitable planets. People have been asking, where are they? Why aren't they here? One possible answer is they are here. Let's say it's ten percent. It depends on my mood of the day really. There's nothing very scientific about any number that any of us would come up with.</p>
+
+<p data-t="3750">I don't even know if it's good for society that we talk about it. It might just scare people or make them nutty. But I'm kind of selfishly curious, and my selfish curiosity means I keep on bugging people about this topic and I want to know what the probability is. I think it's not that low.</p>
+
+<p class="q" data-t="3812">If you put it at around ten percent, Tyler, of that ten percent, what proportion is a scenario in which the US government knows and is hiding it?</p>
+
+<p data-t="3826">Very low. I strongly believe from people I've talked to—or say what Marco Rubio has said on tape—that no one knows. The real conspiracy is people are afraid to admit they don't know because they sound bad or stupid or out of control. I would put it way below one percent that there's some conspiracy or alien bodies or alien craft being held somewhere or Roswell, New Mexico. To me that is very low percent. I would basically dismiss it.</p>
+
+<p data-t="3881">So almost all of that ten percent is that aliens have come with these UAPs—unidentified aerial phenomena—but simply have not announced themselves or made themselves known in a more definitive way. I also think it's unlikely there's little green men inside the vehicles. We send out in essence drone probes to Mars and other places. It's probably something mechanical. We know AI works. It's probably governed by some kind of AI. They've probably been here a long time using Bayesian reasoning. So they're probably not going to destroy us or for that matter help us. It's a big puzzle if in fact it turns out to be alien drone probes. And it's a big puzzle if it turns out to be something else.</p>
+
+<p class="q" data-t="3956">When John referred to the president's daily brief that was devoted to this topic, it was a preview of this report that the Pentagon put out. Secretary Janet Yellen—we invited her to the PDB that day, the one time I think that she came. She's sitting there watching this and thinking, "Is this what these people do in the president's daily brief? Talk about UAPs and aliens?" She kind of was looking around thinking we were playing a practical joke on her. There's this recent report that the Bank of England is now talking about this. I don't think they're true believers, but just as a contingency plan, they should be talking about it. If Trump made this announcement, maybe it's even false—Trump is not predictable—it would maybe affect financial markets.</p>
+
+<p data-t="4022">All right, well, if your personal odds go up or the president makes some sort of announcement on this topic, we may need to consult you again before too much longer. Jake, should we turn to overrated and underrated?</p>
+
+<p data-t="4048">Yes. Turning it back on you, Tyler, your feature from your podcast of overrated and underrated. We're going to put out a number of these and get your answers. John, do you want to kick us off?</p>
+
+<p class="q" data-t="4062">First topic: the People's Liberation Army. Overrated or underrated?</p>
+
+<p data-t="4082">Overrated. Terrible. The Chinese military historically has not performed well. In the late nineteen-seventies, they couldn't really crush Vietnam. There are all these questions about the loyalty of the generals. I don't understand at all what was going on behind those purges. But there's no plausible scenario where it's good news for their efficacy. So maybe at this point, with the purges, it's become properly rated. But mostly it's been overrated as a fighting force. We have tended to overrate most competitor or adversary militaries over the last twenty-five years.</p>
+
+<p class="q" data-t="4134">Cryptocurrency?</p>
+
+<p data-t="4140">Either greatly overrated or greatly underrated, depending who it is you're speaking to. Hardly anyone rates it properly. I think Bitcoin is fine. It's not as evil as people say. It can help people get their money out of tyrannical regimes—China, Russia, Iran. It also helps a lot of illegal activity, which is bad. But as a financial asset, Bitcoin has become actually pretty boring. Price goes up, price goes down, who cares? Stable coins, I think, have a lot of potential. They will help us finance our government budget deficit. A lot of the world wants to do a lot more dealing with something dollar-connected or dollar-based.</p>
+
+<p data-t="4207">Most of the trade between China and Brazil is now done in US-connected stable coins. That's amazing. It's a win for US soft power. It does mean a lot of countries might de facto dollarize, which could hurt their state capacity—it's good for the US, it might be bad for countries such as Brazil, which over time lose some financial autonomy. But a lot of these currencies, especially in the Caribbean and Central America, they don't make sense. The countries are too small. A lot of these places ought to dollarize. If they can do it through stable coins and avoid some of the worse US banking regulations, the world is better off.</p>
+
+<p class="q" data-t="4288">Narrative journalism?</p>
+
+<p data-t="4293">It's become underrated. I greatly enjoy reading it. It's harder to make money with it now that classified ads have gone away and there are only a few major newspapers left. I just think I have the normie take on that that anyone would tell you.</p>
+
+<p class="q" data-t="4318">The impact of quantum computing?</p>
+
+<p data-t="4324">It's interesting you ask. I run this philanthropic program called Emergent Ventures, and I see what very smart teenagers are working on. In the last three or so months, I've seen a noticeable uptick in smart, non-crazy young people working on quantum computing. So that makes me bullish on it. I don't understand either the full potential or the obstacles. The science is difficult. I ask people who work on it full-time and they always give me four or five different answers. But in the last few months, I've started to think it's underrated.</p>
+
+<p class="q" data-t="4387">The public health threat posed by measles?</p>
+
+<p data-t="4393">It's either overrated or underrated. It's not just the Trump people—Canada is doing worse than we are with measles. It's coming back as a thing that's terrible. There's no good reason for it. It gets to this point about culture—ultimately what is behind state capacity. We're screwing around with our culture. We need to return to the culture I grew up with where being vaccinated is this wonderful thing, almost like a gift from God. I was recently in Oaxaca, Mexico. The long lines of people waiting to be vaccinated warmed my heart and made me so happy. For the most part, Mexicans regard vaccination as a wonderful thing that poorer people can't get and should get. We need to move back to that mentality.</p>
+
+<p class="q" data-t="4476">Olympic curling?</p>
+
+<p data-t="4484">Olympic curling is a wonderful sport to watch. It's just very dramatic. It seems people from only a few countries, most of all Canada, like it. Maybe curling is not good for producing celebrities. You don't see faces the way you do in an NBA game or with a final kick in soccer. But definitely underrated.</p>
+
+<p class="q" data-t="4524">Canadians mired in controversy. We won't digress. Last one, somewhat tangentially related: sports betting?</p>
+
+<p data-t="4553">It's gone much worse than I would have thought. So I'm rethinking my position on this. I thought we'll legalize sports betting. There'll be some collateral damage. A lot of people enjoy it, but it won't be a major crisis. Maybe we need a little more time to see how norms adjust, but it's turning out to ruin more lives than I would have expected. Sports betting is so prominent and so easy with apps and online connections and smartphones. I don't know what we can do at this point, but I think it's a real problem. It also runs the risk of soiling prediction markets, which maybe can be useful, but if most of what they're going to do is sports betting, they'll get a bad name and will eventually be put out of business or overregulated. It's a real problem and we've yet to figure out good answers, but we need to.</p>
+
+<p data-t="4667">You're generous to have spent so much time with us. Thank you. This was a lot of fun and a great conversation.</p>
+
+<p data-t="4688">Thank you, Tyler. Really appreciate it. The pleasure was mine.</p>
+
+<p data-t="4702">That was a lot of fun. There aren't many people you could pretty much throw any question under the sun at, and whether or not he has deep expertise, he will come up with a very thoughtful, coherent answer to the question without any real time to think about it or research it. It's impressive.</p>
+
+<p data-t="4738">Absolutely. In preparing for the interview, a lot of these themes that we went through with him, I think will be through lines in this podcast going forward. At some point we probably should do a deep dive on sand or a bunch of these boring areas because it is absolutely striking—the physical realities of the world and where real shortages might squeeze global economies. It's also just super helpful to get perspectives on our field from people who dip in and out of it but don't marinate in it all day every day and who bring perspectives from other fields analytically to the questions that we think about all the time.</p>
+
+<p data-t="4814">One thing that surprised me was that we, as national security professionals, should be more focused on the first island chain and the geography of the Indo-Pacific when it comes to US-China competition. Our questions to him were all about tech, econ, these areas where we think the rubber really hits the road. And a lot of his answers came back to more fundamental geopolitics. It was kind of a weird role reversal—to have the economist very focused on that and have the national security guys very focused on the economy and technologies.</p>
+
+<p data-t="4899">We tried to pioneer—and you get a lot of credit for this—there isn't really a neat breakdown between national security issues, foreign policy issues, and these kind of universal issues that we're all wrestling with, including on the domestic side. People that can range across them like he did make for an interesting conversation.</p>
+
+<p data-t="4960">Well, that's all for today. We'll be back next week with a new episode of The Long Game. In the meantime, send us your questions and comments at longamepodcast.com and find us on Substack. The links are in the show notes.</p>
+    </div>
+  </main>
+  <script>
+  async function toggleYtBookmark(btn) {
+    const payload = {
+      title: btn.dataset.title,
+      url: btn.dataset.url,
+      filename: btn.dataset.filename,
+      interviewDate: btn.dataset.date,
+      source: 'YT',
+      expert: btn.dataset.channel,
+    };
+    try {
+      const resp = await fetch('/bookmark', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload),
+      });
+      const result = await resp.json();
+      setYtBookmarkState(btn, !!result.bookmarked);
+    } catch (e) {
+      console.error('Bookmark toggle failed:', e);
+    }
+  }
+  function setYtBookmarkState(btn, on) {
+    btn.classList.toggle('is-bookmarked', on);
+    btn.innerHTML = on ? '&#9733;' : '&#9734;';
+    btn.title = on ? 'Bookmarked' : 'Bookmark';
+    btn.setAttribute('aria-label', on ? 'Bookmarked' : 'Bookmark');
+  }
+  (async function initYtBookmarkState() {
+    const btn = document.getElementById('yt-bookmark-btn');
+    if (!btn || !btn.dataset.filename) return;
+    try {
+      const resp = await fetch('/bookmarks');
+      if (!resp.ok) return;
+      const list = await resp.json();
+      if (Array.isArray(list) && list.some(b => b && b.filename === btn.dataset.filename)) {
+        setYtBookmarkState(btn, true);
+      }
+    } catch (e) { /* offline -- leave default state */ }
+  })();
+
+  async function shareYtPage(btn) {
+    const original = btn.innerHTML;
+    btn.disabled = true;
+    btn.innerHTML = '&hellip;';
+    try {
+      const resp = await fetch('/share', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ filename: btn.dataset.filename }),
+      });
+      const result = await resp.json();
+      if (!result.ok) throw new Error(result.error || 'Share failed');
+      try { await navigator.clipboard.writeText(result.url); } catch (e) {}
+      btn.innerHTML = '&#10003;';
+      btn.title = 'Copied ' + result.url;
+      setTimeout(() => { btn.innerHTML = original; btn.disabled = false; btn.title = 'Share'; }, 2500);
+    } catch (e) {
+      console.error('Share failed:', e);
+      btn.innerHTML = '!';
+      btn.title = 'Share failed: ' + (e && e.message || e);
+      setTimeout(() => { btn.innerHTML = original; btn.disabled = false; btn.title = 'Share'; }, 3000);
+    }
+  }
+
+  // When the page is viewed from somewhere other than the local Reader
+  // server (e.g. a shared copy on GitHub Pages), hide the interactive
+  // buttons whose endpoints only exist on localhost.
+  (function hideLocalOnlyControls() {
+    const host = location.hostname;
+    const isLocal = host === 'localhost' || host === '127.0.0.1' || host === '';
+    if (isLocal) return;
+    const actions = document.querySelector('.yt-header-actions');
+    if (!actions) return;
+    const bookmark = actions.querySelector('#yt-bookmark-btn');
+    const share = actions.querySelector('#yt-share-btn');
+    if (bookmark) bookmark.remove();
+    if (share) share.remove();
+  })();
+  </script>
+</body>
+</html>
