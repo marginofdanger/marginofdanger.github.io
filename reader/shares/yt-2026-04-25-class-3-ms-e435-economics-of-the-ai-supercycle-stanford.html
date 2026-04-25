@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Class #3 | MS&amp;E435: Economics of the AI Supercycle Stanford University Spring &#39;26 Apoorv Agrawal</title>
+  <style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background: #faf8f5;
+  color: #2c2418;
+  line-height: 1.7;
+  padding: 0 1rem 2rem;
+}
+header {
+  position: sticky;
+  top: 0;
+  background: #faf8f5;
+  z-index: 100;
+  border-bottom: 2px solid #c4956a;
+  box-shadow: 0 2px 8px rgba(44,36,24,0.08);
+  padding: 0.6rem 1rem;
+}
+.header-inner {
+  max-width: 78ch;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header-title { font-size: 1rem; color: #2c2418; }
+.header-title strong { font-size: 1.1rem; }
+.header-link {
+  font-size: 0.85rem;
+  color: #8b6d4e;
+  text-decoration: none;
+  border: 1px solid #c4956a;
+  padding: 0.2rem 0.7rem;
+  border-radius: 4px;
+}
+.header-link:hover { background: #f0ebe3; }
+main {
+  max-width: 78ch;
+  margin: 0 auto;
+  padding-top: 0.5rem;
+}
+h2 {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #2c2418;
+  margin-top: 2rem;
+  margin-bottom: 0.5rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 2px solid #c4956a;
+}
+h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #3d3225;
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+section { margin-bottom: 1.5rem; }
+ul { margin: 0.5rem 0 0.5rem 1.5rem; }
+li { margin-bottom: 0.4rem; }
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0.75rem 0;
+  font-size: 0.92rem;
+}
+thead th {
+  background: #3d3225;
+  color: #faf8f5;
+  text-transform: uppercase;
+  font-size: 0.78rem;
+  letter-spacing: 0.05em;
+  padding: 0.5rem 0.75rem;
+  text-align: left;
+  font-weight: 600;
+}
+tbody td {
+  padding: 0.45rem 0.75rem;
+  border-bottom: 1px solid #e8e0d4;
+}
+tbody tr:nth-child(even) { background: #f0ebe3; }
+tbody tr:nth-child(odd) { background: #faf8f5; }
+.key-insight {
+  border-left: 4px solid #c4956a;
+  background: #f5efe8;
+  padding: 0.75rem 1rem;
+  margin: 0.75rem 0;
+  font-size: 0.93rem;
+  border-radius: 0 6px 6px 0;
+}
+.qa-pair { margin-bottom: 1.25rem; }
+.question-box {
+  background: #f0ebe3;
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+  margin-bottom: 0.5rem;
+}
+.analyst-label {
+  display: block;
+  font-size: 0.8rem;
+  color: #8b6d4e;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  margin-bottom: 0.25rem;
+}
+.answer { padding-left: 0.25rem; }
+.loading-section { opacity: 0.5; }
+.loading-indicator {
+  font-size: 1.2rem;
+  padding: 2rem;
+  text-align: center;
+  color: #8b6d4e;
+}
+
+/* YouTube transcript reader */
+
+/* Legacy .yt-meta-card -- kept so old output files still render cleanly.
+   New output uses .header-title.yt below instead. */
+.yt-meta-card {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  margin-bottom: 1.5rem;
+  background: #f5efe8;
+  border-left: 4px solid #c4956a;
+  border-radius: 0 6px 6px 0;
+  padding: 0.9rem 1rem;
+}
+.yt-meta-card img {
+  flex: 0 0 180px;
+  height: 101px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+.yt-meta-body { flex: 1; font-size: 0.93rem; }
+.yt-meta-title { font-weight: 700; font-size: 1rem; margin-bottom: 0.25rem; }
+.yt-meta-sub { color: #8b6d4e; margin-bottom: 0.35rem; }
+.yt-meta-url { font-size: 0.85rem; color: #3d3225; }
+
+/* YouTube sticky header uses the default 78ch-capped centered
+   container so it aligns with the body text column below. The
+   buttons sit at the right edge of that centered container. */
+header:has(.header-inner.yt) { padding: 0.75rem 1rem; }
+.header-inner.yt { gap: 1rem; }
+.header-title.yt {
+  display: flex;
+  gap: 0.9rem;
+  align-items: center;
+  min-width: 0;
+  flex: 1;
+}
+.yt-header-thumb { flex: 0 0 88px; line-height: 0; }
+.yt-header-thumb img {
+  width: 88px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 3px;
+  display: block;
+}
+.yt-header-text { min-width: 0; flex: 1; }
+.yt-header-text strong {
+  display: block;
+  font-size: 1rem;
+  line-height: 1.3;
+  color: #2c2418;
+  /* Allow wrapping to 2 lines so long podcast titles show in full. */
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.yt-header-sub {
+  font-size: 0.8rem;
+  margin-top: 0.2rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.yt-header-sub .yt-channel { color: #8b6d4e; }
+.yt-header-sub .yt-date,
+.yt-header-sub .yt-dur { color: #3d3225; font-weight: 600; }
+.yt-header-sub .yt-sep { color: #c4956a; margin: 0 0.5rem; }
+
+.yt-header-actions {
+  display: flex;
+  gap: 0.4rem;
+  align-items: center;
+  flex: 0 0 auto;
+}
+/* Shared box shape for the star + share + YT buttons so they're
+   visually identical. Applies to both the <button>s and the <a> link. */
+.yt-header-actions .yt-bookmark-btn,
+.yt-header-actions .yt-share-btn,
+.yt-header-actions .header-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font: inherit;
+  font-size: 0.85rem;
+  line-height: 1;
+  color: #8b6d4e;
+  background: transparent;
+  border: 1px solid #c4956a;
+  border-radius: 4px;
+  padding: 0;
+  box-sizing: border-box;
+  width: 2.2rem;
+  height: 2.2rem;
+  white-space: nowrap;
+  text-decoration: none;
+  cursor: pointer;
+}
+.yt-header-actions .yt-bookmark-btn { font-size: 1rem; }
+.yt-header-actions .yt-share-btn { font-size: 1.05rem; }
+.yt-header-actions .yt-share-btn:disabled { opacity: 0.6; cursor: default; }
+.yt-header-actions .yt-bookmark-btn:hover,
+.yt-header-actions .yt-share-btn:hover,
+.yt-header-actions .header-link:hover {
+  background: #f0ebe3;
+  color: #3d3225;
+}
+.yt-header-actions .yt-bookmark-btn.is-bookmarked {
+  background: #c4956a;
+  color: #faf8f5;
+  border-color: #a87d5a;
+}
+.yt-header-actions .yt-bookmark-btn.is-bookmarked:hover {
+  background: #a87d5a;
+  color: #faf8f5;
+}
+
+h3.chapter {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #3d3225;
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+h3.chapter a {
+  font-size: 0.8rem;
+  color: #8b6d4e;
+  text-decoration: none;
+  font-weight: 400;
+}
+
+.yt-body p {
+  margin-bottom: 1.15rem;
+}
+.yt-body p.q {
+  background: #f0ebe3;
+  border-left: 3px solid #c4956a;
+  border-radius: 0 6px 6px 0;
+  padding: 0.6rem 0.9rem;
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+  color: #3d3225;
+  font-style: italic;
+  font-size: 0.96rem;
+}
+.yt-body p.q::before {
+  content: "Q";
+  display: inline-block;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 0.72rem;
+  color: #8b6d4e;
+  letter-spacing: 0.05em;
+  margin-right: 0.5rem;
+  padding: 0.05rem 0.4rem;
+  border: 1px solid #c4956a;
+  border-radius: 3px;
+  vertical-align: 0.1em;
+}
+.yt-body p.q a {
+  display: block;
+  text-align: right;
+  margin-top: 0.3rem;
+  font-style: normal;
+  font-size: 0.8rem;
+  color: #8b6d4e;
+  text-decoration: none;
+  white-space: nowrap;
+}
+.yt-body p.q a:hover {
+  text-decoration: underline;
+}
+
+</style>
+</head>
+<body>
+  <header>
+    <div class="header-inner yt">
+      <div class="header-title yt">
+        <a class="yt-header-thumb" href="https://www.youtube.com/watch?v=4zk-hJ50vmU" target="_blank"><img src="https://i.ytimg.com/vi/4zk-hJ50vmU/maxresdefault.jpg" alt=""></a>
+        <div class="yt-header-text">
+          <strong>Class #3 | MS&amp;E435: Economics of the AI Supercycle Stanford University Spring &#39;26 Apoorv Agrawal</strong>
+          <div class="yt-header-sub">
+            <span class="yt-channel">MS&amp;E 435: Economics of AI</span>
+            <span class="yt-sep">&middot;</span>
+            <span class="yt-date">Apr 22, 2026</span>
+            <span class="yt-sep">&middot;</span>
+            <span class="yt-dur">49m</span>
+          </div>
+        </div>
+      </div>
+      <div class="yt-header-actions">
+        <button id="yt-bookmark-btn"
+                class="yt-bookmark-btn"
+                title="Bookmark"
+                aria-label="Bookmark"
+                data-filename="yt-2026-04-25-class-3-ms-e435-economics-of-the-ai-supercycle-stanford.html"
+                data-title="Class #3 | MS&amp;E435: Economics of the AI Supercycle Stanford University Spring &#39;26 Apoorv Agrawal"
+                data-url="https://www.youtube.com/watch?v=4zk-hJ50vmU"
+                data-date="2026-04-22T14:22:01-07:00"
+                data-channel="MS&amp;E 435: Economics of AI"
+                onclick="toggleYtBookmark(this)">&#9734;</button>
+        <button id="yt-share-btn"
+                class="yt-share-btn"
+                title="Share"
+                aria-label="Share"
+                data-filename="yt-2026-04-25-class-3-ms-e435-economics-of-the-ai-supercycle-stanford.html"
+                onclick="shareYtPage(this)">&#8599;</button>
+        <a class="header-link" href="https://www.youtube.com/watch?v=4zk-hJ50vmU" target="_blank" title="Watch on YouTube" aria-label="Watch on YouTube">YT</a>
+      </div>
+    </div>
+  </header>
+  <main>
+    <div class="yt-body">
+    <p data-t="0">Today we're going to talk about the data centers that you guys are melting. The big theme of all of this is really this chart—the capex spend by the five hyperscalers on AI. As you can tell, this is going right and it's going right fast. To put this in context, this is one of the biggest investments we are making.</p>
+
+<p data-t="22">This is bigger than space, bigger than our highway system, bigger than the Manhattan Project, and second only to the US defense budget. I'm excited to break it down today with Chase Lock Miller, founder and CEO of Crusoe, who is arguably building it the best that we know.</p>
+
+<p data-t="49">Chase is obviously the founder and CEO of Crusoe. A fun fact I learned recently: Chase is a very avid mountaineer, having summited five of the seven peaks across the world, including Everest. Crusoe is designed with mountaineering in mind—there's plan A, plan B, and then there's plan C to plan B. Chase, thank you so much for doing this with us.</p>
+
+<p data-t="83">Thanks for having me. Thanks for joining us.</p>
+
+<p class="q" data-t="88">So Chase, tell us a little bit about what is this data center economy we're in the middle of.</p>
+
+<p data-t="94">This is extra special for me. I went to grad school here at Stanford, so it's fun being on the other side of the table, being back on campus. I appreciate you all taking interest in what I'm working on now at Crusoe.</p>
+
+<p data-t="108">In certain ways, the data center itself is a physical manifestation of the boom we're seeing in AI adoption. It's the physical infrastructure required to power the GPUs, to operate the GPUs, to run these big compute workloads that train new models, fine-tune models, and operate large-scale inference workloads to serve tokens to consumers.</p>
+
+<p data-t="135">Everybody who raised their hand today saying they use Gemini, ChatGPT, or Claude is relying on data centers. The data center is the physical infrastructure component that really enables all of this AI technology to proliferate and change people's lives.</p>
+
+<p class="q" data-t="153">Now, there's a lot of different components that go into the data center. We've heard about compute, memory, power, interconnects, and labor. Help us put into context all the different things. How should we think about it when hyperscalers spend $650 billion building these data centers? Where does that go and how much of that is going to you?</p>
+
+<p data-t="177">When I think about the infrastructure of intelligence, I start with a basic question: what does it take to produce AI? AI is the combination of data, algorithms—back propagation, neural networks, transformer architectures—and compute. Particularly, high-performance computing infrastructure through GPUs lets us parallelize a lot of the workloads and do tensor math at high performance.</p>
+
+<p data-t="203">You also need energy to run those GPUs and data centers, the physical buildings that house and operate all of this computing infrastructure. What actually costs money? Data costs money. You have to buy data, and this opened up opportunities for data labeling companies like Scale AI, Meror, and Handshake.</p>
+
+<p data-t="225">Algorithms sit in a lot of labs inventing new mechanisms and recursive learning techniques. There are many different architectures for making better use of data. But compute, energy, and data centers are what Crusoe focuses on—how do we build, operate, and scale and make the best use of all this infrastructure. That's really where the money is being spent.</p>
+
+<p data-t="249">The name of my presentation is "From Electrons to Tokens." Why are tokens actually valuable? To answer that, I'll reference the Cobb-Douglas model, an economics model for production. If you look at the growth in GDP, it's fundamentally the sum of three key components: the change in labor, the change in capital—which includes physical capital like buildings and plants, and capital invested into an economy—and the change in technology.</p>
+
+<p data-t="280">Technology makes labor more productive. Why are tokens so valuable and why is everybody making these huge investments? For the first time in history, we're able to create digital labor. When you give an agent a task—when you tell your Claude bot to create a CRM for your new product—that is literally digital labor being brought into the world.</p>
+
+<p data-t="310">Historically, you could really only change labor via the birth rate, and that's got a 20-year lead time. It's a massive incubation period. You have to send them to schools, feed them, house them. I have three kids—it takes a long time to change Delta L naturally. But for the first time in history, we can actually change Delta L digitally through investment in data centers and GPUs, really accelerating the growth in the economy by accelerating the growth in digital labor force.</p>
+
+<p data-t="345">The reason these investments are taking place and why they're so broad-based is that there's an opportunity to completely transform the economy by accelerating GDP growth and fundamentally upleveling and improving people's quality of life by seeing unprecedented growth. Crusoe sits at a couple different layers of the stack. We're a vertically integrated AI infrastructure business.</p>
+
+<p data-t="372">Because this is a new category of infrastructure, we've taken the approach that we want to unblock anything that gets in our way of standing up this infrastructure of intelligence that will power accelerated GDP growth for the economy. We think about it in two phases. The bottom layers are basically energy development. These data centers require lots and lots of energy, and we're thoughtful about taking an energy-first approach—going to areas with access to abundant, low-cost energy resources.</p>
+
+<p data-t="412">The next piece is the data center itself, the actual physical buildings, including the building, the plant around it, and all the chillers. At its most basic, a data center is a building that has power and cooling, and you can plug in computers. At very large scale, it becomes very complex and draws in the pinnacle of engineering from every ecosystem—chemical engineering for cooling architectures, mechanical engineering, electrical engineering dealing with high-voltage power sources and very high-density capacities.</p>
+
+<p data-t="455">It also involves computer science and electrical engineering in chip architectures and how compute gets run and data gets transferred. It's really the amalgamation and consolidation of every form of engineering in one giant building that operates intelligence for the world. It's a cool engineering problem.</p>
+
+<p class="q" data-t="489">Tell us about the bottleneck in AI. We hear it was compute four years ago, then power, then memory—stocks are ripping right now—then labor and all these other components like land, power, shells, maybe even regulation. Give us an overview. For the time you've been doing this, which is just under a decade, how has that shifted over time? Where is it today and where do you see it going? What's the core bottleneck gating growth?</p>
+
+<p data-t="532">Today the core bottleneck is powered, energized data centers—powered shells where you can plug in chips and start operating a big GPU compute cluster. But the bottleneck moves around a lot. Sometimes it's getting power to the data centers, sometimes it's individual components like electrical equipment, switchgear, chillers, or power generation. Chips have kind of softened as the bottleneck. Access to chips has become more available. It's really about finding places where you can put those chips and turn them on.</p>
+
+<p data-t="570">That's part of why Crusoe took a vertically integrated approach. When bottlenecks move around, being vertically integrated means you can do almost anything across the stack. We're not in the chip business. We're not in the model business. But apart from that, we tackle most challenges throughout the entire ecosystem.</p>
+
+<p class="q" data-t="595">You started Crusoe with the core insight that energy was one of the most scarce resources, at least in the western world. Tell us about a site—maybe Abene or one of the others you can talk about. Why did you start there? What was the scarce resource you were solving for? Why work backwards from energy instead of from compute, memory, or powered shells?</p>
+
+<p data-t="625">Our insight was that markets are reasonably efficient. During the steady-state growth in data center capacity as web 2.0 unfolded and web applications increasingly grew, there was this machine standing up new data centers in big hubs. Markets like Northern Virginia ran a large portion of the internet. I never wanted to be the next data center developer in Northern Virginia. That didn't seem like an appealing way to enter a market and make a splash.</p>
+
+<p data-t="660">We said there are going to be new types of computing applications far different from serving web applications—artificial intelligence training of large workloads, back propagation, and digital currencies that require tremendous computing power for proof-of-work consensus mechanisms. At scale, energy becomes the bottleneck. We asked: can we find areas that aren't historical data center markets and build data centers where instead of moving the energy, we're actually moving data? We could collocate in those areas.</p>
+
+<p data-t="705">One first manifestation was a site we've been working on since June 2024 where we signed the first two buildings. This is at this point one of the largest AI computing campuses in the world—I think it might be the largest. In Abene, Texas, many folks had never heard of it until we put a shovel in the ground there. Why Abene? It's an area of West Texas that is consistently very windy and very sunny.</p>
+
+<p data-t="745">A lot of renewable energy developers went there to build large-scale renewable energy production because they were incentivized by something called production tax credits—the government pays them to produce clean electrons. They have to sell them to someone independent of price. What resulted was actually an overinvestment in renewable generation infrastructure in this West Texas market. Power prices were actually negative because there was no marginal buyer for this power and not enough transmission to get it somewhere useful.</p>
+
+<p data-t="780">We said great—we've got a power-hungry application for you. We worked with the city of Abene. There's a 200-megawatt substation and a 1-gigawatt substation. To put those numbers in context, a gigawatt substation is the largest privately owned substation in the United States. A gigawatt basically powers the whole city of Denver. So basically a Denver-size amount of power to power computers. It's a very large amount of power in one location, and we were able to access it fundamentally because there was abundant, low-cost energy that was having trouble getting out of that market.</p>
+
+<p class="q" data-t="825">Who is the tenant for this? Could you tell us—is this ChatGPT? Is this Claude? Is this Gemini?</p>
+
+<p data-t="838">The tenant is Oracle and OpenAI. There are eight buildings. The first eight buildings are all for Oracle and OpenAI. This was known as Project Stargate, the first big project. To support this, we built a natural gas power plant—roughly 350 megawatts—to support the development and energize this giant computing cluster.</p>
+
+<p data-t="866">It was designed to operate as one coherent cluster, meaning all the chips across all the data centers were interconnected on the same high-performance back-end network to operate as one coherent workload. You could run one training job on all the chips across all the data centers together, which is a really unique architecture.</p>
+
+<p data-t="895">To give you a sense of scale, we had to build a parking lot—a 5,000-car parking lot that's totally full because we have roughly 9,000 people on site every single day working to bring this campus to life. There's an expansion planned to the south for Microsoft. The campus is 2.1 gigawatts in aggregate—two Denvers worth of power to power all of this AI compute infrastructure.</p>
+
+<p class="q" data-t="932">What is the population of Abene?</p>
+
+<p data-t="938">The population of Abene is 120,000. We're able to source a lot of people initially from Abene, but over time we had to create labor and retention incentives to get people to move there and work as short-term construction workers. Over the long term, there's a steady job population operating these large computing clusters and power plants. That staff is somewhere in the neighborhood of 2,000 people, which is a very large job creator in this local economy where the total population is roughly 120,000.</p>
+
+<p class="q" data-t="995">While the audience is primarily engineering and the class is about economics of AI, walk us through the metaphorical spend of a hundred dollars. If there's x dollars of spend, what's the distribution across the different layers?</p>
+
+<p data-t="1025">We'll start with just the power plant and data center side, then the compute clusters, then talk about these tens of billions of dollars being invested and how anybody makes money—where does the return happen? The initial slide showed this huge capex spend. Crusoe and many companies are Crusoe customers. We help them build out these big capex investments and help them build out this infrastructure-of-intelligence layer.</p>
+
+<p data-t="1055">Electrical equipment is a huge component. There are small buildings with white roofs called power distribution centers. They take power from the substation, which comes in at medium voltage—34.5 kilovolts—and distribute it. There are transformers lining the entire left and right sides of the building, distributing power to step it down from 345 kilovolts to 480 or 415. That's a big piece of capex.</p>
+
+<p data-t="1090">You also have all sorts of cooling equipment and mechanical equipment—chillers that look like RAM but aren't. They're air-cooled chillers with wound copper pipes. There's a giant chilled water loop recirculating water through the data center. Cool water goes in on the inlet side, goes into the rack of GPUs where there's a thermal transfer event from the energized chip producing heat. The water exits through the chillers where you blow air over wound copper coils to exhaust the heat, and the water cools down to cold water again for the GPUs.</p>
+
+<p data-t="1130">That's another big investment. The plumbing that goes into this is really substantial. We have tons of plumbers and pipe fitters on site welding these big plumbing systems together. Each building has about 1 million gallons of water in it to cool these chips. It's recirculating, so there's a narrative that AI is taking all the water, but we use zero water. We fill this system one time, and on an annual basis we use about the same amount of water as a single family home.</p>
+
+<p data-t="1175">Water consumption is important in a market like Abene in West Texas where water is quite scarce. The costs I've normalized on a per-megawatt basis include power distribution centers, the UPS system—a battery system, an uninterruptible power supply—you need this to smooth out power as it gets distributed from the substation into the chip. We're experimenting with alternative battery systems and cooling distribution units that go in the data center and distribute chilled water to individual GPU racks.</p>
+
+<p data-t="1220">There's a ton of core components—steel, concrete, and a batch plant on site where we're actually making concrete with people pouring concrete 24/7. All the site work and labor that goes into making this happen involves tons of people and man-hours. On the power infrastructure side, we have the gas power plant and diesel generators in three gray-roofed buildings backing up power for the core network.</p>
+
+<p data-t="1255">Not everything needs 100% reliability with full backup, but the core storage and networking systems do. In the event of a full grid outage or disaster scenario, we can still access storage systems and move a workload to a new location if needed. The full power plant plus building costs—I want to highlight something. You saw that 5,000-car parking lot. The bottom piece here is labor: 4.7 million dollars per megawatt.</p>
+
+<p data-t="1295">For a gigawatt, that becomes 4.7 billion. This is literally money invested in people to do jobs—blue-collar labor brought in to bring this infrastructure to life. People working construction, people on site building these things. It's a very substantial number. That's an annual number for construction.</p>
+
+<p data-t="1325">When you ask me about bottlenecks, this is a bottleneck. We don't have enough tradespeople. We don't have enough electricians, welders, plumbers, or construction workers because this is one project. There are many that are now cropping up, and there's huge competition for labor. At Crusoe, we're trying to reinvent how we think about bringing infrastructure to life to navigate these critical labor challenges.</p>
+
+<p data-t="1365">Soft costs include insurance, financing costs—we borrow money with a construction loan and have to service that debt. There's siting and commissioning work. The next piece is the gas plant, probably 2 to 3 million per megawatt. What's important to realize is that those costs have gone up a lot. There's a small set of gas turbine manufacturers: GE Vernova, Siemens, Mitsubishi Heavy Industries, Pratt & Whitney, and Caterpillar's Solar division.</p>
+
+<p data-t="1405">But a lot of these companies have been limited in expanding production capacity. Right now, when everybody's trying to bring on new gas generation infrastructure to power AI compute clusters, prices have gone up. A gas turbine that used to cost a million dollars per megawatt now costs 3 million per megawatt. That's why if you look at the stock price of GE Vernova, it's been good to be a shareholder.</p>
+
+<p data-t="1440">Tenant fit-out is all the stuff in the actual data hall—remote power panels, hot-aisle containment systems, fan walls, cooling distribution units, all the stuff you need in the data hall where the GPUs go to energize and power them. Electrical equipment touches different pieces from high voltage to low voltage—power transformers, power distribution centers, medium-voltage switchgear, low-voltage switchgear. Think of your electrical panel at home where you flip a few breakers if the lights go out. This is that but at city scale, all in a giant electrical room.</p>
+
+<p data-t="1485">Then there's all the mechanical equipment from chillers and plumbing to air handling units and fan walls that cool everything and involve mechanical systems. And of course the materials—steel, cement, and all the different components that go into making one of these large buildings. That's what the full stack looks like.</p>
+
+<p class="q" data-t="1520">Where are the GPUs?</p>
+
+<p data-t="1522">That's on the next phase. We'll get to that.</p>
+
+<p data-t="1526">So this is roughly 20 billion per gigawatt. Assuming a gigawatt took a year to come online, you'd be paying 4.5 or 5 billion in salaries for labor per year during the construction period. This is capitalized labor, capex not opex. I'll show opex later.</p>
+
+<p class="q" data-t="1555">One final question: is this number 20 million per megawatt or 20 billion per gigawatt? Is it going down or up over time? Obviously there's so much demand. Gas generation infrastructure, prices have gone up. Labor—if you're an electrician, your price has gone up because there's so much demand for your time.</p>
+
+<p data-t="1580">All these things are seeing price inflation to varying degrees in each category of infrastructure. I wanted to show another cool project to illustrate how we're taking this energy-first approach. Today we have 3,500 people at this site in a town called Claude, Texas, which is hilariously poetic. We didn't name the town, but Claude is a town of 1,500 people and we have 3,500 people working on this project.</p>
+
+<p data-t="1615">It's close enough to Amarillo that we can tap into a lot of the working population there. It's an area very rich in renewables. It's one of the best places in the US to build wind because it's so consistently windy. There's a large wind farm on site producing power that directly feeds into the data centers.</p>
+
+<p data-t="1650">We firm up the power with what we call "across the meter." The meter is the interconnection point into the grid. We have on-site generation through wind, and there's a plan to build solar, batteries, and gas—all-of-the-above energy solutions to energize this campus. What we don't need, we sell into the grid, creating energy abundance that drops costs for all local rate payers.</p>
+
+<p data-t="1685">When we actually need power—when we're doing maintenance on generators or the wind's not blowing or the sun's not shining—we can draw power from the grid. It becomes a mutually beneficial relationship where we invest in power infrastructure and leverage the large distribution, transmission, and other generators across the grid. It's a very cool project. I can't speak about who the customer is, but it is a very big customer for this location.</p>
+
+<p class="q" data-t="1720">You asked about the GPUs. Great segue. All right, who's making money in this?</p>
+
+<p data-t="1723">This guy—if you didn't know already, he's got a building right over here. When we think about IT capex per megawatt, this is the whole data center and power plant: roughly 20 million per megawatt. When you look at IT capex—the compute infrastructure going into the building—it's roughly 40 million per megawatt. This is forward-looking, next-generation stuff.</p>
+
+<p data-t="1755">30 million of that is going to GPUs. That's why he always looks so happy. I don't know—he's always smiling, Jensen. Then where does the rest go? 4 million roughly to networking. These are very complex networking systems, especially when you're thinking about interconnecting these GPUs together as one giant coherent cluster.</p>
+
+<p data-t="1785">When you look at the latest generations of GPUs—the GB200, I believe—Nvidia has come out with a full rack design. All the GPUs—there's 72 in that rack—are all interconnected on the same NVLink domain. You can see the back copper plane. They're all interconnected on this high-performance back-end networking domain, enabling AI researchers to do incredibly high-performance tasks and share data across the NVLink domain.</p>
+
+<p data-t="1820">But then you have to interconnect those racks together through another high-performance back-end network, typically InfiniBand or sometimes RoCE—RDMA over Converged Ethernet. That's where that 4 million per megawatt of spend goes. Then there's CPUs and storage. What's amazing is we've been seeing a massive shortage of CPUs. Why? With the boom in agentic workflows and cloud, you need a lot of CPUs to orchestrate those compute workloads.</p>
+
+<p data-t="1860">There's a lot of demand from everybody in the ecosystem to bring online more CPUs. So about 3 million per megawatt for CPUs and storage. Then there's a bunch of in-the-room capex that I might be double-counting, but a lot of that TOR networking I referred to earlier is roughly 3 million per megawatt. Then you have about 1 million in labor deployments, shipping, and so on. You get to roughly 40 million per megawatt.</p>
+
+<p class="q" data-t="1895">One question: Jensen did a podcast yesterday with Dorsey where he looked not so happy. There's lots of debate around compute being a commodity. Yes or no—is this number going down over time? Is compute a commodity? What are you seeing in prices?</p>
+
+<p data-t="1920">It's tough to say. It's hard to say over the near-term, medium-term, and long-term. It's possible that both are right. I think it depends on the use case too. If you look at older compute, it's going to commoditize as you go further back. But one of the things that's absolutely not a commodity is scale. If you do anything at really big scale, it's super hard to replicate and super hard to repeat.</p>
+
+<p data-t="1955">There's always going to be a cutting edge. Any of the newest stuff is always going to command a premium, and that's been the history of the IT industry. We'll see how it plays out. Capitalism is a powerful force. The invisible hand of capitalism is a very powerful force. Over time, margins probably come down to more standard, stabilized silicon margins—call it 60% gross margin. Today Nvidia is commanding like 80-ish percent gross margin.</p>
+
+<p data-t="1995">Competition is powerful. So I think it's important to understand: you make this huge investment. You're talking about 20 million per megawatt for the data center and power plant, and another 40 million per megawatt for the compute cluster. You just spent 60 million per megawatt. You build a gigawatt cluster, you just spent 60 billion. How are you going to make money? What's the pot of gold at the end of the rainbow?</p>
+
+<p data-t="2025">People are buying this infrastructure to support all these AI applications and serve tokens to customers. I wanted to show this chart because there's a question about how valuable all this equipment is and what timeline you depreciate it over—what's the useful life of this equipment. People said the next generation will come out and this stuff will be completely useless.</p>
+
+<p data-t="2055">This chart tells the exact opposite story. For H100s that initially debuted about three years ago, pricing came down, but with the boom in demand from agents, the price of H100s actually went up and exceeded the price folks were paying when these chips first came out. We're experiencing this firsthand in our Crusoe Cloud business.</p>
+
+<p class="q" data-t="2085">Does this imply—right now most public companies depreciate their compute over five years. Does this imply six is the standard? Does this imply it goes longer?</p>
+
+<p data-t="2105">I don't know. That's my honest answer. We're going to use compute as long as it's valuable to us or to someone else. Part of our strategy has been building services that abstract away the layers of compute. You don't know if you're using an A100, an H100, or an MI300, nor should you care. You care about the actual service you're getting from that.</p>
+
+<p data-t="2135">When you log into Zoom or Google Meet or Teams, you're not thinking: wait, is this an Intel Ice Lake CPU or AMD? You don't care what chip is running. You care about the service you're getting and the fact that you can log in and hear and speak to the other person. We think application scaling is really going to abstract away a lot of the core infrastructure.</p>
+
+<p data-t="2165">I think it's probably longer. This is a similar chart that SemiAnalysis published for Blackwells. We kind of see Blackwells pricing following a very similar trend with the agent breakthrough. So when we look at this holistically—we have the data center, the power plant, and the chips—the upfront capex you're looking at is close to 60 million per megawatt. I think I double-counted something, but it's roughly 60 million per megawatt.</p>
+
+<p data-t="2205">The ongoing opex of this plant is roughly a little over 1 million per megawatt. It's actually pretty limited opex for things like power, insurance, some on-site labor repairing and replacing cables and failing GPUs, and other things. Call it 1 to 2 million per megawatt. What's your revenue if you're just renting out those chips?</p>
+
+<p data-t="2240">Using that chart showing rough pricing for renting an H100, the revenue per megawatt is roughly 15 million per megawatt. You're making an upfront capital investment of 60 million per megawatt and getting 15 million per megawatt in annualized revenue for just renting access to the infrastructure. How does this become a good business?</p>
+
+<p data-t="2275">A lot of it comes down to how you measure the depreciation of all the different bars that make up these capex numbers. That's the critical question analysts on Wall Street are asking: how long is this building valuable? How long is this chip valuable? How long is this power plant valuable? What's the right depreciation curve? You're looking at roughly a four-year payback period for this huge investment on a revenue basis.</p>
+
+<p class="q" data-t="2315">But there's other labor not included here like all the engineering workforce. There's more opex than this. Roughly four years?</p>
+
+<p data-t="2330">Roughly four years. But what's another way to improve the value you're delivering to customers? I spoke about the vertically integrated strategy Crusoe has when we deploy chips. One product we offer is a managed compute cluster for the engineer or developer who really wants to manage the infrastructure themselves, manage the compute nodes, run a big training workload, interact with individual virtual machines or a large managed Kubernetes cluster of compute.</p>
+
+<p data-t="2365">But for folks who just want to interact with the model—if you're actually hosting a model, the title of this slide deck is "From Electrons to Tokens." How do you get to tokens? Where's the value uplift when you add a managed-services layer where you're actually serving the model, hosting a model, and providing an endpoint for customers to hit? You serve those ChatGPT or Anthropic queries that everybody's sending on their phones or laptops.</p>
+
+<p data-t="2405">You end up improving the margins quite a bit, adding call it another 5 to 15 million per megawatt. In a very optimistic case, you end up with 30 million per megawatt per year. You get a two-year payback. That's a dramatically better outcome.</p>
+
+<p class="q" data-t="2435">If you have no other slides, I might roll you through a couple of questions the class had and then open it up. So go ahead. Did you have more?</p>
+
+<p data-t="2445">This is just some pictures of deployments showing Blackwells and I'll talk about inference scaling. To try to bring down those labor costs, Crusoe designed something we call Crusoe Spark—our modular, self-contained AI data center that we manufacture in centralized locations. We can bring down the labor cost and infrastructure cost quite a bit: 30 to 50 percent savings depending on overall cost. That 19 million per megawatt we can bring down pretty dramatically.</p>
+
+<p class="q" data-t="2485">What's the capacity? Is this a gigawatt, a couple megawatts?</p>
+
+<p data-t="2495">Each unit for our air-cooled architecture is 500 kilowatts. And we have a liquid-cooled version that's 2 megawatts. You can deploy them in fleets, which opens up a lot of new power opportunities. It's a pretty neat solution.</p>
+
+<p class="q" data-t="2515">Well, in the interest of time, I can't think of a better person to ask this question. You've seen probably every layer of the stack from chips to power to gas to labor to networking. If you had to pick a layer and in particular a company and in particular a stock, what would you go long on and what would you go short on, and why?</p>
+
+<p data-t="2540">Would I go long or would I go short? I will call you in a year from now. See how that did.</p>
+
+<p class="q" data-t="2555">Man, that's tough. Other than Crusoe, of course.</p>
+
+<p data-t="2560">I'm turbo long Crusoe. But I do think that getting these things right is difficult when you look at the time horizon. I do think that my bear case is actually about the huge investment across the electrical stack. There are so many components because you're taking power from a high-voltage substation maybe at 345 kilovolts. There's a new line going in Texas at 765 kilovolts, very high-voltage power that then goes through transformation where you step it down to medium voltage, step it down to low voltage, distributing it—tons of cable and stuff.</p>
+
+<p data-t="2605">I think the data center is fundamentally going to drive a lot of innovations in the whole electrical stack and leverage a lot of solid-state electronics, solid-state transformers, and power electronics. I think it puts in jeopardy a lot of companies that have not innovated much in the last hundred years. This includes Eaton, Schneider, and others. Those companies will do very well in the near term. They're on the critical path right now and will do super well.</p>
+
+<p data-t="2645">They're big partners of mine so I hate saying I'm negative on that, but over the long term, if they don't innovate, I think that whole piece of the stack will dramatically come down in cost because of innovators building out this next version of the electrical stack. There's going to be huge shifts to 900-volt DC and all these different aspects.</p>
+
+<p data-t="2680">That's an opportunity for the electrical engineers in the room. Absolutely, it's a huge opportunity. Power electronics—how do you get power from 765 kilovolts to like 900-volt DC in the rack? Innovating on that problem is a super huge opportunity for people.</p>
+
+<p class="q" data-t="2710">Any picks on the long side? If not, I have another question for you.</p>
+
+<p data-t="2720">I'm bullish on so many things. I do think open source is winning. Open source will do well and take more from the closed-source model place.</p>
+
+<p class="q" data-t="2735">Elon, space data centers. Bullish, bearish, real, fantasy? Is this happening in our lifetime or not—data centers in space?</p>
+
+<p data-t="2750">I'm actually very interested in this. At Crusoe, we've established a partnership with StarCloud, which actually launched the first H100s into space. There's a lot to like about it. I just walked you through this whole stack of areas where I'm spending billions of dollars. All the concrete foundation—you don't need that in space. All the permitting and approvals you need on the power side—you don't need any of that in space.</p>
+
+<p data-t="2790">A lot of the core networking pieces—I didn't get into the millions and millions of strands of fiber that go into one of these data centers and the technicians you have to plug everything in. In space, you use optics for everything. Everything is basically optically interconnected. That's very interesting. It's also very hard. The thermal management piece is very challenging, and the ongoing operations piece is very challenging.</p>
+
+<p data-t="2830">In these data centers, when you're operating big large-scale interconnected compute clusters, things fail. GPUs fail. They have to be reseated in their compute tray or sometimes sent back to the vendor. But you're not sending an astronaut into space to take a chip and send it back to Jensen. That just isn't going to happen. You're going to have natural deprecation that creates challenging economics.</p>
+
+<p data-t="2870">A lot of it rides on whether Starship fundamentally reduces the cost of payload. I don't know. He has a better idea than I do on that. My philosophy is probably not material in the next 5 years and probably not material for 10 years. But I think over a longer period of time, data centers in space are going to play a major role in the future of intelligent infrastructure.</p>
+
+<p class="q" data-t="2905">In a couple of weeks, the SpaceX S1 is going to be available for everybody here to read. We'll see what his time estimate is. We know your time estimate is next year or something?</p>
+
+<p data-t="2920">Next year. That's right.</p>
+
+<p class="q" data-t="2925">And final question: you're a Stanford alum. If you were here right now, what advice would you have for students making decisions about what to study, where to focus? There's no tougher time than now to make that decision.</p>
+
+<p data-t="2940">I have this philosophy that the exact things you learn in school don't matter that much. I don't want to be disparaging to that, but they're important. It's more about the process of learning. In my experience, one of our core philosophies—one of our core values at Crusoe is thinking like a mountaineer. Another core value is living on the infinite growth loop: nobody's a finished product, everybody's a work in progress.</p>
+
+<p data-t="2985">If you can get better, if you can learn more, if you have the tenacity to improve yourself every single day, over time you get exponential compounding, which is the most valuable asset any of us can have. It's about investing in the process of hard work, grit, and grinding. Then actually leverage a lot of tools because I don't know what the world will look like five years from now with mass adoption and utilization of AI.</p>
+
+<p data-t="3020">We'll all have the workforce of a million people at our fingertips, right? It's fundamentally going to change work. It's going to change the way everybody operates. So I would focus less on the what and focus more on the how, and leveraging AI tools to run and live your life. That's the advice I'd give to students.</p>
+    </div>
+  </main>
+  <script>
+  async function toggleYtBookmark(btn) {
+    const payload = {
+      title: btn.dataset.title,
+      url: btn.dataset.url,
+      filename: btn.dataset.filename,
+      interviewDate: btn.dataset.date,
+      source: 'YT',
+      expert: btn.dataset.channel,
+    };
+    try {
+      const resp = await fetch('/bookmark', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload),
+      });
+      const result = await resp.json();
+      setYtBookmarkState(btn, !!result.bookmarked);
+    } catch (e) {
+      console.error('Bookmark toggle failed:', e);
+    }
+  }
+  function setYtBookmarkState(btn, on) {
+    btn.classList.toggle('is-bookmarked', on);
+    btn.innerHTML = on ? '&#9733;' : '&#9734;';
+    btn.title = on ? 'Bookmarked' : 'Bookmark';
+    btn.setAttribute('aria-label', on ? 'Bookmarked' : 'Bookmark');
+  }
+  (async function initYtBookmarkState() {
+    const btn = document.getElementById('yt-bookmark-btn');
+    if (!btn || !btn.dataset.filename) return;
+    try {
+      const resp = await fetch('/bookmarks');
+      if (!resp.ok) return;
+      const list = await resp.json();
+      if (Array.isArray(list) && list.some(b => b && b.filename === btn.dataset.filename)) {
+        setYtBookmarkState(btn, true);
+      }
+    } catch (e) { /* offline -- leave default state */ }
+  })();
+
+  async function shareYtPage(btn) {
+    const original = btn.innerHTML;
+    btn.disabled = true;
+    btn.innerHTML = '&hellip;';
+    try {
+      const resp = await fetch('/share', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ filename: btn.dataset.filename }),
+      });
+      const result = await resp.json();
+      if (!result.ok) throw new Error(result.error || 'Share failed');
+      try { await navigator.clipboard.writeText(result.url); } catch (e) {}
+      btn.innerHTML = '&#10003;';
+      btn.title = 'Copied ' + result.url;
+      setTimeout(() => { btn.innerHTML = original; btn.disabled = false; btn.title = 'Share'; }, 2500);
+    } catch (e) {
+      console.error('Share failed:', e);
+      btn.innerHTML = '!';
+      btn.title = 'Share failed: ' + (e && e.message || e);
+      setTimeout(() => { btn.innerHTML = original; btn.disabled = false; btn.title = 'Share'; }, 3000);
+    }
+  }
+
+  // When the page is viewed from somewhere other than the local Reader
+  // server (e.g. a shared copy on GitHub Pages), hide the interactive
+  // buttons whose endpoints only exist on localhost.
+  (function hideLocalOnlyControls() {
+    const host = location.hostname;
+    const isLocal = host === 'localhost' || host === '127.0.0.1' || host === '';
+    if (isLocal) return;
+    const actions = document.querySelector('.yt-header-actions');
+    if (!actions) return;
+    const bookmark = actions.querySelector('#yt-bookmark-btn');
+    const share = actions.querySelector('#yt-share-btn');
+    if (bookmark) bookmark.remove();
+    if (share) share.remove();
+  })();
+  </script>
+</body>
+</html>
