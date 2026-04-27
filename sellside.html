@@ -72,7 +72,6 @@
       padding: 22px 44px 28px 56px;
       box-shadow: 0 10px 30px rgba(23, 32, 26, 0.05);
     }
-    .report.is-read { opacity: 0.68; }
     .report.is-bookmarked { border-color: color-mix(in srgb, var(--accent-2), var(--line) 35%); }
     .report header { display: flex; gap: 16px; justify-content: space-between; align-items: flex-start; padding-right: 0; }
     .eyebrow { color: var(--accent); font-size: 0.78rem; font-weight: 700; text-transform: uppercase; overflow-wrap: anywhere; }
@@ -139,8 +138,39 @@
     .actions { display: flex; gap: 8px; align-items: center; flex-shrink: 0; }
     .icon-btn { width: 38px; padding: 0; font-size: 1rem; }
     .jump-btn { width: 38px; padding: 0; font-size: 0.95rem; }
-    .read-btn.active { background: var(--accent); color: white; border-color: var(--accent); }
     .bookmark-btn.active { background: var(--accent-2); color: white; border-color: var(--accent-2); }
+    .status-board {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+      gap: 28px;
+      margin: 18px 0 26px;
+    }
+    .status-board h2 {
+      display: block;
+      margin: 0 0 8px;
+      font-size: 1rem;
+      line-height: 1.2;
+    }
+    .status-board ol {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      border-left: 3px solid color-mix(in srgb, var(--accent-2), var(--line) 25%);
+    }
+    .status-row, .status-empty {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 12px;
+      align-items: center;
+      min-height: 40px;
+      margin-bottom: 4px;
+      padding: 8px 10px 8px 12px;
+      border-radius: 4px;
+      background: #efeae2;
+    }
+    .status-title { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+    .status-meta { color: var(--muted); font-size: 0.82rem; white-space: nowrap; }
+    .status-empty { display: block; color: var(--muted); }
     .grid {
       display: grid;
       grid-template-columns: 1fr;
@@ -168,6 +198,7 @@
       .update-status { text-align: left; }
       .actions { margin-top: 0; }
       .grid { grid-template-columns: 1fr; }
+      .status-board { grid-template-columns: 1fr; gap: 14px; }
       input { grid-column: 1 / -1; width: 100%; }
     }
   </style>
@@ -177,7 +208,7 @@
   <section class="topbar">
     <div>
       <h1>Sell-Side Report Digest</h1>
-      <p class="subtle">Generated Apr 27, 2026 01:35 PM</p>
+      <p class="subtle">Generated Apr 27, 2026 01:44 PM</p>
     </div>
     <div class="controls">
       <button id="prev-report" class="jump-btn" type="button" title="Previous note" aria-label="Previous note">↑</button>
@@ -187,22 +218,79 @@
       <input id="search" type="search" placeholder="Search reports">
       <select id="filter">
         <option value="all">All</option>
-        <option value="unread">Unread</option>
-        <option value="read">Read</option>
         <option value="bookmarked">Bookmarked</option>
       </select>
       <span id="update-status" class="update-status"></span>
     </div>
   </section>
   <p id="empty" class="empty">No sell-side reports match the current filter.</p>
+  <section class="status-board">
+    <div>
+      <h2>★ Bookmarked (0)</h2>
+      <ol><li class="status-empty">No bookmarked reports yet.</li></ol>
+    </div>
+    <div>
+      <h2>▶ Processed (10)</h2>
+      <ol>
+      <li class="status-row">
+        <span class="status-title">Rise of the AI Agent - Global Implications</span>
+        <span class="status-meta">MS · Apr 27</span>
+      </li>
+
+      <li class="status-row">
+        <span class="status-title">CY26 Data Center Capex Revised Higher and Strong Initial Growth Outlook of 40% for CY27; Positive Across the Semiconductor AI Value Chain - Potential for Continued Upward Revisions</span>
+        <span class="status-meta">JPM · Apr 27</span>
+      </li>
+
+      <li class="status-row">
+        <span class="status-title">Microsoft Fairwater Going Live (ANET Positive), Korea Memory Exports, DRAM &amp; NAND Forecasts, iPhone Outperformance, &amp; More</span>
+        <span class="status-meta">WFC · Apr 27</span>
+      </li>
+
+      <li class="status-row">
+        <span class="status-title">Microsoft Corp. - New OpenAI Agreement Clarifies Relationship - Cleaner Path Ahead for MSFT</span>
+        <span class="status-meta">BCA MSFT · Apr 27</span>
+      </li>
+
+      <li class="status-row">
+        <span class="status-title">Initiate at Buy: Dash to Grow Share of Global Food &amp; Retail Commerce; $225 PT</span>
+        <span class="status-meta">TD DASH · Apr 27</span>
+      </li>
+
+      <li class="status-row">
+        <span class="status-title">F3Q26 Preview: Move CY26 &amp; CY27 EPS Ests to ~$125 and ~$150; PT to $975</span>
+        <span class="status-meta">WFC SNDK · Apr 27</span>
+      </li>
+
+      <li class="status-row">
+        <span class="status-title">1Q26 Model Update: More Challenging Path Ahead</span>
+        <span class="status-meta">BCA HCA · Apr 27</span>
+      </li>
+
+      <li class="status-row">
+        <span class="status-title">1Q Preview: Margin Execution, Emerging Platform Optionality?</span>
+        <span class="status-meta">MS CVNA · Apr 27</span>
+      </li>
+
+      <li class="status-row">
+        <span class="status-title">Microsoft: F3Q Preview - Capacity Considerations</span>
+        <span class="status-meta">DB MSFT · Apr 27</span>
+      </li>
+
+      <li class="status-row">
+        <span class="status-title">What You Need to Know from HCA’s 1Q Earnings &amp; Follow-Up with Management</span>
+        <span class="status-meta">JPM HCA · Apr 27</span>
+      </li>
+</ol>
+    </div>
+  </section>
   
 <article class="report" data-report-id="2db8d888d7295334" data-title="rise of the ai agent - global implications">
   <div class="ordinal">01</div>
   <header>
     <h2><span class="title-firm">MS</span><span class="title-text">Rise of the AI Agent - Global Implications</span></h2>
     <div class="actions">
-      <button type="button" class="icon-btn read-btn" title="Mark read" aria-label="Mark read">✓</button>
-      <button type="button" class="icon-btn bookmark-btn" title="Bookmark" aria-label="Bookmark">★</button>
+      <button type="button" class="icon-btn bookmark-btn" title="Bookmark" aria-label="Bookmark" aria-pressed="false">★</button>
     </div>
   </header>
   <div class="facts-table-wrap">
@@ -235,8 +323,7 @@
   <header>
     <h2><span class="title-firm">JPM</span><span class="title-text">CY26 Data Center Capex Revised Higher and Strong Initial Growth Outlook of 40% for CY27; Positive Across the Semiconductor AI Value Chain - Potential for Continued Upward Revisions</span></h2>
     <div class="actions">
-      <button type="button" class="icon-btn read-btn" title="Mark read" aria-label="Mark read">✓</button>
-      <button type="button" class="icon-btn bookmark-btn" title="Bookmark" aria-label="Bookmark">★</button>
+      <button type="button" class="icon-btn bookmark-btn" title="Bookmark" aria-label="Bookmark" aria-pressed="false">★</button>
     </div>
   </header>
   <div class="facts-table-wrap">
@@ -269,8 +356,7 @@
   <header>
     <h2><span class="title-firm">WFC</span><span class="title-text">Microsoft Fairwater Going Live (ANET Positive), Korea Memory Exports, DRAM &amp; NAND Forecasts, iPhone Outperformance, &amp; More</span></h2>
     <div class="actions">
-      <button type="button" class="icon-btn read-btn" title="Mark read" aria-label="Mark read">✓</button>
-      <button type="button" class="icon-btn bookmark-btn" title="Bookmark" aria-label="Bookmark">★</button>
+      <button type="button" class="icon-btn bookmark-btn" title="Bookmark" aria-label="Bookmark" aria-pressed="false">★</button>
     </div>
   </header>
   <div class="facts-table-wrap">
@@ -303,8 +389,7 @@
   <header>
     <h2><span class="title-firm">BCA</span><span class="ticker-badge" aria-label="Ticker">MSFT</span><span class="title-text">Microsoft Corp. - New OpenAI Agreement Clarifies Relationship - Cleaner Path Ahead for MSFT</span></h2>
     <div class="actions">
-      <button type="button" class="icon-btn read-btn" title="Mark read" aria-label="Mark read">✓</button>
-      <button type="button" class="icon-btn bookmark-btn" title="Bookmark" aria-label="Bookmark">★</button>
+      <button type="button" class="icon-btn bookmark-btn" title="Bookmark" aria-label="Bookmark" aria-pressed="false">★</button>
     </div>
   </header>
   <div class="facts-table-wrap">
@@ -337,8 +422,7 @@
   <header>
     <h2><span class="title-firm">TD</span><span class="ticker-badge" aria-label="Ticker">DASH</span><span class="title-text">Initiate at Buy: Dash to Grow Share of Global Food &amp; Retail Commerce; $225 PT</span></h2>
     <div class="actions">
-      <button type="button" class="icon-btn read-btn" title="Mark read" aria-label="Mark read">✓</button>
-      <button type="button" class="icon-btn bookmark-btn" title="Bookmark" aria-label="Bookmark">★</button>
+      <button type="button" class="icon-btn bookmark-btn" title="Bookmark" aria-label="Bookmark" aria-pressed="false">★</button>
     </div>
   </header>
   <div class="facts-table-wrap">
@@ -371,8 +455,7 @@
   <header>
     <h2><span class="title-firm">WFC</span><span class="ticker-badge" aria-label="Ticker">SNDK</span><span class="title-text">F3Q26 Preview: Move CY26 &amp; CY27 EPS Ests to ~$125 and ~$150; PT to $975</span></h2>
     <div class="actions">
-      <button type="button" class="icon-btn read-btn" title="Mark read" aria-label="Mark read">✓</button>
-      <button type="button" class="icon-btn bookmark-btn" title="Bookmark" aria-label="Bookmark">★</button>
+      <button type="button" class="icon-btn bookmark-btn" title="Bookmark" aria-label="Bookmark" aria-pressed="false">★</button>
     </div>
   </header>
   <div class="facts-table-wrap">
@@ -405,8 +488,7 @@
   <header>
     <h2><span class="title-firm">BCA</span><span class="ticker-badge" aria-label="Ticker">HCA</span><span class="title-text">1Q26 Model Update: More Challenging Path Ahead</span></h2>
     <div class="actions">
-      <button type="button" class="icon-btn read-btn" title="Mark read" aria-label="Mark read">✓</button>
-      <button type="button" class="icon-btn bookmark-btn" title="Bookmark" aria-label="Bookmark">★</button>
+      <button type="button" class="icon-btn bookmark-btn" title="Bookmark" aria-label="Bookmark" aria-pressed="false">★</button>
     </div>
   </header>
   <div class="facts-table-wrap">
@@ -439,8 +521,7 @@
   <header>
     <h2><span class="title-firm">MS</span><span class="ticker-badge" aria-label="Ticker">CVNA</span><span class="title-text">1Q Preview: Margin Execution, Emerging Platform Optionality?</span></h2>
     <div class="actions">
-      <button type="button" class="icon-btn read-btn" title="Mark read" aria-label="Mark read">✓</button>
-      <button type="button" class="icon-btn bookmark-btn" title="Bookmark" aria-label="Bookmark">★</button>
+      <button type="button" class="icon-btn bookmark-btn" title="Bookmark" aria-label="Bookmark" aria-pressed="false">★</button>
     </div>
   </header>
   <div class="facts-table-wrap">
@@ -473,8 +554,7 @@
   <header>
     <h2><span class="title-firm">DB</span><span class="ticker-badge" aria-label="Ticker">MSFT</span><span class="title-text">Microsoft: F3Q Preview - Capacity Considerations</span></h2>
     <div class="actions">
-      <button type="button" class="icon-btn read-btn" title="Mark read" aria-label="Mark read">✓</button>
-      <button type="button" class="icon-btn bookmark-btn" title="Bookmark" aria-label="Bookmark">★</button>
+      <button type="button" class="icon-btn bookmark-btn" title="Bookmark" aria-label="Bookmark" aria-pressed="false">★</button>
     </div>
   </header>
   <div class="facts-table-wrap">
@@ -507,8 +587,7 @@
   <header>
     <h2><span class="title-firm">JPM</span><span class="ticker-badge" aria-label="Ticker">HCA</span><span class="title-text">What You Need to Know from HCA’s 1Q Earnings &amp; Follow-Up with Management</span></h2>
     <div class="actions">
-      <button type="button" class="icon-btn read-btn" title="Mark read" aria-label="Mark read">✓</button>
-      <button type="button" class="icon-btn bookmark-btn" title="Bookmark" aria-label="Bookmark">★</button>
+      <button type="button" class="icon-btn bookmark-btn" title="Bookmark" aria-label="Bookmark" aria-pressed="false">★</button>
     </div>
   </header>
   <div class="facts-table-wrap">
@@ -538,8 +617,6 @@
 
 </main>
 <script>
-const stateKey = "sellside-report-state-v1";
-const state = JSON.parse(localStorage.getItem(stateKey) || "{}");
 const reports = [...document.querySelectorAll(".report")];
 const search = document.querySelector("#search");
 const filter = document.querySelector("#filter");
@@ -549,32 +626,16 @@ const updateStatus = document.querySelector("#update-status");
 const prevButton = document.querySelector("#prev-report");
 const nextButton = document.querySelector("#next-report");
 
-function save() {
-  localStorage.setItem(stateKey, JSON.stringify(state));
-}
-
-function applyState(card) {
-  const id = card.dataset.reportId;
-  const item = state[id] || {};
-  card.classList.toggle("is-read", !!item.read);
-  card.classList.toggle("is-bookmarked", !!item.bookmarked);
-  card.querySelector(".read-btn").classList.toggle("active", !!item.read);
-  card.querySelector(".bookmark-btn").classList.toggle("active", !!item.bookmarked);
-}
-
 function refilter() {
   const q = search.value.trim().toLowerCase();
   const mode = filter.value;
   let visible = 0;
   reports.forEach(card => {
-    const item = state[card.dataset.reportId] || {};
     const haystack = card.innerText.toLowerCase();
     const matchesSearch = !q || haystack.includes(q);
     const matchesMode =
       mode === "all" ||
-      (mode === "read" && item.read) ||
-      (mode === "unread" && !item.read) ||
-      (mode === "bookmarked" && item.bookmarked);
+      (mode === "bookmarked" && card.classList.contains("is-bookmarked"));
     const show = matchesSearch && matchesMode;
     card.hidden = !show;
     if (show) visible += 1;
@@ -625,21 +686,19 @@ function updateJumpButtons() {
 
 reports.forEach(card => {
   const id = card.dataset.reportId;
-  state[id] = state[id] || {};
-  applyState(card);
-  card.querySelector(".read-btn").addEventListener("click", () => {
-    state[id].read = !state[id].read;
-    state[id].readAt = state[id].read ? new Date().toISOString() : null;
-    save();
-    applyState(card);
-    refilter();
-  });
   card.querySelector(".bookmark-btn").addEventListener("click", () => {
-    state[id].bookmarked = !state[id].bookmarked;
-    state[id].bookmarkedAt = state[id].bookmarked ? new Date().toISOString() : null;
-    save();
-    applyState(card);
+    const bookmarked = !card.classList.contains("is-bookmarked");
+    card.classList.toggle("is-bookmarked", bookmarked);
+    card.querySelector(".bookmark-btn").classList.toggle("active", bookmarked);
+    card.querySelector(".bookmark-btn").setAttribute("aria-pressed", bookmarked ? "true" : "false");
     refilter();
+    fetch("http://127.0.0.1:8765/bookmark", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ report_id: id, bookmarked })
+    }).catch(() => {
+      updateStatus.textContent = "Bookmark saved locally in view, but helper is offline.";
+    });
   });
 });
 search.addEventListener("input", refilter);
