@@ -1,7 +1,507 @@
 {
-  "generated_at": "2026-04-27T13:06:04",
+  "generated_at": "2026-04-27T13:35:34",
   "source": "C:\\Users\\AdrianOw\\OneDrive - chieftaincapital.com\\Desktop",
   "reports": [
+    {
+      "id": "2db8d888d7295334",
+      "title": "Rise of the AI Agent - Global Implications",
+      "file_name": "20260419_Morgan_Stanley_1590-TT_Technology-_Rise_of_the_AI_Agent_Global_Implications.pdf",
+      "modified": "2026-04-27T13:22:31",
+      "pages": 73,
+      "schema_version": 7,
+      "is_sell_side_report": true,
+      "exclusion_reason": null,
+      "sell_side_firm": "MS",
+      "company": null,
+      "ticker": null,
+      "companies_covered": "NVDA, AMD, INTC, ARM, MU, STX, WDC, ASML, AMAT, KLAC",
+      "report_date": "2026-04-19",
+      "headline": "Morgan Stanley argues agentic AI shifts the infrastructure bottleneck from pure GPU compute toward CPU orchestration, memory, substrates and broader system infrastructure, expanding the investable AI stack globally.",
+      "summary": "Morgan Stanley frames agentic AI as a structural broadening of AI capex beyond accelerators: GPUs remain critical, but multi-step autonomous workflows raise the importance of CPUs, memory, networking, substrates and semiconductor equipment. The note introduces a sizing framework that sees $32.5-60bn of incremental CPU TAM by 2030 and 15-45EB of incremental DRAM demand, with supply-constrained enablers such as memory, foundry, ABF substrates, BMCs and interconnect positioned to capture outsized economics. Stock-wise, the firm prefers full-stack beneficiaries globally, and it raises price targets on key Korea memory/substrate names.",
+      "important_observations": [
+        "The core variant view is that AI economics are shifting from owning the best accelerator to enabling system orchestration, memory persistence and data movement across the full stack.",
+        "CPU time may represent the majority of agentic workload latency, implying cluster architecture and spending intensity can change materially even if GPU demand stays strong.",
+        "Memory is treated as an active architectural layer rather than passive storage, supporting a stronger and potentially more durable upside case for DRAM, NAND and memory-interface suppliers.",
+        "Supply-constrained components such as ABF substrates, foundry capacity, BMCs, sockets/connectors and equipment could capture disproportionate pricing power as AI systems become more complex.",
+        "Morgan Stanley prefers some enablers over direct CPU exposure in the US, arguing token growth and hyperscaler capex may translate more directly into earnings upside for names such as NVIDIA and Micron than for CPU vendors.",
+        "The report suggests agentic AI could lengthen the HDD upcycle by increasing persistent storage needs for context, history and system data, not just benefiting semis."
+      ],
+      "new_data": [
+        "Introduces a new Morgan Stanley framework for agentic AI CPU and memory TAM.",
+        "Estimates incremental CPU TAM of $32.5-60bn by 2030 within total server CPU TAM of $100bn+.",
+        "Estimates 15-45EB of incremental DRAM demand by 2030, equal to 26-77% of 2027 annual DRAM supply.",
+        "Argues CPU-side orchestration can account for 50-90% of total workload latency in agentic systems.",
+        "Highlights a rising cluster CPU:GPU ratio, citing a move from roughly 1:12 in older Hopper-era builds toward 1:2 for Rubin and potentially 2:1 for Rubin Ultra.",
+        "Forecasts foundry CPU TAM reaching about $33bn in 2026 and $37bn by 2028, with TSMC at roughly 70-75% share."
+      ],
+      "management_insights": [
+        "NVIDIA CEO Jensen Huang said on March 16, 2026 that the CPU is 'driving' the model, reinforcing the report's orchestration thesis.",
+        "NVIDIA has announced Meta and CoreWeave as customers for standalone Vera CPUs, supporting the view that AI-optimized CPUs are becoming a real product category.",
+        "GUC management indicated it has secured next-generation Arm-based CPU design wins including Google CPU and Microsoft Cobalt CPU programs.",
+        "The note cites recent channel checks indicating capacity tightness and pricing power into 2H26-2027 for memory, ABF substrates and related enablers.",
+        "Morgan Stanley references AMD and NVIDIA commentary as pointing to unusually strong CPU demand as AI workloads become more reasoning-intensive."
+      ],
+      "estimate_changes": [],
+      "estimate_change_details": [
+        {
+          "metric": "Price Target",
+          "period": "Current",
+          "prior": "KRW 1,300,000",
+          "new": "KRW 1,700,000",
+          "pct_change": "31%",
+          "note": "SK hynix price target raised."
+        },
+        {
+          "metric": "Price Target",
+          "period": "Current",
+          "prior": "KRW 251,000",
+          "new": "KRW 362,000",
+          "pct_change": "44%",
+          "note": "Samsung Electronics common shares price target raised."
+        },
+        {
+          "metric": "Price Target",
+          "period": "Current",
+          "prior": "KRW 213,350",
+          "new": "KRW 289,600",
+          "pct_change": "36%",
+          "note": "Samsung Electronics preferred shares price target raised."
+        },
+        {
+          "metric": "Price Target",
+          "period": "Current",
+          "prior": "KRW 500,000",
+          "new": "KRW 710,000",
+          "pct_change": "42%",
+          "note": "Samsung Electro-Mechanics price target raised."
+        }
+      ],
+      "evidence_quality": [
+        "Primary/public management sourcing: NVIDIA GTC 2026 commentary and announced customer references support the CPU-orchestration narrative, but some roadmap implications remain forward-looking.",
+        "Analyst model work: TAM, latency splits, CPU:GPU intensity and DRAM demand estimates are largely Morgan Stanley framework outputs and should be treated as scenario analysis rather than reported market facts.",
+        "Triangulated with market/industry data: Mercury Research, IDC, FactSet, Prismark and other third-party datasets are used to anchor share, revisions and supply assumptions.",
+        "Channel-check based: pricing power, supply tightness and demand strength for memory, ABF and equipment are partly based on checks, which are useful but inherently anecdotal and less verifiable than company-reported data."
+      ],
+      "risks_or_watch_items": [
+        "Whether agentic AI adoption scales fast enough to convert architectural interest into sustained orders and earnings revisions.",
+        "GPU-centric efficiency gains or software optimization could reduce the incremental CPU and memory intensity assumed in the framework.",
+        "Supply additions in memory, ABF or foundry could limit duration of pricing power for current bottleneck beneficiaries.",
+        "CPU competition may intensify as NVIDIA, AMD, Arm and Intel all target AI-optimized orchestration workloads.",
+        "Valuation risk remains important where the report prefers enablers over some direct CPU names despite favorable thematic exposure."
+      ],
+      "key_numbers": [
+        "Incremental CPU TAM by 2030: $32.5-60bn",
+        "Total server CPU TAM by 2030: $100bn+",
+        "Incremental DRAM demand by 2030: 15-45EB",
+        "Incremental DRAM demand as % of 2027 supply: 26-77%",
+        "CPU-side orchestration share of workload latency: 50-90%",
+        "Illustrative CPU:GPU ratio shift: ~1:12 older builds to ~1:2 Rubin, potentially 2:1 Rubin Ultra",
+        "2026 WFE forecast: $143bn, up 23%",
+        "2027 foundry logic WFE growth forecast: 28%",
+        "TSMC estimated CPU foundry share: ~70% in 2026 to ~75% in 2028",
+        "HDD shortages forecast: ~200EB in CY26 and ~250EB in CY27",
+        "Aspeed CPU server BMC share: ~70%",
+        "Montage global memory interconnect share: ~36.8%"
+      ]
+    },
+    {
+      "id": "34d95764c5b7b224",
+      "title": "CY26 Data Center Capex Revised Higher and Strong Initial Growth Outlook of 40% for CY27; Positive Across the Semiconductor AI Value Chain - Potential for Continued Upward Revisions",
+      "file_name": "20260427_JP_Morgan_Semiconductors-_CY26_Data_Center_Capex_Revised_Higher_an.pdf",
+      "modified": "2026-04-27T13:22:15",
+      "pages": 10,
+      "schema_version": 7,
+      "is_sell_side_report": true,
+      "exclusion_reason": null,
+      "sell_side_firm": "JPM",
+      "company": null,
+      "ticker": null,
+      "companies_covered": "AMD, ADI, AMAT, ARM, ALAB, AVGO, CDNS, KLAC, LRCX, MTSI, MRVL, MU, NVDA, SNPS",
+      "report_date": "2026-04-27",
+      "headline": "J.P. Morgan raises its 2026 cloud data center capex growth forecast and introduces a strong 2027 outlook, arguing AI infrastructure demand and backlog visibility remain robust across the semiconductor AI value chain.",
+      "summary": "J.P. Morgan materially lifted its 2026 data center capex outlook and introduced a +40% 2027 growth view, arguing hyperscaler AI buildouts, multi-year backlog visibility, and sustained capacity constraints support another leg of upside for AI-linked semis. The note is constructive across GPUs, custom ASICs, memory, semicaps, and EDA, with particular benefit to NVDA, AVGO, MRVL, AMD, and MU, while also arguing custom ASICs should continue gaining accelerator share versus GPUs in 2026-2027.",
+      "important_observations": [
+        "The firm expects the same pattern seen in 2025 to repeat in 2026, with out-year capex expectations likely moving higher again as visibility improves.",
+        "Custom AI ASICs are framed as an increasingly important share gainer versus merchant GPUs, which could shift value capture toward AVGO and MRVL alongside hyperscaler in-house programs.",
+        "The note argues 2027 spending could still prove conservative because its base case assumes limited inflation and a greater custom-ASIC mix lowering cost per GW.",
+        "Backlog and order-book visibility into 2027 is presented as unusually strong, supporting confidence that AI infrastructure demand is not a near-term spike.",
+        "The strongest read-through is not just to compute vendors but also to the broader AI value chain including memory, wafer-fab equipment, and EDA."
+      ],
+      "new_data": [
+        "2026 data center capex growth forecast revised to +63% from +52%.",
+        "Initial 2027 data center capex growth forecast introduced at +40%.",
+        "Incremental 2026 data center capex implied at more than $200 billion, the largest annual increase on record.",
+        "North American planned data center power capacity tracked at more than 140GW at end-2025.",
+        "Installed North American data center capacity forecast to rise from 48GW in 2025 to 60GW+ in 2026 and 75GW+ in 2027.",
+        "NVIDIA cited as having $1T+ of Blackwell and Vera Rubin demand visibility through 2027.",
+        "Broadcom cited as discussing $100B+ of AI revenue in FY27.",
+        "Micron cited as having signed the industry's first five-year CSA."
+      ],
+      "management_insights": [
+        "Management commentary from NVDA and AVGO is presented as evidence of extended 2027 backlog visibility, with customers locking in capacity well ahead of deployment.",
+        "Hyperscalers and foundation-model labs are described as still capacity-constrained, supporting continued AI infrastructure intensity.",
+        "The note expects companies to sound constructive on upcoming commentary around customer activity, bookings, backlog, and supply-chain capacity.",
+        "Broadcom's recent customer commitment and partnership commentary is used to support the view that custom AI XPUs are scaling faster.",
+        "The demand driver is shifting beyond training into inference and reasoning/agentic workloads, implying durable compute intensity."
+      ],
+      "estimate_changes": [],
+      "estimate_change_details": [
+        {
+          "metric": "Data Center Capex Growth",
+          "period": "CY2026",
+          "prior": 52,
+          "new": 63,
+          "pct_change": 21,
+          "note": "J.P. Morgan revised its 2026 growth forecast higher by 11 percentage points."
+        },
+        {
+          "metric": "Data Center Capex Growth",
+          "period": "CY2027",
+          "prior": null,
+          "new": 40,
+          "pct_change": null,
+          "note": "Initial 2027 growth forecast; no prior comparison disclosed."
+        }
+      ],
+      "evidence_quality": [
+        "Primary and semi-primary inputs: company-reported commentary from NVDA, AVGO, and MU plus published hyperscaler capex announcements.",
+        "Triangulated with market and industry data from 650 Group and Datacenter Hawk, alongside J.P. Morgan hardware-team model work.",
+        "Evidence is partly primary but still substantially analyst-inference-driven because the key conclusion depends on forecast extrapolation into 2027.",
+        "Backlog, bookings, and planned power-capacity data provide stronger-than-usual visibility, but many figures remain management- and analyst-estimated rather than audited end-demand measures."
+      ],
+      "risks_or_watch_items": [
+        "If hyperscaler capex pacing slips or AI deployment ROI weakens, 2027 assumptions could prove too aggressive.",
+        "A faster shift toward lower-cost custom ASICs could change value capture across the supply chain even if total spending remains strong.",
+        "The outlook depends on continued supply-chain expansion; bottlenecks in packaging, memory, networking, or power could delay deployments.",
+        "The bullish thesis assumes inference and agentic workloads continue to raise compute intensity rather than normalize.",
+        "Potential upside remains, but that also means expectations are rising quickly and could create a tougher setup for companies that merely meet forecasts."
+      ],
+      "key_numbers": [
+        "2026 data center capex growth: +63% vs prior +52%.",
+        "2027 data center capex growth: +40%.",
+        "Incremental 2026 data center capex: $200B+.",
+        "North America planned data center capacity at end-2025: 140GW+.",
+        "Installed capacity: 48GW in 2025, 60GW+ in 2026, 75GW+ in 2027.",
+        "NVIDIA demand visibility through 2027: $1T+.",
+        "Broadcom AI revenue discussed for FY27: $100B+."
+      ]
+    },
+    {
+      "id": "5cd5efd6eaead070",
+      "title": "Microsoft Fairwater Going Live (ANET Positive), Korea Memory Exports, DRAM & NAND Forecasts, iPhone Outperformance, & More",
+      "file_name": "20260424_Wells_Fargo_Microsoft_Fairwater_Going_Live_-ANET_Positive--_Korea_Me.pdf",
+      "modified": "2026-04-27T13:22:09",
+      "pages": 26,
+      "schema_version": 7,
+      "is_sell_side_report": true,
+      "exclusion_reason": null,
+      "sell_side_firm": "WFC",
+      "company": null,
+      "ticker": null,
+      "companies_covered": "ANET, MSFT, AAPL, MU, AMD, RMBS, NVDA, NTAP, GOOGL, CDNS, ASML",
+      "report_date": "2026-04-17",
+      "headline": "Wells Fargo weekly technology note argues AI infrastructure and memory trends remain strong, flags Microsoft Fairwater as a positive read-through for Arista, and highlights Apple hardware outperformance amid tightening memory supply.",
+      "summary": "Wells Fargo\u2019s weekly sector update compiles company, supply-chain, industry-data, and third-party forecast developments across semis and IT hardware. The main incremental messages are that Microsoft\u2019s Fairwater AI data center appears to be ramping ahead of schedule with positive Ethernet implications for Arista, South Korea memory export data and TrendForce forecasts continue to signal an exceptionally strong DRAM/NAND pricing and revenue cycle, Apple appears to be gaining share in smartphones while also locking in memory supply, and AI infrastructure spending expectations are moving higher with follow-on implications for memory, networking, EDA, and server ecosystems.",
+      "important_observations": [
+        "Microsoft Fairwater going live ahead of schedule is framed as a tangible demand read-through for Arista because Microsoft represented about 26% of Arista\u2019s 2025 revenue and is leaning further into Ethernet-based AI networking.",
+        "The note reinforces a variant view that memory conditions remain tighter and stronger than many investors appreciate, with Korean export data, spot pricing, and TrendForce revisions all pointing to continued upside in DRAM and NAND economics.",
+        "Apple\u2019s iPhone and Mac commentary suggests the company is using scale and supply-chain control as a competitive weapon in a constrained memory environment, potentially extending share gains versus weaker industry demand.",
+        "Rambus is presented as still well positioned despite LPDDR/SOCAMM2 adoption, but the report flags a real debate around whether AI-optimized memory form factors dilute chipset content versus traditional R-DIMM and MR-DIMM architectures.",
+        "Cadence\u2019s new AI agents and GPU-accelerated workflows are framed as a possible monetization inflection if usage-based pricing and contract uplift prove meaningful rather than just product positioning.",
+        "Anthropic\u2019s Opus 4.7 commentary introduces a qualitative concern that benchmark gains may be masking real-world degradation, which the analysts link to compute constraints and a possible competitive opening for OpenAI."
+      ],
+      "new_data": [
+        "Microsoft CEO disclosed Fairwater data center in Wisconsin is going live ahead of schedule and will deploy hundreds of thousands of GB200 GPUs.",
+        "South Korea March 2026 exports: DRAM $8.0B, NAND $2.5B, SSD $3.2B, total semis $32.8B.",
+        "Preliminary 1Q26 smartphone data from Gartner, IDC, and Counterpoint showed industry down while Apple iPhone shipments and share outperformed.",
+        "China 1Q26 smartphone exports were $26.6B, down 5% y/y, with March at $9.5B, up 2% y/y.",
+        "MacBook Neo demand reportedly exceeded expectations, with 2026 shipment planning raised to 10M from 5M-8M.",
+        "TrendForce raised 2026 DRAM and NAND industry revenue forecasts again; Gartner raised multi-year AI infrastructure spending forecasts.",
+        "Cadence announced new Google and NVIDIA collaborations plus multiple AI agent product launches.",
+        "ASML repurchased \u20ac98M of stock in 4/6-4/10, bringing QTD repurchases to \u20ac198M."
+      ],
+      "management_insights": [
+        "Satya Nadella\u2019s post indicating Fairwater is live ahead of schedule suggests Microsoft\u2019s AI infrastructure buildout is executing faster than expected.",
+        "Wells interprets Apple\u2019s large increase in unconditional purchase commitments as a deliberate move to secure memory supply and pricing through FY2027 and beyond.",
+        "AMD\u2019s Verano roadmap implies AI servers will increasingly split between traditional DIMM-based CPUs and LPDDR/SOCAMM2-optimized architectures.",
+        "Cadence\u2019s conference messaging emphasized autonomous design agents, GPU acceleration, and digital-twin capacity planning as pathways to customer productivity and potentially higher monetization."
+      ],
+      "estimate_changes": [],
+      "estimate_change_details": [
+        {
+          "metric": "2026 MacBook Neo Shipments",
+          "period": "CY2026",
+          "prior": "5M-8M units",
+          "new": "10M units",
+          "pct_change": null,
+          "note": "Report cites DigiTimes shipment planning increase; percentage not computed because prior was a range, not a single value."
+        },
+        {
+          "metric": "DRAM Industry Revenue",
+          "period": "CY2026",
+          "prior": "$502B",
+          "new": "$594B",
+          "pct_change": "18%",
+          "note": "TrendForce monthly forecast revision cited by Wells Fargo; rounded from $501.8B to $594.2B."
+        },
+        {
+          "metric": "DRAM Blended ASP",
+          "period": "CY2026",
+          "prior": "+160% y/y",
+          "new": "+207% y/y",
+          "pct_change": "29%",
+          "note": "TrendForce raised DRAM ASP growth assumption; pct_change computed on the growth-rate figures."
+        },
+        {
+          "metric": "NAND Industry Revenue",
+          "period": "CY2026",
+          "prior": "$218B",
+          "new": "$226B",
+          "pct_change": "4%",
+          "note": "TrendForce monthly forecast revision cited by Wells Fargo; rounded from $217.8B to $225.9B."
+        },
+        {
+          "metric": "NAND Industry Revenue",
+          "period": "CY2027",
+          "prior": "$294B",
+          "new": "$311B",
+          "pct_change": "6%",
+          "note": "TrendForce monthly forecast revision cited by Wells Fargo; new value shown in report as $311.2B."
+        },
+        {
+          "metric": "NAND Blended ASP",
+          "period": "CY2026",
+          "prior": "+156% y/y",
+          "new": "+161% y/y",
+          "pct_change": "3%",
+          "note": "TrendForce raised NAND ASP growth assumption; pct_change computed on the growth-rate figures."
+        },
+        {
+          "metric": "AI Infrastructure Spending",
+          "period": "CY2026",
+          "prior": null,
+          "new": "+$65B vs prior forecast",
+          "pct_change": null,
+          "note": "Gartner increased 2026 AI infrastructure forecast by about $65B, but the absolute prior and new forecast levels were not provided in the text."
+        },
+        {
+          "metric": "GenAI Model Spending Growth",
+          "period": "CY2026",
+          "prior": "83% growth",
+          "new": "110% growth",
+          "pct_change": "33%",
+          "note": "Gartner increased expected 2026 GenAI model spending growth rate in its updated forecast."
+        }
+      ],
+      "evidence_quality": [
+        "Primary and relatively high-weight on company-reported or executive-sourced items such as Satya Nadella\u2019s Fairwater announcement and Apple reported purchase-commitment disclosures.",
+        "Strong industry-data component from South Korea trade statistics, China customs data, and third-party shipment trackers; useful but still indirect proxies for company revenue and demand.",
+        "Forecast revisions rely heavily on external research providers such as TrendForce, Gartner, IDC, Gartner, and Counterpoint; evidence is triangulated rather than purely proprietary.",
+        "Several conclusions are analyst inference layered on top of public datapoints, especially around Arista read-through, Apple supply strategy, Rambus content risk, and AI monetization.",
+        "Some sections are anecdotal or qualitative, including the Opus 4.7 testing commentary and conference takeaways, so these should carry less weight than the hard export and forecast data."
+      ],
+      "risks_or_watch_items": [
+        "Whether Microsoft\u2019s Fairwater architecture scales across additional sites in a way that materially lifts Ethernet demand for Arista.",
+        "Sustainability of extreme DRAM and NAND pricing strength given spot-price moderation week to week.",
+        "Whether Apple\u2019s memory procurement advantage translates into durable smartphone share gains or simply reflects near-term supply tightness.",
+        "Potential content risk to Rambus if SOCAMM2/LPDDR architectures expand faster than traditional R-DIMM and MR-DIMM adoption.",
+        "Need to verify whether Cadence\u2019s AI product launches drive real pricing uplift, usage growth, or faster revenue growth rather than incremental feature packaging.",
+        "Samsung HBM4 yield, reliability, and stability progress remains a key competitive watch item versus SK Hynix and Micron.",
+        "Anthropic compute constraints and model-quality tradeoffs could shift competitive positioning across AI infrastructure beneficiaries."
+      ],
+      "key_numbers": [
+        "Microsoft Fairwater: $7B+ data center; hundreds of thousands of GB200 GPUs; Microsoft was ~26% of Arista 2025 revenue.",
+        "March South Korea DRAM exports: $8.0B, +176% y/y, +23% m/m; 1Q26 DRAM exports +248% y/y, +84% q/q.",
+        "March South Korea NAND exports: $2.5B, +383% y/y, +81% m/m; 1Q26 NAND exports +377% y/y, +77% q/q.",
+        "March total South Korea semiconductor exports: $32.8B, +151% y/y.",
+        "1Q26 smartphone shipments: Gartner 295.5M (-4% y/y), IDC 289.7M (-4% y/y); Apple estimated at 56M-58M by Gartner and 61.1M by IDC.",
+        "Apple purchase commitments: $33.2B total exiting F1Q26 versus $13.3B prior quarter; FY2027-FY2030+ commitments $28.4B, up $19.9B q/q.",
+        "China 1Q26 smartphone exports: $26.6B (-5% y/y, -38% q/q); March $9.5B (+2% y/y, +30% m/m).",
+        "MacBook Neo 2026 shipments reportedly revised to 10M from 5M-8M.",
+        "TrendForce 2026 DRAM revenue forecast: $594.2B versus prior $501.8B; 2026 NAND revenue forecast: $225.9B versus prior $217.8B.",
+        "Gartner AI infrastructure spending forecast: +$65B change for 2026; AI infrastructure projected at $2.66T by 2030 versus $976B in 2025; AI semis $198B in 2025 to $599B in 2030.",
+        "ASML buybacks: \u20ac98M during 4/6-4/10; \u20ac198M QTD; estimated \u20ac10.75B remaining authorization."
+      ]
+    },
+    {
+      "id": "8c8a333f66e6aaa1",
+      "title": "Microsoft Corp. - New OpenAI Agreement Clarifies Relationship - Cleaner Path Ahead for MSFT",
+      "file_name": "20260427_Barclays_MSFT_Microsoft_Corp.-_New_OpenAI_Agreement_Clarifies_Relation.pdf",
+      "modified": "2026-04-27T13:21:22",
+      "pages": 8,
+      "schema_version": 7,
+      "is_sell_side_report": true,
+      "exclusion_reason": null,
+      "sell_side_firm": "BCA",
+      "company": "Microsoft Corp.",
+      "ticker": "MSFT",
+      "companies_covered": "MSFT",
+      "report_date": "2026-04-27",
+      "headline": "Barclays views the revised Microsoft-OpenAI agreement as a net positive because it clarifies economics, removes AGI-related uncertainty, preserves revenue and IP benefits for Microsoft, and reduces capital intensity tied to OpenAI capacity needs.",
+      "summary": "Barclays argues the latest Microsoft-OpenAI agreement creates a cleaner and more workable separation as both parties move toward greater independence. Microsoft retains revenue share through 2030 and IP rights through 2032, while the apparent removal of the AGI clause reduces structural ambiguity. Barclays sees benefits from Azure keeping first-ship status for new OpenAI innovation, Microsoft avoiding the need to fund all of OpenAI\u2019s infrastructure buildout, and management gaining more flexibility to allocate capital toward Copilot, cloud, GPU capacity, and Microsoft\u2019s own LLM efforts.",
+      "important_observations": [
+        "The revised structure appears to reduce a key overhang by removing AGI-linked contractual uncertainty and replacing it with time-based economics.",
+        "Azure retains a first-mover product advantage because new OpenAI innovation is still expected to ship there first, even as OpenAI broadens hyperscaler relationships.",
+        "Microsoft gains strategic flexibility by no longer needing to build all data center capacity for OpenAI, which could free capital for internal AI monetization priorities.",
+        "The deal suggests a clearer competitive boundary as OpenAI pushes further into enterprise products, lowering the risk of a messier strategic collision with Microsoft.",
+        "Microsoft still preserves economic and IP exposure to OpenAI despite a less exclusive relationship, supporting upside participation without full dependency."
+      ],
+      "new_data": [
+        "Microsoft receives revenue share until 2030 regardless of OpenAI technology progress.",
+        "Microsoft maintains rights to OpenAI IP until 2032, but those rights are no longer exclusive.",
+        "Azure remains the first hyperscaler where new OpenAI innovation will be shipped.",
+        "Microsoft no longer shares its own revenue with OpenAI, while still receiving revenue from OpenAI.",
+        "Microsoft remains a major shareholder in OpenAI.",
+        "Barclays notes prior amendments to the Microsoft-OpenAI agreement on 2025-10-28 and 2026-02-27 before this latest revision."
+      ],
+      "management_insights": [
+        "No direct management meeting or earnings-call commentary is cited; the note relies mainly on the announced agreement and OpenAI blog-post details.",
+        "The analyst infers that Microsoft management can redirect capital toward Copilot, cloud/GPU capacity, and internal LLM development under the revised structure.",
+        "The analyst also infers that OpenAI is under pressure to expand enterprise offerings as competition from Anthropic increases."
+      ],
+      "estimate_changes": [],
+      "estimate_change_details": [],
+      "evidence_quality": [
+        "Primary source: based mainly on the newly announced Microsoft-OpenAI agreement and referenced blog-post terms.",
+        "Mostly analyst interpretation of contractual changes and strategic implications rather than reported financial results or formal company guidance.",
+        "No channel checks, survey work, or proprietary dataset are cited in the text provided.",
+        "Useful for framing strategic overhang removal, but near-term financial impact is largely analyst inference rather than quantified company disclosure."
+      ],
+      "risks_or_watch_items": [
+        "OpenAI\u2019s expanding multi-cloud strategy could dilute Azure\u2019s exclusivity over time despite first-ship status.",
+        "OpenAI\u2019s deeper push into enterprise products may still create competitive friction with Microsoft software offerings.",
+        "The IP arrangement is no longer exclusive, which may reduce some long-term strategic defensibility versus earlier structures.",
+        "Investors should watch whether reduced OpenAI infrastructure obligations actually translate into better Microsoft capital allocation and AI returns.",
+        "Future revisions to the partnership could still affect monetization, ownership economics, or product go-to-market boundaries."
+      ],
+      "key_numbers": [
+        "Overweight rating",
+        "Price target: $600",
+        "Share price (2026-04-24): $424.62",
+        "Implied upside: 41%",
+        "OpenAI revenue share to Microsoft through 2030",
+        "OpenAI IP rights for Microsoft through 2032",
+        "Barclays valuation uses ~30x CY27E EPS",
+        "CY27E EPS: $20.23"
+      ]
+    },
+    {
+      "id": "2807f8ede7eb05ec",
+      "title": "Initiate at Buy: Dash to Grow Share of Global Food & Retail Commerce; $225 PT",
+      "file_name": "20260427_TD_Cowen_-XDH_Initiate_at_Buy-_Dash_to_Grow_Share_of_Global_Food_-_Ret.pdf",
+      "modified": "2026-04-27T13:21:19",
+      "pages": 60,
+      "schema_version": 7,
+      "is_sell_side_report": true,
+      "exclusion_reason": null,
+      "sell_side_firm": "TD",
+      "company": "DoorDash",
+      "ticker": "DASH",
+      "companies_covered": "DASH",
+      "report_date": "2026-04-27",
+      "headline": "TD Cowen initiates DoorDash at Buy with a $225 price target, arguing US delivery leadership, grocery/retail expansion, international growth, and ads/commerce monetization can drive sustained revenue growth and margin expansion.",
+      "summary": "TD Cowen initiated coverage of DoorDash with a Buy rating and $225 price target, framing the stock as a beneficiary of rising share in global food and retail commerce. The thesis centers on steady MAU and order-frequency growth, grocery and retail penetration, international expansion through Wolt and Deliveroo, and a fast-growing advertising and commerce layer that should lift profitability. The firm expects technology investment in 2026 to weigh on sentiment near term but support stronger 2027 EPS acceleration, with DoorDash positioned for multiple expansion if execution on platform unification, grocery scaling, and ad monetization continues.",
+      "important_observations": [
+        "The core bull case is less about near-term upside in delivery and more about DoorDash becoming a broader commerce platform spanning restaurant, grocery, retail, ads, and merchant software.",
+        "The note argues 2026 technology spending is being misread as margin pressure rather than a high-ROI investment that could unlock faster product velocity and stronger 2027 earnings growth.",
+        "North America share gains are expected to continue even from a leadership position, with gains coming at the expense of GrubHub, smaller platforms, and parts of grocery/retail aggregation.",
+        "Grocery and retail are viewed as incrementally additive to order frequency because most first-time category orders come from existing restaurant users.",
+        "Advertising is framed as a major long-term margin lever, with mix expansion rather than delivery economics alone driving EBITDA upside.",
+        "International is no longer just footprint expansion; the report treats unified platform integration across DoorDash, Wolt, and Deliveroo as a future profitability catalyst.",
+        "Agentic commerce is presented as a tailwind rather than a disintermediation risk, assuming DoorDash keeps attractive economics in AI-driven order flows."
+      ],
+      "new_data": [
+        "Coverage initiated with Buy rating and $225 DCF-based price target.",
+        "TD Cowen forecasts 18% pro forma revenue CAGR from 2025-2030 and 27% adjusted EBITDA CAGR over the same period.",
+        "TD Cowen forecasts 20% revenue CAGR and 27% adjusted EBITDA CAGR from 2025-2030 in the summary framing.",
+        "North America delivery share is projected to rise from 50.9% in 2025 to 52.6% in 2028.",
+        "International revenue mix is projected to increase from 23% of 4Q25 revenue to 37% by 2030.",
+        "Grocery and retail GOV is estimated at $8.1B in 2025, 8% of GOV, with 25% CAGR from 2025-2030.",
+        "Ad revenue is estimated at $1.6B in 2025 and $9.5B by 2030, rising from 1.6% to 3.9% of GOV.",
+        "Subscription members are projected to grow from 35M in 2025 to 46.5M in 2028.",
+        "2026 revenue and adjusted EBITDA estimates are both about 1% below consensus."
+      ],
+      "management_insights": [
+        "Management has said the international business was close to contribution profit breakeven as of 3Q25.",
+        "Management expects grocery and retail unit economics to turn positive in 2H26.",
+        "Management has highlighted that a growing share of first-time grocery users are entering DoorDash through grocery/retail rather than restaurant delivery.",
+        "The company plans to launch a new unified tech platform in 2026 to improve developer productivity and product rollout across regions.",
+        "Recent product work includes AI-powered recommendations, smart tags, smarter search, courier app improvements, and SmartScale to reduce missing-item claims."
+      ],
+      "estimate_changes": [],
+      "estimate_change_details": [
+        {
+          "metric": "Price Target",
+          "period": "Initiation",
+          "prior": null,
+          "new": 225,
+          "pct_change": null,
+          "note": "Coverage initiation; no prior TD Cowen price target disclosed."
+        },
+        {
+          "metric": "Revenue",
+          "period": "2026E",
+          "prior": null,
+          "new": "$17,705M",
+          "pct_change": null,
+          "note": "Coverage initiation; 2026 estimate is about 1% below FactSet consensus of $17,845M."
+        },
+        {
+          "metric": "Revenue",
+          "period": "2027E",
+          "prior": null,
+          "new": "$21,293M",
+          "pct_change": null,
+          "note": "Coverage initiation; 2027 estimate is slightly below FactSet consensus of $21,372M."
+        },
+        {
+          "metric": "Adj. EBITDA",
+          "period": "2026E",
+          "prior": null,
+          "new": "$3,561M",
+          "pct_change": null,
+          "note": "Coverage initiation; 2026 estimate is about 1% below FactSet consensus of $3,605M."
+        },
+        {
+          "metric": "Adj. EBITDA",
+          "period": "2027E",
+          "prior": null,
+          "new": "$4,710M",
+          "pct_change": null,
+          "note": "Coverage initiation; 2027 estimate is below FactSet consensus of $4,792M."
+        }
+      ],
+      "evidence_quality": [
+        "Primary company-reported data and guidance: historical revenue, EBITDA, MAUs, subscriber counts, category penetration comments, and management commentary anchor much of the note.",
+        "Proprietary datasets: TD Cowen uses a North America market-share model and a 2,500-person US consumer survey; useful for trend direction but still survey/model-based rather than audited.",
+        "Triangulated industry evidence: the report references company filings, FactSet consensus, National Restaurant Association data, FRED retail sales data, and competitor disclosures.",
+        "A meaningful portion of the long-term margin and multiple-expansion thesis is analyst model work and inference, especially around ROI on tech spending, ads monetization, and international integration.",
+        "Management-related insights are mostly indirect, drawn from prior calls and public statements rather than a fresh management meeting in this document."
+      ],
+      "risks_or_watch_items": [
+        "Amazon is the clearest competitive watch item given high Prime overlap, faster same-day delivery rollout, and grocery expansion.",
+        "Uber Eats remains a strong competitor, especially with Uber One bundling and international overlap.",
+        "Execution risk around the 2026 tech replatforming and integration of DoorDash, Wolt, and Deliveroo could delay margin benefits.",
+        "Regulatory exposure remains material around independent-contractor classification and wage rules.",
+        "Grocery and retail adoption may fall short if DoorDash cannot expand merchant selection, improve unit economics, or compete with Walmart, Amazon, and Instacart.",
+        "AI/chatbot intermediaries could pressure economics if order-sourcing partners capture more take rate than expected.",
+        "Autonomous delivery could become a competitive threat if third parties build consumer-facing delivery networks outside DoorDash."
+      ],
+      "key_numbers": [
+        "Price $176.78 as of 2026-04-24; PT $225 implies about 27% upside.",
+        "2025A revenue $13,717M; 2026E $17,705M; 2027E $21,293M.",
+        "2025A adjusted EBITDA $2,779M; 2026E $3,561M; 2027E $4,710M.",
+        "Forecast revenue CAGR 18% from 2025-2030 pro forma; adjusted EBITDA CAGR 27%.",
+        "Forecast EPS CAGR 43% from 2025-2030.",
+        "DoorDash operates in 40+ countries and serves 56M+ monthly active users.",
+        "North America share projected from 50.9% in 2025 to 52.6% in 2028.",
+        "Grocery and retail MAU penetration projected from about 30% in 4Q25 to 39% by 2031.",
+        "Ad revenue projected from $1.6B in 2025 to $9.5B in 2030.",
+        "Subscription members projected from 35M in 2025 to 47M in 2028.",
+        "2026 estimates are roughly 1% below consensus on both revenue and adjusted EBITDA.",
+        "Stock is cited as 38% below 2025 highs; 2027 valuation is 16x EV/EBITDA on TD Cowen estimates."
+      ]
+    },
     {
       "id": "6ce6e31515a9c56b",
       "title": "F3Q26 Preview: Move CY26 & CY27 EPS Ests to ~$125 and ~$150; PT to $975",
@@ -469,538 +969,6 @@
         "Internal resiliency benefit target for 2026: about $400M",
         "Remaining hurricane recovery benefit opportunity from 2024 headwind: about $125M",
         "Approved capital project pipeline: $5.5B-$6.0B over 24-30 months"
-      ]
-    },
-    {
-      "id": "e73be1863c327321",
-      "title": "Remain Underweight following the Q1 setback",
-      "file_name": "20260427_Morgan_Stanley_HCA_HCA_Healthcare-_Inc.-_Remain_Underweight_following_the_Q.pdf",
-      "modified": "2026-04-27T08:54:47",
-      "pages": 14,
-      "schema_version": 7,
-      "is_sell_side_report": true,
-      "exclusion_reason": null,
-      "sell_side_firm": "MS",
-      "company": "HCA Healthcare, Inc.",
-      "ticker": "HCA",
-      "companies_covered": "HCA, THC",
-      "report_date": "2026-04-27",
-      "headline": "Morgan Stanley keeps Underweight on HCA after a Q1 miss, arguing most of the volume shortfall was temporary but upside to FY26 remains limited absent better supplemental payments.",
-      "summary": "Morgan Stanley maintains its Underweight rating and $425 price target on HCA after a weak Q1 driven by a soft respiratory season and winter storms, which the firm estimates hurt EBITDA by about $180 million. While management said volumes improved in February and March and reaffirmed core 2026 operating targets, Morgan Stanley still sees limited upside to guidance outside supplemental-payment approvals, with exchange disruption and future policy risk remaining the key swing factors. Annual 2026-2028 estimates and the price target are unchanged, though some quarterly revenue and EBITDA estimates were adjusted.",
-      "important_observations": [
-        "The Q1 miss appears more timing-related than structural, but Morgan Stanley still does not see enough earnings upside to justify a better stance on the stock.",
-        "Supplemental payments were the main offset in Q1 and remain the biggest near-term source of upside if Florida approvals come through.",
-        "Exchange disruption is tracking within prior assumptions, but the shift toward uninsured and lower-quality exchange mix remains a meaningful drag on collections and EBITDA.",
-        "Morgan Stanley argues Tenet may be set up better than HCA into earnings because HCA's respiratory weakness may be less relevant there and Tenet's estimates look more conservative.",
-        "Peak valuation leaves little room for operational or policy setbacks as investors move closer to potential 2027-2028 healthcare policy headwinds."
-      ],
-      "new_data": [
-        "Q1 same-facility equivalent admissions rose 1.3% y/y.",
-        "Respiratory weakness reduced quarterly admissions growth by 70 bps and ER visit growth by 140 bps.",
-        "Winter storms reduced admissions and ER visits by about 30 bps and 50 bps, respectively.",
-        "Morgan Stanley estimates respiratory and storm impacts together hurt Q1 EBITDA by about $180 million.",
-        "Supplemental payments benefited Q1 by about $200 million versus Morgan Stanley's $80 million expectation.",
-        "Exchange disruption reduced Q1 EBITDA by about $150 million; management still expects a $600-$900 million FY26 EBITDA headwind.",
-        "Exchange admissions fell about 15% in Q1; uninsured admissions rose 16%, with more than half tied to exchange shifts.",
-        "Management now expects the FY supplemental-payment benefit decline to be $50-$250 million versus the prior $250-$450 million decline."
-      ],
-      "management_insights": [
-        "Management said February and March volumes rebounded after January weather and respiratory weakness.",
-        "Management reaffirmed 2%-3% equivalent-admissions growth for Q2-Q4 and EBITDA margins slightly above 20% for 2026.",
-        "Management remains constructive on Florida supplemental-payment approval, which could provide upside to current guidance.",
-        "Management said exchange-related volume loss was at the low end of the prior 15%-20% assumption.",
-        "Management noted some shift from Silver to Bronze exchange plans, though not yet significant.",
-        "Management highlighted AI rollout areas including ambient listening, nurse handoff, patient safety, and nurse engagement tools."
-      ],
-      "estimate_changes": [],
-      "estimate_change_details": [
-        {
-          "metric": "Revenue",
-          "period": "1Q26",
-          "prior": "$18,986m",
-          "new": "$19,109m",
-          "pct_change": 1,
-          "note": "Raised after reported Q1 results."
-        },
-        {
-          "metric": "Revenue",
-          "period": "1Q27",
-          "prior": "$19,831m",
-          "new": "$19,959m",
-          "pct_change": 1,
-          "note": "Modest upward revision to quarterly forecast."
-        },
-        {
-          "metric": "EBITDA",
-          "period": "1Q26",
-          "prior": "$3,867m",
-          "new": "$3,802m",
-          "pct_change": -2,
-          "note": "Cut to reflect Q1 shortfall from respiratory and weather effects."
-        },
-        {
-          "metric": "EBITDA",
-          "period": "4Q26",
-          "prior": "$4,238m",
-          "new": "$4,324m",
-          "pct_change": 2,
-          "note": "Raised, likely reflecting recovery timing and supplemental-payment assumptions."
-        },
-        {
-          "metric": "EBITDA",
-          "period": "2026",
-          "prior": "$16,000m",
-          "new": "$16,000m",
-          "pct_change": 0,
-          "note": "Full-year EBITDA estimate unchanged."
-        },
-        {
-          "metric": "Price Target",
-          "period": "12-18M",
-          "prior": "$425",
-          "new": "$425",
-          "pct_change": 0,
-          "note": "Price target unchanged."
-        }
-      ],
-      "evidence_quality": [
-        "Company-reported Q1 results and guidance update; primary evidence and highest-weight input in the note.",
-        "Management commentary from the earnings release/call on volumes, exchanges, and supplemental payments; primary but management-framed.",
-        "Analyst model work versus prior forecasts and consensus; useful for framing revisions but partly inference-driven for out-quarters.",
-        "No channel checks, survey work, or proprietary dataset evidence presented here; external triangulation appears limited."
-      ],
-      "risks_or_watch_items": [
-        "Florida supplemental-payment approval and any other state program approvals.",
-        "Whether Q2-Q4 admissions actually return to the 2%-3% growth target.",
-        "Magnitude of FY26 exchange-market disruption versus the $600-$900 million EBITDA headwind assumption.",
-        "Further migration from exchange to uninsured or lower-value Bronze plans, which could pressure collections.",
-        "2027-2028 policy risk around ACA subsidies, Medicaid funding, and reimbursement.",
-        "Potential reemergence of wage pressure or weaker utilization trends."
-      ],
-      "key_numbers": [
-        "Underweight rating; $425 price target.",
-        "Stock closed at $474.03 on April 23, 2026.",
-        "Q1 same-facility equivalent admissions +1.3% y/y.",
-        "Commercial ex-exchange admissions +0.6%, Medicare +1.9%, Medicaid +0.3%.",
-        "Respiratory plus storm impacts: about -$180m EBITDA in Q1.",
-        "Supplemental payments benefit: about $200m in Q1 vs $80m expected.",
-        "Exchange disruption EBITDA impact: about $150m in 1Q26; FY26 headwind guide $600-$900m.",
-        "Exchange mix: 7% of admissions and 8.5% of revenue in Q1.",
-        "Uninsured admissions +16%; exchange admissions about -15% in Q1.",
-        "FY26 guidance: revenue $76.5bn-$80.0bn; EBITDA $15.55bn-$16.45bn.",
-        "Morgan Stanley 2026E EBITDA $16.0bn and EPS $30.60."
-      ]
-    },
-    {
-      "id": "a29249032c58fc74",
-      "title": "In Any Hand That Is Dealt, GE Holds All the Cards",
-      "file_name": "20260426_Jefferies_GE_GE-_In_Any_Hand_That_Is_Dealt-_GE_Holds_All_the_Cards.pdf",
-      "modified": "2026-04-27T08:54:46",
-      "pages": 33,
-      "schema_version": 7,
-      "is_sell_side_report": true,
-      "exclusion_reason": null,
-      "sell_side_firm": "JEF",
-      "company": "General Electric Company",
-      "ticker": "GE",
-      "companies_covered": "GE",
-      "report_date": "2026-04-26",
-      "headline": "Jefferies stays Buy on GE, trims PT to $365 from $375, and argues conservative guidance leaves upside in services and 2028 targets.",
-      "summary": "Jefferies frames GE Aerospace as a high-visibility aerospace compounder whose conservative 2026 guidance understates services upside, backlog strength, and the runway to exceed 2028 targets. The note highlights stronger-than-guided commercial services momentum, resilient OE and defense demand, improving free-cash-flow capacity, and a path to 2028 operating profit above management\u2019s $11.5B target, while acknowledging macro risk from higher oil prices, air-travel sensitivity, tariffs, and GE9X/LEAP execution.",
-      "important_observations": [
-        "Services is the central variant view: Jefferies sees material upside to 2026 commercial services despite management\u2019s cautious tone and flat-to-low-single-digit departures assumption.",
-        "The 2028 framework appears intentionally conservative, with Jefferies estimating $12.9B of 2028 operating profit versus management\u2019s $11.5B target.",
-        "Q1 services strength looks structurally supported by backlog, delinquent parts, and already-scheduled shop visits rather than just a one-quarter pull-forward.",
-        "Narrowbody aftermarket, especially LEAP and CFM56, is the main earnings engine; Jefferies expects LEAP services to become a much larger profit contributor as warranty and durability issues normalize.",
-        "Widebody services also improved, helped by higher GE90/GEnx workscopes and slower-than-expected retirements, extending the revenue tail.",
-        "GE9X remains an earnings drag and an important offset to otherwise strong volume and aftermarket dynamics."
-      ],
-      "new_data": [
-        "GE reaffirmed 2026 guidance but reduced its departures forecast to flat-to-low-single digits from mid-single digits.",
-        "Management now assumes Brent rises in Q2/Q3 to roughly $105/bbl before easing back by Q4.",
-        "Q1 2026 commercial services grew 39% y/y; internal shop visits rose 35% and spare parts were implied up 45%.",
-        "Services orders rose 49% y/y in Q1, including more than 30% growth since early March.",
-        "Services RPO reached $171B, up about $30B over five quarters and about 22% versus YE24.",
-        "Spare-parts delinquencies are up 70% versus YE24, reinforcing the supply-demand imbalance.",
-        "GE raised its 2026 services growth expectation by $500M to $4.0B y/y from $3.5B.",
-        "Q1 engine deliveries rose 43% y/y; LEAP deliveries were up 63% to 520 units.",
-        "DPT Q1 orders rose 67% y/y to $6.2B; DPT RPO increased to $30B from $25.9B at YE25."
-      ],
-      "management_insights": [
-        "Management took an unusually cautious tone, emphasizing macro and oil-price uncertainty and signaling scar tissue from past downturns.",
-        "GE reaffirmed 2026 guidance rather than raising it despite strong Q1 execution.",
-        "Management expects Q2 2026 services growth in the high teens.",
-        "Two-thirds of the internal shop visits embedded in guidance are already off-wing, suggesting good near-term visibility.",
-        "Management expects tariff headwinds to be mitigated through cost actions, pricing surcharges, duty drawbacks, USMCA compliance, exemptions, foreign-trade zones, and rerouting work.",
-        "Management continues to guide to 2028 sales growth of double digits, operating profit of $11.5B, and roughly 100% FCF conversion."
-      ],
-      "estimate_changes": [],
-      "estimate_change_details": [
-        {
-          "metric": "Adj EPS",
-          "period": "2026E",
-          "prior": 7.45,
-          "new": 7.5,
-          "pct_change": "1%",
-          "note": "Jefferies raised 2026 adjusted EPS to $7.50 from $7.45."
-        },
-        {
-          "metric": "Adj EPS",
-          "period": "2027E",
-          "prior": 8.55,
-          "new": 8.65,
-          "pct_change": "1%",
-          "note": "Jefferies raised 2027 adjusted EPS to $8.65 from $8.55."
-        },
-        {
-          "metric": "Price Target",
-          "period": "12-month",
-          "prior": 375,
-          "new": 365,
-          "pct_change": "-3%",
-          "note": "PT cut to $365 from $375 while maintaining Buy."
-        },
-        {
-          "metric": "Revenue",
-          "period": "2026E",
-          "prior": null,
-          "new": 48163,
-          "pct_change": null,
-          "note": "2026 revenue estimate change shown as less than 1%, but prior Jefferies revenue estimate is not disclosed in the excerpt."
-        },
-        {
-          "metric": "Revenue",
-          "period": "2027E",
-          "prior": null,
-          "new": 52853,
-          "pct_change": null,
-          "note": "2027 revenue estimate change shown as less than 1%, but prior Jefferies revenue estimate is not disclosed in the excerpt."
-        },
-        {
-          "metric": "EBIT",
-          "period": "2028E",
-          "prior": null,
-          "new": 12919,
-          "pct_change": null,
-          "note": "Jefferies 2028 adjusted EBIT estimate is $12.9B, presented against company target rather than a prior Jefferies estimate."
-        }
-      ],
-      "evidence_quality": [
-        "Primary company-reported evidence: Q1 results, reaffirmed 2026 guidance, backlog/RPO, order data, and disclosed operational metrics carry high weight.",
-        "Management call/meeting interpretation is important here; the cautious tone and oil/departures assumptions are direct but still partly qualitative.",
-        "Analyst model work is substantial: long-dated revenue, services, margin, FCF, and valuation bridges are mostly Jefferies inference rather than newly disclosed company commitments.",
-        "Evidence is triangulated with company data plus industry/market inputs such as fleet growth, airframe production, and Cirium data, but the 2027-2030 upside case remains forecast-dependent.",
-        "Some conclusions rely on extrapolating current services demand, pricing, and workscope trends, so confidence is strongest near term and lower on outer-year margin expansion."
-      ],
-      "risks_or_watch_items": [
-        "Higher oil prices and the knock-on effect on global air travel and departures.",
-        "Whether Q2/Q3 traffic and utilization hold up well enough to support the services growth implied in Jefferies\u2019 model.",
-        "LEAP durability restoration, warranty unwind, and pace of margin improvement.",
-        "GE9X negative engine margin, launch learning curve, and timing of 777X entry into service.",
-        "Tariff and cost-inflation offsets versus planned pricing and productivity actions.",
-        "Supply-chain constraints, spare-parts shortages, and whether delinquency/backlog converts cleanly into revenue.",
-        "Defense order conversion and mix in DPT.",
-        "Capital deployment pace, especially buybacks and dividends versus FCF and leverage."
-      ],
-      "key_numbers": [
-        "Buy rating maintained; PT cut to $365 from $375.",
-        "2026E revenue $48.2B; 2027E revenue $52.9B; 2028E revenue $57.8B.",
-        "2026E adj EPS $7.50; 2027E adj EPS $8.65.",
-        "Q1 2026 commercial services +39% y/y; Q2 services expected high teens.",
-        "2026 services growth expectation raised to +$4.0B y/y from +$3.5B.",
-        "Services RPO $171B; up about $30B over five quarters.",
-        "Q1 services orders +49% y/y; spare-parts delinquencies +70% versus YE24.",
-        "Q1 engine deliveries +43% y/y; LEAP deliveries +63% to 520.",
-        "2026E adjusted operating profit $10.26B; 2028E adjusted operating profit $12.9B versus company target $11.5B.",
-        "2026E adjusted FCF $8.36B; 2028E adjusted FCF $10.35B."
-      ]
-    },
-    {
-      "id": "20d32aafed7c8190",
-      "title": "Volumes Were Iced Out in Q1, Impacting Margins, But SDP/Resiliency Theses Hold",
-      "file_name": "20260424_Jefferies_HCA_HCA-_Volumes_Were_Iced_Out_in_Q1-_Impacting_Margins-_But.pdf",
-      "modified": "2026-04-27T08:54:44",
-      "pages": 11,
-      "schema_version": 7,
-      "is_sell_side_report": true,
-      "exclusion_reason": null,
-      "sell_side_firm": "JEF",
-      "company": "HCA Healthcare",
-      "ticker": "HCA",
-      "companies_covered": "HCA",
-      "report_date": "2026-04-24",
-      "headline": "Jefferies keeps Buy on HCA after a weather- and respiratory-driven Q1 EBITDA miss, cuts PT to $525 from $590, and argues SDP approvals, resiliency savings, and strong FCF preserve the bull case.",
-      "summary": "Jefferies views HCA\u2019s Q1 miss as largely transitory: winter storms and a weak respiratory season pressured same-store admissions and created fixed-cost deleverage, but revenue was roughly in line, FY2026 revenue/EBITDA/EPS guidance was reaffirmed, SDP expectations were raised, and the firm believes underlying demand, AI/resiliency-driven cost savings, pending state-directed payment approvals, and robust free cash flow keep the medium-term thesis intact despite a lower price target.",
-      "important_observations": [
-        "Underlying EBITDA growth was framed as stronger than reported once adjusting for weather, respiratory weakness, and supplemental payment timing, with Jefferies citing normalized EBITDA growth of 3.5%.",
-        "The Q1 miss appears more margin/deleverage-driven than demand-collapse-driven; same-store revenue per equivalent admission still rose 3.1%, suggesting pricing/acuity held up better than volumes.",
-        "Incremental SDP upside remains a key debate point, with Jefferies expecting further approvals in Florida and Virginia after positive Georgia and Texas developments.",
-        "Management\u2019s resiliency/AI program is positioned as a meaningful offset to policy and reimbursement pressure, with Jefferies pointing to a $400MM EBITDA contribution this year.",
-        "Free cash flow strength remains central to the thesis because it supports both growth CapEx and continued buybacks even through uneven quarterly operating results.",
-        "Variant perception may hinge on whether investors treat Q1 as a one-time weather/flu distortion or as an early sign of softer utilization and weaker commercial mix."
-      ],
-      "new_data": [
-        "Q1 2026 revenue was $19.1B, roughly in line with Street expectations.",
-        "Q1 2026 adjusted EBITDA was $3.73B, 1.9% below Street.",
-        "Same-store admissions rose 0.9%; same-store adjusted admissions rose 1.3%; same-store revenue per adjusted admission rose 3.1%.",
-        "Weather reduced admissions by about 30 bps and weak respiratory trends by about 70 bps in the quarter.",
-        "HCA recognized $200MM of SDP in Q1 versus prior expectations of $80MM, helped by Georgia DPP and reinstatement of the Texas ATLIS program.",
-        "HIX impact was estimated at $150MM in Q1.",
-        "FY2026 guidance was reaffirmed at revenue $76.5B-$80.0B, EBITDA $15.55B-$16.45B, and EPS $29.10-$31.50.",
-        "FY2026 SDP guidance was revised upward by $200MM at the midpoint to a range of negative $50MM to negative $250MM.",
-        "Q1 free cash flow was $704MM."
-      ],
-      "management_insights": [
-        "Management reaffirmed FY2026 revenue, EBITDA, and EPS guidance despite the Q1 miss, signaling confidence that the weakness was temporary.",
-        "Management increased SDP expectations for FY2026, reflecting improved outlook from state-directed payment developments.",
-        "The resiliency program remains a major operating lever, and Jefferies says management expects it to contribute about $400MM of EBITDA this year.",
-        "Management appears focused on using strong cash generation to fund CapEx and share repurchases while preserving growth."
-      ],
-      "estimate_changes": [],
-      "estimate_change_details": [
-        {
-          "metric": "EPS",
-          "period": "FY2026E",
-          "prior": 29.59,
-          "new": 30.48,
-          "pct_change": "3%",
-          "note": "Prior inferred from the report's stated +3% change to Jefferies FY2026 EPS estimate; exact prior value not printed."
-        },
-        {
-          "metric": "Price Target",
-          "period": "12-month",
-          "prior": 590,
-          "new": 525,
-          "pct_change": "-11%",
-          "note": "Jefferies lowered PT while maintaining Buy, citing 10.5x FY2027 EBITDA."
-        }
-      ],
-      "evidence_quality": [
-        "Primary: based on company-reported Q1 2026 results and reaffirmed FY2026 guidance; high relevance for quarterly read-through.",
-        "Primary plus analyst model work: Jefferies combines reported metrics with its own variance analysis, normalization bridge, and revised forecasts.",
-        "Partly triangulated but still inference-heavy on drivers such as weather, respiratory weakness, SDP timing, and resiliency offsets; medium confidence on normalized earnings power.",
-        "Forward-looking upside from pending SDP approvals and additional cost savings is mostly analyst inference rather than confirmed company guidance; lower confidence than reported results."
-      ],
-      "risks_or_watch_items": [
-        "Pending Florida and Virginia SDP approvals are important swing factors for upside.",
-        "eAPTC expiration and broader Medicaid/policy changes could pressure EBITDA if offsets fall short.",
-        "Commercial mix softness, lower acuity, or prolonged volume weakness would challenge the thesis that Q1 was transitory.",
-        "Site-neutrality policy risk remains a sector overhang.",
-        "Resiliency/AI savings may ramp slower than expected.",
-        "A recession could reduce higher-margin commercial procedures."
-      ],
-      "key_numbers": [
-        "Q1 2026 revenue: $19.1B",
-        "Q1 2026 adjusted EBITDA: $3.73B",
-        "Adj. EBITDA vs Street: -1.9%",
-        "Same-store admissions growth: +0.9%",
-        "Same-store adjusted admissions growth: +1.3%",
-        "Same-store revenue per adjusted admission: +3.1%",
-        "Weather admissions drag: 30 bps",
-        "Respiratory drag: 70 bps",
-        "Q1 recognized SDP: $200MM",
-        "Prior SDP expectation for Q1: $80MM",
-        "Estimated HIX impact in Q1: $150MM",
-        "FY2026 revenue guidance: $76.5B-$80.0B",
-        "FY2026 EBITDA guidance: $15.55B-$16.45B",
-        "FY2026 EPS guidance: $29.10-$31.50",
-        "FY2026E EBITDA: $16.09B",
-        "FY2027E EBITDA: $16.90B",
-        "FY2026E EPS: $30.48",
-        "FY2027E EPS: $32.18",
-        "Q1 free cash flow: $704MM",
-        "Price target: $525 (from $590)"
-      ]
-    },
-    {
-      "id": "912552badb9462f5",
-      "title": "Herm\u00e8s International SCA: Expert Call Feedback: Resale Demand Softens",
-      "file_name": "20260425_UBS_RMS-FP_Herme_s_International_SCA_-Expert_Call_Feedback-_Resale.pdf",
-      "modified": "2026-04-27T08:54:43",
-      "pages": 15,
-      "schema_version": 7,
-      "is_sell_side_report": true,
-      "exclusion_reason": null,
-      "sell_side_firm": "UBS",
-      "company": "Herm\u00e8s International SCA",
-      "ticker": "RMS FP",
-      "companies_covered": "RMS FP",
-      "report_date": "2026-04-20",
-      "headline": "UBS expert-call feedback points to softer Herm\u00e8s resale demand, especially outside core icons, while maintaining a Neutral rating and \u20ac1,765 price target.",
-      "summary": "UBS frames a more cautious read-through for Herm\u00e8s from a follow-up expert call with a curated luxury resale platform founder: secondhand demand has softened over the past six months, sell-through is taking longer, and non-core models are under pressure, although store-fresh bags and Birkin demand remain relatively resilient. The note suggests weakening resale support could matter for primary demand and indicates rising VIP preference for rarity, special editions, and exotics, while broader soft-luxury resale trends also look mixed to weaker. UBS keeps a Neutral rating and \u20ac1,765 price target, with forecasts implying modest 2026 earnings pressure before reacceleration in 2027.",
-      "important_observations": [
-        "Resale demand for Herm\u00e8s bags has weakened over the last six months, with a growing mismatch between asking prices and consumer appetite.",
-        "Weakness is concentrated in non-core models such as Evelyne, Picotin, and Lindy; Birkin is described as the only bag model with clearly resilient demand.",
-        "Within quota bags, preference has shifted materially toward Birkin versus Kelly, implying the market is rewarding the strongest iconography and brand-code scarcity.",
-        "Store-fresh bags can still clear, but time-to-sell has lengthened and pre-loved inventory faces greater pricing pressure because supply is higher.",
-        "VIP demand appears to be migrating toward rare colors, novelties, unique specifications, and exotics, reinforcing a bifurcated market between true scarcity and more available product.",
-        "Improved access in markets such as China, helped by lower pre-spend requirements, may be reducing perceived scarcity for historically rarer models.",
-        "Steep resale discounts outside bags, including RTW and accessories, point to weaker broader brand monetization in secondary channels.",
-        "The expert's tone on Herm\u00e8s turned less constructive, which matters because resale-market strength has historically supported primary-market desirability."
-      ],
-      "new_data": [
-        "Expert call conducted on 2026-04-17 with founder of an ultra-curated luxury resale platform.",
-        "Expert says overall secondhand Herm\u00e8s bag demand has softened over the past six months.",
-        "Birkin/Kelly preference within quota bags has shifted to roughly 70/30 from about 50/50 previously.",
-        "Sourcing of Herm\u00e8s bags is about 70% from professional resellers and has become easier outside rare models.",
-        "RTW resale discounts are around 70% to retail.",
-        "Shoes and accessories such as belts are trading at roughly 70-80% discounts to retail.",
-        "China access to Herm\u00e8s bags has improved due to lower pre-spend requirements, according to the expert."
-      ],
-      "management_insights": [],
-      "estimate_changes": [
-        "No explicit estimate revision versus prior UBS forecasts disclosed in the note.",
-        "UBS maintains Neutral rating and \u20ac1,765 price target.",
-        "UBS forecasts imply 2026 revenue growth of 4.2%, EBIT down 0.1%, and EPS down 1.1%, followed by stronger 2027 recovery."
-      ],
-      "estimate_change_details": [
-        {
-          "metric": "Price Target",
-          "period": "12m",
-          "prior": 1820,
-          "new": 1765,
-          "pct_change": "-3%",
-          "note": "Price target history in the report shows a cut from \u20ac1,820 on 2026-03-30 to \u20ac1,765 on 2026-04-16."
-        }
-      ],
-      "evidence_quality": [
-        "Primary/near-primary: UBS cites company accounts, LSEG Eikon, and UBS model forecasts for financials and valuation.",
-        "Channel check / expert call: key incremental thesis rests on a follow-up call with the founder of a curated resale platform, which is informative but anecdotal and sentiment-sensitive.",
-        "Triangulated only partially: resale observations are detailed within handbags but broader comments on jewelry and other brands are explicitly noted by the expert as less certain.",
-        "Mostly analyst inference for stock impact: the bearish read-through to primary demand and brand health is UBS interpretation built on secondary-market evidence rather than company guidance."
-      ],
-      "risks_or_watch_items": [
-        "Further softening in resale demand could weaken the scarcity halo that supports full-price primary demand.",
-        "Non-core model pressure and longer sell-through times may be an early warning of broader normalization in luxury demand.",
-        "If access continues to improve in China and other markets, perceived exclusivity could erode for less-rare Herm\u00e8s products.",
-        "VIP concentration in ultra-rare product may narrow the brand's demand breadth and make performance more dependent on top-end clients.",
-        "UBS highlights broader macro/discretionary spending slowdown, brand-image deterioration, raw-material volatility, and supply-chain disruption as key risks."
-      ],
-      "key_numbers": [
-        "Neutral rating",
-        "\u20ac1,765 price target",
-        "Share price \u20ac1,741 on 2026-04-17",
-        "Forecast stock return 2.4%",
-        "2026E revenue \u20ac16,682m",
-        "2027E revenue \u20ac17,952m",
-        "2026E EBIT \u20ac6,562m",
-        "2027E EBIT \u20ac7,133m",
-        "2026E net earnings \u20ac4,475m",
-        "2027E net earnings \u20ac5,211m",
-        "2026E EPS \u20ac42.60",
-        "2027E EPS \u20ac49.61",
-        "2026E P/E 40.9x",
-        "2027E P/E 35.1x",
-        "2026-2029 sales CAGR 7%",
-        "2026-2029 EPS CAGR 11%",
-        "Birkin/Kelly preference about 70/30 vs about 50/50 previously",
-        "RTW resale discount about 70%",
-        "Shoes/accessories resale discount about 70-80%"
-      ]
-    },
-    {
-      "id": "b66cb1e929e99aa3",
-      "title": "Blackstone Group (BX): Slowdown in Credit fee growth and Real Estate remain headwinds to BX\u2019s growth algo; reiterate Neutral",
-      "file_name": "20260424_Goldman_Sachs_BX_Blackstone_Group_-BX--_Slowdown_in_Credit_fee_growth_and.pdf",
-      "modified": "2026-04-27T08:54:41",
-      "pages": 10,
-      "schema_version": 7,
-      "is_sell_side_report": true,
-      "exclusion_reason": null,
-      "sell_side_firm": "GS",
-      "company": "Blackstone Group",
-      "ticker": "BX",
-      "companies_covered": "BX",
-      "report_date": "2026-04-24",
-      "headline": "Goldman Sachs cut BX DE/EPS estimates and lowered its price target to $116, arguing muted management-fee growth from Real Estate weakness and slower Credit fee growth will keep shares range-bound despite stronger PE, Infra, Secondaries, and institutional Credit trends.",
-      "summary": "Following 1Q26 results, Goldman Sachs reiterates Neutral on Blackstone and lowers 2026-2028 distributable earnings/EPS estimates plus its 12-month price target to $116 from $118. The core thesis is that Real Estate and BCRED, which together represent more than 40% of management fees, should remain near-term drags on fee-related earnings growth, while stronger fundraising and activation in Private Equity, Infrastructure, Secondaries, and institutional Credit are not enough to offset slower fee conversion, retail credit outflows, and softer real estate performance/fundraising timing.",
-      "important_observations": [
-        "Real Estate and BCRED are expected to be the main drags on 2026 fee-related earnings growth because they comprise more than 40% of management fees and are both under pressure.",
-        "Goldman sees BX's underlying FRE growth algorithm at only 6%-7% in 2026, with a sharper rebound pushed into 2027 rather than near term.",
-        "Institutional Credit remains a bright spot, but mix shift toward lower-fee insurance/institutional capital and BCRED outflows reduces the earnings conversion from AUM growth.",
-        "Real Estate fundraising risk is rising because recent BREP vintages show weak returns and realizations are outpacing fundraising, potentially capping the size of the next flagship vintage.",
-        "The stock still screens expensive versus peers at roughly 25x NTM P/E and 30x implied P/FRE, limiting upside until growth visibly re-accelerates."
-      ],
-      "new_data": [
-        "2026/2027/2028E DE per share cut to $5.64/$7.64/$8.23 from $5.69/$8.08/$8.83.",
-        "12-month price target reduced to $116 from $118; target FRE multiple cut to 26x from 27x.",
-        "Goldman now expects only 6%-7% management fee growth in 2026, with acceleration to 11%-12% in 2027 and 2028.",
-        "1Q26 total base management fee growth was 8% YoY; Real Estate management fees were down 3% YoY.",
-        "BCRED had 1Q net outflows of $1.4bn.",
-        "Institutional Credit/insurance fundraising was strong, with about $40bn of Credit fundraising in 1Q and $34bn of inflows referenced for institutional credit momentum.",
-        "IG private credit platform reached $130bn, up 23% YoY.",
-        "Credit segment available capital was $74bn, with about 85% expected to generate incremental management fees upon deployment."
-      ],
-      "management_insights": [
-        "Management suggested YoY management-fee growth should decelerate until later in 2026.",
-        "Private Equity fee conversion is delayed by fee holidays, with fuller fee-rate contribution skewed to 2H26.",
-        "Management characterized April fundraising weakness in BXINFRA and BXPE as episodic and tied to macro volatility and the Iran war, not structural.",
-        "Management said institutional demand from pensions, sovereign wealth, and insurance clients remains robust, especially in IG private credit and ABF.",
-        "Management indicated BCRED demand remains subdued despite roughly flat April flows, implying continued near-term retail credit headwinds."
-      ],
-      "estimate_changes": [],
-      "estimate_change_details": [
-        {
-          "metric": "EPS",
-          "period": "2026E",
-          "prior": "$5.69",
-          "new": "$5.64",
-          "pct_change": "-1%",
-          "note": "DE per share estimate lowered after 1Q26 results."
-        },
-        {
-          "metric": "EPS",
-          "period": "2027E",
-          "prior": "$8.08",
-          "new": "$7.64",
-          "pct_change": "-5%",
-          "note": "DE per share estimate lowered on weaker fee-growth outlook."
-        },
-        {
-          "metric": "EPS",
-          "period": "2028E",
-          "prior": "$8.83",
-          "new": "$8.23",
-          "pct_change": "-7%",
-          "note": "DE per share estimate lowered on slower medium-term growth expectations."
-        },
-        {
-          "metric": "Price Target",
-          "period": "12-month",
-          "prior": "$118",
-          "new": "$116",
-          "pct_change": "-2%",
-          "note": "PT cut as Goldman rolled forward Q5-Q8 FRE estimates and reduced target FRE multiple to 26x from 27x."
-        }
-      ],
-      "evidence_quality": [
-        "Primary evidence: based on company-reported 1Q26 results and management commentary from the earnings release/call.",
-        "Primary evidence: includes company-reported segment data, fundraising, fee growth, AUM/FPAUM, performance, and flow datapoints.",
-        "Analyst model work is significant: estimate cuts, FRE growth framing, SOTP valuation, and multiple compression are Goldman inference layered on top of reported data.",
-        "Some forward-looking judgments rely on management guidance and analyst assumptions about fundraising timing, fee holidays, deployment, and retail flow trends rather than hard backlog conversion."
-      ],
-      "risks_or_watch_items": [
-        "Watch BCRED flows through end-2026 and possibly early 2027; continued outflows could offset institutional Credit strength.",
-        "Track fundraising and performance for next Real Estate flagship vintages, especially BREP IX and other T-2 vintages.",
-        "Monitor timing of fee activation after PE fundraising and fee holidays, particularly BCP Asia III, SP X, and Energy V.",
-        "Follow whether April Wealth-channel softness in BXINFRA and BXPE rebounds as management expects.",
-        "Valuation remains a risk if growth stays muted for longer than expected."
-      ],
-      "key_numbers": [
-        "Neutral rating; price target $116 vs prior $118.",
-        "Shares closed at $122.33 on 2026-04-23, implying about 5% downside to PT.",
-        "2026E/2027E/2028E DE per share: $5.64 / $7.64 / $8.23.",
-        "Expected 2026 management fee growth: 6%-7%.",
-        "Expected 2027-2028 management fee growth: 11%-12%.",
-        "1Q26 base management fee growth: +8% YoY.",
-        "Real Estate management fees in 1Q26: -3% YoY.",
-        "BCRED 1Q net flows: -$1.4bn.",
-        "Institutional Credit inflows in 1Q: $34bn; total Credit fundraising about $40bn.",
-        "IG private credit platform AUM: $130bn, up 23% YoY.",
-        "Credit available capital: $74bn; about 85% expected to earn fees when deployed.",
-        "BREP IX had returned about 50% of committed capital with a 5% net IRR as of 2026-03-31.",
-        "Goldman models next RE flagship vintage at about $27bn, flat v. prior vintage.",
-        "Stock valuation cited at about 25x NTM P/E and 30x implied P/FRE."
       ]
     }
   ],
