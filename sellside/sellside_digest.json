@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-27T14:39:39",
+  "generated_at": "2026-04-27T15:49:48",
   "source": "C:\\Users\\AdrianOw\\OneDrive - chieftaincapital.com\\Desktop",
   "reports": [
     {
@@ -861,80 +861,6 @@
         "Logistics expense: ~7% of SG&A.",
         "Credit datapoint: subprime delinquencies fell to 5.54% in March from 6.37% in January.",
         "Valuation framing: PT implies roughly 24x-25x FY27 Adj EBITDA."
-      ]
-    },
-    {
-      "id": "839a8749c43b0ec4",
-      "title": "F3Q Preview - Capacity Considerations",
-      "file_name": "20260427_Deutsche_Bank_MSFT_Microsoft-_F3Q_Preview_Capacity_Considerations.pdf",
-      "modified": "2026-04-27T08:54:55",
-      "pages": 19,
-      "schema_version": 7,
-      "is_sell_side_report": true,
-      "exclusion_reason": null,
-      "sell_side_firm": "DB",
-      "company": "Microsoft",
-      "ticker": "MSFT",
-      "companies_covered": "MSFT",
-      "report_date": "2026-04-20",
-      "headline": "DB previews MSFT F3Q with likely modest rev upside and Azure strength, but argues AI capacity allocation to apps/security/internal R&D may cap near-term Azure upside and keep focus on proving AI monetization ex-Azure.",
-      "summary": "Deutsche Bank previews MSFT F3Q ahead of the April 29, 2026 print, expecting another solid qtr with rev around guidance-to-slightly above, Azure likely above the 37-38% cc guide but only modestly because constrained capacity is being allocated across Azure, first-party apps, security, and internal R&D. DB stays constructive on the long-term setup and keeps Buy/$575 PT, but argues the stock increasingly needs tangible AI monetization outside Azure as capex, allocation tradeoffs, and sentiment around competitive AI risk remain key debates.",
-      "important_observations": [
-        "DB sees underlying Azure demand/supply support for growth above guide, but thinks allocation choices likely limit the beat to roughly 1 pt rather than a major upside print.",
-        "The central debate is not demand but where scarce AI capacity is deployed; prioritizing first-party apps, security, and internal R&D may sacrifice near-term Azure monetization for longer-term platform value.",
-        "DB estimates Azure contributes more than 60% of FY26 incremental rev, reinforcing that Azure remains the primary growth engine even as investors look for broader AI monetization.",
-        "The note argues investor burden is shifting toward evidence of AI payoff above the infra layer, especially in M365/Copilot and other application surfaces.",
-        "DB views fears of near-term competitive displacement in enterprise productivity/systems of record as overhyped, but acknowledges sentiment risk until usage and monetization data improve.",
-        "Commercial bookings could be stronger than expected due to renewals, policy changes around annual consumption thresholds, and customers reserving capacity for rising inference needs.",
-        "DB expects capex growth to decelerate materially in FY27 even if absolute spend remains up y/y, implying capacity constraints and allocation tradeoffs may persist beyond this qtr."
-      ],
-      "new_data": [
-        "DB models F3Q rev/EPS at $81.2bn/$4.06 vs Street $81.3bn/$4.05.",
-        "DB models F4Q rev/EPS at $88.0bn/$4.27 vs Street $88.0bn/$4.25.",
-        "The note highlights 15m paid M365 Copilot seats as still early penetration, roughly ~1% of the broader M365 base by DB's framing.",
-        "DB cites prior mgmt commentary implying Azure could have grown above 40% if all incremental GPUs had been allocated there, suggesting $2bn+ ARR worth of capacity may be directed elsewhere.",
-        "The note points to announced M365 price increases effective July 1, 2026, including Office 365 E3 to $26 from $23 and Microsoft 365 E3 to $39 from $36.",
-        "DB cites recent product/strategy items including Agent 365 GA and a new E7 SKU starting May 1 as potential future ARPU tailwinds.",
-        "DB references commercial cRPO growth accelerating to 39% y/y and commercial RPO reaching $625bn as evidence of strong forward demand."
-      ],
-      "management_insights": [
-        "Mgmt has indicated a relative preference to allocate AI capacity toward first-party apps, security features, and internal R&D rather than maximizing near-term Azure growth.",
-        "Last qtr mgmt suggested Azure growth could have exceeded 40% with different GPU allocation, implying deliberate tradeoffs rather than pure supply shortfall.",
-        "Mgmt last disclosed 15m paid M365 Copilot seats, supporting traction but still not enough to visibly change M365 Commercial Cloud growth yet.",
-        "Prior commentary framed Azure guidance as capacity-driven, and DB believes that characterization likely still holds for F3Q and likely F4Q.",
-        "Mgmt has guided F3Q commercial bookings to healthy core growth ex-OpenAI, supported by strong renewal rates.",
-        "DB expects mgmt to remain disciplined on op margin despite elevated AI investment and increased R&D focus.",
-        "The report flags org changes during F3Q including a unified Copilot organization across commercial and consumer plus a reorganized Copilot leadership team."
-      ],
-      "estimate_changes": [],
-      "estimate_change_details": [],
-      "evidence_quality": [
-        "Primary: company-reported historical results, guidance, product disclosures, and prior mgmt commentary form the core evidence base.",
-        "Analyst model work: the note is largely a preview built on DB segment forecasts, margin assumptions, and scenario analysis around capacity allocation.",
-        "Triangulated: DB supplements company data with IDC/Gartner PC shipment data, Bloomberg consensus, and industry capex/market datapoints.",
-        "Channel-check / anecdotal elements are present in bookings, migration, GPU pricing, and server demand commentary, so some conclusions are inferential rather than fully verified.",
-        "Overall weight: moderately strong for near-term setup and framing, but several key calls on Azure upside limits and AI monetization timing are still mostly analyst inference."
-      ],
-      "risks_or_watch_items": [
-        "Azure upside may remain capped if incremental capacity continues to be diverted to apps, security, and internal AI R&D.",
-        "The stock may need clearer proof of AI monetization outside Azure, especially in M365/Copilot, to sustain sentiment.",
-        "Capex growth is still very high in FY26, while FY27 may bring slower growth and continued allocation friction.",
-        "Memory pricing, component costs, and geopolitical conflict could pressure capex efficiency, supply, and F4Q/FY27 planning.",
-        "Commercial bookings strength could still be constrained medium-term if customers want more capacity than MSFT can provision.",
-        "MPC remains volatile given PC demand, inventory normalization, Windows refresh timing, and gaming execution.",
-        "Potential moves into frontier models could increase compute intensity and crowd out externally monetizable workloads."
-      ],
-      "key_numbers": [
-        "Rating/PT: Buy, $575 PT.",
-        "Price at 2026-04-17: $422.79.",
-        "F3Q26E total rev $81.2bn, non-GAAP EPS $4.06, op income $36.6bn.",
-        "F3Q26 Azure guide: +37-38% y/y cc; DB bogey: 38-39%.",
-        "F4Q26E total rev $88.0bn, EPS $4.27.",
-        "F3Q26 capex est.: DB $34.5bn vs Street ~$35bn; F2Q actual capex incl. leases was $37.5bn.",
-        "FY26 capex growth expected above prior year; DB expects FY27 capex still up y/y but at a meaningfully lower growth rate than ~60% in FY26.",
-        "15m paid M365 Copilot seats disclosed last qtr; seat adds +160% y/y.",
-        "Commercial RPO: $625bn as of F2Q26; commercial cRPO growth: +39% y/y last qtr.",
-        "DB says current $575 PT implies 28x CY27E EPS versus Mag 7 median ~27x."
       ]
     }
   ],
