@@ -1,7 +1,1120 @@
 {
-  "generated_at": "2026-04-28T10:12:43",
+  "generated_at": "2026-04-28T10:26:10",
   "source": "C:\\Users\\AdrianOw\\OneDrive - chieftaincapital.com\\Desktop",
   "reports": [
+    {
+      "id": "982912a3429e2abd",
+      "title": "U.S. Semiconductors & Semiconductor Capital Equipment: Shifting Ratings Ahead of CQ1",
+      "file_name": "20260422_Barclays_WDC_U.S._Semiconductors_-_Semiconductor_Capital_Equipment-_S.pdf",
+      "modified": "2026-04-28T10:09:37",
+      "pages": 34,
+      "schema_version": 7,
+      "is_sell_side_report": true,
+      "exclusion_reason": null,
+      "sell_side_firm": "BCA",
+      "company": "Western Digital",
+      "ticker": "WDC",
+      "companies_covered": "WDC, STX, SWKS, QRVO, QCOM, PENG",
+      "report_date": "2026-04-22",
+      "headline": "Barclays keeps WDC at OW and raises PT to $405 on a materially more bullish HDD pricing/ASP outlook and tighter LT HDD supply-demand.",
+      "summary": "Barclays\u2019 sector note shifts several ratings ahead of CQ1, but for WDC the key change is a PT increase to $405 from $325 while maintaining OW. The thesis is that HDD pricing has further legs as Flash pricing rises, supply discipline holds, and hyperscaler demand visibility extends into CY27-28. Barclays materially lifts industry HDD rev/ASP assumptions and raises WDC EPS ests, arguing the market is underappreciating a more durable structural re-rating in drives rather than a short cyclical spike.",
+      "important_observations": [
+        "Barclays sees drives as the most attractive value pocket in semis, with more pricing leverage left in HDD vs Flash.",
+        "The firm argues HDD industry re-rating could be more permanent given duopoly structure and capex/supply discipline.",
+        "WDC is positioned to benefit from higher-capacity mix, stronger Mass Capacity pricing, and a structurally tighter Nearline market.",
+        "Barclays frames ASP, not units, as the main earnings driver in CY26-27, implying margin and EPS torque can remain strong even with unit declines.",
+        "The note suggests upside risk to current HDD pricing assumptions as LTAs roll off and vendors renegotiate at materially higher levels.",
+        "Barclays still views WDC favorably even while noting STX\u2019s 40TB/HAMR transition may improve STX\u2019s relative cost position over time."
+      ],
+      "new_data": [
+        "Barclays raises CY26 HDD industry rev growth to +31% y/y from +14% prior.",
+        "CY26 HDD rev forecast lifted to $30B from $25B prior; CY27 lifted to $39B from $30B prior.",
+        "CY26 HDD units now seen at 121M vs 110M prior; CY27 at 119M vs 107M prior.",
+        "CY26 ASP forecast raised to +33% y/y from +27% prior; CY27 to +34% from +20% prior.",
+        "Barclays models Mass Capacity $/TB up +7% y/y in CY26 and +15% in CY27.",
+        "For WDC specifically, Barclays now forecasts rev growth of +39% in CY26 and +32% in CY27 vs prior +25% and +26%."
+      ],
+      "management_insights": [
+        "Industry commentary is said to point to mid-high single-digit $/TB increases through each qtr of CY26, with Barclays seeing further upside.",
+        "Mgmt commentary cited by Barclays suggests both HDD vendors remain committed to not adding capacity.",
+        "Nearline capacity is described as allocated through CY26 and into CY27, with cloud customers already discussing CY28 demand.",
+        "WDC downside risk is explicitly tied to a worse-than-expected pricing environment, underscoring pricing as the core driver."
+      ],
+      "estimate_changes": [],
+      "estimate_change_details": [
+        {
+          "metric": "Price Target",
+          "period": "Current",
+          "prior": 325,
+          "new": 405,
+          "pct_change": 25,
+          "note": "PT raised on higher CY27 EPS and a higher target multiple."
+        },
+        {
+          "metric": "EPS",
+          "period": "FY1 / CY26E",
+          "prior": 8.68,
+          "new": 9.19,
+          "pct_change": 6,
+          "note": "Barclays FY1 EPS estimate increased."
+        },
+        {
+          "metric": "EPS",
+          "period": "FY2 / CY27E",
+          "prior": 12.42,
+          "new": 13.93,
+          "pct_change": 12,
+          "note": "Barclays FY2 EPS estimate increased."
+        },
+        {
+          "metric": "Revenue",
+          "period": "CY26 HDD industry",
+          "prior": "$25B",
+          "new": "$30B",
+          "pct_change": 17,
+          "note": "Rounded from $25.4B to $29.7B; industry HDD forecast, not WDC-only revenue."
+        },
+        {
+          "metric": "Revenue",
+          "period": "CY27 HDD industry",
+          "prior": "$30B",
+          "new": "$39B",
+          "pct_change": 31,
+          "note": "Rounded from $29.6B to $38.8B; industry HDD forecast, not WDC-only revenue."
+        }
+      ],
+      "evidence_quality": [
+        "Primary + analyst model work: Barclays cites company data, prior company commentary, and its own revised HDD model.",
+        "Triangulated industry view: combines company commentary, Flash pricing context, IDC data, and Barclays sector work.",
+        "Mostly forward-looking/inference-heavy for WDC: PT and est changes rely on Barclays assumptions for pricing, mix, and supply discipline.",
+        "Limited new primary WDC-specific disclosure in this note; conviction depends more on industry structure and pricing analysis than fresh mgmt engagement."
+      ],
+      "risks_or_watch_items": [
+        "HDD pricing could underwhelm if supply/demand tightness eases faster than Barclays expects.",
+        "Flash pricing could normalize, reducing relative HDD pricing umbrella and weakening the bullish storage thesis.",
+        "STX\u2019s HAMR/40TB execution could shift competitive dynamics and relative margin leadership over time.",
+        "Watch hyperscaler demand follow-through into CY27-28 and whether allocation/tightness persists after current LTAs roll.",
+        "Any deviation from capital discipline or capacity additions by HDD vendors would challenge the structural re-rating thesis."
+      ],
+      "key_numbers": [
+        "WDC rating: OW maintained.",
+        "WDC PT: $405 vs $325 prior.",
+        "WDC share price in report: $383.81 on 21-Apr-2026.",
+        "WDC EPS: FY1 9.19 vs 8.68 prior; FY2 13.93 vs 12.42 prior.",
+        "WDC PT methodology: 24x CY27 EPS of $16.83 vs prior 22x on $14.74.",
+        "Barclays WDC rev growth fcst: +39% CY26, +32% CY27.",
+        "HDD industry rev fcst: $29.7B CY26 and $38.8B CY27.",
+        "HDD units fcst: 121.4M CY26 and 118.9M CY27.",
+        "Industry ASP fcst: +33% y/y CY26 and +34% y/y CY27.",
+        "Mass Capacity $/TB fcst: +7% y/y CY26 and +15% y/y CY27."
+      ]
+    },
+    {
+      "id": "a8fde2f19bc6a402",
+      "title": "HDD Demand (and Pricing) Still Strengthening; Moving STX to Top Pick",
+      "file_name": "20260406_Morgan_Stanley_STX_Hard_Disk_Drives-_HDD_Demand_-and_Pricing-_Still_Strengt.pdf",
+      "modified": "2026-04-28T10:09:35",
+      "pages": 34,
+      "schema_version": 7,
+      "is_sell_side_report": true,
+      "exclusion_reason": null,
+      "sell_side_firm": "MS",
+      "company": "STX",
+      "ticker": "STX",
+      "companies_covered": "STX, WDC",
+      "report_date": "2026-04-06",
+      "headline": "MS keeps OW on STX/WDC, moves Top Pick to STX, lifts PTs and ests on stronger HDD demand, tighter supply, and firmer 2027/2028 pricing.",
+      "summary": "Morgan Stanley argues the nearline HDD cycle is getting stronger, not weaker, with hyperscaler demand, longer customer visibility, and pricing checks implying a tighter supply backdrop through CY28 and balance only by CY29. The note raises STX/WDC ests and PTs, reiterates OW on both, and shifts Top Pick to STX on a modest valuation discount, faster GM expansion from HAMR-led cost-downs, and greater scope for upward EPS revisions versus Street cons.",
+      "important_observations": [
+        "MS says recent checks point to sustained hyperscaler demand strength and firmer pricing into 2027, extending the 'stronger for longer' HDD thesis.",
+        "The core variant view is not just better demand but materially better price/TB and cost/TB dynamics, which together drive GM/EPS well above cons.",
+        "MS now sees STX/WDC GM running 400-500 bps above cons through CY27, with STX having the wider gap vs Street and therefore more revision upside.",
+        "STX becomes Top Pick mainly on relative valuation, faster HAMR-led cost-downs, and less dilution risk vs WDC, not because MS turned less constructive on WDC.",
+        "The note frames HDDs as a more attractive AI infra bottleneck than many peers given 80-90% DC rev exposure, oligopolistic structure, and no greenfield capacity growth.",
+        "MS argues the market is over-applying memory-cycle concerns to HDDs despite a tighter industry structure, lower capex intensity, and less risk of supply response."
+      ],
+      "new_data": [
+        "Latest channel/check work suggests 2027/2028 HDD negotiations are occurring near $20/TB, well above MS base-case assumptions of $13-15/TB.",
+        "MS supply/demand tracker now implies HDD shortages through CY28 and parity only in CY29, one year later than in its original thesis.",
+        "New bottom-up cost-per-TB model indicates cost-downs should accel over the next ~6 qtrs as 40TB+ drives ramp, supporting mid/high-50s GMs entering CY27.",
+        "MS says industry output may be LSD-MSD% above prior expectations, but demand has improved enough that shortages still widen.",
+        "The report introduces a detailed quarterly mix model for STX and WDC, with more explicit assumptions around HAMR/ePMR ramps and high-capacity mix."
+      ],
+      "management_insights": [
+        "Mgmt commentary and company discussions are cited to support HAMR/ePMR roadmaps, qualification timing, and high-capacity mix assumptions.",
+        "STX mgmt milestones imply HAMR could reach ~80% of nearline EBs by end-FY28 in MS's framework.",
+        "WDC public roadmap points to ~60TB ePMR by 2028 and potential 100TB capacity by decade-end; MS models remain more conservative than this.",
+        "Company conversations reportedly showed no signs of current HDD cycle weakness and no near-term operational impact from helium risk."
+      ],
+      "estimate_changes": [],
+      "estimate_change_details": [
+        {
+          "metric": "Price Target",
+          "period": "STX",
+          "prior": 468,
+          "new": 582,
+          "pct_change": 24,
+          "note": "PT raised; STX moved to Top Pick."
+        },
+        {
+          "metric": "Price Target",
+          "period": "WDC",
+          "prior": 369,
+          "new": 380,
+          "pct_change": 3,
+          "note": "PT raised; OW reiterated."
+        },
+        {
+          "metric": "Revenue",
+          "period": "STX FY27E ($mm)",
+          "prior": 15368,
+          "new": 15793,
+          "pct_change": 3,
+          "note": "Higher price/TB assumptions and stronger margin setup."
+        },
+        {
+          "metric": "EPS",
+          "period": "STX FY27E ($)",
+          "prior": 26,
+          "new": 26,
+          "pct_change": -1,
+          "note": "Raised pricing/cost assumptions were offset by higher diluted shares; report text still frames the change as modestly higher vs prior."
+        },
+        {
+          "metric": "Revenue",
+          "period": "STX FY28E ($mm)",
+          "prior": 17938,
+          "new": 18814,
+          "pct_change": 5,
+          "note": "Higher price/TB and stronger mix assumptions."
+        },
+        {
+          "metric": "EPS",
+          "period": "STX FY28E ($)",
+          "prior": 37,
+          "new": 38,
+          "pct_change": 4,
+          "note": "Rounded from $36.74 to $38.07."
+        },
+        {
+          "metric": "Revenue",
+          "period": "WDC FY27E ($mm)",
+          "prior": 16707,
+          "new": 16792,
+          "pct_change": 1,
+          "note": "Modest uplift from higher price/TB."
+        },
+        {
+          "metric": "EPS",
+          "period": "WDC FY27E ($)",
+          "prior": 16,
+          "new": 17,
+          "pct_change": 2,
+          "note": "Rounded from $16.35 to $16.70; driven by higher price/TB, lower cost/TB, and less dilution."
+        },
+        {
+          "metric": "Revenue",
+          "period": "WDC FY28E ($mm)",
+          "prior": 20313,
+          "new": 20693,
+          "pct_change": 2,
+          "note": "Modest uplift on improved HDD assumptions."
+        }
+      ],
+      "evidence_quality": [
+        "Primary + semi-primary: company-reported data/guidance, public roadmaps, and direct conversations with STX/WDC mgmt.",
+        "Triangulated but partly anecdotal: recent HDD channel checks and hyperscaler pricing discussions are central to the thesis.",
+        "Heavy analyst model work: supply/demand tracker and bottom-up cost-per-TB / mix models drive much of the upside case.",
+        "Useful but not fully verifiable from outside: pricing negotiations and qualification timing rely on checks and inference, so conviction should be high but not treated as hard reported fact."
+      ],
+      "risks_or_watch_items": [
+        "Hyperscalers improve HDD utilization/efficiency, reducing demand growth.",
+        "Helium supply disruptions constrain HDD output.",
+        "HAMR/ePMR roadmap or customer qualification delays.",
+        "Unexpected unit capacity additions weaken pricing discipline.",
+        "Toshiba or new entrants disrupt the oligopoly.",
+        "AI/cloud capex slows on ROIC/FCF scrutiny.",
+        "eSSD share gains outpace assumptions and pressure HDD demand."
+      ],
+      "key_numbers": [
+        "STX PT $582 from $468; WDC PT $380 from $369.",
+        "MS reiterates OW on both; Top Pick shifts from WDC to STX.",
+        "2027/2028 pricing checks near $0.02/GB vs MS base case $0.013-0.015/GB.",
+        "MS sees HDD shortages of ~200EB in CY26 and ~250EB in CY27.",
+        "MS now expects supply/demand parity only in CY29.",
+        "STX CY27 EPS base/bull: $32.31 / $41.90; WDC CY27 EPS base/bull: $21.12 / $27.34.",
+        "MS says STX/WDC trade at ~13-14x new CY27 EPS, while its FY27 EPS sits 25-30% above cons and FY28 EPS 45-50% above Street.",
+        "Base-case CY27 GM: STX 57.9%, WDC 59.0%; bull-case CY27 GM: STX 64.6%, WDC 64.8%."
+      ]
+    },
+    {
+      "id": "9bcdec2cdbc56428",
+      "title": "Seagate: Potential Upside to Estimates Remains Despite Recent Robust Increases; Cloud Demand and Pricing Tailwinds to Accelerate Margins; Initiate at OW",
+      "file_name": "20260330_JP_Morgan_STX_Seagate-_Potential_Upside_to_Estimates_Remains_Despite_R.pdf",
+      "modified": "2026-04-28T10:09:34",
+      "pages": 38,
+      "schema_version": 7,
+      "is_sell_side_report": true,
+      "exclusion_reason": null,
+      "sell_side_firm": "JPM",
+      "company": "Seagate",
+      "ticker": "STX",
+      "companies_covered": "STX",
+      "report_date": "2026-03-30",
+      "headline": "JPM init STX at OW with $525 Dec-26 PT on view that AI/cloud storage demand, HDD pricing tailwinds, and HAMR-driven mix can push rev/EPS materially above cons over the next 2-3 yrs.",
+      "summary": "JPM initiates STX at OW, arguing the stock can still work after a sharp rerating because AI-driven cloud capex, structurally better HDD pricing, and a disciplined duopoly should support a stronger earnings cycle than investors historically associate with HDDs. The note frames STX as a beneficiary of mid-20s exabyte growth, low-single-digit price gains instead of historical price declines, and HAMR-led mix improvement, driving ~25% rev CAGR and 50%+ operating earnings CAGR with upside to cons, especially into CY27/FY27.",
+      "important_observations": [
+        "Core bull case is not just demand growth but a structural change in HDD pricing: rev/EB may turn from historical low-teens declines to flat-to-up/LSD growth.",
+        "JPM argues supply discipline by STX/WDC matters as much as AI demand, because higher-capacity drives can meet exabyte growth without flooding unit supply.",
+        "Variant view is that investors may still be underestimating how much cloud/AI storage demand can sustain better pricing and higher GP/EB.",
+        "HAMR adoption is treated as a key upside lever: faster customer qualification and mix shift could lift exabyte growth and margins beyond base-case assumptions.",
+        "The note suggests valuation should be benchmarked vs AI suppliers rather than STX's own pre-AI history, implying further rerating is possible if the capex cycle proves durable."
+      ],
+      "new_data": [
+        "Initiation at OW with Dec-26 PT of $525.",
+        "JPM forecasts FY25-FY27 rev from $9.1bn to $14.6bn and adj EPS from $8.11 to $20.06.",
+        "JPM sees 25% rev CAGR and 50%+ operating earnings CAGR over the medium term.",
+        "JPM says STX has qualified a second customer for Mozaic 4 HAMR.",
+        "Base case assumes LSD increases in rev/EB vs historical low-teens declines.",
+        "JPM expects gross margin to approach 50% by end-CY27 and op margin to reach mid-40s in FY28."
+      ],
+      "management_insights": [
+        "Mgmt is presented as experienced in navigating storage cycles, with long-tenured operating and technology leadership.",
+        "JPM highlights execution on higher-capacity drive transitions and recent 20%+ y/y exabyte growth as evidence mgmt is converting demand into shipments.",
+        "Second customer qualification for Mozaic 4 is cited as a sign HAMR adoption is progressing faster than expected.",
+        "Mgmt guidance on HAMR mix appears embedded: 50%+ of shipments in 2H26 and >70% exiting FY27."
+      ],
+      "estimate_changes": [
+        "No prior JPM model revision disclosed because this is an initiation.",
+        "JPM's framework implies upside vs street CY27/FY27 ests, especially on pricing, margins, and exabyte growth.",
+        "PT introduced at $525 based on 22x CY27 EPS."
+      ],
+      "estimate_change_details": [
+        {
+          "metric": "Price Target",
+          "period": "Dec-26",
+          "prior": null,
+          "new": 525,
+          "pct_change": null,
+          "note": "New PT introduced on initiation; no prior JPM PT."
+        },
+        {
+          "metric": "Revenue",
+          "period": "FY26E",
+          "prior": null,
+          "new": "11540 USD mn",
+          "pct_change": null,
+          "note": "Initiation forecast; no prior JPM estimate disclosed."
+        },
+        {
+          "metric": "Revenue",
+          "period": "FY27E",
+          "prior": null,
+          "new": "14586 USD mn",
+          "pct_change": null,
+          "note": "Initiation forecast; no prior JPM estimate disclosed."
+        },
+        {
+          "metric": "EBITDA",
+          "period": "FY26E",
+          "prior": null,
+          "new": "4119 USD mn",
+          "pct_change": null,
+          "note": "Initiation forecast; no prior JPM estimate disclosed."
+        },
+        {
+          "metric": "EBITDA",
+          "period": "FY27E",
+          "prior": null,
+          "new": "6132 USD mn",
+          "pct_change": null,
+          "note": "Initiation forecast; no prior JPM estimate disclosed."
+        },
+        {
+          "metric": "EBIT",
+          "period": "FY26E",
+          "prior": null,
+          "new": "3857 USD mn",
+          "pct_change": null,
+          "note": "Initiation forecast; no prior JPM estimate disclosed."
+        },
+        {
+          "metric": "EBIT",
+          "period": "FY27E",
+          "prior": null,
+          "new": "5809 USD mn",
+          "pct_change": null,
+          "note": "Initiation forecast; no prior JPM estimate disclosed."
+        },
+        {
+          "metric": "Net Income",
+          "period": "FY26E",
+          "prior": null,
+          "new": "3001 USD mn",
+          "pct_change": null,
+          "note": "Initiation forecast; no prior JPM estimate disclosed."
+        },
+        {
+          "metric": "Net Income",
+          "period": "FY27E",
+          "prior": null,
+          "new": "4693 USD mn",
+          "pct_change": null,
+          "note": "Initiation forecast; no prior JPM estimate disclosed."
+        },
+        {
+          "metric": "EPS",
+          "period": "FY26E",
+          "prior": null,
+          "new": 13.15,
+          "pct_change": null,
+          "note": "Initiation forecast; no prior JPM estimate disclosed."
+        },
+        {
+          "metric": "EPS",
+          "period": "FY27E",
+          "prior": null,
+          "new": 20.06,
+          "pct_change": null,
+          "note": "Initiation forecast; no prior JPM estimate disclosed."
+        }
+      ],
+      "evidence_quality": [
+        "Primary + analyst model work: uses company-reported results, company slides, and JPM forecasts/valuation.",
+        "Partly triangulated with external market/industry data from IDC, Gartner, 650 Group, and Bloomberg.",
+        "Some support comes from company-reported/customer qualification datapoints and mgmt roadmap disclosures, which are more concrete than broad thematic AI claims.",
+        "A meaningful part of the upside case is analyst inference on pricing durability, capex sustainability, and valuation rerating, so confidence is moderate rather than high-certainty.",
+        "No channel checks, survey, or expert-call evidence is cited in the excerpt; thesis leans more on industry structure and model assumptions."
+      ],
+      "risks_or_watch_items": [
+        "Cloud capex slowdown could break the demand/pricing setup supporting the bull case.",
+        "Capacity constraints could limit STX's ability to fulfill demand even if end-market conditions remain strong.",
+        "Faster migration to flash/SSD as NAND density improves or relative TCO narrows is the main technology risk.",
+        "Watch whether HDD pricing actually sustains sequential gains rather than reverting to historical deflation.",
+        "Track HAMR mix ramp, Mozaic customer adds, and whether exabyte growth stays in the 20%+ range."
+      ],
+      "key_numbers": [
+        "Price 27-Mar-26: $380.07",
+        "Rating/PT: OW, $525 Dec-26 PT",
+        "Implied upside: ~39%",
+        "FY25A/FY26E/FY27E rev: $9,097mn / $11,540mn / $14,586mn",
+        "FY25A/FY26E/FY27E adj EPS: $8.11 / $13.15 / $20.06",
+        "FY27E adj EBITDA: $6,132mn",
+        "FY27E adj EBIT: $5,809mn",
+        "FY26E/FY27E EBIT margin: 33.4% / 39.8%",
+        "Medium-term rev CAGR: 25%",
+        "Medium-term operating earnings CAGR: 50%+",
+        "CY27 EPS used for PT: $23.45",
+        "Target multiple: 22x P/E"
+      ]
+    },
+    {
+      "id": "b34446c45ebb62d1",
+      "title": "Harnessing the Power of Heat: HDD Versus SSD - Ahead of the Curve Series",
+      "file_name": "20230620_TD_Cowen_LRCX_Harnessing_The_Power_Of_Heat-_HDD_Versus_SSD_Ahead_Of.pdf",
+      "modified": "2026-04-28T10:09:32",
+      "pages": 75,
+      "schema_version": 7,
+      "is_sell_side_report": true,
+      "exclusion_reason": null,
+      "sell_side_firm": "TD",
+      "company": null,
+      "ticker": null,
+      "companies_covered": "STX, WDC, PSTG, LRCX",
+      "report_date": "2023-06-20",
+      "headline": "TD Cowen argues HAMR keeps HDDs structurally advantaged vs eSSDs in DC storage, with STX the main equity beneficiary and PT raised to $78.",
+      "summary": "TD Cowen\u2019s industry note argues HAMR is a step-change for nearline HDD economics, enabling materially lower $/TB and potentially higher OEM GMs, which should preserve HDD dominance in DC storage through 2032 despite SSD price declines. The core call is that HDDs remain the lowest-cost medium for the bulk of cold/warm data, SSD/HDD price parity is unlikely this decade if HAMR ramps, and STX is best positioned given its HAMR lead, while WDC should remain competitive with a lagged roadmap and PSTG/LRCX also benefit from separate NAND-related trends.",
+      "important_observations": [
+        "Variant view vs cons is that HDDs and SSDs remain complementary, with ~80% of DC storage still on HDDs by 2032 rather than SSDs displacing HDDs before price parity.",
+        "HAMR is framed as a structural margin lever, not just a capacity upgrade, because higher TB/drive lowers BOM per TB and may improve pricing discipline in a consolidated HDD market.",
+        "AI is presented as net pos for HDD demand because training/inference ecosystems require large low-cost data lakes even if SSDs serve performance tiers.",
+        "SSD share gains in downturns are viewed as self-limiting because NAND capacity additions are highly capex intensive and hyperscalers design storage architectures well ahead of spot-price troughs.",
+        "WDC share loss risk is argued to be manageable because customer concentration, deliberate dual-sourcing, and WDC's interim roadmap could blunt STX's HAMR lead.",
+        "Non-nearline HDD remains the weak link; the constructive thesis is mainly about nearline/cloud rather than the full HDD portfolio."
+      ],
+      "new_data": [
+        "Proprietary model suggests HAMR can be up to 500 bps accretive to HDD OEM GMs.",
+        "HAMR yields need to exceed ~40% to be GM-neutral vs current CMR economics.",
+        "32TB HAMR is modeled at ~30% lower cost/TB vs 20TB CMR; 36TB HAMR adds another ~10% cost/TB reduction vs 32TB HAMR.",
+        "TD Cowen sees HDD cost/TB staying ~4x cheaper than SSDs by decade-end, or ~2x cheaper on TCO after power/space/perf adjustments.",
+        "Nearline HDDs are projected to remain ~80% of DC storage by 2032, down from mid-80%s today.",
+        "Analyst field work indicates one major CSP could test ~25k HAMR units in CY23 and potentially deploy up to ~2M drives over 2 years if qualified."
+      ],
+      "management_insights": [
+        "STX had shipped 32TB HAMR drives to a cloud customer for qualification in Apr-23, with rev ramp expected in early CY24.",
+        "STX mgmt's LT GM target is cited at 30-33%; TD Cowen believes HAMR could push STX toward ~34% GM by CY26.",
+        "STX CFO commentary indicates HAMR product introductions may occur every 18-20 months vs 10-12 months historically for PMR, implying more complex ramps.",
+        "WDC is described as executing well on ePMR/ultraSMR and improving enterprise SSD qualifications after prior controller/firmware issues.",
+        "PSTG is portrayed as leveraging DirectFlash/QLC capabilities and seeing selective cloud opportunities, but not as a full nearline HDD replacement across DC storage."
+      ],
+      "estimate_changes": [],
+      "estimate_change_details": [
+        {
+          "metric": "Price Target",
+          "period": "Current",
+          "prior": 70,
+          "new": 78,
+          "pct_change": "11%",
+          "note": "STX PT raised to $78 from $70."
+        }
+      ],
+      "evidence_quality": [
+        "Primary/secondary mix: report cites company-reported data, disclosed customer qualification activity, and mgmt commentary, but many conclusions extend beyond what companies explicitly guided.",
+        "Triangulated but partly anecdotal: heavy use of analyst field work with CSPs/supply chain to assess SSD/HDD mix, HAMR adoption timing, and customer qualification plans.",
+        "Mostly analyst model work on economics: GM uplift, yield thresholds, cost/TB curves, and long-range market sizing are proprietary estimates rather than reported figures.",
+        "Industry-data supported: uses market share, capex, and storage demand framing from company data, Gartner, and cloud customer trends.",
+        "Weight should be moderate: useful differentiated framework, but key calls depend on HAMR yield/ramp execution and long-dated SSD cost assumptions."
+      ],
+      "risks_or_watch_items": [
+        "STX HAMR manufacturing yields and ability to sustain volume production.",
+        "Customer qualification timing and whether pilot deployments convert to meaningful purchases.",
+        "NAND pricing duration/severity; another deep downcycle could improve SSD competitiveness near term.",
+        "Ramp of 30TB+ high-capacity SSDs and QLC/PLC adoption curves.",
+        "Cloud/DC capex cadence, as ~70% of nearline HDD demand is tied to new DC builds.",
+        "Non-nearline HDD erosion could offset part of the nearline upside across the broader HDD complex."
+      ],
+      "key_numbers": [
+        "STX PT to $78 from $70.",
+        "HAMR GM uplift potential: up to 500 bps.",
+        "HAMR GM-neutral yield threshold: ~40% vs ~85% CMR yield today.",
+        "HDDs store ~85% of DC data today; TD Cowen sees ~80% by 2032.",
+        "HDD market forecast: $24B by 2032, ~3% CAGR from 2022.",
+        "Nearline HDD forecast: ~7% CAGR; exabyte shipments ~18% CAGR.",
+        "32TB HAMR cost/TB modeled ~30% below 20TB CMR.",
+        "SSD/HDD price ratio seen at ~4x by 2032; TCO ratio below 2x by decade-end.",
+        "NAND suppliers would need ~$1.5B WFE to take 1% nearline share from HDDs.",
+        "STX nearline share cited at ~45%; projected share gain ~500 bps through CY26."
+      ]
+    },
+    {
+      "id": "2f08c60bf52b45e9",
+      "title": "Seagate Technology | North America: Upgrading to Overweight On A More Attractive Multi-Year Earnings Story",
+      "file_name": "20240326_Morgan_Stanley_STX_Seagate_Technology-_Upgrading_to_Overweight_On_A_More_At (1).pdf",
+      "modified": "2026-04-28T10:09:31",
+      "pages": 30,
+      "schema_version": 7,
+      "is_sell_side_report": true,
+      "exclusion_reason": null,
+      "sell_side_firm": "MS",
+      "company": "Seagate Technology",
+      "ticker": "STX",
+      "companies_covered": "STX",
+      "report_date": "2024-03-26",
+      "headline": "MS upg STX to OW from EW and lifts PT to $115 on higher HAMR-driven GM upside and incremental AI-related HDD demand in FY26-27.",
+      "summary": "Morgan Stanley upgrades STX to OW from EW and raises its PT to $115 from $73, arguing the stock is moving from a cyclical HDD recovery into a structurally stronger earnings phase. The key change is a more bullish bottom-up view on HAMR mix and margin accretion, with LT GM now seen at 32-35% vs mgmt's 30-33% target, plus modest AI-driven HDD exabyte upside in FY26-27. While HAMR mix lowers rev per exabyte and trims rev ests by 1-2%, MS sees the GM lift more than offsetting that pressure, driving 20-30% higher EPS ests and FY27 EPS power above $10.50.",
+      "important_observations": [
+        "Core debate shifts from cyclical recovery timing to whether HAMR can structurally reset STX GM above prior through-cycle levels.",
+        "MS argues HAMR is materially margin accretive, with a modeled ~45% normalized GM for 30TB drives and further upside as 40TB/50TB products scale.",
+        "AI is framed less as an immediate rev driver and more as an outer-year storage tailwind that benefits HDD alongside flash rather than displacing it outright.",
+        "The note implies variant perception vs Street on profitability, with MS 200-300 bps ahead of Street GM in FY25/26 and >10% ahead of Street FY27 EPS power.",
+        "Despite lower price/TB and slightly lower rev, MS sees mix/technology leadership creating a stronger earnings algorithm through GM expansion and opex discipline.",
+        "Potential catalysts include HAMR customer quals starting as soon as May, broader US tier-1 CSP qualification by CY24-end, share gains, and a future Analyst Day that could lift LT GM guide."
+      ],
+      "new_data": [
+        "Rating changed to OW from EW.",
+        "PT raised to $115 from $73.",
+        "FY24-27 EPS ests raised 18-32%.",
+        "FY25-27 GM ests raised by 321-489 bps; FY27 GM now 35.1%.",
+        "FY26-27 HDD exabyte fcst raised 4% on AI-related demand assumptions.",
+        "HAMR mix now modeled at 8% of HDD exabytes in FY24 and ~50% by FY27.",
+        "MS introduces a bottom-up HAMR margin view implying ~45% normalized GM for 30TB HAMR drives.",
+        "FY24-27 rev ests trimmed 1-2% due to lower price/EB as HAMR mix rises."
+      ],
+      "management_insights": [
+        "Mgmt has indicated any AI-related uplift would be incremental to its mid-20% mass-capacity exabyte CAGR framework.",
+        "Mgmt's current LT GM target remains 30-33%, but MS believes this excludes HAMR mix benefits.",
+        "Mgmt said the first 1M HAMR shipments should be immediately GM accretive, with margins scaling as more customers qualify.",
+        "Mgmt expects to ship 1M HAMR units in C1H24/F2H24, broadly in line with MS assumptions.",
+        "Mgmt has said 30% GM can be achieved with ~20% less rev than at peak, supported by cost actions and portfolio changes.",
+        "Mgmt has reiterated continued pricing actions and believes opex can remain structurally below pre-COVID levels at similar rev."
+      ],
+      "estimate_changes": [
+        "PT increased to $115 from $73 and rating upgraded to OW from EW.",
+        "EPS ests increased across FY24-27, led by higher GM assumptions from HAMR mix shift.",
+        "GM ests raised 50 bps in FY24 and ~300-500 bps in FY25-27.",
+        "Rev ests reduced 1-2% across FY24-27 due to lower HDD price/EB assumptions.",
+        "FY26-27 HDD exabyte ests increased 4% on incremental AI demand."
+      ],
+      "estimate_change_details": [
+        {
+          "metric": "Price Target",
+          "period": "Current",
+          "prior": 73,
+          "new": 115,
+          "pct_change": "58%",
+          "note": "PT raised as valuation base moves to FY27 EPS and earnings power outlook improves."
+        },
+        {
+          "metric": "EPS",
+          "period": "FY24",
+          "prior": 0.66,
+          "new": 0.77,
+          "pct_change": "17%",
+          "note": "Driven by higher GM, partly offset by slightly lower rev."
+        },
+        {
+          "metric": "EPS",
+          "period": "FY25",
+          "prior": 3.89,
+          "new": 4.99,
+          "pct_change": "28%",
+          "note": "Benefit from higher HAMR mix and stronger GM outlook."
+        },
+        {
+          "metric": "EPS",
+          "period": "FY26",
+          "prior": 6.1,
+          "new": 7.63,
+          "pct_change": "25%",
+          "note": "Higher GM more than offsets lower price/EB."
+        },
+        {
+          "metric": "EPS",
+          "period": "FY27",
+          "prior": 8.02,
+          "new": 10.61,
+          "pct_change": "32%",
+          "note": "Outer-year earnings power revised materially higher."
+        },
+        {
+          "metric": "Revenue",
+          "period": "FY24",
+          "prior": 6461,
+          "new": 6426,
+          "pct_change": "-1%",
+          "note": "Rounded whole numbers, $M."
+        },
+        {
+          "metric": "Revenue",
+          "period": "FY25",
+          "prior": 8426,
+          "new": 8264,
+          "pct_change": "-2%",
+          "note": "Rounded whole numbers, $M."
+        },
+        {
+          "metric": "Revenue",
+          "period": "FY26",
+          "prior": 9655,
+          "new": 9514,
+          "pct_change": "-1%",
+          "note": "Rounded whole numbers, $M."
+        },
+        {
+          "metric": "Revenue",
+          "period": "FY27",
+          "prior": 10845,
+          "new": 10725,
+          "pct_change": "-1%",
+          "note": "Rounded whole numbers, $M."
+        },
+        {
+          "metric": "Gross Margin",
+          "period": "FY24",
+          "prior": "24.2%",
+          "new": "24.8%",
+          "pct_change": null,
+          "note": "Change is +55 bps; pct_change not meaningful for margin percentages."
+        },
+        {
+          "metric": "Gross Margin",
+          "period": "FY25",
+          "prior": "27.6%",
+          "new": "30.8%",
+          "pct_change": null,
+          "note": "Change is +321 bps; pct_change not meaningful for margin percentages."
+        },
+        {
+          "metric": "Gross Margin",
+          "period": "FY26",
+          "prior": "29.4%",
+          "new": "33.0%",
+          "pct_change": null,
+          "note": "Change is +360 bps; pct_change not meaningful for margin percentages."
+        },
+        {
+          "metric": "Gross Margin",
+          "period": "FY27",
+          "prior": "30.2%",
+          "new": "35.1%",
+          "pct_change": null,
+          "note": "Change is +489 bps; pct_change not meaningful for margin percentages."
+        }
+      ],
+      "evidence_quality": [
+        "Primary plus analyst model work: company-reported results/guidance and recent CFO/mgmt meetings are central inputs.",
+        "Triangulated with external industry data from IDC, cloud capex work, and Japan channel/industry inputs rather than relying on mgmt alone.",
+        "Some AI storage demand support comes from survey data and VAR checks, which are directional and less definitive than reported company data.",
+        "HAMR margin conclusions are mostly analyst bottom-up inference/modeling, so conviction is higher on direction than exact magnitude/timing."
+      ],
+      "risks_or_watch_items": [
+        "HAMR mix ramp or HAMR GM may prove too aggressive; underutilization and supply-demand imbalance could delay normalization.",
+        "Flash/SSD substitution in DC could limit HDD demand and weaken the AI-related storage tailwind.",
+        "Competitor tech catch-up could reduce STX pricing power and share gain potential.",
+        "HDD price/TB could fall faster than modeled as HAMR economics are shared with customers.",
+        "AI demand timing remains uncertain; near-term AI capex is currently somewhat cannibalistic to storage spend.",
+        "Opex could ramp faster than expected, reducing EPS flow-through."
+      ],
+      "key_numbers": [
+        "Rating: EW -> OW",
+        "PT: $73 -> $115",
+        "Close price (Mar 25, 2024): $88.21",
+        "FY24/25/26/27 EPS: $0.77 / $4.99 / $7.63 / $10.61",
+        "Prior FY24/25/26/27 EPS: $0.66 / $3.89 / $6.10 / $8.02",
+        "FY24/25/26/27 rev: $6,426M / $8,264M / $9,514M / $10,725M",
+        "FY24/25/26/27 GM: 24.8% / 30.8% / 33.0% / 35.1%",
+        "HAMR mix of HDD exabytes: ~8% FY24 -> ~50% FY27",
+        "HDD exabytes: 400 FY24, 569 FY25, 767 FY26, 977 FY27",
+        "FY26-27 HDD exabyte fcst raised 4%",
+        "HAMR normalized GM estimate: ~45% for 30TB drive",
+        "Bull/Base/Bear values: $155 / $115 / $60"
+      ]
+    },
+    {
+      "id": "3b0e35a660492b4b",
+      "title": "Harnessing the Power of Heat: HDD Versus SSD - Ahead of the Curve Series",
+      "file_name": "20230620_TD_Cowen_LRCX_Harnessing_The_Power_Of_Heat-_HDD_Versus_SSD_Ahead_Of (1).pdf",
+      "modified": "2026-04-28T10:09:29",
+      "pages": 75,
+      "schema_version": 7,
+      "is_sell_side_report": true,
+      "exclusion_reason": null,
+      "sell_side_firm": "TD",
+      "company": null,
+      "ticker": null,
+      "companies_covered": "STX, WDC, PSTG, LRCX",
+      "report_date": "2023-06-20",
+      "headline": "TD Cowen argues HAMR should extend HDD relevance in DC storage, with STX the clearest beneficiary and PT raised to $78.",
+      "summary": "TD Cowen lays out a bullish HDD/NL storage thesis centered on HAMR, arguing HDDs should remain the dominant DC storage medium through 2032 despite SSD gains because HAMR materially lowers HDD cost/TB and can lift OEM GMs. The report sees STX as the main beneficiary given its HAMR lead, models HDDs at ~80% of DC storage by decade-end, and views SSD adoption as constrained by cost, capex intensity, and high-capacity supply even during NAND downcycles.",
+      "important_observations": [
+        "Variant view vs cons is that HDDs and SSDs remain complementary in DCs, with HDDs still storing ~80% of data by 2032.",
+        "HAMR is framed as a structural cost/margin inflection for HDDs, not just a capacity upgrade; 32TB HAMR is modeled at 30% lower cost/TB vs 20TB CMR.",
+        "AI is viewed as a net HDD demand tailwind because training datasets require cheap bulk storage, even if SSDs serve performance-sensitive workloads.",
+        "TD Cowen argues SSD share gains in NAND downcycles should be limited because hyperscalers treat trough SSD pricing as unsustainable and high-capacity SSD supply is constrained.",
+        "WDC is seen as behind STX on HAMR but not facing catastrophic share loss; Cowen expects only low/mid-single-digit share loss as WDC bridges with CMR/SMR scaling.",
+        "PSTG is viewed as a targeted beneficiary of lower NAND pricing and QLC adoption, but not a full nearline HDD replacement story.",
+        "LRCX is a read-through on rising NAND process complexity, especially as stacking/layer counts increase and deposition requirements rise."
+      ],
+      "new_data": [
+        "Proprietary framework suggests HAMR can be up to 500 bps GM accretive for HDD OEMs.",
+        "Cowen estimates HAMR yields need to exceed ~40% to be GM-neutral vs CMR.",
+        "Field work indicates a major CSP could test ~25K HAMR drives in CY23 and potentially deploy up to 2M drives within 2 years if qualified.",
+        "Cowen models HDD cost/TB remaining ~4x cheaper than SSD by decade-end, or ~2x cheaper on TCO basis.",
+        "Cowen forecasts a $24B total HDD market by 2032, with NL HDD rev growing 7% CAGR from 2022.",
+        "Cowen estimates $1.5B of NAND WFE spend is needed for SSD suppliers to take 1% share from nearline HDDs."
+      ],
+      "management_insights": [
+        "Seagate had shipped 32TB HAMR drives to a cloud customer for qualification in Apr-23, with rev ramp expected in early CY24.",
+        "Seagate CFO commentary cited by Cowen suggests HAMR product introductions every 18-20 months vs 10-12 months historically for PMR.",
+        "Mgmt LT GM target for STX is referenced at 30-33%; Cowen sees upside to ~34% by CY26 if HAMR ramps well.",
+        "Cowen notes WDC has improved enterprise SSD qualification execution after prior controller/firmware issues."
+      ],
+      "estimate_changes": [],
+      "estimate_change_details": [
+        {
+          "metric": "Price Target",
+          "period": "Current",
+          "prior": 70,
+          "new": 78,
+          "pct_change": "11%",
+          "note": "STX PT raised to $78 from $70."
+        },
+        {
+          "metric": "EPS",
+          "period": "STX earnings power / CY26 framework",
+          "prior": null,
+          "new": 8,
+          "pct_change": null,
+          "note": "Cowen frames HAMR upside as roughly $8.0/sh in earnings power; no prior EPS estimate disclosed."
+        },
+        {
+          "metric": "Gross Margin",
+          "period": "STX CY26",
+          "prior": null,
+          "new": "34%",
+          "pct_change": null,
+          "note": "Cowen models GM expansion toward 34%; prior published estimate revision not provided."
+        }
+      ],
+      "evidence_quality": [
+        "Primary + analyst model work: report uses company-reported market data, disclosed product timing, and Cowen financial modeling.",
+        "Triangulated field work: multiple conclusions rely on channel checks/field work with CSPs and storage ecosystem contacts rather than solely public disclosures.",
+        "Proprietary dataset/inference: HAMR yield, GM accretion, cost/TB, and share scenarios are largely Cowen analytical constructs, not company-guided outputs.",
+        "Some datapoints are anecdotal but directionally useful, especially CSP qualification/deployment commentary on HAMR.",
+        "Weight should be moderate: thesis is detailed and cross-checked, but key conclusions depend on future HAMR yields, customer qualification, and NAND pricing behavior."
+      ],
+      "risks_or_watch_items": [
+        "STX HAMR manufacturing yields and timing of full customer qualification.",
+        "Cloud/DC capex trends, since Cowen estimates ~70% of nearline HDD demand is tied to new DC builds.",
+        "Duration/severity of NAND pricing pressure and whether another sharp downcycle temporarily improves SSD competitiveness.",
+        "Ramp of 30TB+ high-capacity SSDs and whether supply broadens faster than expected.",
+        "Potential NAND technology improvements that re-accelerate cost/TB declines.",
+        "Pressure in non-nearline HDD categories, where SSD substitution risk is higher."
+      ],
+      "key_numbers": [
+        "STX PT raised to $78 from $70.",
+        "HAMR could be up to 500 bps GM accretive for HDD OEMs.",
+        "HAMR yield threshold for GM neutrality estimated at ~40% vs ~85% CMR yields today.",
+        "HDDs seen at ~80% of DC storage by decade-end vs ~85-86% in 2022.",
+        "32TB HAMR modeled at 30% lower cost/TB vs 20TB CMR; 36TB HAMR ~10% lower vs 32TB HAMR.",
+        "Cowen forecasts total HDD market at $24B by 2032 with nearline HDD rev CAGR of 7%.",
+        "SSD/HDD price ratio seen near ~4x by 2032; TCO ratio below 2x by decade-end.",
+        "Nearline HDD exabyte growth modeled at ~18-20% CAGR through 2032.",
+        "STX could gain ~500 bps nearline share through CY26.",
+        "A major CSP may test ~25K HAMR drives in CY23 and potentially deploy up to 2M over 2 years."
+      ]
+    },
+    {
+      "id": "b28739623c503b22",
+      "title": "Moving STX to Top Pick As We Gain Greater Confidence In Cycle Lonity and Margins",
+      "file_name": "20250121_Morgan_Stanley_STX_Seagate_Technology-_Moving_STX_to_Top_Pick_As_We_Gain_Gr.pdf",
+      "modified": "2026-04-28T10:09:28",
+      "pages": 29,
+      "schema_version": 7,
+      "is_sell_side_report": true,
+      "exclusion_reason": null,
+      "sell_side_firm": "MS",
+      "company": "Seagate Technology",
+      "ticker": "STX",
+      "companies_covered": "STX, AAPL",
+      "report_date": "2025-01-21",
+      "headline": "MS moves STX to Top Pick, keeps OW, cuts PT to $129 from $133; thesis is cycle longevity + structurally higher GM despite a transitory Mar-qtr supply hit.",
+      "summary": "MS upgrades STX to its IT Hardware Top Pick on rising conviction that the HDD upcycle has more room to run, Mar-qtr supply issues are temporary, and Street GM/EPS remain too low as HAMR mix scales. The note cuts PT to $129 from $133 on lower NTM EPS, but argues for a June-qtr rev snap-back, continued pricing strength, tighter supply, and FY26-27 EPS upside vs cons driven by materially higher GM assumptions.",
+      "important_observations": [
+        "June-qtr rev snap-back is central to the call: MS sees +11% q/q rev growth vs typical -1% seasonality once supply constraints ease.",
+        "Variant view is on margins, not just demand: MS sees FY26-27 GM at 37.8%/39.6%, well above Street, driven by HAMR mix and stronger non-HAMR pricing/profitability.",
+        "Recent industry checks suggest NL HDD demand remains robust after 6 qtrs of capacity growth, with CSP inventories still normal and lead times still ~52 weeks.",
+        "MS argues the market is overly focused on cyclical rollover/share loss risk while underappreciating STX's 24/28TB traction and HAMR-led competitiveness into C2H25/CY26.",
+        "High short interest and low expectations could amplify upside if post-earnings confidence builds around June recovery, further HAMR quals, and FY26 buybacks."
+      ],
+      "new_data": [
+        "Recent industry checks were positive outside a brief early-2025 CSP digestion period.",
+        "CSP HDD inventories are described as normal/not elevated.",
+        "HDD lead times remain about 52 weeks, consistent with the prior 6 months.",
+        "Growing LTAs/build-to-order agreements are said to be improving production visibility, in some cases into 2026.",
+        "VAR survey points to accelerating storage/server demand into 2025 from enterprise OEM channels.",
+        "Asia component-supplier checks suggest better-than-seasonal Mar-qtr restocking tied to end-demand, not channel inventory build.",
+        "Updated HAMR volume/margin work now assumes HAMR is ~1% of HDD EB in FY25 and up to ~50% by FY27."
+      ],
+      "management_insights": [
+        "Company disclosed on Dec. 3, 2024 that Mar-qtr HDD output would be lower than expected, with up to $200M rev impact.",
+        "Mgmt said HAMR began shipping in small volume to non-cloud customers in F2Q25.",
+        "Mgmt indicated HAMR shipments should pick up more materially around mid-CY25 as the first cloud customer ramps.",
+        "Mgmt has cited mid-20s % mass-capacity CAGR targets that predated HAMR launch and any AI tailwind.",
+        "Mgmt LT GM target referenced by MS is 30-33%, while MS believes actual normalized GM can exceed that."
+      ],
+      "estimate_changes": [],
+      "estimate_change_details": [
+        {
+          "metric": "Price Target",
+          "period": "Current",
+          "prior": "$133",
+          "new": "$129",
+          "pct_change": "-3%",
+          "note": "PT cut on lower NTM EPS despite unchanged 14x multiple."
+        },
+        {
+          "metric": "Revenue",
+          "period": "F3Q25 (Mar qtr)",
+          "prior": "$2,300M",
+          "new": "$2,100M",
+          "pct_change": "-9%",
+          "note": "Cut reflects disclosed supply shortfall."
+        },
+        {
+          "metric": "EPS",
+          "period": "F3Q25 (Mar qtr)",
+          "prior": "$2.14",
+          "new": "$1.65",
+          "pct_change": "-23%",
+          "note": "Lower rev base from supply issue drives the EPS reset."
+        },
+        {
+          "metric": "Revenue",
+          "period": "FY25",
+          "prior": "$9,307M",
+          "new": "$8,950M",
+          "pct_change": "-4%",
+          "note": "Lower price/EB assumptions and Mar-qtr supply impact."
+        },
+        {
+          "metric": "EPS",
+          "period": "FY25",
+          "prior": "$8.21",
+          "new": "$7.29",
+          "pct_change": "-11%",
+          "note": "Now roughly in line with Street despite lower internal forecast."
+        },
+        {
+          "metric": "Revenue",
+          "period": "FY26",
+          "prior": "$11,204M",
+          "new": "$10,290M",
+          "pct_change": "-8%",
+          "note": "HAMR mix lowers price/EB, offset partly by better profitability."
+        },
+        {
+          "metric": "EPS",
+          "period": "FY26",
+          "prior": "$11.82",
+          "new": "$11.14",
+          "pct_change": "-6%",
+          "note": "Still 19% above cons on higher GM assumptions."
+        },
+        {
+          "metric": "Revenue",
+          "period": "FY27",
+          "prior": "$11,892M",
+          "new": "$10,558M",
+          "pct_change": "-11%",
+          "note": "Lower rev path reflects higher HAMR mix and lower price/EB."
+        },
+        {
+          "metric": "EPS",
+          "period": "FY27",
+          "prior": "$12.91",
+          "new": "$12.96",
+          "pct_change": "0%",
+          "note": "Rounded; essentially flat to slightly up as GM gains offset lower rev."
+        },
+        {
+          "metric": "Gross Margin",
+          "period": "FY25",
+          "prior": "35.4%",
+          "new": "34.8%",
+          "pct_change": "-2%",
+          "note": "Down ~70 bps from supply-driven shipment impact."
+        },
+        {
+          "metric": "Gross Margin",
+          "period": "FY26",
+          "prior": "35.9%",
+          "new": "37.8%",
+          "pct_change": "5%",
+          "note": "Up 190 bps on higher HAMR mix and stronger base margins."
+        },
+        {
+          "metric": "Gross Margin",
+          "period": "FY27",
+          "prior": "35.3%",
+          "new": "39.6%",
+          "pct_change": "12%",
+          "note": "Up 420 bps; MS sees materially stronger normalized margin structure."
+        }
+      ],
+      "evidence_quality": [
+        "Primary: company-reported results, 8-K disclosure, and mgmt commentary on HAMR shipments/qualification timing.",
+        "Triangulated: analyst industry checks with CSPs, enterprise OEMs, and Asia-based component suppliers support the demand/supply view.",
+        "Survey-based: VAR survey is directionally useful for enterprise demand but lower-confidence than reported orders/shipment data.",
+        "Analyst model work: HAMR volume, pricing, and margin framework is heavily model-driven and important to the upside case.",
+        "Market/industry data: cloud capex correlations, lead times, pricing trends, and shipment trackers add support but are partly inferential."
+      ],
+      "risks_or_watch_items": [
+        "Mar-qtr supply issue could persist longer than MS expects, delaying the June rebound.",
+        "WDC share gains in high-capacity NL drives remain a competitive risk until HAMR/24TB+/28TB traction broadens.",
+        "HAMR qualification/ramp timing could slip again, especially at large cloud customers.",
+        "If cloud capex or enterprise storage demand softens, the cycle-longevity thesis weakens.",
+        "HDD pricing could normalize faster than expected, pressuring GM and EPS.",
+        "AI-driven HDD demand may prove more modest or later than the thesis assumes."
+      ],
+      "key_numbers": [
+        "Rating: OW; Top Pick changed from AAPL to STX.",
+        "PT: $129 vs prior $133.",
+        "STX close (Jan. 17, 2025): $97.67; implied upside ~32%.",
+        "F3Q25 rev/EPS now $2.1B/$1.65 vs prior $2.3B/$2.14.",
+        "June-qtr rev expected at $2.4B, +11% q/q vs T5Y seasonality of -1%.",
+        "FY25/FY26/FY27 rev ests: $8.95B / $10.29B / $10.56B.",
+        "FY25/FY26/FY27 EPS ests: $7.29 / $11.14 / $12.96.",
+        "FY26/FY27 EPS are 19%/34% above cons.",
+        "FY25/FY26/FY27 GM ests: 34.8% / 37.8% / 39.6%.",
+        "HAMR assumed to rise from ~1% of HDD EB in FY25 to ~50% by FY27.",
+        "FY27 HAMR volume forecast: ~11M units and ~382 EB.",
+        "Like-for-like HDD pricing expected up LSD q/q in CY25; per-EB HDD/SSD cost gap seen at 6-8x through 2028."
+      ]
+    },
+    {
+      "id": "30f28e14e1c92149",
+      "title": "Seagate Technology PLC: The Dawn of The Zettabyte Age",
+      "file_name": "20170406_BTIG_STX_Seagate_Technology_PLC.pdf",
+      "modified": "2026-04-28T10:09:26",
+      "pages": 36,
+      "schema_version": 7,
+      "is_sell_side_report": true,
+      "exclusion_reason": null,
+      "sell_side_firm": "B",
+      "company": "Seagate Technology PLC",
+      "ticker": "STX",
+      "companies_covered": "STX, WDC",
+      "report_date": "2017-04-04",
+      "headline": "BTIG argues STX is underappreciated as a core beneficiary of secular data growth, with HDD remaining the economic capacity tier for cloud and edge-generated data; Maintain Buy, $55 PT.",
+      "summary": "BTIG reiterates Buy on STX and frames the stock as a mispriced beneficiary of the coming \"zettabyte age,\" arguing that secular data creation, cloud build-outs, AI/ML, and edge computing should sustain HDD bit demand well beyond what unit declines imply. The note\u2019s core thesis is that while flash dominates performance use cases, HDD remains the only economical medium for large-scale capacity storage, supporting STX\u2019s mix shift toward higher-margin nearline enterprise and improved EPS power.",
+      "important_observations": [
+        "Core debate is not whether data grows, but whether investors are underestimating the value of the low-cost storage layer required to retain that data at scale.",
+        "BTIG argues counting HDD units misses the thesis; bit/EB growth and mix shift to high-capacity enterprise drives are more relevant than spindle declines.",
+        "Nearline enterprise is already becoming the economic engine of STX, with materially better growth, mix, and profit profile than legacy PC/client HDD.",
+        "The note frames STX as a variant-perception idea: bearish HDD views are inconsistent with bullish secular data-growth views unless memory capex rises massively or data-retention assumptions prove too optimistic.",
+        "BTIG sees cloud and intelligent-edge buildouts as additive, not cannibalistic, with edge inference increasing the need for centralized cloud storage for training, retention, and metadata.",
+        "Valuation argument is that the market is still pricing STX on cyclical/legacy HDD concerns rather than as a secular data infrastructure beneficiary."
+      ],
+      "new_data": [
+        "IDC Data Age 2025 forecast: global datasphere to reach 163 ZB by 2025 vs 16.1 ZB in 2016.",
+        "IDC forecast: hypercritical data to grow at 54% CAGR vs 30% for total data.",
+        "IDC forecast: embedded data to reach 20% of all data created by 2020.",
+        "IDC forecast: IoT data to represent 95% of real-time data by 2025.",
+        "IDC forecast: analyzed data to reach 5.2 ZB by 2024; data interacting with cognitive systems to reach 1.4 ZB by 2025.",
+        "BTIG cloud capex forecast for major platforms rises to $66.7B in FY18E from $50.9B in FY16A.",
+        "BTIG shows flash remains at a large $/GB premium to enterprise HDD through FY25E despite narrowing.",
+        "IDC/BTIG suggest HDD still represents roughly 50% of storage bits shipped in 2025, with enterprise HDD >80% of enterprise HDD/SSD mix.",
+        "BTIG base-case storage model assumes 18% combined data growth and ~1.8 ZB HDD demand by 2025."
+      ],
+      "management_insights": [
+        "Mgmt has publicly discussed a $30B-$40B HDD opportunity based on 1.5-2.0 ZB of HDD storage demand.",
+        "Company guidance for CY17 EPS of at least $4.50 was well above prior market expectations and used by BTIG as evidence that the mix/cost reset is working.",
+        "BTIG cites public signs of healthier factory utilization, stable pricing, post-flood-high GM, and continued mix shift away from PC exposure.",
+        "Mgmt appears focused on portfolio realignment toward high-capacity cloud/enterprise, surveillance, gaming, DVR, and other higher-capacity use cases."
+      ],
+      "estimate_changes": [
+        "No explicit analyst rev/EPS/PT revision versus BTIG\u2019s prior note is disclosed; BTIG maintains Buy and $55 PT.",
+        "The note highlights stronger company outlook vs prior market expectations, especially CY17 EPS guide of at least $4.50 vs prior consensus near $3.80."
+      ],
+      "estimate_change_details": [],
+      "evidence_quality": [
+        "Primary/triangulated: uses IDC's March 2017 Data Age 2025 study, company-reported results/guidance, and BTIG/FactSet market data.",
+        "Primary company evidence: references Seagate-reported nearline EB growth, rev mix, margin trends, and company outlook.",
+        "Mostly analyst model work/inference: long-dated HDD/NAND bit-growth, revenue, and EPS power scenarios are BTIG framework assumptions rather than company guidance.",
+        "Some third-party industry support: Gartner, Google white paper, silicon supply commentary, and cloud capex datasets help triangulate storage-demand and supply constraints.",
+        "Weight should be moderate: strong for secular framing and current mix/profit trends, lower for precise 2020-2025 TAM, bit-share, and valuation outcomes."
+      ],
+      "risks_or_watch_items": [
+        "CSP demand remains lumpy with limited NT visibility despite broader customer diversification.",
+        "If NAND cost declines or memory capex ramp faster than BTIG assumes, HDD economics and long-term share could weaken.",
+        "Retention assumptions matter: if more real-time/IoT data is discarded rather than stored, capacity demand could underwhelm.",
+        "Legacy PC/client HDD declines still pressure consolidated units and can obscure improvement in higher-value segments.",
+        "Execution risk remains around sustaining double-digit capacity growth, stable pricing, and continued enterprise mix gains."
+      ],
+      "key_numbers": [
+        "STX rating/PT: Buy, $55 PT.",
+        "STX share price: $45.30; implied upside 21.4%.",
+        "Dividend yield: 5.6%; market cap: $13.5B.",
+        "BTIG FY17E sales/EPS: $11.168B / $4.56.",
+        "BTIG FY18E sales/EPS: $11.265B / $4.53.",
+        "PT methodology: 12x run-rate EPS of about $4.50.",
+        "Seagate high-capacity enterprise EB growth: 63% in CY16.",
+        "High-capacity enterprise rev: about $2.7B in CY16; rev mix expanded from 21% to 32%.",
+        "Gross margin cited at 32% vs FY16 of 25%.",
+        "IDC datasphere forecast: 163 ZB by 2025 vs 16.1 ZB in 2016.",
+        "IDC says 19 ZB of storage must ship in aggregate over the next 8 years to keep up with demand.",
+        "BTIG base case: about 1.0 ZB HDD demand in 2020; STX at 40% share implies about $9B HDD rev on 130M units at $70 ASP.",
+        "BTIG earnings-power framework: FY2019 EPS $4-$6 and FY2020 EPS $5-$7 under favorable capacity scenarios."
+      ]
+    },
+    {
+      "id": "ab6baf65fc9a43f2",
+      "title": "CQ1'16 Earnings Preview: ANET, INFN, SNDK, STX, WDC Plus HDD / SSD Forecast Update and Raising STX PT to $27",
+      "file_name": "20160407_Citi_WDC_CQ1-16_Earnings_Preview-_ANET-_INFN-_SNDK-_STX-_WDC-_Plu.pdf",
+      "modified": "2026-04-28T10:09:25",
+      "pages": 56,
+      "schema_version": 7,
+      "is_sell_side_report": true,
+      "exclusion_reason": null,
+      "sell_side_firm": "C",
+      "company": "Western Digital Corp.",
+      "ticker": "WDC",
+      "companies_covered": "ANET, INFN, SNDK, STX, WDC",
+      "report_date": "2016-04-07",
+      "headline": "Citi previews CQ1/FQ3 storage and networking prints, cuts LT HDD unit ests, lifts SSD outlook, trims WDC FY17/FY18 EPS, and raises STX PT to $27.",
+      "summary": "Citi\u2019s 7-Apr-2016 preview is a multi-name storage/networking note with the key sector call being a lower 2017-2018 HDD unit outlook and higher SSD adoption assumptions. For WDC, Citi sees limited downside into FQ3'16 with rev/EPS roughly in line, but flows the weaker HDD / faster SSD mix into its model and trims FY17/FY18 EPS to $6.32/$6.66 from $6.40/$6.95. Citi still prefers WDC over STX on better positioning for SSD migration and the pending SNDK deal, while separately raising STX\u2019s PT to $27 on multiple expansion despite maintaining a Sell.",
+      "important_observations": [
+        "Citi\u2019s main variant view is that the HDD decline extends into 2017-2018 as soft PC demand and faster SSD migration pressure the storage complex more than prior assumptions.",
+        "For WDC, downside into the quarter is framed as limited because Citi is using a conservative ~100M drive TAM vs industry at 103-104M, reducing the risk of a material near-term miss.",
+        "Citi remains structurally more positive on WDC than STX because WDC is viewed as better levered to SSD migration and captive NAND via the pending SNDK acquisition.",
+        "Enterprise storage mix is shifting faster toward SSDs, which Citi argues strengthens the strategic logic of the WDC-SNDK merger.",
+        "ANET\u2019s 2H setup is tied to Tomahawk-based upgrades and 100Gb spine buildouts, while INFN\u2019s thesis leans on Metro/DCI growth offset by telco capex seasonality and R&D drag.",
+        "SNDK fundamentals appear less important than deal timing, with the stock viewed as trading mainly on the pending WDC acquisition and remaining MOFCOM approval."
+      ],
+      "new_data": [
+        "HDD unit ests cut to -5.4% growth in 2017 and -4.0% in 2018 from -0.3% and -1.8%; 2016 HDD decline unchanged at -12%.",
+        "SSD unit growth fcst raised to 28.4% / 15.7% / 13.2% for 2016/2017/2018 from 20.6% / 19.7% / 15.8%.",
+        "Client SSD attach implied at 55% of total PC shipments exiting 2018 vs 22% currently.",
+        "Total HDD units revised to 392.7M in 2017 from 414.0M and 377.1M in 2018 from 406.5M.",
+        "Enterprise HDD units revised to 63.5M in 2017 from 68.2M and 61.8M in 2018 from 68.2M.",
+        "WDC FQ3'16 preview: rev $2.856B, EPS $1.28, 42.1M HDD units, ASP $62.",
+        "STX FQ3'16 preview: rev $2.696B, EPS $0.60, 40.8M HDD units, ASP $60.",
+        "SNDK CQ1'16 preview: rev $1.231B, EPS $0.57, with bits shipped down 10% q/q and ASPs down 8% q/q."
+      ],
+      "management_insights": [
+        "SNDK is expected to issue results and written commentary without a conference call as the WDC merger approaches close.",
+        "Citi expects WDC to guide FQ4'16 toward a slightly >100M HDD TAM and seasonal rev recovery to $2.9B-$3.0B.",
+        "Citi expects ANET commentary to stay constructive on Webscale upgrades and 100Gb spine deployments into 2H16."
+      ],
+      "estimate_changes": [],
+      "estimate_change_details": [
+        {
+          "metric": "EPS",
+          "period": "WDC FY2017",
+          "prior": 6.4,
+          "new": 6.32,
+          "pct_change": "-1%",
+          "note": "Citi trimmed WDC FY17 EPS on updated HDD/SSD industry assumptions."
+        },
+        {
+          "metric": "EPS",
+          "period": "WDC FY2018",
+          "prior": 6.95,
+          "new": 6.66,
+          "pct_change": "-4%",
+          "note": "Citi trimmed WDC FY18 EPS on updated HDD/SSD industry assumptions."
+        },
+        {
+          "metric": "Price Target",
+          "period": "STX",
+          "prior": 23,
+          "new": 27,
+          "pct_change": "17%",
+          "note": "PT raised on sector multiple expansion and more balanced NT risk."
+        },
+        {
+          "metric": "EPS",
+          "period": "STX FY2017",
+          "prior": 3.62,
+          "new": 3.56,
+          "pct_change": "-2%",
+          "note": "Citi lowered FY17 EPS to reflect HDD/SSD model updates."
+        },
+        {
+          "metric": "EPS",
+          "period": "STX FY2018",
+          "prior": 3.46,
+          "new": 3.38,
+          "pct_change": "-2%",
+          "note": "Citi lowered FY18 EPS to reflect HDD/SSD model updates."
+        }
+      ],
+      "evidence_quality": [
+        "Primary/analyst model work: detailed Citi earnings previews, company guidance ranges, and Citi vs Street bridges for ANET/INFN/SNDK/STX/WDC.",
+        "Market/industry data: HDD and SSD unit forecasts appear built from Trendfocus, FactSet, and Citi\u2019s storage model; useful for sector framing but still model-driven.",
+        "Triangulated channel/adjacent data: note cites Webscale capex, NA telco capex, supplier commentary, and Taiwan semi supply-chain read-throughs rather than new company-reported datapoints.",
+        "Limited primary mgmt evidence: this is largely a pre-earnings inference note, not a post-call readout or mgmt mtg summary, so conviction on quarter specifics should be weighted accordingly."
+      ],
+      "risks_or_watch_items": [
+        "PC demand could stay weaker for longer, pressuring HDD TAM and WDC/STX estimates further.",
+        "Faster-than-modeled SSD migration remains the key structural risk to HDD-centric names.",
+        "WDC-SNDK close timing still depends on final MOFCOM approval.",
+        "STX may see NT GM upside, but Citi still sees LT strategy and possible disruptive M&A as overhangs.",
+        "WDC\u2019s near-term print is sensitive to HDD units/ASP around a ~100M industry TAM assumption.",
+        "INFN demand outlook still depends on telco capex seasonality and whether Metro/DCI offsets hold."
+      ],
+      "key_numbers": [
+        "WDC FQ3'16 est: rev $2.856B, EPS $1.28, GM 28.8%, OM 11.3%, HDD units 42.1M, ASP $62.",
+        "WDC FY17/FY18 EPS revised to $6.32/$6.66 from $6.40/$6.95.",
+        "STX PT raised to $27 from $23; FY17/FY18 EPS cut to $3.56/$3.38 from $3.62/$3.46.",
+        "2017/2018 total HDD units cut to 392.7M/377.1M from 414.0M/406.5M.",
+        "2016/2017/2018 SSD unit growth fcst raised to 28.4%/15.7%/13.2%.",
+        "Client SSD attach seen at 55% of PC shipments by end-2018 vs 22% currently.",
+        "SNDK CQ1'16 est: rev $1.231B, EPS $0.57; deal close could come as early as mid-Q2 pending MOFCOM.",
+        "ANET Q1'16 est: rev $237M, EPS $0.61; INFN Q1'16 est: rev $245M, EPS $0.17."
+      ]
+    },
     {
       "id": "b4f3c22e9f6859d1",
       "title": "Ares Management Corp. (ARES): ARCC read-across: Slower deployment and modest pick up in non-accruals",
@@ -16,849 +1129,66 @@
       "ticker": "ARES",
       "companies_covered": "ARES",
       "report_date": "2026-04-28",
-      "headline": "GS says ARCC's 1Q26 print points to slower direct-lending deployment, muted 2Q activity, and a modest uptick in credit stress, but scaled managers like ARES should benefit when activity normalizes.",
-      "summary": "Goldman Sachs reiterates its positive view on ARES, using ARCC's 1Q26 results as a read-across for ARES' credit business. The main takeaways are a sharp decel in net commitments/deployment, muted April activity, and a modest rise in non-accruals, partly offset by still-solid credit metrics and fee contribution. GS expects NT direct-lending deployment to stay soft amid volatility, but sees ARES as well positioned to redeploy its large dry powder when markets reopen.",
+      "headline": "GS says ARCC's 1Q26 print points to slower direct-lending deployment, muted 2Q activity, and modestly worse credit metrics, with implications for ARES fees and sentiment.",
+      "summary": "Goldman reiterates Buy on ARES and uses ARCC's 1Q26 results as a read-across for ARES' credit business: net deployment slowed sharply, April activity stayed muted, and non-accruals ticked up modestly, reinforcing a softer NT origination backdrop. The note argues scaled platforms like ARES should benefit when activity normalizes given roughly $100bn of available credit capital, but investors are likely to stay focused on whether weaker deployment and rising non-accruals signal broader credit-performance divergence across managers.",
       "important_observations": [
-        "Direct-lending activity appears to have slowed materially versus recent qtrs, with net commitments nearly stalling in 1Q26.",
-        "April activity remained muted and backlog declined, suggesting 2Q deployment may stay soft absent better market conditions.",
-        "Non-accruals moved higher but remain within historical ranges, keeping focus on manager-by-manager credit dispersion.",
-        "Scaled platforms like ARES may gain share when origination rebounds given roughly $100bn of available credit capital.",
-        "Portfolio EBITDA softened q/q and leverage ticked up, but comparable TTM EBITDA growth and interest coverage were still supportive."
+        "Net new commitments fell sharply even though new-money spreads stayed broadly stable, implying the bottleneck is activity/vol rather than pricing alone.",
+        "April commitment pace remained soft and backlog declined, suggesting 2Q deployment may stay muted absent a market reopening.",
+        "Non-accruals increased but remain within historical ranges, keeping focus on whether underlying credit trends are starting to bifurcate across managers.",
+        "Portfolio EBITDA weakened q/q while leverage edged up, a combination that bears watching if private-credit fundamentals soften further.",
+        "ARCC management fees were modestly ahead of GS's ARES model, providing a small offset to softer deployment trends."
       ],
       "new_data": [
-        "ARCC gross new commitments were $3,246mn in 1Q26 vs $5,825mn in 4Q25 and $3,453mn y/y.",
-        "Net new commitments fell to $70mn in 1Q26 vs $1,164mn in 4Q25 and $596mn y/y.",
-        "Net fundings were $277mn in 1Q26 vs $515mn in 4Q25 and $243mn y/y.",
-        "Through Apr. 23, gross new commitments were about $198mn vs exits/repayments of about $13mn.",
-        "Backlog was about $1.8bn on Apr. 23, down from $2.2bn at end-Jan. 2026.",
-        "Weighted avg yield on debt investments funded in 1Q26 was 9.2% vs 9.9% in 1Q25.",
-        "Non-accruals rose 30 bps q/q to 2.1% of cost; non-accruals were 1.2% of fair value, flat q/q.",
-        "Portfolio weighted avg EBITDA fell 5% q/q to $291mn from $307mn.",
-        "Portfolio weighted avg net lev increased to 5.7x from 5.6x.",
-        "ARCC management fees were $111mn, about 3% above GS's ARES model."
+        "1Q26 gross new commitments were $3,246mn vs $5,825mn in 4Q25 and $3,453mn y/y.",
+        "1Q26 net new commitments slowed to $70mn vs $1,164mn in 4Q25 and $596mn y/y.",
+        "1Q26 net fundings were $277mn vs $515mn in 4Q25 and $243mn y/y.",
+        "Debt-investment yield on fundings was 9.2% in 1Q26 vs 9.9% in 1Q25; implied spread was ~550bps on quarter-end SOFR.",
+        "Apr MTD through Apr 23 gross commitments were ~$198mn vs exits/repayments of ~$13mn; backlog was ~$1.8bn vs $2.2bn at end-Jan.",
+        "Non-accruals rose 30bps q/q to 2.1% of cost; fair-value non-accruals were 1.2%, flat q/q.",
+        "Portfolio weighted-average EBITDA fell 5% q/q to $291mn; net lev rose to 5.7x from 5.6x.",
+        "Mgmt fees were $111mn, ~3% above GS's published ARES model and +9% y/y."
       ],
       "management_insights": [
-        "Mgmt indicated muted activity so far in 2Q, consistent with recent market volatility.",
-        "Mgmt disclosed less than $200mn of commitments in April, well below roughly $500mn in Apr. 2025.",
-        "Mgmt showed backlog down to about $1.8bn by Apr. 23 from $2.2bn at end-Jan., signaling a lighter near-term pipeline.",
-        "Read-through implies credit performance is beginning to diverge more across managers, making asset selection and scale more important."
+        "Mgmt flagged muted activity so far in 2Q, with commitments below prior-year April levels.",
+        "ARCC disclosed only sub-$200mn of commitments through Apr 23, underscoring a slower origination environment.",
+        "GS expects ARES can accelerate deployment once markets stabilize because of its scale and ~$100bn of available capital.",
+        "Credit performance is likely to stay in focus as non-accrual trends begin to diverge by manager."
       ],
       "estimate_changes": [],
-      "estimate_change_details": [],
+      "estimate_change_details": [
+        {
+          "metric": "Price Target",
+          "period": "12M",
+          "prior": 165,
+          "new": 131,
+          "pct_change": "-21%",
+          "note": "PT cut per GS target-price history table; Buy rating reiterated."
+        }
+      ],
       "evidence_quality": [
-        "Primary evidence: ARCC 1Q26 company-reported results, 10-Q, and KPI disclosures.",
-        "Primary evidence: month-to-date Apr. 23 operating datapoints and backlog commentary from mgmt/company materials.",
-        "Triangulated read-across: GS maps ARCC trends to ARES because ARCC drives 30%+ of ARES Credit segment management fees.",
-        "Mostly observational/analyst inference on NT deployment outlook for ARES and alt managers; limited new disclosed ARES-specific est revisions in the note."
+        "Primary: based mainly on ARCC's company-reported 1Q26 results, earnings release, slide deck, and 10-Q datapoints.",
+        "Primary: includes company-disclosed Apr MTD origination/backlog metrics, which are timely and directly relevant for NT read-across.",
+        "Triangulated but indirect: conclusions for ARES rely on ARCC as a fee/contribution proxy rather than direct ARES segment reporting.",
+        "Mostly analyst inference for broader alt-manager implications, especially around deployment normalization and manager-by-manager credit divergence."
       ],
       "risks_or_watch_items": [
-        "2Q direct-lending deployment could remain muted if volatility persists.",
-        "Further increases in non-accruals or weaker borrower fundamentals could pressure sentiment on ARES credit earnings.",
-        "Credit performance may diverge more across managers, increasing execution risk.",
-        "Backlog erosion and lower new-money yields/exits mix could limit fee and earnings momentum.",
-        "GS flags wider credit spreads and slower-than-expected realizations as downside risks."
+        "Wider credit spreads or ongoing vol could keep deployment and fee growth muted.",
+        "Further increases in non-accruals could pressure sentiment and raise concern on asset quality.",
+        "Backlog erosion and weak Apr commitments raise risk that 2Q originations stay below recent run-rate.",
+        "Realization timing remains a downside risk per GS.",
+        "Watch whether portfolio EBITDA pressure and slightly higher lev become a broader trend."
       ],
       "key_numbers": [
         "ARES rating/PT: Buy, $131 PT; price $112.18; implied upside 16.8%.",
-        "ARCC contributes 30%+ of ARES Credit segment management fees, incl. Part I fees.",
-        "Available credit capital at ARES: about $100bn.",
-        "1Q26 gross new commitments: $3,246mn.",
-        "1Q26 net new commitments: $70mn.",
-        "1Q26 net fundings: $277mn.",
-        "Apr. 23 MTD gross commitments: about $198mn; exits/repayments: about $13mn.",
-        "Apr. 23 backlog: about $1.8bn vs $2.2bn at end-Jan. 2026.",
-        "1Q26 funded yield: 9.2%; Apr. funded yield: 9.1%; yield on exited/repaid investments: 9.7%.",
-        "Implied spread on new fundings: about 550 bps.",
-        "Non-accruals: 2.1% of cost and 1.2% of fair value.",
-        "Interest coverage: 2.2x.",
-        "Weighted avg portfolio EBITDA: $291mn.",
-        "Weighted avg net lev: 5.7x.",
-        "ARCC management fees: $111mn; Part I fees: $84mn.",
-        "GS 2026E ARES rev/EPS/AuM: $4,854mn / $5.77 / $709,743mn."
-      ]
-    },
-    {
-      "id": "404f366bfd38abb1",
-      "title": "Asbury Automotive: 1Q26 Miss on New/Used Units, GPUs and P&S Better; Expect Underperformance Today; Sector Read Mixed as GPUs Better and SS Unit Weakness Likely Due to DMS Transition",
-      "file_name": "20260428_JP_Morgan_ABG_Asbury_Automotive-_1Q26_Miss_on_New-Used_Units-_GPUs_and.pdf",
-      "modified": "2026-04-28T10:07:47",
-      "pages": 9,
-      "schema_version": 7,
-      "is_sell_side_report": true,
-      "exclusion_reason": null,
-      "sell_side_firm": "JPM",
-      "company": "ABG",
-      "ticker": "ABG",
-      "companies_covered": "ABG, AN, GPI, LAD, PAG, SAH",
-      "report_date": "2026-04-28",
-      "headline": "ABG 1Q26 missed on units and EPS, with JPM pointing to divestitures and Tekion DMS disruption as key drags; GPUs and P&S were relatively better, giving a somewhat less negative read-through for peers than feared.",
-      "summary": "JPM says ABG\u2019s 1Q26 print was a sizable miss, with EPS 8% below JPM and 4% below cons as new/used unit weakness, SS GP underperformance, and weaker SG&A leverage more than offset better TCA income and lower floorplan interest. The analyst views the sharp SS unit miss as likely idiosyncratic and tied to the ongoing Tekion DMS transition, while better new/used GPUs and P&S trends provide a modestly constructive sector signal. JPM expects ABG shares to underperform near term and sees the broader dealer group trading lower until the market gets more clarity on how much of the weakness is DMS-related versus fundamental.",
-      "important_observations": [
-        "Unit weakness appears more severe than gross profit weakness, suggesting operational disruption rather than purely pricing deterioration.",
-        "Better new and used GPUs plus solid P&S temper the negative read-through for peers despite ABG's headline EPS miss.",
-        "SS gross profit fell 8% y/y, worse than JPM's -6%, pointing to incremental pressure beyond divestitures alone.",
-        "Elevated divestiture activity distorted the qtr and complicates clean read-through on underlying demand/productivity.",
-        "Sector setup into dealer earnings may be less negative than feared if ABG's SS unit miss is mainly DMS-specific."
-      ],
-      "new_data": [
-        "1Q26 EPS was $5.37 vs JPM $5.85 and cons roughly $5.59.",
-        "Adj EBITDA was $207 mn vs JPM $218 mn.",
-        "Total retail automotive rev was $4,113 mn vs JPM $4,434 mn.",
-        "Net income was $102 mn vs JPM $109 mn.",
-        "New vehicle units were 39,282 vs JPM 42,990; used vehicle units were 33,202 vs JPM 35,627.",
-        "New GPU was $3,271 vs JPM $3,246; used GPU was $1,849 vs JPM $1,759; F&I GPU was $2,303 vs JPM $2,273.",
-        "P&S rev was $365 mn vs JPM $368 mn, with SS P&S GP growth -1% vs JPM -2%.",
-        "ABG bought back ~$147 mn of stock in 1Q26.",
-        "ABG divested 10 stores and terminated 7 franchises across 3 stores, representing ~$625 mn annualized rev and ~$210 mn cash inflow."
-      ],
-      "management_insights": [],
-      "estimate_changes": [],
-      "estimate_change_details": [],
-      "evidence_quality": [
-        "Primary source: company-reported 1Q26 results, with detailed metric-by-metric comparison vs JPM model.",
-        "Analyst model work: conclusions on miss drivers, sector read-through, and implied peer EPS are partly inference-based.",
-        "Moderate triangulation: peer read-through uses ABG GPU data extrapolated across AN/GPI/LAD/PAG/SAH, which is useful but indirect.",
-        "No substantive mgmt call commentary yet in this note; several key issues are framed as questions for the 10am ET call.",
-        "Weight near-term datapoints fairly highly for quarter mechanics, but use caution on broader thesis until DMS disruption and divestiture effects are better isolated."
-      ],
-      "risks_or_watch_items": [
-        "Tekion DMS integration path and speed of productivity recovery at converted stores.",
-        "Whether SS unit weakness persists beyond the transition period or proves temporary/idiosyncratic.",
-        "2026 SG&A/GP guardrails and scope for incremental cost actions.",
-        "Capital allocation priorities and de-leveraging timeline after divestitures.",
-        "Forward trajectory for new GPUs, used unit volumes, and P&S growth.",
-        "Potential sympathy pressure across dealer stocks until investors gain confidence on peer read-through."
-      ],
-      "key_numbers": [
-        "Rating: UW",
-        "Price: $200.03 (27-Apr-2026)",
-        "EPS: $5.37 vs JPM $5.85, 4% below cons and 8% below JPM",
-        "Adj EBITDA: $207 mn vs JPM $218 mn",
-        "Net income: $102 mn vs JPM $109 mn",
-        "Total retail automotive rev: $4,113 mn vs JPM $4,434 mn",
-        "Gross profit: $727 mn vs JPM $756 mn",
-        "Operating income: $206 mn vs JPM $219 mn",
-        "SG&A/GP: 68.6% vs JPM 68.0%",
-        "New GPU: $3,271 vs JPM $3,246",
-        "Used GPU: $1,849 vs JPM $1,759",
-        "F&I GPU: $2,303 vs JPM $2,273",
-        "New units: 39,282 vs JPM 42,990",
-        "Used units: 33,202 vs JPM 35,627",
-        "SS GP growth: -8% y/y vs JPM -6% y/y",
-        "Buybacks: $147 mn in 1Q26",
-        "Divestitures: ~$625 mn annualized rev; ~$210 mn cash inflow"
-      ]
-    },
-    {
-      "id": "213da045448ee5a2",
-      "title": "1Q26 Ahead Across the Board with Guidance Increased; Assumptions Around ACA Exchanges and Medicaid Progression in Focus",
-      "file_name": "20260428_JP_Morgan_CNC_Centene-_1Q26_Ahead_Across_the_Board_with_Guidance_Incre.pdf",
-      "modified": "2026-04-28T10:07:44",
-      "pages": 8,
-      "schema_version": 7,
-      "is_sell_side_report": true,
-      "exclusion_reason": null,
-      "sell_side_firm": "JPM",
-      "company": "Centene",
-      "ticker": "CNC",
-      "companies_covered": "CNC",
-      "report_date": "2026-04-28",
-      "headline": "CNC posted a broad 1Q26 beat and raised FY26 adj. EPS guide, but JPM stays Neutral as investors focus on ACA Exchange acuity, Medicaid progression, and whether the 1Q beat was mostly timing/seasonality.",
-      "summary": "JPM says CNC delivered a clear 1Q26 beat across Medicaid, Medicare, and Commercial, with adj. EPS of $3.37 vs $2.28 cons and FY26 adj. EPS guide raised to >$3.40 from >$3.00. The note frames the key debate around how much of the beat is sustainable versus seasonal/cadence-driven, especially in ACA Exchange where higher Silver-tier acuity is expected to be offset later by 2026 risk adjustment. JPM views the quarter as a positive start but remains focused on the assumptions embedded in guidance over the next two qtrs.",
-      "important_observations": [
-        "Guide raise of $0.40 trails a >$1.00 1Q EPS beat, suggesting mgmt conservatism or meaningful seasonality/cadence in the rest of FY26.",
-        "Commercial outperformance appears to be the largest swing factor, but JPM questions how much should flow through given likely seasonality.",
-        "ACA Exchange remains the central debate, with higher Silver-tier acuity and specialty Rx util creating uncertainty until 2026 risk adjustment benefits are realized.",
-        "Medicaid trends were better than feared, supported by rate/rev increases, med cost management, and moderate flu costs.",
-        "Medicare margin progression continued, aided by lapping the 1Q25 PDP drag and better HBR.",
-        "Reaffirmed FY26 HBR despite the beat implies a steeper cost-ratio deterioration through the year, which keeps investors focused on back-half execution."
-      ],
-      "new_data": [
-        "1Q26 adj. EPS $3.37 vs JPM $2.34 and cons $2.28.",
-        "1Q26 consolidated HBR 87.3% vs JPM 88.9% and cons 89.2%.",
-        "Medicaid HBR 93.1% vs JPM 93.4% and cons 93.6%.",
-        "Medicare HBR 84.9% vs JPM 85.9% and cons 86.9%.",
-        "Commercial HBR 75.3% vs cons 79.1%.",
-        "Adj. SG&A 7.6% vs JPM/cons 7.4%.",
-        "Investment income $407m vs JPM/cons $351m.",
-        "FY26 adj. EPS guide raised to >$3.40 from >$3.00.",
-        "FY26 premium revenue guide raised by about $1bn; adj. SG&A midpoint lowered about 10 bps; investment income guide raised about $50m.",
-        "DCP was 48 days vs 46 days in 4Q25."
-      ],
-      "management_insights": [
-        "Mgmt said the 1Q beat was about $0.50 better than internal expectations, implying part of the upside may be timing-related.",
-        "Mgmt highlighted favorable y/y Medicaid impact from rate and rev increases, tangible progress on med cost management, and moderate flu cost.",
-        "Mgmt said Commercial/Marketplace results reflected higher acuity among Silver-tier members before anticipated 2026 net risk-adjustment benefit.",
-        "Mgmt left FY26 HBR guidance unchanged despite the quarter, indicating caution around the rest of the year.",
-        "Mgmt improved SG&A assumptions and investment income outlook as part of the FY26 guide update."
-      ],
-      "estimate_changes": [],
-      "estimate_change_details": [
-        {
-          "metric": "Adj. EPS",
-          "period": "FY26 company guidance",
-          "prior": ">$3.00",
-          "new": ">$3.40",
-          "pct_change": "13%",
-          "note": "Company raised FY26 adj. EPS guide; new floor is 40c higher."
-        },
-        {
-          "metric": "Revenue",
-          "period": "FY26 premium and service revenue guidance midpoint",
-          "prior": "$172,000m",
-          "new": "$173,000m",
-          "pct_change": "1%",
-          "note": "Prior midpoint inferred from company comment that premium revenue guidance increased by about $1bn."
-        },
-        {
-          "metric": "Investment Income",
-          "period": "FY26 company guidance",
-          "prior": null,
-          "new": "+ $50m vs prior guide",
-          "pct_change": null,
-          "note": "Report states investment income guidance was increased by about $50m, but prior absolute guide was not provided."
-        }
-      ],
-      "evidence_quality": [
-        "Primary: company-reported 1Q26 results and updated FY26 guidance.",
-        "Primary: mgmt commentary from earnings release, with additional focus on upcoming call assumptions.",
-        "Triangulated: JPM compares reported metrics against its model and Bloomberg cons, giving solid context on magnitude of beat/miss.",
-        "Partly inference-based: views on seasonality, cadence, and conservatism are analyst interpretation rather than fully disclosed company data."
-      ],
-      "risks_or_watch_items": [
-        "ACA Exchange morbidity and specialty Rx util, especially among Silver-tier members.",
-        "Whether anticipated 2026 risk-adjustment benefit materializes as expected.",
-        "Medicaid rate updates and underlying med cost trend through the year.",
-        "Durability of Commercial margin upside versus seasonal benefit.",
-        "MA util trends and commentary around final 2027 rates.",
-        "PDP margin sustainability after a strong 2025.",
-        "Back-half FY26 HBR cadence implied by unchanged HBR guide despite 1Q beat."
-      ],
-      "key_numbers": [
-        "Rating: Neutral",
-        "Price (27-Apr-2026): $43.50",
-        "1Q26 adj. EPS: $3.37",
-        "FY26 adj. EPS guide: >$3.40 vs >$3.00 prior",
-        "1Q26 consolidated HBR: 87.3%",
-        "1Q26 Medicaid HBR: 93.1%",
-        "1Q26 Medicare HBR: 84.9%",
-        "1Q26 Commercial HBR: 75.3%",
-        "1Q26 adj. SG&A: 7.6%",
-        "1Q26 investment income: $407m",
-        "FY26 premium and service revenue guide midpoint: $173.0bn",
-        "FY26 HBR guide midpoint: 91.3%",
-        "DCP: 48 days"
-      ]
-    },
-    {
-      "id": "3b54d4a5e1ef762e",
-      "title": "1Q26 First Look: Strong EPS Beat and Raise Reinforces ACA Recovery",
-      "file_name": "20260428_Barclays_CNC_Centene-_1Q26_First_Look-_Strong_EPS_Beat_and_Raise_Rein.pdf",
-      "modified": "2026-04-28T10:07:42",
-      "pages": 10,
-      "schema_version": 7,
-      "is_sell_side_report": true,
-      "exclusion_reason": null,
-      "sell_side_firm": "BCA",
-      "company": "Centene",
-      "ticker": "CNC",
-      "companies_covered": "CNC",
-      "report_date": "2026-04-28",
-      "headline": "CNC 1Q26 EPS beat by ~50% vs cons, driven by broad MLR outperformance; FY26 EPS guide raised by $0.40, supporting ACA recovery thesis.",
-      "summary": "Barclays frames CNC's 1Q26 print as a material beat-and-raise that should ease ACA margin concerns and reinforce the recovery case. Adj. EPS of $3.37 beat cons by ~48-50%, primarily on better-than-expected MLR across Commercial/ACA, Medicare, and Medicaid, while FY26 EPS guidance was lifted by $0.40 to >$3.40. Barclays highlights especially strong ACA and Medicare MLR performance, modestly better Medicaid enrollment, and commentary that pricing remains conservative despite higher-acuity silver-book utilization, leaving room for possible 2Q benefit from risk adjustment.",
-      "important_observations": [
-        "ACA MLR beat was strong enough to absorb the specialty pharmacy headwind flagged in Mar, supporting the view that pricing conservatism remains embedded.",
-        "Broad-based MLR upside across all segments reduces concern that 1Q strength was isolated or timing-driven.",
-        "Mgmt said 1Q exceeded internal expectations by $0.50, implying the beat was not only vs Street numbers but also ahead of internal planning.",
-        "Updated guidance does not include any benefit from higher ACA acuity risk adjustment, creating a potential 2Q upside lever.",
-        "Medicaid margin performance benefited from both favorable seasonal flu dynamics and more durable drivers like rate increases and medical cost management.",
-        "Enrollment progression looked broadly consistent with prior guide after adjusting for the MDwise exit effect, lowering risk of a major membership disconnect."
-      ],
-      "new_data": [
-        "1Q26 adj. EPS $3.37 vs cons $2.28; +16% y/y.",
-        "FY26 EPS guidance raised by $0.40 to >$3.40.",
-        "Total operating rev $49.9B, +7.1% y/y, 5.6% above cons.",
-        "MLR 87.3% vs cons 89.2%, 197 bps better than cons.",
-        "Medicaid MLR 93.1% vs cons 93.6%, 53 bps better.",
-        "Commercial/ACA MLR 75.3% vs cons 79.6%, 431 bps better.",
-        "Medicare MLR 84.9% vs cons 86.9%, 197 bps better.",
-        "Net earnings attributable to CNC $1.7B vs cons $1.1B.",
-        "Medicaid enrollment 12.427M, down 0.7% q/q, 0.7% above cons.",
-        "Commercial Marketplace membership 3.582M; total paid ACA membership consistent with Mar disclosure.",
-        "PYD reserve development $1.194B, contributing 10 bps to enterprise MLR.",
-        "Days claims payable 48 days, down 1 day y/y and up 2 days q/q."
-      ],
-      "management_insights": [
-        "Mgmt said 1Q results exceeded internal expectations by $0.50.",
-        "Mgmt cited milder flu season as a benefit to Medicaid MLR.",
-        "Mgmt also pointed to rate increases and medical cost management initiatives as Medicaid margin drivers.",
-        "Mgmt said ACA MLR ran slightly above expectations due to higher acuity in the silver membership book, including elevated specialty pharmacy trend.",
-        "Updated guidance excludes any benefit from ACA risk adjustment tied to higher acuity, which Barclays sees as a possible 2Q tailwind."
-      ],
-      "estimate_changes": [],
-      "estimate_change_details": [
-        {
-          "metric": "EPS Guidance",
-          "period": "FY26",
-          "prior": "~$3.00",
-          "new": ">$3.40",
-          "pct_change": "13%",
-          "note": "Company raised full-year EPS guidance by $0.40; prior implied from new guide minus stated increase."
-        }
-      ],
-      "evidence_quality": [
-        "Primary: company-reported 1Q26 results and guidance update; highest weight for reported P&L, MLR, and membership datapoints.",
-        "Primary + mgmt commentary: quarter update includes specific explanations on flu, rate actions, cost management, and ACA acuity.",
-        "Triangulated: Barclays compares results against Bloomberg consensus and its own model, which helps quantify the beat but remains partly analyst framing.",
-        "Some inference: estimated flu benefit (~15 bps), specialty pharmacy impact (~40 bps), MDwise effect (~60k members), and possible 2Q risk-adjustment upside are analyst-derived rather than company-confirmed."
-      ],
-      "risks_or_watch_items": [
-        "Need to monitor whether ACA specialty pharmacy trend persists or worsens beyond what pricing can absorb.",
-        "2Q risk-adjustment outcome is a watch item since guide excludes benefit and could move earnings either way depending on final acuity settlement.",
-        "Medicaid margin durability should be tested beyond the favorable flu backdrop.",
-        "Membership attrition in Medicaid and the gap between OEP and paid ACA enrollment remain important for revenue and margin progression.",
-        "Downside risks cited by Barclays include higher medical/pharmacy cost trend, slower Medicaid/ACA margin recovery, customer losses, and weaker cost savings realization."
-      ],
-      "key_numbers": [
-        "Adj. EPS $3.37 vs cons $2.28.",
-        "FY26 EPS guide >$3.40, raised by $0.40.",
-        "Total operating rev $49.9B vs cons $47.3B.",
-        "Net earnings attributable to CNC $1.7B vs cons $1.1B.",
-        "Enterprise MLR 87.3% vs cons 89.2%.",
-        "Medicaid MLR 93.1%; Commercial/ACA MLR 75.3%; Medicare MLR 84.9%.",
-        "Medicaid enrollment 12.427M; total membership 26.273M.",
-        "PYD reserves $1.194B; DCP 48 days.",
-        "Barclays rating OW; PT $54; price $43.50."
-      ]
-    },
-    {
-      "id": "9f0f60d0c8a8601d",
-      "title": "1Q26 Earnings Preview: Delivering a Positive Narrative Shift",
-      "file_name": "20260428_Deutsche_Bank_AMZN_Amazon-_1Q26_Earnings_Preview-_Delivering_a_Positive_Nar.pdf",
-      "modified": "2026-04-28T10:07:38",
-      "pages": 18,
-      "schema_version": 7,
-      "is_sell_side_report": true,
-      "exclusion_reason": null,
-      "sell_side_firm": "DB",
-      "company": "Amazon",
-      "ticker": "AMZN",
-      "companies_covered": "AMZN",
-      "report_date": "2026-04-21",
-      "headline": "DB stays Buy/PT $290; sees 1Q26 near high end of guide with AWS accel offsetting softer ads and raises 2026/2027 EPS on stronger AWS profit outlook.",
-      "summary": "DB previews AMZN 1Q26 with rev/OI roughly in line with cons but near the high end of mgmt guide, supported by resilient NA ecom trends and improving AWS demand/consumption. The main change is a more constructive AWS narrative: DB cites stronger commitments, Bedrock/Trainium traction, large AI customer wins, and better chip supply visibility, which more than offsets softer ad checks and a 2% cut to FY26/FY27 ad rev fcst. DB reiterates Buy and $290 PT, and raises 2026/2027 EPS by 4.5%/5.4%.",
-      "important_observations": [
-        "Variant view is that Street may be underestimating AWS momentum while over-focusing on AI-related margin dilution risk.",
-        "DB thinks NA retail cons may be achievable to conservative despite macro concerns, with non-store retail and app activity suggesting 1Q improved vs 4Q.",
-        "Ad growth appears to be decelerating in core Sponsored Products, but DSP mix is stronger and agency checks point to q/q re-accel in 2Q26.",
-        "AWS margin debate remains key into the print; DB expects 1Q margin compression to bottom and modest y/y improvement in 2Q26.",
-        "Recent AI/chip announcements weaken the 'AMZN AI laggard' narrative and reduce concerns around GPU supply constraints.",
-        "Globalstar acquisition is framed as strategically accretive for Leo/Kuiper, spectrum access, edge compute, and Apple-related recurring rev."
-      ],
-      "new_data": [
-        "AWS AI rev run-rate >$15bn as of 1Q26 per Andy Jassy shareholder letter.",
-        "AMZN chips business run-rate >$20bn, growing triple digits y/y; Trainium2 largely sold out, Trainium3 nearly fully subscribed, part of Trainium4 already reserved.",
-        "Archera checks: AWS NTM committed dollar growth rose from 28% in Dec to 30% in Feb, with March seen higher.",
-        "Archera checks: AWS consumption growth reached 32.5% y/y in Feb, up 3.5 pts.",
-        "Nvidia disclosed a multi-year deal with AWS for ~1mn AI processors by end-2027.",
-        "AWS/OpenAI partnership includes up to $50bn investment and Bedrock enterprise distribution.",
-        "Anthropic to spend $100bn+ on AWS tech over 10 years and secured up to 5GW of capacity.",
-        "AMZN announced Globalstar acquisition at $90/share, or about $12bn."
-      ],
-      "management_insights": [
-        "Jassy emphasized AI and infra investment in the Apr. 9 shareholder letter, highlighting rapid AI scaling at AWS.",
-        "Mgmt commentary implies strong demand for Trainium and Bedrock, with future chip capacity already heavily reserved.",
-        "AWS custom silicon is positioned as a price/performance advantage, with inference increasingly running on Trainium.",
-        "Company implemented a 3.5% FBA fuel/logistics surcharge effective Apr. 17 to offset higher fuel costs."
-      ],
-      "estimate_changes": [
-        "FY26 ad rev fcst cut 2%.",
-        "FY27 ad rev fcst cut 2%.",
-        "FY26 EPS est raised 4.5%.",
-        "FY27 EPS est raised 5.4%.",
-        "PT unchanged at $290.",
-        "Buy reiterated."
-      ],
-      "estimate_change_details": [
-        {
-          "metric": "Revenue",
-          "period": "FY26 advertising revenue",
-          "prior": null,
-          "new": null,
-          "pct_change": null,
-          "note": "DB lowered FY26 advertising revenue fcst by 2%, but absolute prior/new values were not disclosed."
-        },
-        {
-          "metric": "Revenue",
-          "period": "FY27 advertising revenue",
-          "prior": null,
-          "new": null,
-          "pct_change": null,
-          "note": "DB lowered FY27 advertising revenue fcst by 2%, but absolute prior/new values were not disclosed."
-        },
-        {
-          "metric": "EPS",
-          "period": "FY26",
-          "prior": null,
-          "new": null,
-          "pct_change": null,
-          "note": "DB raised FY26 EPS est by 4.5%, but absolute prior/new values were not disclosed."
-        },
-        {
-          "metric": "EPS",
-          "period": "FY27",
-          "prior": null,
-          "new": null,
-          "pct_change": null,
-          "note": "DB raised FY27 EPS est by 5.4%, but absolute prior/new values were not disclosed."
-        },
-        {
-          "metric": "Price Target",
-          "period": "12-month",
-          "prior": 290,
-          "new": 290,
-          "pct_change": 0,
-          "note": "PT maintained at $290."
-        }
-      ],
-      "evidence_quality": [
-        "Primary: company-reported guide and Jassy shareholder letter provide direct evidence on 1Q rev/OI range, AWS AI scale, and chip demand.",
-        "Triangulated alt data: Second Measure, Sensor Tower, non-store retail data, and ad agency checks support the ecom/ads read-through.",
-        "Channel/expert checks: Archera commentary on AWS commitments and consumption is useful but still anecdotal and customer-base specific.",
-        "Market/industry data: Nvidia GTC disclosures, WSJ-reported OpenAI/Anthropic spending plans, and announced customer wins strengthen the AWS demand case.",
-        "Analyst model work: rev/OI/margin conclusions and EPS revisions rely partly on DB inference, especially around AWS margin trajectory and ad softness."
-      ],
-      "risks_or_watch_items": [
-        "AWS OI margin on AI workloads remains a central debate and could matter more than top-line upside.",
-        "Ad rev decel in Sponsored Products could worsen if macro or advertiser demand softens further.",
-        "Middle East conflict and higher gas prices may pressure consumer demand and delivery costs.",
-        "FX became less of a tailwind in 1Q and could modestly weigh reported results.",
-        "Execution/regulatory risk on Globalstar deal and on satellite replacement milestones through 2027.",
-        "Street expectations for AWS may be moving higher into the print, raising the bar for upside."
-      ],
-      "key_numbers": [
-        "Buy; PT $290; stock price $248.28 on Apr. 20, 2026.",
-        "1Q26 total rev guide $173.5bn-$178.5bn; DB est $177.7bn.",
-        "1Q26 OI guide $16.5bn-$21.5bn; DB est $21.0bn, 11.8% margin.",
-        "2Q26 DB rev est $189.5bn, 13% y/y.",
-        "2Q26 DB OI est $22.8bn, 12.0% margin.",
-        "1Q26 Street NA retail growth est 9.9% y/y; 2Q26 Street 9.3% y/y.",
-        "AWS margin est: 35.2% in 1Q26 vs 39.5% in 1Q25; 33.1% in 2Q26 vs 32.9% in 2Q25.",
-        "AWS AI rev run-rate >$15bn; chips business run-rate >$20bn.",
-        "Anthropic AWS commitment $100bn+ over 10 years; up to 5GW capacity.",
-        "Globalstar acquisition announced at $90/share, about $12bn.",
-        "FBA surcharge 3.5%, about $0.17/unit on avg.",
-        "DB says FY26/FY27 ad rev fcst cut 2%; FY26/FY27 EPS est raised 4.5%/5.4%."
-      ]
-    },
-    {
-      "id": "52b525e0fff5d2ec",
-      "title": "Ares Management: Model Update: Institutional Centric Funding Model Positions Ares Well To Gain Share, However Not Immune From Macro And Sentiment",
-      "file_name": "20260428_JP_Morgan_ARES_Ares_Management-_Model_Update-_Institutional_Centric_Fun.pdf",
-      "modified": "2026-04-28T10:07:35",
-      "pages": 12,
-      "schema_version": 7,
-      "is_sell_side_report": true,
-      "exclusion_reason": null,
-      "sell_side_firm": "JPM",
-      "company": "ARES",
-      "ticker": "ARES",
-      "companies_covered": "ARES",
-      "report_date": "2026-04-28",
-      "headline": "JPM keeps OW on ARES but cuts Dec-26 PT to $144 from $188 and trims 26E/27E EPS on slower DL activity, softer private wealth flows, and lower sector multiples.",
-      "summary": "JPM updates ARES ahead of 1Q26 and stays constructive on the firm's institutional/fee-centric model, diversified credit platform, and real assets growth runway, but cuts ests and PT to reflect a weaker macro/dealmaking backdrop, slower U.S. direct lending wealth flows, lower BDC fundraising, and sector de-rating. The note argues ARES can still gain share in dislocation and benefit from institutional fundraising plus GCP-driven real assets expansion, but near-term deployment, leverage, and sentiment are likely softer than previously modeled.",
-      "important_observations": [
-        "ARES's funding mix remains more institutional and management-fee driven than peers, supporting steadier earnings despite macro noise.",
-        "JPM sees ARES's broad credit platform as a share gainer in dislocated markets, but 1H26 deployment likely decels vs 2H25 peaks.",
-        "Private wealth softness appears concentrated in U.S. direct lending; non-DL strategies and Europe look more resilient.",
-        "Real Assets is framed as a key growth offset, helped by GCP, expected 2026-27 fund launches, and better RE/perf fee setup.",
-        "The PT cut is driven not just by lower EPS but by a meaningful multiple reset, implying sector sentiment/risk premia matter as much as fundamentals."
-      ],
-      "new_data": [
-        "Global M&A was $1.68tn in 1Q26; April announced/closed volume was only $351bn, signaling a softer 2Q26 pace.",
-        "JPM credit team estimates Mar direct lending vols fell 29% y/y to $20.7bn; 1Q26 DL volume was $61.1bn, down 14% y/y.",
-        "1Q26 LBO-funded DL deployment was $23.3bn, down 17% y/y.",
-        "JPM lowers 2026 Credit segment FPAUM commitments to $26bn from $29bn.",
-        "JPM now models Credit deployment/leverage at $8.0bn in 1Q26 and $8.5bn in 2Q26 vs $9.5bn in 4Q25 and $9.9bn in 3Q25.",
-        "JPM now models 2026 FRE margin expansion of ~108 bps, mid-range of ARES's typical 0-150 bps annual walk.",
-        "Real Assets FRPR ests move to $114mm for 2026 from $98mm prior; 2027 moves to $168mm from $259mm prior.",
-        "2026 net carry est is cut to $351mm from $401mm prior; JPM's 1Q26 net carry est is $78mm after mgmt tempered near-term outlook."
-      ],
-      "management_insights": [
-        "Mgmt has said the firm is seeing attractive opportunities across most business lines despite macro volatility.",
-        "Mgmt previously indicated 2026 capital collections should be at least as strong as record 2025 levels of $113bn.",
-        "Mgmt has guided to further FRE margin expansion, with 2026 at the high end of the normal 0-150 bps annual range.",
-        "Mgmt indicated Alternative Credit Pathfinder III should complete fundraising by end of summer.",
-        "Mgmt had flagged $52mm of European waterfall net carry slipping from 4Q25 into 1Q26 as a timing item and previously pointed to roughly $200mm of net carry across 4Q25-1Q26.",
-        "As of Mar 31 filings, mgmt tempered firmwide 1Q26 net carry outlook to $75mm and reiterated $350mm for full-year 2026."
-      ],
-      "estimate_changes": [],
-      "estimate_change_details": [
-        {
-          "metric": "Adj. EPS",
-          "period": "FY2026E",
-          "prior": 6.49,
-          "new": 5.98,
-          "pct_change": "-8%",
-          "note": "Key Changes table; cut on softer deployment/fundraising and macro uncertainty."
-        },
-        {
-          "metric": "Adj. EPS",
-          "period": "FY2027E",
-          "prior": 7.76,
-          "new": 7.52,
-          "pct_change": "-3%",
-          "note": "Key Changes table; more modest haircut than 2026E."
-        },
-        {
-          "metric": "Price Target",
-          "period": "Dec-2026",
-          "prior": 188,
-          "new": 144,
-          "pct_change": "-23%",
-          "note": "PT cut reflects lower FRE multiple and broader market risk, not only lower ests."
-        },
-        {
-          "metric": "Credit segment FPAUM commitments",
-          "period": "FY2026E",
-          "prior": 29,
-          "new": 26,
-          "pct_change": "-10%",
-          "note": "Units are $bn; lowered for slower U.S. private wealth/direct lending flows."
-        },
-        {
-          "metric": "Real Assets FRPR",
-          "period": "FY2026E",
-          "prior": 98,
-          "new": 114,
-          "pct_change": "16%",
-          "note": "Units are $mm; better non-traded REIT/perf fee outlook."
-        },
-        {
-          "metric": "Real Assets FRPR",
-          "period": "FY2027E",
-          "prior": 259,
-          "new": 168,
-          "pct_change": "-35%",
-          "note": "Units are $mm; still above 2025 actuals, but reset lower vs prior model."
-        },
-        {
-          "metric": "BDC-driven Part I fees",
-          "period": "FY2026E",
-          "prior": 563,
-          "new": 535,
-          "pct_change": "-5%",
-          "note": "Units are $mm; reflects less robust asset growth outlook for BDC vehicles."
-        },
-        {
-          "metric": "BDC-driven Part I fees",
-          "period": "FY2027E",
-          "prior": 560,
-          "new": 528,
-          "pct_change": "-6%",
-          "note": "Units are $mm; continued moderation in retail fundraising assumptions."
-        },
-        {
-          "metric": "Net carry",
-          "period": "FY2026E",
-          "prior": 401,
-          "new": 351,
-          "pct_change": "-12%",
-          "note": "Units are $mm; incorporates softer carry expectations despite some 1Q26 timing benefits."
-        }
-      ],
-      "evidence_quality": [
-        "Primary: company-reported results/filings, prior earnings call commentary, and mgmt guidance are core inputs; high weight on disclosed fee, carry, and fundraising commentary.",
-        "Triangulated: JPM combines company data with Bloomberg global M&A data and internal HY/LL credit team estimates on DL volumes; moderate-to-high weight.",
-        "Market/industry data: private wealth flow slowdown and non-traded BDC redemption trends rely partly on broader market tracker work; useful but somewhat inferential.",
-        "Analyst model work: PT, multiple reset, deployment assumptions, and est revisions are mostly analyst inference layered on primary data; medium weight.",
-        "Not based on channel checks/expert call/survey in the text; conclusions are mainly fundamentals + market data, not anecdotal evidence."
-      ],
-      "risks_or_watch_items": [
-        "2Q26 M&A/dealmaking decel could pressure deployment, fee activation timing, and sentiment.",
-        "Further slowdown in U.S. private wealth/direct lending flows and rising non-traded BDC redemptions could weigh on Credit FPAUM growth.",
-        "Credit quality deterioration remains the key downside risk for returns, fundraising, and valuation.",
-        "GCP integration execution is still a watch item given deal size and higher acquisition multiple vs prior M&A.",
-        "Carry timing/outlook remains volatile; 1Q26 and FY26 realization cadence needs monitoring against mgmt's $350mm guide.",
-        "Sector multiple compression could persist even if ARES fundamentals hold up relatively better than peers."
-      ],
-      "key_numbers": [
-        "Rating/PT: OW maintained; PT cut to $144 from $188.",
-        "Price: $112.18 as of Apr 27, 2026.",
-        "Adj. EPS: 2026E cut to $5.98 from $6.49; 2027E cut to $7.52 from $7.76.",
-        "Rev: FY26E $5,455mm; FY27E $6,703mm.",
-        "Adj. EBIT: FY26E $2,072mm; FY27E $2,635mm.",
-        "Adj. NI: FY26E $1,466mm; FY27E $1,933mm.",
-        "1Q26 global M&A: $1.68tn; April M&A to date: $351bn.",
-        "1Q26 DL volume: $61.1bn, down 14% y/y; Mar DL volume: $20.7bn, down 29% y/y.",
-        "LBO-funded DL in 1Q26: $23.3bn, down 17% y/y.",
-        "2026 Credit FPAUM commitments: cut to $26bn from $29bn.",
-        "2026 net carry est: $351mm vs $401mm prior; 1Q26 net carry est: $78mm.",
-        "2026 FRE margin expansion modeled at ~108 bps."
-      ]
-    },
-    {
-      "id": "fe359c78b68c35ad",
-      "title": "Oil Flash Note: Simple math",
-      "file_name": "JPM_Oil_Flash_Note_Simpl_2026-04-23_5273094.pdf",
-      "modified": "2026-04-27T13:54:29",
-      "pages": 7,
-      "schema_version": 7,
-      "is_sell_side_report": true,
-      "exclusion_reason": null,
-      "sell_side_firm": "JPM",
-      "company": null,
-      "ticker": null,
-      "companies_covered": "Not specified",
-      "report_date": "2026-04-23",
-      "headline": "JPM argues the oil market is clearing via forced demand loss and heavy inventory draws after a Hormuz-related supply shock, with further price upside likely needed to balance the market.",
-      "summary": "J.P. Morgan frames this as a macro commodities flash note rather than single-stock research, arguing that a roughly 14 mbd supply disruption tied to the Strait of Hormuz closure has overwhelmed normal balancing mechanisms because Gulf spare capacity is effectively inaccessible. The note says the market has instead adjusted through massive inventory draws and forced demand loss, especially in the Middle East, Asia, and Africa, with Europe and potentially the US still needing to absorb more of the rebalancing. JPM\u2019s key conclusion is that current prices have not yet done enough work to clear the market globally, implying further tightening and higher prices may be required.",
-      "important_observations": [
-        "What looks like demand destruction is, in JPM's view, largely forced demand loss caused by missing physical supply rather than normal price elasticity.",
-        "The usual first shock absorber, Gulf spare capacity, is effectively unavailable, making this disruption structurally harder to offset than a typical supply outage.",
-        "The remaining balancing gap appears too large for EM demand weakness alone, implying Europe and the US may still need to absorb more rationing via higher prices.",
-        "Petchem feedstocks appear to be the earliest and largest point of adjustment, suggesting downstream industrial weakness could deepen before broader transport fuels fully roll over.",
-        "The Americas are relatively insulated near term, but JPM flags early signs that higher pump prices and airfares are beginning to dent US driving and jet demand."
-      ],
-      "new_data": [
-        "JPM estimates global supply disruption at 9.1 mbd in March, widening to 13.7 mbd in April.",
-        "Observable commercial and strategic inventories drew 4.0 mbd in March and 7.1 mbd in April.",
-        "Observed global oil demand fell 2.8 mbd in March and is tracking down 4.3 mbd in April.",
-        "Middle East, Asia, and Africa account for 87% of the 4.3 mbd April demand hit.",
-        "Feedstock-driven weakness represents about 55% of April demand loss; jet fuel is about 11% of the loss.",
-        "Russian supply is said to be down 350 kbd in recent weeks, while Russia's spare capacity is only about 300 kbd.",
-        "US shale response is limited near term, with only 0.3-0.7 mbd likely over 3-6 months and up to 1 mbd over 6-12 months.",
-        "India March LPG consumption fell 13% YoY, cited as evidence of feedstock/fuel stress."
-      ],
-      "management_insights": [],
-      "estimate_changes": [],
-      "estimate_change_details": [],
-      "evidence_quality": [
-        "Company-reported/public market data: draws on Kpler, IEA, EIA, JODI, Singapore, PAJ, Bloomberg, and Rystad; evidence base is largely market/industry data rather than company-specific disclosures.",
-        "Analyst model work: core conclusions rely on JPM's balance math and inferred global demand-loss estimates; a meaningful portion is analyst synthesis rather than directly observed data.",
-        "Primary vs inference: inventory data are partly observable, but JPM explicitly notes incomplete visibility, especially in product stocks, so true draws may differ materially.",
-        "Triangulated but not fully verifiable in real time: the note combines multiple datasets and market price signals, but several conclusions depend on interpreting shortages and residual balancing gaps.",
-        "No mgmt meeting/call, channel checks, or survey evidence is cited; weight should be placed on macro balance analysis, with caution around fast-moving disruption assumptions."
-      ],
-      "risks_or_watch_items": [
-        "Further price upside may be needed if Europe and the US must participate more fully in demand rationing.",
-        "Inventory visibility is incomplete, especially for product stocks, creating risk that actual draws are either larger or less sustainable than observed.",
-        "Jet demand could weaken further in May as airlines across Asia and Europe cut activity.",
-        "Diesel and jet markets in Europe already appear tight; additional refinery constraints could broaden product stress into gasoline during the US summer driving season.",
-        "A slower-than-expected non-Gulf supply response, especially from US shale, would keep the market tighter for longer.",
-        "Regional dislocations in Asia and Africa could intensify if cargoes continue to be diverted toward higher-bidding markets."
-      ],
-      "key_numbers": [
-        "Supply disruption: 9.1 mbd in March; 13.7 mbd in April.",
-        "Observable inventory draws: 4.0 mbd in March; 7.1 mbd in April.",
-        "Demand loss: 2.8 mbd in March; 4.3 mbd in April.",
-        "Residual balancing need: about 2 mbd even assuming an aggressive 8 mbd inventory contribution.",
-        "Regional concentration: 87% of April demand hit in Middle East, Asia, and Africa.",
-        "Feedstocks share of April demand loss: about 55%; jet fuel share: 11%.",
-        "Brent futures avg: just under $100/bbl in March and April to date; dated crude avg: $107 in March and $123 in April to date.",
-        "US shale response: 0.3-0.7 mbd over 3-6 months; up to 1.0 mbd over 6-12 months.",
-        "Russia spare capacity: about 300 kbd; recent Russian supply decline: 350 kbd.",
-        "India LPG consumption: down 13% YoY in March."
-      ]
-    },
-    {
-      "id": "2db8d888d7295334",
-      "title": "Rise of the AI Agent - Global Implications",
-      "file_name": "20260419_Morgan_Stanley_1590-TT_Technology-_Rise_of_the_AI_Agent_Global_Implications.pdf",
-      "modified": "2026-04-27T13:22:31",
-      "pages": 73,
-      "schema_version": 7,
-      "is_sell_side_report": true,
-      "exclusion_reason": null,
-      "sell_side_firm": "MS",
-      "company": null,
-      "ticker": null,
-      "companies_covered": "NVDA, AMD, ARM, INTC, MU",
-      "report_date": "2026-04-19",
-      "headline": "Agentic AI broadens the AI trade from GPUs to full-stack infra, with CPU orchestration and memory becoming the next major bottlenecks.",
-      "summary": "Morgan Stanley argues agentic AI shifts value creation from standalone accelerators toward system orchestration, lifting CPU, DRAM, packaging, foundry and infra content across the stack. The note frames CPU as the control plane for multi-step AI workflows and estimates agentic workloads can add $32.5-60bn of incremental CPU TAM by 2030 within a $100bn+ server CPU market, alongside 15-45EB of incremental DRAM demand. The firm highlights global beneficiaries across memory, substrates, foundry, BMC/memory interface, storage and semi-cap, and raises PTs on key Korea names tied to memory and ABF exposure.",
-      "important_observations": [
-        "The bottleneck is shifting from raw GPU throughput to orchestration, data movement and memory hierarchy, which broadens AI upside beyond accelerators.",
-        "CPU-side orchestration is framed as the dominant latency source in agentic workloads, implying structurally higher cluster CPU intensity and a rising CPU:GPU ratio.",
-        "Memory is presented as an active architectural layer rather than passive storage, supporting persistent context, recall and continuous learning.",
-        "Morgan Stanley prefers exposure via enablers where capex/token growth maps more directly into earnings upside, especially memory, foundry, ABF and infrastructure ICs.",
-        "Supply-constrained layers such as leading-edge foundry, ABF substrates, BMCs, memory interconnect and equipment are positioned to capture outsized economics as system complexity rises.",
-        "The note suggests agentic AI can extend the storage cycle as persistent context and knowledge layers increase HDD and NAND demand, not just DRAM."
-      ],
-      "new_data": [
-        "Introduces a new Morgan Stanley framework to size CPU and memory upside from agentic AI.",
-        "Estimates incremental CPU TAM of $32.5-60bn by 2030.",
-        "Estimates total server CPU TAM of $100bn+ by 2030; executive summary cites $82.5-110bn.",
-        "Estimates 15-45EB of incremental DRAM demand by 2030, equal to 26-77% of 2027 annual DRAM supply.",
-        "States CPU-side orchestration can represent 50-90% of total workload latency.",
-        "Estimates agentic AI could drive 5-10% incremental ABF substrate demand upside by 2030 from enlarged CPU TAM alone.",
-        "Highlights a shift in server architecture from roughly 1 CPU:12 GPU historically toward 1:8, 1:2, and potentially 2:1 in newer platforms."
-      ],
-      "management_insights": [
-        "Cites NVIDIA CEO Jensen Huang at GTC 2026 saying the CPU is increasingly driving AI systems rather than merely supporting them.",
-        "Notes NVIDIA expects standalone CPUs to become a multi-billion-dollar business over time, with Meta and CoreWeave cited as early customers.",
-        "Says GUC mgmt indicated next-gen Arm-based CPU design wins with major customers including Google and Microsoft.",
-        "Frames industry positioning as increasingly shaped by hyperscaler demand for vertically integrated, AI-optimized compute platforms."
-      ],
-      "estimate_changes": [],
-      "estimate_change_details": [
-        {
-          "metric": "Price Target",
-          "period": "Current",
-          "prior": 1300000,
-          "new": 1700000,
-          "pct_change": "31%",
-          "note": "SK hynix PT raised."
-        },
-        {
-          "metric": "Price Target",
-          "period": "Current",
-          "prior": 251000,
-          "new": 362000,
-          "pct_change": "44%",
-          "note": "Samsung Electronics common PT raised."
-        },
-        {
-          "metric": "Price Target",
-          "period": "Current",
-          "prior": 213350,
-          "new": 289600,
-          "pct_change": "36%",
-          "note": "Samsung Electronics preferred PT raised."
-        },
-        {
-          "metric": "Price Target",
-          "period": "Current",
-          "prior": 500000,
-          "new": 710000,
-          "pct_change": "42%",
-          "note": "Samsung Electro-Mechanics PT raised."
-        }
-      ],
-      "evidence_quality": [
-        "Analyst model work: core TAM, latency and architecture conclusions are primarily Morgan Stanley estimates and framework-driven; useful for scenario analysis but not primary evidence.",
-        "Market/industry data: includes references to Mercury Research, IDC, Prismark and FactSet-style market/share data, which adds external support but still requires interpretation.",
-        "Management/public commentary: uses public statements and roadmaps from NVIDIA and others; relevant directional evidence, but not equivalent to company-reported financial guidance.",
-        "Channel checks: supply tightness, pricing power and capacity-constraint views are partly supported by channel checks; informative but inherently anecdotal.",
-        "Mostly triangulated and inference-heavy rather than company-reported results; weight should be moderate for thematic positioning, lower for precise sizing."
-      ],
-      "risks_or_watch_items": [
-        "Actual CPU attach and CPU:GPU ratio progression in production agentic clusters may lag the report's framework.",
-        "Leading-edge foundry, ABF and memory supply constraints could limit volume realization even if demand materializes.",
-        "Some stock calls depend on outer-year capex and architecture shifts that remain partly roadmap-based rather than booked demand.",
-        "Competitive dynamics across NVIDIA, AMD, Arm and Intel may change faster than assumed as specialized AI CPUs evolve.",
-        "TCO and enterprise adoption curves for agentic workloads remain uncertain and could slow monetization of the projected TAM."
-      ],
-      "key_numbers": [
-        "$32.5-60bn incremental CPU TAM by 2030",
-        "$100bn+ total server CPU TAM by 2030",
-        "15-45EB incremental DRAM demand by 2030",
-        "26-77% of 2027 DRAM supply from incremental agentic demand",
-        "50-90% of workload latency attributed to CPU-side orchestration",
-        "5-10% incremental ABF demand upside by 2030",
-        "SK hynix PT: W1,300,000 -> W1,700,000",
-        "Samsung Electronics PT: W251,000 -> W362,000",
-        "Samsung Electronics pref PT: W213,350 -> W289,600",
-        "Samsung Electro-Mechanics PT: W500,000 -> W710,000"
-      ]
-    },
-    {
-      "id": "34d95764c5b7b224",
-      "title": "CY26 Data Center Capex Revised Higher and Strong Initial Growth Outlook of 40% for CY27; Positive Across the Semiconductor AI Value Chain - Potential for Continued Upward Revisions",
-      "file_name": "20260427_JP_Morgan_Semiconductors-_CY26_Data_Center_Capex_Revised_Higher_an.pdf",
-      "modified": "2026-04-27T13:22:15",
-      "pages": 10,
-      "schema_version": 7,
-      "is_sell_side_report": true,
-      "exclusion_reason": null,
-      "sell_side_firm": "JPM",
-      "company": null,
-      "ticker": null,
-      "companies_covered": "AMD, ADI, AMAT, ARM, ALAB, AVGO, CDNS, KLAC, LRCX, MTSI, MRVL, MU, NVDA, SNPS",
-      "report_date": "2026-04-27",
-      "headline": "JPM raises CY26 cloud/data center capex growth view and introduces strong CY27 outlook, reinforcing a bullish stance on the semiconductor AI value chain.",
-      "summary": "J.P. Morgan argues AI infrastructure spend remains in an upward revision cycle, lifting its data center capex growth outlook to 63% for CY26 from 52% and introducing +40% growth for CY27. The note frames sustained hyperscaler and model-lab capacity constraints, rising inference and reasoning workload intensity, and growing backlog visibility at NVDA, AVGO, and MU as evidence that AI compute demand should continue supporting broad upside across semis, custom ASIC vendors, memory, semicaps, and EDA.",
-      "important_observations": [
-        "JPM sees another year of upward capex revisions forming in 2026, similar to the pattern seen through 2025, implying consensus may still be too low for AI infra spend.",
-        "Custom AI ASICs are expected to gain share vs GPUs in CY26/CY27, creating a relative mix tailwind for AVGO and MRVL while still leaving overall accelerator demand very strong.",
-        "The report argues backlog and order-book visibility across semi coverage already points to robust CY27 demand, not just a short-cycle 2026 spike.",
-        "Installed North America DC power capacity growth is presented as a hard-asset constraint/supporting datapoint behind the spend outlook, reducing the risk that the capex thesis is purely narrative-driven.",
-        "JPM expects coming qtrs to show constructive commentary on customer activity, bookings, backlog, and supply-chain capacity, which could serve as incremental positive catalysts for AI-linked names."
-      ],
-      "new_data": [
-        "CY26 data center capex growth forecast raised to 63% from 52%.",
-        "Initial CY27 data center capex growth forecast introduced at 40%.",
-        "More than $200bn of incremental data center capex implied in 2026, a record annual increase.",
-        "North American planned data center power capacity tracked at 140GW+ at end-2025.",
-        "Installed DC capacity forecast: 48GW in 2025, 60GW+ in 2026, 75GW+ in 2027.",
-        "JPM cites NVDA discussing $1T+ of Blackwell and Vera Rubin demand visibility through CY27.",
-        "JPM cites AVGO discussing $100B+ in AI rev in FY27.",
-        "JPM cites MU signing the industry's first five-year CSA."
-      ],
-      "management_insights": [
-        "NVDA and AVGO commentary suggests extended visibility into CY27 as customers lock in capacity well ahead of deployment.",
-        "Hyperscalers are portrayed as remaining capacity-constrained and committed to scaling AI infrastructure despite already elevated spending.",
-        "Mgmt commentary cited by JPM supports continued GPU and XPU ramps over the next few qtrs.",
-        "Recent AVGO customer commitment and partnership commentary is used to support growing custom ASIC adoption.",
-        "The note frames inference-led demand and reasoning/agentic workloads as key drivers of rising compute intensity."
-      ],
-      "estimate_changes": [],
-      "estimate_change_details": [
-        {
-          "metric": "Data center capex growth",
-          "period": "CY2026",
-          "prior": "52%",
-          "new": "63%",
-          "pct_change": "21%",
-          "note": "JPM revised CY26 growth outlook higher."
-        },
-        {
-          "metric": "Data center capex growth",
-          "period": "CY2027",
-          "prior": null,
-          "new": "40%",
-          "pct_change": null,
-          "note": "Initial CY27 forecast; no prior figure provided."
-        },
-        {
-          "metric": "Installed DC capacity",
-          "period": "CY2026",
-          "prior": null,
-          "new": "60 GW+",
-          "pct_change": null,
-          "note": "Forecast level disclosed, but no prior estimate given."
-        },
-        {
-          "metric": "Installed DC capacity",
-          "period": "CY2027",
-          "prior": null,
-          "new": "75 GW+",
-          "pct_change": null,
-          "note": "Forecast level disclosed, but no prior estimate given."
-        }
-      ],
-      "evidence_quality": [
-        "Primary plus analyst synthesis: cites company-reported/backlog commentary from NVDA, AVGO, and MU alongside JPM sector views.",
-        "Triangulated with external market/industry data: 650 Group and Datacenter Hawk used for capex and capacity framing.",
-        "Mostly forward-looking analyst model work for CY26/CY27 capex and capacity forecasts, so conclusions depend on sustained hyperscaler follow-through.",
-        "Evidence base is stronger on demand visibility and capacity build plans than on exact downstream monetization by each covered stock.",
-        "Some conclusions on GPU vs custom ASIC mix shift are partly analyst inference, though supported by recent company commentary."
-      ],
-      "risks_or_watch_items": [
-        "If hyperscaler capex pacing slips or deployment timing pushes out, the 2026-27 upward revision thesis could moderate.",
-        "The bullish CY27 setup assumes limited inflation/commodity pressure; renewed cost inflation could alter spend efficiency and mix.",
-        "A faster mix shift toward custom ASICs could redistribute value within the AI stack even if total spend stays strong.",
-        "Backlog visibility may not fully translate into near-term shipments if supply-chain bottlenecks or power constraints emerge.",
-        "Watch upcoming commentary on bookings, backlog, supply capacity, and customer ramp timing for confirmation of continued estimate upside."
-      ],
-      "key_numbers": [
-        "CY26 data center capex growth: 63% vs prior 52%",
-        "CY27 data center capex growth: 40%",
-        "Incremental 2026 data center capex: $200bn+",
-        "North America planned DC power capacity at end-2025: 140GW+",
-        "Installed DC capacity: 48GW in 2025, 60GW+ in 2026, 75GW+ in 2027",
-        "NVDA demand visibility through CY27: $1T+ for Blackwell and Vera Rubin",
-        "AVGO AI rev discussed for FY27: $100bn+"
+        "ARCC contributes 30%+ of ARES Credit segment mgmt fees incl. Part I fees.",
+        "ARES available credit capital: ~$100bn.",
+        "1Q26 gross commitments: $3,246mn; net new commitments: $70mn; net fundings: $277mn.",
+        "Apr 23 MTD gross commitments: ~$198mn; exits/repayments: ~$13mn; backlog: ~$1.8bn.",
+        "Yield on funded debt investments: 9.2% in 1Q26; Apr funded yield: 9.1%; exited/repaid yield: 9.7%.",
+        "Non-accruals: 2.1% of cost vs 1.8% in 4Q25; 1.2% of fair value.",
+        "Interest coverage: 2.2x; weighted-average portfolio EBITDA: $291mn; net lev: 5.7x.",
+        "Mgmt fees: $111mn; Part I fees: $84mn vs Visible Alpha cons $88mn.",
+        "GS FY26E/FY27E/FY28E EPS: $5.77 / $7.23 / $8.97."
       ]
     }
   ],
