@@ -175,7 +175,7 @@
   <section class="topbar">
     <div>
       <h1>Sell-Side Report Digest</h1>
-      <p class="subtle">Generated Apr 28, 2026 10:26 AM</p>
+      <p class="subtle">Generated Apr 28, 2026 11:12 AM</p>
     </div>
     <div class="controls">
       <button id="prev-report" class="jump-btn" type="button" title="Previous note" aria-label="Previous note">↑</button>
@@ -390,12 +390,12 @@
   </section>
 </article>
 
-<article id="report-b34446c45ebb62d1" class="report" data-report-id="b34446c45ebb62d1" data-title="harnessing the power of heat: hdd versus ssd - ahead of the curve series">
+<article id="report-b34446c45ebb62d1" class="report is-bookmarked" data-report-id="b34446c45ebb62d1" data-title="harnessing the power of heat: hdd versus ssd - ahead of the curve series">
   <div class="ordinal">07</div>
   <header>
     <h2><span class="title-firm">TD</span><span class="title-text">Harnessing the Power of Heat: HDD Versus SSD - Ahead of the Curve Series</span></h2>
     <div class="actions">
-      <button type="button" class="icon-btn bookmark-btn" title="Bookmark" aria-label="Bookmark" aria-pressed="false">★</button>
+      <button type="button" class="icon-btn bookmark-btn active" title="Bookmark" aria-label="Bookmark" aria-pressed="true">★</button>
     </div>
   </header>
   <div class="facts-table-wrap">
@@ -423,12 +423,12 @@
   </section>
 </article>
 
-<article id="report-9bcdec2cdbc56428" class="report" data-report-id="9bcdec2cdbc56428" data-title="seagate: potential upside to estimates remains despite recent robust increases; cloud demand and pricing tailwinds to accelerate margins; initiate at ow">
+<article id="report-9bcdec2cdbc56428" class="report is-bookmarked" data-report-id="9bcdec2cdbc56428" data-title="seagate: potential upside to estimates remains despite recent robust increases; cloud demand and pricing tailwinds to accelerate margins; initiate at ow">
   <div class="ordinal">08</div>
   <header>
     <h2><span class="title-firm">JPM</span><span class="ticker-badge" aria-label="Ticker">STX</span><span class="title-text">Seagate: Potential Upside to Estimates Remains Despite Recent Robust Increases; Cloud Demand and Pricing Tailwinds to Accelerate Margins; Initiate at OW</span></h2>
     <div class="actions">
-      <button type="button" class="icon-btn bookmark-btn" title="Bookmark" aria-label="Bookmark" aria-pressed="false">★</button>
+      <button type="button" class="icon-btn bookmark-btn active" title="Bookmark" aria-label="Bookmark" aria-pressed="true">★</button>
     </div>
   </header>
   <div class="facts-table-wrap">
@@ -456,12 +456,12 @@
   </section>
 </article>
 
-<article id="report-a8fde2f19bc6a402" class="report" data-report-id="a8fde2f19bc6a402" data-title="hdd demand (and pricing) still strengthening; moving stx to top pick">
+<article id="report-a8fde2f19bc6a402" class="report is-bookmarked" data-report-id="a8fde2f19bc6a402" data-title="hdd demand (and pricing) still strengthening; moving stx to top pick">
   <div class="ordinal">09</div>
   <header>
     <h2><span class="title-firm">MS</span><span class="title-text">HDD Demand (and Pricing) Still Strengthening; Moving STX to Top Pick</span></h2>
     <div class="actions">
-      <button type="button" class="icon-btn bookmark-btn" title="Bookmark" aria-label="Bookmark" aria-pressed="false">★</button>
+      <button type="button" class="icon-btn bookmark-btn active" title="Bookmark" aria-label="Bookmark" aria-pressed="true">★</button>
     </div>
   </header>
   <div class="facts-table-wrap">
@@ -489,12 +489,12 @@
   </section>
 </article>
 
-<article id="report-982912a3429e2abd" class="report" data-report-id="982912a3429e2abd" data-title="u.s. semiconductors &amp; semiconductor capital equipment: shifting ratings ahead of cq1">
+<article id="report-982912a3429e2abd" class="report is-bookmarked" data-report-id="982912a3429e2abd" data-title="u.s. semiconductors &amp; semiconductor capital equipment: shifting ratings ahead of cq1">
   <div class="ordinal">10</div>
   <header>
     <h2><span class="title-firm">BCA</span><span class="title-text">U.S. Semiconductors &amp; Semiconductor Capital Equipment: Shifting Ratings Ahead of CQ1</span></h2>
     <div class="actions">
-      <button type="button" class="icon-btn bookmark-btn" title="Bookmark" aria-label="Bookmark" aria-pressed="false">★</button>
+      <button type="button" class="icon-btn bookmark-btn active" title="Bookmark" aria-label="Bookmark" aria-pressed="true">★</button>
     </div>
   </header>
   <div class="facts-table-wrap">
@@ -1583,19 +1583,25 @@ function updateJumpButtons() {
 
 reports.forEach(card => {
   const id = card.dataset.reportId;
-  card.querySelector(".bookmark-btn").addEventListener("click", () => {
+  card.querySelector(".bookmark-btn").addEventListener("click", async () => {
     const bookmarked = !card.classList.contains("is-bookmarked");
     card.classList.toggle("is-bookmarked", bookmarked);
     card.querySelector(".bookmark-btn").classList.toggle("active", bookmarked);
     card.querySelector(".bookmark-btn").setAttribute("aria-pressed", bookmarked ? "true" : "false");
     refilter();
-    fetch("http://127.0.0.1:8765/bookmark", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ report_id: id, bookmarked })
-    }).catch(() => {
-      updateStatus.textContent = "Bookmark saved locally in view, but helper is offline.";
-    });
+    updateStatus.textContent = "Saving bookmark...";
+    try {
+      const response = await fetch("http://127.0.0.1:8765/bookmark", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ report_id: id, bookmarked })
+      });
+      const data = await response.json();
+      if (!response.ok || !data.ok) throw new Error(data.error || `HTTP ${response.status}`);
+      updateStatus.textContent = data.message || "Bookmark saved and database refreshed.";
+    } catch (error) {
+      updateStatus.textContent = "Bookmark saved in this view, but helper refresh failed.";
+    }
   });
 });
 search.addEventListener("input", refilter);
