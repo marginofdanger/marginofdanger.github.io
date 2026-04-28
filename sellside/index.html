@@ -41,10 +41,17 @@
       background: var(--bg);
       box-shadow: 0 6px 18px rgba(23, 32, 26, 0.06);
     }
+    .topbar > div:first-child {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      min-height: 38px;
+    }
     h1 { margin: 0; font-size: 1.02rem; letter-spacing: 0; line-height: 1.1; white-space: nowrap; }
     .topbar p { margin: 2px 0 0; max-width: 620px; font-size: 0.76rem; }
     .subtle, .meta, .muted { color: var(--muted); }
     .controls {
+      position: relative;
       display: grid;
       grid-template-columns: auto auto auto auto minmax(170px, 1fr) minmax(110px, 0.44fr);
       gap: 8px;
@@ -62,7 +69,17 @@
     }
     input { min-width: 0; }
     button, .open-link, .nav-link { cursor: pointer; text-decoration: none; }
-    .update-status { flex-basis: 100%; color: var(--muted); font-size: 0.82rem; text-align: right; min-height: 1.1em; }
+    .update-status {
+      position: absolute;
+      right: 0;
+      top: calc(100% + 3px);
+      color: var(--muted);
+      font-size: 0.72rem;
+      line-height: 1.1;
+      text-align: right;
+      min-height: 0;
+      max-width: 540px;
+    }
     .report {
       position: relative;
       background: var(--panel);
@@ -163,7 +180,7 @@
       .ordinal { position: static; margin-bottom: 8px; text-align: left; width: auto; }
       .controls { grid-template-columns: auto auto auto auto 1fr; margin-top: 8px; }
       .controls select { grid-column: 5; }
-      .update-status { text-align: left; }
+      .update-status { left: 0; right: auto; text-align: left; }
       .actions { margin-top: 0; }
       .grid { grid-template-columns: 1fr; }
       input { grid-column: 1 / -1; width: 100%; }
@@ -175,7 +192,7 @@
   <section class="topbar">
     <div>
       <h1>Sell-Side Report Digest</h1>
-      <p class="subtle">Generated Apr 28, 2026 11:12 AM</p>
+      <p class="subtle">Generated Apr 28, 2026 03:41 PM</p>
     </div>
     <div class="controls">
       <button id="prev-report" class="jump-btn" type="button" title="Previous note" aria-label="Previous note">↑</button>
