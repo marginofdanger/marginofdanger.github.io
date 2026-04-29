@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>FICO Q2 2026 Earnings Call</title>
+<style>
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 0.81rem;
+  line-height: 1.55;
+  background: #faf8f5;
+  color: #2c2418;
+}
+.sticky-header {
+  position: sticky;
+  top: 0;
+  background: #faf8f5;
+  z-index: 100;
+  border-bottom: 2px solid #c4956a;
+  box-shadow: 0 2px 6px rgba(60, 40, 20, 0.08);
+  padding: 0.5rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+.header-title {
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: #2c2418;
+  letter-spacing: 0.02em;
+}
+.header-title .ticker { color: #8b6d4e; font-weight: 600; }
+.header-title .meta { color: #5a4a3a; font-weight: 500; margin-left: 0.4rem; }
+.header-buttons { display: flex; gap: 0.4rem; align-items: center; }
+.header-buttons a, .header-buttons button {
+  border: 1px solid #c4956a;
+  background: transparent;
+  color: #5a4a3a;
+  border-radius: 4px;
+  padding: 0.15rem 0.5rem;
+  font-size: 0.72rem;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  height: 1.6rem;
+  line-height: 1;
+  font-family: inherit;
+}
+.header-buttons a:hover, .header-buttons button:hover { background: #f0ebe3; }
+.content {
+  max-width: 90ch;
+  margin: 0 auto;
+  padding: 0.6rem 1.5rem 3rem;
+}
+h2 {
+  font-size: 1.1rem;
+  color: #3d3225;
+  border-bottom: 2px solid #c4956a;
+  padding-bottom: 0.3rem;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  letter-spacing: 0.02em;
+}
+h3 {
+  font-size: 0.95rem;
+  color: #5a4a3a;
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+ul { padding-left: 1.2rem; margin: 0.5rem 0 1rem; }
+li { margin-bottom: 0.35rem; }
+.key-insight {
+  border-left: 4px solid #c4956a;
+  background: #f0ebe3;
+  padding: 0.6rem 0.9rem;
+  margin: 1rem 0;
+  font-size: 0.78rem;
+}
+.key-insight strong { color: #5a4a3a; text-transform: uppercase; font-size: 0.7rem; letter-spacing: 0.05em; }
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0.7rem 0 1rem;
+  font-size: 0.76rem;
+}
+th {
+  background: #3d3225;
+  color: #faf8f5;
+  text-align: left;
+  padding: 0.4rem 0.6rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.68rem;
+  letter-spacing: 0.05em;
+  border: 1px solid #3d3225;
+}
+td {
+  padding: 0.35rem 0.6rem;
+  border: 1px solid #e0d6c4;
+  vertical-align: top;
+}
+tbody tr:nth-child(odd) { background: #faf8f5; }
+tbody tr:nth-child(even) { background: #f0ebe3; }
+.qa-block { margin-bottom: 1.4rem; }
+.question-box {
+  background: #f0ebe3;
+  border-radius: 6px;
+  padding: 0.55rem 0.8rem;
+  margin-bottom: 0.5rem;
+  border-left: 3px solid #8b6d4e;
+}
+.analyst-label {
+  display: block;
+  font-size: 0.68rem;
+  color: #8b6d4e;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.2rem;
+  font-weight: 600;
+}
+.answer { padding: 0 0.3rem; }
+.answer ul { margin-top: 0.3rem; }
+.speaker-section { margin-bottom: 1.5rem; }
+.speaker-name {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #3d3225;
+  margin-top: 1rem;
+  margin-bottom: 0.4rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+strong { color: #2c2418; }
+</style>
+<meta name="summarizer-verbosity" content="60">
+<meta name="summarizer-model" content="opus">
+</head>
+<body>
+<div class="sticky-header">
+  <div class="header-title">
+    Fair Isaac Corp <span class="ticker">(FICO)</span><span class="meta">— Q2 2026 Earnings · 04/28/26</span>
+  </div>
+  <div class="header-buttons">
+    <button id="bookmark-btn" data-source-url="https://www.bamsec.com/transcripts/8c0bcacb-4f7b-427d-a876-68ad843f4247" data-interview-date="04/28/26" data-source="EC" data-expert="Fair Isaac Corp" onclick="bookmarkTranscript()">☆</button>
+      <button id="share-btn" title="Share" aria-label="Share" data-filename="FAIR-ISAAC-CORP-Q2-2026.html" onclick="shareEarningsPage(this)">&#8599;</button>
+    <a href="https://www.bamsec.com/transcripts/8c0bcacb-4f7b-427d-a876-68ad843f4247" target="_blank">Transcript</a>
+    <a href="#qa">Q&amp;A</a>
+  </div>
+</div>
+
+<div class="content">
+
+<h2>Prepared Remarks</h2>
+
+<div class="speaker-section">
+<div class="speaker-name">Will Lansing — CEO</div>
+
+<table>
+<thead><tr><th>Metric</th><th>Q2'26</th><th>YOY</th><th>Notes</th></tr></thead>
+<tbody>
+<tr><td>Revenue</td><td><strong>$692M</strong></td><td>+39%</td><td></td></tr>
+<tr><td>GAAP net income</td><td>$264M</td><td>+63%</td><td></td></tr>
+<tr><td>GAAP EPS</td><td><strong>$11.14</strong></td><td>+69%</td><td></td></tr>
+<tr><td>Non-GAAP net income</td><td>$297M</td><td>+54%</td><td></td></tr>
+<tr><td>Non-GAAP EPS</td><td><strong>$12.50</strong></td><td>+60%</td><td></td></tr>
+<tr><td>FCF (Q2)</td><td>$214M</td><td></td><td></td></tr>
+<tr><td>FCF (TTM)</td><td>$867M</td><td>+28%</td><td></td></tr>
+<tr><td>Buyback Q2</td><td><strong>$605M</strong></td><td></td><td>484K shrs @ avg $1,251 — largest $ qtr ever</td></tr>
+<tr><td>Scores rev</td><td>$475M</td><td>+60%</td><td>B2B key driver; 6th straight qtr B2C growth</td></tr>
+<tr><td>Software rev</td><td>$217M</td><td>+7%</td><td>Platform +54%, non-platform −12%</td></tr>
+</tbody>
+</table>
+
+<ul>
+<li><strong>FICO 10T mortgage pricing reset:</strong> direct license now <strong>$0.99/score + $65 funding fee</strong> (vs prior $4.95 + $33); designed to encourage 10T adoption — most predictive score, incorporates rental/utility history, qualifies 5% more borrowers.</li>
+<li><strong>10T early adopter program:</strong> +11 lenders added; 55 total = $495B annual serviceable originations + $1.6T eligible servicing.</li>
+<li><strong>Direct licensing readiness:</strong> 3 of top 5 resellers signed, 2 in deep discussion; awaiting FHFA sign-off on resellers calculating score (math identical to bureau).</li>
+<li><strong>Ultra FICO:</strong> closing in on go-live with strategic partner Plaid; bigger plan to be unveiled at FICO World May 19–22.</li>
+<li><strong>AI / scores moat:</strong> regulated underwriting requires explainability + model governance — limits AI disruption; FICO has <strong>137 AI patents</strong> incl. blockchain for traceable decisioning.</li>
+<li><strong>FICO platform:</strong> agentic-by-design AI decisioning leader (Gartner/Forrester/IDC); 150+ global clients; ARR approaching $350M and growing rapidly; "land &amp; expand" continues working.</li>
+</ul>
+
+<div class="key-insight">
+<strong>Key Insight</strong><br>
+The $0.99 + $65 funding-fee model for 10T is a deliberate land-grab on adoption — revenue-neutral to FICO either way, but designed to make 10T the de facto standard before Vantage scales. Lansing repeatedly frames Vantage market share as ~2% and sees no volume loss in FY26.
+</div>
+</div>
+
+<div class="speaker-section">
+<div class="speaker-name">Steve Weber — CFO</div>
+
+<table>
+<thead><tr><th>Scores Detail</th><th>Q2'26</th><th>YOY</th></tr></thead>
+<tbody>
+<tr><td>B2B revenue</td><td></td><td><strong>+72%</strong></td></tr>
+<tr><td>B2C revenue</td><td></td><td>+5%</td></tr>
+<tr><td>Mortgage originations rev</td><td>72% of B2B / 63% of total scores</td><td><strong>+127%</strong></td></tr>
+<tr><td>Auto originations rev</td><td></td><td>+13%</td></tr>
+<tr><td>Card / PL / other originations</td><td></td><td>+6%</td></tr>
+</tbody>
+</table>
+
+<table>
+<thead><tr><th>Software Metric</th><th>Q2'26</th><th>YOY</th><th>Notes</th></tr></thead>
+<tbody>
+<tr><td>ACV bookings (Q2)</td><td>$28M</td><td></td><td></td></tr>
+<tr><td>ACV bookings (TTM)</td><td>$126M</td><td><strong>+36%</strong></td><td>2H expected &gt; 1H</td></tr>
+<tr><td>Total Software ARR</td><td>$789M</td><td>+10%</td><td></td></tr>
+<tr><td>Platform ARR</td><td><strong>$349M</strong> (44% mix)</td><td>+49%</td><td>Mid-30% ex-migrations</td></tr>
+<tr><td>Non-platform ARR</td><td>$440M</td><td>−8%</td><td>Migrations + EOL + usage decline</td></tr>
+<tr><td>SaaS rev</td><td></td><td>+19%</td><td>Driven by FICO platform</td></tr>
+<tr><td>On-premise rev</td><td></td><td>−4%</td><td></td></tr>
+<tr><td>DBNRR (total)</td><td>109%</td><td></td><td></td></tr>
+<tr><td>Platform NRR</td><td><strong>136%</strong></td><td></td><td>New + expanded use cases</td></tr>
+<tr><td>Non-platform NRR</td><td>90%</td><td></td><td></td></tr>
+</tbody>
+</table>
+
+<table>
+<thead><tr><th>P&amp;L / BS</th><th>Q2'26</th><th>Prior Q</th><th>Notes</th></tr></thead>
+<tbody>
+<tr><td>OpEx</td><td>$289M</td><td>$278M</td><td>+4% QoQ; trending modestly up in 2H</td></tr>
+<tr><td>Non-GAAP op margin</td><td><strong>65%</strong></td><td>58% (PY)</td><td>+712 bps YoY</td></tr>
+<tr><td>Effective tax rate</td><td>25.7%</td><td></td><td>FY guide: ~24% effective, 25–26% operating</td></tr>
+<tr><td>Cash &amp; investments</td><td>$272M</td><td></td><td></td></tr>
+<tr><td>Total debt</td><td>$3.64B</td><td></td><td>WAIR 5.5%; 93% senior notes</td></tr>
+<tr><td>Revolver balance</td><td>$265M</td><td></td><td>Repayable any time</td></tr>
+<tr><td>Post-Q2 buybacks (since Apr 1)</td><td>$170M / 164K shrs</td><td></td><td>Avg $1,040</td></tr>
+</tbody>
+</table>
+
+<ul>
+<li><strong>Regional mix:</strong> Americas 90% / EMEA 7% / APAC 3%.</li>
+<li><strong>Debt activity:</strong> March issued $1B senior notes due 2034; redeemed $400M notes due May.</li>
+<li><strong>FY26 software guide caveat:</strong> lower point-in-time rev expected — fewer non-platform license renewal opportunities vs PY.</li>
+</ul>
+</div>
+
+<div class="speaker-section">
+<div class="speaker-name">FY26 Guidance — Raised</div>
+
+<table>
+<thead><tr><th>Metric</th><th>FY26 Guide</th><th>YOY</th></tr></thead>
+<tbody>
+<tr><td>Revenue</td><td><strong>$2.45B</strong></td><td>+23%</td></tr>
+<tr><td>GAAP net income</td><td>$825M</td><td>+27%</td></tr>
+<tr><td>GAAP EPS</td><td>$35.60</td><td>+34%</td></tr>
+<tr><td>Non-GAAP net income</td><td>$946M</td><td>+29%</td></tr>
+<tr><td>Non-GAAP EPS</td><td><strong>$40.45</strong></td><td>+35%</td></tr>
+</tbody>
+</table>
+
+<ul>
+<li><strong>Volume assumptions:</strong> conservative; no Vantage share loss assumed in FY26; some performance-model rev pushed late FY26 → early FY27 from timing lag.</li>
+</ul>
+</div>
+
+<h2 id="qa">Q&amp;A</h2>
+
+<div class="qa-block">
+<div class="question-box">
+<span class="analyst-label">Jason Haas — Wells Fargo</span>
+<strong>Philosophy behind the $0.99 upfront pricing reset?</strong>
+</div>
+<div class="answer">
+<ul>
+<li><strong>Multi-year direction:</strong> historical upfront-only model concentrates cost on first purchaser; performance model spreads monetization across the value chain to beneficiaries that weren't paying.</li>
+<li><strong>10T adoption catalyst:</strong> $0.99 + $65 funding fee designed to encourage widespread 10T use — already established in non-conforming, this drives conforming.</li>
+</ul>
+</div>
+</div>
+
+<div class="qa-block">
+<div class="question-box">
+<strong>What % of lenders shift fully to Vantage vs pulling both?</strong>
+</div>
+<div class="answer">
+<ul>
+<li><strong>Parity argument:</strong> 10T at $0.99 = parity with Vantage on price; 10T wins on predictiveness — no good reason to switch.</li>
+<li><strong>Gaming scenario:</strong> if FHFA doesn't solve gaming and consumers shop rates, originators likely pull <em>both</em> scores — share loss but not volume loss.</li>
+</ul>
+</div>
+</div>
+
+<div class="qa-block">
+<div class="question-box">
+<span class="analyst-label">Manav Patnaik — Barclays</span>
+<strong>10T direct license go-live timing &amp; lender feedback?</strong>
+</div>
+<div class="answer">
+<ul>
+<li><strong>Reseller status:</strong> 3 of top 5 signed, deep discussions with remaining 2 — fully expects all 5.</li>
+<li><strong>Pent-up demand:</strong> significant lender interest in performance-based model.</li>
+<li><strong>Final hurdle:</strong> FHFA sign-off on resellers calculating score — math/methodology identical to bureau, no anticipated issues. No firm date but "closing in."</li>
+</ul>
+</div>
+</div>
+
+<div class="qa-block">
+<div class="question-box">
+<strong>10T historical data release timing — another pilot before 2027?</strong>
+</div>
+<div class="answer">
+<ul>
+<li>FHFA/GSEs control release timing; market sentiment wants 10T &amp; Vantage evaluated simultaneously — pressure exists, no timeline.</li>
+</ul>
+</div>
+</div>
+
+<div class="qa-block">
+<div class="question-box">
+<span class="analyst-label">Simon Clinch — Redburn Atlantic</span>
+<strong>How will lenders treat the two pricing options at parity?</strong>
+</div>
+<div class="answer">
+<ul>
+<li><strong>Lender choice:</strong> per-score legacy or $0.99 + funding fee — FICO is "largely indifferent," roughly revenue-neutral.</li>
+<li><strong>Performance model rationale:</strong> low upfront supports widespread prospecting/qualification, aligning with policy goal of more housing/mortgages.</li>
+</ul>
+</div>
+</div>
+
+<div class="qa-block">
+<div class="question-box">
+<strong>Why is reseller readiness taking longer than expected?</strong>
+</div>
+<div class="answer">
+<ul>
+<li>Initial expectations "a little optimistic" — multiple moving parts requiring validation/testing; awaiting FHFA sign-off on reseller score calculation is the final gate.</li>
+</ul>
+</div>
+</div>
+
+<div class="qa-block">
+<div class="question-box">
+<span class="analyst-label">Surinder Thind — Jefferies</span>
+<strong>Sequence of dependencies before FHFA releases historical 10T data?</strong>
+</div>
+<div class="answer">
+<ul>
+<li>No hidden dependencies — release 10T data, GSEs accept 10T. That's it.</li>
+</ul>
+</div>
+</div>
+
+<div class="qa-block">
+<div class="question-box">
+<strong>Expense outlook beyond FICO World step-up?</strong>
+</div>
+<div class="answer">
+<ul>
+<li>Not material overall — incremental personnel, FICO World, marketing; software growth carries COGS, not 100% margin. Backable from guidance numbers.</li>
+</ul>
+</div>
+</div>
+
+<div class="qa-block">
+<div class="question-box">
+<span class="analyst-label">Faiza Alwy — Deutsche Bank</span>
+<strong>Drivers behind +127% mortgage rev growth — beyond pricing?</strong>
+</div>
+<div class="answer">
+<ul>
+<li>Decent volume quarter — brief rate dip drove uptick; consistent with bureau commentary; better than guide assumed but they continue to guide conservatively.</li>
+</ul>
+</div>
+</div>
+
+<div class="qa-block">
+<div class="question-box">
+<strong>Software bookings/platform ARR drivers — verticals beyond financial services?</strong>
+</div>
+<div class="answer">
+<ul>
+<li><strong>Financial services-driven:</strong> not a vertical expansion story — wide range of use cases within FS; platform becomes "heart and soul" of customer interaction, then expands. Land &amp; expand working; high satisfaction.</li>
+</ul>
+</div>
+</div>
+
+<div class="qa-block">
+<div class="question-box">
+<span class="analyst-label">Jeff Meuler — Baird</span>
+<strong>Can underwriters pull multiple scores earlier in process even if GSEs only accept one?</strong>
+</div>
+<div class="answer">
+<ul>
+<li>Awaiting GSE selling guidelines — can't speak for them.</li>
+</ul>
+</div>
+</div>
+
+<div class="qa-block">
+<div class="question-box">
+<strong>What went into approval of the 21 lenders for Vantage 4.0 pilot?</strong>
+</div>
+<div class="answer">
+<ul>
+<li>Lacking detail — not invited to participate; understanding is "fairly manual process."</li>
+</ul>
+</div>
+</div>
+
+<div class="qa-block">
+<div class="question-box">
+<span class="analyst-label">Ashish Sabadra — RBC</span>
+<strong>Mid-term pricing strategy — gap between price and value? % of loan amount?</strong>
+</div>
+<div class="answer">
+<ul>
+<li><strong>Don't shock the market:</strong> always evaluating, but no precipitous changes — current moves are first steps in multi-year direction; case for low upfront + monetization spread across value chain remains the philosophy.</li>
+</ul>
+</div>
+</div>
+
+<div class="qa-block">
+<div class="question-box">
+<strong>Vantage LLPA grids — what credit risks are GSEs accounting for?</strong>
+</div>
+<div class="answer">
+<ul>
+<li><strong>Risk differential is real:</strong> Vantage default risk &amp; prepayment risk differ from FICO.</li>
+<li><strong>Cycle data gap:</strong> Vantage data only goes back to 2013 — never tested through full cycle; downstream investors will demand premium for unknown risk.</li>
+<li><strong>Pricing dispersion → gaming headache:</strong> sometimes Vantage will be better for consumer, sometimes FICO — creates a real problem for the GSEs to solve.</li>
+</ul>
+</div>
+</div>
+
+<div class="qa-block">
+<div class="question-box">
+<span class="analyst-label">Keen Fai Tong — Goldman Sachs</span>
+<strong>Other implementation hurdles for direct licensing? Why are 2 resellers slower?</strong>
+</div>
+<div class="answer">
+<ul>
+<li>Just FHFA approval pending — no other meaningful factors. "Very close" on remaining 2.</li>
+</ul>
+</div>
+</div>
+
+<div class="qa-block">
+<div class="question-box">
+<strong>Guidance assumptions on Vantage adoption / direct licensing timing / performance fee?</strong>
+</div>
+<div class="answer">
+<ul>
+<li><strong>No volume loss to Vantage</strong> assumed in FY26.</li>
+<li><strong>Revenue neutral</strong> between per-score and performance models — minor timing diff (funding fee trails initial fee).</li>
+<li><strong>Lag built into guide:</strong> some performance-model revenue pushed from late FY26 to early FY27.</li>
+</ul>
+</div>
+</div>
+
+<div class="qa-block">
+<div class="question-box">
+<span class="analyst-label">Alex Hess — JPMorgan</span>
+<strong>Anything beyond rack rate + volume in the +127% mortgage growth?</strong>
+</div>
+<div class="answer">
+<ul>
+<li>Some customers were on lighter rate last year, now at full wrap rate — primarily new rate + additional volumes. Nothing unusual.</li>
+</ul>
+</div>
+</div>
+
+<div class="qa-block">
+<div class="question-box">
+<strong>Investments in scores innovation / Ultra FICO?</strong>
+</div>
+<div class="answer">
+<ul>
+<li>Incremental expense not large; constant innovation investment continues. <strong>Ultra FICO likely a significant scores business factor</strong> — full plan at FICO World next month.</li>
+</ul>
+</div>
+</div>
+
+<div class="qa-block">
+<div class="question-box">
+<span class="analyst-label">Kyle Peterson — Needham</span>
+<strong>Will platform-up / non-platform-down trend continue?</strong>
+</div>
+<div class="answer">
+<ul>
+<li><strong>Two paths:</strong> (1) new platform sales (often existing customers, new use cases); (2) legacy → platform migration.</li>
+<li><strong>Not forcing migration:</strong> legacy renewals are highly profitable; customer-led decision. Currently in balance — may shift in future.</li>
+</ul>
+</div>
+</div>
+
+<div class="qa-block">
+<div class="question-box">
+<strong>Auto originations deceleration — comps, pricing, or volume?</strong>
+</div>
+<div class="answer">
+<ul>
+<li><strong>Tough comps</strong> primary driver; '26 price increases consistent with '25; mix shift toward lower unit-cost pricing tiers gaining volume from higher tiers.</li>
+</ul>
+</div>
+</div>
+
+<div class="qa-block">
+<div class="question-box">
+<span class="analyst-label">Craig Huber — Huber Research</span>
+<strong>Vantage market share in cards / autos / PL / non-conforming mortgage?</strong>
+</div>
+<div class="answer">
+<ul>
+<li><strong>Vantage market share ~2%</strong> — bureaus give Vantage scores away free with FICO purchases, so reported volumes are largely unpaid.</li>
+<li><strong>Non-conforming mortgage:</strong> lenders use FICO Classic + FICO 10T — they don't use Vantage.</li>
+<li><strong>Audit gap:</strong> FICO numbers are audited; Vantage's are not — share loss would show up in FICO's reported results, and it doesn't.</li>
+</ul>
+</div>
+</div>
+
+<div class="qa-block">
+<div class="question-box">
+<strong>Why drop upfront fee from $5 to $0.99?</strong>
+</div>
+<div class="answer">
+<ul>
+<li>(1) Price-competitive with Vantage at low entry point; (2) Encourage 10T adoption — classic new-product launch pricing.</li>
+</ul>
+</div>
+</div>
+
+<div class="qa-block">
+<div class="question-box">
+<strong>No worry about meaningful Vantage share loss on conforming?</strong>
+</div>
+<div class="answer">
+<ul>
+<li>Correct — competitive on price, far more competitive on predictiveness; no good reason for share to move.</li>
+</ul>
+</div>
+</div>
+
+<div class="qa-block">
+<div class="question-box">
+<span class="analyst-label">Ryan Griffin — BMO</span>
+<strong>Securitization market feedback on Vantage?</strong>
+</div>
+<div class="answer">
+<ul>
+<li><strong>Not ready for Vantage:</strong> ~20 mortgages securitized with Vantage paper (&lt;1% of recent securitizations) — market still all FICO; hurdles to overcome.</li>
+</ul>
+</div>
+</div>
+
+<div class="qa-block">
+<div class="question-box">
+<strong>Expectations for FHFA's summer 10T data release / predictiveness validation?</strong>
+</div>
+<div class="answer">
+<ul>
+<li>FICO has provided data, ready to go — no timeline. White papers on website analyze 10T vs Vantage on default + prepayment risk; <strong>10T qualifies 5% more borrowers</strong>. Encourage looking at third-party analyses coming over weeks/months.</li>
+</ul>
+</div>
+</div>
+
+<div class="qa-block">
+<div class="question-box">
+<span class="analyst-label">Owen Lau — Clear Street</span>
+<strong>Why can't AI / third-party platforms build a more predictive, cheaper score?</strong>
+</div>
+<div class="answer">
+<ul>
+<li><strong>Fair lending regulatory wall:</strong> AI black-box can't demonstrate non-discrimination — e.g., AI can find 100 proxies for redlining; regulators won't accept opaque underwriting models.</li>
+<li><strong>Reason codes:</strong> FICO ships ~32 reason codes — adverse action letters require explainability; CFPB shut down Upstart's AI underwriting experiment as cautionary tale.</li>
+<li><strong>Predictiveness leadership:</strong> 10T more predictive than Vantage and any other score; only exception = lender-built proprietary scores layered on top of FICO using first-party data.</li>
+<li><strong>Future-ready:</strong> FICO holds patents in explainability + ethical AI — advantaged when AI eventually fits underwriting.</li>
+</ul>
+</div>
+</div>
+
+<div class="qa-block">
+<div class="question-box">
+<strong>Any of the 21 pilot lenders received updated LLPA grid? When public?</strong>
+</div>
+<div class="answer">
+<ul>
+<li>No info — heard nothing. "Manual process." Encourages analysts to keep asking.</li>
+</ul>
+</div>
+</div>
+
+<div class="qa-block">
+<div class="question-box">
+<span class="analyst-label">Scott Wurtzel — Wolfe Research</span>
+<strong>Volume assumption changes since last quarter?</strong>
+</div>
+<div class="answer">
+<ul>
+<li>Q2 volumes better than guide assumed but not extrapolating — consistently conservative for back half. Hard to make up missed scores rev elsewhere.</li>
+</ul>
+</div>
+</div>
+
+<div class="qa-block">
+<div class="question-box">
+<strong>Buyback aggressiveness at current levels?</strong>
+</div>
+<div class="answer">
+<ul>
+<li>Always interested, in market consistently — not market timers but lean in opportunistically. <strong>"Current levels — opportunistic."</strong></li>
+</ul>
+</div>
+</div>
+
+<div class="qa-block">
+<div class="question-box">
+<span class="analyst-label">Kevin McVeigh — UBS</span>
+<strong>Regulatory environment — anything else to watch?</strong>
+</div>
+<div class="answer">
+<ul>
+<li><strong>$13T mortgage market — no surprise plays:</strong> changes telegraphed well in advance; not expecting to be blindsided.</li>
+<li><strong>GSE privatization upside:</strong> if GSEs go private or lose guarantee, emphasis on credit default risk rises — advantage FICO (best score for default prediction).</li>
+</ul>
+</div>
+</div>
+
+<div class="qa-block">
+<div class="question-box">
+<span class="analyst-label">Curtis Nagle — BofA</span>
+<strong>10T uptake in non-conforming?</strong>
+</div>
+<div class="answer">
+<ul>
+<li>~$1.2T running 10T in parallel with Classic (lenders want latest score available).</li>
+</ul>
+</div>
+</div>
+
+<div class="qa-block">
+<div class="question-box">
+<span class="analyst-label">Sean Kennedy — Mizuho</span>
+<strong>Adverse selection / gaming dynamics with two-score system?</strong>
+</div>
+<div class="answer">
+<ul>
+<li><strong>Structural gaming risk:</strong> in a two-score world, one will always be more favorable to a given consumer — pulling both is almost inevitable absent FHFA intervention.</li>
+<li><strong>Share loss ≠ volume loss:</strong> if both pulled, market expands by the second score; Vantage could gain "share" via gaming but FICO sees no volume loss.</li>
+</ul>
+</div>
+</div>
+
+<div class="qa-block">
+<div class="question-box">
+<strong>Auto / card volume weakness late in quarter? Consumer signs?</strong>
+</div>
+<div class="answer">
+<ul>
+<li><strong>Auto:</strong> stable absent economic disruption.</li>
+<li><strong>Card:</strong> bank-marketing-driven; varies QoQ.</li>
+<li><strong>Consumer:</strong> slight subprime falloff offset by prime/super-prime — no significant weakness.</li>
+</ul>
+</div>
+</div>
+
+</div>
+
+<script>
+function bookmarkTranscript() {
+  const btn = document.getElementById('bookmark-btn');
+  const data = { title: document.title, url: btn.dataset.sourceUrl || window.location.href, filename: window.location.pathname.split('/').pop(), interviewDate: btn.dataset.interviewDate || '', source: btn.dataset.source || '', expert: btn.dataset.expert || '' };
+  fetch('http://localhost:3210/bookmark', { method: 'POST', headers: {'Content-Type':'application/json'}, body: JSON.stringify(data) })
+    .then(r => r.json()).then(r => { btn.textContent = r.bookmarked ? '★' : '☆'; btn.style.opacity = r.bookmarked ? '1' : '0.7'; });
+}
+
+function shareEarningsPage(btn) {
+  const original = btn.innerHTML;
+  btn.disabled = true;
+  btn.innerHTML = '\u2026';
+  fetch('http://localhost:3210/share', { method: 'POST', headers: {'Content-Type':'application/json'}, body: JSON.stringify({ filename: btn.dataset.filename }) })
+    .then(r => r.json())
+    .then(j => {
+      if (!j.ok) throw new Error(j.error || 'Share failed');
+      try { navigator.clipboard.writeText(j.url); } catch(e) {}
+      btn.innerHTML = '\u2713';
+      btn.title = 'Copied ' + j.url;
+      setTimeout(() => { btn.innerHTML = original; btn.disabled = false; btn.title = 'Share'; }, 2500);
+    })
+    .catch(e => {
+      console.error('Share failed:', e);
+      btn.innerHTML = '!';
+      btn.title = 'Share failed: ' + (e && e.message || e);
+      setTimeout(() => { btn.innerHTML = original; btn.disabled = false; btn.title = 'Share'; }, 3000);
+    });
+}
+(function hideLocalOnlyControls() {
+  const host = location.hostname;
+  if (host === 'localhost' || host === '127.0.0.1' || host === '') return;
+  const bm = document.getElementById('bookmark-btn');
+  const sh = document.getElementById('share-btn');
+  if (bm) bm.remove();
+  if (sh) sh.remove();
+})();
+</script>
+
+<footer style="max-width:90ch;margin:2rem auto 1rem;padding-top:0.75rem;border-top:1px solid #e8e0d4;text-align:right;font-size:0.7rem"><a href="http://localhost:3210/status" style="color:#8b6d4e;text-decoration:none">Summarizer Status ↗</a></footer>
+</body>
+</html>
