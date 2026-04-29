@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>$160B Market Cap, $5.48B Revenue, $10M EBITDA Per Head: Inside AppLovin’s Profit Engine</title>
+  <style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background: #faf8f5;
+  color: #2c2418;
+  line-height: 1.7;
+  padding: 0 1rem 2rem;
+}
+header {
+  position: sticky;
+  top: 0;
+  background: #faf8f5;
+  z-index: 100;
+  border-bottom: 2px solid #c4956a;
+  box-shadow: 0 2px 8px rgba(44,36,24,0.08);
+  padding: 0.6rem 1rem;
+}
+.header-inner {
+  max-width: 78ch;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header-title { font-size: 1rem; color: #2c2418; }
+.header-title strong { font-size: 1.1rem; }
+.header-link {
+  font-size: 0.85rem;
+  color: #8b6d4e;
+  text-decoration: none;
+  border: 1px solid #c4956a;
+  padding: 0.2rem 0.7rem;
+  border-radius: 4px;
+}
+.header-link:hover { background: #f0ebe3; }
+main {
+  max-width: 78ch;
+  margin: 0 auto;
+  padding-top: 0.5rem;
+}
+h2 {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #2c2418;
+  margin-top: 2rem;
+  margin-bottom: 0.5rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 2px solid #c4956a;
+}
+h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #3d3225;
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+section { margin-bottom: 1.5rem; }
+ul { margin: 0.5rem 0 0.5rem 1.5rem; }
+li { margin-bottom: 0.4rem; }
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0.75rem 0;
+  font-size: 0.92rem;
+}
+thead th {
+  background: #3d3225;
+  color: #faf8f5;
+  text-transform: uppercase;
+  font-size: 0.78rem;
+  letter-spacing: 0.05em;
+  padding: 0.5rem 0.75rem;
+  text-align: left;
+  font-weight: 600;
+}
+tbody td {
+  padding: 0.45rem 0.75rem;
+  border-bottom: 1px solid #e8e0d4;
+}
+tbody tr:nth-child(even) { background: #f0ebe3; }
+tbody tr:nth-child(odd) { background: #faf8f5; }
+.key-insight {
+  border-left: 4px solid #c4956a;
+  background: #f5efe8;
+  padding: 0.75rem 1rem;
+  margin: 0.75rem 0;
+  font-size: 0.93rem;
+  border-radius: 0 6px 6px 0;
+}
+.qa-pair { margin-bottom: 1.25rem; }
+.question-box {
+  background: #f0ebe3;
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+  margin-bottom: 0.5rem;
+}
+.analyst-label {
+  display: block;
+  font-size: 0.8rem;
+  color: #8b6d4e;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  margin-bottom: 0.25rem;
+}
+.answer { padding-left: 0.25rem; }
+.loading-section { opacity: 0.5; }
+.loading-indicator {
+  font-size: 1.2rem;
+  padding: 2rem;
+  text-align: center;
+  color: #8b6d4e;
+}
+
+/* YouTube transcript reader */
+
+/* Legacy .yt-meta-card -- kept so old output files still render cleanly.
+   New output uses .header-title.yt below instead. */
+.yt-meta-card {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  margin-bottom: 1.5rem;
+  background: #f5efe8;
+  border-left: 4px solid #c4956a;
+  border-radius: 0 6px 6px 0;
+  padding: 0.9rem 1rem;
+}
+.yt-meta-card img {
+  flex: 0 0 180px;
+  height: 101px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+.yt-meta-body { flex: 1; font-size: 0.93rem; }
+.yt-meta-title { font-weight: 700; font-size: 1rem; margin-bottom: 0.25rem; }
+.yt-meta-sub { color: #8b6d4e; margin-bottom: 0.35rem; }
+.yt-meta-url { font-size: 0.85rem; color: #3d3225; }
+
+/* YouTube sticky header uses the default 78ch-capped centered
+   container so it aligns with the body text column below. The
+   buttons sit at the right edge of that centered container. */
+header:has(.header-inner.yt) { padding: 0.75rem 1rem; }
+.header-inner.yt { gap: 1rem; }
+.header-title.yt {
+  display: flex;
+  gap: 0.9rem;
+  align-items: center;
+  min-width: 0;
+  flex: 1;
+}
+.yt-header-thumb { flex: 0 0 88px; line-height: 0; }
+.yt-header-thumb img {
+  width: 88px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 3px;
+  display: block;
+}
+.yt-header-text { min-width: 0; flex: 1; }
+.yt-header-text strong {
+  display: block;
+  font-size: 1rem;
+  line-height: 1.3;
+  color: #2c2418;
+  /* Allow wrapping to 2 lines so long podcast titles show in full. */
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.yt-header-sub {
+  font-size: 0.8rem;
+  margin-top: 0.2rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.yt-header-sub .yt-channel { color: #8b6d4e; }
+.yt-header-sub .yt-date,
+.yt-header-sub .yt-dur { color: #3d3225; font-weight: 600; }
+.yt-header-sub .yt-sep { color: #c4956a; margin: 0 0.5rem; }
+
+.yt-header-actions {
+  display: flex;
+  gap: 0.4rem;
+  align-items: center;
+  flex: 0 0 auto;
+}
+/* Shared box shape for the star + share + YT buttons so they're
+   visually identical. Applies to both the <button>s and the <a> link. */
+.yt-header-actions .yt-bookmark-btn,
+.yt-header-actions .yt-share-btn,
+.yt-header-actions .header-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font: inherit;
+  font-size: 0.85rem;
+  line-height: 1;
+  color: #8b6d4e;
+  background: transparent;
+  border: 1px solid #c4956a;
+  border-radius: 4px;
+  padding: 0;
+  box-sizing: border-box;
+  width: 2.2rem;
+  height: 2.2rem;
+  white-space: nowrap;
+  text-decoration: none;
+  cursor: pointer;
+}
+.yt-header-actions .yt-bookmark-btn { font-size: 1rem; }
+.yt-header-actions .yt-share-btn { font-size: 1.05rem; }
+.yt-header-actions .yt-share-btn:disabled { opacity: 0.6; cursor: default; }
+.yt-header-actions .yt-bookmark-btn:hover,
+.yt-header-actions .yt-share-btn:hover,
+.yt-header-actions .header-link:hover {
+  background: #f0ebe3;
+  color: #3d3225;
+}
+.yt-header-actions .yt-bookmark-btn.is-bookmarked {
+  background: #c4956a;
+  color: #faf8f5;
+  border-color: #a87d5a;
+}
+.yt-header-actions .yt-bookmark-btn.is-bookmarked:hover {
+  background: #a87d5a;
+  color: #faf8f5;
+}
+
+h3.chapter {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #3d3225;
+  margin-top: 1.25rem;
+  margin-bottom: 0.4rem;
+}
+h3.chapter a {
+  font-size: 0.8rem;
+  color: #8b6d4e;
+  text-decoration: none;
+  font-weight: 400;
+}
+
+.yt-body {
+  line-height: 1.58;
+}
+.yt-body p {
+  margin-bottom: 0.9rem;
+}
+.yt-body p.q {
+  background: #f0ebe3;
+  border-left: 3px solid #c4956a;
+  border-radius: 0 6px 6px 0;
+  padding: 0.6rem 0.9rem;
+  margin-top: 1.25rem;
+  margin-bottom: 0.8rem;
+  color: #3d3225;
+  font-style: italic;
+  font-size: 0.96rem;
+}
+.yt-body p.q::before {
+  content: "Q";
+  display: inline-block;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 0.72rem;
+  color: #8b6d4e;
+  letter-spacing: 0.05em;
+  margin-right: 0.5rem;
+  padding: 0.05rem 0.4rem;
+  border: 1px solid #c4956a;
+  border-radius: 3px;
+  vertical-align: 0.1em;
+}
+.yt-body p.q a {
+  display: block;
+  text-align: right;
+  margin-top: 0.3rem;
+  font-style: normal;
+  font-size: 0.8rem;
+  color: #8b6d4e;
+  text-decoration: none;
+  white-space: nowrap;
+}
+.yt-body p.q a:hover {
+  text-decoration: underline;
+}
+
+</style>
+</head>
+<body>
+  <header>
+    <div class="header-inner yt">
+      <div class="header-title yt">
+        <a class="yt-header-thumb" href="https://www.youtube.com/watch?v=dlPCz8Jwypw" target="_blank"><img src="https://i.ytimg.com/vi_webp/dlPCz8Jwypw/maxresdefault.webp" alt=""></a>
+        <div class="yt-header-text">
+          <strong>$160B Market Cap, $5.48B Revenue, $10M EBITDA Per Head: Inside AppLovin’s Profit Engine</strong>
+          <div class="yt-header-sub">
+            <span class="yt-channel">20VC with Harry Stebbings</span>
+            <span class="yt-sep">&middot;</span>
+            <span class="yt-date">Apr 27, 2026</span>
+            <span class="yt-sep">&middot;</span>
+            <span class="yt-dur">1h 20m</span>
+          </div>
+        </div>
+      </div>
+      <div class="yt-header-actions">
+        <button id="yt-bookmark-btn"
+                class="yt-bookmark-btn"
+                title="Bookmark"
+                aria-label="Bookmark"
+                data-filename="yt-2026-04-29-160b-market-cap-5-48b-revenue-10m-ebitda-per-head-inside.html"
+                data-title="$160B Market Cap, $5.48B Revenue, $10M EBITDA Per Head: Inside AppLovin’s Profit Engine"
+                data-url="https://www.youtube.com/watch?v=dlPCz8Jwypw"
+                data-date="2026-04-27T07:00:38-07:00"
+                data-channel="20VC with Harry Stebbings"
+                onclick="toggleYtBookmark(this)">&#9734;</button>
+        <button id="yt-share-btn"
+                class="yt-share-btn"
+                title="Share"
+                aria-label="Share"
+                data-filename="yt-2026-04-29-160b-market-cap-5-48b-revenue-10m-ebitda-per-head-inside.html"
+                onclick="shareYtPage(this)">&#8599;</button>
+        <a class="header-link" href="https://www.youtube.com/watch?v=dlPCz8Jwypw" target="_blank" title="Watch on YouTube" aria-label="Watch on YouTube">YT</a>
+      </div>
+    </div>
+  </header>
+  <main>
+    <div class="yt-body">
+    <h3 class="chapter"><span>Intro</span><a href="https://www.youtube.com/watch?v=dlPCz8Jwypw&t=0s">&#x21AA; 00:00</a></h3>
+<p data-t="0">A lot of the things that we've been able to accomplish just don't make sense to people. In a world where things don't make sense, people think you're cheating. The founder mentality has got to be chase winning. In order for me to get paid anything, the stock had to clear that and then keep going up from there. Almost in every relationship of my life, I was never really present.</p>
+<p data-t="24">That fear of blowup is one of my big motivators. Now, I have interviewed a thousand CEOs of the largest companies over the last 10 years. This guest, Adam Foroughi, is top five I've ever met, easily. There is no company on the planet with numbers like AppLovin. Of all the shows that I've done in the studio, this is the favorite one for me that I've ever done with a CEO. Ready to go.</p>
+<p class="q" data-t="60">Adam, I'm so excited for this. It's funny, I sent you the schedule beforehand and you were like, "That's a lot of questions." I stalked the [__] out of you before this, just to be clear, so thank you for agreeing to this onslaught of questions.<a href="https://www.youtube.com/watch?v=dlPCz8Jwypw&t=60s">&#x21AA; 01:00</a></p>
+<p data-t="71">Yeah, I like it. I try to go unscripted, so I can't say I reviewed them, but it was a lot of questions.</p>
+<p class="q" data-t="76">Well, don't worry. Reviewing them is always a way to have a manufactured conversation, so this is going to be completely unscripted. One thing that I'm always trying to understand before we dive in is the mentality of an entrepreneur. There's two types of people: people that are motivated by losing, or people that are motivated by winning. Are you fearful of losing, or are you inspired by the thrill of winning?<a href="https://www.youtube.com/watch?v=dlPCz8Jwypw&t=76s">&#x21AA; 01:16</a></p>
+<h3 class="chapter"><span>Why Winning (Not Fear) Drives the Best Founders</span><a href="https://www.youtube.com/watch?v=dlPCz8Jwypw&t=77s">&#x21AA; 01:17</a></h3>
+<p data-t="98">I think if you've had success, you almost have to be inspired by winning. If you're fearful of losing or you have a fear of failure, I feel like you're almost certain to be stuck. You're not going to take shots that are material, and you're going to protect downside more than go after upside. I don't tend to believe that's really the founder mentality.</p>
+<p data-t="117">If you took a risk once upon a time to start a business where there was nothing, you didn't even know what it was going to become, and you knew the odds were 99-and-some-percent likely that you were going to fail, that in itself has to tell you the founder mentality's got to be chase winning. Over the years, I've taken motivation through winning. I think it's also important to note that founders don't tend to be motivated by money as well if they're really successful.</p>
+<p data-t="140">That's something that I like to ask in interview questions, and I found the best people are motivated by personal growth, development, being inspired, finding things intellectually stimulating, winning, but it never tends to be money, because money is a very tough thing to continuously be motivated by. Eventually you will reach a point where money is no longer a motivator, and then you need to find something else. So I've always pushed to win, and I've always pushed to learn and grow, and those are the things that really got me going.</p>
+<p class="q" data-t="171">I actually spoke to Kathy on your team beforehand, and she said that you don't care about money anymore in terms of personal wealth. Can I ask you, how does that change how you operate as a CEO?<a href="https://www.youtube.com/watch?v=dlPCz8Jwypw&t=171s">&#x21AA; 02:51</a></p>
+<h3 class="chapter"><span>When Money Stops Mattering: The Real Founder Motivation</span><a href="https://www.youtube.com/watch?v=dlPCz8Jwypw&t=179s">&#x21AA; 02:59</a></h3>
+<p data-t="183">There was a baseline that I needed to feel like family was good, and I was fortunate enough to start a couple businesses before they were successful. So I'd reached the baseline before I started this business. In those businesses, I really aspired to get a single. I just wanted to get enough money where I didn't have to stress about money.</p>
+<p data-t="201">Once I co-founded this business with my team and we started getting going, I never really needed anything from this monetarily. The interesting piece there is, as we were building up, we were growing really quickly, and in 2015 we got approached to sell the business for quite a lot of money, in the hundreds of millions of dollars, all cash. Had I not had the singles before, it might have been something that was very enticing, to just cash out the whole thing at that point in time.</p>
+<p data-t="232">But because I knew my bank account was sound, I wasn't in it for money. I was trying to build big, and really I felt like this had to be the home run. I was able to think about the deal process there logically and understand that the business is growing really well, it's really sound, why would we give it up on that upward trajectory? We were able to really play long, and I think in large part that's because I didn't start this at all considering the money that I can make from it.</p>
+<p class="q" data-t="255">Speaking of not starting for the money, your total comp in 2023 was 83 million bucks, making you the eighth-highest-paid CEO in America. How do you think about that? What do people not see when they read headlines like that? What is the misconception?<a href="https://www.youtube.com/watch?v=dlPCz8Jwypw&t=255s">&#x21AA; 04:15</a></p>
+<h3 class="chapter"><span>83M CEO Payday: The Truth Behind the Headlines</span><a href="https://www.youtube.com/watch?v=dlPCz8Jwypw&t=257s">&#x21AA; 04:17</a></h3>
+<p data-t="273">To understand my comp in '23, you've got to really look backward to '22. We went public in '21. In the first year, the stock went up to about $40 billion market cap. In 2022, we fell about 92% to a little bit under $4 billion market cap. For the life of the company, I had only taken equity that was my founder stock and based on the money that I originally put in the company. I'd taken no compensation. I was taking basically the bare minimum to have benefits.</p>
+<p data-t="306">At the bottom in '22, I made a decision, and that was for the first time to ask for compensation. The reason I did that is because I felt like, I'm public, turning this company around is a big task, and I'd like to align myself with investors to say I'm going to get paid, but I'm only going to get paid if the stock recovers. So the thresholds of compensation that the comp committee on the board granted me were, at a minimum, the stock was $9. We had to get to the first threshold, I think, was about $38 to $40.</p>
+<p data-t="340">In order for me to get paid anything, the stock had to clear that and then keep going up from there for me to get any sort of compensation. Then there were, I think, five or six levels from there, all the way up to a return to $80, which was our IPO price, and I had a term to go achieve it.</p>
+<p data-t="351">I feel like CEOs who are founders originally started a business taking really big risk. If the belief is that the CEO should then never get compensation ever again, it's completely flawed logic. You want to give people who chase really big upside by creating really big things the potential to continuously have that really big upside, because it allows them to mentally stay motivated on what they're doing versus start drifting to other things.</p>
+<p data-t="381">Any founder, even at the low point, I was worth quite a bit of money on paper at least with my equity. I could have walked away and started something else. I've now had three successful businesses, so I believe I could have a fourth, but I really wanted to stay committed to the company and stay aligned with investors.</p>
+<p data-t="399">I think the other thing that people miss is that the CEO's job in a company, especially one that's gone from small to very, very large, is an incredibly lonely, very stressful role. If you talk to CEOs and founders, I know you do fairly often, these jobs are brutal. People these days are afraid to talk to me because I'm so busy, even though I'm not. I'm the same person I was 10 years ago. They don't come up to me anymore.</p>
+<p data-t="426">Or people inside the company or outside the company, if the stock is doing well, believe you're smarter than you are, and if the stock is doing poorly, believe you're going to be so stressed out you might jump off a building. You don't understand the things that are going on in the CEO's mind when you really haven't done that role yourself. Very few people in the world have built a business from small to very, very large and eventually taken it public.</p>
+<p data-t="448">So I say that to say it's a brutal job. It's lonely. It's stressful. You almost certainly are going to have distraction from personal life. I don't know many founders who have had that kind of success that have fantastic personal lives. You end up distracted from your kids because you're always focused on work. It consumes you. Therefore, to then say the CEO should take less pay is something that's quite unjust, because it's not understanding of the role that the CEO has to absorb.</p>
+<p class="q" data-t="473">Have you ever questioned the sacrifice in any way? My brother has children, and I watch him have children and be an amazing parent and see my parents be grandparents. I'm just grinding in the office till 11 or 12 every night. A little bit of me questions the sacrifice sometimes, if I'm honest. Did you ever?<a href="https://www.youtube.com/watch?v=dlPCz8Jwypw&t=473s">&#x21AA; 07:53</a></p>
+<h3 class="chapter"><span>The Hidden Cost of Being a CEO: What No One Tells You</span><a href="https://www.youtube.com/watch?v=dlPCz8Jwypw&t=474s">&#x21AA; 07:54</a></h3>
+<p data-t="497">I would say at the low, low point in '22, I decided to make some changes because I did question the sacrifice I was making. There were two tolls that I saw that were being taken on my life. One was my health was decaying, and I felt like if I'm this stressed out where I'm not sleeping, I'm drinking eight cups of coffee a day, I'm losing my hair, losing my fitness, just losing the things that allow me to focus, if I don't reverse that, I'm never going to be in a place to be mentally sound to run the business.</p>
+<p data-t="530">I felt like as a CEO of a public company, I'm committing for the next 10, 20 years. I need to be here a long time. To do that, I needed my health. So I stopped what I was doing and reset that. The other piece was I felt like from my children, I drifted a little bit more distant because I wasn't paying attention to them.</p>
+<p data-t="548">I think any founder or anyone who works at a tech company that's always on knows this experience if they have kids. You hang out with your kids, but your mind is elsewhere, either that or you're on your phone. So you're never really present. What I realized is almost in every relationship in my life, I was never really present. What I tried to do to change that is at least take small moments to feel like I was present.</p>
+<p data-t="577">Small moments might be 10 minutes at a time because I'm not going to be able to sit down and have hours at a time. But if I gave myself 10 minutes at a time to hang out with one of my children or a couple of my children, I felt like, okay, now I'm actually committing to them to be 100% present. That was a change.</p>
+<p data-t="584">The third change I made at that point in time was that I started introducing hobbies to myself. For example, I started learning how to surf in the last year or two years. You have to put the phone down. You have to be completely disconnected. You get mental ease. In the absence of these changes, I feel like I would have felt like I'm giving away a big part of my own ability to be stable and happy.</p>
+<p data-t="602">By getting that back, I became a better CEO of the business. I became someone who could be more thoughtful and who could be more long-term focused.</p>
+<p class="q" data-t="608">You said in 2022, you fell, you kind of dropped it in very casually, you fell 92%. I mean, 92%. What does no one know about, respectfully, being in a trough that deep that they should know?<a href="https://www.youtube.com/watch?v=dlPCz8Jwypw&t=608s">&#x21AA; 10:08</a></p>
+<h3 class="chapter"><span>Down 92%: How Do You Not Lose Your Mind?</span><a href="https://www.youtube.com/watch?v=dlPCz8Jwypw&t=611s">&#x21AA; 10:11</a></h3>
+<p data-t="626">To fall 92% in a year, you go down almost every single day of the year. Most people, I think, Neil once told me, what's the difference between being down 98% and 99%? Half. It's a lot. Also, when you realize you fell 92%, you've got to go up 10x to get back to where you started. It is a bloodbath.</p>
+<p data-t="651">A couple things. One is a lot of people think your psyche is tied to the stock. Beyond that, when you talk to some execs who are at public companies, they'll say they don't look at the stock price. I can say I 100% look at the stock price. It is very, very hard to run a public company and say I'm just going to choose not to look at the stock price for a few days, a week, whatever, because you've got investors that care, you've got your team that cares, and it's a real-time ticker on what the world thinks of your business.</p>
+<p data-t="686">The challenge there is, when everyone is telling you that the stock is going down every single day, investors are not buying your shares, it's very easy to go, am I doing something wrong? Is the business [__]? Is something here that I don't understand that everyone else in the world is smarter than me on and understands? It can make you lose confidence and second-guess yourself.</p>
+<p data-t="703">In the face of that, I think what's important is, if you believe in your business, maintaining conviction. We did a couple things that really allowed us to turn the business around. As an advertising business, there's an advertising model that drives a lot of the success that we have on platform. Everything we do is on a performance basis, so advertisers plug in, they aim to get a certain amount of revenue that's more than the ad dollars that they spend on the platform.</p>
+<p data-t="731">What delivers that equation for them is how potent our advertising model is. These models are recommendation system models, and that's one of the earlier forms of machine learning that existed. It's really gotten supercharged with what we see today in AI and the research advancements in LLMs. In '22, at the very bottom, we said we're on an older version of machine learning. We're going to completely throw out our technology, rebuild it, and go to what is really cutting edge and current in the field of recommendation systems.</p>
+<p data-t="762">To do that was a big internal change. One, we had to slow down basically all research and development on the current system because we said we're going to throw it out. It's now outdated. It's not going to carry us forward where we've got to go. We had to turn over some people. We had to take some of the people that had helped us get to that point, which again was a $30 billion IPO and up from there and then cratered, and say the old system's done. We're rebuilding to something new.</p>
+<p data-t="794">Then we had to have conviction behind that bet and rally everyone at the company that this is the right thing to do and we're going to go execute on it and win.</p>
+<p class="q" data-t="799">When you do that, how did you literally do that?<a href="https://www.youtube.com/watch?v=dlPCz8Jwypw&t=799s">&#x21AA; 13:19</a></p>
+<p data-t="805">You have to voice confidence in your own bet. It's very, very hard to walk around confident when your stock's down that much. People are calling you thinking you're suicidal, so you've got to drown out that noise.</p>
+<p class="q" data-t="816">Like I said, the CEO, to check that you're doing okay.<a href="https://www.youtube.com/watch?v=dlPCz8Jwypw&t=816s">&#x21AA; 13:36</a></p>
+<p data-t="819">Yeah. You almost didn't get that, but you got, it looks like you should probably go consult a therapist because it looks like you're going to kill yourself. I wasn't giving off those vibes, at least I didn't think so. I've always had a belief that so long as we have conviction on a path, we've got a strategy that sounds right, and we've got a motivated team behind it, we're good to go.</p>
+<p data-t="847">I was able to voice confidence internally. In doing so, we were able to retain core team and the important people that we needed to go execute on this path forward. That's really the challenge you get into when the stock falls that much. It's really, really hard to understand how can you retain people, as people are working and seeing the exact same thing that we're talking about, and their families are probably going, is this company a piece of [__]? Why aren't investors buying the shares? It's easy to get tricked into believing it is when it goes down 92%.</p>
+<h3 class="chapter"><span>Layoffs: AI Revolution or COVID Hangover? Will the Layoffs Work?</span><a href="https://www.youtube.com/watch?v=dlPCz8Jwypw&t=875s">&#x21AA; 14:35</a></h3>
+<p class="q" data-t="877">That is a very material shift in terms of technology architecture, which leads to the layoffs. We're seeing a huge amount of layoffs today. Are those layoffs today, do you think, due to AI efficiency, or do you think it's because of overhiring in COVID times?<a href="https://www.youtube.com/watch?v=dlPCz8Jwypw&t=877s">&#x21AA; 14:37</a></p>
+<p data-t="889">I think it's the latter today, because the former is still yet to take full effect at most companies. But a couple years ago, we've been growing really fast ever since we launched this model, Axon 2, in April of 2023 and the stock recovered. I think it was in '24, mostly in '24, we had a year where we probably grew near triple digits, but we ended up cutting the team's staff by 40% to 50% in most departments.</p>
+<p data-t="921">The reason I did that then is a belief that if the role was going to get automated, or that AI was not being adopted fast enough in those departments, it's time to let those people go and rebuild the organization as if we were building it knowing what technologies were available to us today.</p>
+<p class="q" data-t="941">Can I just pause you there? What roles did you assume at that time were going to get automated, if we deconstruct those?<a href="https://www.youtube.com/watch?v=dlPCz8Jwypw&t=941s">&#x21AA; 15:41</a></p>
+<p data-t="952">First of all, over time companies get bloated. I said, what are the process-oriented organizations? What is created? Even in our company, we run really lean. We've got really high revenue per employee and EBITDA per employee, but even at that time we'd gotten bloated over a decade plus. So I looked at, first, what are the process-enabling parts of the organization? One was HR.</p>
+<p data-t="975">HR as a function was necessary to have, because you've got to be able to do things like hire people and fire people, but our team had gotten bloated and there was a lot of process that the HR team was introducing in the organization. As a founder, I still remember the days we were 10, 20, 50, 100 people and you didn't have that much process. You had one HR person per 100 to 200 people, and things felt faster. I wanted to get back to that point.</p>
+<p data-t="1000">So I went through and said, what are the processes I don't like at the company? Let me just eliminate those. Then we can go through and say, who are the gatekeepers of those processes? You can remove those people. Then you go to where are the areas that you're going to start seeing a lot more automation. An example in our business is creative production. We felt like AI is going to get to the point where creatives are going to be automatically produced. You still need humans to innovate, but you can have less humans because a lot of the design work can be handed off.</p>
+<p data-t="1035">In engineering, your best engineers can use these tools to really accelerate themselves, and your weaker engineers might not understand how to use these tools, or might only get a 2x instead of a 10x or 100x increase in output.</p>
+<p class="q" data-t="1047">Can I just interrupt you there? On the creative production side, how do you think about the fear of moving before the market's ready? What I mean by that is, yes, there's a lot of promise, but you can fire before the creative tools are there to deliver what was.<a href="https://www.youtube.com/watch?v=dlPCz8Jwypw&t=1047s">&#x21AA; 17:27</a></p>
+<p data-t="1060">Your earlier question about winning ties in here. I don't play in fear of failure or fear of losing. I also believe, on my team across the board, our job for them has to be the right job for them at this moment, and right defined by the best place to have personal development and growth. If we believe that every single person has a good role, if we think that's no longer true, we should part ways, good severance, and make sure they're free to go do something else, because I don't like to keep people in roles that are going towards a dead end.</p>
+<p data-t="1095">It was a bet and a belief that these technologies were going to get good enough to automate these roles away, but we didn't want to take the risk that we were going to keep people in dead-end roles. That just creates a morale hit. That creates this organization that ends up optimizing to people who are just not happy. We try to optimize to our best performers.</p>
+<p data-t="1113">Best performers, your A players, want free rein to just go crush it. But they don't want to be distracted by unhappiness. They don't want to be distracted by people who are working at a role that is almost certainly going to get automated away. By taking it and saying, build the culture as if we were building it today, knowing what technologies are available to us, what would we look like, we just went to what we would look like. That forcing function made us have to get to an automated place faster. It would have been a lot slower had we had people that were trying to fight adoption of the technologies because they were fearful it was going to lead to their job loss.</p>
+<p class="q" data-t="1150">Do you think it is possible to have a company of your scale, which according to the numbers was 895 with 4.3 million revenue a head, only A players? Is there a time when you just by nature have to have a native B tier?<a href="https://www.youtube.com/watch?v=dlPCz8Jwypw&t=1150s">&#x21AA; 19:10</a></p>
+<p data-t="1169">Our core business, so we bought a couple businesses. We have Adjust, which is an analytics company, and Wurl, which is a CTV business. Those two aren't integrated. They run their own business. If I just went to the core business, our core advertising products are about 400 people. Some very, very high percentage of all the company's EBITDA comes from the core business. If you then calculate the EBITDA per employee over 400, it's a really, really high number. I think it's reaching or over 10 million a head now.</p>
+<p data-t="1200">On can you have a team full of A players, not everyone can be an A player in a team. You need some roles that are just there to be process and keep the lights on. We're a public company, so there's certain things that have to happen just because they have to happen. But HR, for example, like I touched on earlier, we went and took a pretty large HR organization, one that I think had 70 or 80 people on it, and now might have 15.</p>
+<p data-t="1227">The people that we retained are your A players in HR. They're the doers who are individual contributors. They just get stuff done. They don't get bogged down in process. Every organization, we said, how do we slim down to the best people? For us, the best people are defined by those that really want to come in and make a difference and learn and develop themselves, but not need process to get there. No management layer, no slowdown. It's just people who just want to get [__] done.</p>
+<p data-t="1257">That went through the entire organization where we leaned up to just those kinds of people. Then you start looking around the room and you've got great people everywhere. Then you enjoy working at that company. A players, what I've learned, can exist whether it is a back-office role, an engineering role, or a front-line revenue-generating role, but A players won't exist in bulk if you have a bunch of Bs, Cs, and Ds around them.</p>
+<p class="q" data-t="1275">Can I ask, what role do you dislike most, but you have to keep?<a href="https://www.youtube.com/watch?v=dlPCz8Jwypw&t=1275s">&#x21AA; 21:15</a></p>
+<p data-t="1281">So long as I have all people who are doers, who are really high output, I don't dislike any role because it fits our culture and every part of that comes together to build the business. As an example, if you look at our exec team, we have CEO, CTO, CFO, and general counsel. We don't have a CRO. We don't have a COO. Go down the list of other C levels that people might have. We don't have a CMO. We don't have a chief people officer. We don't have any of these roles.</p>
+<p class="q" data-t="1316">CHRO. None of these people. CHRO. No. What's the point? I'm shorting the company. If you don't have a chief human resources officer, what are you doing?<a href="https://www.youtube.com/watch?v=dlPCz8Jwypw&t=1316s">&#x21AA; 21:56</a></p>
+<p data-t="1322">They manage the HR officer. They manage the next person, then the next person, then the next person, to eventually the doer. The reason I state this is because we really built a culture of doers. It is very, very hard when you grow up, to go from a team you started and was small and was a team of doers, to eventually get large and go public. It's very hard to maintain that.</p>
+<p data-t="1349">We didn't until we ran through the layoffs and started leaning up. Really, the catalyst for me was this guy who's now the CTO, Giovanni, came in and he started looking around the organization and kept saying, why do we have these people? Why do we have these processes? It reminded me that the most important question to ask in business is why. He's inspired me to go, it's been 10 years, we're working with all these people, we have all these processes that we built over 10 years, why do we have these things? Why is it that I have this person who has this title who means nothing?</p>
+<p data-t="1383">I went through the whole organization. We just went back to the founding roots and tried to go back to that culture of doers. The question why played a huge role in that, and we were able to get to a place where everything was leaned up to doers. So we no longer have a role or a layer that I don't appreciate.</p>
+<h3 class="chapter"><span>Why Most Companies Can&#39;t Build a Culture of A-Players</span><a href="https://www.youtube.com/watch?v=dlPCz8Jwypw&t=1398s">&#x21AA; 23:18</a></h3>
+<p class="q" data-t="1400">I'm a CEO listening and I want to have a culture of doers and a culture of execution like you have. What are the biggest mistakes you see other CEOs make who want this culture but don't have it?<a href="https://www.youtube.com/watch?v=dlPCz8Jwypw&t=1400s">&#x21AA; 23:20</a></p>
+<p data-t="1412">I think it's really, really hard if the train leaves the station and your team becomes bloated to go backwards. The reason I say that, and this is a challenge in software today, is it's not as simple as go lay off 50%, 60% of people. If the team is bloated and there's a mixture of As, Bs, and Cs, your As are probably already long gone, and what's left is like A-minuses to B-pluses and then go down from there. It's people who like working in a process-oriented bigger company that are sticking around.</p>
+<p data-t="1439">If you go fire 50% of people and the culture and the team is mediocre, you're left with half mediocrity, and you're not going to get to where we hopefully are at, which is just a bunch of A players who are doers. The only way to fix a culture like that is to go and fire 99% of people and just rebuild it from the ground up. It's exceptionally hard to do. Not a lot of people understand how to do that because they don't know what they're looking for, and it's very, very hard to do that as a public company.</p>
+<p data-t="1465">I think it's challenging. People hear that this is the way to build things, and founders remember the glory days of 50 people in a room just building stuff and things moving incredibly quickly. It's not particularly easy to take a company that's gotten large scale with a bunch of layers, a big exec suite, and then take it back down.</p>
+<p class="q" data-t="1484">Will the layoffs that we are seeing not result in the desired improvements from the CEOs who are making them?<a href="https://www.youtube.com/watch?v=dlPCz8Jwypw&t=1484s">&#x21AA; 24:44</a></p>
+<p data-t="1494">I think if they really know what they're doing and they understand how the company looked when it was highly efficient when it was founded, then it's plausible that it can get back to the roots. But if it's a company that's gotten bloated to the point of mediocrity and it's just let's fire half and try to automate roles, it's probably not going to get to the place that people think it should.</p>
+<p class="q" data-t="1513">We are seeing a deluge of SBC, stock-based compensation, at a level that we almost haven't ever seen before, I don't think, in corporate history. How do you feel and think about that?<a href="https://www.youtube.com/watch?v=dlPCz8Jwypw&t=1513s">&#x21AA; 25:13</a></p>
+<p data-t="1525">We've given roughly the same amount of stock every year in terms of absolute amount, and it's roughly $300 million. If you think about our market cap, I think our market cap's about $150 billion. Our burn on stock-based comp is very, very low. You can judge us on cash flow minus SBC, which I generally think is the right way to judge companies.</p>
+<p data-t="1545">What's happened in tech, though, is that there's been an expectation that stock-based comp will be high at companies. As stock prices have gone down, especially in software companies of late, you have a downward spiral that's formed where all of a sudden a company is burning 3% of their cap table every single year to pay out equity to the team, it falls 66%, and now you're at 10%. You're at a level of dilution that it's incredibly hard to come out from underneath.</p>
+<p data-t="1571">It makes it hard to bet on those companies when they're burning that much equity. What I found, and what we implemented in '22 when we fell a lot, is that certain people have enough compensation to not take risk on the stock if the stock's going to be volatile. We used to believe that every single person should have equity granted by the company. Instead, we went to a place where we said the top 10% to 15% of the company will get equity and the rest won't.</p>
+<p data-t="1599">They'll have the right to buy equity, and there's ESPP programs that let employees buy equity at a discount if they so choose. Otherwise, they'll just be paid on cash. I remember when I first started my career, I couldn't have taken risk. I was basically going paycheck to paycheck. If you got 25% of your pay in stock and it went up, great, you feel great. But if it falls 92%, you're like, damn, I can't pay my rent. That's a real problem.</p>
+<p data-t="1624">We took it to a point where people who had the luxury of being able to take upside got upside. Everyone else got cash comp. They had the decision themselves, and we controlled this burn. We got into the position where it just wasn't burdensome to our business. I think companies tend to give away their stock too cheaply and too broadly, not understanding who actually can drive the value of the equity, and also believing that the investors are going to be accepting of really high burn rates.</p>
+<p class="q" data-t="1655">Why do you believe cash flow minus SBC is the right way to value companies?<a href="https://www.youtube.com/watch?v=dlPCz8Jwypw&t=1655s">&#x21AA; 27:35</a></p>
+<p data-t="1660">I think cash is king. I like simple. I look at accounting practices and I look at EBITDA numbers and what's clean EBITDA versus not. End of the day, net income, cash, these are clean things. If a company generates a billion dollars of cash but gives out a billion dollars of equity and says I'm just going to buy my equity at a billion dollars, they're not generating any cash.</p>
+<p data-t="1685">So what's the real value of that business? Either you're diluting and they're paying all of the cash they generate to buy the equity back to offset the dilution, or they're building up a cash balance that just offsets the dilution. So what's the point of believing that the cash flow is real in that case? For me, it's just distill businesses down to the simplest metric, which is cash flow minus SBC.</p>
+<h3 class="chapter"><span>What % of Applovin Code is AI? What Will it Be in 5 Years Time?</span><a href="https://www.youtube.com/watch?v=dlPCz8Jwypw&t=1703s">&#x21AA; 28:23</a></h3>
+<p class="q" data-t="1703">We mentioned the creative changes that are happening with AI and how that impacts output. Engineering is one that you mentioned several times. How have you seen engineering productivity change with AI in the last year or two? Databricks, I think, released yesterday that 50% of their code is generated by AI.<a href="https://www.youtube.com/watch?v=dlPCz8Jwypw&t=1703s">&#x21AA; 28:23</a></p>
+<p data-t="1720">Ours is a higher percentage than that, but it depends on how you think about percentage.</p>
+<p class="q" data-t="1725">You say yours is?<a href="https://www.youtube.com/watch?v=dlPCz8Jwypw&t=1725s">&#x21AA; 28:45</a></p>
+<p data-t="1726">Yeah, 80%, 90% probably, but that discounts quality over quantity. I think what's important is, if you just shoot for a percentage of tokens consumed, you could get to a place where you're just creating slop. If you're incentivizing slop, you're not going to get very far as a business. You're going to have massive fees to go pay the large language model businesses, but you're not going to get further as a business.</p>
+<p data-t="1751">What's important is, are your engineers good enough to use these technologies to accelerate what creates value for the company, and can you measure that? It's great to deploy an army of agents to go do my work for me, but if it's unclear what the deliverable is and it's unclear that that deliverable is aligned with actual growth in the business, then it's just waste.</p>
+<p data-t="1774">It's easy to say percentage of code is high because truly if you set off the agents and start writing code, they're going to contribute more code than humans. But is there value created? Everything we do with a lean team is try to go to value creation. If you optimize to that, you get the most out of the agents without looking at the superficial metrics, more so trying to distill it to, was your investment in tokens covered by the amount of revenue that you created from the code contributed?</p>
+<p class="q" data-t="1799">What does it mean to move to value creation? How do you do that?<a href="https://www.youtube.com/watch?v=dlPCz8Jwypw&t=1799s">&#x21AA; 29:59</a></p>
+<p data-t="1804">You have to understand the KPIs of the business that drive the business. Our organization was built pretty nicely for the era that we're in. One, we don't have a product organization. Our engineers are meant to be product managers. If you think about what's happening with AI native engineers today, they have to be really imaginative. They have to be product people.</p>
+<p data-t="1828">They don't have to know how to write code, but they have to be able to audit code, because frankly, you can't just go type out what you need in a complex system and get a deliverable and it's done. They still need to be able to review the code and make sure what they're checking in is safe and high quality. But first and foremost, they need to know what the business needs and they need to know how to measure it.</p>
+<p data-t="1853">Our business, with a lean team, and one where when you push a model improvement it is with certainty that it's easy to see it reflected in accuracy numbers in the model and also revenue growth in the business, the team knows what the KPIs are that they're optimizing to. Because they know that, they can then align with what an agent or army of agents is going to do on their behalf and try to get to that point of get the most value out from the investment that we're making.</p>
+<p data-t="1878">I think it's very hard in a lot of businesses to understand exactly what are the KPIs that we're optimizing to, so they just go, let's write a bunch of things and see what sticks. Then you're walking on a slippery slope. You may have so much cost ballooning from token usage that you don't actually get the type of revenue growth you need to cover it.</p>
+<p class="q" data-t="1893">Can you talk to me about when you optimized for a KPI that turned out to be wrong, and what you learned from that?<a href="https://www.youtube.com/watch?v=dlPCz8Jwypw&t=1893s">&#x21AA; 31:33</a></p>
+<p data-t="1898">Our business is pretty simple, so I don't know that we ever optimized to something that turned out to be wrong, because we've always optimized to the same thing. There are two things that drive our business. If the model is more accurately predictive, it's going to drive more revenue for the customer, the advertiser, than their media cost spent, and everything is measurable in our system. If that function holds true, revenue should grow as well alongside it.</p>
+<p data-t="1927">Because everything is real-time tracked and because we've always had a very consistent business model where we don't sell the belief that something worked, we sell the actual fact that something worked and we can measure everything, we ended up in a lucky spot where the business was built really well to be able to go utilize the types of technologies that we're seeing out there today.</p>
+<p class="q" data-t="1944">You said multiple times about it's very easy to have massive spend on the LLMs and just bluntly AI slop being created. How did you think about the decision whether to invest in your own model, as Harvey did, as Cursor did, TBD on how that goes, versus use existing frontier models?<a href="https://www.youtube.com/watch?v=dlPCz8Jwypw&t=1944s">&#x21AA; 32:24</a></p>
+<p data-t="1964">We're not an interface on top of large language models. There's usage of large language models in the company for productivity. There's some usage of large language models in our core business as well. But a recommendation system model is something that drives engagement, what you see on content on a social network. It's something that drives most advertising products in the world today, Facebook's ad system, TikTok's ad system, ours.</p>
+<p data-t="1992">This is a space of machine learning that really hit its stride about a decade ago and really accelerated with some of the research that we've seen come out of the large language model space lately. But it's a space where you can't just defer to the large language model and say, based on what you know about this user and the data I have available, what's the next ad to see? That wouldn't work as well as a custom model built for this purpose.</p>
+<p data-t="2014">In a world where you get to a place where you're in a category where you're utilizing the large language model or you're building an interface on top, you better build a moat really, really fast, given how exceptionally talented companies like Anthropic are about releasing product on top of their own models.</p>
+<h3 class="chapter"><span>Building on OpenAI: Opportunity or Existential Risk?</span><a href="https://www.youtube.com/watch?v=dlPCz8Jwypw&t=2027s">&#x21AA; 33:47</a></h3>
+<p class="q" data-t="2031">Do you think the majority of companies we see created today will be commoditized, eaten by Anthropic and OpenAI and frontier models?<a href="https://www.youtube.com/watch?v=dlPCz8Jwypw&t=2031s">&#x21AA; 33:51</a></p>
+<p data-t="2038">I would be very, very nervous if I was building a business as an interface on top of those companies.</p>
+<p class="q" data-t="2044">What does your team use internally, engineering-wise? Cursor or Claude Code?<a href="https://www.youtube.com/watch?v=dlPCz8Jwypw&t=2044s">&#x21AA; 34:04</a></p>
+<p data-t="2049">Most people are on Claude Code. Codex is utilized as well, and Cursor less so these days.</p>
+<p class="q" data-t="2050">You have 895 people today. How many people will AppLovin have?<a href="https://www.youtube.com/watch?v=dlPCz8Jwypw&t=2050s">&#x21AA; 34:10</a></p>
+<p data-t="2058">It's tough to say. Again, it's 400 people in the core business. We run lean. Is it going to be 800 on the core business? I highly doubt it. Is it going to be 50 on the core business? I'd love it, but I highly doubt it too. I think we're in a range of a good level for what we need for what we're doing today.</p>
+<p data-t="2079">Now, if some of the things that we'll take bets on over time work, we'll need more people around other businesses. But if we're just executing on our core business, it's very likely we don't need to go hire a whole lot more.</p>
+<p class="q" data-t="2092">You said about kind of execution, team of doers. It sounds great, but it's very, very hard to do, and you need great, oh God I sound like a real corporate, but alignment. But you don't do one-to-one meetings. How do you do the culture of execution without one-on-one meetings and without the traditional corporate scaffolding?<a href="https://www.youtube.com/watch?v=dlPCz8Jwypw&t=2092s">&#x21AA; 34:52</a></p>
+<p data-t="2112">It's really interesting. I'll broaden this out a little bit. One of my beliefs is that really good people figure out a way. They don't need a whole lot of mentorship. So if people on my team directly report to me, I never do one-on-ones. I don't do reviews. If I don't like something they're doing, they know about it in real time via chat. If I like what they're doing, they don't need to know. They know that I respect them and they're good to go. Good people don't need that type of handholding usually.</p>
+<p data-t="2147">What ends up happening is people who need a lot of development do, and those people aren't the people that I want on this team of A players. So we tend to shy away from a lot of traditional management techniques. Another example of this is something like learning and development. A lot of companies try to structure all the onboarding and learning and development processes in a company to say, you're new at my company, here's how you should learn the business.</p>
+<p data-t="2174">I remember in school I hated classes that were structured. I didn't learn anything. You couldn't retain it. I wanted to learn as I went. My first couple jobs out of school, I came in and I was just curious and I figured stuff out. I've seen a pattern that our best people come in, they ask questions, they figure things out. So we don't really have formal learning and development, and it's completely disconnected from what you would expect at a company.</p>
+<p data-t="2204">We don't want to structure people. We want to get really curious minds who come in, who are loud enough to get what they need to get, and who can learn. Now I'm going to tie it to the AI-native world today. The benefit of not doing things in these one-on-one silos and very structured is you can document everything in Slack or transcripted video calls.</p>
+<p data-t="2228">If you do that, any new person can come in and go, hey, Claude, summarize for me what Adam cares about over the last quarter and write me a book of everything that matters to him, and take the person who's running the best sales calls and summarize what he does or she does for those calls and tell me what I should know on this job. Then you start asking these types of questions, you start getting really good output because all of the information is available to Claude.</p>
+<p data-t="2257">You end up getting a person who can actually develop themselves through curiosity and output out of the models. That is a much more capable future employee than someone who was just told, here's what you need to know.</p>
+<p class="q" data-t="2267">You said about transcribed video calls having a lot of quality data that can be summarized. That's great. I believe in in-person strongly. How do you think about in-person versus remote and the value derived?<a href="https://www.youtube.com/watch?v=dlPCz8Jwypw&t=2267s">&#x21AA; 37:47</a></p>
+<p data-t="2279">End of the day, we're a sales business talking to advertisers, so I do believe there's a lot of value to building relationships in person. I think you do have a loss in ability to feed that information in the model and show other people what you're doing in those in-person interactions. So what we tend to do is believe the vast, vast majority of communication needs to be written or through a video call.</p>
+<p data-t="2300">When you need to build a relationship with key clients, you go in person and you take them out. If you take them out in a social gathering, you can send notes into a chat around that client and have that as your history on the in-person meeting. But you can't replace in person. I think as human beings, as we go to this world where bots are going to do more for us, in-person's even more valuable.</p>
+<p class="q" data-t="2303">I'm similar to you in terms of a focus on execution, and I get told that not everything has to be productive and sometimes being deliberately unproductive is almost productivity, a la team drinks. I don't want to do team drinks on a Friday at 5:30. Can we not bond over a whiteboard in a project that we're working on? We all love what we're doing. Why do we have to go and sit and drink in a pub? But I'm told that that's productive culture building.<a href="https://www.youtube.com/watch?v=dlPCz8Jwypw&t=2303s">&#x21AA; 38:23</a></p>
+<p data-t="2336">What I found is, in the most productive moments with your best people, you get in heated debates, like yelling matches. If you get really heated with someone and you go right back to let's just crank, and there's not moments where you go out to dinner, you have drinks, you get to bond, you sometimes lose the human side of things, and you sometimes get in a place where resentment can build and then things can become unproductive.</p>
+<p data-t="2359">When you remember that you're just a bunch of smart people in a room trying to figure [__] out, and you really remember that at something like a dinner, at something like drinks, you end up creating, I think, productivity out of those moments. The other thing I found is when we go out and drink and we start shooting the [__], really good ideas can come of that too.</p>
+<p data-t="2380">It's not that we're going out with a bunch of coworkers and talking about baseball. We're going out with a bunch of coworkers and getting drunk together and talking about work opportunities. Sometimes your best ideas come out of those moments.</p>
+<p class="q" data-t="2393">You also don't attend conferences. Why don't you attend conferences? How do you think about that?<a href="https://www.youtube.com/watch?v=dlPCz8Jwypw&t=2393s">&#x21AA; 39:53</a></p>
+<p data-t="2399">That's not true anymore. I do go to conferences now. When we fell in 2022, one of the things we did on the investor relations side, you fall 92%, no one's buying your stock. We said we're going to buy our own shares and we're going to shut down investor relations because what's the point? Why do I need to go to a conference to explain to everyone who's selling my shares to buy my shares? You're not going to convince someone to buy your shares when they're convinced every day you're going down.</p>
+<p data-t="2424">I said a better use of my time is focusing internal and focusing on the long term. It's a bad use of my time to go to conferences. As a public company CEO, you are supposed to go to conferences. You're supposed to meet with investors. So for a period of a couple years there, '22 and '23, we basically just shut all that down.</p>
+<p data-t="2443">Eventually, when the stock started gaining traction and the market cap was really recovering, I realized those were key parts of the role. I like to challenge myself and do things well, even if they're uncomfortable to me. Here we're sitting and we're having a one-on-one conversation that'll eventually air. This is relaxed, but going to a conference, speaking in front of a couple hundred people, I've always had a fear of public speaking. I'm an introverted person that didn't want to put myself out there.</p>
+<p data-t="2467">What I realized is, now that we're playing at higher-stakes tables, the company's getting bigger, we need to be out there. We need to be conveying what it is that we do so that people can understand the business model and can understand the prospects of the business model. I started doing more conferences over the last couple years. I think they've been rewarding because it's challenged me to do something that's naturally uncomfortable for me.</p>
+<p class="q" data-t="2490">What else, other than public speaking, remains uncomfortable but you have to do it all the same?<a href="https://www.youtube.com/watch?v=dlPCz8Jwypw&t=2490s">&#x21AA; 41:30</a></p>
+<p data-t="2497">Maybe the only other thing that comes to mind right now is it took me a long time to learn how to delegate. This is something that I actually committed to in that dark year, '22, as well. I was a very controlling, hands-on CEO for a very long time. I ran it. It was almost like all roads of the company went up to me.</p>
+<p data-t="2517">When we fell and I realized I'm not making great decisions for the business, I also realized other people are smarter at other aspects of the business than I am. So why am I not deferring to them? Why am I not delegating? Where I got to was I started stripping away my own roles. Actually, it was almost not that I was handing things off. It was that the rest of the team said, I'm going to come in and just take these things away.</p>
+<p data-t="2548">Again, this Giovanni, I'll give another example, he just started taking the product role that I had run and owned for a decade at the company. He took it away from me, and it was great because now I can ride sidecar. I can see what the team does, but I don't have to be in the weeds. It freed me up to do more strategic thought for the business long term. It freed me up to do more investor relations. But it's very, very hard as a controlling founder-type business to have the founder go, I'm going to hand things off.</p>
+<p data-t="2581">Those two things, one internal, one external, were important for me to really see as flaws and try to grow and develop through them.</p>
+<p class="q" data-t="2590">I think we've seen this prevailing trend of anti-delegation now, which is Paul Graham's founder mode and the importance of being in the weeds on certainly a number of things that traditionally would be delegated. How do you think about the power of delegation, that importance of delegation, with the rise of founder mode and founders being told go back?<a href="https://www.youtube.com/watch?v=dlPCz8Jwypw&t=2590s">&#x21AA; 43:10</a></p>
+<p data-t="2604">The whole notion of founder mode is an extreme reaction to extreme bloat that got created in most Silicon Valley companies over the last decade. If you're in a company with a bunch of layers and a bunch of process, how do you reverse it? We talked earlier about how a team of mediocrity, you can't reverse back to a team of high output. In large part, the only way to reverse is to have a founder that takes control back.</p>
+<p data-t="2630">But once you get to that lean team of highly exceptional doers, if you're then controlling and not delegating, then what are you doing? You have a whole bunch of exceptional talent around you who, in theory, on their own roles in the business, are going to be more of a subject matter expert than one individual who runs the business can be. In that case, delegation is very powerful.</p>
+<p class="q" data-t="2648">I have to ask, there was a day where the stock fell 23%. The caption here is the short seller war. I'm just really intrigued. Short sellers have come after you multiple times now. Is there a flaw in the mechanics of the market?<a href="https://www.youtube.com/watch?v=dlPCz8Jwypw&t=2648s">&#x21AA; 44:08</a></p>
+<h3 class="chapter"><span>The Dark Side of Short Sellers &amp; Market Manipulation</span><a href="https://www.youtube.com/watch?v=dlPCz8Jwypw&t=2649s">&#x21AA; 44:09</a></h3>
+<p data-t="2666">First of all, when you go down 92% in a year, you sort of learn to take your beatings. I've gotten to the point where that was a massive blessing. Go public and immediately take that beating, you realize that the public markets are volatile. There's things outside your control.</p>
+<p data-t="2679">The short seller attacks were not particularly surprising to me because we went from a low point of $9 a share to a high point of $750 a share in two, two and a half years. That kind of a run-up from under $4 billion market cap to around $250 billion market cap, I don't know if any other company has ever seen that kind of value creation in that short amount of time in history. Then you looked at the companies that were at our market cap, all names that people would recognize, and then goofy-named AppLovin.</p>
+<p data-t="2708">Nobody knows what advertising businesses do, let alone the goofy name. So we sort of expected it because we weren't out there promoting ourselves. We were just executing the business. I think because we grew so quickly, both revenue, profit, and stock price, we sort of failed to put our story out there proactively. Therefore, we were sitting ducks for people that wanted to create manipulation or narrative to cause the stock to go down.</p>
+<p data-t="2744">The thing I don't like about short sellers and the way the market's constructed today is they can take a position, take a large bet on puts, or sell their research to hedge funds who take a large bet on puts, and put overly dramatic articles out there to try to spook investors to sell off a stock. At the beginning of their short report, they'll say, we've most likely covered our short position by the time you're reading this report. There is not only this massive financial incentive to make the post much more dramatic than necessary or real, there's also not really any downside or protection against what they post.</p>
+<p data-t="2780">They don't have to be accurate because they go disclose everything they do. On the other side, myself as a public company executive, we operate within the boundaries of the SEC. We have to be accurate in everything we say. We cannot go out and be misleading in any statements. It's very, very difficult to be in that position, unable to address these types of reports and get attacked by people that don't have any sort of downside to what they're posting and have quite a bit of financial gain to come from attacking companies that people know less about.</p>
+<p data-t="2817">What it did for us were two things. One, our team understands volatility. Like I said, you go down by as much as we did in the first year post-IPO, the team that's still there doesn't have a problem with volatility, and most likely they have a lot of conviction in the business model and the path to the future. Some of the team, it was funny, because you don't usually want people posting responses, but some of our leaders were posting, it's funny that the short sellers, because we're so good at what we do and the model that we built, they can't come up with anything other than we're cheating.</p>
+<p data-t="2852">There was a lot of pride in what we built coming out from the team. So I knew that the team was sound and we were going to be able to recover from any sort of attack. The second piece that it did as a forcing function was it required us to go out to investors and the market and do more things about marketing the company and explaining the business. In a way, it was like a rip-off-the-band-aid moment for us when it comes to marketing. We had to make ourselves more available and we had to be able to articulate what it is that we do in a clear way.</p>
+<p class="q" data-t="2886">Was it a mistake to not invest in brand marketing, brand awareness before that?<a href="https://www.youtube.com/watch?v=dlPCz8Jwypw&t=2886s">&#x21AA; 48:06</a></p>
+<p data-t="2892">It's easy to say in hindsight it could have been a mistake. We grew really fast. Like I said, when you're heads down, you're working in a lean organization.</p>
+<p class="q" data-t="2898">What was the revenue growth year one, year two, year three, kind of ballpark?<a href="https://www.youtube.com/watch?v=dlPCz8Jwypw&t=2898s">&#x21AA; 48:18</a></p>
+<p data-t="2904">Honestly, I don't remember exacts, but near triple digits each year. Our rule of 40, sorry, in the last quarter I think was like 150. Not only are we growing, we grew like 70% year over year. We have 84%, I think, EBITDA margins. The revenue growth since we launched the Axon 2 model has been astounding. The profitability profile of the business is crazy.</p>
+<p data-t="2934">The business is expanding without adding heads. We have a very odd financial profile because when you look at it, you go, how can a business have 84% EBITDA margins? There's not another comp in the world that looks like it. A lot of the things that we've been able to accomplish just don't make sense to people. In a world where things don't make sense, people think you're cheating instead of realizing you built one of the cooler technologies the world's ever seen.</p>
+<p data-t="2958">As a team, and me as the CEO of the business, it's my responsibility to go out and explain the business. I owe it to my team who's built this really cool technology to go explain the business. We owe it to our partners in the industry because when people take shots on us on the other side, you've got advertisers who are buying on a performance basis. They're spending billions of dollars a year. We put out that a year ago the scale of investment on our platform was 11 billion run rate. We've grown a ton since then.</p>
+<p data-t="2990">So you're talking well over $10 billion a year of dollars spent on a performance basis. A shot on us is effectively calling all these advertisers who are spending at that large scale a bunch of morons. Not only did I owe it to my team, I owed it to our clients to go out and explain our business and explain why some of the world's best marketers are buying on the other side, some of the world's best businesses are growing really quickly and profitably on the other side, and our engineers have built really exceptional technology.</p>
+<h3 class="chapter"><span>Do Great Founders Doubt Themselves?</span><a href="https://www.youtube.com/watch?v=dlPCz8Jwypw&t=3010s">&#x21AA; 50:10</a></h3>
+<p class="q" data-t="3011">Two things. You speak with such confidence. You said shots on you. Do you give a [__] what other people think about you?<a href="https://www.youtube.com/watch?v=dlPCz8Jwypw&t=3011s">&#x21AA; 50:11</a></p>
+<p data-t="3016">A long time ago, I realized you can't control that. So no.</p>
+<p class="q" data-t="3020">Okay. You don't? Do you ever doubt yourself? If you speak with such confidence and such assuredness, I want to follow you. I'm being serious. There are moments when you're just you and your wife in the kitchen and your head is in your hands like [__]. Do you have doubt or not?<a href="https://www.youtube.com/watch?v=dlPCz8Jwypw&t=3020s">&#x21AA; 50:20</a></p>
+<p data-t="3040">Building the business, almost every morning I'd wake up thinking I've got to check stats, make sure we're still operating, or are we going to go bankrupt today? In a way, I've always had this doubt that this is real, that what we're building is going to last, that what we're building is going to be really big. In essence, that fear of blowup is one of my big motivators. So I feel like I always have that doubt.</p>
+<p data-t="3071">I don't ever feel like we've made it, and that pushes a lot of us to want to keep pushing forward because we are in a very, very tough space. Advertising is very competitive. There's a lot of technology that's improving in terms of technology capability for our performance stack, but that also forces us to continue to be innovative, otherwise we'd fall behind peers. If we ever get complacent, we're almost certain to lose.</p>
+<p data-t="3102">I always tell investors or team, if at any moment I sound like I don't have conviction in our future path, we're sort of reeling, that would be a moment to doubt us. But I don't feel that way because I've been doing this a very, very long time. With the team that I've got working on these technologies, this product, this platform, and the opportunities in front of us, I've always had conviction that the future was going to be better than the past. That has kept me in a position where I can voice confidence in what we're doing.</p>
+<h3 class="chapter"><span>TikTok, Meta &amp; The Future of Recommendation Engines</span><a href="https://www.youtube.com/watch?v=dlPCz8Jwypw&t=3127s">&#x21AA; 52:07</a></h3>
+<p class="q" data-t="3131">One of my very dear friends has built up a half-a-billion-dollar position in ByteDance, obviously TikTok's parent company, and he said one of the reasons is because they have the most advanced targeting engine in the world. Would you agree?<a href="https://www.youtube.com/watch?v=dlPCz8Jwypw&t=3131s">&#x21AA; 52:11</a></p>
+<p data-t="3138">I would say when it comes to engagement, creating the ability for a social network to not need any social interaction and still be able to deliver you fantastic content, the TikTok recommendation algo is quite phenomenal. If you think about recommendation systems, what's the world we operate in? On the one hand, the content you see on Instagram, the content you see on TikTok, is very dialed in to what you're interested in. It is a constant loop. It's very interesting.</p>
+<p data-t="3168">The advertising systems too, the ads you see on Instagram have become very much like content. They're highly relevant. The ads that we're able to show consumers now are getting very relevant and they drive action. As the technology in recommendation system models and just generally in AI models has gotten better, the capacity to serve more relevant, more targeted ads to the consumer, even knowing less about the person, has gotten so good that people are really able to use the advertising to discover the products that they want.</p>
+<h3 class="chapter"><span>The Path to a $1 Trillion Company: What Needs to Happen?</span><a href="https://www.youtube.com/watch?v=dlPCz8Jwypw&t=3192s">&#x21AA; 53:12</a></h3>
+<p class="q" data-t="3197">We mentioned TikTok and we mentioned Meta there. For AppLovin, currently valued circa 150 billion market cap, whatever it is precisely, but give or take, for AppLovin to be a trillion-dollar company, do you have to be a social network as well?<a href="https://www.youtube.com/watch?v=dlPCz8Jwypw&t=3197s">&#x21AA; 53:17</a></p>
+<p data-t="3212">No. I think, if you think about what creates a trillion-dollar business, and I sort of said cash flow minus SBC is a really, really important metric, if we ever got to generating $30 billion, $35 billion of cash a year, we'd probably be a trillion-dollar business. So you think about what can get us to that point.</p>
+<p data-t="3231">There are a couple things that can get us there. One is continued execution in the domain that we're in. We think we can get much bigger just by better monetizing the gaming audience. It's a billion-plus daily active users who play these games, adult audience, a lot of heads of household. The next thing you think about is, how do you expand what you have?</p>
+<p data-t="3249">In the past I've talked about connected TV as one of the holy grails of advertising. If you can port the performance ad we serve on mobile to the television and allow small and medium-sized businesses to serve there and make it all performance-based, that's a really big unlock. So it's something we still take seriously. Then you think about what are other applications of the technology. We're really good at advertising model. We have yet to have a chance to have our team work on an engagement model.</p>
+<p data-t="3279">A social network for us is not a requirement to get to a trillion dollars. It's an interesting play to recruit talent and continue to tune our skills and modeling. As you think about the research labs and any company that's building models, they better have things that are interesting for new researchers to come in to work on, new applications of technology. For us, a lot of these bets will also be means to go hire some of the best people in the world. If we execute on it, obviously great, but not a requirement.</p>
+<p class="q" data-t="3310">Eli Gill just tweeted, actually, compute is the currency of the future, and that compute will be one of the defining factors that the best talent looks for when deciding which company to join. Do you agree with that, and how do you think about that?<a href="https://www.youtube.com/watch?v=dlPCz8Jwypw&t=3310s">&#x21AA; 55:10</a></p>
+<p data-t="3322">Depends on the space. Large language models obviously have the ability to scale with more compute, and therefore it is attractive to researchers to join companies that can invest a lot in compute. If you look at right now, we can all say probably Anthropic is doing the best in terms of releasing models and product in the large language model space as of this moment. Anthropic probably does not invest the most in compute.</p>
+<p class="q" data-t="3345">Yes.<a href="https://www.youtube.com/watch?v=dlPCz8Jwypw&t=3345s">&#x21AA; 55:45</a></p>
+<p data-t="3346">So if you think about that, how did they actually get really good researchers creating the best product output? Well, they have really good culture and they have really good people, and they really tuned what they were going after. Recommendation system space does not need as much compute to create the output that's necessary to succeed, so it's quite different.</p>
+<p data-t="3364">You're looking for people that still want to solve really big problems and are very mathematically inclined, but there's different spaces in modeling. There's vision models, there's the LLMs, there's recommendation systems, there's others. Depending on the product that someone is interested in, they'll go to a different company. You've got people that like working on recommendation system models, and they're not bound by compute, they're bound by curiosity and application of techniques to create a better output.</p>
+<h3 class="chapter"><span>Stock Buybacks: How to Do Them and When They Go Wrong?</span><a href="https://www.youtube.com/watch?v=dlPCz8Jwypw&t=3393s">&#x21AA; 56:33</a></h3>
+<p class="q" data-t="3393">You mentioned the buyback that you did in 2022, I think it was, or when the stock was very, very low. We've seen a wave of buybacks, whether it's Wix or ServiceNow among many others, Salesforce huge. How should we read these buybacks, a sign of internal confidence?<a href="https://www.youtube.com/watch?v=dlPCz8Jwypw&t=3393s">&#x21AA; 56:33</a></p>
+<p data-t="3410">Buybacks are interesting because if you look at history, the concept of a buyback doesn't usually pan out. It's not usually a good financial bet. It's like a bridge round. It's tough. Here's why it's tough. It's easy when you're inside to think you're cheap, but you sort of trade where you deserve to trade. It's really hard to know when is it cheap enough.</p>
+<p data-t="3435">The reason why our buyback was very, very successful is when we went public during COVID, we didn't build a really big roster of blue-chip investors. We had a very flimsy cap table. Then this led to the stock collapsing much more than it should have. When we went public in '21, we had $700 million of EBITDA. $28 billion IPO company goes to $40 billion. In '22, we cleared a billion of EBITDA. So we grew 40-ish percent in '22, yet, like I said, the stock fell 92%. We got to under four times.</p>
+<p data-t="3471">Why did that happen? We went public in COVID, didn't attract blue-chip investors, so our cap table was basically the private market cap table that needed to sell. That's a real big problem. Most companies that are private probably have half their cap table as sellers. When we went and did our buyback, we didn't say, hey, we're just going to go to the market and take float out, like take a share back from every single shareholder. That would imply that even part of my shares are getting bought back, right?</p>
+<p data-t="3502">What we instead did was go and say, if you are a seller, please work with us to sell back to the business. We went and deployed every dollar that we made, including we raised some debt to deploy even more, and took back a lot of the shares on the cap table that were going to inevitably sell into the public markets over the coming months.</p>
+<p data-t="3519">By doing that, we were able to get liquidity to company folks, investors, and old ex-cofounders and other folks on the cap table that needed liquidity. We were able to get them liquid no problem. They were happy to do the trade, and we were able to take out that selling pressure. These folks being willing to work with us was a gift.</p>
+<p data-t="3535">Then, as the business started accelerating, you remove the selling pressure and overhang, then you're set up in a position where you can now go attract the right investors.</p>
+<p class="q" data-t="3541">Give or take, how much money did that buyback make you?<a href="https://www.youtube.com/watch?v=dlPCz8Jwypw&t=3541s">&#x21AA; 59:01</a></p>
+<h3 class="chapter"><span>Is the SaaS Model Breaking? What Happens Now?</span><a href="https://www.youtube.com/watch?v=dlPCz8Jwypw&t=3544s">&#x21AA; 59:04</a></h3>
+<p data-t="3548">Probably, I'd say based on where we're trading today, roughly a third of the company's value came from that buyback.</p>
+<p class="q" data-t="3555">So you said 150 billion roughly. So let's call it 50 billion around. Well done.<a href="https://www.youtube.com/watch?v=dlPCz8Jwypw&t=3555s">&#x21AA; 59:15</a></p>
+<p data-t="3559">Yeah, it was a good buyback. Now, just buying out of the market, just buying your float back, it's not a good bet usually because you start doing the buyback and if you're not right, you don't time it well, and none of us are day traders when we're running businesses, you can burn the capital that you made really quickly and then you're in a much worse spot.</p>
+<p class="q" data-t="3594">You said people trade where they deserve to trade in a lot of cases. Is the SaaS apocalypse fair then?<a href="https://www.youtube.com/watch?v=dlPCz8Jwypw&t=3594s">&#x21AA; 59:54</a></p>
+<p data-t="3600">As an investor, if I was one, when you get into an unpredictable outcome in the future, it's very easy to sell businesses. The rapid rate of product delivery in the large language model space makes a lot of traditional enterprise SaaS companies hard to bet on years into the future. So what happens? Terminal value is dicier. So you value the company less, you get out.</p>
+<p data-t="3625">Their stock-based comp was high, but it was an acceptable percentage of total value. Stock tanks, stock-based comp becomes too extreme. Now they're in a position where not only are they going to lose their heads, they're also competitively challenged. So you're in a really bad downward spiral. In a way, I would say not only is it fair because of the risk that exists, I'm not sure it's actually done yet.</p>
+<p data-t="3644">Again, I'm not a trader of businesses, but I do think we're going to go through material changes in the market, especially when it comes to enterprise SaaS over the coming years. It may not be that these companies that we have today as some of the SaaS leaders are completely going to wipe out, because I don't think that happens. Companies, once they're embedded with you utilizing a certain software, usually don't change. But it may be that a lot of the growth opportunities are gone for these businesses.</p>
+<p data-t="3675">You strip out growth opportunities in businesses. The reason we went and traded down to under four times EBITDA is because investors did not believe in our future growth prospects. When you're a public market investor, you only like to bet on companies where you have sound belief that their future is going to be a lot rosier than the present. It is very hard to believe that right now in traditional enterprise SaaS when these large language model businesses, the models, the frontier models, continue to get so much more powerful.</p>
+<p class="q" data-t="3700">You mentioned the material changes there. What do you think the most material changes will be in the next few years?<a href="https://www.youtube.com/watch?v=dlPCz8Jwypw&t=3700s">&#x21AA; 1:01:40</a></p>
+<p data-t="3705">The rate of advancement is astounding over the last few months. You see the amount of products that are rolling out. It's like every day there's something new. I think the coolest thing that we're seeing right now is, for people who know how to utilize it, the ability to just launch an army of agents to do certain tasks, and obviously coding is the most obvious utilization today.</p>
+<p data-t="3737">If you see that today and believe we're already at a point where the army of agents can continue to start improving the code that's available to them and the products that are available to them in a recursive way, the rate of acceleration of technology and R&D and our imaginations becoming products is only going to get faster. Where does that lead us to? I don't know. But I think it's going to be a much more productive future than the present.</p>
+<p class="q" data-t="3749">We mentioned engineering again. You said you don't have a product team, so to speak. How do you think about the org chart today and how that changes over time? Do we lose product as a function?<a href="https://www.youtube.com/watch?v=dlPCz8Jwypw&t=3749s">&#x21AA; 1:02:29</a></p>
+<p data-t="3760">We chose not to have it because we wanted to have exceptional engineers that understood the product. The belief was, if our engineering team is writing the product that delivers revenue, our sales team and all other teams are effectively cheerleading for the engineering team, making sure they have what they need and then eventually going out and selling their product. But we can only sell the product if it's good enough to be sold.</p>
+<p data-t="3786">The engineers, if exceptional, better be good enough at understanding the product that they need to build to go build it. I do think the role of product should end up looking a lot like it does at our company over time, that either your product people become engineers or your engineers become product people, but you don't need both.</p>
+<p data-t="3809">What usually happens, whoever becomes AI native and knows how to utilize these tools will become those powerful 10x, 100x output folks who know how to use the tools to create that kind of output. I do think for some time still, though, you're going to need an engineer doing the work and still making sure that the code is up to security standards, the code's not slop, the code is good enough to contribute to your main codebase. There's a lot that still comes from having a traditional engineering background that's valuable in today's world.</p>
+<p class="q" data-t="3828">Every day it feels like we have another major security breach. We've seen Lovable in the last 24 hours. We saw V0 in the 24 hours before that. It goes on and on and on in the last month. To what extent are you nervous that models like Mythos will unravel vulnerabilities that were previously unseen and we have security be the biggest problem?<a href="https://www.youtube.com/watch?v=dlPCz8Jwypw&t=3828s">&#x21AA; 1:03:48</a></p>
+<p data-t="3853">Obviously there's a risk there. Now, you could say, is Anthropic slowing down the rollout because they don't have the compute, or is Anthropic slowing down the rollout because they're really concerned about the risk? It's probably somewhere in between. There's obviously a risk, though. These models, one of the things they're built for is audit code and expose any vulnerabilities or bugs and solve them. So you would hope that we will be a lot more buttoned up on security in the future than we are today.</p>
+<p data-t="3878">But because of how quickly these models are just getting exceptionally good, it's almost certain companies are going to be releasing code faster. When you release products faster, you ship fast, you break things, and because of that, you're going to have more security breaches most likely. But once you get past that point, you're probably going to be in a point where the technology is a lot more buttoned up than it was before.</p>
+<p class="q" data-t="3901">What is no one talking about that you think everyone should be talking about?<a href="https://www.youtube.com/watch?v=dlPCz8Jwypw&t=3901s">&#x21AA; 1:05:01</a></p>
+<p data-t="3908">I do think there needs to be a lot of honesty around what is the world going to look like as these AI technologies continue to get more powerful. If every technology company could stand to lose 75%, 80% of their talent and get more efficient, what does that actually mean? Does it mean that there's going to be 10 times more startups, so the startup funds are going to be crushing it, and people are going to be way more productive and we're going to get way more product in the world? Plausible.</p>
+<p data-t="3939">I'm a believer that the technology unlocks a lot more output, and our ability to imagine things and then go and create becomes not only cheaper, much more believable. But it requires people to really level up. I think we need to be honest about what the path is going to look like, because my guess is you're going to see a lot more tech layoffs over the next couple of years as companies really start understanding that not laying people off creates a blockade to actually getting to this AI-native state.</p>
+<p class="q" data-t="3964">Did you find it hard that in a year where you have triple-digit growth, stellar year, you're laying off such a large portion? I really like and respect you, but at that point that's a choice you don't need to make.<a href="https://www.youtube.com/watch?v=dlPCz8Jwypw&t=3964s">&#x21AA; 1:06:04</a></p>
+<p data-t="3976">Look, again, are you playing to win or are you playing not to lose? I feel like we're very, very transparent with our employees today. Anyone asks me, I'll say you're here because you're an exceptional talent. What does that mean going forward? You use these technologies to create more output. You become AI native. You're going to have a role here. If you avoid utilizing these technologies, you're not, and you're going to get fired, and that's life.</p>
+<p data-t="4002">We demand that the people who are at the company are adopting these technologies rapidly to create more output. But we don't shy away from difficult discussion because if they're not able to do that, there's a role somewhere for them, but it wouldn't be at our company.</p>
+<p class="q" data-t="4021">Totally get that. Final one before we move to a quickfire is just on budgeting. Token budgeting is one of the biggest questions for leaders. How should I think about it, actually thinking about planning it, forecasting?<a href="https://www.youtube.com/watch?v=dlPCz8Jwypw&t=4021s">&#x21AA; 1:07:01</a></p>
+<p data-t="4027">To my point, I think it's flawed logic because if you just throw a budget at people and you create a leaderboard of token usage, what are people going to do? Create a bunch of crap that has no value. All of a sudden you burn your budget, you're paying really big checks, and you don't have revenue on the other side of it.</p>
+<p data-t="4046">Companies need to get to the point of understanding what are they actually optimizing to, and who's utilizing the technologies and creating token consumption that actually aligns with those KPIs. When that happens, you won't be in the mindset of token budgeting. You will want to invest in tokens because there's revenue on the other side of it. But I think today people are just blindly going at spend a bunch of money, get on the leaderboard, use the tools, something good's going to happen. You better be able to measure that, otherwise you're going to get a lot of bad behavior.</p>
+<p data-t="4077">It's no different than companies that staffed up to very, very large team sizes and bloated teams over the last decade, 15 years in the Valley because they had the means to and it was let's just get on a hiring quota. Token quotas and token budgets are no different than hiring quotas. Until they get efficient, they'll be inefficient, and I think a lot of companies will just burn money.</p>
+<p class="q" data-t="4095">I care desperately, before we do a quickfire, about being the best that I can be and being number one in my business. I also want to be a parent. What is the uncomfortable truth that I should hear about being a parent and trying to be the best?<a href="https://www.youtube.com/watch?v=dlPCz8Jwypw&t=4095s">&#x21AA; 1:08:15</a></p>
+<p data-t="4106">I think it's really hard. As human beings, to become really good at something, you have to focus on it and you have to put out a lot of effort. At least me, I'm not all that great at multitasking. Being a parent is a really difficult thing. So if you are a founder running something and you want to become the best, you want to be the best podcaster, I want to become the best in advertising with my team leading us the way there, to do that you need to prioritize that task.</p>
+<p data-t="4136">The second you do that, in essence you're deprioritizing the task of being a parent, being a husband, being a good person in the personal life. It requires having a family that understands the commitment you have to the day job, and it requires a balance that is really hard to attain.</p>
+<p class="q" data-t="4153">What have you missed that you regretted?<a href="https://www.youtube.com/watch?v=dlPCz8Jwypw&t=4153s">&#x21AA; 1:09:13</a></p>
+<p data-t="4158">As you do what you do, a lot of times you're not really connected to reality, to what's happening around you, because your mind is wandering. My mind is always on business. Even when I dream and I wake up, it's something about business. I think back at moments where the kids were growing up and sort of a blur, and I go, was I just not there? I was there, but I wasn't there mentally. It is not a great thought when you have that.</p>
+<p data-t="4193">On the other side, this business that became much bigger than I thought was possible means a lot to me. Figuring out that balance is really hard as human beings. I think it is a challenge. It's one that I'm still working on. I think it's very, very hard to accomplish being really good at all facets of life.</p>
+<h3 class="chapter"><span>Quick-Fire Round</span><a href="https://www.youtube.com/watch?v=dlPCz8Jwypw&t=4204s">&#x21AA; 1:10:04</a></h3>
+<p class="q" data-t="4205">The ultimate challenge. Do you mind if we do a quickfire round?<a href="https://www.youtube.com/watch?v=dlPCz8Jwypw&t=4205s">&#x21AA; 1:10:05</a></p>
+<p data-t="4209">Yeah, go for it.</p>
+<p class="q" data-t="4210">What have you changed your mind on most in the last 12 months?<a href="https://www.youtube.com/watch?v=dlPCz8Jwypw&t=4210s">&#x21AA; 1:10:10</a></p>
+<p data-t="4216">I don't know if I've changed my mind much in the last 12 months. When I hit that low point in '22, I sort of got to a place where I said, I'm going to think forward about what I do professionally, and then maybe this translates to my personal life too, and I'm going to plan out three to five years and work back from it. When you think about the current year, 12 months, I feel like whatever is happening now is defined by the decisions we made in the past.</p>
+<p data-t="4248">Therefore, nothing that I do today is going to change an outcome in that 12 months. What I'm thinking today or trying to execute on today or starting to research today can change an outcome one, two, three, four, five years down the road. But because it's undefined still, and you're in that moment of, huh, I think this is something interesting, it's very hard to challenge that thought. If you believe in it and you've got conviction in it, you sort of just run with it. So I don't know that I would change anything that I've thought about in the last 12 months because I don't yet know what's going to happen from it.</p>
+<p class="q" data-t="4280">Who do you not have on your board who you would most like to have on your board?<a href="https://www.youtube.com/watch?v=dlPCz8Jwypw&t=4280s">&#x21AA; 1:11:20</a></p>
+<p data-t="4285">That is a tough question for me too because I think we have a pretty well-constructed board, but I don't have a lot of experience with boards. When we were private, from 2011 when we started the business to 2018 when KKR invested and we got our first three-person board, I didn't have a board. I just ran on my own and we ended up deciding and making choices as I saw fit. Obviously I would consult my co-founders, other people on the team, but there was no board because we were a bootstrap business with just a convertible note round.</p>
+<p data-t="4316">Then we had a three-person board. Now we've got quite a bit bigger than that, but not that much bigger than that. I think it's eight or nine people, if I recall. We have a really good composition of people now. The people around the table are a mixture of people who have worked at the company, know me intimately well and are supportive, or have really good business instincts outside of us who bring great things to it.</p>
+<p data-t="4342">I actually recently stepped aside as the chairman of the board to hand it over to this gentleman, Craig Billings. He's CEO of Wynn, one of the smartest people I've ever met, very, very competent at building businesses and understanding corporate governance. I felt like my job is to run the business, and I don't want to be consuming my own time on anything other than day-to-day operations.</p>
+<p data-t="4365">Board is something that I've got to really work with and allow to be pulled into the business and contribute back to the business and work with me on the business, but it's not something that I'm going to be good enough to be the chairman on versus someone like Craig who is exceptionally talented at all aspects of building a big business. I felt like that trade was a good trade. It's not common that you'll see a CEO step aside as chairman, but I've always believed that in every role that we all do, whether it's me or someone else on the team, if there's someone better to do it, step aside and let them take over. That's something that allows you to always be leveling up.</p>
+<p class="q" data-t="4403">How do you feel about founders investing?<a href="https://www.youtube.com/watch?v=dlPCz8Jwypw&t=4403s">&#x21AA; 1:13:23</a></p>
+<p data-t="4409">I don't invest anymore for a couple reasons. One is, in order to invest, you've got to sell shares in your own business to have liquidity to go invest. I don't know, again, if I didn't start this business for money, I don't know what I need to invest to create more return on. If you're an investor, you hopefully really want to create return or impact or something that is a KPI that you care about.</p>
+<p data-t="4437">But the second you care about that KPI and you chase it, you're selling from your own core business to go diversify. You're not focused on your day job. For me, my goal in life is to make my company as good as it can possibly be three years from now, five years from now, 10 years from now, 20 years from now. If I plot into the future, every second of my available time should be committed to it. Otherwise, there's some loss. I don't know what that loss is, but if I get distracted on other things, there's some loss that I can't measure. As those losses start adding up, they can compound and it can make it less likely that you could succeed.</p>
+<p class="q" data-t="4463">What decision with AppLovin would you do differently knowing what you know now? You mentioned the weakness of your cap table there. That struck me, and I was like, do you wish you delayed it then?<a href="https://www.youtube.com/watch?v=dlPCz8Jwypw&t=4463s">&#x21AA; 1:14:23</a></p>
+<p data-t="4473">There's never a good time to go public. So I don't question the past because the past makes up where you are in the present. I've made a lot of decisions. A lot of them end up wrong, but we pivot and we learn from them. We went public in a very difficult time, towards the late of the growth-stock run-up during COVID, and the second COVID ended and usage patterns returned to what they were pre-COVID, everyone collapsed in growth stocks, in particular those late-market IPOs.</p>
+<p data-t="4503">So you could say, okay, we didn't time the market right. As you just said, there's no right time to go public. I also think the learning for us, and anyone going public, is the moment in time. It's like a Series A, Series B, Series C. It's a fundraising round. You have a business that has long-term growth opportunities that you have high conviction in and can be big enough to be owned by anyone in the world and interesting enough to be owned by anyone in the world.</p>
+<p data-t="4527">In a world where there's no right time to go public, you can't time the market. Just go public. You take the capital you raise and you build forward. Really what's important for me running the business is I really am not focused on where the stock's going to be next quarter. Three to five years from now, we better be higher than where we are by enough so that I feel like people made a good return on investment owning our shares today. They better make more on us than they can make by owning the basket of the S&amp;P, just putting their money in debt.</p>
+<p data-t="4556">If they make a good enough return on us over the next three to five years, I feel like I did my job right as CEO. Then they need the next three to five years and the next three to five years after that, but we owe it to investors to make them a return greater than what else they can put their money in.</p>
+<p class="q" data-t="4569">Finish this sentence. The advertising business that is most at risk from AppLovin in the next three years is?<a href="https://www.youtube.com/watch?v=dlPCz8Jwypw&t=4569s">&#x21AA; 1:16:09</a></p>
+<p data-t="4575">Tough question to finish the sentence on because I don't think it's any. We build a business trying to better help an advertiser reach a consumer, drive a transaction inside this gaming audience, a billion-plus daily active users. We're trying to create incremental transactions. When you do a performance marketing platform, we're not trying to take from others. We're trying to give an advertiser the chance to spend $100,000 a day growing your business today, spend an extra $20,000 a day with us, and create more transactional volume.</p>
+<p data-t="4603">Don't take from anyone else. Take your $100,000 a day investment business that might have $300,000 a day of revenue with it and add another $20,000 of media spend. Get to 120K and get to 360K revenue. Your business grows 20% by investing an extra 20% in our technology, our platform, our audience that you otherwise weren't accessing in that moment.</p>
+<p class="q" data-t="4629">I'm going to steal from another podcaster who's actually a friend of mine, but great artists steal, kind of quote. It's a really nice question, and it's the final one. What's the kindest thing that anyone's ever done for you?<a href="https://www.youtube.com/watch?v=dlPCz8Jwypw&t=4629s">&#x21AA; 1:17:09</a></p>
+<p data-t="4642">It's a weird one. Maybe kindness is, in those dark moments, whether it's my wife, close friend, people checking in on me. But the reason I say it's a weird one is we don't tend to push the word kindness around very often at the company. We believe you're pushing forward in an aggressive fashion, almost cutthroat.</p>
+<p class="q" data-t="4668">Do you worry that you're too aggressive?<a href="https://www.youtube.com/watch?v=dlPCz8Jwypw&t=4668s">&#x21AA; 1:17:48</a></p>
+<p data-t="4672">I think, candidly, some people will listen to this, and I get in trouble for this, they would say that it's exclusionary because it's too aggressive. I love being aggressive. If you do checks on me and people who've come across me, you'll get half the people that say I'm very aggressive and they sort of like it, half the people will say I'm an [__]. They'll all say I'm competent. On the one hand, it sort of checks the boxes I care about. People think I'm competent, great.</p>
+<p data-t="4700">But the reality is aggressive can rub people the wrong way. The reason I reacted a little awkwardly to the kindness point, if you're too kind and not as direct, not as aggressive, you're wasting time. In a world where time is limited and you can't quantify the loss from sugarcoating things, I'd much rather be aggressive and rub some people the wrong way and surround myself with people that want to push hard than really be surrounded by people who care so much about kindness that they're willing to slow down.</p>
+<p class="q" data-t="4726">Have you ever rubbed people up the wrong way and you regretted it?<a href="https://www.youtube.com/watch?v=dlPCz8Jwypw&t=4726s">&#x21AA; 1:18:46</a></p>
+<p data-t="4733">Not really. I guess I just don't think about it much. I don't live in much of a world of regrets because I live in a world of almost short-term memory. I make a lot of decisions. A lot of them end up wrong. I optimize to go forward. Same thing with interpersonal relationships.</p>
+<p data-t="4743">I really do want to be surrounded by people who are great, who I can work with for a long time, who I can become friends with. I would love to be surrounded by a core group of family and friends for a very, very long time. As long as I'm here around all of that, when you're moving fast, you're certainly going to rub people the wrong way at times, and you're going to miscommunicate. You're going to do something wrong.</p>
+<p data-t="4770">But if you live in fear of that and you allow that to impact your pace, you'll slow down. I'd rather just go fast and know that that's a risk, and it is what it is.</p>
+<p data-t="4783">It's so funny. I do so many shows. I've done so many shows. I've done this 11 years. But you feel really good shows when you're doing them. It's funny, for the first five minutes of this, I was like, oh, this is going to be good. What's really hard, actually, is to keep really good, and people don't think about this. It's very hard to keep quality with length of conversation.</p>
+<p data-t="4806">You were exceptional. Thank you so much for doing this with me. Thank you for doing it in person. I've loved this.</p>
+<p data-t="4811">Awesome. Thanks for having me back. It's cool doing it four years after we first met.</p>
+    </div>
+  </main>
+  <script>
+  async function toggleYtBookmark(btn) {
+    const payload = {
+      title: btn.dataset.title,
+      url: btn.dataset.url,
+      filename: btn.dataset.filename,
+      interviewDate: btn.dataset.date,
+      source: 'YT',
+      expert: btn.dataset.channel,
+    };
+    try {
+      const resp = await fetch('/bookmark', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload),
+      });
+      const result = await resp.json();
+      setYtBookmarkState(btn, !!result.bookmarked);
+    } catch (e) {
+      console.error('Bookmark toggle failed:', e);
+    }
+  }
+  function setYtBookmarkState(btn, on) {
+    btn.classList.toggle('is-bookmarked', on);
+    btn.innerHTML = on ? '&#9733;' : '&#9734;';
+    btn.title = on ? 'Bookmarked' : 'Bookmark';
+    btn.setAttribute('aria-label', on ? 'Bookmarked' : 'Bookmark');
+  }
+  (async function initYtBookmarkState() {
+    const btn = document.getElementById('yt-bookmark-btn');
+    if (!btn || !btn.dataset.filename) return;
+    try {
+      const resp = await fetch('/bookmarks');
+      if (!resp.ok) return;
+      const list = await resp.json();
+      if (Array.isArray(list) && list.some(b => b && b.filename === btn.dataset.filename)) {
+        setYtBookmarkState(btn, true);
+      }
+    } catch (e) { /* offline -- leave default state */ }
+  })();
+
+  async function shareYtPage(btn) {
+    const original = btn.innerHTML;
+    btn.disabled = true;
+    btn.innerHTML = '&hellip;';
+    try {
+      const resp = await fetch('/share', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ filename: btn.dataset.filename }),
+      });
+      const result = await resp.json();
+      if (!result.ok) throw new Error(result.error || 'Share failed');
+      try { await navigator.clipboard.writeText(result.url); } catch (e) {}
+      btn.innerHTML = '&#10003;';
+      btn.title = 'Copied ' + result.url;
+      setTimeout(() => { btn.innerHTML = original; btn.disabled = false; btn.title = 'Share'; }, 2500);
+    } catch (e) {
+      console.error('Share failed:', e);
+      btn.innerHTML = '!';
+      btn.title = 'Share failed: ' + (e && e.message || e);
+      setTimeout(() => { btn.innerHTML = original; btn.disabled = false; btn.title = 'Share'; }, 3000);
+    }
+  }
+
+  // When the page is viewed from somewhere other than the local Reader
+  // server (e.g. a shared copy on GitHub Pages), hide the interactive
+  // buttons whose endpoints only exist on localhost.
+  (function hideLocalOnlyControls() {
+    const host = location.hostname;
+    const isLocal = host === 'localhost' || host === '127.0.0.1' || host === '';
+    if (isLocal) return;
+    const actions = document.querySelector('.yt-header-actions');
+    if (!actions) return;
+    const bookmark = actions.querySelector('#yt-bookmark-btn');
+    const share = actions.querySelector('#yt-share-btn');
+    if (bookmark) bookmark.remove();
+    if (share) share.remove();
+  })();
+  </script>
+</body>
+</html>
