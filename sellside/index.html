@@ -94,6 +94,7 @@
     .report.is-bookmarked { border-color: color-mix(in srgb, var(--accent-2), var(--line) 35%); }
     .report.is-new { border-top-color: color-mix(in srgb, #c28a21, var(--line) 25%); }
     .report header { display: flex; gap: 16px; justify-content: space-between; align-items: flex-start; padding-right: 0; }
+    .report-body { width: 85%; max-width: 100%; }
     .eyebrow { color: var(--accent); font-size: 0.78rem; font-weight: 700; text-transform: uppercase; overflow-wrap: anywhere; }
     h2 {
       display: flex;
@@ -194,6 +195,7 @@
       .topbar { display: block; min-height: 118px; padding: 10px 12px; }
       .report header { display: flex; }
       .report { padding-left: 18px; padding-right: 18px; }
+      .report-body { width: 100%; }
       .ordinal { position: static; margin-bottom: 8px; text-align: left; width: auto; }
       .controls { grid-template-columns: auto auto auto auto 1fr; margin-top: 8px; }
       .controls select { grid-column: 5; }
@@ -209,7 +211,7 @@
   <section class="topbar">
     <div>
       <h1>Sell-Side Report Digest</h1>
-      <p class="subtle">Generated Apr 29, 2026 09:04 AM</p>
+      <p class="subtle">Generated Apr 29, 2026 09:10 AM</p>
     </div>
     <div class="controls">
       <button id="prev-report" class="jump-btn" type="button" title="Previous note" aria-label="Previous note">↑</button>
@@ -234,6 +236,7 @@
       <button type="button" class="icon-btn bookmark-btn" title="Bookmark" aria-label="Bookmark" aria-pressed="false">★</button>
     </div>
   </header>
+  <div class="report-body">
   <div class="facts-table-wrap">
     <table class="facts-table">
       <tbody>
@@ -257,6 +260,7 @@
     <section><h3>Risks / Watch Items</h3><ul><li>AI/cloud capex slowdown could weaken HDD demand growth despite current backlog/planning visibility.</li><li>Faster NAND/flash substitution if cost gap narrows or NAND density improves faster than expected.</li><li>Execution risk around HAMR/Mozaic quals, ramp, yields, and mix assumptions into CY26-CY27.</li><li>Stock already up sharply YTD/12m; valuation depends on sustaining AI-levered supplier multiple and high margin trajectory.</li><li>Watch whether favorable pricing persists as capacity additions or demand normalization emerge.</li></ul></section>
     <section><h3>Key Numbers</h3><div class="key-table-wrap"><table class="key-table"><tbody><tr><th>Rating</th><td>OW; Dec-26 PT $775 vs $600 prior; price $579.03 on Apr 28, 2026; implied upside 34%.</td></tr><tr><th>F</th><td>3Q26 rev $3.112bn vs JPM $2.980bn/cons $2.954bn; guide was $2.8-$3.0bn.</td></tr><tr><th>F</th><td>3Q26 EPS $4.10 vs JPM $3.56/cons $3.50; guide was $3.20-$3.60.</td></tr><tr><th>F</th><td>3Q26 GM 47.0% vs JPM 45.3%/cons 44.6%; OM 37.5% vs cons 34.8%.</td></tr><tr><th>F</th><td>4Q26 guide rev $3.35-$3.55bn, EPS $4.80-$5.20, low-40% OM.</td></tr><tr><th>FY26E/FY27E/FY28E rev</th><td>$12.071bn/$16.658bn/$21.493bn; EPS: $14.88/$25.70/$36.00.</td></tr><tr><th>FY</th><td>27E GM 51.6%, EBIT margin 44.3%, EBITDA $7.725bn, FCF $5.126bn.</td></tr><tr><th>Avg rev per EB +</th><td>5% q/q; HAMR 30%+ of Nearline EB shipments in F3Q26 and ~40% exiting FY26.</td></tr></tbody></table></div></section>
   </section>
+  </div>
 </article>
 
 <article id="report-cce008fa44130bf1" class="report is-new" data-report-id="cce008fa44130bf1" data-title="another day, another dollar (per tb)">
@@ -267,6 +271,7 @@
       <button type="button" class="icon-btn bookmark-btn" title="Bookmark" aria-label="Bookmark" aria-pressed="false">★</button>
     </div>
   </header>
+  <div class="report-body">
   <div class="facts-table-wrap">
     <table class="facts-table">
       <tbody>
@@ -290,6 +295,7 @@
     <section><h3>Risks / Watch Items</h3><ul><li>Slower-than-expected HAMR/Mozaic ramp or CSP qualification delays.</li><li>Worse-than-expected pricing trends if HDD tightness eases.</li><li>Nearline end-market growth decel, especially in data center demand.</li><li>Valuation sensitivity: PT assumes 24x CY27E EPS, up from 22x prior.</li><li>Potential unit capacity confusion from tool orders; mgmt says no unit adds, but head-count changes bear watching.</li></ul></section>
     <section><h3>Key Numbers</h3><div class="key-table-wrap"><table class="key-table"><tbody><tr><th>Note</th><td>Rating OW unchanged; sector view N unchanged.</td></tr><tr><th>PT</th><td>$750, up from $625; price $579.03 as of 28-Apr-26; implied upside +29.5%.</td></tr><tr><th>Mar qtr rev</th><td>$3.112B vs St. $2.954B; EPS $4.10 vs St. $3.50; GM 47.0% vs St. 44.6%.</td></tr><tr><th>Jun guide rev</th><td>$3.45B vs St. $3.156B; EPS $5.00 vs St. $3.96; implied GM ~50.2%.</td></tr><tr><th>FY</th><td>26E rev $12.016B, EPS $14.82; FY27E rev $16.609B, EPS $26.24; FY28E rev $22.223B, EPS $37.75.</td></tr><tr><th>CY</th><td>26E rev/EPS $14.265B/$20.93; CY27E rev/EPS $19.309B/$31.85.</td></tr><tr><th>CY</th><td>27E FCF $5.36B; FY28E FCF $8.012B.</td></tr><tr><th>Upside case</th><td>$850 based on 25x upside CY27E EPS $34; downside case $550 based on 20x downside CY27E EPS $27.</td></tr></tbody></table></div></section>
   </section>
+  </div>
 </article>
 
 <article id="report-d806fe7f8cf4357d" class="report is-new" data-report-id="d806fe7f8cf4357d" data-title="2% of csp capex, but hosts 80% of their storage. pricing power in early innings">
@@ -300,6 +306,7 @@
       <button type="button" class="icon-btn bookmark-btn" title="Bookmark" aria-label="Bookmark" aria-pressed="false">★</button>
     </div>
   </header>
+  <div class="report-body">
   <div class="facts-table-wrap">
     <table class="facts-table">
       <tbody>
@@ -323,6 +330,7 @@
     <section><h3>Risks / Watch Items</h3><ul><li>WDC report: compare cost/TB y/y, GM gap vs STX, and whether WDC CY27 EPS can approach $22 vs Street $17.</li><li>NAND pricing momentum and NAND/HDD premium widening are key leading indicators for HDD pricing flexibility.</li><li>Hyperscale ROI matters indirectly: stronger ROI reduces pressure on DRAM/NAND suppliers to cut pricing, supporting HDD pricing backdrop.</li><li>Data center build delays, financing issues, or slowdown could pressure cloud/enterprise demand.</li><li>SSD/100TB+ adoption could accel and cannibalize HDD vols/margins.</li><li>HAMR yield or ramp issues could limit cost/TB declines and GM expansion.</li></ul></section>
     <section><h3>Key Numbers</h3><div class="key-table-wrap"><table class="key-table"><tbody><tr><th>Rating</th><td>Buy</td></tr><tr><th>Price</th><td>$579.03 as of 2026-04-28</td></tr><tr><th>PT</th><td>$850 from $500</td></tr><tr><th>Market cap</th><td>$126.3B</td></tr><tr><th>FY26E rev/EPS</th><td>$12,016MM / $14.82</td></tr><tr><th>FY27E rev/EPS</th><td>$15,043MM / $24.89</td></tr><tr><th>CY27E EPS</th><td>$34.04</td></tr><tr><th>JunQ26E EPS guide/est</th><td>$5.00</td></tr><tr><th>CY27E GM assumption</th><td>~60%</td></tr><tr><th>JunQ implied GM</th><td>Nearly 50%</td></tr><tr><th>Modeled ASP growth</th><td>9%; MarQ ASP +4% y/y; JunQ ASP est +7% y/y</td></tr><tr><th>Exabyte shipment growth</th><td>27% CY26, 21% CY27; 25% cited in upside model</td></tr><tr><th>STX/WDC cloud storage HDD share</th><td>~90%</td></tr><tr><th>HDD share of cloud exabytes</th><td>~80%</td></tr><tr><th>HDDs as CSP capex</th><td>&lt;2%; DRAM/NAND: 35-40%</td></tr><tr><th>NAND pricing expected +</th><td>200% this year</td></tr><tr><th>NAND/HDD premium expected to widen from</th><td>17x to 25x by YE</td></tr><tr><th>ESG score</th><td>63/100</td></tr></tbody></table></div></section>
   </section>
+  </div>
 </article>
 
 <article id="report-bb326530ef766435" class="report is-new" data-report-id="bb326530ef766435" data-title="f3q26 earnings – even stronger for even longer for our &#x27;top pick&#x27;">
@@ -333,6 +341,7 @@
       <button type="button" class="icon-btn bookmark-btn" title="Bookmark" aria-label="Bookmark" aria-pressed="false">★</button>
     </div>
   </header>
+  <div class="report-body">
   <div class="facts-table-wrap">
     <table class="facts-table">
       <tbody>
@@ -356,6 +365,7 @@
     <section><h3>Risks / Watch Items</h3><ul><li>HDD demand growth could decel or AI-driven demand may fail to materialize.</li><li>Pricing could normalize faster than MS expects, limiting GM expansion.</li><li>HDD supply discipline could weaken if industry capacity expands.</li><li>ESSD substitution for cold cloud data could pressure HDD demand.</li><li>HAMR qualification or high-capacity drive ramps could take longer than expected.</li><li>Geopolitical tensions and tariff costs remain downside risks.</li><li>Convert dilution could be more significant if not retired as expected.</li></ul></section>
     <section><h3>Key Numbers</h3><div class="key-table-wrap"><table class="key-table"><tbody><tr><th>Rating</th><td>OW; Top Pick; Industry View Cautious.</td></tr><tr><th>PT</th><td>$767 vs prior $582; bull case $1,131; bear case $350.</td></tr><tr><th>Close price Apr 28, 2026</th><td>$579.03; PT upside +32%.</td></tr><tr><th>F</th><td>3Q26 rev $3.112B; GM 47.0%; OM 37.5%; EPS $4.10; FCF $953M.</td></tr><tr><th>Jun qtr guide</th><td>Rev $3.45B +/- $100M; EPS $5.00 +/- $0.20; low-40% OM.</td></tr><tr><th>CY</th><td>27 EPS $42.59 vs prior $32.31 and 132% above cons per MS.</td></tr><tr><th>FY26/FY27/FY28 ModelWare EPS</th><td>$14.92/$31.75/$53.95.</td></tr><tr><th>FY26/FY27/FY28 rev ests</th><td>$12.040B/$17.470B/$22.980B.</td></tr><tr><th>FY26/FY27/FY28 GM ests</th><td>45.2%/57.1%/67.0%.</td></tr><tr><th>MS models</th><td>$10B+ FCF over next 6 qtrs and ~6% diluted share reduction.</td></tr></tbody></table></div></section>
   </section>
+  </div>
 </article>
 
 <article id="report-87cef52114b49168" class="report is-new" data-report-id="87cef52114b49168" data-title="seagate technology (stx): tight supply, improving pricing, and hamr ramp should bolster confidence in higher earnings power">
@@ -366,6 +376,7 @@
       <button type="button" class="icon-btn bookmark-btn" title="Bookmark" aria-label="Bookmark" aria-pressed="false">★</button>
     </div>
   </header>
+  <div class="report-body">
   <div class="facts-table-wrap">
     <table class="facts-table">
       <tbody>
@@ -389,6 +400,7 @@
     <section><h3>Risks / Watch Items</h3><ul><li>HAMR qualification delays or failures at major hyperscalers.</li><li>Supply-side discipline could break if STX or peers add capacity too aggressively.</li><li>Industry could over-ship LT trendline demand after current tightness.</li><li>Elevated expectations and bullish positioning may limit upside if pricing/FY27 visibility decels.</li></ul></section>
     <section><h3>Key Numbers</h3><div class="key-table-wrap"><table class="key-table"><tbody><tr><th>Rating</th><td>Buy; 12-mo PT $700 vs prior $385; price $579.03; implied upside 20.9%, total return 21.4%.</td></tr><tr><th>Value</th><td>1Q26 rev $3.112bn vs Street $2.950bn; EPS $4.10 vs Street $3.51.</td></tr><tr><th>Value</th><td>1Q26 Data Center rev $2.50bn vs Street $2.376bn; Edge IoT $612mn vs Street $574mn.</td></tr><tr><th>Value</th><td>1Q26 GM 47.0%, OM 37.5%.</td></tr><tr><th>2Q26 guide midpoint</th><td>Rev $3.45bn, EPS $5.00, opex $295mn, tax 16%, share count 231mn.</td></tr><tr><th>LT rev growth guide &gt;</th><td>20% vs prior low/mid-teens.</td></tr><tr><th>CY</th><td>27E GS rev $17.896bn and EPS $29.55; CY28E rev $21.073bn and EPS $36.60.</td></tr><tr><th>Normalized EPS for PT</th><td>$32.00; unchanged 22x P/E multiple.</td></tr></tbody></table></div></section>
   </section>
+  </div>
 </article>
 
 <article id="report-aec69120c1494542" class="report is-new" data-report-id="aec69120c1494542" data-title="the best ever quarter with substantial outperformance; raise pt to $1,617">
@@ -399,6 +411,7 @@
       <button type="button" class="icon-btn bookmark-btn" title="Bookmark" aria-label="Bookmark" aria-pressed="false">★</button>
     </div>
   </header>
+  <div class="report-body">
   <div class="facts-table-wrap">
     <table class="facts-table">
       <tbody>
@@ -422,6 +435,7 @@
     <section><h3>Risks / Watch Items</h3><ul><li>FHFA/GSE rules could enable VantageScore adoption or score-shopping, pressuring FICO share and pricing.</li><li>LLPA grid and securitization-market acceptance of alt scores remain unresolved and could slow or reshape adoption.</li><li>Mortgage exposure is high, making rates and origination vols key NT drivers.</li><li>Regulatory/legislative pressure from FHFA and lawmakers could limit pricing power or prompt DOJ scrutiny.</li><li>AI disruption concerns and terminal multiple pressure remain valuation overhangs despite strong NT fundamentals.</li></ul></section>
     <section><h3>Key Numbers</h3><div class="key-table-wrap"><table class="key-table"><tbody><tr><th>Rating Buy; PT</th><td>$1,617 vs $1,607 prior; price $1,010.50.</td></tr><tr><th>F</th><td>2Q26 rev $692M, +39% y/y; adj EPS $12.50.</td></tr><tr><th>FY26 CS ests</th><td>Rev $2,591M; adj EPS $42.46.</td></tr><tr><th>FY27 CS ests</th><td>Rev $3,011M; adj EPS $52.17.</td></tr><tr><th>FY26 guide</th><td>Rev $2.45B, adj NI $946M, adj EPS $40.45.</td></tr><tr><th>Scores rev</th><td>$475M, +60% y/y; mortgage +127% y/y.</td></tr><tr><th>Software rev</th><td>$217M, +7% y/y; total ARR $789M, +10%; platform ARR $349M, +49%.</td></tr><tr><th>Non-GAAP OM</th><td>65%, +700 bps y/y; Q2 FCF $214M; TTM FCF $867M, +28% y/y.</td></tr><tr><th>Q</th><td>2 buybacks $605M plus $170M post-qtr; debt $3.64B at ~5.5% WA rate.</td></tr><tr><th>Valuation</th><td>21x NTM P/E vs 5-yr avg 41x; PT uses 31x NTM P/E on 2027 adj EPS.</td></tr></tbody></table></div></section>
   </section>
+  </div>
 </article>
 
 <article id="report-11549648d82dd3d5" class="report is-new" data-report-id="11549648d82dd3d5" data-title="f2q26 first take—fundamentals shining; no new info on regulatory timelines">
@@ -432,6 +446,7 @@
       <button type="button" class="icon-btn bookmark-btn" title="Bookmark" aria-label="Bookmark" aria-pressed="false">★</button>
     </div>
   </header>
+  <div class="report-body">
   <div class="facts-table-wrap">
     <table class="facts-table">
       <tbody>
@@ -455,6 +470,7 @@
     <section><h3>Risks / Watch Items</h3><ul><li>VS4 pilot news flow remains the main NT headline risk.</li><li>FICO 10T may not be available for GSE originations until late summer/fall while VS4 moves ahead.</li><li>Need to monitor DLP go-live timing, reseller completion, lender adoption, and whether breakage cost reduction supports share defense.</li><li>Potential competitor traction, US macro downturn, rev growth changes, M&amp;A at scale, and efficiency initiatives could affect ests/PT.</li><li>Watch whether FY26 guide proves conservative and whether mortgage strength sustains.</li></ul></section>
     <section><h3>Key Numbers</h3><div class="key-table-wrap"><table class="key-table"><tbody><tr><th>F</th><td>2Q26 rev $692M, +39% y/y vs JEF $653M/cons $630M.</td></tr><tr><th>F</th><td>2Q26 adj EPS $12.50 vs JEF $10.87/cons $10.89.</td></tr><tr><th>F</th><td>2Q26 adj EBITDA margin 64.8% vs JEF 61.1%/cons 62.1%.</td></tr><tr><th>Scores rev</th><td>$475M, +60% y/y vs JEF $438M/cons $418M.</td></tr><tr><th>Software rev</th><td>$199M, +8.4% y/y vs JEF $196M/cons $192M.</td></tr><tr><th>Professional Services rev</th><td>$18M vs JEF/cons $19M.</td></tr><tr><th>FY</th><td>26 rev guide at least $2,450M vs prior $2,350M; JEF $2,530M; cons $2,496M.</td></tr><tr><th>FY</th><td>26 adj EPS guide at least $40.45 vs JEF $41.65/cons $41.67.</td></tr><tr><th>Buy rating; PT</th><td>$1,800; prior close $1,010.50; mkt cap $24.3B.</td></tr><tr><th>PT based on</th><td>40.0x CY26E adj EPS of $44.98.</td></tr></tbody></table></div></section>
   </section>
+  </div>
 </article>
 
 <article id="report-924b8fcf6a4acce4" class="report is-new" data-report-id="924b8fcf6a4acce4" data-title="strong f2q bolstered by healthy mortgage score price realization with a favorable competitive outlook">
@@ -465,6 +481,7 @@
       <button type="button" class="icon-btn bookmark-btn" title="Bookmark" aria-label="Bookmark" aria-pressed="false">★</button>
     </div>
   </header>
+  <div class="report-body">
   <div class="facts-table-wrap">
     <table class="facts-table">
       <tbody>
@@ -488,6 +505,7 @@
     <section><h3>Risks / Watch Items</h3><ul><li>FHFA move from tri-merge to bi-merge could reduce scores pulled per mortgage by up to one-third, pressuring units even if demand/pricing remain intact.</li><li>DLP still requires final FHFA/GSE sign-off; delay could weigh on sentiment despite limited FY26 guide impact.</li><li>VantageScore 4.0 share gains are not in FY26 guide; any adoption would challenge GS/FICO assumptions.</li><li>B2C Scores growth remains modest at +5% y/y with no NT accel signaled.</li><li>Non-Platform ARR declined 8% y/y and is expected to continue declining due to migrations, EoL products, and usage declines.</li><li>Opex rising q/q from personnel and marketing, though GS expects rev growth to outpace cost growth.</li></ul></section>
     <section><h3>Key Numbers</h3><div class="key-table-wrap"><table class="key-table"><tbody><tr><th>Rating</th><td>Buy; 12-mo PT $1,543 vs price $1,010.50, implying 52.7% upside.</td></tr><tr><th>Market cap</th><td>$24.0bn; EV $27.4bn; 3m ADTV $440.9mn.</td></tr><tr><th>F</th><td>2Q rev $691.7mn, +38.7% y/y; GS est $612.9mn; FactSet cons implied below actual.</td></tr><tr><th>F</th><td>2Q adjusted EPS $12.50 vs GS $10.65 and cons $10.89.</td></tr><tr><th>F</th><td>2Q adjusted EBITDA $448.5mn; margin 64.8%, +710 bps y/y.</td></tr><tr><th>Mortgage origination rev +</th><td>127% y/y; 63% of Scores rev and 43% of total rev.</td></tr><tr><th>FY26 guide</th><td>Rev $2.45bn, EPS $40.45; prior guide rev $2.35bn, EPS $38.17.</td></tr><tr><th>GS FY26E</th><td>Rev $2.531bn, EBITDA $1.512bn, EPS $41.62, FCF $1.113bn.</td></tr><tr><th>Platform ARR +</th><td>48.7% y/y; non-Platform ARR -8.3% y/y; total Software ARR +10.4%.</td></tr><tr><th>F</th><td>2Q repurchases $605mn plus $170mn since Apr 1; new authorization $1.5bn.</td></tr></tbody></table></div></section>
   </section>
+  </div>
 </article>
 
 <article id="report-9caffff0c3f19c77" class="report is-new" data-report-id="9caffff0c3f19c77" data-title="fico / tru: strong results and commentary were anticipated; &#x27;lenders choice&#x27; comments &amp; fico call back tomorrow">
@@ -498,6 +516,7 @@
       <button type="button" class="icon-btn bookmark-btn" title="Bookmark" aria-label="Bookmark" aria-pressed="false">★</button>
     </div>
   </header>
+  <div class="report-body">
   <div class="facts-table-wrap">
     <table class="facts-table">
       <tbody>
@@ -521,6 +540,7 @@
     <section><h3>Risks / Watch Items</h3><ul><li>FHFA/political scrutiny of bureau pricing and Mr. Pulte comments could keep overhang on FICO/TRU/EFX.</li><li>Macro/rate volatility and mortgage inquiry decel could pressure guide assumptions despite current run-rate strength.</li><li>TRU margin flow-through, India declines, and intl recovery remain investor concerns.</li><li>EFX faces 2H government growth decel and TWN competition concerns, with read-throughs for TRU.</li><li>VS4 pilot, LLPA grid process, and timing of GSE testing could affect FICO 10T adoption path.</li><li>FICO Direct Lending Program still awaits final FHFA sign-off and reseller/bureau operational alignment.</li></ul></section>
     <section><h3>Key Numbers</h3><div class="key-table-wrap"><table class="key-table"><tbody><tr><th>FICO rating OW, PT</th><td>$1,950, price $1,010.50.</td></tr><tr><th>TRU rating EW, PT</th><td>$80, price $70.08.</td></tr><tr><th>FICO F</th><td>2Q26 rev $692M, +39% y/y; EBITDA $449M, +56% y/y; adj EPS $12.50, +60% y/y.</td></tr><tr><th>FICO FY26 guide</th><td>Rev $2.45B; adj EPS $40.45; BCA FY26 adj EPS $43.22.</td></tr><tr><th>FICO Scores rev</th><td>$475M, +60% y/y; Scores op margin 91.1%.</td></tr><tr><th>TRU F</th><td>1Q26 rev $1.246B, +14% y/y; adj EBITDA $438M; adj EPS $1.18.</td></tr><tr><th>TRU FY26 guide</th><td>Rev $5.10-5.135B; adj EBITDA $1.796-1.816B; adj EPS $4.68-4.75.</td></tr><tr><th>TRU FY</th><td>26 guide assumes mortgage +28%, inquiry growth -4% to -6%, organic CC growth +7.9% to +8.7%.</td></tr><tr><th>FICO 10T early adopters</th><td>55 lenders, $495B originations, ~$1.62T eligible servicing.</td></tr><tr><th>BCA sees ~</th><td>50% of market as high-vol pullers that could benefit from FICO performance-fee model; 30-40% adoption would be strong initial outcome.</td></tr></tbody></table></div></section>
   </section>
+  </div>
 </article>
 
 <article id="report-1f683ed34f1bedb6" class="report is-new" data-report-id="1f683ed34f1bedb6" data-title="credit bureaus and fico—vs4 live without 10t will further pressure fico stock">
@@ -531,6 +551,7 @@
       <button type="button" class="icon-btn bookmark-btn" title="Bookmark" aria-label="Bookmark" aria-pressed="false">★</button>
     </div>
   </header>
+  <div class="report-body">
   <div class="facts-table-wrap">
     <table class="facts-table">
       <tbody>
@@ -554,6 +575,7 @@
     <section><h3>Risks / Watch Items</h3><ul><li>Names and behavior of the 21 VS4 pilot lenders.</li><li>Size, caps, and controls around VS4 pilot originations.</li><li>Timing of FICO 10T GSE implementation, with JEF expecting late 3Q earliest.</li><li>Whether lenders route borrowers to Classic FICO, VS4, or 10T and how many scores are pulled.</li><li>FHFA actions on optional bi-merge or 1-bureau reports and actual lender adoption.</li><li>Potential FICO market share loss before 10T launch despite more competitive pricing.</li></ul></section>
     <section><h3>Key Numbers</h3><div class="key-table-wrap"><table class="key-table"><tbody><tr><th>Rating</th><td>Buy</td></tr><tr><th>PT</th><td>$1,800; prior close: $970.17; implied upside: +86%</td></tr><tr><th>Mkt cap</th><td>$23.3B</td></tr><tr><th>52w range</th><td>$870.01-$2,217.60</td></tr><tr><th>2026E adj EPS</th><td>$44.98 used for PT at 40.0x</td></tr><tr><th>Classic FICO via bureaus</th><td>$10/score</td></tr><tr><th>Classic FICO via DLP</th><td>$4.95/score + $33/score per borrower</td></tr><tr><th>FICO 10T via bureaus</th><td>$10/score</td></tr><tr><th>FICO 10T via DLP</th><td>$0.99/score + $65/score per borrower</td></tr><tr><th>VS4</th><td>$0.99/score via bureaus</td></tr><tr><th>Potential inquiry decline from bureau reforms</th><td>5%-25%+</td></tr><tr><th>JEF inquiry model</th><td>94.1mm first-mtg inquiries and 20.4mm HELoan/HELOC inquiries</td></tr></tbody></table></div></section>
   </section>
+  </div>
 </article>
 
 <article id="report-a15d51c44acb01d0" class="report is-new" data-report-id="a15d51c44acb01d0" data-title="fair isaac corp. - more q&#x27;s than answers from fhfa/hud press conference; but at least now we can begin to test the debate + cb&#x27;s next?">
@@ -564,6 +586,7 @@
       <button type="button" class="icon-btn bookmark-btn" title="Bookmark" aria-label="Bookmark" aria-pressed="false">★</button>
     </div>
   </header>
+  <div class="report-body">
   <div class="facts-table-wrap">
     <table class="facts-table">
       <tbody>
@@ -587,6 +610,7 @@
     <section><h3>Risks / Watch Items</h3><ul><li>Timing and content of FICO 10T historical data release in summer 2026.</li><li>Whether LLPA grids are published broadly and whether VS 4.0 receives parity or risk-weighted treatment.</li><li>Real-time lender feedback on accuracy, efficacy, pricing, and execution for VS 4.0 vs FICO 10T.</li><li>DLP go-live in 2Q26 and actual adoption by large IMBs/resellers.</li><li>Potential FHFA/agency action against CB pricing, tri-merge requirements, or joint ownership of VS.</li><li>Political/regulatory risk from Hawley letter, FTC/DOJ attention, or broader antitrust scrutiny.</li><li>Risk that a poorly managed two-score transition raises GSE costs, MBS spreads, or borrower costs.</li></ul></section>
     <section><h3>Key Numbers</h3><div class="key-table-wrap"><table class="key-table"><tbody><tr><th>Rating</th><td>OW unchanged; industry view N unchanged.</td></tr><tr><th>PT</th><td>$1,950; price: $1,063.33 as of 23-Mar-2026; implied upside/downside +83.4%.</td></tr><tr><th>Market cap</th><td>$25.2bn; shares out: 23.72mn; free float: 96.95%.</td></tr><tr><th>FY</th><td>26E rev $2,464mn, adj EBITDA $1,514mn, adj EPS $41.87; FY27E rev $2,848mn, adj EBITDA $1,839mn, adj EPS $53.49.</td></tr><tr><th>FY26E/FY27E EPS y/y growth</th><td>40%/28%; P/E 23.2x/18.1x.</td></tr><tr><th>Scores rev ests</th><td>FY26E $1,600mn, FY27E $1,919mn, FY28E $2,208mn; Scores op margin 89.7%/90.9%/91.8%.</td></tr><tr><th>Software rev ests</th><td>FY26E $864mn, FY27E $930mn, FY28E $1,004mn.</td></tr><tr><th>DLP pricing</th><td>FICO 10T $0.99/score + $65 funding fee; Classic $4.95/score + $33 funding fee; flat score option $10/score.</td></tr><tr><th>Initial VS pilot</th><td>21 lenders; VS loans accepted ~$10mn, securitization pending.</td></tr><tr><th>FICO 10T claims</th><td>18% more predictive than VS 4.0; qualifies 5%+ more borrowers; reduces defaults ~17% in higher score bands.</td></tr><tr><th>GSE Agency MBS</th><td>49% of outstanding mortgage debt; Ginnie Mae 18%; loans non-MBS 29%; non-agency MBS 4%.</td></tr></tbody></table></div></section>
   </section>
+  </div>
 </article>
 
 <article id="report-ac6f5e41c7164ef8" class="report is-new" data-report-id="ac6f5e41c7164ef8" data-title="gses now formally accepting vantagescore 4.0 for conforming mortgages on a limited basis">
@@ -597,6 +621,7 @@
       <button type="button" class="icon-btn bookmark-btn" title="Bookmark" aria-label="Bookmark" aria-pressed="false">★</button>
     </div>
   </header>
+  <div class="report-body">
   <div class="facts-table-wrap">
     <table class="facts-table">
       <tbody>
@@ -620,6 +645,7 @@
     <section><h3>Risks / Watch Items</h3><ul><li>Timing/content of FICO 10T historical performance data release targeted for summer.</li><li>Whether FHFA adds safeguards around lender choice and score gaming.</li><li>Expansion pace beyond top-21 lenders and actual lender uptake of VS4.0 vs FICO 10T.</li><li>Any FHFA move from tri-merge to bi-merge or single-score, which could pressure bureau mortgage economics.</li><li>Headline/regulatory risk could cap FICO valuation even if fundamentals hold.</li></ul></section>
     <section><h3>Key Numbers</h3><div class="key-table-wrap"><table class="key-table"><tbody><tr><th>Value</th><td>21 largest mortgage lenders in initial VS4.0 rollout</td></tr><tr><th>~</th><td>35% est share of US conforming mortgage vols for top-21 lenders</td></tr><tr><th>FICO 10T GSE historical data</th><td>Apr 2013-Sep 2025 loans</td></tr><tr><th>Additional VS4.0 data</th><td>Apr 2023-Sep 2025</td></tr><tr><th>FICO 10T direct price</th><td>$0.99/score + $65 funding fee</td></tr><tr><th>Classic FICO direct price</th><td>$4.95/score + $33 funding fee</td></tr><tr><th>Bureau-distributed Classic FICO and FICO 10T</th><td>$10/score</td></tr><tr><th>FICO rating/PT</th><td>Buy, $1,528</td></tr><tr><th>EFX rating/PT</th><td>N, $200</td></tr><tr><th>TRU rating/PT</th><td>N, $74</td></tr></tbody></table></div></section>
   </section>
+  </div>
 </article>
 
 <article id="report-88f67bab1f6af948" class="report is-new" data-report-id="88f67bab1f6af948" data-title="global technology: semiconductors - memory: global memory s/d update and bom cost analysis">
@@ -630,6 +656,7 @@
       <button type="button" class="icon-btn bookmark-btn" title="Bookmark" aria-label="Bookmark" aria-pressed="false">★</button>
     </div>
   </header>
+  <div class="report-body">
   <div class="facts-table-wrap">
     <table class="facts-table">
       <tbody>
@@ -653,6 +680,7 @@
     <section><h3>Risks / Watch Items</h3><ul><li>Memory price spike causes deeper PC/smartphone unit or content cuts than GS stress case.</li><li>Supplier capex/capacity additions exceed expectations, especially if cleanroom constraints ease.</li><li>HBM competition intensifies as SEC scales HBM3E/HBM4 and Micron gains share.</li><li>NAND recovery could fail to materialize; YMTC roadmap progress could pressure SNDK/NAND pricing.</li><li>ASIC adoption or hyperscaler capex could surprise positively or negatively, moving HBM TAM materially.</li><li>Consumer OEM pricing actions may pressure downstream margins and demand elasticity.</li></ul></section>
     <section><h3>Key Numbers</h3><div class="key-table-wrap"><table class="key-table"><tbody><tr><th>2026E DRAM S/D</th><td>4.9% undersupply; 2027E: 2.5% undersupply.</td></tr><tr><th>2026E NAND S/D</th><td>4.2% undersupply; 2027E: 2.1% undersupply.</td></tr><tr><th>2026E/27E HBM TAM</th><td>$54bn/$75bn; HBM demand 4.7mn/6.3mn GB; avg ASP $11.5/$12.1 per GB.</td></tr><tr><th>2026E/27E HBM S/D</th><td>5.1%/4.0% undersupply; industry HBM capacity end-2026 515K/month vs 485K prior.</td></tr><tr><th>2026E conventional DRAM ASP growth</th><td>SEC +176% y/y, Hynix +184% y/y; NAND ASP growth: SEC +121%, Hynix +102%.</td></tr><tr><th>Value</th><td>2026E SEC OP fcst &gt;W180tn; SEC DRAM/NAND OPM 67%/40%; Hynix DRAM/NAND OPM 77%/44%.</td></tr><tr><th>HBM ASIC share of demand</th><td>33% in 2026E and 36% in 2027E vs 28%/34% prior.</td></tr><tr><th>ICMSP/Rubin NAND demand</th><td>+29EB in 2026 and +79EB in 2027.</td></tr><tr><th>Stress case DRAM demand growth still +</th><td>21% y/y and S/D still 1.7% undersupplied in 2026E.</td></tr></tbody></table></div></section>
   </section>
+  </div>
 </article>
 
 <article id="report-d6194e2f3f81b1ba" class="report is-new" data-report-id="d6194e2f3f81b1ba" data-title="shifting ratings ahead of cq1 earnings: rf and drives oh my! ug swks, qrvo, stx to ow, dg peng to ew, reinstate qcom at uw">
@@ -663,6 +691,7 @@
       <button type="button" class="icon-btn bookmark-btn" title="Bookmark" aria-label="Bookmark" aria-pressed="false">★</button>
     </div>
   </header>
+  <div class="report-body">
   <div class="facts-table-wrap">
     <table class="facts-table">
       <tbody>
@@ -686,6 +715,7 @@
     <section><h3>Risks / Watch Items</h3><ul><li>AAPL lower-end launch timing and RF supply-chain messaging at CQ1 earnings.</li><li>STX 40TB/Mozaic 4+ qualification pace, vol ramp, and GM follow-through.</li><li>Whether HDD $/TB gains persist as LTAs roll off and Flash prices move.</li><li>QCOM Jun analyst day DC AI plan, hyperscaler traction, and HUMAIN shipment timing.</li><li>Android handset production cuts from memory shortages and Samsung Exynos share shift risk.</li><li>PENG FY27 Advanced Computing visibility, memory GM pressure, LED divestiture or M&amp;A cat.</li><li>Semi cap setup risk as Street embeds nearly 30% CY26 equipment growth for LRCX.</li></ul></section>
     <section><h3>Key Numbers</h3><div class="key-table-wrap"><table class="key-table"><tbody><tr><th>WDC PT</th><td>$405 vs $325 prior; FY1/FY2 EPS $9.19/$13.93 vs $8.68/$12.42 prior.</td></tr><tr><th>STX PT</th><td>$625 vs $425 prior; FY1/FY2 EPS $13.74/$23.14 vs $12.82/$17.63 prior.</td></tr><tr><th>SWKS PT</th><td>$70 vs $60 prior; QRVO PT $100 vs $95 prior; PENG PT $27 vs $23 prior; QCOM PT $130 reinstated.</td></tr><tr><th>HDD CY</th><td>26 rev ~$29.7B, +31% y/y; CY27 rev $38.8B, +31% y/y.</td></tr><tr><th>HDD CY</th><td>26/CY27 ASPs +33%/+34% y/y; units -2%/-2% y/y.</td></tr><tr><th>STX/WDC rev growth fcst</th><td>STX +39%/+35% y/y in CY26/CY27; WDC +39%/+32%.</td></tr><tr><th>STX Mass Capacity $/TB modeled +</th><td>7%/+15% y/y in CY26/CY27.</td></tr><tr><th>QCOM Handsets modeled</th><td>11%/-14% in FY26/FY27 vs Street -9%/-11%; Auto +31%/+25%.</td></tr><tr><th>PENG FY</th><td>27 GM est 26.1% after 28.3% in FY26; FY26 Advanced Computing rev revised to -20% from flat prior.</td></tr></tbody></table></div></section>
   </section>
+  </div>
 </article>
 
 <article id="report-6af14ac5b91ae235" class="report is-new" data-report-id="6af14ac5b91ae235" data-title="pages from welcome packet 26-27">
@@ -696,6 +726,7 @@
       <button type="button" class="icon-btn bookmark-btn" title="Bookmark" aria-label="Bookmark" aria-pressed="false">★</button>
     </div>
   </header>
+  <div class="report-body">
   <div class="facts-table-wrap">
     <table class="facts-table">
       <tbody>
@@ -719,6 +750,7 @@
     <section><h3>Risks / Watch Items</h3><p class="muted">No strong hits found.</p></section>
     <section><h3>Key Numbers</h3><p class="muted">No strong hits found.</p></section>
   </section>
+  </div>
 </article>
 
 </main>
