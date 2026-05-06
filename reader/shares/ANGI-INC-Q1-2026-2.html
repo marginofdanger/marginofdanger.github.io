@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Angi Inc. Q1 2026 Earnings Call</title>
+<style>
+/* Canonical earnings-call summary stylesheet.
+   Edit this file to restyle every earnings summary at once.
+   Class names here are dictated by prompt.txt. */
+
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, sans-serif;
+  background: #faf8f5;
+  color: #2c2418;
+  font-size: 0.81rem;
+  line-height: 1.55;
+}
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: #faf8f5;
+  border-bottom: 2px solid #c4956a;
+  box-shadow: 0 2px 6px rgba(90, 74, 58, 0.12);
+  padding: 0.5rem 1.5rem;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+  align-items: center;
+  gap: 0.5rem;
+}
+.header-title {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: #2c2418;
+  min-width: 0;
+  grid-column: 1;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+.header-title .ticker { color: #8b6d4e; font-weight: 600; }
+.header-title .meta { color: #5a4a3a; font-weight: 500; }
+.market-strip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  white-space: nowrap;
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: #5a4a3a;
+  grid-column: 2;
+  justify-self: center;
+}
+.market-strip .market-price { color: #2c2418; font-weight: 500; }
+.market-strip .market-up { color: #28734a; }
+.market-strip .market-down { color: #a34d3d; }
+.market-strip .market-flat { color: #5a4a3a; }
+.market-strip strong { font-weight: 700; }
+.header-actions { display: flex; gap: 0.35rem; align-items: center; grid-column: 3; justify-self: end; }
+.header-actions a, .header-actions button {
+  border: 1px solid #c4956a;
+  background: transparent;
+  color: #5a4a3a;
+  border-radius: 4px;
+  padding: 0.15rem 0.5rem;
+  font-size: 0.72rem;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+  line-height: 1.3;
+  height: 1.55rem;
+  display: inline-flex;
+  align-items: center;
+  font-family: inherit;
+}
+.header-actions a:hover, .header-actions button:hover { background: #f0ebe3; }
+
+@media (max-width: 900px) {
+  .header { grid-template-columns: minmax(0, 1fr) max-content; }
+  .header-title { grid-column: 1; }
+  .header-actions { grid-column: 2; }
+  .market-strip { grid-column: 1 / -1; grid-row: 2; justify-self: start; }
+}
+
+.content {
+  max-width: 90ch;
+  margin: 0 auto;
+  padding: 0.6rem 1.5rem 3rem;
+}
+
+h2 {
+  font-size: 1.1rem;
+  color: #3d3225;
+  border-bottom: 2px solid #c4956a;
+  padding-bottom: 0.3rem;
+  margin-top: 1.8rem;
+  margin-bottom: 0.8rem;
+}
+h3 {
+  font-size: 0.95rem;
+  color: #5a4a3a;
+  margin-top: 1.3rem;
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+}
+h3 .role {
+  font-weight: 500;
+  color: #8b6d4e;
+  font-size: 0.82rem;
+}
+
+ul { padding-left: 1.2rem; margin: 0.5rem 0; }
+li { margin-bottom: 0.35rem; }
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0.7rem 0;
+  font-size: 0.78rem;
+}
+th {
+  background: #3d3225;
+  color: #faf8f5;
+  text-transform: uppercase;
+  font-size: 0.68rem;
+  letter-spacing: 0.04em;
+  padding: 0.4rem 0.55rem;
+  text-align: left;
+  font-weight: 700;
+}
+td {
+  padding: 0.35rem 0.55rem;
+  border-bottom: 1px solid #e3dbc9;
+}
+tbody tr:nth-child(odd) { background: #faf8f5; }
+tbody tr:nth-child(even) { background: #f0ebe3; }
+
+.key-insight {
+  border-left: 4px solid #8b6d4e;
+  background: #f5efe4;
+  padding: 0.55rem 0.85rem;
+  margin: 0.8rem 0;
+  font-size: 0.78rem;
+  border-radius: 0 4px 4px 0;
+}
+.key-insight strong { color: #3d3225; }
+
+.qa-block { margin-bottom: 1.3rem; }
+.question {
+  background: #f0ebe3;
+  border-radius: 5px;
+  padding: 0.55rem 0.85rem;
+  margin-bottom: 0.5rem;
+  border-left: 3px solid #c4956a;
+}
+.question .analyst {
+  display: block;
+  font-size: 0.7rem;
+  color: #8b6d4e;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 700;
+  margin-bottom: 0.25rem;
+}
+.answer { padding: 0 0.25rem; }
+.answer ul { margin-top: 0.25rem; }
+
+strong { color: #2c2418; }
+
+</style>
+<meta name="summarizer-verbosity" content="60">
+<meta name="summarizer-model" content="opus">
+</head>
+<body>
+<div class="header">
+<div class="header-title">Angi Inc. <span class="ticker">(ANGI)</span><span class="meta">Q1 2026 · 05/06/26</span></div>
+<span class="market-strip" aria-label="Market snapshot"><span class="market-price">Px: <strong>$4.77</strong></span><span>YTD: <strong class="market-down">-62%</strong></span><span>1Y: <strong class="market-down">-58%</strong></span></span>
+<div class="header-actions">
+<button id="bookmark-btn" data-source-url="https://www.bamsec.com/transcripts/4af4f433-8578-41ac-9dbb-72e00ef0a34a" data-interview-date="05/06/26" data-source="EC" data-expert="Angi Inc." onclick="bookmarkTranscript()">☆</button>
+      <button id="share-btn" title="Share" aria-label="Share" data-filename="ANGI-INC-Q1-2026-2.html" onclick="shareEarningsPage(this)">&#8599;</button>
+<a href="https://www.bamsec.com/transcripts/4af4f433-8578-41ac-9dbb-72e00ef0a34a" target="_blank">Transcript</a>
+<a href="#qa">Q&A</a>
+</div>
+</div>
+
+<div class="content">
+
+<h2>Prepared Remarks</h2>
+
+<h3>Jeffrey W. Kip <span class="role">— CEO & Director</span></h3>
+
+<p><strong>Strategic pivot announced:</strong> moving from legacy platform to AI-native tech platform; building agents to multiply core CX effectiveness ("Angi Pro Chief Revenue Officer"); leveraging agentic coding to build 2x faster than before. Releasing resources from incremental legacy work to chase larger opportunity.</p>
+
+<table>
+<thead><tr><th>Asset / Metric</th><th>Value</th></tr></thead>
+<tbody>
+<tr><td>Brand equity</td><td><strong>30 yrs</strong></td></tr>
+<tr><td>Active Pros (NA + Europe)</td><td><strong>~200K</strong></td></tr>
+<tr><td>NPS improvement (3 yrs)</td><td><strong>+30 pts</strong></td></tr>
+<tr><td>Pro churn improvement</td><td><strong>−30%</strong></td></tr>
+<tr><td>Homeowners touching AI helper</td><td><strong>50%</strong></td></tr>
+</tbody>
+</table>
+
+<ul>
+<li><strong>Why pivot:</strong> legacy stack brittle; time/cost extremely high; not 100% consistent at incremental delivery; opportunity cost vs AI-native build too great.</li>
+<li><strong>3 strategic pillars:</strong> (1) accelerate move to AI-native platform for core flywheel; (2) build Angi Pro CRO agents to lift Pro win rates and LTV; (3) use agentic coding to ship 2x faster.</li>
+<li><strong>Twofold market:</strong> core lead marketplace + new software/services business — Pros can use Angi Pro CRO for non-Angi leads & overall ops.</li>
+<li><strong>Mission unchanged:</strong> jobs done well for homeowners, jobs won well for Pros; goal remains profitable accelerating growth — pivot is on execution path, not destination.</li>
+</ul>
+
+<div class="key-insight"><strong>Key Insight:</strong> Co is abandoning quarterly guidance & incremental legacy investment to refocus engineering on AI-native platform + Pro agents — explicit acknowledgement that "fighting the last war" on old tech destroys more value than it creates given AI-driven uncapped upside.</div>
+
+<h2 id="qa">Q&A</h2>
+
+<div class="qa-block">
+<div class="question"><span class="analyst">Dan — Unknown Firm</span><strong>How much will the pivot impact revenue/EBITDA and over what time frame?</strong></div>
+<div class="answer">
+<ul>
+<li><strong>No guidance — by choice, not visibility:</strong> distraction cost too high vs the larger opportunity.</li>
+<li><strong>Cash flow floor (directional, not commitment):</strong> ~<strong>$50M/yr</strong> adj. EBITDA minus CapEx as comfortable cushion; will continue building cash on BS, not draw it down.</li>
+<li><strong>Funding model:</strong> internal — only adding cost where opportunity warrants (e.g., AI software/token costs <strong>several $M higher</strong> than planned a few months ago).</li>
+<li><strong>Implicit revenue cost:</strong> some lower revenue from pulling resources off legacy incremental wins; magnitude not quantified.</li>
+</ul>
+</div>
+</div>
+
+<div class="qa-block">
+<div class="question"><span class="analyst">Dan — Unknown Firm</span><strong>Unpack the path to $5B revenue vs the $700B TAM — and is there a separate software TAM not yet discussed?</strong></div>
+<div class="answer">
+<ul>
+<li><strong>TAM math:</strong>
+<table>
+<thead><tr><th>Metric</th><th>Value</th></tr></thead>
+<tbody>
+<tr><td>Residential job-value TAM (NA)</td><td><strong>$700B</strong></td></tr>
+<tr><td>Current capture</td><td><strong>&lt;1.5%</strong></td></tr>
+<tr><td>Market split (large Pro 10+ emp / small Pro)</td><td>75% / 25%</td></tr>
+<tr><td>Share — small Pro</td><td>3–4%</td></tr>
+<tr><td>Share — large Pro</td><td><strong>&lt;0.5%</strong></td></tr>
+<tr><td>Replicating small-Pro share in large-Pro mkt → revenue</td><td><strong>$2.5B</strong> (at ~10% take rate)</td></tr>
+<tr><td>European TAM (less penetrated)</td><td><strong>$500–600B</strong></td></tr>
+</tbody>
+</table>
+</li>
+<li><strong>Win rate lever:</strong> 10 service requests → 7 jobs completed → only <strong>2 won by Angi Pros</strong>; UK/Germany/Netherlands run at <strong>3.5</strong>; doubling to 4/7 takes share of total job value from 3–4% → <strong>6–8%</strong>.</li>
+<li><strong>Unit economics:</strong> Pros pay ~<strong>$50/lead</strong>, win 1 in 7–8, avg job ~<strong>$4,000</strong>; current take rate ~10% (good marker).</li>
+<li><strong>Software TAM (new):</strong> 10% of $700B = <strong>$70B</strong> lead market; estimated <strong>$50–70B</strong> services/software market alongside → <strong>~$140B total</strong>; growing as software transforms with AI.</li>
+<li><strong>Multiple paths to $5B:</strong> (1) 7% share × 10% take; (2) lower share + software/services rev; (3) accelerated Europe penetration.</li>
+</ul>
+</div>
+</div>
+
+<div class="qa-block">
+<div class="question"><span class="analyst">Robert (for Youssef) — Unknown Firm</span><strong>Q1 performance levers vs 90 days ago — what outperformed, what's sustainable, and progress on new LLM traffic channels?</strong></div>
+<div class="answer">
+<ul>
+<li><strong>Q1 results vs guide:</strong>
+<table>
+<thead><tr><th>Metric</th><th>Q1 Actual</th><th>Guide</th><th>Notes</th></tr></thead>
+<tbody>
+<tr><td>Adj. EBITDA</td><td><strong>~$23M</strong></td><td>$10–15M</td><td>Beat by ~$8M+</td></tr>
+<tr><td>Capitalized eng. labor</td><td>+~€2M vs plan</td><td>—</td><td>Per accounting policy; cash impact neutral</td></tr>
+<tr><td>Revenue</td><td>Low end of range</td><td>—</td><td>Strong Jan/Feb; Mar pulled lower by macro</td></tr>
+</tbody>
+</table>
+</li>
+<li><strong>Macro mix shift in March:</strong> homeowners pulled back from larger jobs (roofing, HVAC — categories with most extra capacity) toward smaller jobs; Pros reduced lead budgets in response.</li>
+<li><strong>EBITDA beat drivers:</strong> higher capitalized labor (per policy); one-time expense benefits + timing.</li>
+<li><strong>LLM traffic strategy:</strong> buying OpenAI traffic near breakeven; live in beta; ChatGPT app launched; Amazon launch imminent; multiple major-platform integrations to be announced in coming months.</li>
+<li><strong>Tech approach:</strong> can pick up convo at any point in chat (start, middle, end) using proprietary domain-knowledge fine-tuning; testing LLM-first chat that mirrors core homeowner experience — currently has conversion deprecation, narrowing before broad rollout.</li>
+<li><strong>Thesis:</strong> deliver better results → LLMs route more traffic to Angi (same dynamic that won them SEO + paid social).</li>
+</ul>
+</div>
+</div>
+
+<div class="qa-block">
+<div class="question"><span class="analyst">Sergio Segura — KeyBanc Capital Markets</span><strong>What does Angi Pro CRO look like at the product level, why now, and how does GTM change for smaller Pros?</strong></div>
+<div class="answer">
+<ul>
+<li><strong>Why now:</strong> AI agents + agentic coding capabilities have changed dramatically in last few months; biggest gap is jobs completed (7) vs jobs won by Angi Pros (2) — doubling to 4–5 of 7 is the prize.</li>
+<li><strong>Agent roadmap (sequential build):</strong>
+<ol>
+<li><strong>AI call center / booking agent:</strong> outbound + inbound calls to homeowner, info gathering, books on Pro's calendar, reminders, reschedules — booking rate is large Pros' #1 metric.</li>
+<li><strong>Pre-visit coaching agent:</strong> coach Pro on the sale going in.</li>
+<li><strong>On-visit transcription/quote agent:</strong> records visit (granola-like), in-visit notifications with closing tips, drafts quote by time Pro is back in truck.</li>
+<li><strong>Quote follow-up & closing agent:</strong> follow-ups, change handling, escalates Pro intervention.</li>
+</ol>
+</li>
+<li><strong>Timeline:</strong> first agent in test in <strong>next several weeks</strong>; agentic SDLC platform to be built alongside; demo at <strong>Investor Day in fall</strong>.</li>
+<li><strong>Customer outcome:</strong> homeowner NPS already +50 when job gets done — driving win rate fixes the one biggest leak in the system.</li>
+</ul>
+</div>
+</div>
+
+<div class="qa-block">
+<div class="question"><span class="analyst">Vanessa Fong (for Stephen) — UBS</span><strong>What's making forecasting harder — is it the cost side as you build the product?</strong></div>
+<div class="answer">
+<ul>
+<li><strong>Not a forecasting issue:</strong> visibility remains high; pulling guidance is a strategic choice, not a capability gap.</li>
+<li><strong>Rationale:</strong> no reward for managing quarterly range; opportunity cost of focusing on next $1M vs next $1B is too high; market feedback supports the change.</li>
+<li><strong>Milestones (in lieu of guidance):</strong>
+<table>
+<thead><tr><th>Milestone</th><th>Target</th></tr></thead>
+<tbody>
+<tr><td>Migration to new AI-native platform</td><td><strong>~12 months</strong></td></tr>
+<tr><td>Sequential rollout of Pro CRO agents</td><td>Multi-quarter</td></tr>
+<tr><td>Material revenue acceleration</td><td><strong>2027</strong></td></tr>
+</tbody>
+</table>
+</li>
+<li><strong>Commercial machine still running:</strong> driving back to Pro growth → revenue growth, just no timetable attached.</li>
+</ul>
+</div>
+</div>
+
+<div class="qa-block">
+<div class="question"><span class="analyst">Danny (for Cory) — Unknown Firm</span><strong>What does the pivot mean for the homeowner experience, and what's the rationale for Q1/Q2 debt repurchase + updated capital allocation?</strong></div>
+<div class="answer">
+<ul>
+<li><strong>Homeowner experience evolution:</strong> personal AI agents will increasingly transact on homeowners' behalf; strategy is to be the destination both for direct homeowners AND their personal agents — by delivering "jobs done well," train LLMs to route to Angi.</li>
+<li><strong>Interactive flow:</strong> caveated estimates from homeowner-supplied info, photos, iterative measurement requests → better Pro matching of tech + equipment.</li>
+<li><strong>Capital allocation:</strong>
+<table>
+<thead><tr><th>Action</th><th>Detail</th></tr></thead>
+<tbody>
+<tr><td>Bonds repurchased (Q1 + Q2-to-date)</td><td><strong>~$100M</strong></td></tr>
+<tr><td>% of debt outstanding bought back</td><td><strong>~20%</strong></td></tr>
+<tr><td>Discount to par</td><td><strong>~9%</strong></td></tr>
+<tr><td>Shares repurchased since spinoff</td><td><strong>~20% of o/s</strong></td></tr>
+<tr><td>Buyback capped until</td><td><strong>April 2027</strong> (tax-free spin rules, 2-yr lookback)</td></tr>
+</tbody>
+</table>
+</li>
+<li><strong>M&A stance:</strong> conservative/disciplined — would take great value augmenting strategy; not aggressive on deploying BS cash for outside-strategy assets.</li>
+<li><strong>Future repurchase:</strong> not averse to more bonds or eventual share buybacks; mindful of creeping tender rules on bonds.</li>
+</ul>
+</div>
+</div>
+
+</div>
+
+<script>
+function bookmarkTranscript() {
+  const btn = document.getElementById('bookmark-btn');
+  const data = { title: document.title, url: btn.dataset.sourceUrl || window.location.href, filename: window.location.pathname.split('/').pop(), interviewDate: btn.dataset.interviewDate || '', source: btn.dataset.source || '', expert: btn.dataset.expert || '' };
+  fetch('http://localhost:3220/bookmark', { method: 'POST', headers: {'Content-Type':'application/json'}, body: JSON.stringify(data) })
+    .then(r => r.json()).then(r => { btn.textContent = r.bookmarked ? '★' : '☆'; btn.style.opacity = r.bookmarked ? '1' : '0.7'; });
+}
+
+function shareEarningsPage(btn) {
+  const original = btn.innerHTML;
+  btn.disabled = true;
+  btn.innerHTML = '\u2026';
+  fetch('http://localhost:3220/share', { method: 'POST', headers: {'Content-Type':'application/json'}, body: JSON.stringify({ filename: btn.dataset.filename }) })
+    .then(r => r.json())
+    .then(j => {
+      if (!j.ok) throw new Error(j.error || 'Share failed');
+      try { navigator.clipboard.writeText(j.url); } catch(e) {}
+      btn.innerHTML = '\u2713';
+      btn.title = 'Copied ' + j.url;
+      setTimeout(() => { btn.innerHTML = original; btn.disabled = false; btn.title = 'Share'; }, 2500);
+    })
+    .catch(e => {
+      console.error('Share failed:', e);
+      btn.innerHTML = '!';
+      btn.title = 'Share failed: ' + (e && e.message || e);
+      setTimeout(() => { btn.innerHTML = original; btn.disabled = false; btn.title = 'Share'; }, 3000);
+    });
+}
+(function hideLocalOnlyControls() {
+  const host = location.hostname;
+  if (host === 'localhost' || host === '127.0.0.1' || host === '') return;
+  const actions = document.querySelector('.header-actions');
+  if (!actions) return;
+  const bm = actions.querySelector('#bookmark-btn');
+  const sh = actions.querySelector('#share-btn');
+  if (bm) bm.remove();
+  if (sh) sh.remove();
+})();
+</script>
+
+<footer style="max-width:90ch;margin:2rem auto 1rem;padding-top:0.75rem;border-top:1px solid #e8e0d4;text-align:right;font-size:0.7rem"><a href="http://localhost:3220/status" style="color:#8b6d4e;text-decoration:none">Summarizer Status ↗</a></footer>
+</body>
+</html>
