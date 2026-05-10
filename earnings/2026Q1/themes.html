@@ -1,0 +1,516 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>1Q26 Earnings Themes</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #14211f;
+      --muted: #5b6763;
+      --line: #d9e0dd;
+      --soft: #f2f6f3;
+      --paper: #fffdf8;
+      --accent: #0f766e;
+      --warn: #93412e;
+      --gold: #796414;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      color: var(--ink);
+      background: var(--paper);
+      line-height: 1.48;
+    }
+    main { max-width: 820px; margin: 0 auto; padding: 24px 20px 44px; }
+    header { padding-bottom: 10px; margin-bottom: 0; }
+    h1 { font-size: clamp(1.55rem, 2.4vw, 2rem); line-height: 1.08; letter-spacing: 0; margin: 0 0 8px; font-weight: 700; }
+    h2 { font-size: 1.38rem; line-height: 1.18; letter-spacing: 0; margin: 0 0 7px; font-weight: 700; }
+    h3 { font-size: 1.02rem; line-height: 1.2; margin: 0 0 4px; font-weight: 700; }
+    p { margin: 0 0 9px; }
+    strong { font-weight: 700; }
+    .dek { max-width: 720px; color: var(--muted); font-size: 1.02rem; }
+    .meta { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; color: var(--muted); font-size: .82rem; }
+    .pill { border: 1px solid var(--line); border-radius: 999px; padding: 4px 9px; background: #fff; }
+    .report-nav {
+      display: flex;
+      gap: 0;
+      border-bottom: 2px solid var(--ink);
+      margin: 0 0 16px;
+    }
+    .report-nav a {
+      color: var(--muted);
+      text-decoration: none;
+      font-weight: 650;
+      padding: 10px 16px;
+      border: 1px solid transparent;
+      border-bottom: 0;
+      border-radius: 7px 7px 0 0;
+      margin-bottom: -2px;
+    }
+    .report-nav a:hover { color: var(--ink); }
+    .report-nav a.active {
+      color: var(--ink);
+      background: #fff;
+      border-color: var(--ink);
+    }
+    .quarter-picker {
+      margin-left: auto;
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      padding: 0 0 6px 12px;
+      color: var(--muted);
+      font-size: .86rem;
+      font-weight: 650;
+    }
+    .quarter-picker select {
+      font: inherit;
+      color: var(--ink);
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 7px;
+      padding: 5px 26px 5px 8px;
+    }
+    .note {
+      background: #eef6f3;
+      border-left: 4px solid var(--accent);
+      padding: 10px 12px;
+      margin: 13px 0 16px;
+      color: #263432;
+      font-size: .96rem;
+    }
+    .summary {
+      border: 1px solid var(--line);
+      border-radius: 7px;
+      background: #fff;
+      padding: 12px 14px;
+      margin: 0 0 16px;
+    }
+    .summary ul { margin: 6px 0 0; padding-left: 20px; }
+    .summary li { margin: 5px 0; }
+    .theme-block {
+      border-top: 1px solid var(--line);
+      padding-top: 15px;
+      margin-top: 17px;
+    }
+    .theme-read {
+      color: #2b3634;
+      margin-bottom: 10px;
+      max-width: 760px;
+    }
+    .evidence {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 7px;
+      overflow: hidden;
+    }
+    .company-row {
+      display: grid;
+      grid-template-columns: minmax(6.4rem, 7.6rem) minmax(0, 1fr);
+      gap: 13px;
+      padding: 10px 12px;
+      border-bottom: 1px dotted #ccd5d1;
+      font-size: .95rem;
+    }
+    .company-row.method-row { grid-template-columns: minmax(6.4rem, 7.6rem) minmax(0, 1fr); }
+    .company-row.market-row { grid-template-columns: minmax(7.8rem, 9rem) minmax(0, 1fr); }
+    .company-row:last-child { border-bottom: 0; }
+    .company-row > span:last-child { min-width: 0; }
+    .ticker {
+      display: block;
+      font-weight: 700;
+      color: #061414;
+      letter-spacing: .01em;
+      line-height: 1.12;
+      overflow-wrap: normal;
+      word-break: normal;
+    }
+    .move,
+    .move-line {
+      display: block;
+      margin-top: 4px;
+      color: var(--muted);
+      font-size: .76rem;
+      font-weight: 700;
+      letter-spacing: .02em;
+      line-height: 1.2;
+    }
+    .move-line + .move-line { margin-top: 1px; }
+    .move.pos { color: #0f6b3d; }
+    .move.neg { color: #93412e; }
+    .move-line.pos { color: #0f6b3d; }
+    .move-line.neg { color: #93412e; }
+    .move-line.na { color: var(--muted); }
+    .company-row p:last-child { margin-bottom: 0; }
+    .texture {
+      color: #2b3634;
+      font-size: inherit;
+    }
+    .excerpt {
+      display: inline;
+      color: #0d5f59;
+      font-weight: 650;
+    }
+    .tag {
+      display: inline-block;
+      color: var(--warn);
+      font-size: .75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .04em;
+      margin-right: 6px;
+    }
+    .watch {
+      border-left: 3px solid var(--gold);
+      padding: 8px 10px;
+      margin-top: 10px;
+      background: #fffaf0;
+      color: #40391c;
+      font-size: .92rem;
+    }
+    .source-links {
+      margin-top: 6px;
+      color: var(--muted);
+      font-size: .78rem;
+    }
+    .source-links a { color: #245f5a; text-decoration-color: #bdd2ce; }
+    .guidance-table {
+      width: 100%;
+      border-collapse: collapse;
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 7px;
+      overflow: hidden;
+      font-size: .92rem;
+    }
+    .guidance-table th, .guidance-table td {
+      text-align: left;
+      vertical-align: top;
+      padding: 9px 10px;
+      border-bottom: 1px dotted #ccd5d1;
+    }
+    .guidance-table tr:last-child td { border-bottom: 0; }
+    .guidance-table th {
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: .06em;
+      font-size: .72rem;
+      background: var(--soft);
+    }
+    .up { color: #0f6b3d; font-weight: 700; }
+    .down { color: #93412e; font-weight: 700; }
+    footer {
+      border-top: 1px solid var(--line);
+      margin-top: 20px;
+      padding-top: 12px;
+      color: var(--muted);
+      font-size: .86rem;
+    }
+    @media (max-width: 640px) {
+      main { padding: 18px 14px 34px; }
+      .report-nav { overflow-x: auto; }
+      .report-nav a { white-space: nowrap; padding: 9px 12px; }
+      .quarter-picker { margin-left: 0; padding: 8px 0 6px 8px; white-space: nowrap; }
+      .company-row { grid-template-columns: minmax(5.8rem, 6.8rem) minmax(0, 1fr); gap: 9px; padding: 9px; }
+      .company-row.market-row { grid-template-columns: minmax(6.6rem, 7.4rem) minmax(0, 1fr); }
+      .company-row.method-row { grid-template-columns: minmax(5.8rem, 6.8rem) minmax(0, 1fr); }
+      .guidance-table, .guidance-table thead, .guidance-table tbody, .guidance-table tr, .guidance-table th, .guidance-table td { display: block; width: 100%; }
+      .guidance-table thead { display: none; }
+      .guidance-table tr { border-bottom: 1px solid var(--line); }
+      .guidance-table td { border-bottom: 0; padding: 7px 9px; }
+      .guidance-table td::before {
+        display: block;
+        color: var(--muted);
+        text-transform: uppercase;
+        letter-spacing: .06em;
+        font-size: .68rem;
+        font-weight: 700;
+        margin-bottom: 2px;
+      }
+      .guidance-table td:nth-child(1)::before { content: "Direction"; }
+      .guidance-table td:nth-child(2)::before { content: "Company"; }
+      .guidance-table td:nth-child(3)::before { content: "Change"; }
+      .guidance-table td:nth-child(4)::before { content: "Read-through"; }
+    }
+  </style>
+</head>
+<body>
+<main>
+  <header>
+    <h1>1Q26 Earnings Themes</h1>
+    <p class="dek">A theme-based synthesis of recent earnings-call summaries, normalized to the calendar quarter they inform. The focus is on business signals that repeat across companies, accelerate or decelerate meaningfully, or change the mechanism behind demand, margins, or capital allocation.</p>
+    <div class="meta">
+      <span class="pill">Calendar quarter: 1Q26</span>
+      <span class="pill">Scope: earnings calls only</span>
+      <span class="pill">Excludes expert-call and YouTube artifacts</span>
+    </div>
+  </header>
+  <nav class="report-nav" aria-label="Report navigation">
+    <a class="active" href="themes.html" aria-current="page">Earnings themes</a>
+    <a href="reactions.html">Earnings reactions</a>
+    <div class="quarter-picker">
+      <label for="quarter-select">Quarter</label>
+      <select id="quarter-select" aria-label="Quarter selector">
+        <option value="../2026Q1/themes.html" selected>1Q26</option>
+      </select>
+    </div>
+  </nav>
+
+  <section class="summary">
+    <h3>What Looks Most Incremental</h3>
+    <ul>
+      <li><strong>The consumer is bifurcated, but not simply weak.</strong> Value retail is still gaining households, Hilton and Marriott described lower/mid-market lodging as improving, and several negative reactions point to households demanding a sharper value proposition in connectivity, used cars, restaurants, and rural retail.</li>
+      <li><strong>AI infrastructure is no longer a single-bottleneck story.</strong> Memory, storage, power, and server manufacturing remain the strongest bottom-up scarcity signals, but ARM and AMD add a compute-architecture layer: CPU orchestration, accelerator competition, memory bandwidth, interconnect, rack efficiency, and power availability are all becoming part of the same investment debate.</li>
+      <li><strong>Software AI is bifurcating too.</strong> Workflow/data control layers are finding monetization paths; services firms are seeing procurement pressure and productivity sharing.</li>
+      <li><strong>Credit improved faster than the macro narrative.</strong> Card and auto credit loss metrics got better, but lenders still sound cautious about lower-income and rate-sensitive borrowers.</li>
+      <li><strong>Healthcare split into payer relief and product/volume quality risk.</strong> Centene and UnitedHealth showed cost/risk-adjustment clarity, while Zimmer, Thermo, and HCA show why beat quality, utilization, and guide bridges matter.</li>
+      <li><strong>Guidance tells a cleaner story than revenue alone.</strong> Lodging, parcel, power, telecom, semi equipment, and Centene saw real raises or positive payer repricing; airlines, Nike, housing, Domino's, Spotify, and some healthcare tools/hospitals carried more caveats.</li>
+    </ul>
+  </section>
+
+  <section class="theme-block">
+    <h2>Portfolio-manager overlay: what the external context says</h2>
+    <p class="theme-read">The outside data do not overturn the bottom-up read; they make it more investable. The macro is not a simple recession/boom call. It is a nominally resilient economy with persistent inflation, softer rate-sensitive demand, and a capital cycle increasingly pulled toward AI, power, and data infrastructure. That argues for separating <strong>exceptional businesses with pricing power and duration</strong> from businesses merely showing cyclical rebound or price-funded demand.</p>
+    <div class="evidence">
+      <div class="company-row method-row"><span class="ticker">Macro context</span><span>BEA reported Q1 real GDP <strong>+2.0%</strong> SAAR and real final sales to private domestic purchasers <strong>+2.5%</strong>, but also said consumer spending decelerated while investment accelerated. March PCE looked hot in dollars, with PCE <strong>+0.9%</strong> nominal, but real PCE only <strong>+0.2%</strong> and the saving rate <strong>3.6%</strong>. The portfolio read is: demand is alive, but pricing and income mix matter more than unit volume.</span></div>
+      <div class="company-row method-row"><span class="ticker">Consumer</span><span>Census retail sales were <strong>+1.7%</strong> m/m and <strong>+4.0%</strong> y/y in March, with nonstore retail <strong>+10.1%</strong> y/y, while Conference Board expectations stayed weak at <strong>70.9</strong> and NFIB optimism fell to <strong>95.8</strong>. That supports the company-level split: Walmart/Dollar Tree/value convenience can win share, Marriott/Hilton can see selective travel normalization, but undifferentiated discretionary and financing-sensitive categories need a sharper value proposition.</span></div>
+      <div class="company-row method-row"><span class="ticker">Credit</span><span>The Fed's April SLOOS said banks left credit-card and auto standards basically unchanged, but demand weakened for credit-card, auto, and other consumer loans; C&amp;I standards tightened modestly and NDFI standards tightened over the past year. That squares with Ally/Capital One/Synchrony showing improving loss metrics while Wells Fargo, Tractor Supply, CarMax, and Charter still describe a consumer sensitive to rates, fuel, and monthly payments.</span></div>
+      <div class="company-row method-row"><span class="ticker">AI capex</span><span>The external AI evidence is unusually strong. Microsoft said its AI business exceeded a <strong>$37B</strong> annual run rate, up <strong>+123%</strong> y/y; Amazon reported AWS <strong>+28%</strong> to <strong>$37.6B</strong> and an AWS AI run rate above <strong>$15B</strong>; Alphabet reported Google Cloud <strong>+63%</strong> to <strong>$20.0B</strong> with backlog above <strong>$460B</strong>. This makes the GEV/STX/SNDK/MU/CLS/VRT evidence look less like one-off supplier exuberance and more like a real capital-cycle pull-through.</span></div>
+      <div class="company-row method-row"><span class="ticker">Scarcity</span><span>IEA expects global data-center electricity consumption to reach around <strong>945 TWh</strong> by 2030, with accelerated-server electricity demand growing about <strong>30%</strong> annually. Deloitte's 2026 semiconductor outlook frames the same bottleneck from the chip side: global semi sales near <strong>$975B</strong>, generative-AI chips approaching <strong>$500B</strong>, and memory near <strong>$200B</strong>, with consumer memory shortages and major price spikes as AI pulls capacity into high-value workloads. The investable read is scarcity pricing in memory, power, cooling, and interconnect.</span></div>
+      <div class="company-row method-row"><span class="ticker">Quality filter</span><span>The Buffett/Hohn part says prefer businesses that can compound because they control scarce assets, customer relationships, data, workflow, or mission-critical infrastructure. The Druckenmiller part says the biggest changes happen when investors begin underwriting a new capital cycle. The best candidates in this report are where both are true: pricing power plus reinvestment runway, not merely a low multiple or a one-quarter beat.</span></div>
+    </div>
+    <div class="source-links">External triangulation: <a href="https://www.bea.gov/news/2026/gdp-advance-estimate-1st-quarter-2026">BEA GDP</a>; <a href="https://www.bea.gov/index.php/news/2026/personal-income-and-outlays-march-2026">BEA PCE</a>; <a href="https://www.census.gov/retail/sales.html">Census retail sales</a>; <a href="https://www.conference-board.org/topics/consumer-confidence/index.cfm?os=app">Conference Board confidence</a>; <a href="https://www.nfib.com/news/press-release/new-small-business-optimism-fell-in-march-survey/">NFIB</a>; <a href="https://www.federalreserve.gov/data/sloos/sloos-202604.htm">Fed SLOOS</a>; <a href="https://www.microsoft.com/en-us/investor/earnings/fy-2026-q3/press-release-webcast">Microsoft IR</a>; <a href="https://www.aboutamazon.com/news/company-news/amazon-earnings-q1-2026-report">Amazon IR</a>; <a href="https://www.aboutamazon.com/news/company-news/amazon-ceo-andy-jassy-aws-ai-q1-2026-earnings/">AWS AI commentary</a>; <a href="https://www.sec.gov/Archives/edgar/data/1652044/000165204426000043/googexhibit991q12026.htm">Alphabet SEC filing</a>; <a href="https://www.iea.org/reports/energy-and-ai/energy-demand-from-ai">IEA Energy and AI</a>; <a href="https://www.deloitte.com/us/en/insights/industry/technology/technology-media-telecom-outlooks/semiconductor-industry-outlook.html">Deloitte semiconductor outlook</a>.</div>
+  </section>
+
+  <section class="theme-block">
+    <h2>How I am ranking what is interesting</h2>
+    <p class="theme-read">I am using two lenses. The first is extract-first: let the transcripts surface repeated or unusually large business changes. The second is reaction-first: use the earnings move as a prompt, then go back to the extract and ask what investors were actually reassessing.</p>
+    <div class="evidence">
+      <div class="company-row method-row"><span class="ticker">Bottom-up</span><span>Highest weight goes to things that change the mechanism, not just the level: new pricing power, allocation instead of normal selling, explicit capacity constraints, surprising cohort commentary, guidance changes, margin step-changes, deferrals, or a TAM expansion that management can quantify.</span></div>
+      <div class="company-row method-row"><span class="ticker">Top-down</span><span>Large stock moves are treated as a search prompt. If a stock moves sharply on a small beat, a miss, or mixed headline numbers, I look for the non-obvious driver: guide quality, order book, margin bridge, credit trend, management tone, backlog duration, or a risk the headline metrics hide.</span></div>
+      <div class="company-row method-row"><span class="ticker">Synthesis</span><span>The strongest ideas are where both lenses agree. The most useful questions often come when they disagree, such as a strong text narrative with a negative stock reaction, or a big positive stock reaction despite an EPS miss.</span></div>
+    </div>
+    <div class="watch"><strong>Practical rule:</strong> a datapoint gets promoted when it is large, repeated, surprising versus category expectations, or confirmed by the earnings reaction. A company-specific anecdote gets demoted when it cannot be tied to a broader mechanism or when the extract is not the actual earnings report.</div>
+  </section>
+
+  <section class="theme-block">
+    <h2>Earnings reaction cross-check: where large moves deserve more work</h2>
+    <p class="theme-read">The Bloomberg/XBBG appendix now covers <strong>144</strong> companies from the local extract universe and requested stock-reaction-only checks, with <strong>143</strong> Bloomberg reported-earnings records returned. The median EPS surprise was about <strong>+4.1%</strong>, while the median first-close reaction was roughly flat at <strong>+0.1%</strong>, so investors were not simply rewarding beats. Before-market releases use that day's close; after-market releases use the next trading-day close. That makes the largest moves useful: they identify where the call probably contained a more important signal than the headline EPS and revenue surprise.</p>
+    <div class="evidence">
+      <div class="company-row market-row"><span class="ticker">GEV<span class="move pos">1d: +13.8%</span></span><span><p>Bloomberg EPS missed consensus by about <strong>-56.8%</strong>.</p><p class="texture">The driver was not the quarter's EPS. It was orders <strong>+71%</strong>, backlog rising to <strong>$163B</strong>, higher power-equipment pricing, a large FCF guide raise, and data-center orders already exceeding all of FY25. The reaction confirms that investors were repricing power as an AI capacity bottleneck.</p></span></div>
+      <div class="company-row market-row"><span class="ticker">GNRC / CNC<span class="move pos">1d: +16.5% / +14.0%</span></span><span><p>These two large positive moves added themes I would have underweighted from keywords alone.</p><p class="texture">Generac points to backup/distributed power as an AI/grid bottleneck; Centene points to payer upside from medical-cost execution plus Marketplace risk-adjustment mechanics.</p></span></div>
+      <div class="company-row market-row"><span class="ticker">ARM / AMD<span class="move pos">1d: +2.1% / +23.4%</span></span><span><p>ARM reported 4Q26 EPS <strong>+2.7%</strong>, revenue <strong>+1.3%</strong>, and FY EPS revision <strong>+2.2%</strong>; AMD reported 1Q26 EPS <strong>+6.8%</strong>, revenue <strong>+3.7%</strong>, and FY EPS revision <strong>+8.0%</strong>.</p><p class="texture">AMD's reaction was one of the largest positive moves in the set, which makes AI compute a confirmed market signal rather than just a thematic extrapolation. ARM's reaction was smaller, but the combination of reported-results data and its local AGI CPU event extract moves the read-through away from a GPU-only lens and toward heterogeneous compute: CPUs coordinating inference, accelerators doing dense math, and the full rack determining delivered performance.</p></span></div>
+      <div class="company-row market-row"><span class="ticker">CHWY<span class="move pos">1d: +13.3%</span></span><span><p>The move came despite a small EPS miss and roughly in-line revenue.</p><p class="texture">That points to margin and productivity as the real story. The extract points to adjusted EBITDA growing roughly 3x revenue growth and AI savings moving from low tens of millions in 2026 to more than <strong>$50M</strong> annualized in 2027.</p></span></div>
+      <div class="company-row market-row"><span class="ticker">ALLY<span class="move pos">1d: +8.1%</span></span><span><p>EPS was <strong>+19.2%</strong> versus consensus, even as revenue missed.</p><p class="texture">The read is credit and funding relief: retail auto net charge-offs improved to <strong>1.97%</strong>, NIM guidance was held, and management's credit guide did not deteriorate despite a cautious consumer backdrop.</p></span></div>
+      <div class="company-row market-row"><span class="ticker">UNH<span class="move pos">1d: +7.0%</span></span><span><p>EPS was <strong>+10.0%</strong> and revenue <strong>+2.3%</strong> versus consensus.</p><p class="texture">Investors rewarded clarity that Medicare Advantage pricing and membership discipline are working: pricing near <strong>10%</strong> against <strong>7-8%</strong> trend, deliberate membership trade-down, and OptumHealth operational improvement from clinical management and lower admissions/SNF use.</p></span></div>
+      <div class="company-row market-row"><span class="ticker">ZBH<span class="move neg">1d: -10.6%</span></span><span><p>EPS was <strong>+12.4%</strong> and revenue <strong>+0.8%</strong> versus consensus.</p><p class="texture">This is a classic quality-of-beat signal. Organic constant-currency sales growth was only <strong>+2.9%</strong>, full-year organic growth guidance stayed <strong>+1% to +3%</strong>, EPS was raised only about <strong>$0.10</strong> despite a <strong>$0.20</strong> tariff benefit, and Q2 operating margin was guided down about <strong>200 bps</strong>.</p></span></div>
+      <div class="company-row market-row"><span class="ticker">TMO<span class="move neg">1d: -9.2%</span></span><span><p>EPS was <strong>+3.8%</strong> and revenue <strong>+1.5%</strong> versus consensus.</p><p class="texture">The negative reaction points to the organic-growth quality of the raise: Q1 organic growth was only <strong>+1%</strong>, the full-year organic guide remained <strong>+3% to +4%</strong>, and the headline revenue raise was helped by Clario. China, academic/government, and the second-half ramp remain the debate.</p></span></div>
+      <div class="company-row market-row"><span class="ticker">BABA<span class="move neg">1d: -7.1%</span></span><span><p>EPS was <strong>-43.4%</strong> and revenue <strong>-1.7%</strong> versus consensus.</p><p class="texture">The text contains a real AI/cloud acceleration story: cloud revenue <strong>+35%</strong> and AI revenue triple-digit for the tenth straight quarter. The reaction says investors cared more about the cost of that strategy: adjusted EBITDA down <strong>-57%</strong>, free cash flow compression, and core commerce pressure.</p></span></div>
+      <div class="company-row market-row"><span class="ticker">CHTR / KMX<span class="move neg">1d: -25.5% / -15.1%</span></span><span><p>These were among the largest negative moves in the set.</p><p class="texture">The common thread is affordability/substitution rather than a clean recession call. Charter's issue was top-of-funnel broadband consideration, not churn; CarMax stabilized units by giving up GPU and pausing buybacks. Both reactions point to customers demanding sharper value propositions when financing, competition, or replacement cycles are unfavorable.</p></span></div>
+      <div class="company-row market-row"><span class="ticker">SPOT / DPZ / TSCO<span class="move neg">1d: -12.4% / -8.8% / -11.7%</span></span><span><p>All three had plausible strategic stories, but the stock reactions shifted the focus toward current margin translation and guidance.</p><p class="texture">Spotify's ad gross margin and AI/cloud reinvestment, Domino's lowered U.S. same-store-sales guide and value-promo intensity, and Tractor Supply's trip-frequency/pet drag against a 2% comp breakeven threshold all mattered more than the broad strategy narrative.</p></span></div>
+      <div class="company-row market-row"><span class="ticker">W / SGI<span class="move neg">1d: -12.8% / -11.8%</span></span><span><p>These are useful process checks.</p><p class="texture">The available extracts skew toward fireside or strategy-day style commentary rather than the actual earnings report, so a positive long-term narrative should not override a negative earnings reaction without finding the company-specific driver.</p></span></div>
+    </div>
+  </section>
+
+  <section class="theme-block">
+    <h2>Consumer: value-seeking broadened, but lower-end travel improved</h2>
+    <p class="theme-read">The interesting consumer read is not one-dimensional. Dollar stores and Walmart still show households managing budgets, but lodging companies gave some of the cleanest commentary that lower and middle income travel demand improved. That matters because it is a different signal from the old "luxury is resilient" frame: experiences may be recovering further down the income ladder even while rate-sensitive goods and big-ticket categories remain stuck.</p>
+    <div class="evidence">
+      <div class="company-row"><span class="ticker">HLT<span class="move neg">1d: -2.7%</span></span><span><p>System-wide RevPAR was <strong>+3.6%</strong>, above the high end of guide; business transient RevPAR improved <strong>4 points</strong> versus Q4, group was <strong>+4.3%</strong>, and leisure was <strong>+3.5%</strong>.</p><p class="texture">The texture was more useful than the beat: management described a <span class="excerpt">"C-shaped economy"</span> in which demand was moving from luxury and upper-upscale into mid and lower chain scales as the middle class got back into the game.</p></span></div>
+      <div class="company-row"><span class="ticker">MAR<span class="move pos">1d: +1.3%</span></span><span><p>U.S./Canada RevPAR was <strong>+4.0%</strong>; select-service RevPAR inflected to <strong>+3.5%</strong> from a weak Q4.</p><p class="texture">Marriott called the strength broad across leisure, group, business transient ex-government, and chain scales. In Q&amp;A, the explanation was concrete: domestic/drive-to travel, higher tax refunds, low supply, and travel-over-goods behavior, including among lower-income consumers.</p></span></div>
+      <div class="company-row"><span class="ticker">DG<span class="move neg">1d: -6.1%</span></span><span><p>Same-store sales were <strong>+4.3%</strong> and Value Valley grew <strong>+17.6%</strong>.</p><p class="texture">This is still the budget-pressure side of the consumer: traffic is healthy when the format gives shoppers a very explicit value proposition.</p></span></div>
+      <div class="company-row"><span class="ticker">DLTR<span class="move pos">1d: +6.4%</span></span><span><p>Comp was <strong>+5%</strong>, households rose <strong>+6.5M</strong> in Q4, and discretionary comp <strong>+6.2%</strong> outpaced consumables <strong>+3.6%</strong>.</p><p class="texture">That is more interesting than a defensive grocery-like read. It says consumers are not only trading down for staples; they are also willing to spend on small-ticket discretionary when the price architecture works.</p></span></div>
+      <div class="company-row"><span class="ticker">WMT<span class="move neg">1d: -1.4%</span></span><span><p>Ecommerce grew <strong>+20%</strong>, marketplace grew <strong>+20%</strong>, marketplace SKUs reached roughly <strong>500M</strong>, and Spark baskets were about <strong>35%</strong> larger.</p><p class="texture">The read-through is value plus convenience, with ads, marketplace, and services improving the profit mix. Walmart is not just a defensive consumer share-taker; it is becoming a scale platform for budget-conscious demand.</p></span></div>
+      <div class="company-row"><span class="ticker">FIVE<span class="move pos">1d: +9.9%</span></span><span><p>All districts and income cohorts were positive.</p><p class="texture">This fits the same pattern as Dollar Tree: affordability is a draw, but the demand is not purely distress. Novelty and low absolute ticket size still pull traffic.</p></span></div>
+      <div class="company-row"><span class="ticker">ULTA<span class="move neg">1d: -17.9%</span></span><span><p>Comp was <strong>+5.4%</strong>, loyalty members grew <strong>+5%</strong>, and app users rose <strong>+15%</strong>.</p><p class="texture">Beauty remains a resilient small luxury, but the more important mechanism is retention: loyalty and mobile engagement make the category less exposed to generic discretionary weakness.</p></span></div>
+      <div class="company-row"><span class="ticker">AXP<span class="move neg">1d: -4.3%</span></span><span><p>Spend grew <strong>+10%</strong>, revenue <strong>+11%</strong>, and more than <strong>70%</strong> of new accounts were on fee-paying products.</p><p class="texture">Premium spending remains structurally different from the mass-rate-sensitive consumer, and AmEx is still finding customers willing to pay for membership value.</p></span></div>
+      <div class="company-row"><span class="ticker">WFC<span class="move neg">1d: -5.7%</span></span><span><p>Wells Fargo said upper-income consumers remained resilient while lower-income consumers were more exposed to rates and energy.</p><p class="texture">The gas-price comment was specific: gasoline moved to about <strong>7%</strong> of debit-card spend and <strong>5%</strong> of credit-card spend, up from <strong>6%</strong> and <strong>4%</strong>. That creates a natural offset against other categories in the back half.</p></span></div>
+      <div class="company-row"><span class="ticker">SBUX<span class="move pos">1d: +7.8%</span></span><span><p>Comp was <strong>+7%</strong> and transactions improved by <strong>4 points</strong>.</p><p class="texture">The read is brand-specific frequency recovery, not generic restaurant traffic. It is a useful reminder that execution can overwhelm category averages in consumer services.</p></span></div>
+      <div class="company-row"><span class="ticker">AAL / DAL<span class="move pos">1d: +2.4% / +3.8%</span></span><span><p>American revenue grew <strong>+10.8%</strong> and premium paid load factor was roughly <strong>10 points</strong> above 2019; Delta revenue grew <strong>+9.4%</strong>.</p><p class="texture">Travel preference remains intact, especially at the premium end, but airlines are more exposed than lodging to fuel and international disruption.</p></span></div>
+    </div>
+    <div class="watch"><strong>Watch:</strong> the confirmation would be continued lower-chain lodging strength without a credit deterioration. The break would be a reversal in Dollar Tree discretionary, Marriott/Hilton select-service, or card-loss trends.</div>
+  </section>
+
+  <section class="theme-block">
+    <h2>Affordability and substitution: investors punished price-funded demand</h2>
+    <p class="theme-read">The reaction pass added a harsher read to the otherwise resilient consumer section. The weak spots were not random: they were businesses where customers have alternatives, financing matters, or management is trying to preserve demand by giving something back through price, margin, promotions, or capital intensity. That is why the large negative moves in Charter, CarMax, Tractor Supply, Domino's, and Spotify matter even though the headline macro data does not say "consumer collapse."</p>
+    <div class="evidence">
+      <div class="company-row"><span class="ticker">CHTR<span class="move neg">1d: -25.5%</span></span><span><p>Internet net adds were a <strong>120K</strong> loss, revenue fell <strong>-1%</strong>, adjusted EBITDA fell <strong>-2.2%</strong>, and CapEx rose to <strong>$2.9B</strong>, while mobile still added <strong>370K</strong> lines and exceeded <strong>12M</strong> total lines.</p><p class="texture">The important management texture was that churn and point-of-sale yield were not the core problem; the problem was getting households to consider Charter in the first place. FWA, fiber overbuild, housing, satellite, and mobile substitution are turning home connectivity into a much more active price/value market.</p></span></div>
+      <div class="company-row"><span class="ticker">CMCSA / RCI<span class="move pos">1d: +7.7% / +13.6%</span></span><span><p>Comcast and Rogers were a striking contrast to Charter.</p><p class="texture">Comcast still lost <strong>65K</strong> broadband customers, but that was <strong>117K</strong> better YoY, wireless net adds were a record <strong>435K</strong>, and about <strong>40%</strong> of the residential broadband base was on simpler pricing. Rogers showed wireless net adds of <strong>33K</strong>, retail Internet net adds of <strong>7K</strong>, wireless margin of <strong>65%</strong>, and cable margin of <strong>58%</strong>. The split says convergence and pricing architecture matter as much as raw broadband category growth.</p></span></div>
+      <div class="company-row"><span class="ticker">KMX<span class="move neg">1d: -15.1%</span></span><span><p>Used unit comps improved to <strong>-1.9%</strong> from <strong>-9.0%</strong> in Q3, but adjusted EPS was <strong>$0.34</strong> versus <strong>$0.60</strong>, used retail GPU fell <strong>$207</strong>, Q1 GPU was guided down about <strong>$300</strong> YoY, and buybacks were paused.</p><p class="texture">CarMax is one of the clearest affordability anecdotes: every FICO tier except <strong>800+</strong> is feeling affordability/inflation pressure, and ValuMax is now roughly <strong>50%</strong> of inventory versus <strong>15-20%</strong> a decade-plus ago. Unit stabilization is being bought with lower margin and broader credit reach.</p></span></div>
+      <div class="company-row"><span class="ticker">TSCO<span class="move neg">1d: -11.7%</span></span><span><p>Comp was only <strong>+0.5%</strong>, below the roughly <strong>2%</strong> comp threshold needed for fixed-cost leverage; transactions were <strong>-1%</strong>, and companion animal was a <strong>-100 bps</strong> comp drag.</p><p class="texture">This was not an all-out rural consumer break. It was narrower and more interesting: trips were consolidated, tax refunds were going to essentials/savings/debt, and dog population fell from <strong>96M</strong> in 2023 to <strong>94M</strong> in 2024 and roughly <strong>92M</strong> in 2025, hitting Tractor Supply's dog-heavy pet mix.</p></span></div>
+      <div class="company-row"><span class="ticker">DPZ<span class="move neg">1d: -8.8%</span></span><span><p>U.S. same-store sales were <strong>+0.9%</strong>, carryout was <strong>+2.4%</strong>, delivery was <strong>-0.3%</strong>, and 2026 U.S. SSS guidance moved from about <strong>3%</strong> to positive low single digits.</p><p class="texture">Management's comment that competitors were copying the Domino's value playbook is useful macro texture. The company still thinks rivals cannot sustain the promos without hurting franchisee economics, but the near-term read is simple: value competition is intense enough to force guide resets even for category winners.</p></span></div>
+      <div class="company-row"><span class="ticker">SPOT<span class="move neg">1d: -12.4%</span></span><span><p>Spotify had MAUs of <strong>761M</strong>, subscribers of <strong>293M</strong>, revenue growth of <strong>+14%</strong>, and gross margin of <strong>33%</strong>.</p><p class="texture">Spotify's negative reaction reframes the call around ad translation and reinvestment: ad revenue grew only <strong>+3%</strong>, Q2 operating income guide was <strong>EUR630M</strong> versus <strong>EUR715M</strong> in Q1, and management is spending on marketing, cloud, and AI R&amp;D.</p></span></div>
+    </div>
+    <div class="watch"><strong>Watch:</strong> this theme worsens if price/value actions stop producing traffic, if lower-credit cohorts weaken, or if ad/subscription businesses keep spending more to produce the same incremental growth. It improves if Charter-type connectivity names stabilize connects without ARPU give-up, CarMax recovers GPU, and restaurant value promotions convert to share gains rather than margin pressure.</div>
+  </section>
+
+  <section class="theme-block">
+    <h2>Housing and big-ticket: turnover is frozen, so execution is the story</h2>
+    <p class="theme-read">Housing remains one of the clearest weak macro areas. The nuance is that a frozen resale market does not mean every housing-adjacent company is equally weak. Builders are using incentives and inventory control, repair/pro remains steadier than resale-driven big-ticket, and a few furniture and contractor-platform names are taking share inside a bad category.</p>
+    <div class="evidence">
+      <div class="company-row"><span class="ticker">HD<span class="move pos">1d: +2.0%</span></span><span><p>Existing-home turnover stayed near <strong>3%</strong> versus a normal <strong>4-5%</strong>, and big-ticket PFRI decelerated for the eighth straight quarter.</p><p class="texture">The home-improvement read is still "locked housing," not broad recovery. The offset is that repair and pro demand can keep comps from breaking even when discretionary big-ticket remains pressured.</p></span></div>
+      <div class="company-row"><span class="ticker">DHI<span class="move pos">1d: +5.8%</span></span><span><p>Orders rose <strong>+11%</strong> while completed unsold homes fell <strong>-35%</strong>. D.R. Horton lowered the top end of revenue guidance and trimmed closings by about <strong>500</strong>.</p><p class="texture">The tone was not demand capitulation. It was a builder choosing pace, inventory, and incentives while rates remain the gating item.</p></span></div>
+      <div class="company-row"><span class="ticker">PHM<span class="move pos">1d: +2.4%</span></span><span><p>Incentives rose <strong>290 bps</strong>, and active-adult plus move-up buyers were roughly <strong>60%</strong> of mix.</p><p class="texture">That mix matters: builders are leaning into buyers with equity and balance-sheet flexibility rather than waiting for first-time affordability to normalize.</p></span></div>
+      <div class="company-row"><span class="ticker">RH<span class="move neg">1d: -14.5%</span></span><span><p>Revenue grew <strong>+8%</strong> while peers were down <strong>8-30 points</strong> worse.</p><p class="texture">This is a brand and share-control story inside a weak furniture cycle. The macro category is not suddenly healthy; the exceptional company result is the point.</p></span></div>
+      <div class="company-row"><span class="ticker">W<span class="move neg">1d: -12.8%</span></span><span><p>Wayfair moved from flat to <strong>+7%</strong> growth while the category contracted.</p><p class="texture">Online furniture can recover before the category if price, logistics, and assortment improve. Again, the read-through is share and execution more than end-market strength.</p></span></div>
+      <div class="company-row"><span class="ticker">SGI<span class="move neg">1d: -11.8%</span></span><span><p>Somnigroup said mattress units are about <strong>30%</strong> below 2021 and <strong>11.4M</strong> below long-term trend.</p><p class="texture">That is one of the starkest normalization datapoints in the set: household formation and replacement demand have not translated into a normal durable-goods cycle.</p></span></div>
+      <div class="company-row"><span class="ticker">SHW<span class="move neg">1d: -3.5%</span></span><span><p>Gross margin improved <strong>+90 bps</strong> despite weak residential demand.</p><p class="texture">Pricing, mix, and contractor/pro exposure can still defend profitability even when housing volumes are soft.</p></span></div>
+      <div class="company-row"><span class="ticker">WSO<span class="move neg">1d: -4.0%</span></span><span><p>Watsco has more than <strong>75K</strong> weekly contractor users, about <strong>$1.8B</strong> of GMV through OnCall Air, and roughly <strong>40%</strong> of volume digital.</p><p class="texture">This is a quieter but useful read-through: contractor workflow digitization can be a margin and stickiness lever even in a rate-sensitive end market.</p></span></div>
+    </div>
+    <div class="watch"><strong>Watch:</strong> housing needs turnover to move first. Until then, the winners are likely to be builders with incentive flexibility, repair/pro channels, and companies taking share in weak categories.</div>
+  </section>
+
+  <section class="theme-block">
+    <h2>AI infrastructure: bottlenecks are spreading beyond GPUs</h2>
+    <p class="theme-read">The most novel read-through is not simply that AI demand is strong. It is that bottlenecks are spreading across the full system: memory and storage are moving toward allocation economics; power and backup generation are becoming priced constraints; CPU orchestration and interconnect are expanding the semiconductor opportunity beyond GPUs; and deployment capacity is becoming a gating item for revenue conversion. The external evidence raises conviction: BEA's GDP details point to information-processing equipment and software as investment drivers, while Microsoft, Amazon, and Alphabet all reported AI/cloud scale that is now large enough to change the supplier profit pool.</p>
+    <div class="evidence">
+      <div class="company-row"><span class="ticker">SNDK<span class="move pos">1d: +11.5%</span></span><span><p><span class="tag">Q3 FY26 / calendar 1Q26</span>Revenue was <strong>$5.95B</strong>, up <strong>+251%</strong> YoY and <strong>+97%</strong> QoQ, while gross margin jumped from <strong>51.1%</strong> to <strong>78.4%</strong> in one quarter.</p><p class="texture">Management called out <span class="excerpt">"extraordinary pricing acceleration"</span>, five multiyear NBM partnerships, more than one-third of FY27 BiCS supply under firm commitments, about <strong>$42B</strong> of minimum contractual revenue in three Q3 contracts, and more than <strong>$11B</strong> of guarantees across five deals. The key read is that NAND customers are accepting scarcity economics, not just paying spot price.</p></span></div>
+      <div class="company-row"><span class="ticker">MU<span class="move neg">1d: -3.8%</span></span><span><p><span class="tag">Q2 FY26 / calendar 1Q26</span>Revenue was <strong>$23.9B</strong>, up <strong>+196%</strong> YoY; DRAM grew <strong>+207%</strong>, NAND <strong>+169%</strong>, and gross margin reached a company-record <strong>75%</strong>.</p><p class="texture">Micron said supply is meeting only <strong>50-67%</strong> of key customer medium-term demand, and described memory as a <span class="excerpt">"defining strategic asset"</span> in the AI era. The HBM4 ramp for NVIDIA's Vera Rubin and 4x YoY LP DRAM content per data-center CPU make this more architectural than cyclical.</p></span></div>
+      <div class="company-row"><span class="ticker">STX<span class="move pos">1d: +8.0%</span></span><span><p>Data-center revenue was <strong>$2.5B</strong>, up <strong>+55%</strong>, and nearline capacity is nearly fully allocated through <strong>CY27</strong>.</p><p class="texture">Storage is behaving like an allocation market. Seagate also lifted its long-term revenue target from low-to-mid teens growth to at least <strong>20%</strong>, a striking change for what used to be a slower-cycle hardware category.</p></span></div>
+      <div class="company-row"><span class="ticker">GEV<span class="move pos">1d: +13.8%</span></span><span><p>Orders were <strong>$18.3B</strong>, up <strong>+71%</strong>, with book-to-bill around <strong>2x</strong> and backlog rising to <strong>$163B</strong> from <strong>$116B</strong> at spin.</p><p class="texture">Data-center orders were <strong>$2.4B</strong> in Q1, more than all of FY25. Pricing on first-half orders was <strong>10-20 points</strong> higher per kW than Q4 2025, making power a priced bottleneck, not just a volume opportunity.</p></span></div>
+      <div class="company-row"><span class="ticker">GNRC<span class="move pos">1d: +16.5%</span></span><span><p>Generac's investor-day extract framed data-center backup power as a <strong>$14B-$17B</strong> global TAM, with C&amp;I TAM expanding from roughly <strong>$14B</strong> to <strong>$30B</strong> when data centers are included.</p><p class="texture">The underlying business texture is grid stress: management cited <strong>$1.4T</strong> of needed grid infrastructure investment over five years, load growth of <strong>+32%</strong> over the next five years versus <strong>+9%</strong> in the prior five, and a data-center backlog of about <strong>$700M</strong> booking into 2027-2028. The power theme is now centralized grid plus behind-the-meter resilience.</p></span></div>
+      <div class="company-row"><span class="ticker">ARM / AMD<span class="move pos">1d: +2.1% / +23.4%</span></span><span><p>ARM's local event extract framed agentic AI as a CPU-intensity step-change: CPU cores per GW move from roughly <strong>30M</strong> pre-agentic to about <strong>120M</strong>, agentic queries can require <strong>15x+</strong> tokens per human query, CSS is already roughly <strong>20%</strong> of royalties, and the AGI CPU step moves Arm from IP/CSS into direct silicon. AMD's reported-results check showed EPS <strong>+6.8%</strong>, revenue <strong>+3.7%</strong>, FY EPS revision <strong>+8.0%</strong>, and the strongest large-cap semi reaction in this report set.</p><p class="texture">The read-through is that AI compute is becoming a system-design market, not only an accelerator unit-volume market. The better question is which companies control a durable bottleneck: CPU orchestration, accelerator road maps, memory bandwidth, interconnect, software compatibility, or power and rack-level efficiency. ARM is architecture evidence; AMD is the earnings-reaction confirmation that investors are rewarding credible alternatives and capacity into the AI compute stack.</p></span></div>
+      <div class="company-row"><span class="ticker">ALAB<span class="move pos">1d: +6.3%</span></span><span><p>Astera's conference extract points to interconnect as a new AI bottleneck: Aries was designed across <strong>100%</strong> of NVIDIA platforms, Scorpio P-Series went from roughly zero to more than <strong>$125M</strong> of FY25 revenue, Taurus exceeded <strong>$100M</strong>, and PCIe switch TAM could move from roughly zero last year to more than <strong>$10B</strong> by 2030.</p><p class="texture">The read-through is that AI clusters are becoming networking systems. GPU count, lane speed, rack scale, signal distance, telemetry, and NVLink/Fusion-style translation bridges are becoming monetizable constraints.</p></span></div>
+      <div class="company-row"><span class="ticker">VRT<span class="move neg">1d: -2.3%</span></span><span><p>Sales grew <strong>+30%</strong>, operating margin reached <strong>20.8%</strong>, up <strong>430 bps</strong>, and FY26 margin guide moved to <strong>23.3%</strong>, up <strong>290 bps</strong> YoY.</p><p class="texture">The Americas were up <strong>+44%</strong>; the second-half acceleration depends on capacity additions. That is an important pattern across AI infrastructure: demand is not the bottleneck, deliverability is.</p></span></div>
+      <div class="company-row"><span class="ticker">CLS<span class="move neg">1d: -11.9%</span></span><span><p>Revenue was <strong>$4.05B</strong>, up <strong>+53%</strong>; enterprise revenue rose <strong>+130%</strong> from AI/ML compute and storage ramps.</p><p class="texture">Management said the backlog and pipeline were the strongest of the CEO's tenure and expected 2027 to add more revenue than the <strong>$6.5B</strong> layered on in 2026. That makes ODM/server manufacturing a direct AI capacity read-through.</p></span></div>
+      <div class="company-row"><span class="ticker">LRCX<span class="move pos">1d: +0.1%</span></span><span><p>Lam raised its 2026 WFE outlook to roughly <strong>$140B</strong> with upside bias; NAND conversion spend was framed around <strong>$40B</strong>, mostly before the end of CY27.</p><p class="texture">The nuance is supply: NAND installed wafer capacity is still down more than <strong>20%</strong> from prior highs. If customers need more bits, equipment has to come back.</p></span></div>
+      <div class="company-row"><span class="ticker">ASML<span class="move neg">1d: -2.4%</span></span><span><p>ASML narrowed/raised 2026 revenue guidance to <strong>EUR36-40B</strong>; memory customers were sold out for the rest of the year.</p><p class="texture">Low-NA EUV capacity is planned to move from at least <strong>60 systems</strong> in 2026 to at least <strong>80</strong> in 2027. This supports the memory-capex recovery rather than just a logic/foundry story.</p></span></div>
+      <div class="company-row"><span class="ticker">NXP<span class="move pos">1d: +22.1%</span></span><span><p>Mixed-signal data-center revenue is expected to exceed <strong>$500M</strong> in 2026 versus roughly <strong>$200M</strong> in 2025.</p><p class="texture">That is a helpful reminder that AI infrastructure beneficiaries include power management, signal chain, and analog content, not only GPUs and memory.</p></span></div>
+    </div>
+    <div class="watch"><strong>Watch:</strong> the strongest confirmation would be more collateralized memory/storage agreements, power-equipment pricing holding, and WFE guide raises. The break would be hyperscaler digestion showing up first in server builds, then in memory commitments.</div>
+  </section>
+
+  <section class="theme-block">
+    <h2>Software and cloud: AI is rewarding control layers and pressuring exposed services</h2>
+    <p class="theme-read">The software read is more textured than "AI helps software." The companies with governed data, workflow ownership, identity, or distribution into enterprise systems sound advantaged. Services firms are seeing a messier version of the same trend: AI creates project demand but also automates delivery, pressures pricing, and gives procurement another lever. The long-duration question is whether AI becomes a true product expansion and pricing layer, or just another reason customers demand more output per dollar.</p>
+    <div class="evidence">
+      <div class="company-row"><span class="ticker">NOW<span class="move neg">1d: -15.3%</span></span><span><p>Subscription revenue grew <strong>+19%</strong> constant currency, above guide, and customers spending over <strong>$1M</strong> on Now Assist rose <strong>+130%</strong> YoY.</p><p class="texture">The important detail is monetization shape: roughly <strong>50%</strong> of net-new business came from non-seat models such as tokens, infrastructure, hardware, and connectors. ServiceNow is trying to become the enterprise <span class="excerpt">"AI control tower"</span>, not just a per-seat workflow vendor.</p></span></div>
+      <div class="company-row"><span class="ticker">IBM<span class="move neg">1d: -9.6%</span></span><span><p>Revenue grew <strong>+8%</strong>, infrastructure grew <strong>+14%</strong>, GenAI is about <strong>30%</strong> of backlog, and internal productivity benefit exceeds <strong>$4.5B</strong>.</p><p class="texture">IBM is a useful hybrid read: AI is both external demand and internal margin action. Mainframe/infrastructure strength also says enterprise AI budgets can land in old-stack modernization, not only cloud-native software.</p></span></div>
+      <div class="company-row"><span class="ticker">BABA<span class="move neg">1d: -7.1%</span></span><span><p>Cloud revenue grew <strong>+35%</strong>, and AI revenue grew triple-digit for the tenth straight quarter.</p><p class="texture">Cloud EBITDA fell <strong>-57%</strong> because Alibaba is investing through the cycle. That is a useful contrast to U.S. software margins: cloud providers may accept near-term margin pressure to secure AI platform position.</p></span></div>
+      <div class="company-row"><span class="ticker">SPOT<span class="move neg">1d: -12.4%</span></span><span><p>MAUs reached <strong>761M</strong>, up <strong>+12%</strong> constant currency, subscribers were <strong>293M</strong>, revenue grew <strong>+14%</strong>, gross margin was <strong>33%</strong>, and AI DJ had <strong>94M</strong> subscribers using it.</p><p class="texture">The negative stock reaction keeps the analysis honest: ad-supported revenue grew only <strong>+3%</strong>, ad gross margin declined YoY because engagement/content cost outran ad revenue, and Q2 operating income guidance stepped down as marketing, cloud, and AI R&amp;D rise. AI product engagement is real, but investors still demanded proof of monetization and operating leverage.</p></span></div>
+      <div class="company-row"><span class="ticker">ADBE<span class="move neg">1d: -8.9%</span></span><span><p>Adobe is monetizing AI through subscription, freemium, and outcome/consumption paths, with AEM, AEP, AgenticWeb, LLM Optimizer, and Brand Concierge broadening the surface area.</p><p class="texture">The read-through is that AI-mediated discovery may become a marketing budget category. Adobe is trying to sell the control layer for brand assets, agent traffic, and content workflows.</p></span></div>
+      <div class="company-row"><span class="ticker">SPGI<span class="move neg">1d: -0.9%</span></span><span><p>S&amp;P Global cited demand for AI-ready data distribution.</p><p class="texture">This is one of the cleaner "data is infrastructure" reads: proprietary, permissioned, enterprise-ready data becomes more valuable as model interfaces proliferate.</p></span></div>
+      <div class="company-row"><span class="ticker">MCO<span class="move pos">1d: +1.6%</span></span><span><p>Moody's highlighted private-credit data and distribution into ChatGPT Enterprise.</p><p class="texture">The specific read-through is not only AI search. It is that high-value financial data providers can turn model distribution into a channel while keeping entitlement and governance controls.</p></span></div>
+      <div class="company-row"><span class="ticker">EFX<span class="move neg">1d: -10.0%</span></span><span><p>Equifax beat on revenue and margin, framed mortgage as a <strong>20%+</strong> framework, and produced <strong>+75 bps</strong> of ex-FICO margin expansion.</p><p class="texture">Management held guidance despite the beat because of Iran uncertainty and said absent that uncertainty it would have raised. That makes the call a useful signal of underlying data demand with macro caution layered on top.</p></span></div>
+      <div class="company-row"><span class="ticker">ACN<span class="move pos">1d: +4.3%</span></span><span><p>Bookings remained large, but the quarterly bookings and consulting tone were less clean.</p><p class="texture">Accenture is the offset to the control-layer winners: AI can create transformation demand while also compressing delivery economics and giving clients reason to scrutinize rates.</p></span></div>
+      <div class="company-row"><span class="ticker">INFY<span class="move neg">1d: -4.0%</span></span><span><p>Infosys had a growing large-deal pipeline, but procurement pressure and AI productivity offsets weighed on pricing.</p><p class="texture">The read-through is that AI value is being negotiated. Services vendors may not keep all productivity gains if customers can see the automation benefits.</p></span></div>
+    </div>
+    <div class="watch"><strong>Watch:</strong> non-seat consumption, AI data distribution, and platform attach should confirm the advantaged software cohort. Consulting price pressure and slower discretionary projects would show AI acting as a deflationary force in services.</div>
+  </section>
+
+  <section class="theme-block">
+    <h2>Credit and financials: losses improved, but lenders still respect the lower-end risk</h2>
+    <p class="theme-read">Credit was better than feared across several consumer lenders, but the tone was not euphoric. The useful macro read is that delinquencies and charge-offs can improve while management still treats lower-income and rate-sensitive borrowers cautiously. The Fed's bank survey supports that nuance: standards were broadly stable in cards and autos, but demand weakened. Financial activity also broadened: trading, hedging, and deal-pipeline commentary improved even without a fully open capital-markets backdrop.</p>
+    <div class="evidence">
+      <div class="company-row"><span class="ticker">COF<span class="move neg">1d: -3.0%</span></span><span><p>Card charge-offs were <strong>5.1%</strong>, down <strong>109 bps</strong> YoY, and delinquencies were <strong>3.7%</strong>, down <strong>55 bps</strong>.</p><p class="texture">Capital One described domestic card delinquencies as better than seasonal, but was <span class="excerpt">"not ready to declare divergence"</span>. That caution is exactly the texture: credit is improving, but management is not extrapolating aggressively.</p></span></div>
+      <div class="company-row"><span class="ticker">ALLY<span class="move pos">1d: +8.1%</span></span><span><p>Retail auto net charge-offs improved to <strong>1.97%</strong>; NIM guidance stayed <strong>3.60-3.70%</strong> and NCO guidance stayed <strong>1.80-2.00%</strong>.</p><p class="texture">Ally's guide implies an exit at or above the high end of NIM despite fewer cuts. That is a better liability/asset-pricing story than the headline auto-volume backdrop would suggest.</p></span></div>
+      <div class="company-row"><span class="ticker">SYF<span class="move neg">1d: -1.2%</span></span><span><p>Purchase volume grew <strong>+5%</strong> with better delinquencies and net charge-offs.</p><p class="texture">Private-label credit is often a good stress signal. Synchrony improving on both volume and losses argues against a broad consumer-credit break.</p></span></div>
+      <div class="company-row"><span class="ticker">AXP<span class="move neg">1d: -4.3%</span></span><span><p>AmEx credit remained below 2019 levels while spend and fee-card acquisition stayed strong.</p><p class="texture">This confirms the premium split: the consumer with balance-sheet flexibility is still spending and still low-loss.</p></span></div>
+      <div class="company-row"><span class="ticker">BAC / JPM<span class="move-line pos">1d: BAC +1.8%</span><span class="move-line neg">JPM -0.8%</span></span><span><p>Bank of America revenue grew <strong>+7%</strong>, EPS grew <strong>+25%</strong>, and NII grew <strong>+9%</strong>; JPMorgan delivered <strong>23%</strong> ROTCE.</p><p class="texture">Large-bank earnings power is still robust when deposit betas, fee activity, and credit costs are not all moving against them at once.</p></span></div>
+      <div class="company-row"><span class="ticker">WFC / PNC<span class="move-line neg">1d: WFC -5.7%</span><span class="move-line pos">PNC +0.4%</span></span><span><p>Wells Fargo closed its final consent order and auto originations more than doubled; PNC still points toward a <strong>3%</strong> NIM path.</p><p class="texture">The regional and money-center read is gradual profitability improvement rather than a sudden loan-growth boom.</p></span></div>
+      <div class="company-row"><span class="ticker">CME<span class="move pos">1d: +0.5%</span></span><span><p>ADV rose <strong>+22%</strong> to <strong>36.2M</strong> contracts, with commodities up <strong>+38%</strong>.</p><p class="texture">Hedging demand remains high. That is a macro uncertainty signal, but also a revenue tailwind for market infrastructure.</p></span></div>
+      <div class="company-row"><span class="ticker">GS<span class="move neg">1d: -1.9%</span></span><span><p>Goldman cited <strong>$150B</strong> of lead M&amp;A assignments.</p><p class="texture">Capital markets are not fully open everywhere, but the backlog of strategic activity is rebuilding.</p></span></div>
+    </div>
+    <div class="watch"><strong>Watch:</strong> consumer credit is most convincing if charge-offs keep falling while purchase volume holds. The financial-activity confirmation would be M&amp;A assignments converting into announced deals and financing volumes.</div>
+  </section>
+
+  <section class="theme-block">
+    <h2>Capacity discipline: operators are protecting scarcity rather than chasing volume</h2>
+    <p class="theme-read">A recurring theme across transport, aerospace, and logistics was that management teams are not blindly adding capacity to chase demand. Some of this is forced by supply constraints, fuel, geopolitics, or network resets. But the broader macro read is margin discipline: scarce aircraft, constrained networks, and rational parcel capacity are being managed as profit levers.</p>
+    <div class="evidence">
+      <div class="company-row"><span class="ticker">AER<span class="move pos">1d: +0.7%</span></span><span><p>AerCap expects aircraft shortages through the end of the decade.</p><p class="texture">That supports lessor pricing and keeps airlines from returning to undisciplined capacity growth too quickly.</p></span></div>
+      <div class="company-row"><span class="ticker">BA<span class="move pos">1d: +5.5%</span></span><span><p>Boeing is moving 737 output toward <strong>47/month</strong> and later <strong>52/month</strong>.</p><p class="texture">Supply recovery matters, but the aircraft shortage is not solved quickly. That gives the airline and lessor ecosystem a longer scarcity runway.</p></span></div>
+      <div class="company-row"><span class="ticker">GE<span class="move neg">1d: -5.6%</span></span><span><p>Orders rose <strong>+87%</strong>, and commercial-services backlog was above <strong>$170B</strong>.</p><p class="texture">The aftermarket and installed-base cycle remain strong. Aviation profitability is not just new deliveries; it is service intensity on a constrained global fleet.</p></span></div>
+      <div class="company-row"><span class="ticker">UAL<span class="move neg">1d: -7.3%</span></span><span><p>Capacity for 3Q/4Q was revised to flat to <strong>+2%</strong>, about <strong>5 points</strong> below the prior plan, and FY EPS range widened to <strong>$7-$11</strong>.</p><p class="texture">United said there was <span class="excerpt">"no demand destruction visible"</span> in bookings, but fuel and geopolitics force discipline. Management is cutting marginal capacity such as off-peak and red-eye flights unless yields can carry the cost.</p></span></div>
+      <div class="company-row"><span class="ticker">LUV<span class="move neg">1d: -3.8%</span></span><span><p>FY26 capacity moved to roughly <strong>2%</strong>, the low end of the prior 2-3% range, and management did not update the $4 EPS path because of fuel volatility.</p><p class="texture">This was caution rather than a volume collapse. The industry is increasingly unwilling to fly uneconomic capacity just to protect share.</p></span></div>
+      <div class="company-row"><span class="ticker">UPS<span class="move neg">1d: -4.0%</span></span><span><p>UPS is absorbing about <strong>500K</strong> fewer Amazon pieces per day, closing <strong>23</strong> buildings, and using driver buyouts while healthcare revenue reached <strong>$3B</strong>.</p><p class="texture">Mix and network simplification matter more than headline package growth. The company is shrinking lower-quality volume and reallocating toward specialized logistics.</p></span></div>
+      <div class="company-row"><span class="ticker">FDX<span class="move pos">1d: +2.6%</span></span><span><p>FedEx raised revenue growth guidance to <strong>+6-6.5%</strong> and adjusted EPS to <strong>$19.30-$20.10</strong> from <strong>$17.80-$19.00</strong>.</p><p class="texture">Network 2.0 savings, B2B share gains, and better mix make FedEx the cleaner parcel execution story in the set.</p></span></div>
+      <div class="company-row"><span class="ticker">UNP<span class="move pos">1d: +8.8%</span></span><span><p>Union Pacific cut trains <strong>24%</strong> since 2019 while adding <strong>113K</strong> carloads.</p><p class="texture">Rails are an operating-leverage story if volumes hold: fewer assets moving more freight is the simple version of the productivity thesis.</p></span></div>
+    </div>
+    <div class="watch"><strong>Watch:</strong> if fuel remains higher, airlines' ability to pass through price will matter more than headline demand. In logistics, the key is whether network savings can offset soft package mix.</div>
+  </section>
+
+  <section class="theme-block">
+    <h2>Healthcare: payer relief, utilization friction, and guide quality split investor response</h2>
+    <p class="theme-read">Healthcare was not one macro story either. Investors rewarded payer names where cost trend, risk adjustment, or benefit-cost repricing became clearer, but punished cases where beat quality, utilization timing, or organic growth looked less clean. Patient affordability is still visible in delayed care and exchange mechanics, while procedure growth, diagnostics automation, and HSA growth point to pockets of strong structural demand.</p>
+    <div class="evidence">
+      <div class="company-row"><span class="ticker">CNC<span class="move pos">1d: +14.0%</span></span><span><p>Adjusted diluted EPS was <strong>$3.37</strong>, about <strong>$0.50</strong> above expectations, and FY26 adjusted EPS guidance moved to more than <strong>$3.40</strong> from more than <strong>$3.00</strong>.</p><p class="texture">The texture was payer mechanics, not just a beat: Medicaid HBR improved <strong>50 bps</strong> YoY to <strong>93.1%</strong>, Medicare HBR was <strong>84.9%</strong>, Marketplace membership was about <strong>3.58M</strong>, and Wakely data suggested membership loss after APTC changes was less severe than expected in nearly every market. Management still carried a cautious Marketplace pretax margin guide around <strong>3%</strong>, leaving risk-adjustment upside to be corroborated.</p></span></div>
+      <div class="company-row"><span class="ticker">HQY<span class="move pos">1d: +1.1%</span></span><span><p>HealthEquity added more than <strong>1M</strong> HSAs while U.S. jobs grew only <strong>181K</strong>; HSA assets were above <strong>$36B</strong>, up <strong>+14%</strong>, across <strong>17.8M</strong> accounts.</p><p class="texture">The unusually strong account growth makes healthcare savings behavior a clean affordability and benefits-design read-through.</p></span></div>
+      <div class="company-row"><span class="ticker">CYH<span class="move neg">1d: -14.0%</span></span><span><p>Elective surgeries fell <strong>-2.2%</strong>; high-deductible commercial and exchange patients delayed care.</p><p class="texture">This is direct evidence that out-of-pocket burden still changes utilization, even when the broader economy is not in recession.</p></span></div>
+      <div class="company-row"><span class="ticker">UNH<span class="move pos">1d: +7.0%</span></span><span><p>UnitedHealth priced Medicare Advantage against roughly <strong>7-8%</strong> trend and expects MA membership down about <strong>1.3M</strong>.</p><p class="texture">The macro read is benefit-cost repricing, not simple demand weakness. The company raised its full-year earnings view while choosing margin repair over membership growth.</p></span></div>
+      <div class="company-row"><span class="ticker">HCA<span class="move neg">1d: -8.8%</span></span><span><p>Revenue grew <strong>+4.3%</strong>, adjusted EBITDA grew about <strong>+2%</strong>, and management reaffirmed FY26 guidance, but Q1 had a combined adjusted EBITDA drag of roughly <strong>$180M</strong> from seasonal volume/storm and supplemental-payment timing.</p><p class="texture">The call is a good example of guide-quality skepticism. Management described the Q1 drag as temporal, pointed to February/March volume rebound, kept the next three quarters' volume growth expectation at <strong>2-3%</strong>, and said Florida DPP upside was not in the guide. The stock reaction suggests investors still wanted cleaner utilization and EBITDA conversion.</p></span></div>
+      <div class="company-row"><span class="ticker">ISRG<span class="move pos">1d: +3.9%</span></span><span><p>Procedures grew <strong>+17%</strong>, and SP procedures grew <strong>+68%</strong>.</p><p class="texture">Procedure demand and robotic adoption remain strong even where patient affordability is uneven. Innovation can produce volume growth that macro affordability alone would not predict.</p></span></div>
+      <div class="company-row"><span class="ticker">ZBH<span class="move neg">1d: -10.6%</span></span><span><p>Sales grew <strong>+9.3%</strong>, with tech alone up <strong>+30%</strong>.</p><p class="texture">Medtech acceleration is more innovation and penetration than macro volume alone.</p></span></div>
+      <div class="company-row"><span class="ticker">DGX<span class="move pos">1d: +4.5%</span></span><span><p>Revenue grew <strong>+9.2%</strong>, AD-Detect more than doubled, and AI customer-service productivity improved <strong>+40%</strong>.</p><p class="texture">Diagnostics is a data and automation story as well as a utilization story.</p></span></div>
+      <div class="company-row"><span class="ticker">DHR / TMO<span class="move neg">1d: -0.5% / -9.2%</span></span><span><p>Danaher biotech grew <strong>+7%</strong> and bioprocessing was high-single-digit, while Thermo Fisher was more mixed.</p><p class="texture">Life-science tools are improving, but not with the clarity of procedure-driven medtech or diagnostics automation.</p></span></div>
+    </div>
+    <div class="watch"><strong>Watch:</strong> affordability pressure should show up first in elective-care deferral and payer benefit design. The upside confirmation is procedure growth staying high while life-science tools broaden.</div>
+  </section>
+
+  <section class="theme-block">
+    <h2>Profitability and capital allocation: productivity is bridging mixed demand to strong EPS</h2>
+    <p class="theme-read">Several companies are not waiting for a perfect demand backdrop. They are using productivity, loyalty, lower acquisition cost, AI savings, and buybacks to convert uneven revenue into EPS growth. This is the corporate-profitability side of the macro read: management teams are still finding levers when volume is mixed.</p>
+    <div class="evidence">
+      <div class="company-row"><span class="ticker">PG<span class="move pos">1d: +1.7%</span></span><span><p>Organic sales grew <strong>+3%</strong>, with volume <strong>+2</strong> and price <strong>+1</strong>; productivity offset <strong>330 bps</strong> of pressure.</p><p class="texture">Staples are no longer getting the same easy pricing, so productivity is doing more of the margin work.</p></span></div>
+      <div class="company-row"><span class="ticker">ACI<span class="move neg">1d: -3.0%</span></span><span><p>Albertsons loyalty members exceeded <strong>51M</strong>, up <strong>+12%</strong>, and the productivity target rose to <strong>$2B</strong> over three years from <strong>$1.5B</strong>.</p><p class="texture">Food retail is using loyalty, data, and cost actions to offset pharmacy and inflation pressure.</p></span></div>
+      <div class="company-row"><span class="ticker">VZ<span class="move pos">1d: +1.6%</span></span><span><p>Verizon delivered the first positive Q1 postpaid phone adds in <strong>13 years</strong>, and March acquisition/retention cost was down <strong>35%</strong> versus end-Q4.</p><p class="texture">Profitability came from commercial discipline as much as subscriber growth. The guide raise shows management is letting better cost discipline flow through.</p></span></div>
+      <div class="company-row"><span class="ticker">CHWY<span class="move pos">1d: +13.3%</span></span><span><p>Chewy guided adjusted EBITDA growth at roughly <strong>3x</strong> revenue growth, with AI savings scaling from low tens of millions in 2026 to <strong>$50M+</strong> annualized in 2027.</p><p class="texture">This is one of the clearer examples of AI as a cost and productivity bridge, not just a product-revenue story.</p></span></div>
+      <div class="company-row"><span class="ticker">C<span class="move pos">1d: +2.6%</span></span><span><p>Citigroup repurchased <strong>$6.3B</strong>.</p><p class="texture">Large-bank capital return remains aggressive where capital ratios allow it.</p></span></div>
+      <div class="company-row"><span class="ticker">FICO<span class="move pos">1d: +2.9%</span></span><span><p>FICO's <strong>$605M</strong> buyback was its largest quarter.</p><p class="texture">Proprietary data and software economics are being converted directly into per-share growth.</p></span></div>
+      <div class="company-row"><span class="ticker">MGM<span class="move neg">1d: -2.0%</span></span><span><p>MGM has reduced share count by more than <strong>50%</strong> over time.</p><p class="texture">The casino read-through is as much capital allocation as Las Vegas demand.</p></span></div>
+      <div class="company-row"><span class="ticker">SNDK<span class="move pos">1d: +11.5%</span></span><span><p>SanDisk authorized a <strong>$6B</strong> buyback in the same quarter it reached net cash.</p><p class="texture">The scale of capital return underscores how abruptly NAND profitability changed. It also makes memory one of the most dramatic capital-allocation stories in the set.</p></span></div>
+    </div>
+    <div class="watch"><strong>Watch:</strong> productivity is most valuable when revenue is only modestly positive. The risk is that companies over-harvest costs if volume softens further.</div>
+  </section>
+
+  <section class="theme-block">
+    <h2>Meaningful guidance changes and management stance shifts</h2>
+    <p class="theme-read">Guidance changes are useful because they show where management teams were willing to let better demand flow through and where they refused to extrapolate. The cleanest raises were lodging, parcel, telecom, power, semi equipment, and Centene's payer raise; the cleanest caution/lower revisions were fuel-exposed airlines, Nike, rate-sensitive housing, restaurant value competition, Spotify reinvestment, and CarMax affordability/margin trade-offs.</p>
+    <table class="guidance-table">
+      <thead><tr><th>Direction</th><th>Company</th><th>Change</th><th>Read-through</th></tr></thead>
+      <tbody>
+        <tr><td class="up">Raised</td><td><strong>MAR</strong><span class="move pos">1d: +1.3%</span></td><td>FY26 global RevPAR guide raised to <strong>+2% to +3%</strong>; gross fees raised to <strong>$5.93B-$5.99B</strong>; residential branding fees raised to <strong>+45% to +50%</strong>.</td><td>Broad lodging demand was strong enough to raise despite a Middle East drag of roughly 100-125 bps on FY global RevPAR.</td></tr>
+        <tr><td class="up">Raised</td><td><strong>HLT</strong><span class="move neg">1d: -2.7%</span></td><td>RevPAR guide raised <strong>1 point</strong>; midpoint EBITDA raised about <strong>$20M</strong>.</td><td>Lower and mid-chain improvement was visible enough for a raise even with geopolitical caution.</td></tr>
+        <tr><td class="up">Raised</td><td><strong>FDX</strong><span class="move pos">1d: +2.6%</span></td><td>Adjusted EPS raised to <strong>$19.30-$20.10</strong> from <strong>$17.80-$19.00</strong>; revenue growth guide raised to <strong>+6-6.5%</strong>.</td><td>Network savings and B2B share gains are converting into earnings, not just cost rhetoric.</td></tr>
+        <tr><td class="up">Raised</td><td><strong>VZ</strong><span class="move pos">1d: +1.6%</span></td><td>Adjusted EPS growth guide raised to <strong>+5-6%</strong> from <strong>+4-5%</strong>.</td><td>Commercial discipline and lower acquisition/retention costs are flowing through.</td></tr>
+        <tr><td class="up">Raised</td><td><strong>GEV</strong><span class="move pos">1d: +13.8%</span></td><td>Adjusted EBITDA margin guide raised <strong>1 point</strong> at both ends; free-cash-flow guide raised about <strong>$1.5B</strong>; Electrification raised.</td><td>Power and grid demand tied to data centers is showing both volume and pricing power.</td></tr>
+        <tr><td class="up">Raised</td><td><strong>CNC</strong><span class="move pos">1d: +14.0%</span></td><td>FY26 adjusted EPS guide moved to more than <strong>$3.40</strong> from more than <strong>$3.00</strong>.</td><td>Medicaid/Medicare medical-cost execution and Marketplace risk-adjustment evidence improved enough for a real payer re-rating.</td></tr>
+        <tr><td class="up">Raised / narrowed</td><td><strong>ASML</strong><span class="move neg">1d: -2.4%</span></td><td>2026 revenue guide narrowed/raised to <strong>EUR36-40B</strong>.</td><td>Memory capex recovery is broadening the semi-equipment cycle.</td></tr>
+        <tr><td class="up">Raised</td><td><strong>ACI</strong><span class="move neg">1d: -3.0%</span></td><td>Three-year productivity target raised to <strong>$2B</strong> from <strong>$1.5B</strong>.</td><td>Food retail is using cost and data levers to defend profit in a mixed consumer environment.</td></tr>
+        <tr><td class="down">Lowered / deferred</td><td><strong>NKE</strong><span class="move neg">1d: -12.9%</span></td><td>Q4 revenue guide moved to <strong>-2% to -4%</strong>; China expected down about <strong>20%</strong>; full-year and long-term guidance deferred to the fall 2026 investor day.</td><td>Nike remains one of the clearest brand/discretionary resets in the set.</td></tr>
+        <tr><td class="down">Lowered</td><td><strong>DPZ</strong><span class="move neg">1d: -8.8%</span></td><td>2026 U.S. same-store-sales guide moved from about <strong>3%</strong> to positive low single digits.</td><td>Value competition and macro pressure are forcing even a strong franchise system to reset near-term comp expectations.</td></tr>
+        <tr><td class="down">Lower margin / paused buyback</td><td><strong>KMX</strong><span class="move neg">1d: -15.1%</span></td><td>Q1 used retail GPU guided down about <strong>$300</strong> YoY; buybacks paused while leverage sits slightly above target.</td><td>Used-auto unit stabilization is coming with margin give-up and affordability stress.</td></tr>
+        <tr><td class="down">Reinvestment drag</td><td><strong>SPOT</strong><span class="move neg">1d: -12.4%</span></td><td>Q2 operating income guided to <strong>EUR630M</strong> versus Q1 operating income of <strong>EUR715M</strong>.</td><td>AI/cloud/product investment and ad monetization lag are limiting near-term operating leverage despite strong user growth.</td></tr>
+        <tr><td class="down">Widened / cut capacity</td><td><strong>UAL</strong><span class="move neg">1d: -7.3%</span></td><td>3Q/4Q capacity revised to flat to <strong>+2%</strong>, about <strong>5 points</strong> below prior plan; FY EPS widened to <strong>$7-$11</strong>.</td><td>Demand is not collapsing, but fuel/geopolitical uncertainty forces capacity discipline.</td></tr>
+        <tr><td class="down">Lowered</td><td><strong>DHI</strong><span class="move pos">1d: +5.8%</span></td><td>Top end of revenue guide lowered; closings trimmed by about <strong>500</strong>.</td><td>Rate-sensitive housing remains weak enough that builders are managing pace and incentives.</td></tr>
+        <tr><td class="up">Raised / disciplined</td><td><strong>UNH</strong><span class="move pos">1d: +7.0%</span></td><td>Raised/refreshed adjusted EPS to above <strong>$18.25</strong>; MA membership expected down about <strong>1.3M</strong>.</td><td>The read is not a downgrade: UnitedHealth raised the year while accepting lower MA membership to protect pricing and margins.</td></tr>
+        <tr><td class="down">Held despite beat</td><td><strong>EFX</strong><span class="move neg">1d: -10.0%</span></td><td>Guide held despite revenue/margin beat; management indicated it would have raised absent Iran uncertainty.</td><td>Underlying credit-data demand looks better than the unchanged guide, but macro risk kept management conservative.</td></tr>
+        <tr><td class="down">Held / cautious</td><td><strong>ALLY</strong><span class="move pos">1d: +8.1%</span></td><td>NIM guide held at <strong>3.60-3.70%</strong>; NCO guide held at <strong>1.80-2.00%</strong>.</td><td>Credit and margin are improving, but auto lenders are not treating the environment as risk-free.</td></tr>
+        <tr><td class="down">Held / cautious</td><td><strong>LUV</strong><span class="move neg">1d: -3.8%</span></td><td>FY26 capacity moved to roughly <strong>2%</strong>, the low end of prior 2-3%; management did not update the $4 EPS path because of fuel volatility.</td><td>Airline capacity remains disciplined, but fuel makes earnings translation less certain.</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <footer>
+    Selection methodology: I used a bottom-up text pass and a top-down earnings-reaction pass. The bottom-up pass prioritized repeated cross-company signals, sequential inflections, management explanations that changed the mechanism, and hard datapoints large enough to matter. The top-down pass used large earnings reactions, especially reactions that diverged from headline EPS/revenue surprises, to identify where guide quality, margins, backlog, credit, or management tone deserved a deeper read.
+  </footer>
+</main>
+<script>
+(() => {
+  const select = document.getElementById("quarter-select");
+  if (!select) return;
+  select.addEventListener("change", () => {
+    if (select.value) window.location.href = select.value;
+  });
+})();
+</script>
+</body>
+</html>
+
+
+
+

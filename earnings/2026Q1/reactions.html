@@ -1,0 +1,446 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>1Q26 earnings beat/miss/reactions</title>
+  <style>
+    :root {
+      --ink: #14211f;
+      --muted: #5b6763;
+      --line: #d9e0dd;
+      --soft: #f2f6f3;
+      --paper: #fffdf8;
+      --accent: #0f766e;
+      --bad: #93412e;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      color: var(--ink);
+      background: var(--paper);
+      line-height: 1.42;
+    }
+    main { max-width: 980px; margin: 0 auto; padding: 24px 20px 44px; }
+    header { padding-bottom: 10px; margin-bottom: 0; }
+    h1 { font-size: clamp(1.55rem, 2.4vw, 2rem); line-height: 1.08; margin: 0 0 8px; letter-spacing: 0; font-weight: 700; }
+    h2 { font-size: 1.2rem; margin: 18px 0 8px; font-weight: 700; }
+    h3 { font-weight: 700; }
+    p { margin: 0 0 9px; }
+    .dek { color: var(--muted); max-width: 760px; }
+    .report-nav {
+      display: flex;
+      gap: 0;
+      border-bottom: 2px solid var(--ink);
+      margin: 0 0 16px;
+    }
+    .report-nav a {
+      color: var(--muted);
+      text-decoration: none;
+      font-weight: 650;
+      padding: 10px 16px;
+      border: 1px solid transparent;
+      border-bottom: 0;
+      border-radius: 7px 7px 0 0;
+      margin-bottom: -2px;
+    }
+    .report-nav a:hover { color: var(--ink); }
+    .report-nav a.active {
+      color: var(--ink);
+      background: #fff;
+      border-color: var(--ink);
+    }
+    .quarter-picker {
+      margin-left: auto;
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      padding: 0 0 6px 12px;
+      color: var(--muted);
+      font-size: .86rem;
+      font-weight: 650;
+    }
+    .quarter-picker select {
+      font: inherit;
+      color: var(--ink);
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 7px;
+      padding: 5px 26px 5px 8px;
+    }
+    .cards { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 8px; margin: 13px 0; }
+    .card { border: 1px solid var(--line); background: #fff; border-radius: 7px; padding: 10px; }
+    strong { font-weight: 700; }
+    .label { color: var(--muted); text-transform: uppercase; font-size: .72rem; letter-spacing: .06em; font-weight: 700; }
+    .value { font-size: 1.35rem; font-weight: 700; margin-top: 2px; }
+    .ranked { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin: 10px 0 14px; }
+    .ranked div { border: 1px solid var(--line); background: #fff; border-radius: 7px; padding: 10px 12px; }
+    .ranked ul { margin: 6px 0 0; padding-left: 19px; }
+    .ranked li { margin: 3px 0; }
+    table { width: 100%; border-collapse: collapse; background: #fff; border: 1px solid var(--line); border-radius: 7px; overflow: hidden; font-size: .88rem; }
+    th, td { text-align: left; vertical-align: top; padding: 8px 9px; border-bottom: 1px dotted #ccd5d1; }
+    th { background: var(--soft); color: var(--muted); text-transform: uppercase; font-size: .68rem; letter-spacing: .06em; }
+    .sort-button {
+      appearance: none;
+      border: 0;
+      background: transparent;
+      color: inherit;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      padding: 0;
+      text-align: left;
+      text-transform: inherit;
+      letter-spacing: inherit;
+      font: inherit;
+      font-weight: 700;
+    }
+    .sort-button:hover { color: var(--ink); }
+    .sort-indicator::after { content: ""; color: #84908c; font-size: .68rem; }
+    th.sorted-asc .sort-indicator::after { content: "^"; color: var(--accent); }
+    th.sorted-desc .sort-indicator::after { content: "v"; color: var(--accent); }
+    td span { display: block; color: var(--muted); font-size: .78rem; margin-top: 2px; }
+    tr:last-child td { border-bottom: 0; }
+    .missing { color: var(--muted); }
+    footer { border-top: 1px solid var(--line); margin-top: 20px; padding-top: 12px; color: var(--muted); font-size: .85rem; }
+    @media (max-width: 760px) {
+      main { padding: 18px 12px 34px; }
+      .report-nav { overflow-x: auto; }
+      .report-nav a { white-space: nowrap; padding: 9px 12px; }
+      .quarter-picker { margin-left: 0; padding: 8px 0 6px 8px; white-space: nowrap; }
+      .cards, .ranked { grid-template-columns: 1fr; }
+      table { display: block; overflow-x: auto; white-space: nowrap; }
+    }
+  </style>
+</head>
+<body>
+<main>
+  <header>
+    <h1>1Q26 earnings beat/miss/reactions</h1>
+    <p class="dek">For each company discovered in the local earnings-call extract universe, plus explicitly requested stock-reaction-only checks, this pulls Bloomberg/XBBG reported earnings data using the BBG project's methodology. Stock reaction is timing-aware: before-market releases use that day's close, after-market releases use the next trading-day close. Industry groupings use GICS sector and industry-group classifications from the BBG snapshot, with explicit fallbacks for uncovered tickers.</p>
+  </header>
+  <nav class="report-nav" aria-label="Report navigation">
+    <a href="themes.html">Earnings themes</a>
+    <a class="active" href="reactions.html" aria-current="page">Earnings reactions</a>
+    <div class="quarter-picker">
+      <label for="quarter-select">Quarter</label>
+      <select id="quarter-select" aria-label="Quarter selector">
+        <option value="../2026Q1/reactions.html" selected>1Q26</option>
+      </select>
+    </div>
+  </nav>
+
+  <div class="cards">
+    <div class="card"><div class="label">Companies in universe</div><div class="value">144</div></div>
+    <div class="card"><div class="label">Returned records</div><div class="value">143</div></div>
+    <div class="card"><div class="label">Median EPS surprise</div><div class="value">4.8%</div></div>
+    <div class="card"><div class="label">Median D+1 reaction</div><div class="value">0.0%</div></div>
+  </div>
+
+  <div class="ranked">
+    <div>
+      <h3>Largest Positive D+1 Reactions</h3>
+      <ul><li><strong>AMD</strong> 23.4% after 1Q26</li>
+<li><strong>ROIV</strong> 22.1% after 3Q26</li>
+<li><strong>NXP</strong> 22.1% after 1Q26</li>
+<li><strong>GNRC</strong> 16.5% after 1Q26</li>
+<li><strong>CNC</strong> 14.0% after 1Q26</li>
+<li><strong>GEV</strong> 13.8% after 1Q26</li>
+<li><strong>RCI</strong> 13.6% after 1Q26</li>
+<li><strong>CHWY</strong> 13.3% after 4Q26</li>
+<li><strong>SNDK</strong> 11.5% after 3Q26</li>
+<li><strong>FIVE</strong> 9.9% after 4Q26</li></ul>
+    </div>
+    <div>
+      <h3>Largest Negative D+1 Reactions</h3>
+      <ul><li><strong>CHTR</strong> -25.5% after 1Q26</li>
+<li><strong>ULTA</strong> -17.9% after 4Q26</li>
+<li><strong>SOFI</strong> -15.4% after 1Q26</li>
+<li><strong>NOW</strong> -15.3% after 1Q26</li>
+<li><strong>KMX</strong> -15.1% after 4Q26</li>
+<li><strong>RH</strong> -14.5% after 4Q26</li>
+<li><strong>CYH</strong> -14.0% after 1Q26</li>
+<li><strong>NKE</strong> -12.9% after 3Q26</li>
+<li><strong>W</strong> -12.8% after 1Q26</li>
+<li><strong>SPOT</strong> -12.4% after 1Q26</li></ul>
+    </div>
+  </div>
+
+  
+            <section>
+              <h2>All companies</h2>
+              <table>
+                <thead>
+                  <tr>
+                    <th>Ticker</th><th>GICS sector</th><th>Reported date</th><th>Reported quarter</th>
+                    <th>EPS beat/miss</th><th>Revenue beat/miss</th><th>D+1 stock</th>
+                    <th>1W stock</th><th>1W vs SPX</th><th>FY EPS revision</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class=''><td><strong>APD</strong></td><td>Materials</td><td>2026-04-30 </td><td>2Q26</td><td>4.3%</td><td>3.2%</td><td>-0.8%</td><td>-2.5%</td><td>-5.3%</td><td>1.1%</td></tr><tr class=''><td><strong>CCK</strong></td><td>Materials</td><td>2026-04-27 </td><td>1Q26</td><td>6.1%</td><td>7.3%</td><td>0.5%</td><td>-2.1%</td><td>-2.6%</td><td>0.2%</td></tr><tr class=''><td><strong>SHW</strong></td><td>Materials</td><td>2026-04-28 BMO</td><td>1Q26</td><td>3.6%</td><td>2.0%</td><td>-3.5%</td><td>-7.0%</td><td>-8.2%</td><td>-0.1%</td></tr><tr class=''><td><strong>AER</strong></td><td>Industrials</td><td>2026-04-29 BMO</td><td>1Q26</td><td>42.9%</td><td>9.6%</td><td>0.7%</td><td>10.2%</td><td>7.0%</td><td>7.9%</td></tr><tr class=''><td><strong>AIR</strong></td><td>Industrials</td><td>2026-03-24 </td><td>3Q26</td><td>NA</td><td>NA</td><td>4.2%</td><td>5.8%</td><td>6.6%</td><td>3.5%</td></tr><tr class=''><td><strong>BA</strong></td><td>Industrials</td><td>2026-04-22 BMO</td><td>1Q26</td><td>76.1%</td><td>3.3%</td><td>5.5%</td><td>2.3%</td><td>1.2%</td><td>11.8%</td></tr><tr class=''><td><strong>FAST</strong></td><td>Industrials</td><td>2026-04-13 </td><td>1Q26</td><td>0.7%</td><td>0.5%</td><td>-6.9%</td><td>-7.3%</td><td>-11.6%</td><td>0.5%</td></tr><tr class=''><td><strong>GE</strong></td><td>Industrials</td><td>2026-04-21 BMO</td><td>1Q26</td><td>16.5%</td><td>8.7%</td><td>-5.6%</td><td>-4.7%</td><td>-5.2%</td><td>1.3%</td></tr><tr class=''><td><strong>GEV</strong></td><td>Industrials</td><td>2026-04-22 BMO</td><td>1Q26</td><td>-56.8%</td><td>2.5%</td><td>13.8%</td><td>7.2%</td><td>6.2%</td><td>30.6%</td></tr><tr class=''><td><strong>GNRC</strong></td><td>Industrials</td><td>2026-04-29 BMO</td><td>1Q26</td><td>36.0%</td><td>1.2%</td><td>16.5%</td><td>23.2%</td><td>20.0%</td><td>6.8%</td></tr><tr class=''><td><strong>HON</strong></td><td>Industrials</td><td>2026-04-23 </td><td>1Q26</td><td>4.9%</td><td>-1.6%</td><td>-2.6%</td><td>-2.6%</td><td>-3.6%</td><td>0.1%</td></tr><tr class=''><td><strong>LMT</strong></td><td>Industrials</td><td>2026-04-23 </td><td>1Q26</td><td>-6.4%</td><td>-1.2%</td><td>-4.6%</td><td>-6.7%</td><td>-7.7%</td><td>0.1%</td></tr><tr class=''><td><strong>MOG</strong></td><td>Industrials</td><td>2026-04-24 </td><td>2Q26</td><td>NA</td><td>NA</td><td>2.3%</td><td>-1.8%</td><td>-3.5%</td><td>2.9%</td></tr><tr class=''><td><strong>OTIS</strong></td><td>Industrials</td><td>2026-04-22 </td><td>1Q26</td><td>-0.3%</td><td>1.8%</td><td>-1.3%</td><td>-2.9%</td><td>-3.9%</td><td>-0.5%</td></tr><tr class=''><td><strong>SNA</strong></td><td>Industrials</td><td>2026-04-23 </td><td>1Q26</td><td>-1.2%</td><td>2.6%</td><td>2.2%</td><td>0.3%</td><td>-0.7%</td><td>-1.2%</td></tr><tr class=''><td><strong>URI</strong></td><td>Industrials</td><td>2026-04-22 </td><td>1Q26</td><td>7.8%</td><td>2.6%</td><td>-0.4%</td><td>18.1%</td><td>17.1%</td><td>2.0%</td></tr><tr class=''><td><strong>VRT</strong></td><td>Industrials</td><td>2026-04-22 BMO</td><td>1Q26</td><td>15.5%</td><td>0.3%</td><td>-2.3%</td><td>-2.0%</td><td>-3.0%</td><td>5.7%</td></tr><tr class=''><td><strong>WSO</strong></td><td>Industrials</td><td>2026-04-28 BMO</td><td>1Q26</td><td>10.1%</td><td>NA</td><td>-4.0%</td><td>-7.9%</td><td>-9.1%</td><td>1.5%</td></tr><tr class=''><td><strong>EFX</strong></td><td>Industrials</td><td>2026-04-21 AMC</td><td>1Q26</td><td>9.7%</td><td>2.1%</td><td>-10.0%</td><td>-13.1%</td><td>-13.4%</td><td>0.8%</td></tr><tr class='missing'><td><strong>EXPN</strong></td><td>Industrials</td><td>NA </td><td>NA</td><td>NA</td><td>NA</td><td>NA</td><td>NA</td><td>NA</td><td>NA</td></tr><tr class=''><td><strong>ROL</strong></td><td>Industrials</td><td>2026-04-22 </td><td>1Q26</td><td>1.7%</td><td>1.0%</td><td>1.1%</td><td>1.1%</td><td>0.1%</td><td>-0.2%</td></tr><tr class=''><td><strong>TRU</strong></td><td>Industrials</td><td>2026-04-28 </td><td>1Q26</td><td>6.3%</td><td>2.7%</td><td>-1.6%</td><td>-4.1%</td><td>-5.3%</td><td>0.5%</td></tr><tr class=''><td><strong>AAL</strong></td><td>Industrials</td><td>2026-04-23 BMO</td><td>1Q26</td><td>12.9%</td><td>0.5%</td><td>2.4%</td><td>1.8%</td><td>0.8%</td><td>427.3%</td></tr><tr class=''><td><strong>DAL</strong></td><td>Industrials</td><td>2026-04-08 BMO</td><td>1Q26</td><td>12.5%</td><td>0.9%</td><td>3.8%</td><td>9.7%</td><td>3.6%</td><td>4.2%</td></tr><tr class=''><td><strong>FDX</strong></td><td>Industrials</td><td>2026-03-19 AMC</td><td>3Q26</td><td>26.1%</td><td>2.2%</td><td>2.6%</td><td>-1.7%</td><td>2.2%</td><td>2.8%</td></tr><tr class=''><td><strong>LUV</strong></td><td>Industrials</td><td>2026-04-22 BMO</td><td>1Q26</td><td>-1.7%</td><td>-0.5%</td><td>-3.8%</td><td>-9.0%</td><td>-10.1%</td><td>-1.4%</td></tr><tr class=''><td><strong>UAL</strong></td><td>Industrials</td><td>2026-04-21 AMC</td><td>1Q26</td><td>9.1%</td><td>1.1%</td><td>-7.3%</td><td>-10.4%</td><td>-10.8%</td><td>0.4%</td></tr><tr class=''><td><strong>UNP</strong></td><td>Industrials</td><td>2026-04-23 BMO</td><td>1Q26</td><td>2.3%</td><td>-0.5%</td><td>8.8%</td><td>8.1%</td><td>7.0%</td><td>0.9%</td></tr><tr class=''><td><strong>UPS</strong></td><td>Industrials</td><td>2026-04-28 BMO</td><td>1Q26</td><td>3.5%</td><td>1.0%</td><td>-4.0%</td><td>-9.4%</td><td>-10.6%</td><td>1.0%</td></tr><tr class=''><td><strong>TSLA</strong></td><td>Consumer Discretionary</td><td>2026-04-22 AMC</td><td>1Q26</td><td>20.6%</td><td>0.9%</td><td>-3.3%</td><td>-1.2%</td><td>-3.3%</td><td>-1.6%</td></tr><tr class=''><td><strong>DHI</strong></td><td>Consumer Discretionary</td><td>2026-04-21 BMO</td><td>2Q26</td><td>4.5%</td><td>-0.9%</td><td>5.8%</td><td>2.0%</td><td>1.6%</td><td>0.9%</td></tr><tr class=''><td><strong>KER</strong></td><td>Consumer Discretionary</td><td>2026-04-14 </td><td>1Q26</td><td>NA</td><td>-1.5%</td><td>2.9%</td><td>-10.6%</td><td>-13.2%</td><td>0.9%</td></tr><tr class=''><td><strong>MC</strong></td><td>Consumer Discretionary</td><td>2026-04-13 </td><td>1Q26</td><td>NA</td><td>-2.4%</td><td>-0.3%</td><td>1.5%</td><td>-2.8%</td><td>-1.5%</td></tr><tr class=''><td><strong>NKE</strong></td><td>Consumer Discretionary</td><td>2026-03-31 AMC</td><td>3Q26</td><td>15.1%</td><td>0.4%</td><td>-12.9%</td><td>-14.1%</td><td>-21.7%</td><td>-13.0%</td></tr><tr class=''><td><strong>PHM</strong></td><td>Consumer Discretionary</td><td>2026-04-23 BMO</td><td>1Q26</td><td>-1.2%</td><td>1.3%</td><td>2.4%</td><td>-4.1%</td><td>-5.1%</td><td>-0.3%</td></tr><tr class=''><td><strong>PVH</strong></td><td>Consumer Discretionary</td><td>2026-03-31 </td><td>4Q26</td><td>15.4%</td><td>2.9%</td><td>4.8%</td><td>31.5%</td><td>24.5%</td><td>2.9%</td></tr><tr class=''><td><strong>SGI</strong></td><td>Consumer Discretionary</td><td>2026-05-07 AMC</td><td>1Q26</td><td>2.8%</td><td>-1.6%</td><td>-11.8%</td><td>NA</td><td>NA</td><td>-1.0%</td></tr><tr class=''><td><strong>BKNG</strong></td><td>Consumer Discretionary</td><td>2026-04-28 AMC</td><td>1Q26</td><td>6.1%</td><td>0.5%</td><td>-2.0%</td><td>-5.2%</td><td>-7.8%</td><td>-1.1%</td></tr><tr class=''><td><strong>DPZ</strong></td><td>Consumer Discretionary</td><td>2026-04-27 BMO</td><td>1Q26</td><td>-3.1%</td><td>-1.1%</td><td>-8.8%</td><td>-10.2%</td><td>-10.7%</td><td>-2.0%</td></tr><tr class=''><td><strong>HLT</strong></td><td>Consumer Discretionary</td><td>2026-04-28 BMO</td><td>1Q26</td><td>1.8%</td><td>-0.6%</td><td>-2.7%</td><td>-5.9%</td><td>-7.1%</td><td>0.1%</td></tr><tr class=''><td><strong>MAR</strong></td><td>Consumer Discretionary</td><td>2026-05-06 BMO</td><td>1Q26</td><td>6.4%</td><td>0.4%</td><td>1.3%</td><td>NA</td><td>NA</td><td>0.2%</td></tr><tr class=''><td><strong>MGM</strong></td><td>Consumer Discretionary</td><td>2026-04-29 AMC</td><td>1Q26</td><td>-3.9%</td><td>2.0%</td><td>-2.0%</td><td>-4.1%</td><td>-6.9%</td><td>1.6%</td></tr><tr class=''><td><strong>SBUX</strong></td><td>Consumer Discretionary</td><td>2026-04-28 AMC</td><td>2Q26</td><td>17.4%</td><td>4.3%</td><td>7.8%</td><td>8.7%</td><td>6.1%</td><td>3.4%</td></tr><tr class=''><td><strong>ABG</strong></td><td>Consumer Discretionary</td><td>2026-04-28 </td><td>1Q26</td><td>NA</td><td>NA</td><td>0.3%</td><td>-0.8%</td><td>-1.9%</td><td>-0.5%</td></tr><tr class=''><td><strong>BABA</strong></td><td>Consumer Discretionary</td><td>2026-03-19 BMO</td><td>3Q26</td><td>-43.4%</td><td>-1.7%</td><td>-7.1%</td><td>-6.7%</td><td>-4.5%</td><td>-10.7%</td></tr><tr class=''><td><strong>CHWY</strong></td><td>Consumer Discretionary</td><td>2026-03-25 BMO</td><td>4Q26</td><td>-2.5%</td><td>-0.0%</td><td>13.3%</td><td>13.5%</td><td>13.2%</td><td>5.2%</td></tr><tr class=''><td><strong>DKS</strong></td><td>Consumer Discretionary</td><td>2026-03-12 </td><td>4Q26</td><td>-0.1%</td><td>12.4%</td><td>1.1%</td><td>-1.3%</td><td>1.2%</td><td>-2.5%</td></tr><tr class=''><td><strong>FIVE</strong></td><td>Consumer Discretionary</td><td>2026-03-18 AMC</td><td>4Q26</td><td>7.9%</td><td>1.0%</td><td>9.9%</td><td>6.0%</td><td>9.5%</td><td>13.3%</td></tr><tr class=''><td><strong>HD</strong></td><td>Consumer Discretionary</td><td>2026-02-24 BMO</td><td>4Q26</td><td>6.7%</td><td>-0.2%</td><td>2.0%</td><td>-2.7%</td><td>-2.4%</td><td>-0.3%</td></tr><tr class=''><td><strong>KMX</strong></td><td>Consumer Discretionary</td><td>2026-04-14 BMO</td><td>4Q26</td><td>-476.3%</td><td>3.6%</td><td>-15.1%</td><td>-20.5%</td><td>-23.0%</td><td>-4.3%</td></tr><tr class=''><td><strong>RH</strong></td><td>Consumer Discretionary</td><td>2026-03-31 AMC</td><td>4Q26</td><td>-30.1%</td><td>-3.5%</td><td>-14.5%</td><td>-6.2%</td><td>-13.8%</td><td>-42.6%</td></tr><tr class=''><td><strong>TSCO</strong></td><td>Consumer Discretionary</td><td>2026-04-21 BMO</td><td>1Q26</td><td>-9.1%</td><td>-1.2%</td><td>-11.7%</td><td>-20.6%</td><td>-21.0%</td><td>-2.1%</td></tr><tr class=''><td><strong>ULTA</strong></td><td>Consumer Discretionary</td><td>2026-03-12 AMC</td><td>4Q26</td><td>-1.6%</td><td>1.8%</td><td>-17.9%</td><td>-18.8%</td><td>-14.8%</td><td>0.1%</td></tr><tr class=''><td><strong>W</strong></td><td>Consumer Discretionary</td><td>2026-04-30 BMO</td><td>1Q26</td><td>-12.8%</td><td>1.5%</td><td>-12.8%</td><td>-9.7%</td><td>-12.5%</td><td>0.1%</td></tr><tr class=''><td><strong>ACI</strong></td><td>Consumer Staples</td><td>2026-04-14 BMO</td><td>4Q26</td><td>10.9%</td><td>-0.6%</td><td>-3.0%</td><td>1.5%</td><td>-1.1%</td><td>0.6%</td></tr><tr class=''><td><strong>DG</strong></td><td>Consumer Staples</td><td>2026-03-12 BMO</td><td>4Q26</td><td>17.3%</td><td>1.0%</td><td>-6.1%</td><td>-14.8%</td><td>-12.3%</td><td>2.7%</td></tr><tr class=''><td><strong>DLTR</strong></td><td>Consumer Staples</td><td>2026-03-16 BMO</td><td>4Q26</td><td>1.2%</td><td>-0.3%</td><td>6.4%</td><td>0.8%</td><td>1.5%</td><td>1.2%</td></tr><tr class=''><td><strong>SYY</strong></td><td>Consumer Staples</td><td>2026-04-28 </td><td>3Q26</td><td>-0.4%</td><td>-0.1%</td><td>-2.6%</td><td>-3.3%</td><td>-4.5%</td><td>-0.4%</td></tr><tr class=''><td><strong>WMT</strong></td><td>Consumer Staples</td><td>2026-02-19 BMO</td><td>4Q26</td><td>1.6%</td><td>0.1%</td><td>-1.4%</td><td>-1.7%</td><td>-2.1%</td><td>-0.6%</td></tr><tr class=''><td><strong>KO</strong></td><td>Consumer Staples</td><td>2026-04-28 </td><td>1Q26</td><td>6.0%</td><td>2.7%</td><td>3.9%</td><td>4.0%</td><td>2.8%</td><td>1.1%</td></tr><tr class=''><td><strong>LW</strong></td><td>Consumer Staples</td><td>2026-04-01 </td><td>3Q26</td><td>18.2%</td><td>4.9%</td><td>-8.9%</td><td>-1.5%</td><td>-6.1%</td><td>0.8%</td></tr><tr class=''><td><strong>PEP</strong></td><td>Consumer Staples</td><td>2026-04-16 </td><td>1Q26</td><td>4.1%</td><td>2.7%</td><td>2.3%</td><td>0.5%</td><td>-0.7%</td><td>0.4%</td></tr><tr class=''><td><strong>STZ</strong></td><td>Consumer Staples</td><td>2026-04-08 </td><td>4Q26</td><td>9.9%</td><td>2.3%</td><td>-2.3%</td><td>6.6%</td><td>0.4%</td><td>-4.6%</td></tr><tr class=''><td><strong>PG</strong></td><td>Consumer Staples</td><td>2026-04-24 BMO</td><td>3Q26</td><td>1.9%</td><td>3.6%</td><td>1.7%</td><td>1.1%</td><td>-0.7%</td><td>-1.5%</td></tr><tr class=''><td><strong>CNC</strong></td><td>Health Care</td><td>2026-04-28 BMO</td><td>1Q26</td><td>47.8%</td><td>5.3%</td><td>14.0%</td><td>21.8%</td><td>20.6%</td><td>15.2%</td></tr><tr class=''><td><strong>CYH</strong></td><td>Health Care</td><td>2026-04-21 AMC</td><td>1Q26</td><td>-290.2%</td><td>0.3%</td><td>-14.0%</td><td>-8.9%</td><td>-9.3%</td><td>29.3%</td></tr><tr class=''><td><strong>DGX</strong></td><td>Health Care</td><td>2026-04-21 BMO</td><td>1Q26</td><td>6.2%</td><td>2.6%</td><td>4.5%</td><td>-0.6%</td><td>-1.1%</td><td>1.4%</td></tr><tr class=''><td><strong>ELV</strong></td><td>Health Care</td><td>2026-04-22 </td><td>1Q26</td><td>14.3%</td><td>3.5%</td><td>0.0%</td><td>14.8%</td><td>13.8%</td><td>3.4%</td></tr><tr class=''><td><strong>HCA</strong></td><td>Health Care</td><td>2026-04-24 BMO</td><td>1Q26</td><td>0.7%</td><td>0.1%</td><td>-8.8%</td><td>-8.6%</td><td>-10.3%</td><td>-0.1%</td></tr><tr class=''><td><strong>HQY</strong></td><td>Health Care</td><td>2026-03-17 AMC</td><td>4Q26</td><td>4.6%</td><td>0.5%</td><td>1.1%</td><td>4.8%</td><td>6.4%</td><td>0.9%</td></tr><tr class=''><td><strong>ISRG</strong></td><td>Health Care</td><td>2026-04-21 AMC</td><td>1Q26</td><td>19.3%</td><td>5.8%</td><td>3.9%</td><td>-2.5%</td><td>-2.9%</td><td>2.9%</td></tr><tr class=''><td><strong>MOH</strong></td><td>Health Care</td><td>2026-04-22 </td><td>1Q26</td><td>20.3%</td><td>-0.7%</td><td>1.3%</td><td>30.1%</td><td>29.1%</td><td>5.9%</td></tr><tr class=''><td><strong>SHC</strong></td><td>Health Care</td><td>2026-05-05 </td><td>1Q26</td><td>3.4%</td><td>3.4%</td><td>-0.4%</td><td>NA</td><td>NA</td><td>0.4%</td></tr><tr class=''><td><strong>UNH</strong></td><td>Health Care</td><td>2026-04-21 BMO</td><td>1Q26</td><td>10.0%</td><td>2.3%</td><td>7.0%</td><td>13.4%</td><td>13.0%</td><td>2.9%</td></tr><tr class=''><td><strong>ZBH</strong></td><td>Health Care</td><td>2026-04-28 BMO</td><td>1Q26</td><td>12.4%</td><td>0.8%</td><td>-10.6%</td><td>-10.3%</td><td>-11.5%</td><td>0.8%</td></tr><tr class=''><td><strong>DHR</strong></td><td>Health Care</td><td>2026-04-21 BMO</td><td>1Q26</td><td>6.3%</td><td>-0.6%</td><td>-0.5%</td><td>-8.5%</td><td>-8.9%</td><td>0.5%</td></tr><tr class=''><td><strong>MEDP</strong></td><td>Health Care</td><td>2026-04-22 </td><td>1Q26</td><td>12.8%</td><td>1.8%</td><td>-1.2%</td><td>-19.7%</td><td>-20.7%</td><td>-0.8%</td></tr><tr class=''><td><strong>ROIV</strong></td><td>Health Care</td><td>2026-02-06 </td><td>3Q26</td><td>NA</td><td>NA</td><td>22.1%</td><td>25.1%</td><td>24.6%</td><td>5.8%</td></tr><tr class=''><td><strong>TMO</strong></td><td>Health Care</td><td>2026-04-23 BMO</td><td>1Q26</td><td>3.8%</td><td>1.5%</td><td>-9.2%</td><td>-6.8%</td><td>-7.8%</td><td>1.0%</td></tr><tr class=''><td><strong>BAC</strong></td><td>Financials</td><td>2026-04-15 BMO</td><td>1Q26</td><td>9.9%</td><td>0.9%</td><td>1.8%</td><td>-0.4%</td><td>-2.9%</td><td>2.1%</td></tr><tr class=''><td><strong>C</strong></td><td>Financials</td><td>2026-04-14 BMO</td><td>1Q26</td><td>15.3%</td><td>4.5%</td><td>2.6%</td><td>4.3%</td><td>1.7%</td><td>3.6%</td></tr><tr class=''><td><strong>JPM</strong></td><td>Financials</td><td>2026-04-14 BMO</td><td>1Q26</td><td>9.5%</td><td>2.6%</td><td>-0.8%</td><td>-0.2%</td><td>-2.8%</td><td>2.5%</td></tr><tr class=''><td><strong>MTB</strong></td><td>Financials</td><td>2026-04-15 </td><td>1Q26</td><td>4.1%</td><td>0.5%</td><td>-1.6%</td><td>-1.3%</td><td>-3.8%</td><td>-0.2%</td></tr><tr class=''><td><strong>PNC</strong></td><td>Financials</td><td>2026-04-15 BMO</td><td>1Q26</td><td>4.2%</td><td>-0.8%</td><td>0.4%</td><td>1.8%</td><td>-0.7%</td><td>1.2%</td></tr><tr class=''><td><strong>USB</strong></td><td>Financials</td><td>2026-04-16 </td><td>1Q26</td><td>3.1%</td><td>0.1%</td><td>-1.6%</td><td>0.5%</td><td>-0.8%</td><td>1.0%</td></tr><tr class=''><td><strong>WFC</strong></td><td>Financials</td><td>2026-04-14 BMO</td><td>1Q26</td><td>-1.1%</td><td>-1.4%</td><td>-5.7%</td><td>-5.9%</td><td>-8.5%</td><td>-0.6%</td></tr><tr class=''><td><strong>ALLY</strong></td><td>Financials</td><td>2026-04-17 BMO</td><td>1Q26</td><td>19.2%</td><td>-1.8%</td><td>8.1%</td><td>5.3%</td><td>3.5%</td><td>2.4%</td></tr><tr class=''><td><strong>ARCC</strong></td><td>Financials</td><td>2026-04-28 </td><td>1Q26</td><td>-2.7%</td><td>-1.7%</td><td>1.7%</td><td>4.0%</td><td>2.8%</td><td>-0.8%</td></tr><tr class=''><td><strong>AXP</strong></td><td>Financials</td><td>2026-04-23 BMO</td><td>1Q26</td><td>6.2%</td><td>1.6%</td><td>-4.3%</td><td>-3.0%</td><td>-4.0%</td><td>0.7%</td></tr><tr class=''><td><strong>BLK</strong></td><td>Financials</td><td>2026-04-14 </td><td>1Q26</td><td>9.1%</td><td>3.1%</td><td>3.0%</td><td>1.9%</td><td>-0.7%</td><td>1.6%</td></tr><tr class=''><td><strong>CME</strong></td><td>Financials</td><td>2026-04-22 BMO</td><td>1Q26</td><td>-0.2%</td><td>-1.4%</td><td>0.5%</td><td>1.0%</td><td>-0.0%</td><td>-0.3%</td></tr><tr class=''><td><strong>COF</strong></td><td>Financials</td><td>2026-04-21 AMC</td><td>1Q26</td><td>-3.1%</td><td>-0.9%</td><td>-3.0%</td><td>-7.2%</td><td>-7.6%</td><td>-3.3%</td></tr><tr class=''><td><strong>GS</strong></td><td>Financials</td><td>2026-04-13 BMO</td><td>1Q26</td><td>7.4%</td><td>1.6%</td><td>-1.9%</td><td>3.7%</td><td>-0.5%</td><td>1.4%</td></tr><tr class=''><td><strong>LPRO</strong></td><td>Financials</td><td>2026-05-07 </td><td>1Q26</td><td>NA</td><td>NA</td><td>-5.3%</td><td>NA</td><td>NA</td><td>0.0%</td></tr><tr class=''><td><strong>MA</strong></td><td>Financials</td><td>2026-04-30 </td><td>1Q26</td><td>4.8%</td><td>1.8%</td><td>-4.2%</td><td>-4.6%</td><td>-7.4%</td><td>0.8%</td></tr><tr class=''><td><strong>MCO</strong></td><td>Financials</td><td>2026-04-22 BMO</td><td>1Q26</td><td>2.3%</td><td>0.7%</td><td>1.6%</td><td>0.1%</td><td>-0.9%</td><td>-0.1%</td></tr><tr class=''><td><strong>MS</strong></td><td>Financials</td><td>2026-04-15 </td><td>1Q26</td><td>15.2%</td><td>4.4%</td><td>4.5%</td><td>4.2%</td><td>1.8%</td><td>3.5%</td></tr><tr class=''><td><strong>NTRS</strong></td><td>Financials</td><td>2026-04-21 </td><td>1Q26</td><td>NA</td><td>NA</td><td>8.0%</td><td>5.0%</td><td>4.6%</td><td>5.0%</td></tr><tr class=''><td><strong>RJF</strong></td><td>Financials</td><td>2026-04-22 </td><td>2Q26</td><td>NA</td><td>NA</td><td>-0.0%</td><td>0.7%</td><td>-0.4%</td><td>0.5%</td></tr><tr class=''><td><strong>SCHW</strong></td><td>Financials</td><td>2026-04-16 </td><td>1Q26</td><td>2.6%</td><td>-0.4%</td><td>-7.6%</td><td>-11.3%</td><td>-12.5%</td><td>0.9%</td></tr><tr class=''><td><strong>SOFI</strong></td><td>Financials</td><td>2026-04-29 BMO</td><td>1Q26</td><td>-0.8%</td><td>3.7%</td><td>-15.4%</td><td>-11.2%</td><td>-14.4%</td><td>0.1%</td></tr><tr class=''><td><strong>SPGI</strong></td><td>Financials</td><td>2026-04-28 BMO</td><td>1Q26</td><td>3.2%</td><td>2.4%</td><td>-0.9%</td><td>-3.0%</td><td>-4.2%</td><td>0.6%</td></tr><tr class=''><td><strong>SYF</strong></td><td>Financials</td><td>2026-04-21 BMO</td><td>1Q26</td><td>2.9%</td><td>-2.3%</td><td>-1.2%</td><td>-3.0%</td><td>-3.4%</td><td>0.8%</td></tr><tr class=''><td><strong>WU</strong></td><td>Financials</td><td>2026-04-24 </td><td>1Q26</td><td>-36.7%</td><td>2.3%</td><td>-4.6%</td><td>-1.3%</td><td>-3.0%</td><td>-2.0%</td></tr><tr class=''><td><strong>BRO</strong></td><td>Financials</td><td>2026-04-27 </td><td>1Q26</td><td>1.8%</td><td>NA</td><td>0.3%</td><td>-12.5%</td><td>-13.0%</td><td>-1.0%</td></tr><tr class=''><td><strong>CB</strong></td><td>Financials</td><td>2026-04-21 </td><td>1Q26</td><td>3.3%</td><td>NA</td><td>-0.2%</td><td>0.1%</td><td>-0.3%</td><td>0.7%</td></tr><tr class=''><td><strong>GSHD</strong></td><td>Financials</td><td>2026-04-22 </td><td>1Q26</td><td>88.8%</td><td>10.5%</td><td>2.0%</td><td>5.7%</td><td>4.7%</td><td>5.4%</td></tr><tr class=''><td><strong>TRV</strong></td><td>Financials</td><td>2026-04-16 </td><td>1Q26</td><td>8.9%</td><td>-3.6%</td><td>-0.2%</td><td>2.7%</td><td>1.5%</td><td>1.4%</td></tr><tr class=''><td><strong>WRB</strong></td><td>Financials</td><td>2026-04-21 </td><td>1Q26</td><td>14.6%</td><td>NA</td><td>-1.2%</td><td>1.4%</td><td>1.0%</td><td>2.1%</td></tr><tr class=''><td><strong>ACN</strong></td><td>Information Technology</td><td>2026-03-19 BMO</td><td>2Q26</td><td>2.8%</td><td>1.0%</td><td>4.3%</td><td>0.7%</td><td>2.9%</td><td>0.4%</td></tr><tr class=''><td><strong>ADBE</strong></td><td>Information Technology</td><td>2026-03-12 AMC</td><td>1Q26</td><td>3.0%</td><td>1.9%</td><td>-8.9%</td><td>-9.3%</td><td>-5.4%</td><td>0.5%</td></tr><tr class=''><td><strong>CDNS</strong></td><td>Information Technology</td><td>2026-04-27 </td><td>1Q26</td><td>4.0%</td><td>1.2%</td><td>1.1%</td><td>5.0%</td><td>4.5%</td><td>1.0%</td></tr><tr class=''><td><strong>FICO</strong></td><td>Information Technology</td><td>2026-04-28 AMC</td><td>2Q26</td><td>12.6%</td><td>8.4%</td><td>2.9%</td><td>5.2%</td><td>2.6%</td><td>4.2%</td></tr><tr class=''><td><strong>IBM</strong></td><td>Information Technology</td><td>2026-04-22 AMC</td><td>1Q26</td><td>5.7%</td><td>1.5%</td><td>-9.6%</td><td>-9.7%</td><td>-11.7%</td><td>0.7%</td></tr><tr class=''><td><strong>INFY</strong></td><td>Information Technology</td><td>2026-04-23 BMO</td><td>4Q26</td><td>NA</td><td>NA</td><td>-4.0%</td><td>-7.6%</td><td>-8.6%</td><td>-1.7%</td></tr><tr class=''><td><strong>IT</strong></td><td>Information Technology</td><td>2026-05-05 </td><td>1Q26</td><td>13.7%</td><td>-0.2%</td><td>1.2%</td><td>NA</td><td>NA</td><td>4.3%</td></tr><tr class=''><td><strong>NOW</strong></td><td>Information Technology</td><td>2026-04-22 AMC</td><td>1Q26</td><td>-0.2%</td><td>0.7%</td><td>-15.3%</td><td>-11.8%</td><td>-13.9%</td><td>0.0%</td></tr><tr class=''><td><strong>CLS</strong></td><td>Information Technology</td><td>2026-04-27 AMC</td><td>1Q26</td><td>4.3%</td><td>0.1%</td><td>-11.9%</td><td>1.8%</td><td>0.5%</td><td>17.7%</td></tr><tr class=''><td><strong>JBL</strong></td><td>Information Technology</td><td>2026-03-18 </td><td>2Q26</td><td>7.2%</td><td>6.5%</td><td>-1.4%</td><td>8.0%</td><td>9.8%</td><td>7.9%</td></tr><tr class=''><td><strong>SNDK</strong></td><td>Information Technology</td><td>2026-04-30 AMC</td><td>3Q26</td><td>61.3%</td><td>26.1%</td><td>11.5%</td><td>46.8%</td><td>43.1%</td><td>43.5%</td></tr><tr class=''><td><strong>STX</strong></td><td>Information Technology</td><td>2026-04-28 AMC</td><td>3Q26</td><td>17.1%</td><td>5.4%</td><td>8.0%</td><td>32.0%</td><td>29.3%</td><td>26.7%</td></tr><tr class=''><td><strong>ALAB</strong></td><td>Information Technology</td><td>2026-05-05 AMC</td><td>1Q26</td><td>13.0%</td><td>5.5%</td><td>6.3%</td><td>NA</td><td>NA</td><td>16.0%</td></tr><tr class=''><td><strong>AMD</strong></td><td>Information Technology</td><td>2026-05-05 AMC</td><td>1Q26</td><td>6.8%</td><td>3.7%</td><td>23.4%</td><td>NA</td><td>NA</td><td>8.0%</td></tr><tr class=''><td><strong>AMKR</strong></td><td>Information Technology</td><td>2026-04-27 </td><td>1Q26</td><td>27.9%</td><td>2.0%</td><td>-3.2%</td><td>-9.1%</td><td>-9.6%</td><td>19.6%</td></tr><tr class=''><td><strong>ARM</strong></td><td>Information Technology</td><td>2026-05-06 AMC</td><td>4Q26</td><td>2.7%</td><td>1.3%</td><td>2.1%</td><td>NA</td><td>NA</td><td>2.2%</td></tr><tr class=''><td><strong>ASM</strong></td><td>Information Technology</td><td>2026-03-10 </td><td>4Q25</td><td>NA</td><td>NA</td><td>5.5%</td><td>-10.9%</td><td>-9.8%</td><td>0.9%</td></tr><tr class=''><td><strong>ASML</strong></td><td>Information Technology</td><td>2026-04-15 BMO</td><td>1Q26</td><td>NA</td><td>0.9%</td><td>-2.4%</td><td>-4.9%</td><td>-7.4%</td><td>5.9%</td></tr><tr class=''><td><strong>LRCX</strong></td><td>Information Technology</td><td>2026-04-22 AMC</td><td>3Q26</td><td>7.7%</td><td>1.6%</td><td>0.1%</td><td>-0.2%</td><td>-2.2%</td><td>10.4%</td></tr><tr class=''><td><strong>MU</strong></td><td>Information Technology</td><td>2026-03-18 AMC</td><td>2Q26</td><td>33.7%</td><td>20.2%</td><td>-3.8%</td><td>-23.0%</td><td>-19.4%</td><td>54.9%</td></tr><tr class=''><td><strong>NXP</strong></td><td>Information Technology</td><td>2026-04-28 AMC</td><td>1Q26</td><td>2.2%</td><td>0.9%</td><td>22.1%</td><td>28.1%</td><td>25.5%</td><td>6.1%</td></tr><tr class=''><td><strong>UMC</strong></td><td>Information Technology</td><td>2026-04-29 </td><td>1Q26</td><td>NA</td><td>-91.1%</td><td>9.3%</td><td>30.6%</td><td>27.5%</td><td>13.1%</td></tr><tr class=''><td><strong>9984</strong></td><td>Communication Services</td><td>2026-02-12 </td><td>3Q26</td><td>-88.6%</td><td>1.0%</td><td>2.4%</td><td>-5.6%</td><td>-4.5%</td><td>40.3%</td></tr><tr class=''><td><strong>CMCSA</strong></td><td>Communication Services</td><td>2026-04-23 BMO</td><td>1Q26</td><td>9.3%</td><td>3.7%</td><td>7.7%</td><td>-7.9%</td><td>-8.9%</td><td>-0.9%</td></tr><tr class=''><td><strong>RCI</strong></td><td>Communication Services</td><td>2026-04-22 BMO</td><td>1Q26</td><td>NA</td><td>0.8%</td><td>13.6%</td><td>9.9%</td><td>8.9%</td><td>0.7%</td></tr><tr class=''><td><strong>T</strong></td><td>Communication Services</td><td>2026-04-22 </td><td>1Q26</td><td>3.8%</td><td>0.8%</td><td>0.4%</td><td>-0.5%</td><td>-1.5%</td><td>0.5%</td></tr><tr class=''><td><strong>TMUS</strong></td><td>Communication Services</td><td>2026-04-28 </td><td>1Q26</td><td>NA</td><td>NA</td><td>2.2%</td><td>6.3%</td><td>5.1%</td><td>1.7%</td></tr><tr class=''><td><strong>VZ</strong></td><td>Communication Services</td><td>2026-04-27 BMO</td><td>1Q26</td><td>5.8%</td><td>-1.0%</td><td>1.6%</td><td>2.6%</td><td>2.1%</td><td>1.0%</td></tr><tr class=''><td><strong>0700</strong></td><td>Communication Services</td><td>2026-03-18 </td><td>4Q25</td><td>-0.5%</td><td>0.2%</td><td>0.1%</td><td>-8.1%</td><td>-6.2%</td><td>-2.6%</td></tr><tr class=''><td><strong>CHTR</strong></td><td>Communication Services</td><td>2026-04-24 BMO</td><td>1Q26</td><td>-3.7%</td><td>0.3%</td><td>-25.5%</td><td>-29.0%</td><td>-30.7%</td><td>-5.0%</td></tr><tr class=''><td><strong>NFLX</strong></td><td>Communication Services</td><td>2026-04-16 </td><td>1Q26</td><td>58.9%</td><td>0.6%</td><td>0.1%</td><td>-13.8%</td><td>-15.0%</td><td>7.2%</td></tr><tr class=''><td><strong>OMC</strong></td><td>Communication Services</td><td>2026-04-28 </td><td>1Q26</td><td>3.9%</td><td>9.3%</td><td>1.1%</td><td>2.1%</td><td>0.9%</td><td>-0.8%</td></tr><tr class=''><td><strong>ROKU</strong></td><td>Communication Services</td><td>2026-04-30 </td><td>1Q26</td><td>73.8%</td><td>3.7%</td><td>3.5%</td><td>12.5%</td><td>9.7%</td><td>11.5%</td></tr><tr class=''><td><strong>SPOT</strong></td><td>Communication Services</td><td>2026-04-28 BMO</td><td>1Q26</td><td>15.2%</td><td>0.1%</td><td>-12.4%</td><td>-15.4%</td><td>-16.6%</td><td>-0.3%</td></tr><tr class=''><td><strong>CEG</strong></td><td>Utilities</td><td>2026-02-24 </td><td>4Q25</td><td>2.3%</td><td>24.0%</td><td>6.4%</td><td>10.6%</td><td>10.9%</td><td>1.0%</td></tr>
+                </tbody>
+              </table>
+            </section>
+            
+
+  
+            <section>
+              <h2>Materials</h2>
+              <table>
+                <thead>
+                  <tr>
+                    <th>Ticker</th><th>GICS sector</th><th>Reported date</th><th>Reported quarter</th><th>EPS beat/miss</th>
+                    <th>Revenue beat/miss</th><th>D+1 stock</th><th>1W stock</th>
+                    <th>1W vs SPX</th><th>FY EPS revision</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class=''><td><strong>APD</strong></td><td>Materials</td><td>2026-04-30 </td><td>2Q26</td><td>4.3%</td><td>3.2%</td><td>-0.8%</td><td>-2.5%</td><td>-5.3%</td><td>1.1%</td></tr><tr class=''><td><strong>CCK</strong></td><td>Materials</td><td>2026-04-27 </td><td>1Q26</td><td>6.1%</td><td>7.3%</td><td>0.5%</td><td>-2.1%</td><td>-2.6%</td><td>0.2%</td></tr><tr class=''><td><strong>SHW</strong></td><td>Materials</td><td>2026-04-28 BMO</td><td>1Q26</td><td>3.6%</td><td>2.0%</td><td>-3.5%</td><td>-7.0%</td><td>-8.2%</td><td>-0.1%</td></tr>
+                </tbody>
+              </table>
+            </section>
+            
+            <section>
+              <h2>Industrials</h2>
+              <table>
+                <thead>
+                  <tr>
+                    <th>Ticker</th><th>GICS sector</th><th>Reported date</th><th>Reported quarter</th><th>EPS beat/miss</th>
+                    <th>Revenue beat/miss</th><th>D+1 stock</th><th>1W stock</th>
+                    <th>1W vs SPX</th><th>FY EPS revision</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class=''><td><strong>AER</strong></td><td>Industrials</td><td>2026-04-29 BMO</td><td>1Q26</td><td>42.9%</td><td>9.6%</td><td>0.7%</td><td>10.2%</td><td>7.0%</td><td>7.9%</td></tr><tr class=''><td><strong>AIR</strong></td><td>Industrials</td><td>2026-03-24 </td><td>3Q26</td><td>NA</td><td>NA</td><td>4.2%</td><td>5.8%</td><td>6.6%</td><td>3.5%</td></tr><tr class=''><td><strong>BA</strong></td><td>Industrials</td><td>2026-04-22 BMO</td><td>1Q26</td><td>76.1%</td><td>3.3%</td><td>5.5%</td><td>2.3%</td><td>1.2%</td><td>11.8%</td></tr><tr class=''><td><strong>FAST</strong></td><td>Industrials</td><td>2026-04-13 </td><td>1Q26</td><td>0.7%</td><td>0.5%</td><td>-6.9%</td><td>-7.3%</td><td>-11.6%</td><td>0.5%</td></tr><tr class=''><td><strong>GE</strong></td><td>Industrials</td><td>2026-04-21 BMO</td><td>1Q26</td><td>16.5%</td><td>8.7%</td><td>-5.6%</td><td>-4.7%</td><td>-5.2%</td><td>1.3%</td></tr><tr class=''><td><strong>GEV</strong></td><td>Industrials</td><td>2026-04-22 BMO</td><td>1Q26</td><td>-56.8%</td><td>2.5%</td><td>13.8%</td><td>7.2%</td><td>6.2%</td><td>30.6%</td></tr><tr class=''><td><strong>GNRC</strong></td><td>Industrials</td><td>2026-04-29 BMO</td><td>1Q26</td><td>36.0%</td><td>1.2%</td><td>16.5%</td><td>23.2%</td><td>20.0%</td><td>6.8%</td></tr><tr class=''><td><strong>HON</strong></td><td>Industrials</td><td>2026-04-23 </td><td>1Q26</td><td>4.9%</td><td>-1.6%</td><td>-2.6%</td><td>-2.6%</td><td>-3.6%</td><td>0.1%</td></tr><tr class=''><td><strong>LMT</strong></td><td>Industrials</td><td>2026-04-23 </td><td>1Q26</td><td>-6.4%</td><td>-1.2%</td><td>-4.6%</td><td>-6.7%</td><td>-7.7%</td><td>0.1%</td></tr><tr class=''><td><strong>MOG</strong></td><td>Industrials</td><td>2026-04-24 </td><td>2Q26</td><td>NA</td><td>NA</td><td>2.3%</td><td>-1.8%</td><td>-3.5%</td><td>2.9%</td></tr><tr class=''><td><strong>OTIS</strong></td><td>Industrials</td><td>2026-04-22 </td><td>1Q26</td><td>-0.3%</td><td>1.8%</td><td>-1.3%</td><td>-2.9%</td><td>-3.9%</td><td>-0.5%</td></tr><tr class=''><td><strong>SNA</strong></td><td>Industrials</td><td>2026-04-23 </td><td>1Q26</td><td>-1.2%</td><td>2.6%</td><td>2.2%</td><td>0.3%</td><td>-0.7%</td><td>-1.2%</td></tr><tr class=''><td><strong>URI</strong></td><td>Industrials</td><td>2026-04-22 </td><td>1Q26</td><td>7.8%</td><td>2.6%</td><td>-0.4%</td><td>18.1%</td><td>17.1%</td><td>2.0%</td></tr><tr class=''><td><strong>VRT</strong></td><td>Industrials</td><td>2026-04-22 BMO</td><td>1Q26</td><td>15.5%</td><td>0.3%</td><td>-2.3%</td><td>-2.0%</td><td>-3.0%</td><td>5.7%</td></tr><tr class=''><td><strong>WSO</strong></td><td>Industrials</td><td>2026-04-28 BMO</td><td>1Q26</td><td>10.1%</td><td>NA</td><td>-4.0%</td><td>-7.9%</td><td>-9.1%</td><td>1.5%</td></tr><tr class=''><td><strong>EFX</strong></td><td>Industrials</td><td>2026-04-21 AMC</td><td>1Q26</td><td>9.7%</td><td>2.1%</td><td>-10.0%</td><td>-13.1%</td><td>-13.4%</td><td>0.8%</td></tr><tr class='missing'><td><strong>EXPN</strong></td><td>Industrials</td><td>NA </td><td>NA</td><td>NA</td><td>NA</td><td>NA</td><td>NA</td><td>NA</td><td>NA</td></tr><tr class=''><td><strong>ROL</strong></td><td>Industrials</td><td>2026-04-22 </td><td>1Q26</td><td>1.7%</td><td>1.0%</td><td>1.1%</td><td>1.1%</td><td>0.1%</td><td>-0.2%</td></tr><tr class=''><td><strong>TRU</strong></td><td>Industrials</td><td>2026-04-28 </td><td>1Q26</td><td>6.3%</td><td>2.7%</td><td>-1.6%</td><td>-4.1%</td><td>-5.3%</td><td>0.5%</td></tr><tr class=''><td><strong>AAL</strong></td><td>Industrials</td><td>2026-04-23 BMO</td><td>1Q26</td><td>12.9%</td><td>0.5%</td><td>2.4%</td><td>1.8%</td><td>0.8%</td><td>427.3%</td></tr><tr class=''><td><strong>DAL</strong></td><td>Industrials</td><td>2026-04-08 BMO</td><td>1Q26</td><td>12.5%</td><td>0.9%</td><td>3.8%</td><td>9.7%</td><td>3.6%</td><td>4.2%</td></tr><tr class=''><td><strong>FDX</strong></td><td>Industrials</td><td>2026-03-19 AMC</td><td>3Q26</td><td>26.1%</td><td>2.2%</td><td>2.6%</td><td>-1.7%</td><td>2.2%</td><td>2.8%</td></tr><tr class=''><td><strong>LUV</strong></td><td>Industrials</td><td>2026-04-22 BMO</td><td>1Q26</td><td>-1.7%</td><td>-0.5%</td><td>-3.8%</td><td>-9.0%</td><td>-10.1%</td><td>-1.4%</td></tr><tr class=''><td><strong>UAL</strong></td><td>Industrials</td><td>2026-04-21 AMC</td><td>1Q26</td><td>9.1%</td><td>1.1%</td><td>-7.3%</td><td>-10.4%</td><td>-10.8%</td><td>0.4%</td></tr><tr class=''><td><strong>UNP</strong></td><td>Industrials</td><td>2026-04-23 BMO</td><td>1Q26</td><td>2.3%</td><td>-0.5%</td><td>8.8%</td><td>8.1%</td><td>7.0%</td><td>0.9%</td></tr><tr class=''><td><strong>UPS</strong></td><td>Industrials</td><td>2026-04-28 BMO</td><td>1Q26</td><td>3.5%</td><td>1.0%</td><td>-4.0%</td><td>-9.4%</td><td>-10.6%</td><td>1.0%</td></tr>
+                </tbody>
+              </table>
+            </section>
+            
+            <section>
+              <h2>Consumer Discretionary</h2>
+              <table>
+                <thead>
+                  <tr>
+                    <th>Ticker</th><th>GICS sector</th><th>Reported date</th><th>Reported quarter</th><th>EPS beat/miss</th>
+                    <th>Revenue beat/miss</th><th>D+1 stock</th><th>1W stock</th>
+                    <th>1W vs SPX</th><th>FY EPS revision</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class=''><td><strong>TSLA</strong></td><td>Consumer Discretionary</td><td>2026-04-22 AMC</td><td>1Q26</td><td>20.6%</td><td>0.9%</td><td>-3.3%</td><td>-1.2%</td><td>-3.3%</td><td>-1.6%</td></tr><tr class=''><td><strong>DHI</strong></td><td>Consumer Discretionary</td><td>2026-04-21 BMO</td><td>2Q26</td><td>4.5%</td><td>-0.9%</td><td>5.8%</td><td>2.0%</td><td>1.6%</td><td>0.9%</td></tr><tr class=''><td><strong>KER</strong></td><td>Consumer Discretionary</td><td>2026-04-14 </td><td>1Q26</td><td>NA</td><td>-1.5%</td><td>2.9%</td><td>-10.6%</td><td>-13.2%</td><td>0.9%</td></tr><tr class=''><td><strong>MC</strong></td><td>Consumer Discretionary</td><td>2026-04-13 </td><td>1Q26</td><td>NA</td><td>-2.4%</td><td>-0.3%</td><td>1.5%</td><td>-2.8%</td><td>-1.5%</td></tr><tr class=''><td><strong>NKE</strong></td><td>Consumer Discretionary</td><td>2026-03-31 AMC</td><td>3Q26</td><td>15.1%</td><td>0.4%</td><td>-12.9%</td><td>-14.1%</td><td>-21.7%</td><td>-13.0%</td></tr><tr class=''><td><strong>PHM</strong></td><td>Consumer Discretionary</td><td>2026-04-23 BMO</td><td>1Q26</td><td>-1.2%</td><td>1.3%</td><td>2.4%</td><td>-4.1%</td><td>-5.1%</td><td>-0.3%</td></tr><tr class=''><td><strong>PVH</strong></td><td>Consumer Discretionary</td><td>2026-03-31 </td><td>4Q26</td><td>15.4%</td><td>2.9%</td><td>4.8%</td><td>31.5%</td><td>24.5%</td><td>2.9%</td></tr><tr class=''><td><strong>SGI</strong></td><td>Consumer Discretionary</td><td>2026-05-07 AMC</td><td>1Q26</td><td>2.8%</td><td>-1.6%</td><td>-11.8%</td><td>NA</td><td>NA</td><td>-1.0%</td></tr><tr class=''><td><strong>BKNG</strong></td><td>Consumer Discretionary</td><td>2026-04-28 AMC</td><td>1Q26</td><td>6.1%</td><td>0.5%</td><td>-2.0%</td><td>-5.2%</td><td>-7.8%</td><td>-1.1%</td></tr><tr class=''><td><strong>DPZ</strong></td><td>Consumer Discretionary</td><td>2026-04-27 BMO</td><td>1Q26</td><td>-3.1%</td><td>-1.1%</td><td>-8.8%</td><td>-10.2%</td><td>-10.7%</td><td>-2.0%</td></tr><tr class=''><td><strong>HLT</strong></td><td>Consumer Discretionary</td><td>2026-04-28 BMO</td><td>1Q26</td><td>1.8%</td><td>-0.6%</td><td>-2.7%</td><td>-5.9%</td><td>-7.1%</td><td>0.1%</td></tr><tr class=''><td><strong>MAR</strong></td><td>Consumer Discretionary</td><td>2026-05-06 BMO</td><td>1Q26</td><td>6.4%</td><td>0.4%</td><td>1.3%</td><td>NA</td><td>NA</td><td>0.2%</td></tr><tr class=''><td><strong>MGM</strong></td><td>Consumer Discretionary</td><td>2026-04-29 AMC</td><td>1Q26</td><td>-3.9%</td><td>2.0%</td><td>-2.0%</td><td>-4.1%</td><td>-6.9%</td><td>1.6%</td></tr><tr class=''><td><strong>SBUX</strong></td><td>Consumer Discretionary</td><td>2026-04-28 AMC</td><td>2Q26</td><td>17.4%</td><td>4.3%</td><td>7.8%</td><td>8.7%</td><td>6.1%</td><td>3.4%</td></tr><tr class=''><td><strong>ABG</strong></td><td>Consumer Discretionary</td><td>2026-04-28 </td><td>1Q26</td><td>NA</td><td>NA</td><td>0.3%</td><td>-0.8%</td><td>-1.9%</td><td>-0.5%</td></tr><tr class=''><td><strong>BABA</strong></td><td>Consumer Discretionary</td><td>2026-03-19 BMO</td><td>3Q26</td><td>-43.4%</td><td>-1.7%</td><td>-7.1%</td><td>-6.7%</td><td>-4.5%</td><td>-10.7%</td></tr><tr class=''><td><strong>CHWY</strong></td><td>Consumer Discretionary</td><td>2026-03-25 BMO</td><td>4Q26</td><td>-2.5%</td><td>-0.0%</td><td>13.3%</td><td>13.5%</td><td>13.2%</td><td>5.2%</td></tr><tr class=''><td><strong>DKS</strong></td><td>Consumer Discretionary</td><td>2026-03-12 </td><td>4Q26</td><td>-0.1%</td><td>12.4%</td><td>1.1%</td><td>-1.3%</td><td>1.2%</td><td>-2.5%</td></tr><tr class=''><td><strong>FIVE</strong></td><td>Consumer Discretionary</td><td>2026-03-18 AMC</td><td>4Q26</td><td>7.9%</td><td>1.0%</td><td>9.9%</td><td>6.0%</td><td>9.5%</td><td>13.3%</td></tr><tr class=''><td><strong>HD</strong></td><td>Consumer Discretionary</td><td>2026-02-24 BMO</td><td>4Q26</td><td>6.7%</td><td>-0.2%</td><td>2.0%</td><td>-2.7%</td><td>-2.4%</td><td>-0.3%</td></tr><tr class=''><td><strong>KMX</strong></td><td>Consumer Discretionary</td><td>2026-04-14 BMO</td><td>4Q26</td><td>-476.3%</td><td>3.6%</td><td>-15.1%</td><td>-20.5%</td><td>-23.0%</td><td>-4.3%</td></tr><tr class=''><td><strong>RH</strong></td><td>Consumer Discretionary</td><td>2026-03-31 AMC</td><td>4Q26</td><td>-30.1%</td><td>-3.5%</td><td>-14.5%</td><td>-6.2%</td><td>-13.8%</td><td>-42.6%</td></tr><tr class=''><td><strong>TSCO</strong></td><td>Consumer Discretionary</td><td>2026-04-21 BMO</td><td>1Q26</td><td>-9.1%</td><td>-1.2%</td><td>-11.7%</td><td>-20.6%</td><td>-21.0%</td><td>-2.1%</td></tr><tr class=''><td><strong>ULTA</strong></td><td>Consumer Discretionary</td><td>2026-03-12 AMC</td><td>4Q26</td><td>-1.6%</td><td>1.8%</td><td>-17.9%</td><td>-18.8%</td><td>-14.8%</td><td>0.1%</td></tr><tr class=''><td><strong>W</strong></td><td>Consumer Discretionary</td><td>2026-04-30 BMO</td><td>1Q26</td><td>-12.8%</td><td>1.5%</td><td>-12.8%</td><td>-9.7%</td><td>-12.5%</td><td>0.1%</td></tr>
+                </tbody>
+              </table>
+            </section>
+            
+            <section>
+              <h2>Consumer Staples</h2>
+              <table>
+                <thead>
+                  <tr>
+                    <th>Ticker</th><th>GICS sector</th><th>Reported date</th><th>Reported quarter</th><th>EPS beat/miss</th>
+                    <th>Revenue beat/miss</th><th>D+1 stock</th><th>1W stock</th>
+                    <th>1W vs SPX</th><th>FY EPS revision</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class=''><td><strong>ACI</strong></td><td>Consumer Staples</td><td>2026-04-14 BMO</td><td>4Q26</td><td>10.9%</td><td>-0.6%</td><td>-3.0%</td><td>1.5%</td><td>-1.1%</td><td>0.6%</td></tr><tr class=''><td><strong>DG</strong></td><td>Consumer Staples</td><td>2026-03-12 BMO</td><td>4Q26</td><td>17.3%</td><td>1.0%</td><td>-6.1%</td><td>-14.8%</td><td>-12.3%</td><td>2.7%</td></tr><tr class=''><td><strong>DLTR</strong></td><td>Consumer Staples</td><td>2026-03-16 BMO</td><td>4Q26</td><td>1.2%</td><td>-0.3%</td><td>6.4%</td><td>0.8%</td><td>1.5%</td><td>1.2%</td></tr><tr class=''><td><strong>SYY</strong></td><td>Consumer Staples</td><td>2026-04-28 </td><td>3Q26</td><td>-0.4%</td><td>-0.1%</td><td>-2.6%</td><td>-3.3%</td><td>-4.5%</td><td>-0.4%</td></tr><tr class=''><td><strong>WMT</strong></td><td>Consumer Staples</td><td>2026-02-19 BMO</td><td>4Q26</td><td>1.6%</td><td>0.1%</td><td>-1.4%</td><td>-1.7%</td><td>-2.1%</td><td>-0.6%</td></tr><tr class=''><td><strong>KO</strong></td><td>Consumer Staples</td><td>2026-04-28 </td><td>1Q26</td><td>6.0%</td><td>2.7%</td><td>3.9%</td><td>4.0%</td><td>2.8%</td><td>1.1%</td></tr><tr class=''><td><strong>LW</strong></td><td>Consumer Staples</td><td>2026-04-01 </td><td>3Q26</td><td>18.2%</td><td>4.9%</td><td>-8.9%</td><td>-1.5%</td><td>-6.1%</td><td>0.8%</td></tr><tr class=''><td><strong>PEP</strong></td><td>Consumer Staples</td><td>2026-04-16 </td><td>1Q26</td><td>4.1%</td><td>2.7%</td><td>2.3%</td><td>0.5%</td><td>-0.7%</td><td>0.4%</td></tr><tr class=''><td><strong>STZ</strong></td><td>Consumer Staples</td><td>2026-04-08 </td><td>4Q26</td><td>9.9%</td><td>2.3%</td><td>-2.3%</td><td>6.6%</td><td>0.4%</td><td>-4.6%</td></tr><tr class=''><td><strong>PG</strong></td><td>Consumer Staples</td><td>2026-04-24 BMO</td><td>3Q26</td><td>1.9%</td><td>3.6%</td><td>1.7%</td><td>1.1%</td><td>-0.7%</td><td>-1.5%</td></tr>
+                </tbody>
+              </table>
+            </section>
+            
+            <section>
+              <h2>Health Care</h2>
+              <table>
+                <thead>
+                  <tr>
+                    <th>Ticker</th><th>GICS sector</th><th>Reported date</th><th>Reported quarter</th><th>EPS beat/miss</th>
+                    <th>Revenue beat/miss</th><th>D+1 stock</th><th>1W stock</th>
+                    <th>1W vs SPX</th><th>FY EPS revision</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class=''><td><strong>CNC</strong></td><td>Health Care</td><td>2026-04-28 BMO</td><td>1Q26</td><td>47.8%</td><td>5.3%</td><td>14.0%</td><td>21.8%</td><td>20.6%</td><td>15.2%</td></tr><tr class=''><td><strong>CYH</strong></td><td>Health Care</td><td>2026-04-21 AMC</td><td>1Q26</td><td>-290.2%</td><td>0.3%</td><td>-14.0%</td><td>-8.9%</td><td>-9.3%</td><td>29.3%</td></tr><tr class=''><td><strong>DGX</strong></td><td>Health Care</td><td>2026-04-21 BMO</td><td>1Q26</td><td>6.2%</td><td>2.6%</td><td>4.5%</td><td>-0.6%</td><td>-1.1%</td><td>1.4%</td></tr><tr class=''><td><strong>ELV</strong></td><td>Health Care</td><td>2026-04-22 </td><td>1Q26</td><td>14.3%</td><td>3.5%</td><td>0.0%</td><td>14.8%</td><td>13.8%</td><td>3.4%</td></tr><tr class=''><td><strong>HCA</strong></td><td>Health Care</td><td>2026-04-24 BMO</td><td>1Q26</td><td>0.7%</td><td>0.1%</td><td>-8.8%</td><td>-8.6%</td><td>-10.3%</td><td>-0.1%</td></tr><tr class=''><td><strong>HQY</strong></td><td>Health Care</td><td>2026-03-17 AMC</td><td>4Q26</td><td>4.6%</td><td>0.5%</td><td>1.1%</td><td>4.8%</td><td>6.4%</td><td>0.9%</td></tr><tr class=''><td><strong>ISRG</strong></td><td>Health Care</td><td>2026-04-21 AMC</td><td>1Q26</td><td>19.3%</td><td>5.8%</td><td>3.9%</td><td>-2.5%</td><td>-2.9%</td><td>2.9%</td></tr><tr class=''><td><strong>MOH</strong></td><td>Health Care</td><td>2026-04-22 </td><td>1Q26</td><td>20.3%</td><td>-0.7%</td><td>1.3%</td><td>30.1%</td><td>29.1%</td><td>5.9%</td></tr><tr class=''><td><strong>SHC</strong></td><td>Health Care</td><td>2026-05-05 </td><td>1Q26</td><td>3.4%</td><td>3.4%</td><td>-0.4%</td><td>NA</td><td>NA</td><td>0.4%</td></tr><tr class=''><td><strong>UNH</strong></td><td>Health Care</td><td>2026-04-21 BMO</td><td>1Q26</td><td>10.0%</td><td>2.3%</td><td>7.0%</td><td>13.4%</td><td>13.0%</td><td>2.9%</td></tr><tr class=''><td><strong>ZBH</strong></td><td>Health Care</td><td>2026-04-28 BMO</td><td>1Q26</td><td>12.4%</td><td>0.8%</td><td>-10.6%</td><td>-10.3%</td><td>-11.5%</td><td>0.8%</td></tr><tr class=''><td><strong>DHR</strong></td><td>Health Care</td><td>2026-04-21 BMO</td><td>1Q26</td><td>6.3%</td><td>-0.6%</td><td>-0.5%</td><td>-8.5%</td><td>-8.9%</td><td>0.5%</td></tr><tr class=''><td><strong>MEDP</strong></td><td>Health Care</td><td>2026-04-22 </td><td>1Q26</td><td>12.8%</td><td>1.8%</td><td>-1.2%</td><td>-19.7%</td><td>-20.7%</td><td>-0.8%</td></tr><tr class=''><td><strong>ROIV</strong></td><td>Health Care</td><td>2026-02-06 </td><td>3Q26</td><td>NA</td><td>NA</td><td>22.1%</td><td>25.1%</td><td>24.6%</td><td>5.8%</td></tr><tr class=''><td><strong>TMO</strong></td><td>Health Care</td><td>2026-04-23 BMO</td><td>1Q26</td><td>3.8%</td><td>1.5%</td><td>-9.2%</td><td>-6.8%</td><td>-7.8%</td><td>1.0%</td></tr>
+                </tbody>
+              </table>
+            </section>
+            
+            <section>
+              <h2>Financials</h2>
+              <table>
+                <thead>
+                  <tr>
+                    <th>Ticker</th><th>GICS sector</th><th>Reported date</th><th>Reported quarter</th><th>EPS beat/miss</th>
+                    <th>Revenue beat/miss</th><th>D+1 stock</th><th>1W stock</th>
+                    <th>1W vs SPX</th><th>FY EPS revision</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class=''><td><strong>BAC</strong></td><td>Financials</td><td>2026-04-15 BMO</td><td>1Q26</td><td>9.9%</td><td>0.9%</td><td>1.8%</td><td>-0.4%</td><td>-2.9%</td><td>2.1%</td></tr><tr class=''><td><strong>C</strong></td><td>Financials</td><td>2026-04-14 BMO</td><td>1Q26</td><td>15.3%</td><td>4.5%</td><td>2.6%</td><td>4.3%</td><td>1.7%</td><td>3.6%</td></tr><tr class=''><td><strong>JPM</strong></td><td>Financials</td><td>2026-04-14 BMO</td><td>1Q26</td><td>9.5%</td><td>2.6%</td><td>-0.8%</td><td>-0.2%</td><td>-2.8%</td><td>2.5%</td></tr><tr class=''><td><strong>MTB</strong></td><td>Financials</td><td>2026-04-15 </td><td>1Q26</td><td>4.1%</td><td>0.5%</td><td>-1.6%</td><td>-1.3%</td><td>-3.8%</td><td>-0.2%</td></tr><tr class=''><td><strong>PNC</strong></td><td>Financials</td><td>2026-04-15 BMO</td><td>1Q26</td><td>4.2%</td><td>-0.8%</td><td>0.4%</td><td>1.8%</td><td>-0.7%</td><td>1.2%</td></tr><tr class=''><td><strong>USB</strong></td><td>Financials</td><td>2026-04-16 </td><td>1Q26</td><td>3.1%</td><td>0.1%</td><td>-1.6%</td><td>0.5%</td><td>-0.8%</td><td>1.0%</td></tr><tr class=''><td><strong>WFC</strong></td><td>Financials</td><td>2026-04-14 BMO</td><td>1Q26</td><td>-1.1%</td><td>-1.4%</td><td>-5.7%</td><td>-5.9%</td><td>-8.5%</td><td>-0.6%</td></tr><tr class=''><td><strong>ALLY</strong></td><td>Financials</td><td>2026-04-17 BMO</td><td>1Q26</td><td>19.2%</td><td>-1.8%</td><td>8.1%</td><td>5.3%</td><td>3.5%</td><td>2.4%</td></tr><tr class=''><td><strong>ARCC</strong></td><td>Financials</td><td>2026-04-28 </td><td>1Q26</td><td>-2.7%</td><td>-1.7%</td><td>1.7%</td><td>4.0%</td><td>2.8%</td><td>-0.8%</td></tr><tr class=''><td><strong>AXP</strong></td><td>Financials</td><td>2026-04-23 BMO</td><td>1Q26</td><td>6.2%</td><td>1.6%</td><td>-4.3%</td><td>-3.0%</td><td>-4.0%</td><td>0.7%</td></tr><tr class=''><td><strong>BLK</strong></td><td>Financials</td><td>2026-04-14 </td><td>1Q26</td><td>9.1%</td><td>3.1%</td><td>3.0%</td><td>1.9%</td><td>-0.7%</td><td>1.6%</td></tr><tr class=''><td><strong>CME</strong></td><td>Financials</td><td>2026-04-22 BMO</td><td>1Q26</td><td>-0.2%</td><td>-1.4%</td><td>0.5%</td><td>1.0%</td><td>-0.0%</td><td>-0.3%</td></tr><tr class=''><td><strong>COF</strong></td><td>Financials</td><td>2026-04-21 AMC</td><td>1Q26</td><td>-3.1%</td><td>-0.9%</td><td>-3.0%</td><td>-7.2%</td><td>-7.6%</td><td>-3.3%</td></tr><tr class=''><td><strong>GS</strong></td><td>Financials</td><td>2026-04-13 BMO</td><td>1Q26</td><td>7.4%</td><td>1.6%</td><td>-1.9%</td><td>3.7%</td><td>-0.5%</td><td>1.4%</td></tr><tr class=''><td><strong>LPRO</strong></td><td>Financials</td><td>2026-05-07 </td><td>1Q26</td><td>NA</td><td>NA</td><td>-5.3%</td><td>NA</td><td>NA</td><td>0.0%</td></tr><tr class=''><td><strong>MA</strong></td><td>Financials</td><td>2026-04-30 </td><td>1Q26</td><td>4.8%</td><td>1.8%</td><td>-4.2%</td><td>-4.6%</td><td>-7.4%</td><td>0.8%</td></tr><tr class=''><td><strong>MCO</strong></td><td>Financials</td><td>2026-04-22 BMO</td><td>1Q26</td><td>2.3%</td><td>0.7%</td><td>1.6%</td><td>0.1%</td><td>-0.9%</td><td>-0.1%</td></tr><tr class=''><td><strong>MS</strong></td><td>Financials</td><td>2026-04-15 </td><td>1Q26</td><td>15.2%</td><td>4.4%</td><td>4.5%</td><td>4.2%</td><td>1.8%</td><td>3.5%</td></tr><tr class=''><td><strong>NTRS</strong></td><td>Financials</td><td>2026-04-21 </td><td>1Q26</td><td>NA</td><td>NA</td><td>8.0%</td><td>5.0%</td><td>4.6%</td><td>5.0%</td></tr><tr class=''><td><strong>RJF</strong></td><td>Financials</td><td>2026-04-22 </td><td>2Q26</td><td>NA</td><td>NA</td><td>-0.0%</td><td>0.7%</td><td>-0.4%</td><td>0.5%</td></tr><tr class=''><td><strong>SCHW</strong></td><td>Financials</td><td>2026-04-16 </td><td>1Q26</td><td>2.6%</td><td>-0.4%</td><td>-7.6%</td><td>-11.3%</td><td>-12.5%</td><td>0.9%</td></tr><tr class=''><td><strong>SOFI</strong></td><td>Financials</td><td>2026-04-29 BMO</td><td>1Q26</td><td>-0.8%</td><td>3.7%</td><td>-15.4%</td><td>-11.2%</td><td>-14.4%</td><td>0.1%</td></tr><tr class=''><td><strong>SPGI</strong></td><td>Financials</td><td>2026-04-28 BMO</td><td>1Q26</td><td>3.2%</td><td>2.4%</td><td>-0.9%</td><td>-3.0%</td><td>-4.2%</td><td>0.6%</td></tr><tr class=''><td><strong>SYF</strong></td><td>Financials</td><td>2026-04-21 BMO</td><td>1Q26</td><td>2.9%</td><td>-2.3%</td><td>-1.2%</td><td>-3.0%</td><td>-3.4%</td><td>0.8%</td></tr><tr class=''><td><strong>WU</strong></td><td>Financials</td><td>2026-04-24 </td><td>1Q26</td><td>-36.7%</td><td>2.3%</td><td>-4.6%</td><td>-1.3%</td><td>-3.0%</td><td>-2.0%</td></tr><tr class=''><td><strong>BRO</strong></td><td>Financials</td><td>2026-04-27 </td><td>1Q26</td><td>1.8%</td><td>NA</td><td>0.3%</td><td>-12.5%</td><td>-13.0%</td><td>-1.0%</td></tr><tr class=''><td><strong>CB</strong></td><td>Financials</td><td>2026-04-21 </td><td>1Q26</td><td>3.3%</td><td>NA</td><td>-0.2%</td><td>0.1%</td><td>-0.3%</td><td>0.7%</td></tr><tr class=''><td><strong>GSHD</strong></td><td>Financials</td><td>2026-04-22 </td><td>1Q26</td><td>88.8%</td><td>10.5%</td><td>2.0%</td><td>5.7%</td><td>4.7%</td><td>5.4%</td></tr><tr class=''><td><strong>TRV</strong></td><td>Financials</td><td>2026-04-16 </td><td>1Q26</td><td>8.9%</td><td>-3.6%</td><td>-0.2%</td><td>2.7%</td><td>1.5%</td><td>1.4%</td></tr><tr class=''><td><strong>WRB</strong></td><td>Financials</td><td>2026-04-21 </td><td>1Q26</td><td>14.6%</td><td>NA</td><td>-1.2%</td><td>1.4%</td><td>1.0%</td><td>2.1%</td></tr>
+                </tbody>
+              </table>
+            </section>
+            
+            <section>
+              <h2>Information Technology</h2>
+              <table>
+                <thead>
+                  <tr>
+                    <th>Ticker</th><th>GICS sector</th><th>Reported date</th><th>Reported quarter</th><th>EPS beat/miss</th>
+                    <th>Revenue beat/miss</th><th>D+1 stock</th><th>1W stock</th>
+                    <th>1W vs SPX</th><th>FY EPS revision</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class=''><td><strong>ACN</strong></td><td>Information Technology</td><td>2026-03-19 BMO</td><td>2Q26</td><td>2.8%</td><td>1.0%</td><td>4.3%</td><td>0.7%</td><td>2.9%</td><td>0.4%</td></tr><tr class=''><td><strong>ADBE</strong></td><td>Information Technology</td><td>2026-03-12 AMC</td><td>1Q26</td><td>3.0%</td><td>1.9%</td><td>-8.9%</td><td>-9.3%</td><td>-5.4%</td><td>0.5%</td></tr><tr class=''><td><strong>CDNS</strong></td><td>Information Technology</td><td>2026-04-27 </td><td>1Q26</td><td>4.0%</td><td>1.2%</td><td>1.1%</td><td>5.0%</td><td>4.5%</td><td>1.0%</td></tr><tr class=''><td><strong>FICO</strong></td><td>Information Technology</td><td>2026-04-28 AMC</td><td>2Q26</td><td>12.6%</td><td>8.4%</td><td>2.9%</td><td>5.2%</td><td>2.6%</td><td>4.2%</td></tr><tr class=''><td><strong>IBM</strong></td><td>Information Technology</td><td>2026-04-22 AMC</td><td>1Q26</td><td>5.7%</td><td>1.5%</td><td>-9.6%</td><td>-9.7%</td><td>-11.7%</td><td>0.7%</td></tr><tr class=''><td><strong>INFY</strong></td><td>Information Technology</td><td>2026-04-23 BMO</td><td>4Q26</td><td>NA</td><td>NA</td><td>-4.0%</td><td>-7.6%</td><td>-8.6%</td><td>-1.7%</td></tr><tr class=''><td><strong>IT</strong></td><td>Information Technology</td><td>2026-05-05 </td><td>1Q26</td><td>13.7%</td><td>-0.2%</td><td>1.2%</td><td>NA</td><td>NA</td><td>4.3%</td></tr><tr class=''><td><strong>NOW</strong></td><td>Information Technology</td><td>2026-04-22 AMC</td><td>1Q26</td><td>-0.2%</td><td>0.7%</td><td>-15.3%</td><td>-11.8%</td><td>-13.9%</td><td>0.0%</td></tr><tr class=''><td><strong>CLS</strong></td><td>Information Technology</td><td>2026-04-27 AMC</td><td>1Q26</td><td>4.3%</td><td>0.1%</td><td>-11.9%</td><td>1.8%</td><td>0.5%</td><td>17.7%</td></tr><tr class=''><td><strong>JBL</strong></td><td>Information Technology</td><td>2026-03-18 </td><td>2Q26</td><td>7.2%</td><td>6.5%</td><td>-1.4%</td><td>8.0%</td><td>9.8%</td><td>7.9%</td></tr><tr class=''><td><strong>SNDK</strong></td><td>Information Technology</td><td>2026-04-30 AMC</td><td>3Q26</td><td>61.3%</td><td>26.1%</td><td>11.5%</td><td>46.8%</td><td>43.1%</td><td>43.5%</td></tr><tr class=''><td><strong>STX</strong></td><td>Information Technology</td><td>2026-04-28 AMC</td><td>3Q26</td><td>17.1%</td><td>5.4%</td><td>8.0%</td><td>32.0%</td><td>29.3%</td><td>26.7%</td></tr><tr class=''><td><strong>ALAB</strong></td><td>Information Technology</td><td>2026-05-05 AMC</td><td>1Q26</td><td>13.0%</td><td>5.5%</td><td>6.3%</td><td>NA</td><td>NA</td><td>16.0%</td></tr><tr class=''><td><strong>AMD</strong></td><td>Information Technology</td><td>2026-05-05 AMC</td><td>1Q26</td><td>6.8%</td><td>3.7%</td><td>23.4%</td><td>NA</td><td>NA</td><td>8.0%</td></tr><tr class=''><td><strong>AMKR</strong></td><td>Information Technology</td><td>2026-04-27 </td><td>1Q26</td><td>27.9%</td><td>2.0%</td><td>-3.2%</td><td>-9.1%</td><td>-9.6%</td><td>19.6%</td></tr><tr class=''><td><strong>ARM</strong></td><td>Information Technology</td><td>2026-05-06 AMC</td><td>4Q26</td><td>2.7%</td><td>1.3%</td><td>2.1%</td><td>NA</td><td>NA</td><td>2.2%</td></tr><tr class=''><td><strong>ASM</strong></td><td>Information Technology</td><td>2026-03-10 </td><td>4Q25</td><td>NA</td><td>NA</td><td>5.5%</td><td>-10.9%</td><td>-9.8%</td><td>0.9%</td></tr><tr class=''><td><strong>ASML</strong></td><td>Information Technology</td><td>2026-04-15 BMO</td><td>1Q26</td><td>NA</td><td>0.9%</td><td>-2.4%</td><td>-4.9%</td><td>-7.4%</td><td>5.9%</td></tr><tr class=''><td><strong>LRCX</strong></td><td>Information Technology</td><td>2026-04-22 AMC</td><td>3Q26</td><td>7.7%</td><td>1.6%</td><td>0.1%</td><td>-0.2%</td><td>-2.2%</td><td>10.4%</td></tr><tr class=''><td><strong>MU</strong></td><td>Information Technology</td><td>2026-03-18 AMC</td><td>2Q26</td><td>33.7%</td><td>20.2%</td><td>-3.8%</td><td>-23.0%</td><td>-19.4%</td><td>54.9%</td></tr><tr class=''><td><strong>NXP</strong></td><td>Information Technology</td><td>2026-04-28 AMC</td><td>1Q26</td><td>2.2%</td><td>0.9%</td><td>22.1%</td><td>28.1%</td><td>25.5%</td><td>6.1%</td></tr><tr class=''><td><strong>UMC</strong></td><td>Information Technology</td><td>2026-04-29 </td><td>1Q26</td><td>NA</td><td>-91.1%</td><td>9.3%</td><td>30.6%</td><td>27.5%</td><td>13.1%</td></tr>
+                </tbody>
+              </table>
+            </section>
+            
+            <section>
+              <h2>Communication Services</h2>
+              <table>
+                <thead>
+                  <tr>
+                    <th>Ticker</th><th>GICS sector</th><th>Reported date</th><th>Reported quarter</th><th>EPS beat/miss</th>
+                    <th>Revenue beat/miss</th><th>D+1 stock</th><th>1W stock</th>
+                    <th>1W vs SPX</th><th>FY EPS revision</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class=''><td><strong>9984</strong></td><td>Communication Services</td><td>2026-02-12 </td><td>3Q26</td><td>-88.6%</td><td>1.0%</td><td>2.4%</td><td>-5.6%</td><td>-4.5%</td><td>40.3%</td></tr><tr class=''><td><strong>CMCSA</strong></td><td>Communication Services</td><td>2026-04-23 BMO</td><td>1Q26</td><td>9.3%</td><td>3.7%</td><td>7.7%</td><td>-7.9%</td><td>-8.9%</td><td>-0.9%</td></tr><tr class=''><td><strong>RCI</strong></td><td>Communication Services</td><td>2026-04-22 BMO</td><td>1Q26</td><td>NA</td><td>0.8%</td><td>13.6%</td><td>9.9%</td><td>8.9%</td><td>0.7%</td></tr><tr class=''><td><strong>T</strong></td><td>Communication Services</td><td>2026-04-22 </td><td>1Q26</td><td>3.8%</td><td>0.8%</td><td>0.4%</td><td>-0.5%</td><td>-1.5%</td><td>0.5%</td></tr><tr class=''><td><strong>TMUS</strong></td><td>Communication Services</td><td>2026-04-28 </td><td>1Q26</td><td>NA</td><td>NA</td><td>2.2%</td><td>6.3%</td><td>5.1%</td><td>1.7%</td></tr><tr class=''><td><strong>VZ</strong></td><td>Communication Services</td><td>2026-04-27 BMO</td><td>1Q26</td><td>5.8%</td><td>-1.0%</td><td>1.6%</td><td>2.6%</td><td>2.1%</td><td>1.0%</td></tr><tr class=''><td><strong>0700</strong></td><td>Communication Services</td><td>2026-03-18 </td><td>4Q25</td><td>-0.5%</td><td>0.2%</td><td>0.1%</td><td>-8.1%</td><td>-6.2%</td><td>-2.6%</td></tr><tr class=''><td><strong>CHTR</strong></td><td>Communication Services</td><td>2026-04-24 BMO</td><td>1Q26</td><td>-3.7%</td><td>0.3%</td><td>-25.5%</td><td>-29.0%</td><td>-30.7%</td><td>-5.0%</td></tr><tr class=''><td><strong>NFLX</strong></td><td>Communication Services</td><td>2026-04-16 </td><td>1Q26</td><td>58.9%</td><td>0.6%</td><td>0.1%</td><td>-13.8%</td><td>-15.0%</td><td>7.2%</td></tr><tr class=''><td><strong>OMC</strong></td><td>Communication Services</td><td>2026-04-28 </td><td>1Q26</td><td>3.9%</td><td>9.3%</td><td>1.1%</td><td>2.1%</td><td>0.9%</td><td>-0.8%</td></tr><tr class=''><td><strong>ROKU</strong></td><td>Communication Services</td><td>2026-04-30 </td><td>1Q26</td><td>73.8%</td><td>3.7%</td><td>3.5%</td><td>12.5%</td><td>9.7%</td><td>11.5%</td></tr><tr class=''><td><strong>SPOT</strong></td><td>Communication Services</td><td>2026-04-28 BMO</td><td>1Q26</td><td>15.2%</td><td>0.1%</td><td>-12.4%</td><td>-15.4%</td><td>-16.6%</td><td>-0.3%</td></tr>
+                </tbody>
+              </table>
+            </section>
+            
+            <section>
+              <h2>Utilities</h2>
+              <table>
+                <thead>
+                  <tr>
+                    <th>Ticker</th><th>GICS sector</th><th>Reported date</th><th>Reported quarter</th><th>EPS beat/miss</th>
+                    <th>Revenue beat/miss</th><th>D+1 stock</th><th>1W stock</th>
+                    <th>1W vs SPX</th><th>FY EPS revision</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class=''><td><strong>CEG</strong></td><td>Utilities</td><td>2026-02-24 </td><td>4Q25</td><td>2.3%</td><td>24.0%</td><td>6.4%</td><td>10.6%</td><td>10.9%</td><td>1.0%</td></tr>
+                </tbody>
+              </table>
+            </section>
+            
+
+  <footer>
+    Generated 2026-05-10 via xbbg and BBG's <code>pull_reported_details</code>. The universe is discovered from non-expert/non-YouTube Reader output pages, with manual additions for requested stock-reaction-only checks such as AMD. EPS and revenue beat/miss are actual vs. pre-print Bloomberg consensus. D+1 reactions use the first close after the release based on BBG earnings-calendar snapshots plus explicit/ticker-level timing overrides in the Reader wrapper. GICS classifications come from the latest BBG snapshot when available, with explicit fallbacks for uncovered tickers. FY EPS revision uses Bloomberg BEST_EPS with current-FY override from before the print to roughly seven calendar days after. Missing rows usually mean Bloomberg did not return an earnings record inside the helper's 120-day window or the ticker mapping needs adjustment. Missing count: 1.
+  </footer>
+</main>
+<script>
+(() => {
+  const select = document.getElementById("quarter-select");
+  if (!select) return;
+  select.addEventListener("change", () => {
+    if (select.value) window.location.href = select.value;
+  });
+})();
+
+(() => {
+  function primaryText(cell) {
+    const clone = cell.cloneNode(true);
+    clone.querySelectorAll("span").forEach((span) => span.remove());
+    return clone.textContent.trim();
+  }
+
+  function sortTypeFor(label) {
+    const normalized = label.toLowerCase();
+    if (normalized.includes("reported date")) return "date";
+    if (
+      normalized.includes("beat/miss") ||
+      normalized.includes("stock") ||
+      normalized.includes("spx") ||
+      normalized.includes("revision")
+    ) return "number";
+    return "text";
+  }
+
+  function valueFor(row, columnIndex, sortType) {
+    const cell = row.cells[columnIndex];
+    if (!cell) return { missing: true, value: "" };
+
+    if (sortType === "number") {
+      const text = primaryText(cell);
+      if (!text || text.toUpperCase() === "NA") return { missing: true, value: 0 };
+      const value = Number.parseFloat(text.replace(/[$,%]/g, ""));
+      return Number.isFinite(value) ? { missing: false, value } : { missing: true, value: 0 };
+    }
+
+    if (sortType === "date") {
+      const match = cell.textContent.match(/\d{4}-\d{2}-\d{2}/);
+      if (match) return { missing: false, value: Date.parse(match[0]) };
+    }
+
+    const text = primaryText(cell).toLowerCase();
+    return text ? { missing: false, value: text } : { missing: true, value: "" };
+  }
+
+  function compareRows(a, b, columnIndex, sortType, direction) {
+    const left = valueFor(a.row, columnIndex, sortType);
+    const right = valueFor(b.row, columnIndex, sortType);
+    if (left.missing && right.missing) return a.index - b.index;
+    if (left.missing) return 1;
+    if (right.missing) return -1;
+
+    let result = 0;
+    if (sortType === "number" || sortType === "date") {
+      result = left.value - right.value;
+    } else {
+      result = String(left.value).localeCompare(String(right.value), undefined, { numeric: true });
+    }
+    if (result === 0) return a.index - b.index;
+    return direction === "asc" ? result : -result;
+  }
+
+  function sortTable(table, columnIndex, sortType, direction) {
+    const tbody = table.tBodies[0];
+    const rows = Array.from(tbody.rows).map((row, index) => ({ row, index }));
+    rows.sort((a, b) => compareRows(a, b, columnIndex, sortType, direction));
+    rows.forEach(({ row }) => tbody.appendChild(row));
+
+    table.querySelectorAll("th").forEach((th) => {
+      th.classList.remove("sorted-asc", "sorted-desc");
+      th.setAttribute("aria-sort", "none");
+    });
+    const active = table.tHead.rows[0].cells[columnIndex];
+    active.classList.add(direction === "asc" ? "sorted-asc" : "sorted-desc");
+    active.setAttribute("aria-sort", direction === "asc" ? "ascending" : "descending");
+    table.dataset.sortColumn = String(columnIndex);
+    table.dataset.sortDirection = direction;
+  }
+
+  document.querySelectorAll("table").forEach((table) => {
+    Array.from(table.tHead.rows[0].cells).forEach((th, columnIndex) => {
+      const label = th.textContent.trim();
+      const sortType = sortTypeFor(label);
+      th.setAttribute("aria-sort", "none");
+      th.innerHTML = "";
+
+      const button = document.createElement("button");
+      button.type = "button";
+      button.className = "sort-button";
+      button.title = `Sort by ${label}`;
+      button.innerHTML = `<span>${label}</span><span class="sort-indicator" aria-hidden="true"></span>`;
+      button.addEventListener("click", () => {
+        const sameColumn = table.dataset.sortColumn === String(columnIndex);
+        const current = table.dataset.sortDirection;
+        const initial = sortType === "number" ? "desc" : "asc";
+        const next = sameColumn && current === "asc" ? "desc" : sameColumn && current === "desc" ? "asc" : initial;
+        sortTable(table, columnIndex, sortType, next);
+      });
+      th.appendChild(button);
+    });
+  });
+})();
+</script>
+</body>
+</html>
