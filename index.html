@@ -41,6 +41,31 @@ a.card:hover {
 .tag-live { background: #1a3a2a; color: #3fb950; }
 .tag-tool { background: #1a2a3a; color: #58a6ff; }
 @media (max-width: 800px) { .columns { flex-direction: column; } }
+
+a.panopticon-bar {
+  display: flex; align-items: center; justify-content: space-between;
+  margin: 32px 0 0; padding: 22px 28px;
+  background: linear-gradient(135deg, #1a2433 0%, #0d1a2e 100%);
+  border: 1px solid #2a3f5f; border-radius: 10px;
+  text-decoration: none; color: #e6edf3;
+  transition: border-color 0.15s, transform 0.15s, box-shadow 0.15s;
+}
+a.panopticon-bar:hover {
+  border-color: #58a6ff; transform: translateY(-1px);
+  box-shadow: 0 4px 16px rgba(88,166,255,0.18);
+}
+.panopticon-bar .pano-left { display: flex; align-items: center; gap: 18px; }
+.panopticon-bar .pano-icon { font-size: 1.9rem; }
+.panopticon-bar .pano-title { font-size: 1.05rem; font-weight: 700; color: #fff; letter-spacing: .01em; }
+.panopticon-bar .pano-desc {
+  font-size: 0.82rem; color: #8b949e; margin-top: 2px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+.panopticon-bar .pano-arrow { font-size: 1.4rem; color: #58a6ff; }
+@media (max-width: 600px) {
+  a.panopticon-bar { flex-direction: column; align-items: flex-start; gap: 8px; padding: 16px 18px; }
+  .panopticon-bar .pano-arrow { align-self: flex-end; }
+}
 </style>
 </head>
 <body>
@@ -170,6 +195,18 @@ a.card:hover {
     </a>
   </div>
 </div>
+
+<a class="panopticon-bar" href="https://marginofdanger.github.io/panopticon/">
+  <div class="pano-left">
+    <div class="pano-icon">&#128064;</div>
+    <div>
+      <div class="pano-title">Panopticon — the cross-project digest</div>
+      <div class="pano-desc">Earnings, estimate revisions, annual filings, insider buying, 13D/13G, BDC flows, jobs, and megagrants — all in one place.</div>
+    </div>
+  </div>
+  <div class="pano-arrow">&#8594;</div>
+</a>
+
 <script>
 function equalizeRows() {
   const cols = document.querySelectorAll('.column');
