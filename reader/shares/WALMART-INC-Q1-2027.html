@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Walmart Inc. (WMT) — Q1 FY2027 Earnings Call</title>
+<style>
+/* Canonical earnings-call summary stylesheet.
+   Edit this file to restyle every earnings summary at once.
+   Class names here are dictated by prompt.txt. */
+
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, sans-serif;
+  background: #faf8f5;
+  color: #2c2418;
+  font-size: 0.81rem;
+  line-height: 1.55;
+}
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: #faf8f5;
+  border-bottom: 2px solid #c4956a;
+  box-shadow: 0 2px 6px rgba(90, 74, 58, 0.12);
+  padding: 0.5rem 1.5rem;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+  align-items: center;
+  gap: 0.5rem;
+}
+.header-title {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: #2c2418;
+  min-width: 0;
+  grid-column: 1;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+.header-title .ticker { color: #8b6d4e; font-weight: 600; }
+.header-title .meta { color: #5a4a3a; font-weight: 500; }
+.market-strip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  white-space: nowrap;
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: #5a4a3a;
+  grid-column: 2;
+  justify-self: center;
+}
+.market-strip .market-price,
+.market-strip .market-cap { color: #2c2418; font-weight: 500; }
+.market-strip .market-sep { color: #8b6d4e; font-weight: 500; }
+.market-strip .market-up { color: #28734a; }
+.market-strip .market-down { color: #a34d3d; }
+.market-strip .market-flat { color: #5a4a3a; }
+.market-strip strong { font-weight: 700; }
+.header-actions { display: flex; gap: 0.35rem; align-items: center; grid-column: 3; justify-self: end; }
+.header-actions a, .header-actions button {
+  border: 1px solid #c4956a;
+  background: transparent;
+  color: #5a4a3a;
+  border-radius: 4px;
+  padding: 0.15rem 0.5rem;
+  font-size: 0.72rem;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+  line-height: 1.3;
+  height: 1.55rem;
+  display: inline-flex;
+  align-items: center;
+  font-family: inherit;
+}
+.header-actions a:hover, .header-actions button:hover { background: #f0ebe3; }
+
+@media (max-width: 900px) {
+  .header { grid-template-columns: minmax(0, 1fr) max-content; }
+  .header-title { grid-column: 1; }
+  .header-actions { grid-column: 2; }
+  .market-strip { grid-column: 1 / -1; grid-row: 2; justify-self: start; }
+}
+
+.content {
+  max-width: 90ch;
+  margin: 0 auto;
+  padding: 0.6rem 1.5rem 3rem;
+}
+
+
+h2 {
+  font-size: 1.1rem;
+  color: #3d3225;
+  border-bottom: 2px solid #c4956a;
+  padding-bottom: 0.3rem;
+  margin-top: 1.8rem;
+  margin-bottom: 0.8rem;
+}
+h3 {
+  font-size: 0.95rem;
+  color: #5a4a3a;
+  margin-top: 1.3rem;
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+}
+h3 .role {
+  font-weight: 500;
+  color: #8b6d4e;
+  font-size: 0.82rem;
+}
+
+ul { padding-left: 1.2rem; margin: 0.5rem 0; }
+li { margin-bottom: 0.35rem; }
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0.7rem 0;
+  font-size: 0.78rem;
+}
+th {
+  background: #3d3225;
+  color: #faf8f5;
+  text-transform: uppercase;
+  font-size: 0.68rem;
+  letter-spacing: 0.04em;
+  padding: 0.4rem 0.55rem;
+  text-align: left;
+  font-weight: 700;
+}
+td {
+  padding: 0.35rem 0.55rem;
+  border-bottom: 1px solid #e3dbc9;
+}
+tbody tr:nth-child(odd) { background: #faf8f5; }
+tbody tr:nth-child(even) { background: #f0ebe3; }
+
+.key-insight {
+  border-left: 4px solid #8b6d4e;
+  background: #f5efe4;
+  padding: 0.55rem 0.85rem;
+  margin: 0.8rem 0;
+  font-size: 0.78rem;
+  border-radius: 0 4px 4px 0;
+}
+.key-insight strong { color: #3d3225; }
+
+.qa-block { margin-bottom: 1.3rem; }
+.question {
+  background: #f0ebe3;
+  border-radius: 5px;
+  padding: 0.55rem 0.85rem;
+  margin-bottom: 0.5rem;
+  border-left: 3px solid #c4956a;
+}
+.question .analyst {
+  display: block;
+  font-size: 0.7rem;
+  color: #8b6d4e;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 700;
+  margin-bottom: 0.25rem;
+}
+.answer { padding: 0 0.25rem; }
+.answer ul { margin-top: 0.25rem; }
+
+/* Fallback for model output that closes .content before Q&A. */
+body > h2[id="qa"],
+body > .qa-block {
+  width: min(90ch, 100%);
+  max-width: 90ch;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+strong { color: #2c2418; }
+
+</style>
+<meta name="summarizer-verbosity" content="60">
+<meta name="summarizer-model" content="opus">
+</head>
+<body>
+<div class="header">
+<div class="header-title">Walmart Inc. <span class="ticker">(WMT)</span><span class="meta">Q1 FY2027 · 05/21/26</span></div>
+<span class="market-strip" aria-label="Market snapshot"><span class="market-price">Px: <strong>$121</strong></span><span class="market-sep">|</span><span>YTD: <strong class="market-up">+8%</strong></span><span class="market-sep">|</span><span>1Y: <strong class="market-up">+26%</strong></span><span class="market-sep">|</span><span class="market-cap">Mkt Cap: <strong>$967B</strong></span></span>
+<div class="header-actions">
+<button id="bookmark-btn" data-source-url="https://www.bamsec.com/transcripts/c5b72f8a-cc58-4e2e-a928-65620f85755e" data-interview-date="05/21/26" data-source="EC" data-expert="Walmart Inc." onclick="bookmarkTranscript()">☆</button>
+      <button id="share-btn" title="Share" aria-label="Share" data-filename="WALMART-INC-Q1-2027.html" onclick="shareEarningsPage(this)">&#8599;</button>
+<a href="https://www.bamsec.com/transcripts/c5b72f8a-cc58-4e2e-a928-65620f85755e" target="_blank">Transcript</a>
+<a href="#qa">Q&A</a>
+</div>
+</div>
+
+<div class="content">
+
+<h2>Prepared Remarks</h2>
+
+<h3>John Furner <span class="role">— President & CEO</span></h3>
+
+<table>
+<thead><tr><th>Metric</th><th>Q1</th><th>Notes</th></tr></thead>
+<tbody>
+<tr><td>Rollbacks in place</td><td><strong>~7,200</strong></td><td>+20% YoY; extended from H2 last yr</td></tr>
+<tr><td>US transaction growth</td><td>strongest in 6 qtrs</td><td>units + transactions driving top line</td></tr>
+<tr><td>Marketplace (US)</td><td><strong>~+50%</strong></td><td>launched cross-border to Canada & Mexico</td></tr>
+<tr><td>Enterprise eCommerce</td><td>+26%</td><td>Walmart US delivery +45%</td></tr>
+<tr><td>Advertising (per segment)</td><td>>+30%</td><td>Walmart US <strong>+36%</strong></td></tr>
+<tr><td>Membership fee rev (enterprise)</td><td>+17%</td><td>led by Walmart US</td></tr>
+<tr><td>Units same/next-day, global</td><td><strong>3.5B+</strong></td><td>36%+ of US store-fulfilled delivered <3hrs</td></tr>
+<tr><td>Commerce solutions share of OI</td><td><strong>~1/3</strong></td><td>advertising + membership + marketplace</td></tr>
+</tbody>
+</table>
+
+<table>
+<thead><tr><th>Speed / Fulfillment</th><th>Q1</th></tr></thead>
+<tbody>
+<tr><td>Sam's Club delivery from club</td><td><strong>+90%</strong>; eComm mix at ATH</td></tr>
+<tr><td>Flipkart Minutes (India)</td><td>800+ micro-FCs; <strong><13 min avg</strong></td></tr>
+<tr><td>China units delivered</td><td>>0.5B; ~75% under 1 hr</td></tr>
+<tr><td>Store/club network</td><td>10,900+ locations</td></tr>
+<tr><td>US eComm FC volume automated</td><td>~50%; 60%+ stores get freight from automated DCs; >half RDCs being retrofitted</td></tr>
+</tbody>
+</table>
+
+<ul>
+<li><strong>Consumer:</strong> US shopper feeling pressure, seeking value; launched grilling basket feeding 8 at <$5/person.</li>
+<li><strong>Sparky (AI agent):</strong> WAU +100% QoQ; intelligence/response quality +40% YTD; now in-store, auto-reorder, Spanish; Sparky users' AOV ~35% higher.</li>
+<li><strong>Platform strategy:</strong> "build once, scale globally" — advertising/marketplace/fulfillment/membership scaled at lower marginal cost; now extending to Canada & Mexico; incremental profit without proportional capital.</li>
+<li><strong>General merchandise:</strong> GM comps positive in US; fashion a standout again; International GM outpaced food & consumables, aided by Lunar New Year.</li>
+</ul>
+
+<div class="key-insight"><strong>Key Insight:</strong> As fulfillment economics improve, speed becomes an engine of operating leverage — not just a better customer experience. The 10,900+ store/club network is the physical infrastructure enabling sub-hour speed at an improving cost structure.</div>
+
+<h3>John David Rainey <span class="role">— EVP & CFO</span></h3>
+
+<table>
+<thead><tr><th>Metric</th><th>Q1</th><th>YOY / Notes</th></tr></thead>
+<tbody>
+<tr><td>Constant-currency sales growth</td><td><strong>+5.7%</strong></td><td>beat top of guide by 120 bps</td></tr>
+<tr><td>Consolidated rev (CC) increase</td><td>~+$10B</td><td></td></tr>
+<tr><td>Walmart US comp</td><td>+4.1%</td><td>despite 100 bps drag from max-fair-pricing/pharmacy</td></tr>
+<tr><td>Adj. operating income (CC)</td><td>~+5%</td><td>in line; absorbed ~$175M (~250 bps) fuel headwind</td></tr>
+<tr><td>eCommerce</td><td>+26%</td><td>all segments</td></tr>
+<tr><td>3P marketplace (US)</td><td>~+50%</td><td>highest growth in 2.5 yrs; higher-income engagement</td></tr>
+<tr><td>Advertising (global)</td><td><strong>+37%</strong></td><td>US +36%; mktplace seller ad spend +50%</td></tr>
+<tr><td>Membership fee rev</td><td>+17%</td><td>Walmart+ net adds = Q1 high</td></tr>
+<tr><td>Sam's US membership rev</td><td>+5.6%</td><td>fee increase effective May 1</td></tr>
+<tr><td>WFS same/next-day units</td><td><strong>+~150%</strong></td><td></td></tr>
+<tr><td>International OI growth</td><td>>10%</td><td>led by Asia eComm economics</td></tr>
+<tr><td>US merch-mix gross margin contribution</td><td><strong>+29 bps</strong></td><td>first favorable in 18 qtrs; GM +mid-single digits, share gains best in 5 yrs</td></tr>
+</tbody>
+</table>
+
+<ul>
+<li><strong>Delivery reach:</strong> store-fulfilled delivery sales >2x in 2 yrs; 36%+ under 3hrs (+800 bps vs 2 yrs ago); sub-1hr & sub-30min growing fastest; ~60% of US population reachable in ≤30 min; satisfaction at record highs.</li>
+<li><strong>Walmart+ value:</strong> members spend 4x more overall, 7x more eComm visits/yr; tapping fuel-savings benefit harder amid high gas prices.</li>
+<li><strong>Inflation outlook:</strong> EDLP core, but real COGS impacts — if elevated fuel cost persists, expect somewhat higher retail price inflation in Q2 & H2.</li>
+</ul>
+
+<div class="key-insight"><strong>Key Insight:</strong> Reiterating Feb full-year guidance despite ~$175M unplanned fuel hit — Q1 OI growth is the floor; profitability accelerates from here. ~1/3 of earnings now recurring/subscription-like (membership + advertising), insulating the P&L from macro shocks.</div>
+
+<h4>Guidance</h4>
+<table>
+<thead><tr><th>Metric</th><th>Q2 FY27</th><th>FY27</th></tr></thead>
+<tbody>
+<tr><td>Sales growth (CC)</td><td>+4% to +5%</td><td><strong>+3.5% to +4.5%</strong> (reiterated; toward upper end)</td></tr>
+<tr><td>Operating income growth (CC)</td><td><strong>+7% to +10%</strong></td><td>+6% to +8% (reiterated)</td></tr>
+<tr><td>EPS</td><td>$0.72–$0.74</td><td>$2.75–$2.85</td></tr>
+<tr><td>FX benefit (at current rates)</td><td>~+90 bps sales / ~+130 bps OI</td><td>—n/a—</td></tr>
+</tbody>
+</table>
+<ul>
+<li><strong>Top-end Q2 OI:</strong> +10% CC + 130 bps FX = ~+11.5% reported (double digits).</li>
+<li><strong>Tariff refunds:</strong> guidance assumes zero IEEPA refunds; max eligible (as importer of record) <0.5% of US annual sales.</li>
+<li><strong>Framework intact:</strong> grow OI faster than sales.</li>
+</ul>
+
+<h2 id="qa">Q&A</h2>
+
+<div class="qa-block">
+<div class="question"><span class="analyst">Simeon Gutman — Morgan Stanley</span><strong>Incremental margins are at the high-single/low-double-digit range. Outside fuel, what dials them up over time, especially if fuel stays elevated?</strong></div>
+<div class="answer">
+<ul>
+<li><strong>Core drives mix:</strong> strong core + share gains → ability to expand higher-margin platforms; eComm +26%, US marketplace ~+50% are the key enablers for advertising/membership momentum.</li>
+<li><strong>US eComm incrementals:</strong> ~12% this quarter — pleased.</li>
+<li><strong>Speed fuels frequency:</strong> 60% of US households now served in ≤30 min; greater engagement → more membership/advertising utility; the ~1/3-of-earnings recurring streams insulate from fuel/macro.</li>
+<li><strong>Fuel:</strong> experienced logistics/merchandising teams have many levers; positioned to weather all environments.</li>
+</ul>
+</div>
+</div>
+
+<div class="qa-block">
+<div class="question"><span class="analyst">Greg Melich — Evercore ISI</span><strong>Traffic acceleration (3% Walmart US, 6% Sam's) — how to sustain it? And will tariff rebates fund momentum vs. offset energy costs?</strong></div>
+<div class="answer">
+<ul>
+<li><strong>Traffic drivers:</strong> starts with EDLP merchandising; strong GM quarter; fashion + beauty standouts; eComm now 9th straight US quarter of >20% growth; 7,000+ rollbacks delivered in as little as 30 min.</li>
+<li><strong>Tariff refunds:</strong> pursuing the process; best return on $1 of capital right now is price investment for customers — will keep leaning in.</li>
+</ul>
+</div>
+</div>
+
+<div class="qa-block">
+<div class="question"><span class="analyst">Kate McShane — Goldman Sachs</span><strong>When do the alternative-revenue platforms launching in Canada & Mexico contribute to enterprise margin?</strong></div>
+<div class="answer">
+<ul>
+<li><strong>Build once, scale globally:</strong> US-built platforms (advertising, membership, data ventures) transferring quickly across North America.</li>
+<li><strong>International signals (Nicholas):</strong> eComm +27%; 30% eComm penetration, 30% membership growth, 30% ads growth — small but fast; inspiration also flows back to US core.</li>
+</ul>
+</div>
+</div>
+
+<div class="qa-block">
+<div class="question"><span class="analyst">Michael Lasser — UBS</span><strong>Should outsiders temper expectations for consistent double-digit OI growth given recurring external shocks? Where are the alt-revenue streams vs. potential?</strong></div>
+<div class="answer">
+<ul>
+<li><strong>No tamping needed:</strong> Investor Day framework was ~4% top line, ~4–8% OI growth; incrementals can reach double digits (US eComm proved it this quarter).</li>
+<li><strong>Shocks are exogenous:</strong> tariffs last yr, fuel this yr — hence the range; still came in upper half of guide on CC basis.</li>
+<li><strong>Conviction:</strong> marketplace, advertising & fulfillment services each had their best quarter "since I've been here"; not bulletproof, but managing for the long term, not one quarter.</li>
+</ul>
+</div>
+</div>
+
+<div class="qa-block">
+<div class="question"><span class="analyst">Chris Nardone — BofA</span><strong>Sustainability of GM strength and ticket assumptions into H2? How does marketplace expansion tie to GM share gains?</strong></div>
+<div class="answer">
+<ul>
+<li><strong>GM (Rainey):</strong> tax refunds higher than expected — some macro lift, won't ascribe all to it; team execution real — fashion outsized, with derivative lift to home decor & beauty (75% of beauty growth from new brands like La Roche-Posay).</li>
+<li><strong>Marketplace (Dallaire):</strong> built on speed-of-delivery rails; benefits all categories; more assortment + faster delivery → visit/purchase frequency → membership + advertising; 3P marketplace ad revenues +50% YoY.</li>
+</ul>
+</div>
+</div>
+
+<div class="qa-block">
+<div class="question"><span class="analyst">Chris Horvers — JPMorgan</span><strong>Consumer behavior shift as tax-refund tailwind fades and fuel squeezes the low end? And does grocery price competition / egg-deflation lapping mute inflation and pressure margins?</strong></div>
+<div class="answer">
+<ul>
+<li><strong>Bifurcated consumer:</strong> high-income spending with confidence; low-income budget-conscious / in distress. Fuel gallons per fill-up fell below 10 for first time since 2022 — a stress signal.</li>
+<li><strong>Inflation:</strong> like-for-like ~+1% in Q1; food fertilizer (nitrogen/phosphates) exposed to Strait of Hormuz closure — possible upward AUR pressure if fuel persists.</li>
+<li><strong>Eggs:</strong> egg deflation cut ~100 bps from the like-for-like number; lapping high-egg periods adds upward pressure to printed YoY inflation later in year.</li>
+</ul>
+</div>
+</div>
+
+<div class="qa-block">
+<div class="question"><span class="analyst">Paul Lejuez — Citi</span><strong>Are competitors' price investments showing up in US competitiveness? Where do your price gaps sit and how willing to use them? Tariff rate assumptions?</strong></div>
+<div class="answer">
+<ul>
+<li><strong>Pricing (Furner):</strong> 33rd year — pricing always top of mind in food; focused on best value + omnichannel experience; standout = 7,000+ rollbacks live vs. prior 5,000–5,500 run-rate — a meaningful acceleration; EDLP builds trust.</li>
+<li><strong>Tariffs & fuel (Rainey):</strong> generally assuming the current environment.</li>
+</ul>
+</div>
+</div>
+
+<div class="qa-block">
+<div class="question"><span class="analyst">Oliver Chen — TD Cowen</span><strong>What's driving the Sparky AOV lift, and what are the key AI-native priorities across customer experience and supply chain?</strong></div>
+<div class="answer">
+<ul>
+<li><strong>Sparky expansion:</strong> live across app, web, in-store; added personalized replenishment, meal planning, smarter recs from inventory/price/speed data.</li>
+<li><strong>Mission shift:</strong> early use was GM discovery; now increasingly everyday essentials (food & consumables) — units purchased via Sparky grew >4x QoQ.</li>
+</ul>
+</div>
+</div>
+
+<div class="qa-block">
+<div class="question"><span class="analyst">Bob Ciccarelli — Truist</span><strong>Total usage of fee-generating 30/60-min delivery and the rollout pace of the 30-min-to-60%-of-US capability?</strong></div>
+<div class="answer">
+<ul>
+<li><strong>Fast delivery:</strong> sales +50% YoY in Q1 on adoption growth + rising AOV; stronger engagement across categories incl. GM (highest share gains in 5 yrs).</li>
+<li><strong>Drones:</strong> hit 1 millionth lifetime delivery in Q1, >40% of which occurred in Q1; live in 66 locations across 4 states (TX, GA, NC, AR).</li>
+<li><strong>Enabler (Furner):</strong> 11,000 locations with local inventory + AI-powered data + supply-chain automation (~halfway done) coming online much faster than 2 yrs ago.</li>
+</ul>
+</div>
+</div>
+
+<div class="qa-block">
+<div class="question"><span class="analyst">Krisztina Katai — Deutsche Bank</span><strong>Decompose the ~50% marketplace growth — seller count, AOV — and the rollout pace / biggest opportunities?</strong></div>
+<div class="answer">
+<ul>
+<li><strong>Assortment-led (Dallaire):</strong> revenues are an output of assortment increases that drive engagement; international expansion underway; early days, lots of room — faster delivery cranks the flywheel: more assortment → more sellers → more product.</li>
+<li><strong>WFS (Rainey):</strong> +150% same/next-day units sold; the more sellers use fulfillment services, the bigger the win-win — driving the growth-engine acceleration.</li>
+</ul>
+</div>
+</div>
+
+<div class="qa-block">
+<div class="question"><span class="analyst">Seth Sigman — Barclays</span><strong>Health & Wellness moderated — what's the underlying business? GLP-1 impact and outlook; does GLP-1 pricing pressure free up consumer dollars?</strong></div>
+<div class="answer">
+<ul>
+<li><strong>MFP headwind (Rainey):</strong> max-fair-pricing legislation (Jan) = ~100 bps comp drag; H&W disproportionately in-store, so in-store comps would be positive ex-MFP.</li>
+<li><strong>Underlying (Guggina):</strong> ex-MFP, H&W would have grown mid-to-high single digits; prescription volumes growing, gaining scripts; ~20% of pharmacy deliveries reach doorsteps in <3hrs.</li>
+</ul>
+</div>
+</div>
+
+<div class="qa-block">
+<div class="question"><span class="analyst">Robert Drbul — Guggenheim</span><strong>Private brands in grocery and at Sam's Club, as it relates to the consumer?</strong></div>
+<div class="answer">
+<ul>
+<li><strong>Penetration (Rainey):</strong> down ~40 bps overall — food down >100 bps (largely eggs), GM up almost 200 bps; ex-eggs, food penetration would be higher.</li>
+<li><strong>Walmart US (Guggina):</strong> Great Value & Equate retain trust; bettergoods & freshness guarantee attract new/high-income customers; Great Value redesign — first major refresh in 10+ years.</li>
+<li><strong>Sam's (Watkins):</strong> 2nd year of Member's Mark as only private brand, co-created with members; half of member growth from millennials/Gen Z; reached 100% "made without" label on Member's Mark food & beverage in January.</li>
+</ul>
+</div>
+</div>
+
+<div class="qa-block">
+<div class="question"><span class="analyst">Chuck Grom — Gordon Haskett</span><strong>Category mix turned to a margin source — how much had it held back gross margins given prior Health & Wellness / grocery gains?</strong></div>
+<div class="answer">
+<ul>
+<li><strong>First in 18 quarters:</strong> merch mix a tailwind to GP (+29 bps); fuel increase obscured some progress.</li>
+<li><strong>Pace:</strong> next quarter won't match Q1's improvement (some tax-refund benefit); multiyear path — marketplace adds 3P GM assortment, higher GP than food. "Not directly up and to the right."</li>
+</ul>
+</div>
+</div>
+
+<div class="qa-block">
+<div class="question"><span class="analyst">Corey (unnamed)</span><strong>Q2 OI growth accelerates vs. Q1 despite incremental fuel headwinds — reconcile, given merch-margin improvement won't match Q1.</strong></div>
+<div class="answer">
+<ul>
+<li><strong>Math:</strong> 7–10% CC guide + 130 bps FX → top end ≈ +11.5% reported (double digits) — shows acceleration.</li>
+<li><strong>Balanced note:</strong> lapping higher claims expense in 2Q last year — small tailwind now in base.</li>
+<li><strong>Trajectory:</strong> Q1 always flagged as the most challenging OI quarter; Q2 & H2 accelerate — holding guide despite hundreds of millions in fuel pressure.</li>
+</ul>
+</div>
+</div>
+
+<div class="qa-block">
+<div class="question"><span class="analyst">Rupesh Parikh — Oppenheimer</span><strong>Behavioral shifts from higher gas prices — more online vs. in-store? Any merchandising shifts?</strong></div>
+<div class="answer">
+<ul>
+<li><strong>Fuel value draw:</strong> Sam's gallons +12% in May vs. industry −5% — customers come for value; a fuel member spends <strong>1.6x more</strong> in the rest of the basket than a non-fuel member, underscoring the payoff of leaning into price when wallets are stretched.</li>
+</ul>
+</div>
+</div>
+
+</div>
+
+<script>
+function bookmarkTranscript() {
+  const btn = document.getElementById('bookmark-btn');
+  const data = { title: document.title, url: btn.dataset.sourceUrl || window.location.href, filename: window.location.pathname.split('/').pop(), interviewDate: btn.dataset.interviewDate || '', source: btn.dataset.source || '', expert: btn.dataset.expert || '' };
+  fetch('http://localhost:3220/bookmark', { method: 'POST', headers: {'Content-Type':'application/json'}, body: JSON.stringify(data) })
+    .then(r => r.json()).then(r => { btn.textContent = r.bookmarked ? '★' : '☆'; btn.style.opacity = r.bookmarked ? '1' : '0.7'; });
+}
+
+function shareEarningsPage(btn) {
+  const original = btn.innerHTML;
+  btn.disabled = true;
+  btn.innerHTML = '\u2026';
+  fetch('http://localhost:3220/share', { method: 'POST', headers: {'Content-Type':'application/json'}, body: JSON.stringify({ filename: btn.dataset.filename }) })
+    .then(r => r.json())
+    .then(j => {
+      if (!j.ok) throw new Error(j.error || 'Share failed');
+      try { navigator.clipboard.writeText(j.url); } catch(e) {}
+      btn.innerHTML = '\u2713';
+      btn.title = 'Copied ' + j.url;
+      setTimeout(() => { btn.innerHTML = original; btn.disabled = false; btn.title = 'Share'; }, 2500);
+    })
+    .catch(e => {
+      console.error('Share failed:', e);
+      btn.innerHTML = '!';
+      btn.title = 'Share failed: ' + (e && e.message || e);
+      setTimeout(() => { btn.innerHTML = original; btn.disabled = false; btn.title = 'Share'; }, 3000);
+    });
+}
+(function hideLocalOnlyControls() {
+  const host = location.hostname;
+  if (host === 'localhost' || host === '127.0.0.1' || host === '') return;
+  const actions = document.querySelector('.header-actions');
+  if (!actions) return;
+  const bm = actions.querySelector('#bookmark-btn');
+  const sh = actions.querySelector('#share-btn');
+  if (bm) bm.remove();
+  if (sh) sh.remove();
+})();
+</script>
+
+<footer style="max-width:90ch;margin:2rem auto 1rem;padding-top:0.75rem;border-top:1px solid #e8e0d4;text-align:right;font-size:0.7rem"><a href="http://localhost:3220/status" style="color:#8b6d4e;text-decoration:none">Summarizer Status ↗</a></footer>
+</body>
+</html>
