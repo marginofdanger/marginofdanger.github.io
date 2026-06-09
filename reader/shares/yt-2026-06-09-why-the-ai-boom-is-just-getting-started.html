@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Why the AI Boom Is Just Getting Started</title>
+  <style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background: #faf8f5;
+  color: #2c2418;
+  line-height: 1.7;
+  padding: 0 1rem 2rem;
+}
+header {
+  position: sticky;
+  top: 0;
+  background: #faf8f5;
+  z-index: 100;
+  border-bottom: 2px solid #c4956a;
+  box-shadow: 0 2px 8px rgba(44,36,24,0.08);
+  padding: 0.6rem 1rem;
+}
+.header-inner {
+  max-width: 78ch;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header-title { font-size: 1rem; color: #2c2418; }
+.header-title strong { font-size: 1.1rem; }
+.header-link {
+  font-size: 0.85rem;
+  color: #8b6d4e;
+  text-decoration: none;
+  border: 1px solid #c4956a;
+  padding: 0.2rem 0.7rem;
+  border-radius: 4px;
+}
+.header-link:hover { background: #f0ebe3; }
+main {
+  max-width: 78ch;
+  margin: 0 auto;
+  padding-top: 0.5rem;
+}
+h2 {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #2c2418;
+  margin-top: 2rem;
+  margin-bottom: 0.5rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 2px solid #c4956a;
+}
+h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #3d3225;
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+section { margin-bottom: 1.5rem; }
+ul { margin: 0.5rem 0 0.5rem 1.5rem; }
+li { margin-bottom: 0.4rem; }
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0.75rem 0;
+  font-size: 0.92rem;
+}
+thead th {
+  background: #3d3225;
+  color: #faf8f5;
+  text-transform: uppercase;
+  font-size: 0.78rem;
+  letter-spacing: 0.05em;
+  padding: 0.5rem 0.75rem;
+  text-align: left;
+  font-weight: 600;
+}
+tbody td {
+  padding: 0.45rem 0.75rem;
+  border-bottom: 1px solid #e8e0d4;
+}
+tbody tr:nth-child(even) { background: #f0ebe3; }
+tbody tr:nth-child(odd) { background: #faf8f5; }
+.key-insight {
+  border-left: 4px solid #c4956a;
+  background: #f5efe8;
+  padding: 0.75rem 1rem;
+  margin: 0.75rem 0;
+  font-size: 0.93rem;
+  border-radius: 0 6px 6px 0;
+}
+.qa-pair { margin-bottom: 1.25rem; }
+.question-box {
+  background: #f0ebe3;
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+  margin-bottom: 0.5rem;
+}
+.analyst-label {
+  display: block;
+  font-size: 0.8rem;
+  color: #8b6d4e;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  margin-bottom: 0.25rem;
+}
+.answer { padding-left: 0.25rem; }
+.loading-section { opacity: 0.5; }
+.loading-indicator {
+  font-size: 1.2rem;
+  padding: 2rem;
+  text-align: center;
+  color: #8b6d4e;
+}
+
+/* YouTube transcript reader */
+
+/* Legacy .yt-meta-card -- kept so old output files still render cleanly.
+   New output uses .header-title.yt below instead. */
+.yt-meta-card {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  margin-bottom: 1.5rem;
+  background: #f5efe8;
+  border-left: 4px solid #c4956a;
+  border-radius: 0 6px 6px 0;
+  padding: 0.9rem 1rem;
+}
+.yt-meta-card img {
+  flex: 0 0 180px;
+  height: 101px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+.yt-meta-body { flex: 1; font-size: 0.93rem; }
+.yt-meta-title { font-weight: 700; font-size: 1rem; margin-bottom: 0.25rem; }
+.yt-meta-sub { color: #8b6d4e; margin-bottom: 0.35rem; }
+.yt-meta-url { font-size: 0.85rem; color: #3d3225; }
+
+/* YouTube sticky header uses the default 78ch-capped centered
+   container so it aligns with the body text column below. The
+   buttons sit at the right edge of that centered container. */
+header:has(.header-inner.yt) { padding: 0.75rem 1rem; }
+.header-inner.yt { gap: 1rem; }
+.header-title.yt {
+  display: flex;
+  gap: 0.9rem;
+  align-items: center;
+  min-width: 0;
+  flex: 1;
+}
+.yt-header-thumb { flex: 0 0 88px; line-height: 0; }
+.yt-header-thumb img {
+  width: 88px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 3px;
+  display: block;
+}
+.yt-header-text { min-width: 0; flex: 1; }
+.yt-header-text strong {
+  display: block;
+  font-size: 1rem;
+  line-height: 1.3;
+  color: #2c2418;
+  /* Allow wrapping to 2 lines so long podcast titles show in full. */
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.yt-header-sub {
+  font-size: 0.8rem;
+  margin-top: 0.2rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.yt-header-sub .yt-channel { color: #8b6d4e; }
+.yt-header-sub .yt-date,
+.yt-header-sub .yt-dur { color: #3d3225; font-weight: 600; }
+.yt-header-sub .yt-sep { color: #c4956a; margin: 0 0.5rem; }
+
+.yt-header-actions {
+  display: flex;
+  gap: 0.4rem;
+  align-items: center;
+  flex: 0 0 auto;
+}
+/* Shared box shape for the star + share + YT buttons so they're
+   visually identical. Applies to both the <button>s and the <a> link. */
+.yt-header-actions .yt-bookmark-btn,
+.yt-header-actions .yt-share-btn,
+.yt-header-actions .header-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font: inherit;
+  font-size: 0.85rem;
+  line-height: 1;
+  color: #8b6d4e;
+  background: transparent;
+  border: 1px solid #c4956a;
+  border-radius: 4px;
+  padding: 0;
+  box-sizing: border-box;
+  width: 2.2rem;
+  height: 2.2rem;
+  white-space: nowrap;
+  text-decoration: none;
+  cursor: pointer;
+}
+.yt-header-actions .yt-bookmark-btn { font-size: 1rem; }
+.yt-header-actions .yt-share-btn { font-size: 1.05rem; }
+.yt-header-actions .yt-share-btn:disabled { opacity: 0.6; cursor: default; }
+.yt-header-actions .yt-bookmark-btn:hover,
+.yt-header-actions .yt-share-btn:hover,
+.yt-header-actions .header-link:hover {
+  background: #f0ebe3;
+  color: #3d3225;
+}
+.yt-header-actions .yt-bookmark-btn.is-bookmarked {
+  background: #c4956a;
+  color: #faf8f5;
+  border-color: #a87d5a;
+}
+.yt-header-actions .yt-bookmark-btn.is-bookmarked:hover {
+  background: #a87d5a;
+  color: #faf8f5;
+}
+
+h3.chapter {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #3d3225;
+  margin-top: 1.25rem;
+  margin-bottom: 0.4rem;
+}
+h3.chapter a {
+  font-size: 0.8rem;
+  color: #8b6d4e;
+  text-decoration: none;
+  font-weight: 400;
+}
+
+.yt-body {
+  line-height: 1.58;
+}
+.yt-body p {
+  margin-bottom: 0.9rem;
+}
+.yt-body p.q {
+  background: #f0ebe3;
+  border-left: 3px solid #c4956a;
+  border-radius: 0 6px 6px 0;
+  padding: 0.6rem 0.9rem;
+  margin-top: 1.25rem;
+  margin-bottom: 0.8rem;
+  color: #3d3225;
+  font-style: italic;
+  font-size: 0.96rem;
+}
+.yt-body p.q::before {
+  content: "Q";
+  display: inline-block;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 0.72rem;
+  color: #8b6d4e;
+  letter-spacing: 0.05em;
+  margin-right: 0.5rem;
+  padding: 0.05rem 0.4rem;
+  border: 1px solid #c4956a;
+  border-radius: 3px;
+  vertical-align: 0.1em;
+}
+.yt-body p.q a {
+  display: block;
+  text-align: right;
+  margin-top: 0.3rem;
+  font-style: normal;
+  font-size: 0.8rem;
+  color: #8b6d4e;
+  text-decoration: none;
+  white-space: nowrap;
+}
+.yt-body p.q a:hover {
+  text-decoration: underline;
+}
+
+</style>
+</head>
+<body>
+  <header>
+    <div class="header-inner yt">
+      <div class="header-title yt">
+        <a class="yt-header-thumb" href="https://www.youtube.com/watch?v=DZt1DDmMNGk" target="_blank"><img src="https://i.ytimg.com/vi_webp/DZt1DDmMNGk/maxresdefault.webp" alt=""></a>
+        <div class="yt-header-text">
+          <strong>Why the AI Boom Is Just Getting Started</strong>
+          <div class="yt-header-sub">
+            <span class="yt-channel">Invest Like The Best</span>
+            <span class="yt-sep">&middot;</span>
+            <span class="yt-date">Jun 9, 2026</span>
+            <span class="yt-sep">&middot;</span>
+            <span class="yt-dur">1h 20m</span>
+          </div>
+        </div>
+      </div>
+      <div class="yt-header-actions">
+        <button id="yt-bookmark-btn"
+                class="yt-bookmark-btn"
+                title="Bookmark"
+                aria-label="Bookmark"
+                data-filename="yt-2026-06-09-why-the-ai-boom-is-just-getting-started.html"
+                data-title="Why the AI Boom Is Just Getting Started"
+                data-url="https://www.youtube.com/watch?v=DZt1DDmMNGk"
+                data-date="2026-06-09T05:00:33-07:00"
+                data-channel="Invest Like The Best"
+                onclick="toggleYtBookmark(this)">&#9734;</button>
+        <button id="yt-share-btn"
+                class="yt-share-btn"
+                title="Share"
+                aria-label="Share"
+                data-filename="yt-2026-06-09-why-the-ai-boom-is-just-getting-started.html"
+                onclick="shareYtPage(this)">&#8599;</button>
+        <a class="header-link" href="https://www.youtube.com/watch?v=DZt1DDmMNGk" target="_blank" title="Watch on YouTube" aria-label="Watch on YouTube">YT</a>
+      </div>
+    </div>
+  </header>
+  <main>
+    <div class="yt-body">
+    <h3 class="chapter"><span>Intro</span><a href="https://www.youtube.com/watch?v=DZt1DDmMNGk&t=0s">&#x21AA; 00:00</a></h3>
+<p data-t="0">When you get the right part of the S-curve, you get exponential unit growth. If you have a very strong business model, your earnings don't grow linearly, they grow exponentially. The world doesn't think exponentially. Very few people believe you can accurately predict two, three, four years out. But if you follow and understand the S-curve, and you know the moats and you know how to model, you really can predict these great things.</p>
+<p data-t="28">The enterprise AI or enterprise application AI market is less than 1% penetrated. We've never seen, we talk about S-curves, we call this an L-curve, just straight up.</p>
+<p class="q" data-t="53">Alex, you were saying that your highest conviction position is Anthropic right now. Can you tell the story of discovering it, making the investment, using this anecdote as an excuse to talk about all the things that I think you and I are mutually interested in right now: investors like you, investing in private markets, Anthropic, the business, AI, everything? It's a great way to zoom in. Why is it your highest conviction, and how did you get started?<a href="https://www.youtube.com/watch?v=DZt1DDmMNGk&t=53s">&#x21AA; 00:53</a></p>
+<p data-t="70">Yeah. Well, when the gun went off with OpenAI ChatGPT in November 2022, we immediately took the firm and did a massive deep dive with our 10-person team. Anytime you have a new compute paradigm, there's a new stack, and that creates new winners and losers on the old stack.</p>
+<p data-t="94">In this stack, Jensen talks a lot about it, but it's power at the bottom, chips at the bottom, the clouds, then the foundational models, and then the applications on top. At that time, this was early 2023, we said, we want to be in the chips and the infrastructure first. Not only do they get the demand first, but we know who the winners are.</p>
+<p data-t="123">No matter who wins above, which we weren't sure at the time, we know we're going to need tremendous amounts of compute. We did a deep dive into that, which we can talk about later. But over the next two or three years, we started to get more clarity on how the foundational model layer would evolve.</p>
+<p data-t="143">At the time, two or three years ago, there were 60 different companies going after it. OpenAI was kind of in the lead. We did a webinar in April 2023. We said, look, this might be winner take all. It might be a total commodity because there are open-source players. It might be a race to zero, or it might be an oligopoly where there are three or four leading players.</p>
+<p data-t="168">What we saw over the following three years was that almost all the startups fell away and died. Then some of the largest companies in the world, including Amazon and Meta, Amazon really never really showed up. We'll see what happens with Meta, but they came in strong and then basically their effort faltered, and they had to do a total reboot.</p>
+<p data-t="198">In the meantime, Anthropic was this dark horse candidate, the startup, and they focused really purely on the enterprise. OpenAI had kind of won the consumer, and then Gemini can never be counted out. We love Google as well. It's one of our largest positions. So it really started to look like a three-horse race and somewhat of an oligopoly, very similar to how the cloud market evolved, where three companies underpin the entire SaaS cloud world and have really excellent businesses.</p>
+<p data-t="237">We also were aware of the open-source risk from China, and we started to get comfortable that the quality of the tokens from the leading edge were superior. Because if you're 80% close to the top of the benchmarks, going from 80 to 85 is a huge unlock.</p>
+<p data-t="262">The open-source guys, they don't have as much compute. They can come close to the leading edge, but they can't leapfrog it, and then they kind of falter. Meanwhile, the scaling laws and other means of improving the models, the feedback loops, etc., we saw that there was a very strong runway. Everyone we talked to close to the industry saw that the scaling laws would continue.</p>
+<p data-t="286">So we developed this thesis that it would be a three-horse race. Then the big kicker was code. This is the true unlock of AI. In the first few years, we knew AI would be big, but we were skeptical also. We made large investments because we knew the training would be there, but we weren't sure how much revenue might come and if it could truly replace labor.</p>
+<p data-t="312">If you remember, the early versions of the models were good, but there was some negative feedback from corporates. Could they be truly agentic? We realized in 2025, the first Claude Code and the coding tools really began to explode. You saw the first gen was Microsoft Copilot, which is $20 a month.</p>
+<p data-t="337">That could sort of improve your grammar of coding, maybe find a bug, maybe make a block of code like a paragraph. Then Anthropic came out sometime in the middle of the year, and it could do so much more. It started to get to this point where it could run agentically, and we saw that happening. The coding market just exploded.</p>
+<p data-t="363">Then we started hearing that people who could use it unfettered, we heard that even within Anthropic at that time people were spending $100 a day on tokens, which if you do the math comes out to $20,000 or $30,000 a year. If you think about how many coders there are in the world, 20 million, you've got a half-trillion-dollar market just from coding alone.</p>
+<p data-t="388">Mind you, that was on seven-, eight-, nine-month-old technology. We could see just on the coding market alone that Anthropic had a tremendous opportunity ahead of it. I think at the time, this is pretty funny, we wrote in our letter, we made the investment at the 180 valuation. I think they were hoping to get to a billion to nine.</p>
+<p data-t="414">Then the numbers were like nothing we'd ever seen before: 100 to a billion on the way to nine. When we did it in August of 2025, nobody had any idea what 2026 could be.</p>
+<p data-t="427">The second big unlock lately is that Claude Code has gone to almost completely agentic, where you had Andrej Karpathy and Linus Torvalds last year saying, two of the smartest people in coding, and they completely flip-flopped. Karpathy said last year's code tools could write 20%, and 80% would be handwritten. That flipped when the latest model came out, and now he hasn't written a line of code except in English.</p>
+<p data-t="465">Not to mention the pure unlock that we're going to get for the people that never knew how to code. So just coding alone has completely taken off. Anthropic has been able to stay ahead in coding.</p>
+<p data-t="484">One difference between the clouds, GCP, AWS, and the AI companies is the cloud's generally a commodity. They're selling you servers and storage. They have a lot of software on top, and there is stickiness to it. But in the AI models, everyone thought it would be pure commodity. There's tremendous differentiation within.</p>
+<p data-t="504">There are different training methods and different skills that they're good at. A lot of people have routers that switch in between, which sort of makes it sound like they're commodity, but Anthropic, they're very good for anything that has to do with private equity and finance. Google's very good for ingesting PDF. So there's a lot of differentiation, critical IP, which is a great competitive advantage. Many companies have come after the coding franchise, and Anthropic has been able to keep ahead.</p>
+<p data-t="544">The other thing that's good about the foundational models and Anthropic is it's not just the API or the model. They're building a whole ecosystem of products around the API. We've got the SDK, Claude for co-work, the orchestration layer, and all the tools. They call it sort of a harness, which is the software around the API that gets the most out of the model.</p>
+<p data-t="575">This was one of the things we saw with AWS really early on in 2013. People thought it was a commodity server up in a warehouse, big deal. What they saw was this was a new way of doing computing. They invented all these products that they could see before everybody else that slowly built lock-in.</p>
+<p data-t="591">The other way we think about this is, where are we on this S-curve? We have this infrastructure layer S-curve, which we think is somewhat like 10% penetrated. By the way, we think it's still one of the best ways to play AI, and we'll talk about how that feeds back through.</p>
+<h3 class="chapter"><span>AI&#39;s L-Curve</span><a href="https://www.youtube.com/watch?v=DZt1DDmMNGk&t=595s">&#x21AA; 09:55</a></h3>
+<p data-t="616">But if you think about it, even though 200 or I don't know how many, 800 million people are using AI, they're just using AI 1.0, which is like a search engine on steroids. But now with these new primitives, where you have Claude on your computer linking it in, then you build skills.</p>
+<p data-t="633">Companies are going to build, people and companies are going to start building skills, and then they're going to build true AI bots. Then big corporations are going to build much larger. But where are we in terms of the amount of people doing that? Sundar said it's 10 bps of the knowledge workers of the world.</p>
+<p data-t="653">Anthropic has something like 14 or 15 million DAUs. Probably a small portion of those are truly doing AI the way you can do it. So that 10 bps, it's classic S-curve, where these are the tinkerers. Then it's going to go to the early adopters, then it's going to go to the early mainstream.</p>
+<p data-t="670">But you're going to go from 10 bps to one, two, or 3%, to 5%, to 15% in the next four years. Kind of a light switch this year went off in the enterprise, where everybody realizes they need to do this now and do it fast.</p>
+<p data-t="689">It's still like internet 1.0. You knew you needed a website in 1998, but it's hard to build that website. But this is coming together fast. We think the enterprise AI or enterprise application AI market is less than 1% penetrated, and we've never seen, we talk about S-curves, we call this an L-curve, just straight up.</p>
+<p data-t="719">We'll take this to the infrastructure, which is, we're at 10 basis points of people really using AI, and we're already sold out. There's not enough compute in the world. Anthropic has half of what they need right now, and that's before this huge take-up. Mark Andreessen said in the next four years, one thing he's sure of is there's not going to be enough compute.</p>
+<p data-t="744">Most software companies try to maximize your time on their app to juice engagement. Ramp does the exact opposite. Ramp understands that no one wants to spend hours filing expense reports, reviewing expense reports, and checking for policy violations. So they built their tools to give that time back, using AI to automate 85% of expense reviews with 99% accuracy.</p>
+<p data-t="761">Since Ramp saves companies 5%, it's no wonder that Shopify runs on Ramp, Stripe runs on Ramp, and my business does too. To see what happens when you eliminate the busy work, check out ramp.com/invest.</p>
+<p data-t="772">OpenAI, Cursor, Anthropic, Perplexity, and Vercel all have something in common. They all use WorkOS. Here's why. To achieve enterprise adoption at scale, you have to deliver on core capabilities like SSO, SCIM, RBAC, and audit logs. That's where WorkOS comes in.</p>
+<p data-t="790">Instead of spending months building these mission-critical capabilities yourself, you can just use WorkOS APIs to gain all of them on day zero. That's why so many of the top AI teams you hear about already run on WorkOS. WorkOS is the fastest way to become enterprise ready and stay focused on what matters most, your product. Visit workos.com to get started.</p>
+<p data-t="811">Every investor should know about Rogo because Rogo AI's platform is not just another generic chatbot. Instead, it was designed to support how Wall Street bankers and investors actually work, from sourcing, diligence, and modeling to turning analysis into deliverables.</p>
+<p data-t="825">For me, three key things differentiate Rogo. First, it connects directly to your systems so it can work with your actual data. Second, it understands your workflows, how work really happens across a deal or an investment. Third, it runs end to end and produces real outputs the way the best people do: auditable spreadsheets, investment memos, diligence materials, and slide decks that match your standards.</p>
+<p data-t="841">This all comes from the fact that Rogo is built by finance professionals for finance professionals, and it's already being adopted by some of the most demanding institutions in the world. To learn more, visit rogo.ai/invest.</p>
+<p class="q" data-t="858">I'm so curious, when an investor like you, who historically was a public markets investor, you could hit buy and buy whatever you want, is now operating in lots of the most important private market companies. We can talk about Stripe or Databricks or OpenAI or Anthropic. How do you get the positions at the size that you want, coming from the legacy of being able to just buy?<a href="https://www.youtube.com/watch?v=DZt1DDmMNGk&t=858s">&#x21AA; 14:18</a></p>
+<p class="q" data-t="872">How much of it is creativity just directly with the company? If it is directly with the company, they have a double opt-in. They have to decide to let you in too. How do you do that? What have you learned about getting the allocation you want or the amount of equity you want in a private company, given that wasn't your original background?<a href="https://www.youtube.com/watch?v=DZt1DDmMNGk&t=872s">&#x21AA; 14:32</a></p>
+<p data-t="899">In that case, we got to know the company. One of our analysts knew people in the finance group there, and we actually had a look at the $60 billion round, and we didn't do it. We didn't know the company as well, and the gross margins were negative. Frankly, we hadn't seen coding explode the way it had.</p>
+<p data-t="922">One thing about public markets is you get to know companies over a long period of time, and you can kind of invest on your own schedule. I got a chance to spend some time with Dario. I obviously listened to him on podcasts, and I started to realize these guys, their management team is excellent.</p>
+<p data-t="935">The focus, the dedication, they had almost no turnover, the quality of code, and then the business plan was really starting to play out. It's one thing to grow from 100 to a billion, but it's another to do nine. Then we reached out to the company as much as we could. They took a meeting with us.</p>
+<p data-t="960">We did a 90-page PowerPoint deck where we used Claude Code to scour the internet for all the feedback we could about the coding market and what their products were good at, where they might need to improve. We also did our whole overview of what the coding market would be. They welcomed us into this round, and then we stayed close with the CFO. It's been great to build a relationship with them, and I think we punched above our weight in terms of the allocation. So that one was a total home run.</p>
+<p data-t="990">In the rest of the world, we are in this period where the unicorn market is bigger than most stock markets in Europe, maybe even combined. It's definitely bigger than Germany. It's definitely bigger than the UK. Even before we invested in privates, the first one was 2020, we meet with these. We have to know these companies, and you really have to know them now because sometimes they're the biggest companies in the space and have huge impact.</p>
+<p data-t="1015">So we do two to 3,000 face-to-face meetings with management teams a year, and about 10 or 15% of those are with privates. Then we focus in on the companies that we really want to learn about and find ways to meet with them and get involved in their rounds.</p>
+<p data-t="1041">Our first one was Stripe. We had a large investment at the time. This is 2017, '18, '19, and 2020. We owned Adyen, which is a fantastic payments company. They're a next-gen cloud payments company taking from Worldpay. The cloud modern payments was 5% of total, $80 trillion market or what have you.</p>
+<p data-t="1068">But you can't invest in Adyen unless you know Stripe like the back of your hand. So we did tremendous amounts of due diligence, talked to 200 customers in Adyen, but when we asked about Adyen, we asked about Stripe, and we realized this is Coke and Pepsi. We said, we have to find a way to invest.</p>
+<p data-t="1081">I finally got to meet the Collison brothers in 2019, and so that was our first one. We weren't really known for privates. I've got a friend who is involved with a venture firm that has tremendous amounts, and I talked to him about it. I said, let me know if you ever want to sell some.</p>
+<p data-t="1100">Then I get a call from him during COVID in April of 2020. We knew a lot about Stripe. We didn't have the full financials, but we knew enough that at that valuation, I think it was $35 billion, they disclosed they had over half a trillion of TPV. We knew that Adyen's take rate was 25 or 30 bps, and we knew Stripe's was 40 or 50.</p>
+<p data-t="1128">We knew how many employees they had, so we could kind of get at the profitability. It turned out the take rate was higher. It turned out they were being modest about their TPV. It was much higher than the 550. It was closer to $1 trillion. We underwrote the thing under our assumptions, and it was much better.</p>
+<p data-t="1147">Then we were able to upsize that from the seller to a $100 million block. Sometimes they like it that the VCs are going to own and then most of them are going to sell. They like it that we'll own and own in the public market, which we did with Nubank as well. We owned it for a long period of time in the public market as well.</p>
+<p class="q" data-t="1166">Maybe now's the right time to lay out everything you've ever learned about S-curves. Obviously, your firm is sort of predicated on this idea of technology adoption life cycles and investing in companies at the right time amid a certain platform change or S-curve change. I think everyone knows the basic idea of an S-curve and the stages you mentioned, tinkerers and early adopters and early majority.<a href="https://www.youtube.com/watch?v=DZt1DDmMNGk&t=1166s">&#x21AA; 19:26</a></p>
+<h3 class="chapter"><span>Whale Rock&#39;s S-Curve Playbook</span><a href="https://www.youtube.com/watch?v=DZt1DDmMNGk&t=1171s">&#x21AA; 19:31</a></h3>
+<p class="q" data-t="1191">But I'd love you to go into the super-deep detail of what you've learned, since this is the lens through which you've viewed markets and stocks for a long time. Bring us into the nitty-gritty, fine-grained, nuanced detail of why S-curves can be so useful for investing.<a href="https://www.youtube.com/watch?v=DZt1DDmMNGk&t=1191s">&#x21AA; 19:51</a></p>
+<p data-t="1203">We have an investment framework. It's S-curve, and we'll dive into each one, competitive advantage, and then underappreciated earnings power. When you get the right part of the S-curve, you get exponential unit growth. If you have a very strong business model, which in tech there are so many of those for so many different types of moats, your earnings don't grow linearly, they grow exponentially.</p>
+<p data-t="1228">That's the last piece: invest when there's underappreciated long-term earnings power. Very often the earnings can grow from $1 to $10 to $15 to $20, and it happens way more than you think. It allows you to buy some of the best companies in the world for extremely low PEs.</p>
+<p data-t="1253">When we were buying Nvidia in 2023, we were paying four times earnings. When we bought Tesla in 2019 for the car S-curve, we were paying five times earnings. When we were owning Apple, we were paying four times earnings. When we bought Amazon for AWS, we were getting it for free.</p>
+<p data-t="1267">The world doesn't think exponentially, and they're so focused on the next year, the next quarter. Very few people believe you can accurately predict two, three, four years out. But if you follow and understand the S-curve, and you know the moats and you know how to model, you really can predict these great things.</p>
+<p data-t="1293">So let's go to the S-curve. The S-curve is crucial because every technology follows this pattern where it comes out. The smartphones were out 10 years before the iPhone. The internet was out 20 years before Netscape. AI has been out hidden inside of these companies, but it wasn't until ChatGPT took it public and ignited what it was.</p>
+<p data-t="1321">Electric vehicles, Tesla went public 15 years before 2019, when it went vertical because there were so many barriers to adoption. The first smartphones, they were clunky. They didn't have touchscreen, not Apple, there wasn't a wireless data system, and they were too expensive. They were $500 or $600. Steve Jobs got the price to $200.</p>
+<p data-t="1346">AT&amp;T had a 3G network. It was touchscreen. It was so easy your grandmother could do it. And he built an ecosystem and made it simple. So all the barriers to adoption were eliminated, and then you rocket when those barriers are removed. That's the tornado of demand, that everybody in the world knows they need this right away.</p>
+<p data-t="1366">That's the flip that happens. It happened with electric vehicles. The price was too high. Elon got the price to $40,000. Range anxiety was there. He got the range to 300 miles. The supply chain was finally in place so he could churn out millions of these things. So that triggers the inflection.</p>
+<p data-t="1383">Now, the other nuance, it's not just, oh, it's taken off now. It's how tall, how big is this S-curve, how tall it is, so you know when to sell, how long to hold on. Because we're underwriting out two or three years. We have to know what the growth looks like thereafter. These S-curves can be dynamic.</p>
+<p data-t="1400">When Amazon had AWS, and it was a hidden line item inside of Amazon, covered by retail internet analysts, not hardware, chip, it was a new business model, what have you. But we realized the TAM for this, it was the largest TAM in enterprise IT ever. Previously, the TAM was routers, memory, storage, Dell, EMC, but they were doing it all.</p>
+<p data-t="1437">You want to know how tall the S-curve is. So we figured out they were addressing $600 billion of IT systems, directly addressing that. Then we said it's probably going to be 50% deflationary. Therefore, we're 1 or 2% penetrated.</p>
+<p data-t="1451">But then over time, we realized it actually wasn't deflationary. If you talk to anybody now, they say if you build it yourself, it's about the same price. So that means the TAM was so much bigger. There are mega S-curves and there are sub-S-curves.</p>
+<p data-t="1465">We've been lucky that we've had internet 1.0, mobile, cloud, e-commerce, and now AI, which we can confidently say is the biggest, and all these things build upon one another. With the electric vehicle S-curve, you have to pay attention too. At the time, we thought probably maybe 40 to 50% of the cars would go electric, but it did hit a big wall at 10 or 15%.</p>
+<p data-t="1501">Usually the S-curves go kind of all the way. But in this case, for a variety of reasons, it didn't. So you have to adjust and you have to stay on top of it. Generally, when something gets to sort of 30, 40% penetrated, then you stop having exponential growth, which means the sell side catches up and there's no longer big beats.</p>
+<p class="q" data-t="1519">Is that when you sell typically?<a href="https://www.youtube.com/watch?v=DZt1DDmMNGk&t=1519s">&#x21AA; 25:19</a></p>
+<p data-t="1524">Generally, we like the high growth. It was a mistake with Apple, because in the first five or six years of Apple, it was awesome. It was our largest position, and it would go up 50, 70% a year, except for '08. Then we sold in 2012 when it got to sort of 50% of the US had a smartphone.</p>
+<p data-t="1545">With Apple, they maintained their leadership position. It had a couple years of underperformance, and then the multiple got low. They added several ancillary things, and then they also got to play in the application because they get 30% of the app. So they were able to compound very nicely, say 20%, but the big years were in the zero to 50% part of the curve.</p>
+<p class="q" data-t="1572">I'm so fascinated by this sometimes decade-plus-long flatline at the beginning of one of these curves, which makes me wonder what you've learned about the right moment to buy or even start paying attention before you buy. How do you measure that? Is it always different? What are the pitfalls that you've fallen into? We talked about when to sell, but how do you know when to start thinking about buying in one of these things?<a href="https://www.youtube.com/watch?v=DZt1DDmMNGk&t=1572s">&#x21AA; 26:12</a></p>
+<h3 class="chapter"><span>Spotting Inflection Points</span><a href="https://www.youtube.com/watch?v=DZt1DDmMNGk&t=1574s">&#x21AA; 26:14</a></h3>
+<p data-t="1598">Andy Grove says sort of when you have strategic inflection points, you can't trust the data. Strategic inflection points are about intuition, anecdotal evidence. I love this book called The Dow Jones Averages, a guide to whole-brain investing, which is right brain and left brain. The best investors have the creative side, where it's visual. It's connecting the dots.</p>
+<p data-t="1626">We invested in the mobile video game S-curve for so long. Mobile video games, the screens were small on the phones, and the processing power wasn't good. So you had all these casual games. But then I was in China, and I saw this little 12-year-old boy with a huge phone, and he was playing an awesome video game. I'm like, oh my God, it's now coming to the phone.</p>
+<p data-t="1647">So it's visual. Enterprise is hard because you can't see it. We go to the Gartner IT Symposium. 30,000 American CIOs go there, and we saw this happen with Splunk, where that used to be an amazing database company, and their room where they were explaining was standing room only.</p>
+<p data-t="1669">We saw that with VMware, I'm talking 30 years ago, where they virtualized the server, and there was standing room only. You could just see the corporate demand just beginning. With AWS, we went there, and the grand ballroom was completely packed. That was at nine o'clock, and at 10 o'clock the grand ballroom was completely packed. Eleven o'clock. So you could actually see the demand exploding before it happened.</p>
+<p data-t="1698">We look for all kinds of clues, and there's a whole pattern recognition that happens. By the way, it's okay to be late. It's okay to miss the first one, two, three years in a lot of cases, because if the top of the S-curve is half a trillion, the growth can go on for a long time. You don't always have to be right there.</p>
+<p data-t="1722">It's okay to miss the first 100%. Peter Lynch, I started at Fidelity, and he loved to mentor the young kids. So I got some time with him. He said, "White out the chart. It's all about the future." So it's okay to miss. But what helps about the S-curve is sort of how long it goes for.</p>
+<p data-t="1741">Then there's the slope of the S-curve, which is important. A lot of people think because we're in a modern world, everything's so fast, but there are a lot of factors that determine the pace of the adoption. We commissioned this gentleman, Horace Dediu, who used to work with Clayton Christensen, to go look in history. We have the big S-curves on our wall over the last 100 years.</p>
+<p data-t="1768">The radio S-curve is one of the fastest ever. It took seven years to reach 100% penetration. But the dishwasher S-curve is like that because it needs to be plugged into the back end.</p>
+<p class="q" data-t="1781">What else did you learn? That's fascinating. What else did you learn?<a href="https://www.youtube.com/watch?v=DZt1DDmMNGk&t=1781s">&#x21AA; 29:41</a></p>
+<p data-t="1787">The B2B stuff can take a long time because it needs to be plugged into the existing systems. It's got to be put, the dishwasher, inside the house. Consumers generally tend to go a lot faster.</p>
+<p class="q" data-t="1800">I love that the radio and the dishwasher are the two models for adoption.<a href="https://www.youtube.com/watch?v=DZt1DDmMNGk&t=1800s">&#x21AA; 30:00</a></p>
+<p data-t="1806">Yeah. I covered internet at Fidelity. My first stock was Amazon. That's a whole other story, which is a lot of fun. But I also did B2B internet, and there was a whole huge bull case on that. But basically the underlying infrastructure wasn't in place for B2B to happen. Ultimately, it happened 20 years later with SaaS.</p>
+<p data-t="1830">That is a risk with AI, in that these big companies are very security conscious. They can be slow to move. There are a lot of cultural issues with AI, where you really need a few evangelists to push it through, and the top management needs to push it through. But then IT is saying this is risky.</p>
+<p data-t="1857">That happened with cloud too. That was one of the big things with cloud, where everybody was afraid it's insecure to have your data in the cloud. Then we saw the CIA do it, and we saw Capital One. We talked to the Capital One CIO, and it's more secure in the cloud, and then it really started to take off.</p>
+<p data-t="1878">But those takeoffs, maybe because SaaS is like the dishwasher and because cloud is like the dishwasher, it's got to be plugged in. It meant that yeah, it was growing, but it was sort of a 30 to 40, maybe a 50% growth rate.</p>
+<p data-t="1892">What's amazing about AI is you just, at least with consumers or even business, open up the browser, and it's there. That's why we're getting this straight up. I think there's enough runway in the near term, going from 10 bps of people really using it to two to five or whatever, which is going to cause it to keep on going straight up. We call it a backwards L-curve. It's really pretty exciting.</p>
+<p class="q" data-t="1920">What have you learned about when the group that ends up being the leaders separates itself from one of these competitive packs? You're talking there mostly about overall growth of the S-curve and demand. There's always multiple players fighting for it. You've invested, it seems like you kind of invest after someone has separated themselves from the pack, not try to pick the winners from the pack. Is that roughly correct?<a href="https://www.youtube.com/watch?v=DZt1DDmMNGk&t=1920s">&#x21AA; 32:00</a></p>
+<h3 class="chapter"><span>Finding AI Winners</span><a href="https://www.youtube.com/watch?v=DZt1DDmMNGk&t=1922s">&#x21AA; 32:02</a></h3>
+<p data-t="1947">We're definitely, so you look for the S-curve, then we do an exhaustive study of everybody with exposure in that area and try to find the one with a very powerful competitive advantage. A lot of people didn't like tech. Warren Buffett didn't like tech because he couldn't predict the future, too fast. The S-curve is our map for looking in the future.</p>
+<p data-t="1971">Now, a lot of people were worried about tech because they thought there was so much disruption you could never trust a company to be a long-lived asset. What we've found over the years is some of the competitive advantages within the digital world are more powerful, if not equally or more powerful, than in the offline world.</p>
+<p data-t="1993">You've got the network effect that was so powerful for LinkedIn, Facebook, Alibaba, you name it. Then you can become an industry standard. Oracle and Bloomberg are the industry standard. Oracle, they charge a lot, and there are free versions, there's open-source Oracle. But they had all the database administrators. They had all the software that was tuned to work with them.</p>
+<p data-t="2016">So they basically had a chokehold on the relational database market forever. You can get to scale very quickly because these S-curves grow, and all of a sudden Anthropic is doing $30 billion in sales. Or Amazon had so much scale, and they got it quickly. They got a Walmart-size scale advantage in five years versus 40 years for Walmart.</p>
+<p data-t="2042">So you can have network effects, scale, you can become industry standard, you can be a platform that people build on top of. You can have critical intellectual property, which was what Qualcomm had. You couldn't make a phone without paying them. Or ASML has critical intellectual property. You can't make a chip without their lithography.</p>
+<p data-t="2065">I think what's interesting is maybe these AI foundational companies, they've got scale. You can also have brand. Brand is very important because Google, Amazon, they got to grow. They never had to advertise. Elon's never had to advertise for anything. Cost to acquire versus lifetime, it's the whole business model. Almost all the companies I mentioned have Apple, they have all of these rolled into one.</p>
+<p data-t="2091">So we can sometimes notice these things before the rest of the world. One of our high points was we pitched Amazon for AWS in 2013 at the Robin Hood Investors Conference, and we said the bulls have no idea what they're sitting on. Amazon's won the war before it even started. At that time we said there's Coke and there's no Pepsi. It did turn out there was Pepsi, but it was big enough to last.</p>
+<p data-t="2116">We could see they had a seven-year lead. So first mover is important. Then they became a whole ecosystem and a platform. Then they got scale. So they were 10 times the size of everybody else. Nobody could invest in the R&amp;D to catch them.</p>
+<p data-t="2133">But you're right that if you don't have a competitive advantage, you can be in the best S-curve of all time and still lose out. If your name was RIM, Palm, Nokia, HTC, LG, Motorola, I can go on forever: zero, negative, negative, negative, negative.</p>
+<p data-t="2153">That's what we saw at the foundational model layer, where there were 50 companies trying to do that, and they all have fallen away. Two or three have emerged at the top, and there are a lot of reasons to think they will continue to hold their position.</p>
+<p class="q" data-t="2167">Google's a little trickier because they have this other huge, massive, complex business attached to the Gemini business. But if you take Anthropic and OpenAI as pure plays, and you dig through those and reason through their competitive advantages, why aren't they susceptible to erosion of those things in the fullness of time?<a href="https://www.youtube.com/watch?v=DZt1DDmMNGk&t=2167s">&#x21AA; 36:07</a></p>
+<p data-t="2185">Of all the S-curves we've done, AI is by far the most complex and the fastest changing. We have to keep in mind that there are risks, but also the rewards are the highest, because we're talking about a market in the trillions. We just said cloud, maybe cloud's $800 billion. This might be, we now think, three to five, but there's higher risk, higher reward.</p>
+<p data-t="2216">But let's just say with Anthropic now, it looks like they have critical intellectual property. Generally, they've been able to maintain their high market share in code. Number two is they've built a strong brand for enterprise, to where go talk to any CIO, and the first thing they'll say is Claude.</p>
+<p data-t="2237">They're going to have escape velocity and scale. What was scary for OpenAI and Anthropic fighting these big companies like Google was they had these huge cash cows. To both of the management teams' credit, OpenAI and Anthropic were able to work in these super capital-intensive industries and find ways to raise capital.</p>
+<p data-t="2263">Certainly with Anthropic, with their 10x sales growth and their fundraising ability, it looks like they've reached escape velocity. So now they have scale. The other thing that Anthropic and OpenAI could have is Anthropic, now that they're leading in code, they set that code back onto their model, and it's this concept of the recursive improvement.</p>
+<p data-t="2286">If you look at the pace of their innovation, it's accelerating. Maybe they can have this liftoff stage. OpenAI was focused on so many different other sectors, but they're starting to do better in enterprise, and their coding tool is good, and they're starting to see accelerating growth on that side.</p>
+<p data-t="2312">Then look, the consumer franchise, it looks like enterprise right now is much better because you and I, we're willing to pay a lot because it's replacing human beings. Consumer, maybe you can get advertising, but maybe they would pay for a Claudebot-type assistant if you could make that perfectly well for them. But they have gazillion eyeballs there.</p>
+<p data-t="2338">You're right, things do shift. But we have these charts that we almost do for all of our pitches. On the internet, the leader goes bigger, faster, and wins. It's happened most of the time. The leader gets it. Shopify becomes the leader. It just keeps on going. Amazon, the leader, keeps on going. SaaS company XYZ, you get the lead. It compounds. An internet company compounds on itself.</p>
+<p data-t="2362">Another thing is you need to be big. Another is scale. You need the compute, and you've got to pay for the compute. There are only so many people that can do that. Those are some of the moats that we think are now showing up.</p>
+<p data-t="2373">Now, there are some exceptions to that rule. Usually with the paradigm shifts, AOL, and then dial-up went to broadband, and they didn't make the change. Netscape came out early, and it wasn't as strong of a business model. But I think if you talk to anyone in the Valley or any startups, they'll tell you that they're building on top of these three, and the world's a huge place, and the economy is a huge place, that they'll be able to differentiate within those.</p>
+<p class="q" data-t="2401">I'm so curious, then, what you think all of this means for software. When I look through your portfolio, I don't see a ton of big software companies, enterprise software companies. I don't know if you once had them and sold them or how you thought about it, but it's hard to have the experience of building really useful, cool little tools, even if they're still toys, and not have the thought of, wow, if I spend enough time on this, even if I'm not technical, maybe I could build an ERP equivalent replacement or something for my company.<a href="https://www.youtube.com/watch?v=DZt1DDmMNGk&t=2401s">&#x21AA; 40:01</a></p>
+<h3 class="chapter"><span>AI vs Software</span><a href="https://www.youtube.com/watch?v=DZt1DDmMNGk&t=2404s">&#x21AA; 40:04</a></h3>
+<p class="q" data-t="2432">There doesn't seem to be a fundamental reason why that's not possible, and then those companies could be in lots of trouble. Seems like everyone has a strong view on this one way or the other. I'm curious how you've approached those sorts of companies, given that you don't seem to own a ton of them.<a href="https://www.youtube.com/watch?v=DZt1DDmMNGk&t=2432s">&#x21AA; 40:32</a></p>
+<p data-t="2450">We were at certain points, maybe five years ago, we might have had 40 or 50% of our portfolio in software. Early on, in our April 2023 seminar, we said definitely invest in chips first. We said, but at the application layer, initially we thought these companies are huge. They have huge sales forces. They can take these AI APIs and build products, and they have the data. This is going to be amazing for software.</p>
+<p data-t="2481">Pretty quickly, we realized their AI products were not very good. They weren't moving the needle. Nobody could charge for them. We basically sold almost all of our software, almost all of our application software. We still have one or two small ones, but entering this year, we were actually net short. It really helped us in the first quarter.</p>
+<p data-t="2508">There are so many layers. The old way of software is like using a pen and paper, or it's like a horse and buggy. The new way of software is like a jet engine, or frankly like the transporter from Star Trek. It's so revolutionary changing that it feels like it has to be disruptive now, even if it's not disruptive now or right away.</p>
+<p data-t="2538">So the software companies have another problem, which is their list on the to-do list or priority list of any CIO has fallen a lot. Even if AI is not going to be disruptive, they're spending it on Anthropic tokens because there's faster ROI there. Second, if they're spending all that money over there, it pushes on the budget, so that hurts them.</p>
+<p data-t="2570">Third, a lot of software companies were able to raise price every year, and now they're probably nervous about doing that. Fourth, we'll see what happens with jobs, because there are smart people on both sides of that, but we are seeing some companies really gut their jobs or freeze hiring. So that hurts on seats.</p>
+<p data-t="2596">Maybe in terms of them building their own apps, if you want to be optimistic, it's taken them a while to do that. We talked about how early the primitives of AI are. So maybe they have just taken a while to get to something they can commercialize. But they might not have the right people.</p>
+<p data-t="2634">They might not know, it's a different selling motion from selling a fixed system versus if you're installing something that does human work, you've got to be right at the side to make sure it's really getting done. So you need the FDE, the deployed engineers, and they might not have the right people internally to do that.</p>
+<p data-t="2653">Then, of course, there's the risk of you can build it yourself. The bulls will say, well, they're never going to build their own ERP system. That's probably right. It is true that old tech is very sticky. Mobile video games didn't hurt console games, and the tablet didn't hurt the PC, and the smartphone didn't hurt the PC. There are a lot of integrations and work that goes into these software.</p>
+<p data-t="2683">That's all true, and companies do like to buy. They don't like to build themselves that much. So that's all true. But you can't imagine a world where in one, two, three, four, five years, you could have a brand-new AI-native company going after each one of these very strong incumbents.</p>
+<p data-t="2705">Their data advantage could get obviated. It might be easy to take it out and put the new one in with AI and such. What's good if you like software is the valuations are very high, and everybody knows they're under pressure. Some people are tempted to buy these, but the AI coding tools are just getting better and better. So we'll have to wait and see.</p>
+<p data-t="2731">We're watching these software companies very closely to see if they're getting any revenue that can change that trajectory. But it's hard because if you're a company like Salesforce, you've got $40 billion in sales, and now you might have $500 million of ARR, $700 million of ARR of AI. So you've got this huge base. Maybe this starts to work, but it takes a while.</p>
+<p data-t="2758">In software, there's the rule of 40, which is your growth rate plus your operating margin. If you've got a 20% growth rate and 20%, that's good. For AI, we have a new kind of rule of 40. It's really for chip investing. But what percent of your sales are AI, say 30%, and what's your market share in that category, say 30%? You'd be 60.</p>
+<p data-t="2783">That's a great place to look, because you've got exposure and you've got a strong market position. Problem with software is their AI is 1 or 2% at this stage, and it's a long way to go.</p>
+<p data-t="2798">One thing we are picking up lately, and this is half-baked, but AI could make some of these software platforms more important. Because what's the first thing you do with Claude? You plug it into Slack. If that can become a key repository, that will make Slack a permanent fixture within the organization.</p>
+<p data-t="2816">Maybe these agents, maybe the next wave of AI will be these agents that use tools, and they might operate inside of the existing incumbent software tools to use them like a human being would.</p>
+<p class="q" data-t="2829">Just to pull on that thread, it seems like the commonality of the tools they might use that are the most sticky would be network-based tools. Slack is obviously a great example. The software in Slack itself, I don't know, leaves something to be desired. The software is not the special part. It's that everyone is there, right?<a href="https://www.youtube.com/watch?v=DZt1DDmMNGk&t=2829s">&#x21AA; 47:09</a></p>
+<p class="q" data-t="2860">But I'm curious what kinds of things you would want. Is it just network, the presence of a network effect? Is that the only thing that really matters?<a href="https://www.youtube.com/watch?v=DZt1DDmMNGk&t=2860s">&#x21AA; 47:40</a></p>
+<p data-t="2873">It's still early in our thinking here, but even maybe Workday or the HR systems or the big systems of record, the agents may be running on top of them. CRM is going headless, or they're making a headless version, and that's sort of the bear case too, that you get relegated to just being a database.</p>
+<h3 class="chapter"><span>The Hardware Renaissance</span><a href="https://www.youtube.com/watch?v=DZt1DDmMNGk&t=2893s">&#x21AA; 48:13</a></h3>
+<p data-t="2895">But there's a human interface to it. Then they need to make the AI interface, which is no interface. It's just them going right into the data. You lose that customer interaction, but if the agents are going right to CRM and doing the work inside of CRM, that will solidify CRM, so you won't have to think it's going away.</p>
+<p class="q" data-t="2928">Can we talk about chips? You've referenced them a few times. Infrastructure, chips, everything around the data center maybe. I don't know how you conceive of it. Why is this so interesting to you? I love the modified rule of 40 for percentage that's AI and percentage market share in the category. That's an interesting stat. What companies shine on that today? What are laggards that are surprising?<a href="https://www.youtube.com/watch?v=DZt1DDmMNGk&t=2928s">&#x21AA; 48:48</a></p>
+<p data-t="2967">For the past 40 years, nothing has changed in the data center. Even with cloud, we're basically Intel x86. It became the data center chip sometime in the '90s. Compute grew in the cloud era, and compute workloads grow 25 to 40% every year, but Moore's law is improving at that rate.</p>
+<p data-t="2993">So it didn't require tremendous innovation, and there really was almost no growth in hardware for years and years and years. The whole industry basically commoditized every part, every chip, every part of the server, the printed circuit board to the memory to the enclosures to the networking. There was no innovation. You would go from one gig to 10 gig. That would take seven years.</p>
+<p data-t="3027">When you do switch in the first year, it does take some innovation to get to 10 gig and would create a little cycle, but then it would commoditize. Now you go to AI, and the workloads are growing 10x every year, and they're pushing every single aspect of this hardware to the physical limits of what it can do.</p>
+<p data-t="2993">So not only are you creating tremendous unit growth, but the industry, we call it the decommoditization of the hardware industry. I met with Shaun Maguire three years ago, and he said, "I wish I could come back and be a hardware hedge fund because all the companies are public and they all have powerful IP." Sequoia made some of their best investments back in the hardware day with Apple and Cisco and others.</p>
+<p data-t="3020">We're in this renaissance of chips. So not only do you have tremendous unit growth, but it's requiring tremendous innovation at every aspect of the server. Memory, which used to be a pure commodity, this high-bandwidth memory is stacked 10 chips on top. The input-outputs are 10x what they were before. It took Samsung years to do it, and it's a critical, critical piece.</p>
+<p data-t="3058">Then that is constantly upgrading. They're on the same, they've got to be working with Nvidia for three or four generations in advance. We had this with Celestica. Celestica was a contract manufacturer, and this has been a disaster industry since 1999. It went all offshore to China. It was commodity, but they hung on.</p>
+<p data-t="3083">Celestica's heritage was IBM supercomputing, and they kept all that talent and skill. Then we noticed they were the sole supplier of the Google TPU server. We're like, oh my God, this was three years ago. The stock was trading at eight times earnings. They had this whole business of selling Ethernet white box, which is code word for commodity white box Ethernet switches, into the clouds.</p>
+<p data-t="3120">It turns out that these are excellent businesses. Not only do they have tremendous growth, but to do an AI server computer, it's liquid cooled. It's running so much hotter. It's a $200,000 or $300,000 piece of machinery, whereas an old server was $5,000. If it breaks, you just throw it away. If this thing breaks, the whole thing goes down.</p>
+<p data-t="3142">So you become like critical infrastructure, like selling a critical part on a plane. You'll never get swapped out. Then it turned out they were quite good at liquid cooling, and a lot of other people tried to do it and failed. So they've retained that position.</p>
+<p data-t="3164">Then it also turned out that the Ethernet market was, because in the old days you would go from 100 gig to 400 to 800. It would be a seven-year cycle to upgrade. Now they're upgrading every year, and that's really hard to do. Then there's a whole software layer, the open-source SONiC layer. The guys at Celestica were some of the people that wrote that open-source software. They work very closely with Broadcom.</p>
+<p data-t="3190">What we thought was just a great growth driver turned out to be great competitive advantages, and they have like 50, 60% share of the cloud Ethernet switch market, which is a crucial market for AI because AI is incredibly network intensive.</p>
+<p data-t="3210">Even something like the printed circuit board, a regular server, you need 10 layers. These AI servers, you need a 40-layer, and there are very few PCB suppliers that can make this. There are all kinds of complexities in there. We also own Elite Material, which makes the leading ingredient, copper-clad laminate, which goes into these boards.</p>
+<p data-t="3236">The PCB units are growing, the layer counts are rising. So you've got like a 50 to 60% CAGR just in the units, and then the ASPs are rising, and then the gross profits are rising. Your visibility, which used to be, hey, we'll call you next week if we need you, to, hey, we need you for the next four years to be designing this road map with us.</p>
+<p data-t="3259">So you've gone from a 5% grower, low margin, to a 35%, 40%, 50% top-line CAGR for the next four years with rising margins. Then on top of that, there are shortages of everything. So even if it is a commodity, it's going to be a great cycle.</p>
+<p data-t="3281">We see that up and down the supply chain. You find these companies like Corning, they make the fiber. They've got some ridiculously high share of the fiber. I was reading this Microsoft data center they just built. There's enough fiber to circle the world four and a half times in that one thing. Their fiber is thinner and more bendable and can be specially manufactured to the exact specs.</p>
+<p data-t="3307">It's higher margin, and it's the fastest growing part of their business. In networking, there's scale out, which is kind of connecting all the server racks together. Then there's scale across, which is connecting the data centers together. When you want to build one of these huge clusters and you can't get all the power in one place for training, you want to wire them together.</p>
+<p data-t="3334">But the wires you need, 10x the wire, have to be so much thicker. So that's creating huge growth. Where the real kicker comes in is when you do scale up. That's connecting every GPU in the rack to the other ones. That's done over copper. Eventually that'll be done over fiber. When that happens, that two to three Xs Corning's opportunity.</p>
+<p data-t="3360">So you just have, at every layer of the rack, everyone's overwhelmed. Everyone's overwhelmed. But the story in the power supplies, every Nvidia chip or rack uses 50 to 125% more power. Literally that drives the ASPs of Delta and Advanced Energy.</p>
+<p data-t="3380">I can't believe these stories when I hear them. I'm like, wait, so your ASPs are going to go up 40% for the next four years in a row, and it's higher margin. The broader picture is, we're going to be, the AI demand, if we're right with this L-curve. We're already short, the DRAM market, the NAND market, the PCB. We're already 30% short all these things as we are now.</p>
+<p data-t="3419">As your business scales up, everything gets more complex, especially your compliance and security needs. With so many tools offering Band-Aids and patches, it's unfortunately far too easy for something to slip through the cracks. Fortunately, Vanta is a powerful tool designed to simplify and automate your security work and deliver a single source of truth for compliance and risk.</p>
+<p data-t="3437">There's a reason that Ramp, Cursor, and Snowflake all use Vanta. It frees them to focus on building amazing, differentiated products, knowing that compliance and security are under control. Invest Like the Best listeners get a special offer of $1,000 off Vanta when you go to vanta.com/invest.</p>
+<p data-t="3455">I know firsthand how complex the tech stack is for asset management firms, and seemingly every new tool and data source makes the problem even worse, adding more complexity, more headcount, and more risk. Ridgeline offers a better way forward: one unified platform that automates away that complexity across portfolio accounting, reconciliation, reporting, trading, compliance, and more, all at scale.</p>
+<p data-t="3472">Ridgeline is revolutionizing investment management, helping ambitious firms scale faster, operate smarter, and stay ahead of the curve. See what Ridgeline can unlock for your firm. Schedule a demo at ridgeline.ai.</p>
+<h3 class="chapter"><span>Why Investors Miss AI</span><a href="https://www.youtube.com/watch?v=DZt1DDmMNGk&t=3484s">&#x21AA; 58:04</a></h3>
+<p class="q" data-t="3484">The measure of percent AI, percent market share, do you care more about the absolute or the rate of change of those metrics?<a href="https://www.youtube.com/watch?v=DZt1DDmMNGk&t=3484s">&#x21AA; 58:04</a></p>
+<p data-t="3490">It's good because we did this presentation in 2024 where we actually listed everybody's market share and everybody's. Then I asked Claude to plot it to a thing, and it actually didn't get it right because what it didn't get is the rate of change. So the rate of change is important, and that's incredible too, because you go from 10% to 30%, and your growth rate accelerates, and your margins accelerate. So rate of change is very important.</p>
+<p class="q" data-t="3520">Why don't more people get this right in public markets? If your whole framework is S-curve, competitive advantage, underappreciated earnings power, it feels like the movie's been played out a lot over the last 25, 30 years.<a href="https://www.youtube.com/watch?v=DZt1DDmMNGk&t=3520s">&#x21AA; 58:40</a></p>
+<p data-t="3531">My mom said, "Why do you tell everyone your secret?" It's like, why does the casino teach people how to play blackjack? It's harder. It's really hard to do. You have to be comfortable investing. I've been doing tech for 20 years at Whale Rock. We've got a team that's been doing this, covered many cycles. We know the different.</p>
+<p data-t="3556">Very few people, no one's paid attention to hardware and chips at all. So you've got all these newbies coming into it. You and Gavin, that's it. Gavin's done a great job. People weren't comfortable with it. It's harder to do than it seems.</p>
+<p data-t="3568">The chart, a lot of these companies, their charts are up, so it's scary. Can I buy? Then you also have to have the holistic view, because if you don't have conviction, every time with Nvidia over the last four years, it's like, oh, they had a great year. Oh my God, it's got to be a bubble.</p>
+<p data-t="3588">Then they had another great year, and it's like six months of marking time. It's got to be a bubble. This is getting out of hand. This is pretty scary. The bear cases are not totally without merit. But if you can see the whole picture and understand how these things are unfolding and gain conviction in that, frankly, if you're just a semi analyst, so many semi analysts missed it because they didn't see what was really happening at the foundational model layer.</p>
+<p data-t="3615">So it helps to have the big picture. It helps to have decades and scores of S-curves that you're looking at and where it plays in different things.</p>
+<p class="q" data-t="3628">What in this whole picture, I would describe your stance so far in the first hour discussion as very bullish on the impact that AI is going to have and the returns available as a result. What makes you the most concerned or uncertain? Is it just the rate at which all this stuff changes? What keeps you worried amid what seems like pretty extreme bullishness?<a href="https://www.youtube.com/watch?v=DZt1DDmMNGk&t=3628s">&#x21AA; 1:00:28</a></p>
+<p data-t="3647">One thing that bothers me is there's a lot of negativity in the general population about AI, and there's a lot of negativity in some aspects of the government. I think Maine just banned data centers, and only 20% of the people are optimistic about AI, and potential for negative regulation. But I do think the genie is out of the bottle.</p>
+<p data-t="3681">Another risk is that if AI slows down in its improvements, I think there's a whole lot of AI adoption to happen even if the models didn't improve. But Jensen said this years ago when he was talking about his graphics chips: if good enough is good enough, I won't have a business. Now every year he made the graphics a little bit better, and people always wanted the best.</p>
+<p data-t="3700">In AI, if Anthropic hits a wall and stops improving, or OpenAI, then the open-source models will catch up, and then it might be a race to the bottom. It won't be good for the stocks probably. It could be good for the chip companies. Chip companies don't care who's winning tokens, right? Who wins.</p>
+<p data-t="3728">That's another positive, and they'll benefit if open source takes off. Jensen really wants open source to take off. It's all he kept on mentioning at his last GTC. So that could be a risk.</p>
+<p data-t="3741">Another thing is if one or two of the players falters and loses its position and can't compete, that could be a lot of compute that they don't need in the future. Now, if AI is so big, somebody else will suck that up. We saw that with Oracle canceled a big deal, and then Meta went right in.</p>
+<p data-t="3760">But let's just say Meta decided not to be involved with AI. Hey, we can't keep up. It's just going to be a waste of our resources. So we watch that very carefully. In general, we see more companies truly going after this, and even Microsoft going and trying to build their own. So I think those are some of the key risks.</p>
+<p class="q" data-t="3784">Seems like you really have done very little in the application layer of AI. Historically, the apps ended up being most of the market cap, not the infrastructure, and there wasn't really a model layer in the past. I guess you could say it was the clouds or something. Why focus so much on the bottom layers of Jensen's five-layer cake versus things in the application layer that are actually getting used by consumers?<a href="https://www.youtube.com/watch?v=DZt1DDmMNGk&t=3784s">&#x21AA; 1:03:04</a></p>
+<p data-t="3807">Well, we do. Part of OpenAI is they have ChatGPT, which is an application. But we think the application layer, it always comes later. The first three or four years of the iPhone, and then the applications really took time. So maybe it's just starting.</p>
+<p data-t="3824">To date, we found that area to be pretty risky, because where does the foundational model end, and where does the application begin? Can the applications build enough of a moat where they can fend off and build businesses in that? We thought we would see it in some of the incumbents, like a CRM, and they're starting. Maybe it's just a matter of time.</p>
+<p data-t="3857">But we really haven't seen it in the enterprise world. There are some very good startup application companies out there, but the ecosystem is not clear. When we started, the ecosystem in chips was clear. When we started, the foundational model ecosystem wasn't clear. Now it's clearer to us, and at the application layer, it's still kind of unclear and a little bit dangerous.</p>
+<p data-t="3881">But there will be great application companies built. We really were watching Bret Taylor at Sierra. Bret was CEO of CRM. He wrote Google Maps. He was CIO of Facebook. He's building this fantastic company called Sierra. We're not involved, but that's where the rubber hits the road. Will he be able to turn this into a huge company? He's doing quite well. We'll see.</p>
+<p data-t="3906">It's a matter of timing, when these things really start to come into their own and prove they're sustainable. It usually doesn't start in the first three or four years. It comes a little bit later.</p>
+<h3 class="chapter"><span>Whale Rock&#39;s Research Machine</span><a href="https://www.youtube.com/watch?v=DZt1DDmMNGk&t=3918s">&#x21AA; 1:05:18</a></h3>
+<p class="q" data-t="3919">At your office, you have this giant award wall for the research. I can't remember what it's exactly for. It's for the best research job or project of the year given to an analyst. I think you won it, self-awarded in your own, when you're by yourself. But you've got this now long 20-year history of a year one or one or more people put their name on this wall for having done the best job on a research project that year.<a href="https://www.youtube.com/watch?v=DZt1DDmMNGk&t=3919s">&#x21AA; 1:05:19</a></p>
+<p class="q" data-t="3943">I'm so curious about the nature of that research and how it's changing as a result of all of this. Say the person that's going to win the award this year and the sort of work that requires a human to do, when so much of the work that probably would have won you the award in 2009 or something could probably be fully automated or done in an hour with Claude Code today.<a href="https://www.youtube.com/watch?v=DZt1DDmMNGk&t=3943s">&#x21AA; 1:05:43</a></p>
+<p class="q" data-t="3967">How is the nature of research and what gets you on that Whale Rock award wall changing in real time?<a href="https://www.youtube.com/watch?v=DZt1DDmMNGk&t=3967s">&#x21AA; 1:06:07</a></p>
+<p data-t="3972">I would like to say that we're so advanced in our AI systems that it's a huge change so far. It's helping us get up to speed, and we have a handful of great apps, but it's not yet supplanting the job of the analysts.</p>
+<p data-t="3987">So much of what we're doing is we're meeting with as many companies as humanly possible. We're developing relationships with the management teams that we cover. We're talking to the competitors. The system we use is right out of Common Stocks and Uncommon Profits, which was written by Philip Fisher in the 1950s. It's the scuttlebutt approach. It's growth investing.</p>
+<p data-t="4009">It's get out there and talk to suppliers, customers, competitors, looking for the key characteristics of these leading companies and really developing conviction in them. Now, if it's a new complicated area like ABF substrates or PCBs, we're able to get up to speed on those things quickly, but it can't pick stocks for you in any kind of a way.</p>
+<p data-t="4034">I will say that if you're an analyst who's good at the blocking and tackling, and there's a role for that, but that role is you need to have obviously the insight on top. So we're now using AI to write notes or review the quarter, and those notes are much better. But there better be a really good paragraph on top, which is the wisdom.</p>
+<p data-t="4059">What does this mean? How does this deal with our thesis? What changed? Don't just be a reporter. So the AI can be a great reporter. It can't quite pick into the future.</p>
+<p data-t="4074">The job that the guys did on AppLovin two years ago, I think we got two of the best ad tech guys around. They convinced me to buy. I knew ad tech. I started actually nearby here in New York at that internet advertising startup after I did banking. So I knew internet advertising and ad tech, which is historically a terrible industry.</p>
+<p data-t="4106">But Michael and Sam really figured out the AppLovin story before anybody, and they followed it when it was private. They know all the competitors. They know all the intricacies. There is all this terminology. Sam went to the Las Vegas app advertising conference, and we went to Cannes, and we talked to scores and scores of people.</p>
+<p data-t="4132">They did the work on the model and developed a great relationship with Adam Foroughi. He's one of the best managers out there. I don't see AI doing that.</p>
+<p class="q" data-t="4139">What role does talking to other investors outside of your firm play in your life?<a href="https://www.youtube.com/watch?v=DZt1DDmMNGk&t=4139s">&#x21AA; 1:08:59</a></p>
+<p data-t="4144">One of the great things is just the friendships I've built with so many smart investors. Frankly, Philip Fisher said part of his process was get to know a good 10 or 15 like-minded people around the country and share ideas. They're great, great friends to make. A lot of them have been on your podcasts.</p>
+<p data-t="4172">You develop good friendships, and you share ideas, talk ideas. It's important that it's a two-way street. I call it the tripod. When I like something, and then my analyst likes it, and then somebody who I really respect also likes it, that's three legs of the stool. It can really help the conviction.</p>
+<p class="q" data-t="4199">What have you learned about shaping the products that you offer your investors across the history of the firm? It's not just one monolithic structure anymore. There are several things that if I'm an investor and I want to give you money, there are a couple ways I can do that. How did you arrive at those things, and how could you turn that experience into advice for other investors that are trying to provide their LPs with the right set of options?<a href="https://www.youtube.com/watch?v=DZt1DDmMNGk&t=4199s">&#x21AA; 1:09:59</a></p>
+<p data-t="4222">For the first 15 years, it was a long-short fund. You want to be focused, and if you defocus, that can be hard. So we grew that, and we got that to the scale that we wanted to. We're 20 years old. Maybe 10 years in, people started to ask for a long-only product.</p>
+<p data-t="4242">In 2020, we launched the long-only fund. We're six years on that, and that's now larger than the long-short. The bulk of the assets are in these two. In maybe 2015, we formalized that we might be doing privates. We gave investors the option to opt in or opt out, and you could do 15% or 25%. But we didn't break the seal on the privates until 2020.</p>
+<p data-t="4268">In 2021, we offered a hybrid fund that could be 80% into privates, sort of similar approach, but if you wanted more exposure to privates. Then very recently, we launched the Whale Rock Mega Cap Tech Fund. We just think there's a huge structural underweight of the largest tech companies in the world.</p>
+<p data-t="4295">We also realized that a lot of our performance over the years was from some of the largest companies, whether it be Apple or Amazon or Tesla. People just, it's hard to overweight these to the amount. A lot of our largest pools of capital, endowments or what have you, they realize they have been massively underweight the largest tech companies in the world.</p>
+<p data-t="4323">Because they only have a lot of privates. They don't have a ton of public, and then maybe half the public is international. Of their public bucket, there's a belief that there's no alpha in large cap. So they underweight large cap, and they have a lot of small and mid managers that are stock pickers, because it's intuitive that large cap can't have alpha.</p>
+<p data-t="4351">Then in their hedge fund portfolio, even if it's long bias, they're not going to have 15% in Nvidia and all these other things. We realized that there's a huge, that people are worried that there are these big companies. This is just a product of the digital economy, in that in tech, the leader usually grows bigger and wins and develops very high market share quickly.</p>
+<p data-t="4375">There are great competitive advantages, and they're also selling around the globe. So this is going to lead to massive profit pools and massive market caps, and it's just going to happen into the future. Most endowments are betting against this. They're completely underweight this.</p>
+<p data-t="4393">Finally, somebody came to us and said, what should we do? Which index? I'm on the board of Hamilton College, and on their investment committee they were trying to figure out this. We kept on hearing it, and finally one of our clients was like, so we said, we'll do this for you, because there's a lot of alpha to be had.</p>
+<p data-t="4411">The Mag 7 or the FAANG or whatever, it's going to be different. In 2022 they all rallied, but last year they were very divergent, and this year they're down. So we created the Whale Rock Mega Cap Tech Fund, where the universe is the top 30 market caps globally, and then we pick the 12 or 13 that are the best.</p>
+<p data-t="4437">I think there's tremendous alpha in the largest cap, because if you think about it, a small cap, it just takes one person to figure out it's good and move it up. But it takes 100 people, 100 diversified PMs, to realize Google's not a loser, it's a winner.</p>
+<p data-t="4454">Can we figure that out before 95% of those generalist PMs do it? We've been able to do it. We like your odds in that. Yeah, we like your odds in that. And so there is alpha to be had there.</p>
+<p data-t="4471">As an asset category, it's great because these companies by definition have wonderful moats. Maybe they're not the super S-curve, but sometimes they are. Nvidia sure is, and TSM is really levered to it, and Hynix is extremely levered to it, and ASML is levered to it. That's a new one. We're four months into that one.</p>
+<p class="q" data-t="4497">So the right way maybe to think about it, it sort of sounds like really what you've built is a research machine to understand the world through the lens of companies. The thing you're constantly trying to improve is that research machine, and then the way that you would then express that through products is multiplied. But if I was to try to understand Whale Rock, it would be to investigate the research machine first and foremost.<a href="https://www.youtube.com/watch?v=DZt1DDmMNGk&t=4497s">&#x21AA; 1:14:57</a></p>
+<p data-t="4520">We call it the Whale Rock learning machine, and it's a group of 10 highly experienced individuals. Warren Buffett reads books, and we read books and we read blogs, but we're also in tech. You've got to go out and talk to people. So we do 2,500, 3,000 face-to-face meetings with management teams.</p>
+<p data-t="4540">Munger and Buffett talk about compounding knowledge. We've been compounding that knowledge for 20 years. There are changes to the team, but broadly there's a lot of consistency to it. Andrew and Michael have been with me for 19 and 18 years, and the average experience level on the team is 10 or so years, and that includes some of the newer people.</p>
+<p data-t="4567">That research engine can support all these products, and it's the same people that do publics and the private. So we're not going to scour the world and turn over every A, B. But when we see something that fits into our system, we're able to act on it.</p>
+<p class="q" data-t="4583">It's so much fun to do this with you. When I do this, I ask the same traditional closing question of everybody. What is the kindest thing that anyone's ever done for you?<a href="https://www.youtube.com/watch?v=DZt1DDmMNGk&t=4583s">&#x21AA; 1:16:23</a></p>
+<p data-t="4590">Well, I got to say it's definitely my father. I was super lucky. My father graduated Cornell, a double E, electrical engineering, pivoted to Wall Street, and had a great career at Goldman Sachs. He ran corporate finance in the '80s and then ran private equity as chairman in the '90s. He was just whip smart, but he had such humility and was such a great gentleman.</p>
+<p data-t="4623">When I started Whale Rock, friends and family, he was the first call. But he said, I've been at Goldman for 41 years. How about I come and join you? I'll be the gray hair. I'll be the oversight. I'll be the chairman. You do what you do. You build the firm in Boston. Build the team, run the money, I'll help raise some money.</p>
+<p data-t="4642">We got to work together for six years until he passed away in 2011. I just feel so lucky to have worked with him. It's not easy running a fund. We never raised our voice. He was just an amazing mentor to so many people.</p>
+<p data-t="4665">When he passed away, I got so many letters from people who said, "Your father was just such an influence on me. He was such a gentleman. He was such a great mentor to me." So I just feel so lucky to have worked with him. If I could be half the person that he is, I'd be completely winning.</p>
+<p class="q" data-t="4684">How did he do that? What was his method? Why did so many people say that?<a href="https://www.youtube.com/watch?v=DZt1DDmMNGk&t=4684s">&#x21AA; 1:18:04</a></p>
+<p data-t="4691">I don't know. He was modest. He was whip smart. He was wise. He was also known as a great investor, which isn't the most common thing at a lot of investment banks. He also was on their commitments committee and kept them out of a lot of tougher situations.</p>
+<p data-t="4709">He was very warm, and people could go into his office with problems, and he handled it with grace, whether it's a personal problem or a work issue or what have you. He just had this soft way, and he also had a great sense of humor.</p>
+<p class="q" data-t="4727">Lucky.<a href="https://www.youtube.com/watch?v=DZt1DDmMNGk&t=4727s">&#x21AA; 1:18:47</a></p>
+<p data-t="4729">Yeah. I'm so lucky.</p>
+<p class="q" data-t="4732">So Alex, thanks so much for your time.<a href="https://www.youtube.com/watch?v=DZt1DDmMNGk&t=4732s">&#x21AA; 1:18:52</a></p>
+<p data-t="4735">Thanks so much.</p>
+<p data-t="4738">Your finance team isn't losing money on big mistakes. It's leaking through a thousand tiny decisions nobody's watching. Ramp puts guardrails on spending before it happens: real-time limits, automatic rules, zero firefighting. Try it at ramp.com/invest.</p>
+<p data-t="4755">As your business grows, Vanta scales with you, automating compliance and giving you a single source of truth for security and risk. Learn more at vanta.com/invest.</p>
+<p data-t="4765">Ridgeline is redefining asset management technology as a true partner, not just a software vendor. They've helped firms 5x and scale, enabling faster growth, smarter operations, and a competitive edge. Visit ridgelineapps.com to see what they can unlock for your firm.</p>
+<p data-t="4778">Every investment firm is unique, and generic AI doesn't understand your process. Rogo does. It's an AI platform built specifically for Wall Street, connected to your data, understanding your process, and producing real outputs. Check them out at rogo.ai/invest.</p>
+<p data-t="4790">The best AI and software companies from OpenAI to Cursor to Perplexity use WorkOS to become enterprise ready overnight, not in months. Visit workos.com to skip the unglamorous infrastructure work and focus on your product.</p>
+    </div>
+  </main>
+  <script>
+  async function toggleYtBookmark(btn) {
+    const payload = {
+      title: btn.dataset.title,
+      url: btn.dataset.url,
+      filename: btn.dataset.filename,
+      interviewDate: btn.dataset.date,
+      source: 'YT',
+      expert: btn.dataset.channel,
+    };
+    try {
+      const resp = await fetch('/bookmark', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload),
+      });
+      const result = await resp.json();
+      setYtBookmarkState(btn, !!result.bookmarked);
+    } catch (e) {
+      console.error('Bookmark toggle failed:', e);
+    }
+  }
+  function setYtBookmarkState(btn, on) {
+    btn.classList.toggle('is-bookmarked', on);
+    btn.innerHTML = on ? '&#9733;' : '&#9734;';
+    btn.title = on ? 'Bookmarked' : 'Bookmark';
+    btn.setAttribute('aria-label', on ? 'Bookmarked' : 'Bookmark');
+  }
+  (async function initYtBookmarkState() {
+    const btn = document.getElementById('yt-bookmark-btn');
+    if (!btn || !btn.dataset.filename) return;
+    try {
+      const resp = await fetch('/bookmarks');
+      if (!resp.ok) return;
+      const list = await resp.json();
+      if (Array.isArray(list) && list.some(b => b && b.filename === btn.dataset.filename)) {
+        setYtBookmarkState(btn, true);
+      }
+    } catch (e) { /* offline -- leave default state */ }
+  })();
+
+  async function shareYtPage(btn) {
+    const original = btn.innerHTML;
+    btn.disabled = true;
+    btn.innerHTML = '&hellip;';
+    try {
+      const resp = await fetch('/share', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ filename: btn.dataset.filename }),
+      });
+      const result = await resp.json();
+      if (!result.ok) throw new Error(result.error || 'Share failed');
+      try { await navigator.clipboard.writeText(result.url); } catch (e) {}
+      btn.innerHTML = '&#10003;';
+      btn.title = 'Copied ' + result.url;
+      setTimeout(() => { btn.innerHTML = original; btn.disabled = false; btn.title = 'Share'; }, 2500);
+    } catch (e) {
+      console.error('Share failed:', e);
+      btn.innerHTML = '!';
+      btn.title = 'Share failed: ' + (e && e.message || e);
+      setTimeout(() => { btn.innerHTML = original; btn.disabled = false; btn.title = 'Share'; }, 3000);
+    }
+  }
+
+  // When the page is viewed from somewhere other than the local Reader
+  // server (e.g. a shared copy on GitHub Pages), hide the interactive
+  // buttons whose endpoints only exist on localhost.
+  (function hideLocalOnlyControls() {
+    const host = location.hostname;
+    const isLocal = host === 'localhost' || host === '127.0.0.1' || host === '';
+    if (isLocal) return;
+    const actions = document.querySelector('.yt-header-actions');
+    if (!actions) return;
+    const bookmark = actions.querySelector('#yt-bookmark-btn');
+    const share = actions.querySelector('#yt-share-btn');
+    if (bookmark) bookmark.remove();
+    if (share) share.remove();
+  })();
+  </script>
+</body>
+</html>
