@@ -1,0 +1,763 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Angela Duckworth on Why Grit Is Not Enough</title>
+  <style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background: #faf8f5;
+  color: #2c2418;
+  line-height: 1.7;
+  padding: 0 1rem 2rem;
+}
+header {
+  position: sticky;
+  top: 0;
+  background: #faf8f5;
+  z-index: 100;
+  border-bottom: 2px solid #c4956a;
+  box-shadow: 0 2px 8px rgba(44,36,24,0.08);
+  padding: 0.6rem 1rem;
+}
+.header-inner {
+  max-width: 78ch;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header-title { font-size: 1rem; color: #2c2418; }
+.header-title strong { font-size: 1.1rem; }
+.header-link {
+  font-size: 0.85rem;
+  color: #8b6d4e;
+  text-decoration: none;
+  border: 1px solid #c4956a;
+  padding: 0.2rem 0.7rem;
+  border-radius: 4px;
+}
+.header-link:hover { background: #f0ebe3; }
+main {
+  max-width: 78ch;
+  margin: 0 auto;
+  padding-top: 0.5rem;
+}
+h2 {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #2c2418;
+  margin-top: 2rem;
+  margin-bottom: 0.5rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 2px solid #c4956a;
+}
+h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #3d3225;
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+section { margin-bottom: 1.5rem; }
+ul { margin: 0.5rem 0 0.5rem 1.5rem; }
+li { margin-bottom: 0.4rem; }
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0.75rem 0;
+  font-size: 0.92rem;
+}
+thead th {
+  background: #3d3225;
+  color: #faf8f5;
+  text-transform: uppercase;
+  font-size: 0.78rem;
+  letter-spacing: 0.05em;
+  padding: 0.5rem 0.75rem;
+  text-align: left;
+  font-weight: 600;
+}
+tbody td {
+  padding: 0.45rem 0.75rem;
+  border-bottom: 1px solid #e8e0d4;
+}
+tbody tr:nth-child(even) { background: #f0ebe3; }
+tbody tr:nth-child(odd) { background: #faf8f5; }
+.key-insight {
+  border-left: 4px solid #c4956a;
+  background: #f5efe8;
+  padding: 0.75rem 1rem;
+  margin: 0.75rem 0;
+  font-size: 0.93rem;
+  border-radius: 0 6px 6px 0;
+}
+.qa-pair { margin-bottom: 1.25rem; }
+.question-box {
+  background: #f0ebe3;
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+  margin-bottom: 0.5rem;
+}
+.analyst-label {
+  display: block;
+  font-size: 0.8rem;
+  color: #8b6d4e;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  margin-bottom: 0.25rem;
+}
+.answer { padding-left: 0.25rem; }
+.loading-section { opacity: 0.5; }
+.loading-indicator {
+  font-size: 1.2rem;
+  padding: 2rem;
+  text-align: center;
+  color: #8b6d4e;
+}
+
+/* YouTube transcript reader */
+
+/* Legacy .yt-meta-card -- kept so old output files still render cleanly.
+   New output uses .header-title.yt below instead. */
+.yt-meta-card {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  margin-bottom: 1.5rem;
+  background: #f5efe8;
+  border-left: 4px solid #c4956a;
+  border-radius: 0 6px 6px 0;
+  padding: 0.9rem 1rem;
+}
+.yt-meta-card img {
+  flex: 0 0 180px;
+  height: 101px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+.yt-meta-body { flex: 1; font-size: 0.93rem; }
+.yt-meta-title { font-weight: 700; font-size: 1rem; margin-bottom: 0.25rem; }
+.yt-meta-sub { color: #8b6d4e; margin-bottom: 0.35rem; }
+.yt-meta-url { font-size: 0.85rem; color: #3d3225; }
+
+/* YouTube sticky header uses the default 78ch-capped centered
+   container so it aligns with the body text column below. The
+   buttons sit at the right edge of that centered container. */
+header:has(.header-inner.yt) { padding: 0.75rem 1rem; }
+.header-inner.yt { gap: 1rem; }
+.header-title.yt {
+  display: flex;
+  gap: 0.9rem;
+  align-items: center;
+  min-width: 0;
+  flex: 1;
+}
+.yt-header-thumb { flex: 0 0 88px; line-height: 0; }
+.yt-header-thumb img {
+  width: 88px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 3px;
+  display: block;
+}
+.yt-header-text { min-width: 0; flex: 1; }
+.yt-header-text strong {
+  display: block;
+  font-size: 1rem;
+  line-height: 1.3;
+  color: #2c2418;
+  /* Allow wrapping to 2 lines so long podcast titles show in full. */
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.yt-header-sub {
+  font-size: 0.8rem;
+  margin-top: 0.2rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.yt-header-sub .yt-channel { color: #8b6d4e; }
+.yt-header-sub .yt-date,
+.yt-header-sub .yt-dur { color: #3d3225; font-weight: 600; }
+.yt-header-sub .yt-sep { color: #c4956a; margin: 0 0.5rem; }
+
+.yt-header-actions {
+  display: flex;
+  gap: 0.4rem;
+  align-items: center;
+  flex: 0 0 auto;
+}
+/* Shared box shape for the star + share + YT buttons so they're
+   visually identical. Applies to both the <button>s and the <a> link. */
+.yt-header-actions .yt-bookmark-btn,
+.yt-header-actions .yt-share-btn,
+.yt-header-actions .header-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font: inherit;
+  font-size: 0.85rem;
+  line-height: 1;
+  color: #8b6d4e;
+  background: transparent;
+  border: 1px solid #c4956a;
+  border-radius: 4px;
+  padding: 0;
+  box-sizing: border-box;
+  width: 2.2rem;
+  height: 2.2rem;
+  white-space: nowrap;
+  text-decoration: none;
+  cursor: pointer;
+}
+.yt-header-actions .yt-bookmark-btn { font-size: 1rem; }
+.yt-header-actions .yt-share-btn { font-size: 1.05rem; }
+.yt-header-actions .yt-share-btn:disabled { opacity: 0.6; cursor: default; }
+.yt-header-actions .yt-bookmark-btn:hover,
+.yt-header-actions .yt-share-btn:hover,
+.yt-header-actions .header-link:hover {
+  background: #f0ebe3;
+  color: #3d3225;
+}
+.yt-header-actions .yt-bookmark-btn.is-bookmarked {
+  background: #c4956a;
+  color: #faf8f5;
+  border-color: #a87d5a;
+}
+.yt-header-actions .yt-bookmark-btn.is-bookmarked:hover {
+  background: #a87d5a;
+  color: #faf8f5;
+}
+
+h3.chapter {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #3d3225;
+  margin-top: 1.25rem;
+  margin-bottom: 0.4rem;
+}
+h3.chapter a {
+  font-size: 0.8rem;
+  color: #8b6d4e;
+  text-decoration: none;
+  font-weight: 400;
+}
+
+.yt-body {
+  line-height: 1.58;
+}
+.yt-body p {
+  margin-bottom: 0.9rem;
+}
+.yt-body p.q {
+  background: #f0ebe3;
+  border-left: 3px solid #c4956a;
+  border-radius: 0 6px 6px 0;
+  padding: 0.6rem 0.9rem;
+  margin-top: 1.25rem;
+  margin-bottom: 0.8rem;
+  color: #3d3225;
+  font-style: italic;
+  font-size: 0.96rem;
+}
+.yt-body p.q::before {
+  content: "Q";
+  display: inline-block;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 0.72rem;
+  color: #8b6d4e;
+  letter-spacing: 0.05em;
+  margin-right: 0.5rem;
+  padding: 0.05rem 0.4rem;
+  border: 1px solid #c4956a;
+  border-radius: 3px;
+  vertical-align: 0.1em;
+}
+.yt-body p.q a {
+  display: block;
+  text-align: right;
+  margin-top: 0.3rem;
+  font-style: normal;
+  font-size: 0.8rem;
+  color: #8b6d4e;
+  text-decoration: none;
+  white-space: nowrap;
+}
+.yt-body p.q a:hover {
+  text-decoration: underline;
+}
+
+</style>
+</head>
+<body>
+  <header>
+    <div class="header-inner yt">
+      <div class="header-title yt">
+        <a class="yt-header-thumb" href="https://www.youtube.com/watch?v=AIuBsiZnhRE" target="_blank"><img src="https://i.ytimg.com/vi/AIuBsiZnhRE/maxresdefault.jpg" alt=""></a>
+        <div class="yt-header-text">
+          <strong>Angela Duckworth on Why Grit Is Not Enough</strong>
+          <div class="yt-header-sub">
+            <span class="yt-channel">The Context Window with David Deming</span>
+            <span class="yt-sep">&middot;</span>
+            <span class="yt-date">May 27, 2026</span>
+            <span class="yt-sep">&middot;</span>
+            <span class="yt-dur">1h 2m</span>
+          </div>
+        </div>
+      </div>
+      <div class="yt-header-actions">
+        <button id="yt-bookmark-btn"
+                class="yt-bookmark-btn"
+                title="Bookmark"
+                aria-label="Bookmark"
+                data-filename="yt-2026-06-09-angela-duckworth-on-why-grit-is-not-enough.html"
+                data-title="Angela Duckworth on Why Grit Is Not Enough"
+                data-url="https://www.youtube.com/watch?v=AIuBsiZnhRE"
+                data-date="2026-05-27T04:00:03-07:00"
+                data-channel="The Context Window with David Deming"
+                onclick="toggleYtBookmark(this)">&#9734;</button>
+        <button id="yt-share-btn"
+                class="yt-share-btn"
+                title="Share"
+                aria-label="Share"
+                data-filename="yt-2026-06-09-angela-duckworth-on-why-grit-is-not-enough.html"
+                onclick="shareYtPage(this)">&#8599;</button>
+        <a class="header-link" href="https://www.youtube.com/watch?v=AIuBsiZnhRE" target="_blank" title="Watch on YouTube" aria-label="Watch on YouTube">YT</a>
+      </div>
+    </div>
+  </header>
+  <main>
+    <div class="yt-body">
+    <h3 class="chapter"><span>Cold open: &quot;I was capital-L Lost for 10 years&quot;</span><a href="https://www.youtube.com/watch?v=AIuBsiZnhRE&t=0s">&#x21AA; 00:00</a></h3>
+<p data-t="0">If you have really, really high ambitions, you achieve great things even if you fail. If you have low ambitions, you achieve nothing even if you succeed.</p>
+<p class="q" data-t="6">Where do you think the tech sector evolves from here?<a href="https://www.youtube.com/watch?v=AIuBsiZnhRE&t=6s">&#x21AA; 00:06</a></p>
+<p data-t="11">Well, that's the trillion-dollar question, right? Luckily, you manage, what, two trillion?</p>
+<p data-t="16">So when I give presentations at universities, I ask people, "Hey, anybody here who thinks differently from other people, who kind of think that they are weird, hands up." Typically less than 10%. I said, "You guys, you're great. We'd love to hire you." And then the other 90% is, "Sorry, guys, you're just everybody else. You're never going to make much money."</p>
+<p data-t="33">Okay, so I never do politics because my job is totally not political. But if I were prime minister for a day, I would inject AI everywhere.</p>
+<p data-t="47">If you look at the golden ages we've had and you look at the real powers we've had during the years, Rome, Venice, they were open economies: free trade, free movement of labor, thought, and so on. What they all have in common in terms of the end of the golden ages is...</p>
+<p class="q" data-t="69">What are you leaning against right now?<a href="https://www.youtube.com/watch?v=AIuBsiZnhRE&t=69s">&#x21AA; 01:09</a></p>
+<p data-t="72">Well, I think the stuff to lean against, if you really want to do the opposite of everybody else, would be to do less AI-related investments and more real estate investments.</p>
+<p class="q" data-t="81">How do you see real estate playing out?<a href="https://www.youtube.com/watch?v=AIuBsiZnhRE&t=81s">&#x21AA; 01:21</a></p>
+<p data-t="84">Well, that's a very tough one, right? But it's not very popular, and I see that a lot of big investors are reducing their exposures to real estate. So that's probably a good sign, right, that there are better times ahead.</p>
+<h3 class="chapter"><span>Growing up in Cherry Hill, New Jersey</span><a href="https://www.youtube.com/watch?v=AIuBsiZnhRE&t=90s">&#x21AA; 01:30</a></h3>
+<p class="q" data-t="100">What do you think of office? I guess that's the worst real estate class.<a href="https://www.youtube.com/watch?v=AIuBsiZnhRE&t=100s">&#x21AA; 01:40</a></p>
+<p data-t="101">It's very bad. It's very bad. So you have to think, in a way you've had a bit of a perfect crisis there now, in that COVID meant that more people were working from home. You had some trouble with part of the banking system. You had rates being relatively high, and so you had a few factors there impacting it negatively.</p>
+<p class="q" data-t="123">How do you think about rates? Historically, I think the average is 6% or something somewhere thereabouts, and we've been lower than that for almost 20 years now.<a href="https://www.youtube.com/watch?v=AIuBsiZnhRE&t=123s">&#x21AA; 02:03</a></p>
+<p data-t="134">Yeah. We have been very low and for a very long period of time. I think there are some structural issues which mean that they probably will be a bit higher than they have been.</p>
+<p data-t="146">I think one factor here which people don't talk so much about just now is the impact on climate. Climate is impacting harvests, impacting prices for a lot of raw material, and impacts factors in particular to the food side, be it chocolate, coffee, and so on. Then you've got various fires. You just get a lot of impacts from climate on pricing structures.</p>
+<h3 class="chapter"><span>Arriving at Harvard: rejection and competition</span><a href="https://www.youtube.com/watch?v=AIuBsiZnhRE&t=150s">&#x21AA; 02:30</a></h3>
+<p data-t="177">It also hits insurance rates, free insurance rates, and so on. So that's on the one hand. Now, the thing which is pulling in the other direction is of course efficiency gains through AI, and you'll have much more intelligence at cheaper levels, right?</p>
+<p class="q" data-t="197">Where do you think the tech sector evolves from here?<a href="https://www.youtube.com/watch?v=AIuBsiZnhRE&t=197s">&#x21AA; 03:17</a></p>
+<p data-t="203">Well, that's the trillion-dollar question, right? Luckily, you manage, what, two trillion? So it's pretty hot, right? I think we can agree on that.</p>
+<p data-t="214">I think it's quite interesting. So you have Jensen Huang, the CEO of Nvidia, who goes to Korea, right? He hangs out with the guys at Samsung. They go and have some deep-fried chicken. When they are photographed in this chicken restaurant, the share price of that chicken chain is going up 20%, right? The company that actually breeds chicken in Korea is going up a lot, and the company that does the robotic arms to actually deep fry the chicken is also going up a lot. It just indicates to me that this is now a very, very hot sector when things like that...</p>
+<h3 class="chapter"><span>&quot;You&#39;re no genius&quot; — and the MacArthur punchline</span><a href="https://www.youtube.com/watch?v=AIuBsiZnhRE&t=240s">&#x21AA; 04:00</a></h3>
+<p class="q" data-t="252">What would be your argument for the fact that we're in an AI bubble and then against the fact that we're in one?<a href="https://www.youtube.com/watch?v=AIuBsiZnhRE&t=252s">&#x21AA; 04:12</a></p>
+<p data-t="257">AI bubble, you would look at things like valuations. You'd look at circularity in terms of ownership and vendor financing, these type of things. You'd look at news coverage. You'd look at things like what happens when they eat chicken at a restaurant. So you just look at how frothy a sector is.</p>
+<p data-t="287">On the other side, it has huge ramifications for how we live our lives. We see in our firm we are increasing productivity probably by 20% just by utilizing it more, and we're just stuffing it in wherever we can, and it's making a huge impact.</p>
+<p class="q" data-t="303">How does that show up, the increase in productivity?<a href="https://www.youtube.com/watch?v=AIuBsiZnhRE&t=303s">&#x21AA; 05:03</a></p>
+<p data-t="304">Well, it shows up in that we do more with the same amount of people. We are keeping headcount now flat, and we are just producing more and producing better quality.</p>
+<p class="q" data-t="317">What do you think would cause inflation to come back?<a href="https://www.youtube.com/watch?v=AIuBsiZnhRE&t=317s">&#x21AA; 05:17</a></p>
+<p data-t="322">Slower world economy, AI leading to more productivity gains, humanoids, so increased use of robotics, which is just a cheaper labor supply.</p>
+<p class="q" data-t="333">Is AI making decisions now at the firm, or is it...<a href="https://www.youtube.com/watch?v=AIuBsiZnhRE&t=333s">&#x21AA; 05:33</a></p>
+<p data-t="335">No. There is always a human in the loop, but it's helping us. It's supporting our decision-making.</p>
+<p class="q" data-t="340">Do you think it'll ever replace humans in investing?<a href="https://www.youtube.com/watch?v=AIuBsiZnhRE&t=340s">&#x21AA; 05:40</a></p>
+<p data-t="345">Not in our place. But clearly in some places, right? You have fully automated investment models in a lot of places.</p>
+<p class="q" data-t="356">What skills do you think will matter more in an AI world?<a href="https://www.youtube.com/watch?v=AIuBsiZnhRE&t=356s">&#x21AA; 05:56</a></p>
+<p data-t="362">Interpersonal skills, the ability to talk to people, the ability to listen, and empathy. These things have always been important, but they are just even more important. I'm seeing it in so many places. It's really, really interesting.</p>
+<p class="q" data-t="383">You talked about the ability to listen, I think, in your Wharton commencement speech. How would you teach somebody to do that?<a href="https://www.youtube.com/watch?v=AIuBsiZnhRE&t=383s">&#x21AA; 06:23</a></p>
+<p data-t="398">Well, that's a tough one. It can be taught in that you can point it out to people that they talk all the time and they don't listen, right? So you can say that, but I think we would fall back to how we are generally.</p>
+<p data-t="404">I think it needs to come with some curiosity, because if you're not curious, you're not going to listen. So I think it goes hand in hand with that. Generally you should listen twice as much as you speak, right? That's why you've got two ears. But it's super important.</p>
+<h3 class="chapter"><span>Reunion culture and the class of &#39;92</span><a href="https://www.youtube.com/watch?v=AIuBsiZnhRE&t=420s">&#x21AA; 07:00</a></h3>
+<p data-t="425">A lot of people think they're listening, but they're not actually listening. They're just processing stuff and can't wait to get to the next questions themselves. So there is little listening.</p>
+<p data-t="441">I spoke to this guy called Saul Perlmutter. He is a scientist. He got the Nobel Prize in physics. He said, "Nicolai, we are now at the stage in the world where we, for the first time, can solve all the problems. We know how to solve the climate problem. We know how to feed everybody in the world. We have the technology. We have the science. It's just that we don't talk to each other. We don't listen. We don't work together properly."</p>
+<p class="q" data-t="473">So that's why we need to zoom in. Would you say that's the biggest problem in society?<a href="https://www.youtube.com/watch?v=AIuBsiZnhRE&t=473s">&#x21AA; 07:53</a></p>
+<p data-t="475">I think one of the biggest problems now is the fact that we close up. If you look at the golden ages we've had and you look at the real powers we've had during the years, Rome, Venice, the Song Dynasty, the Netherlands, these places which did really, really well, they were open economies: free trade, free movement of labor, thought, and so on.</p>
+<h3 class="chapter"><span>The thesis, the lab, and Cambridge public schools</span><a href="https://www.youtube.com/watch?v=AIuBsiZnhRE&t=480s">&#x21AA; 08:00</a></h3>
+<p data-t="511">What they all have in common in terms of the end of the golden ages is close of free trade, tariffs, end of immigration, end of free thought, the rise of the strong man, attack on freedoms of all sorts. And we are seeing that in many places of the world. And that's a negative.</p>
+<p class="q" data-t="535">Which one of those concerns you the most?<a href="https://www.youtube.com/watch?v=AIuBsiZnhRE&t=535s">&#x21AA; 08:55</a></p>
+<p data-t="541">All of the above. For me, it's free speech. That seems to be the big limiter. But you need new ideas. You need to rejuvenate countries and societies. Clearly free speech is important.</p>
+<p class="q" data-t="553">How do you see the difference between American and European mindsets?<a href="https://www.youtube.com/watch?v=AIuBsiZnhRE&t=553s">&#x21AA; 09:13</a></p>
+<p data-t="560">So this is super interesting, right? Now I'm in New York for a month, and wow, the energy here, the entrepreneurship, the drive. I just get so much energy just living here. Level of ambitions super high.</p>
+<p data-t="581">Versus Europe, where there is... Europe is a fantastic place too, right, but for different reasons. Culturally incredible, food pretty good in many places, but less ambitions. The thing with ambitions, I think it's so interesting: if you have really, really high ambitions, you achieve great things even if you fail. If you have low ambitions, you achieve nothing even if you succeed. So having great ambitions is just fantastic.</p>
+<p data-t="613">And in America, five. Do you think five is a high number or a low number?</p>
+<p class="q" data-t="618">For what?<a href="https://www.youtube.com/watch?v=AIuBsiZnhRE&t=618s">&#x21AA; 10:18</a></p>
+<p data-t="620">Well, just generally. Number is number. Five, high or low?</p>
+<p class="q" data-t="623">Well, there you go.<a href="https://www.youtube.com/watch?v=AIuBsiZnhRE&t=623s">&#x21AA; 10:23</a></p>
+<p data-t="624">You think five is low? Okay. You ask a European, "Is five high or low?" They would say it's pretty high. So the whole concept of growth rates, ambitions, and so on is different.</p>
+<h3 class="chapter"><span>Accomplished but unhappy</span><a href="https://www.youtube.com/watch?v=AIuBsiZnhRE&t=630s">&#x21AA; 10:30</a></h3>
+<p data-t="636">And then of course you work much harder in America. That's not something I think. It's just the facts. You've got less holiday and so on.</p>
+<p class="q" data-t="644">Do you think that it's good or bad?<a href="https://www.youtube.com/watch?v=AIuBsiZnhRE&t=644s">&#x21AA; 10:44</a></p>
+<p data-t="649">I think it's both. I think it's good for some things in society, and I think it's not so good for the people involved. It's so interesting because if you think of it from an evolutionary point of view, evolution doesn't care about you. It cares about the species. And so it would sacrifice you and make you work harder for the good of the whole unit and the survival of the unit.</p>
+<p class="q" data-t="669">Was it a culture shock when you came to Wharton?<a href="https://www.youtube.com/watch?v=AIuBsiZnhRE&t=669s">&#x21AA; 11:09</a></p>
+<p data-t="673">To Wharton? Yeah. Absolutely. Absolutely. Well, in a way, Norway is the opposite of Wharton, because in Norway everybody's supposed to be the same. You have this thing called Janteloven. It's just, "Don't think you are fantastic in any way, shape, or form."</p>
+<p data-t="690">So you come to... I sit there in a class and it's just, "Hey, what do you guys want to achieve in life?" One of my fellow students, hands up. "What do you want to do?" "I just want to conquer the world." And that's a statement which is totally normal at Wharton, but it's not particularly normal where I'm from.</p>
+<p class="q" data-t="709">How would you change that to add more ambition?<a href="https://www.youtube.com/watch?v=AIuBsiZnhRE&t=709s">&#x21AA; 11:49</a></p>
+<p data-t="711">I don't think you can change it. You can't change a nation, but you can change it in your own company, and you can work on the corporate culture in the firm you work, and you can change it with yourself and your family and your friends. But to change the ambition level of a whole country, I don't think you can do that. It's tough.</p>
+<p class="q" data-t="728">How would you go about it if you had to, if that was your task?<a href="https://www.youtube.com/watch?v=AIuBsiZnhRE&t=728s">&#x21AA; 12:08</a></p>
+<p data-t="733">Okay. So I never do politics because my job is totally not political. But if I were prime minister for a day...</p>
+<p class="q" data-t="738">And your only job was ambition, nothing else.<a href="https://www.youtube.com/watch?v=AIuBsiZnhRE&t=738s">&#x21AA; 12:18</a></p>
+<p data-t="745">I would inject AI everywhere. I would just go all in. I would do what they did in Sweden in the '80s. They had something called Home PC. They bought 800,000 PCs in a country of, at that stage, let's say it was six, seven million or something, eight, put them in people's homes, and it just increased the digitalization of the country.</p>
+<p data-t="769">So now you have Spotify, Klarna, all these things. Is it directly linked? No, probably not, but they increased the digitization. Now they're doing the same thing with AI. They're doing the same in Iceland. In Iceland, they just announced a cooperation project with Anthropic, where they're basically going to stuff it into all the schools and all that kind of thing.</p>
+<p data-t="795">I think it should be perfect for Norway, a highly digitalized country, and where people think it's pretty nice to have a lot of spare time. Of course AI helps you with that.</p>
+<p data-t="806">You read the book about Nvidia, for instance, and Jensen Huang talks about this once-in-a-lifetime opportunity. This is just a once-in-a-lifetime opportunity for people, companies, and countries to pull apart. If you don't do that, you're sort of going to be left behind.</p>
+<p class="q" data-t="825">There's two. Alpha School, I guess, is one of them, who's using AI to get curriculum down to two hours a day. The students are getting massively better outcomes. Then Synthesis Tutor has created this math program through, I think it's kindergarten through grade eight or nine now, and the results are just off the charts. They move kids two standard deviations within three or four months.<a href="https://www.youtube.com/watch?v=AIuBsiZnhRE&t=825s">&#x21AA; 13:45</a></p>
+<h3 class="chapter"><span>Watching her daughter do Harvard differently</span><a href="https://www.youtube.com/watch?v=AIuBsiZnhRE&t=840s">&#x21AA; 14:00</a></h3>
+<p class="q" data-t="848">We've demonstrated that it's better than teachers. But the impediment to that would be what do you think? Why wouldn't people do it? What would be the argument against it?<a href="https://www.youtube.com/watch?v=AIuBsiZnhRE&t=848s">&#x21AA; 14:08</a></p>
+<p data-t="860">I don't know why people would do it. They should do it. They so should do it.</p>
+<p class="q" data-t="865">What's the most important data you look at these days?<a href="https://www.youtube.com/watch?v=AIuBsiZnhRE&t=865s">&#x21AA; 14:25</a></p>
+<p data-t="873">I don't have just one or two data sources. I read just a lot of newspapers, and I think what's going on in the world now is just so incredibly fascinating. It's so exciting to be alive. So I just wake up at 5:00 and I just spin out of bed. I just can't wait to get out of bed to start to read the papers.</p>
+<p data-t="890">Then I start the Financial Times, Wall Street Journal, New York Times, all these things. Wow, the stuff that goes on now is just incredible. Things that you didn't think were possible a year ago, that's now happening, right?</p>
+<p data-t="903">So I was up in a forest a few weeks ago with seven of my best friends, and we were predicting, "Okay, what's going to happen over the next 12 months?" We tape-recorded it, and then we were playing our predictions from last year. These are really clever people. How do you think we did? Terrible. Terrible. Terrible.</p>
+<p data-t="925">We were 80% wrong. We didn't predict that Trump would win the election a few weeks later. We didn't think about tariffs and relationship between the US, Europe, what's going on now in the US, in Europe, in India, in China. We had no clue. So I think trying to predict in this world is just more and more useless.</p>
+<p data-t="956">So what you need to do, you just need to work on speed and agility.</p>
+<p class="q" data-t="961">Go deeper on that for a second. How important is speed and agility?<a href="https://www.youtube.com/watch?v=AIuBsiZnhRE&t=961s">&#x21AA; 16:01</a></p>
+<p data-t="962">I have a big thing with speed. Speed is a mindset. It struck me again going back to New York. Every morning I buy this egg and ham roll, and just the speed with which they wrap it. The speed in New York is very high, but speed generally, I think, is super important.</p>
+<p data-t="989">It comes to this first principle: things shouldn't take longer than they need to take. You save time by being fast. This sounds a bit strange, but if I send you an email and you answer within one minute, how long does that email need to be? Two words, right? I'm impressed because you answer really quickly.</p>
+<p data-t="1016">If you answer the next day, how long does it have to be? A paragraph. And if you answer a week later, it needs to be a page, right? So you just save time by being quick.</p>
+<h3 class="chapter"><span>Summer Bridge to Oxford to McKinsey to teaching</span><a href="https://www.youtube.com/watch?v=AIuBsiZnhRE&t=1020s">&#x21AA; 17:00</a></h3>
+<p data-t="1026">You're in meetings all day. You're trying to stay present, but you're also worried you'll forget the decision, the action item, the important next step. That's where Granola comes in. Granola is an AI-powered notepad for meetings. You jot down rough notes like you always do, and in the background, Granola transcribes and turns them into clear, useful notes when the meeting ends.</p>
+<p data-t="1045">There are no bots joining your calls, no distractions, just a clean notepad that helps you focus. During or after the call, you can chat with your notes. You can ask Granola to pull out action items, help you negotiate, make a decision, write a follow-up email, and so much more. I even use it when I'm listening to podcasts.</p>
+<p data-t="1063">Once you try it on a first meeting, it's hard to go without. Head to granola.ai/shane and get three months free with the code shane. That's granola.ai/shane.</p>
+<p data-t="1076">Most things worth having in life reward focus. Dating should, too. The League is built for people like me who know who they are and what they want. Instead of endless options, it delivered me a curated set of profiles each day, so my time and attention stay directed towards what matters.</p>
+<p data-t="1090">What stood out to me most is the community. High-quality people who are intentional and serious about building something real. If you're ready to approach dating the same way you approach the rest of your life with clarity and purpose, this is worth your attention. The League. Find someone in yours. Download the app and apply today.</p>
+<p class="q" data-t="1111">How do you think about urgency? That's one thing we didn't... That was not a word we used when we were thinking about American versus European mindsets.<a href="https://www.youtube.com/watch?v=AIuBsiZnhRE&t=1111s">&#x21AA; 18:31</a></p>
+<p data-t="1122">Yeah. I try to build urgency into most things. In my office, I have this clock, and it counts down the number of days I've got left in my job. It's not because I look forward to stop working, because I love my job, but I have this thing on the wall.</p>
+<p data-t="1140">So you come in and say, "Hey, we are going to work on this, and I'll sort it by January." And I said, "January? Look here. I've got 1,765 days left. We need to do it now." And then he said, "Oh, really? You only have 1,765 days left? Yeah, let's do it now." So you build urgency into these tasks.</p>
+<p class="q" data-t="1163">I love it. I like that. That's a really good idea. When I was talking with Charlie Munger about predicting, he basically said, "It's a fool's errand. It's better to position and have agility." But you kind of have to mix that with a stubbornness, too. How do you think about that?<a href="https://www.youtube.com/watch?v=AIuBsiZnhRE&t=1163s">&#x21AA; 19:23</a></p>
+<p data-t="1181">I think the most important thing to have in investing is you need to be stubborn, but you need to have the ability to change your mind. Very few people have that. Somebody like Stan Druckenmiller has it, but the combination is rare.</p>
+<p data-t="1198">You need to be stubborn in order to do the opposite of everybody else. When you do these kind of contrarian investments, there will be periods where everything goes against you and it's stressful, but you need to hang in there.</p>
+<p class="q" data-t="1210">Do you think you can teach people to change their minds?<a href="https://www.youtube.com/watch?v=AIuBsiZnhRE&t=1210s">&#x21AA; 20:10</a></p>
+<p data-t="1216">I think you can, to a certain extent. It's easier as you get older, I think, because you've seen more cycles. But it's difficult to find people who are really contrarian now, because you need to live in a space where people don't agree with you.</p>
+<p data-t="1235">In today's world, everybody wants to be liked and have 100 likes on Facebook or whatever. So to be different from other people is tough.</p>
+<p data-t="1249">So now when I give presentations at universities, I ask people, "Hey, anybody here who thinks differently from other people, who kind of think that they are weird, that nobody understands them, hands up." Typically less than 10%.</p>
+<h3 class="chapter"><span>Ten years lost</span><a href="https://www.youtube.com/watch?v=AIuBsiZnhRE&t=1260s">&#x21AA; 21:00</a></h3>
+<p data-t="1261">I said, "You guys, you're great. We'd love to hire you. Can everybody else put their hands up?" And then the other 90% is, "Sorry, guys, you're just like everybody else. You're never going to make much money, but there is hope. You can change."</p>
+<p data-t="1272">I kind of think people hopefully go out of that room and think, "You know what? I want to be different." It's something we should really treasure and love. Weird is good, right?</p>
+<p class="q" data-t="1284">Go deeper on that for a second. I think a lot of people optimize their lives not necessarily to be liked, but definitely not be hated or disliked by people, and that causes all these weird societal distortions.<a href="https://www.youtube.com/watch?v=AIuBsiZnhRE&t=1284s">&#x21AA; 21:24</a></p>
+<p data-t="1302">Yeah. You don't have to be disliked even though people disagree with you. But in my mind, life is not a popularity contest. My wife says, "Well, only people without friends say that." But I don't think so.</p>
+<p data-t="1316">Life is for sure not the popularity contest, and you're definitely not popular all the time. You have that big number on the screen. You can't be popular all the time. You have to be used to the fact that whatever, even if you're right, 10% will disagree with you.</p>
+<p class="q" data-t="1334">Do you read the comments that are negative about you?<a href="https://www.youtube.com/watch?v=AIuBsiZnhRE&t=1334s">&#x21AA; 22:14</a></p>
+<p data-t="1339">No. But I also don't read the positives. And I don't believe them. I don't believe the positives. I don't believe the negatives.</p>
+<p class="q" data-t="1345">So when you read the newspapers, how do you read them? Are you reading headlines and then if it catches you, you read the article, or is there a different way that you skim or process that?<a href="https://www.youtube.com/watch?v=AIuBsiZnhRE&t=1345s">&#x21AA; 22:25</a></p>
+<p data-t="1353">I go through headlines, and then I drill down if it's either something I am interested in or something I know I should know more about, or if I'm going to meet somebody who's interested in that particular field, or I know somebody who's interested, then I pass it on to somebody else, or if I've met the person or had him on our podcast.</p>
+<p class="q" data-t="1375">How do you test your assumptions before making a big investment?<a href="https://www.youtube.com/watch?v=AIuBsiZnhRE&t=1375s">&#x21AA; 22:55</a></p>
+<p data-t="1381">So that's where I think we can be better, and I think we can develop this. By using more of a scientific method, I think we can be better. I do think that there is something called an objective truth. I think there is something which is correct, and we need to find it.</p>
+<p data-t="1406">I have much more of an open mind now than I had in the past. I think I listen to more different types of input and opinions, and I try not to jump to conclusion.</p>
+<p class="q" data-t="1413">Has that made you a better or worse investor based on returns?<a href="https://www.youtube.com/watch?v=AIuBsiZnhRE&t=1413s">&#x21AA; 23:33</a></p>
+<p data-t="1420">Well, I don't run money myself now. I'm running a company where we have a lot of people running money. But for sure it's going to make you a better investor if you take more of the different opinions into the equation. If you are long something, you listen to the shorts, and vice versa. There really is a truth, you know. Don't you think?</p>
+<p class="q" data-t="1443">Do you think there is an objective truth?<a href="https://www.youtube.com/watch?v=AIuBsiZnhRE&t=1443s">&#x21AA; 24:03</a></p>
+<p data-t="1444">I would like to think so.</p>
+<p class="q" data-t="1446">Yeah. But how do we get at that truth?<a href="https://www.youtube.com/watch?v=AIuBsiZnhRE&t=1446s">&#x21AA; 24:06</a></p>
+<p data-t="1449">It's the listening to different types of people.</p>
+<p class="q" data-t="1452">Yeah. But then you're making a judgment call at some point on what's closer to the truth and what's not.<a href="https://www.youtube.com/watch?v=AIuBsiZnhRE&t=1452s">&#x21AA; 24:12</a></p>
+<p data-t="1457">Of course. Then you link in analysis and some pattern recognition and so on, and hopefully you get to something which is correct.</p>
+<p class="q" data-t="1469">I think the source of most of our poor decisions is just blind spots. There's information we're missing. There's something we don't see. Our job is to reduce our blind spots. I don't know if we can completely eliminate them, but we can definitely reduce them.<a href="https://www.youtube.com/watch?v=AIuBsiZnhRE&t=1469s">&#x21AA; 24:29</a></p>
+<p data-t="1486">Yep. And then we reduce it through talking to people and getting different perspectives. It's just like if you and I were standing beside each other right here and you took a photo and I took a photo, both of those photos are 100% accurate. But if we add them together, we get more of a picture than we do individually, because it'll be slightly different because we're standing at slightly different angles with different offsets.</p>
+<h3 class="chapter"><span>Finding psychology at 32</span><a href="https://www.youtube.com/watch?v=AIuBsiZnhRE&t=1500s">&#x21AA; 25:00</a></h3>
+<p class="q" data-t="1504">How has your attitude towards risk changed?<a href="https://www.youtube.com/watch?v=AIuBsiZnhRE&t=1504s">&#x21AA; 25:04</a></p>
+<p data-t="1510">It's a difficult one. I am probably, in some ways, become more risk averse. On the other hand, there are some risks I probably take more of now than I did in the past. People's risk appetite depends on many things.</p>
+<p data-t="1529">Everything else being equal, men take more risk than women, which is why we crash our cars much more, right? Young people take more than older people. Extroverts take more than introverts. It's geographically based, right? American people take more risks than, let's say, Asian people.</p>
+<p data-t="1551">I'm sorry, I'm not the one who has invented this, okay? I did a degree in social psychology, and one of my papers was on exactly this, how is risk appetite linked to the Big Five? As you get older, on average, you take a bit less risk, but as you build wealth, you take a bit more risk sometimes.</p>
+<p data-t="1576">I'm sorry, this was a long answer. I'm not sure I have a very clear answer here. So risk is interesting, right? Let's say you do private equity and you interview somebody like Steve Schwarzman, which we did on our podcast. It's really important not to lose money, so you need to really look at the downside.</p>
+<p data-t="1598">Now, in venture capital, it doesn't matter whether you lose money on a lot of stuff as long as you capture the really big winners, right? You can lose nine out of 10 as long as you get the one, which is going up like a rocket. The issue here is that the entry ticket for the rocket, which was $1 million in the past, that's now $500 million. So that rocket better go up, right?</p>
+<h3 class="chapter"><span>Don&#39;t let me quit for 10 years</span><a href="https://www.youtube.com/watch?v=AIuBsiZnhRE&t=1620s">&#x21AA; 27:00</a></h3>
+<p class="q" data-t="1622">And you guys do mostly, it's like index plus.<a href="https://www.youtube.com/watch?v=AIuBsiZnhRE&t=1622s">&#x21AA; 27:02</a></p>
+<p data-t="1625">Yeah, we are very indexed there. We have a really great investment mandate from the minister of finance. It tells us roughly how we are going to be positioned. It gives us a risk budget, and then we are pretty close to that. That's important for many things, but it's also important because it limits how much money we can lose.</p>
+<p class="q" data-t="1640">So how does that work in practice? You basically start with 100% in the index and then you're like, "Okay, we're going to take a little less of this and a little more of that"?<a href="https://www.youtube.com/watch?v=AIuBsiZnhRE&t=1640s">&#x21AA; 27:20</a></p>
+<p data-t="1646">Yeah, pretty much. I would say we have 20% of the capital we would run in a very active way, and the other part of the capital will do smaller tweaks.</p>
+<p class="q" data-t="1659">But you have a lot of money coming in every year, I would imagine. It's probably on the order of 100 billion-ish, if not more.<a href="https://www.youtube.com/watch?v=AIuBsiZnhRE&t=1659s">&#x21AA; 27:39</a></p>
+<p data-t="1667">Well, it depends on energy prices, but generally there's been inflows.</p>
+<p class="q" data-t="1673">And so do you take that, and no matter what the price is, like say today where the top seven stocks account for 46% of the US index, how do you allocate that new money coming in? Do you just pop it into the index?<a href="https://www.youtube.com/watch?v=AIuBsiZnhRE&t=1673s">&#x21AA; 27:53</a></p>
+<h3 class="chapter"><span>What grit actually means</span><a href="https://www.youtube.com/watch?v=AIuBsiZnhRE&t=1680s">&#x21AA; 28:00</a></h3>
+<p data-t="1685">The inflows or outflows are monthly, right? So you get the money on a particular day, and then you have to think, when do you deploy it into the market? Do you do it a bit beforehand, or a bit afterwards, or a bit before and after? And we use AI to optimize those type of decisions.</p>
+<p class="q" data-t="1710">Do you try to front-run index changes?<a href="https://www.youtube.com/watch?v=AIuBsiZnhRE&t=1710s">&#x21AA; 28:30</a></p>
+<p data-t="1712">Yeah.</p>
+<p class="q" data-t="1713">Using AI, I would imagine.<a href="https://www.youtube.com/watch?v=AIuBsiZnhRE&t=1713s">&#x21AA; 28:33</a></p>
+<p data-t="1715">Yeah.</p>
+<p class="q" data-t="1715">What's gotten harder in investing?<a href="https://www.youtube.com/watch?v=AIuBsiZnhRE&t=1715s">&#x21AA; 28:35</a></p>
+<p data-t="1715">Everything.</p>
+<p class="q" data-t="1715">Nothing's gotten easier?<a href="https://www.youtube.com/watch?v=AIuBsiZnhRE&t=1715s">&#x21AA; 28:35</a></p>
+<p data-t="1717">No, everything's gotten harder. I would say what's getting easier is research, because of the deep research functions in some of the models. You get incredible amount of knowledge within five seconds. It would take you ages to do that before, and it's well structured, and you can play around with it. That's just phenomenal. It's just phenomenal.</p>
+<p class="q" data-t="1744">How do you think about the rise of passive investing when it comes to retail? What are the pros and cons of that?<a href="https://www.youtube.com/watch?v=AIuBsiZnhRE&t=1744s">&#x21AA; 29:04</a></p>
+<p data-t="1749">Well, the pros is that it's cheaper, so people don't pay that much fees. It's difficult to beat the market. The negatives is that they would typically perpetuate bubbles, because with more passive money, they go into stocks which have done historically well, and they perpetuate the moves.</p>
+<p class="q" data-t="1774">Is your goal active return, or total return, absolute return, or is it relative to the index?<a href="https://www.youtube.com/watch?v=AIuBsiZnhRE&t=1774s">&#x21AA; 29:34</a></p>
+<p data-t="1782">Relative to the index. We are measured against a reference index which is constructed by the ministry, and then we try to beat that. Historically, over the last close to 30 years, we've had 25 basis points of performance. So you would say, "Hey, that's not so much." Well, the thing is that if you have a lot of money, it ends up being pretty big absolute amounts.</p>
+<h3 class="chapter"><span>Perseverance without passion</span><a href="https://www.youtube.com/watch?v=AIuBsiZnhRE&t=1800s">&#x21AA; 30:00</a></h3>
+<p class="q" data-t="1809">When you were running your own fund before that, what was the worst investing mistake that you made, and what happened?<a href="https://www.youtube.com/watch?v=AIuBsiZnhRE&t=1809s">&#x21AA; 30:09</a></p>
+<p data-t="1816">The worst mistake was during the financial crisis. We were in a subprime lender, and it turned out that there was accounting fraud, and it was a big position. That's the worst investment I've ever made. What I learned was that you don't want to go into dubious business models.</p>
+<p data-t="1836">So you can say, certainly the type of company we were invested in, is it ethical to lend money to people who are in a tough situation in life? Well, I don't know. It certainly was a really bad investment. I wouldn't invest in that type of company now.</p>
+<p class="q" data-t="1863">What was the lesson you took away from that? Is it the business model?<a href="https://www.youtube.com/watch?v=AIuBsiZnhRE&t=1863s">&#x21AA; 31:03</a></p>
+<p data-t="1866">It's just a business model. I just don't think you should profit from people who have a tough time.</p>
+<p class="q" data-t="1876">What would be the counterargument to that if you were to argue with yourself?<a href="https://www.youtube.com/watch?v=AIuBsiZnhRE&t=1876s">&#x21AA; 31:16</a></p>
+<p data-t="1881">I don't think there's a good counterargument.</p>
+<p class="q" data-t="1882">The pushback would be, wouldn't it be that people all need credit? We've all been down on our luck, and maybe we don't have the best credit rating. But it's just how you do it and how you go about it and what you charge for it.<a href="https://www.youtube.com/watch?v=AIuBsiZnhRE&t=1882s">&#x21AA; 31:22</a></p>
+<p data-t="1893">Yeah. It shouldn't be user rates, for sure.</p>
+<p class="q" data-t="1898">No. Did you do a postmortem after that?<a href="https://www.youtube.com/watch?v=AIuBsiZnhRE&t=1898s">&#x21AA; 31:38</a></p>
+<p data-t="1903">Totally.</p>
+<p class="q" data-t="1904">And then how do you have the confidence to come back and take big swings after you lost a lot of money on that one?<a href="https://www.youtube.com/watch?v=AIuBsiZnhRE&t=1904s">&#x21AA; 31:44</a></p>
+<p data-t="1910">Because as long as you don't do the same mistake. Why make the same mistakes when there are so many mistakes to take from? You find some new ones.</p>
+<h3 class="chapter"><span>Sample before you specialize</span><a href="https://www.youtube.com/watch?v=AIuBsiZnhRE&t=1920s">&#x21AA; 32:00</a></h3>
+<p class="q" data-t="1922">That's originality in mistakes. I love it.<a href="https://www.youtube.com/watch?v=AIuBsiZnhRE&t=1922s">&#x21AA; 32:02</a></p>
+<p data-t="1927">But the risk taking is really interesting. Most people take less risk when they lose money, even though you should take the same amount of risk. Here we use a sports psychologist. I sail, and I did a lot of competition when I was a bit younger. I sailed with some of the British Olympic sailors, and they were just really, really good.</p>
+<p data-t="1948">So I asked them, "Hey, why are you so good?" "We have two reasons. One, we have a really good debrief system, and also we work with sports psychologists to work with mental strength." What is important in sailing is that you can be number one, and then the wind direction changes, and then suddenly you're the last one.</p>
+<p data-t="1971">Next race, you need to take the same type of risks. You cannot let it impact you. That's the same way it is with investing. Just because you lost, you need to get back on your horse and take the same amount of risk. It's very difficult, and that's why you need some psychologist to help you with this.</p>
+<p data-t="1986">I did a podcast with Magnus Carlsen, the chess player, and I asked him, "What happens when you lost a game? Do you take more risk, less risk?" He takes more risk in the next game, which I think is interesting. But normally people take less.</p>
+<p class="q" data-t="2003">That's fascinating, because I was thinking as you were saying that, the worst people would take less or more risk. I just picture this guy or girl at the gambling table in Vegas, and they lose and they keep going double down, double down, double down.<a href="https://www.youtube.com/watch?v=AIuBsiZnhRE&t=2003s">&#x21AA; 33:23</a></p>
+<p data-t="2017">Investors don't do that.</p>
+<p class="q" data-t="2021">Why did you take this job? What did you see? Why did you want it?<a href="https://www.youtube.com/watch?v=AIuBsiZnhRE&t=2021s">&#x21AA; 33:41</a></p>
+<p data-t="2023">It was my dream job. I had run this investment company called AKO Capital, set it up, and it turned 15 years. I thought it was time to pass it on to the next generation and do something else. So I wanted to go back to university and do another degree and learn some more things.</p>
+<h3 class="chapter"><span>What Harvard could do better about career exploration</span><a href="https://www.youtube.com/watch?v=AIuBsiZnhRE&t=2040s">&#x21AA; 34:00</a></h3>
+<p data-t="2053">I had just before that done a degree in social psychology and organizational development. So when this job came up, it was just, wow, it combines asset management, and asset management is the most interesting thing you can do in life, because it's about everything that moves, everything you eat, where you drive, all that kind of thing.</p>
+<p data-t="2073">It's about psychology. It's about markets. It's about greed and fear. It's about macroeconomy, geopolitics, defense. It's about everything, right? So it is the most incredible game you could ever construct.</p>
+<p data-t="2089">Then I could combine it with organization development and really see whether we could take this organization to a place that it hadn't been before, and then do something great for the country. So all my interests came together in one job.</p>
+<p data-t="2102">People talk a lot about product market fit, sales tactics, or pricing strategy. But the truth is, success in selling often comes down to something much simpler: the system behind the sale. That's why I use and love Shop Pay, because nobody does selling better than Shopify. They've built the number one checkout on the planet, and with Shop Pay, businesses see up to 50% higher conversions. That's not a rounding error. That's a game-changer.</p>
+<p data-t="2127">Attention is scarce. Shopify helps you capture it and convert it. If you're building a serious business, your commerce platform needs to meet your customers wherever they are: on your site, in store, in their feed, or right inside their inbox. The less they think, the more they buy. Businesses that sell more, sell on Shopify.</p>
+<p data-t="2151">If you're serious about selling, the tech behind the scenes matters as much as the product. Upgrade your business and get the same checkout that I use. Sign up for your $1 per month trial period at shopify.com/knowledgeproject. All lowercase. Go to shopify.com/knowledgeproject to upgrade your selling today. Shopify.com/knowledgeproject.</p>
+<p class="q" data-t="2172">I'm a huge proponent in sovereign wealth funds. How would you advise the United States or Canada to set one up, knowing what you know now?<a href="https://www.youtube.com/watch?v=AIuBsiZnhRE&t=2172s">&#x21AA; 36:12</a></p>
+<p data-t="2177">I think I'm too humble to advise anybody in that field. What has worked well for Norway is to have a sovereign wealth fund which has broad political anchoring. So the political parties generally agree on the big decisions, which means that when you have a change of government, you do not change the way you run the fund. That's important.</p>
+<p data-t="2203">Then transparency. We are the most transparent fund in the world, and there is actually a world championship in that, and we won it three times in a row. It's a world championship which has been run by a Canadian company called CEM in Toronto.</p>
+<p data-t="2223">Then the last thing is we have a spending rule, which means that the politicians spend a maximum of 3% of the fund every year. So the broad political anchoring, the transparency, and the spending rule, those are three really important factors.</p>
+<p class="q" data-t="2244">Are there any acute political factors that go into this? I imagine it would become political. You're 20 or 30% of the budget at this point.<a href="https://www.youtube.com/watch?v=AIuBsiZnhRE&t=2244s">&#x21AA; 37:24</a></p>
+<p data-t="2251">Yeah. The fund is 25% of the state budget. Well, the whole idea is that the fund should not be political.</p>
+<p class="q" data-t="2257">And then how does Norway's politics work its way into how you might vote for your shares on things like ESG?<a href="https://www.youtube.com/watch?v=AIuBsiZnhRE&t=2257s">&#x21AA; 37:37</a></p>
+<p data-t="2266">That is not politically decided.</p>
+<p class="q" data-t="2269">How is that decided?<a href="https://www.youtube.com/watch?v=AIuBsiZnhRE&t=2269s">&#x21AA; 37:49</a></p>
+<p data-t="2271">That is decided... We have a group of people who sit and look at votes, and they are very, very experienced people. For instance, we look at pay packages. Are they structured in a way which coincides with, are they aligned with, our interests? Are they long-term enough? Are they equity-based enough? Those kind of things.</p>
+<p class="q" data-t="2292">Did those decisions come up to you, or are you at least aware of the big ones?<a href="https://www.youtube.com/watch?v=AIuBsiZnhRE&t=2292s">&#x21AA; 38:12</a></p>
+<p data-t="2297">I am aware of the big ones, but I deliberately do not make decisions here.</p>
+<p class="q" data-t="2302">What was the thinking behind voting against Elon's pay package? What was the rationale?<a href="https://www.youtube.com/watch?v=AIuBsiZnhRE&t=2302s">&#x21AA; 38:22</a></p>
+<p data-t="2308">Well, the team thought it was too big and didn't have the right alignment with shareholders. And the fact that it was dilutive. We own shares in 9,000 companies. If all the CEOs were going to have a billion dollars, that would be pretty expensive for us.</p>
+<p class="q" data-t="2335">I like to think of it as you basically have almost a 2% toll on the world economy at this point or something similar. Is that a fair way to think about it?<a href="https://www.youtube.com/watch?v=AIuBsiZnhRE&t=2335s">&#x21AA; 38:55</a></p>
+<h3 class="chapter"><span>David&#39;s own path: law firm, Berkeley, and serendipity</span><a href="https://www.youtube.com/watch?v=AIuBsiZnhRE&t=2340s">&#x21AA; 39:00</a></h3>
+<p data-t="2340">I think so. I think that's really cool, personally.</p>
+<p class="q" data-t="2346">How do you build long-term thinking into the organization?<a href="https://www.youtube.com/watch?v=AIuBsiZnhRE&t=2346s">&#x21AA; 39:06</a></p>
+<p data-t="2351">It's very difficult, because people want to do things. I think wealth is basically created by owning one or two really good assets, and then you just hold on to it for the very long term. When you look at the really big pockets of wealth, that's basically how it has been created.</p>
+<p data-t="2373">So you make money by doing as little as possible in terms of ownership and change of ownership stakes. But imagine now you're a portfolio manager. You come home from work on Monday and your husband asks you, "How was it today? What did you do?" "I did nothing." Okay.</p>
+<p data-t="2384">And next day, Tuesday, it's like, "Hi, darling. What did you do today?" "Nothing." And the same thing on Wednesday, Thursday, Friday. At the end of the week, "Hey, did you do anything?" "No, I didn't do a thing." It's not intuitive that that's easy, right? Very often the most difficult thing is not to do anything.</p>
+<p data-t="2407">One way to look at it is what I call the inertia analysis. You take the portfolio from January 1, and you see what would have been the investment result if I just stuck to that and not made a single change. Then you look at your actual results for the year, and so often you actually have detracted from your performance by the things you've done.</p>
+<p class="q" data-t="2429">That is so true. What does it mean to think long term? Are there elements to that thinking that go into it?<a href="https://www.youtube.com/watch?v=AIuBsiZnhRE&t=2429s">&#x21AA; 40:29</a></p>
+<p data-t="2439">Well, you have to figure out what's your time horizon, right? Ideally, with a wealth fund, we should think 50 years ahead. But that's tough because you haven't got a clue what the world is going to look like in 50 years' time. We don't even know what it's going to look like in, I would say, three years' time. That's probably the max you can look into the future. So it's very tough to be long-term in what you do.</p>
+<p class="q" data-t="2463">I know Druckenmiller is widely known to take a position, then do research after. Do you do that as well?<a href="https://www.youtube.com/watch?v=AIuBsiZnhRE&t=2463s">&#x21AA; 41:03</a></p>
+<p data-t="2474">Well, I did that quite a lot.</p>
+<p class="q" data-t="2477">Why do you want to do that?<a href="https://www.youtube.com/watch?v=AIuBsiZnhRE&t=2477s">&#x21AA; 41:17</a></p>
+<p data-t="2478">First of all, if your gut feel is good... People don't believe in gut feel. If you call it gut feel, if you call it pattern recognition, more people believe in it. But if your pattern recognition is good and you see something that looks really interesting, the probability of that being a good investment is pretty high. It's way over 50%.</p>
+<p data-t="2511">By taking a position, you create some urgency in the research process, and it's also easier to add to the position if it goes up because you already have some shares, right? Mentally it's a bit easier to get going. So I was in his camp.</p>
+<h3 class="chapter"><span>Gen Z and the cost of comparison</span><a href="https://www.youtube.com/watch?v=AIuBsiZnhRE&t=2520s">&#x21AA; 42:00</a></h3>
+<p class="q" data-t="2522">Do you think you can teach intuition, or pattern recognition if you will?<a href="https://www.youtube.com/watch?v=AIuBsiZnhRE&t=2522s">&#x21AA; 42:02</a></p>
+<p data-t="2523">No, you can't. But you gain it with time. I did a research process when I studied social psychology. I interviewed the 20 best asset managers in Europe, and I asked them about pattern recognition, when do you use it, when don't you use it?</p>
+<p data-t="2539">First of all, you call it gut feel, nobody believes in it. You call it pattern recognition, a lot of people believe in it. You don't believe in anybody else's gut feel, only your own. You can't apply it when you're young because nobody believes in it.</p>
+<p data-t="2551">You can't go to your boss and it's like, "Hey, I think we should just buy 100 million worth of Apple." "Okay, well why?" "It's just a gut feel I have." It doesn't work, right? Nobody's going to listen to you. So you need to be pretty senior, and ideally you want to be the boss, because if you're the boss, you can actually do it, and it gets better over time.</p>
+<p data-t="2573">The best people use a combination of the two. They use a combination of pattern recognition and analysis depending on the situation. If you are pressed for time, you are more likely to use pattern recognition. And if it's a really complex situation where it's difficult to put numbers on the outcome, there pattern recognition is more important.</p>
+<p class="q" data-t="2598">I think I remember an interview with Magnus where he said something like that. "I have an intuitive recognition of what move I'm going to make." Then the follow-up was, "Why does it take you five minutes to move sometimes?" And he's like, "Well, I'm double-checking. I'm slowing down."<a href="https://www.youtube.com/watch?v=AIuBsiZnhRE&t=2598s">&#x21AA; 43:18</a></p>
+<h3 class="chapter"><span>Can grit be taught?</span><a href="https://www.youtube.com/watch?v=AIuBsiZnhRE&t=2610s">&#x21AA; 43:30</a></h3>
+<p data-t="2615">So what he does, according to what he told me, is that his gut feel gives him three different types of moves, and then he analyzes them. Then he spends five, 10 minutes, but beyond that time he doesn't need more time than that, because it doesn't add to the outcome.</p>
+<p data-t="2626">We overanalyze. There are a lot of things we overanalyze. By overanalyzing, it often doesn't improve the outcome, but it makes you more confident about the outcome, which is also not always a good thing.</p>
+<p class="q" data-t="2647">How do you think about chess, which is a defined board, defined rules, finite, knowable, everything's knowable, all the information is visible, versus something like poker when it comes to intuition?<a href="https://www.youtube.com/watch?v=AIuBsiZnhRE&t=2647s">&#x21AA; 44:07</a></p>
+<p class="q" data-t="2660">If you listen to Kahneman, his argument was to really develop intuition, you need a constant environment, rapid feedback, and a lot of iterations. In investing, you definitely don't have a constant environment. Feedback can sometimes take a long time, and you might not get a lot of iterations at the table.<a href="https://www.youtube.com/watch?v=AIuBsiZnhRE&t=2660s">&#x21AA; 44:20</a></p>
+<p data-t="2683">Well, I would argue you get feedback all the time in investing.</p>
+<p class="q" data-t="2689">How is that?<a href="https://www.youtube.com/watch?v=AIuBsiZnhRE&t=2689s">&#x21AA; 44:49</a></p>
+<p data-t="2690">Because the share price tells you something, right?</p>
+<p class="q" data-t="2694">But the share price tomorrow, if you buy today, is that feedback or is that noise? How do you think about that?<a href="https://www.youtube.com/watch?v=AIuBsiZnhRE&t=2694s">&#x21AA; 44:54</a></p>
+<p data-t="2700">Well, it depends. It can be either.</p>
+<p class="q" data-t="2703">So how do you know when you're wrong?<a href="https://www.youtube.com/watch?v=AIuBsiZnhRE&t=2703s">&#x21AA; 45:03</a></p>
+<p data-t="2705">Well, generally speaking, with the share price going against you, that's an indication of the fact that you may be wrong. But of course, you don't know for sure.</p>
+<p class="q" data-t="2713">How do you seek out disagreement?<a href="https://www.youtube.com/watch?v=AIuBsiZnhRE&t=2713s">&#x21AA; 45:13</a></p>
+<p data-t="2718">Well, first you have to create an environment where people are okay to disagree with you. You need to listen. You need to take what they say into consideration. So you need to create that kind of atmosphere.</p>
+<p data-t="2732">In the beginning in my job, people didn't disagree with me. They all agreed, and that's not very good. Now they disagree all the time. It's really good.</p>
+<p class="q" data-t="2745">How did you change that? Because so often leaders are insulated.<a href="https://www.youtube.com/watch?v=AIuBsiZnhRE&t=2745s">&#x21AA; 45:45</a></p>
+<p data-t="2747">By creating, hopefully, that security for people to be able to speak up. Is everybody telling me all the things they mean all the time? No, of course they don't, because some people have respect for the CEO and that kind of stuff. But we are creating ways of doing it.</p>
+<p data-t="2760">For instance, you're Canadian, right? So I'm sure you are into ice hockey. You have these pucks, things that you play with. We have them on the table. It's just like, "Hey, here is a straight puck. I disagree with what you say. I think you're wrong."</p>
+<p data-t="2779">So then you put the disagreement into a physical object and you take it away from the person. So it's not personal. It's just, "Hey, you know what? I think what you're saying here is just crap." And that's really good. In the fund now we have a straight puck award. So the people who are talking up, properly disagreeing with me, get a puck. It's good.</p>
+<p class="q" data-t="2797">I like that idea.<a href="https://www.youtube.com/watch?v=AIuBsiZnhRE&t=2797s">&#x21AA; 46:37</a></p>
+<p data-t="2802">I love it. I think it's just really good.</p>
+<p class="q" data-t="2802">What other ideas do you use internally that would be along the same lines, that may seem interesting or counterintuitive, that are actually super effective?<a href="https://www.youtube.com/watch?v=AIuBsiZnhRE&t=2802s">&#x21AA; 46:42</a></p>
+<p data-t="2808">Well, you just have to work on getting a feedback culture. We are working on it. It's not easy. It's not easy to give feedback, and it's not easy to receive feedback. So you just have to do it all the time.</p>
+<h3 class="chapter"><span>Situated: the title, the data, and the age trend</span><a href="https://www.youtube.com/watch?v=AIuBsiZnhRE&t=2820s">&#x21AA; 47:00</a></h3>
+<p data-t="2825">I'm getting better at it. I'm more of a straight talker. I tell people more now that I disagree with them, and I try to give them feedback straight after. But it's not easy. People are very sensitive.</p>
+<p class="q" data-t="2837">Is there anything you've learned about how you disagree with people that makes a difference?<a href="https://www.youtube.com/watch?v=AIuBsiZnhRE&t=2837s">&#x21AA; 47:17</a></p>
+<p data-t="2842">Well, you can pack it in a touch, but I think you just want to be pretty straight.</p>
+<p class="q" data-t="2847">Yeah. A lot of people are sensitive when you...<a href="https://www.youtube.com/watch?v=AIuBsiZnhRE&t=2847s">&#x21AA; 47:27</a></p>
+<p data-t="2848">Totally. But it's also the age, right? Young people are very, very sensitive. In the Nordics, we are hypersensitive, and in the public sector, they are very, very sensitive.</p>
+<p class="q" data-t="2861">Yeah. And then the feedback you get is so interesting, because a lot of these conversations actually turn into that, which is, "I disagree with you," and then it's, "Well, I didn't like the way you disagreed with me, and you made me feel..." Then the whole topic of the conversation has changed from the actual thing.<a href="https://www.youtube.com/watch?v=AIuBsiZnhRE&t=2861s">&#x21AA; 47:41</a></p>
+<p class="q" data-t="2873">It's not like I disagree with you as a person. I disagree with your opinion on this thing, but now all of a sudden we're talking about how you feel about my disagreement.<a href="https://www.youtube.com/watch?v=AIuBsiZnhRE&t=2873s">&#x21AA; 47:53</a></p>
+<h3 class="chapter"><span>Grit as necessary but not sufficient</span><a href="https://www.youtube.com/watch?v=AIuBsiZnhRE&t=2880s">&#x21AA; 48:00</a></h3>
+<p data-t="2883">Absolutely.</p>
+<p class="q" data-t="2883">And it sort of derails things. It's crazy. What do you look for when hiring?<a href="https://www.youtube.com/watch?v=AIuBsiZnhRE&t=2883s">&#x21AA; 48:03</a></p>
+<p data-t="2888">Curiosity, intelligence, integrity, drive.</p>
+<p class="q" data-t="2895">How do you test for curiosity? What does that look like?<a href="https://www.youtube.com/watch?v=AIuBsiZnhRE&t=2895s">&#x21AA; 48:15</a></p>
+<p data-t="2900">What are you trying to learn now? What have you learned lately?</p>
+<p class="q" data-t="2904">What have you learned lately?<a href="https://www.youtube.com/watch?v=AIuBsiZnhRE&t=2904s">&#x21AA; 48:24</a></p>
+<p data-t="2908">Me? I'm learning every day.</p>
+<p class="q" data-t="2911">I've done a deep dive on you for the past Tuesday.<a href="https://www.youtube.com/watch?v=AIuBsiZnhRE&t=2911s">&#x21AA; 48:31</a></p>
+<p data-t="2913">That poor thing.</p>
+<p class="q" data-t="2915">I've learned lots. I've learned lots about you. One of the favorite things that came up in my learning about you is you have an ice cream stand outside of your office or something.<a href="https://www.youtube.com/watch?v=AIuBsiZnhRE&t=2915s">&#x21AA; 48:35</a></p>
+<p data-t="2924">That's really good. That's really good.</p>
+<p class="q" data-t="2927">Why do you use that?<a href="https://www.youtube.com/watch?v=AIuBsiZnhRE&t=2927s">&#x21AA; 48:47</a></p>
+<p data-t="2929">Because you want people to come by and talk to you. So I've got a sofa next to the ice cream box, and I hang out on the sofa quite a bit, just chill there. Then people come by to have an ice cream and say, "Hey, what are you working on just now?" They tell me what they're working on, and it's really interesting.</p>
+<p data-t="2970">Sometimes it's like, "Yep, but have you spoken to this guy? I think he or she is doing the same thing as you. Have you spoken to that person?" So I just learn a lot. It's great. The payback on that ice cream box is probably, I don't know, a thousand times payback at least.</p>
+<p class="q" data-t="2955">One of the other things I learned about you that I found fascinating that I wanted to follow up on is you had all these conversations after you started, or right before you started. You had hundreds of conversations with people.<a href="https://www.youtube.com/watch?v=AIuBsiZnhRE&t=2955s">&#x21AA; 49:15</a></p>
+<p data-t="2986">I had 140.</p>
+<p class="q" data-t="2990">140. What was the structure of those conversations like?<a href="https://www.youtube.com/watch?v=AIuBsiZnhRE&t=2990s">&#x21AA; 49:50</a></p>
+<p data-t="2992">This is something I learned from a guy called Albert Baehny. He was the head of a company in Switzerland called Geberit and another one called Lonza. When I got the job, I thought, "Gee, I got the job. What do you do when you get a new job?" So I rang all the best CEOs I've ever met. I said, "Hey, what do I do? I got a new job. How do you approach a new job?"</p>
+<p data-t="3016">You have a lot of conversations with people, and you do them before you start, because after you've started, you won't have any time. You do it because people need to get to know you, and you need to get to know them, and you need more data points so that you can make your decisions. So that's very important.</p>
+<p data-t="3034">I sit down with 140 people and I just start, "Hey, what's on your mind?" That's it. And people have stuff on their mind, right?</p>
+<p class="q" data-t="3046">Yeah. What do people think about?<a href="https://www.youtube.com/watch?v=AIuBsiZnhRE&t=3046s">&#x21AA; 50:46</a></p>
+<p data-t="3048">That's very interesting. Then, of course, you develop. It's just like, okay, what are the good things here? What would you change? What's your advice to me? Those kind of things.</p>
+<p data-t="3057">It's very clear. The funny thing is that when you've had half of them, you get the general gist of what you need to do. You've triangulated. The same thing is coming up over and over again, so that's a strong signal.</p>
+<p data-t="3089">Absolutely. I do the same now. I'm in New York for a month. I sit down with everybody in the firm here. We've got 100. "Hey, what's on your mind?" There's a pattern emerging, and if there is a problem, I change it.</p>
+<p class="q" data-t="3062">Do you ask people what you're doing that doesn't make sense?<a href="https://www.youtube.com/watch?v=AIuBsiZnhRE&t=3062s">&#x21AA; 51:02</a></p>
+<p data-t="3071">Yeah, I do, but I probably should do even more, because generally speaking we all do things which don't make sense. Inertia sort of takes over. We're doing reports which nobody reads, that kind of thing.</p>
+<p data-t="3083">So that's the first thing you do when you talk to people. Then you distill down, okay, of everything I've taken from these 140 conversations, what are the three most important things? Then you put together a leader group and you execute those three things, and you take the time it takes.</p>
+<h3 class="chapter"><span>Cody Coleman and situational agency</span><a href="https://www.youtube.com/watch?v=AIuBsiZnhRE&t=3090s">&#x21AA; 51:30</a></h3>
+<p data-t="3100">Leaders who fail, they try to do too many things too quickly. In the beginning, we moved too quickly twice, and then we got the message and we slowed down.</p>
+<p class="q" data-t="3113">Go deeper on that for a second, because that strikes me as something really interesting where a lot of people are trying to go faster and faster. I'm thinking specifically, my friend Cass had a shirt on yesterday. He did the OpenAI investor call, and his shirt literally said "faster." He was all about increasing velocity, and he had just taken over, I think, September 14th or 16th or whatever. Just go deeper on that.<a href="https://www.youtube.com/watch?v=AIuBsiZnhRE&t=3113s">&#x21AA; 51:53</a></p>
+<p data-t="3145">First of all, you need to execute change as a combined leader group. If you aren't a combined leader group and you try to do something on your own, you'll trigger the immune system of the organization. The organization just wants to have you out, and they often succeed. You are isolated, you just don't get things done, and so on.</p>
+<p data-t="3171">So the organization needs to feel, okay, this is a combined leader group. It doesn't make any sense to try to resist this change because it's going to come. I can just as well cave in and accept it. Then you need to prioritize, and you need to have not too many things, and you need to overcommunicate.</p>
+<p data-t="3182">The thing with overcommunication is becoming clearer and clearer. You think you've said it, you think they've heard it. They haven't heard it. It's very, very tough to get something to really permeate through an organization. Then you think, "Gee, I've said it 10 times, and I'm so bored of myself," but then you're only halfway. Just need to keep going. Same message over and over and over again.</p>
+<p class="q" data-t="3212">How do you evaluate CEOs from a competence point of view from the outside, just using public information? What's your thought process when you're evaluating whether this person's effective or ineffective?<a href="https://www.youtube.com/watch?v=AIuBsiZnhRE&t=3212s">&#x21AA; 53:32</a></p>
+<p data-t="3227">I think it's difficult to see before they have been in the position. Most people I see are competent, otherwise they wouldn't have gotten the job. They know their stuff, right? They know the company, they know the things. But are they good communicators? Are they good at executing? It's tough to see from the outside.</p>
+<p class="q" data-t="3251">How long after somebody has taken over do you start to see it in the finances, the analytic numbers, the quantitative numbers?<a href="https://www.youtube.com/watch?v=AIuBsiZnhRE&t=3251s">&#x21AA; 54:11</a></p>
+<p data-t="3258">I think it depends. It depends on the business cycle. It depends on the product cycle of a company. But it takes time to turn around a company.</p>
+<p class="q" data-t="3270">Totally.<a href="https://www.youtube.com/watch?v=AIuBsiZnhRE&t=3270s">&#x21AA; 54:30</a></p>
+<p data-t="3273">I would say to change a culture is a 10-year project.</p>
+<p class="q" data-t="3276">Oh, wow. Why do you think it takes so long?<a href="https://www.youtube.com/watch?v=AIuBsiZnhRE&t=3276s">&#x21AA; 54:36</a></p>
+<p data-t="3280">Well, I've been in the job for five years now. I think I'm roughly halfway in.</p>
+<p class="q" data-t="3287">If you had to do it faster, how would you do it? Is it a matter of force? If we think of it from physics...<a href="https://www.youtube.com/watch?v=AIuBsiZnhRE&t=3287s">&#x21AA; 54:47</a></p>
+<p data-t="3291">No, I think if you do it faster, you need to lay off people. Then you need to change the people. In some businesses you can do that, but in Europe it's difficult. Also, we've got great people. We have amazing people. I think we've got an incredible lineup of very, very able professionals.</p>
+<h3 class="chapter"><span>Big fish, small pond</span><a href="https://www.youtube.com/watch?v=AIuBsiZnhRE&t=3300s">&#x21AA; 55:00</a></h3>
+<p data-t="3316">But there just are a few things that we'd love to change, right? We want to have more feedback into the system. We want to move a bit faster. We want to have a bit less fear. We want to do these kind of things.</p>
+<p class="q" data-t="3328">But it was working as well before you as now, maybe. But it's working when you think about...<a href="https://www.youtube.com/watch?v=AIuBsiZnhRE&t=3328s">&#x21AA; 55:28</a></p>
+<p data-t="3335">Yeah. It was working well. It's a great company. There was nothing wrong with the company. Really good. It had a fantastic performance, right? But I just thought it needed some tweaks.</p>
+<p data-t="3351">Technologically, it was top-notch. Compliance-wise, top-notch. A lot of really, really good things.</p>
+<p class="q" data-t="3356">It's the envy of the world now.<a href="https://www.youtube.com/watch?v=AIuBsiZnhRE&t=3356s">&#x21AA; 55:56</a></p>
+<p data-t="3362">Well, it's a good company.</p>
+<p class="q" data-t="3362">You've taken, just in the sense of the sovereign wealth fund too, these reserves that you have and you've turned them into perpetual wealth, not only for all your citizens but global influence and a toll bridge on the world economy. I think that's amazing.<a href="https://www.youtube.com/watch?v=AIuBsiZnhRE&t=3362s">&#x21AA; 56:02</a></p>
+<p data-t="3380">I would say that's really to the credit of the politicians. The politicians decided, when they found oil back in '69, after they found oil, "Listen, we should put this into a fund." In '96 they set it up. First deposit was relatively small, and now it's grown a lot, right? But the politicians were really foresighted, and they've been good ever since to be true to the principles.</p>
+<p class="q" data-t="3411">What are you trying to learn right now?<a href="https://www.youtube.com/watch?v=AIuBsiZnhRE&t=3411s">&#x21AA; 56:51</a></p>
+<p data-t="3417">Lots of things. I just feel I know so little. I'm just looking at the podcasts I'm doing over the next few months, and I'm learning about all these kind of things. I needed to learn them anyway, but that kind of makes it urgent.</p>
+<h3 class="chapter"><span>Listen to the inner voice</span><a href="https://www.youtube.com/watch?v=AIuBsiZnhRE&t=3420s">&#x21AA; 57:00</a></h3>
+<p data-t="3428">By next week I need to know more about networks. I need to read up on crypto. I need to read up on IMF. Oh my, there is just so much I need to learn.</p>
+<p class="q" data-t="3458">You guys invest in crypto at all?<a href="https://www.youtube.com/watch?v=AIuBsiZnhRE&t=3458s">&#x21AA; 57:38</a></p>
+<p data-t="3462">No, we don't. But I'm talking to somebody who's in that space.</p>
+<p class="q" data-t="3464">Yeah. And you don't invest in the coins themselves, or you don't invest in the exchanges like Coinbase or something?<a href="https://www.youtube.com/watch?v=AIuBsiZnhRE&t=3464s">&#x21AA; 57:44</a></p>
+<p data-t="3476">Well, we have some ownership stakes in some of the infrastructure because it's in the index, and we would own it in a bit more of a passive way.</p>
+<p class="q" data-t="3488">How much do you work?<a href="https://www.youtube.com/watch?v=AIuBsiZnhRE&t=3488s">&#x21AA; 58:08</a></p>
+<p data-t="3495">I work all the time, but it's not work.</p>
+<p class="q" data-t="3500">Is it like Jensen? You wake up at 5:00 and you're go, go, go until 9:00, and for him it doesn't feel like work?<a href="https://www.youtube.com/watch?v=AIuBsiZnhRE&t=3500s">&#x21AA; 58:20</a></p>
+<p data-t="3507">That's what he told me. I kind of mean he works a lot more than me, because he works every holiday and every Saturday and every Sunday and all the time. I tend to wake up at 5:00 and then I read papers and try to understand what's going on in the world. Then I start to shoot mails.</p>
+<p data-t="3528">I have a notepad at the side of my bed, because if I wake up in the middle of the night, I typically have some ideas. If you don't get them down on a piece of paper, you're going to forget them, right? So I do that. Then I work for meetings, and I read in the evenings, and check out the papers for the next day. But it's not work. It's life.</p>
+<p class="q" data-t="3552">So many people, Michael Ovitz gave me this phrase, but so many people fight their job. It's more of a transaction than an integration between work and life. It strikes me that having the view that you have towards work is much healthier.<a href="https://www.youtube.com/watch?v=AIuBsiZnhRE&t=3552s">&#x21AA; 59:12</a></p>
+<h3 class="chapter"><span>Harvard&#39;s 250th and the founding ideals</span><a href="https://www.youtube.com/watch?v=AIuBsiZnhRE&t=3570s">&#x21AA; 59:30</a></h3>
+<p data-t="3572">Yeah, but not all people... It's not like everybody has the opportunity to work with what they love, and not everybody is that fortunate. But I've been really fortunate in that I've ended up with the things I just cannot think of anything more interesting in the world.</p>
+<p class="q" data-t="3583">Who do you go to for advice?<a href="https://www.youtube.com/watch?v=AIuBsiZnhRE&t=3583s">&#x21AA; 59:43</a></p>
+<p data-t="3588">I go to lots of people. I speak with as many people as I can.</p>
+<p data-t="3594">The funny thing, when you ask people for advice, what do they think about you afterwards? Do you think they think that you are more clever or less clever?</p>
+<p class="q" data-t="3601">More clever.<a href="https://www.youtube.com/watch?v=AIuBsiZnhRE&t=3601s">&#x21AA; 1:00:01</a></p>
+<p data-t="3601">More clever. Because you must be very clever who asked me for advice. He must be really clever. He understands how clever I am, and therefore he wants to have my opinion.</p>
+<p class="q" data-t="3613">What surprised you the most this year?<a href="https://www.youtube.com/watch?v=AIuBsiZnhRE&t=3613s">&#x21AA; 1:00:13</a></p>
+<p data-t="3617">Everything that goes on geopolitically.</p>
+<p class="q" data-t="3620">You didn't see it coming, or it just continues to push the limits of what you thought was possible?<a href="https://www.youtube.com/watch?v=AIuBsiZnhRE&t=3620s">&#x21AA; 1:00:20</a></p>
+<p data-t="3623">Yeah. Yeah. But that's what makes life interesting to live. If you don't like what's going on, you can be really depressed about it, or you can put on your student hat and just think, "Oh my, I can't believe I'm alive to see these things." It's so interesting.</p>
+<p data-t="3641">I think it is super interesting. And technology. The thing is that everything is coming together at the same time. The technology development now is just totally, totally phenomenal.</p>
+<p class="q" data-t="3653">What a time to be alive.<a href="https://www.youtube.com/watch?v=AIuBsiZnhRE&t=3653s">&#x21AA; 1:00:53</a></p>
+<p data-t="3656">I wake up every day.</p>
+<p class="q" data-t="3659">Yeah. I remember it was only a couple weeks ago where AI actually made the first bio advance that humans hadn't made, on cancer research. They tested the hypothesis and it was true. I was like, this is Neil Armstrong stepping on the moon. This is incredible. This is the first stage of the first real thing. I thought that was amazing. I was so excited about that.<a href="https://www.youtube.com/watch?v=AIuBsiZnhRE&t=3659s">&#x21AA; 1:00:59</a></p>
+<h3 class="chapter"><span>How Harvard can improve</span><a href="https://www.youtube.com/watch?v=AIuBsiZnhRE&t=3660s">&#x21AA; 1:01:00</a></h3>
+<p class="q" data-t="3680">We always end with the same question, which is, what is success for you?<a href="https://www.youtube.com/watch?v=AIuBsiZnhRE&t=3680s">&#x21AA; 1:01:20</a></p>
+<p data-t="3687">Success is to make an impact in other people's life in a positive manner.</p>
+<p class="q" data-t="3693">It's a great answer. Thank you for taking the time today. I really appreciate it.<a href="https://www.youtube.com/watch?v=AIuBsiZnhRE&t=3693s">&#x21AA; 1:01:33</a></p>
+<p data-t="3698">Thank you.</p>
+    </div>
+  </main>
+  <script>
+  async function toggleYtBookmark(btn) {
+    const payload = {
+      title: btn.dataset.title,
+      url: btn.dataset.url,
+      filename: btn.dataset.filename,
+      interviewDate: btn.dataset.date,
+      source: 'YT',
+      expert: btn.dataset.channel,
+    };
+    try {
+      const resp = await fetch('/bookmark', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload),
+      });
+      const result = await resp.json();
+      setYtBookmarkState(btn, !!result.bookmarked);
+    } catch (e) {
+      console.error('Bookmark toggle failed:', e);
+    }
+  }
+  function setYtBookmarkState(btn, on) {
+    btn.classList.toggle('is-bookmarked', on);
+    btn.innerHTML = on ? '&#9733;' : '&#9734;';
+    btn.title = on ? 'Bookmarked' : 'Bookmark';
+    btn.setAttribute('aria-label', on ? 'Bookmarked' : 'Bookmark');
+  }
+  (async function initYtBookmarkState() {
+    const btn = document.getElementById('yt-bookmark-btn');
+    if (!btn || !btn.dataset.filename) return;
+    try {
+      const resp = await fetch('/bookmarks');
+      if (!resp.ok) return;
+      const list = await resp.json();
+      if (Array.isArray(list) && list.some(b => b && b.filename === btn.dataset.filename)) {
+        setYtBookmarkState(btn, true);
+      }
+    } catch (e) { /* offline -- leave default state */ }
+  })();
+
+  async function shareYtPage(btn) {
+    const original = btn.innerHTML;
+    btn.disabled = true;
+    btn.innerHTML = '&hellip;';
+    try {
+      const resp = await fetch('/share', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ filename: btn.dataset.filename }),
+      });
+      const result = await resp.json();
+      if (!result.ok) throw new Error(result.error || 'Share failed');
+      try { await navigator.clipboard.writeText(result.url); } catch (e) {}
+      btn.innerHTML = '&#10003;';
+      btn.title = 'Copied ' + result.url;
+      setTimeout(() => { btn.innerHTML = original; btn.disabled = false; btn.title = 'Share'; }, 2500);
+    } catch (e) {
+      console.error('Share failed:', e);
+      btn.innerHTML = '!';
+      btn.title = 'Share failed: ' + (e && e.message || e);
+      setTimeout(() => { btn.innerHTML = original; btn.disabled = false; btn.title = 'Share'; }, 3000);
+    }
+  }
+
+  // When the page is viewed from somewhere other than the local Reader
+  // server (e.g. a shared copy on GitHub Pages), hide the interactive
+  // buttons whose endpoints only exist on localhost.
+  (function hideLocalOnlyControls() {
+    const host = location.hostname;
+    const isLocal = host === 'localhost' || host === '127.0.0.1' || host === '';
+    if (isLocal) return;
+    const actions = document.querySelector('.yt-header-actions');
+    if (!actions) return;
+    const bookmark = actions.querySelector('#yt-bookmark-btn');
+    const share = actions.querySelector('#yt-share-btn');
+    if (bookmark) bookmark.remove();
+    if (share) share.remove();
+  })();
+  </script>
+</body>
+</html>
