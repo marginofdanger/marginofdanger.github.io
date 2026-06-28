@@ -1,0 +1,152 @@
+[
+  {
+    "order": 1,
+    "path": "CME\\decks\\key_slides\\slide_01.png",
+    "caption": "2018 revenue mix and the three-pillar moat framing (deep liquidity / platform / clearing) \u2014 historical baseline with Interest Rates 27%, Energy 18%, Market Data 11% of revenue.",
+    "source_deck": "2018-07-26 \u00b7 Q2 2018 earnings appendix"
+  },
+  {
+    "order": 2,
+    "path": "CME\\decks\\key_slides\\slide_02.png",
+    "caption": "Half-century volume record: 13% pro-forma ADV CAGR 1972-2017, the long-run growth claim management leans on.",
+    "source_deck": "2018-07-26 \u00b7 Q2 2018 earnings appendix"
+  },
+  {
+    "order": 3,
+    "path": "CME\\decks\\key_slides\\slide_03.png",
+    "caption": "Non-US electronic ADV as a share of each asset class in 2018 \u2014 the globalization starting point to compare against 2025.",
+    "source_deck": "2018-07-26 \u00b7 Q2 2018 earnings appendix"
+  },
+  {
+    "order": 4,
+    "path": "CME\\decks\\key_slides\\slide_04.png",
+    "caption": "2Q18 adjusted P&L (70.5% operating margin) plus per-asset-class RPC table \u2014 historical unit economics.",
+    "source_deck": "2018-07-26 \u00b7 Q2 2018 earnings appendix"
+  },
+  {
+    "order": 5,
+    "path": "CME\\decks\\key_slides\\slide_05.png",
+    "caption": "Dividend-only capital-return model in 2018 (regular + annual variable dividend, no buybacks) \u2014 the bookend to the 2025 buyback regime change.",
+    "source_deck": "2018-07-26 \u00b7 Q2 2018 earnings appendix"
+  },
+  {
+    "order": 6,
+    "path": "CME\\decks\\key_slides\\slide_06.png",
+    "caption": "'Compelling Investment' case framing a network effect 'similar to large technology companies' \u2014 moat self-description, 2018 vintage.",
+    "source_deck": "2018-10-25 \u00b7 Q3 2018 earnings appendix"
+  },
+  {
+    "order": 7,
+    "path": "CME\\decks\\key_slides\\slide_07.png",
+    "caption": "Updated three-pillar moat framing with the full product map across six asset classes plus OTC, cash Treasuries/repo and crypto.",
+    "source_deck": "2026-02-12 \u00b7 CME Group Overview investor presentation"
+  },
+  {
+    "order": 8,
+    "path": "CME\\decks\\key_slides\\slide_08.png",
+    "caption": "Q4 2025 ADV by asset class and key highlights: +8% revenue growth, 67.1% adjusted operating margin, fifth consecutive record ADV year.",
+    "source_deck": "2026-02-12 \u00b7 CME Group Overview investor presentation"
+  },
+  {
+    "order": 9,
+    "path": "CME\\decks\\key_slides\\slide_09.png",
+    "caption": "Growth maturation: 7% ADV / 12% adjusted-net-income CAGR over 2015-2025, and the rising share of trading days above 30M contracts (29% in 2025, 64% 2026TD).",
+    "source_deck": "2026-02-12 \u00b7 CME Group Overview investor presentation"
+  },
+  {
+    "order": 10,
+    "path": "CME\\decks\\key_slides\\slide_10.png",
+    "caption": "Globalization paying off: non-US ADV 10% CAGR, 60% of front-office sales staff now outside the US (up from 44% in 2018), non-US share by asset class.",
+    "source_deck": "2026-02-12 \u00b7 CME Group Overview investor presentation"
+  },
+  {
+    "order": 11,
+    "path": "CME\\decks\\key_slides\\slide_11.png",
+    "caption": "Retail base nearly quadrupled in a decade (+23% in 2025); new broker partners Robinhood/eToro/Webull/Plus500 and the December 2025 FanDuel JV.",
+    "source_deck": "2026-02-12 \u00b7 CME Group Overview investor presentation"
+  },
+  {
+    "order": 12,
+    "path": "CME\\decks\\key_slides\\slide_12.png",
+    "caption": "New-product innovation engine: micros +32% ADV, US credit futures, TBA mortgage futures, and the sustainable (carbon/water/battery-metals) suite.",
+    "source_deck": "2026-02-12 \u00b7 CME Group Overview investor presentation"
+  },
+  {
+    "order": 13,
+    "path": "CME\\decks\\key_slides\\slide_13.png",
+    "caption": "Interest Rates 2025 revenue of $1.95B decomposed by sub-line (LTIR/STIR futures and options, cleared IRS, BrokerTec); rates ADV doubled 2014 to 2025.",
+    "source_deck": "2026-02-12 \u00b7 CME Group Overview investor presentation"
+  },
+  {
+    "order": 14,
+    "path": "CME\\decks\\key_slides\\slide_14.png",
+    "caption": "Capital efficiency as the moat's cash value: >$80B/day customer margin savings, split ~40% Equity Index / ~35% Rates, with the cross-margining sources.",
+    "source_deck": "2026-02-12 \u00b7 CME Group Overview investor presentation"
+  },
+  {
+    "order": 15,
+    "path": "CME\\decks\\key_slides\\slide_15.png",
+    "caption": "CME Securities Clearing (CMESC): a new SEC-regulated clearing house for cash Treasuries and repo launching in 2026 \u2014 entry into DTCC/FICC's turf.",
+    "source_deck": "2026-02-12 \u00b7 CME Group Overview investor presentation"
+  },
+  {
+    "order": 16,
+    "path": "CME\\decks\\key_slides\\slide_16.png",
+    "caption": "RPC mix punch: physical commodities are 20% of F&O ADV but 35% of clearing and transaction-fee revenue; commodities revenue $1,826M, +9% YoY.",
+    "source_deck": "2026-02-12 \u00b7 CME Group Overview investor presentation"
+  },
+  {
+    "order": 17,
+    "path": "CME\\decks\\key_slides\\slide_17.png",
+    "caption": "Pricing power: OTC-alternative products command 3-4x the standard Equity Index rate per contract; annual ADV roughly tripled 2020 to 2025.",
+    "source_deck": "2026-02-12 \u00b7 CME Group Overview investor presentation"
+  },
+  {
+    "order": 18,
+    "path": "CME\\decks\\key_slides\\slide_18.png",
+    "caption": "Non-transaction revenue durability: market-data revenue 8% CAGR and S&P DJI equity income 12% CAGR over 2020-2025 \u2014 the non-cyclical counterweight.",
+    "source_deck": "2026-02-12 \u00b7 CME Group Overview investor presentation"
+  },
+  {
+    "order": 19,
+    "path": "CME\\decks\\key_slides\\slide_19.png",
+    "caption": "Google Cloud strategic partnership: 2025 was the final year of incremental net-cash migration cost; 2026 turns net-positive. Aurora region + GCUL ledger.",
+    "source_deck": "2026-02-12 \u00b7 CME Group Overview investor presentation"
+  },
+  {
+    "order": 20,
+    "path": "CME\\decks\\key_slides\\slide_20.png",
+    "caption": "Pricing philosophy: adjustments add ~1.5-2% to revenue on similar activity (2026 net +1.0-1.5%); month-by-month rolling RPC by asset class.",
+    "source_deck": "2026-02-12 \u00b7 CME Group Overview investor presentation"
+  },
+  {
+    "order": 21,
+    "path": "CME\\decks\\key_slides\\slide_21.png",
+    "caption": "2025 adjusted income-statement Sankey: $6.521B revenue to $4.525B operating income (69.4% margin) to $4.088B net income \u2014 full reconciliation on one page.",
+    "source_deck": "2026-02-12 \u00b7 CME Group Overview investor presentation"
+  },
+  {
+    "order": 22,
+    "path": "CME\\decks\\key_slides\\slide_22.png",
+    "caption": "Capital-return regime change: opportunistic share repurchases ($3B authorized) added alongside the regular and annual variable dividend; OSTTRA proceeds fund buybacks.",
+    "source_deck": "2026-02-12 \u00b7 CME Group Overview investor presentation"
+  },
+  {
+    "order": 23,
+    "path": "CME\\decks\\key_slides\\slide_23.png",
+    "caption": "LNG export tailwind for Henry Hub energy volume: US natural-gas exports rising from ~15% of production today to 20-25% by 2030.",
+    "source_deck": "2026-02-12 \u00b7 CME Group Overview investor presentation"
+  },
+  {
+    "order": 24,
+    "path": "CME\\decks\\key_slides\\slide_24.png",
+    "caption": "Macro volume driver: dispersion in forward Fed-rate expectations historically tracks higher Treasury futures and options volumes.",
+    "source_deck": "2026-02-12 \u00b7 CME Group Overview investor presentation"
+  },
+  {
+    "order": 25,
+    "path": "CME\\decks\\key_slides\\slide_25.png",
+    "caption": "Management's full 2026 investment case: marketplace position plus growth orientation plus reliable capital return.",
+    "source_deck": "2026-02-12 \u00b7 CME Group Overview investor presentation"
+  }
+]

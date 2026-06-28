@@ -1,0 +1,164 @@
+[
+  {
+    "order": 1,
+    "path": "ICE\\decks\\key_slides\\slide_01.png",
+    "caption": "2017 financial framework: data mid-to-high-single-digit growth, low-single-digit expense growth, double-digit earnings growth and FCF-funded returns.",
+    "source_deck": "Investor Day 2017 2017-06-02"
+  },
+  {
+    "order": 2,
+    "path": "ICE\\decks\\key_slides\\slide_02.png",
+    "caption": "Acquisition hurdle card: greater-than-10% target returns, ROIC above cost of capital, 90%+ synergies in three years, and moat/IP/wallet-share tests.",
+    "source_deck": "Investor Day 2017 2017-06-02"
+  },
+  {
+    "order": 3,
+    "path": "ICE\\decks\\key_slides\\slide_03.png",
+    "caption": "Product roadmap from M&A: acquired assets recombined into ICE Index, data evaluations, bond, CDS, Connect and private-cloud offerings.",
+    "source_deck": "Investor Day 2017 2017-06-02"
+  },
+  {
+    "order": 4,
+    "path": "ICE\\decks\\key_slides\\slide_04.png",
+    "caption": "2017 data TAM: ICE framed pricing, reference, valuation, real-time, trading and exchange data as differentiated growth pools.",
+    "source_deck": "Investor Day 2017 2017-06-02"
+  },
+  {
+    "order": 5,
+    "path": "ICE\\decks\\key_slides\\slide_05.png",
+    "caption": "Old energy proof point: ICE energy revenue and open interest compounded across cycles, anchored by Brent and gas liquidity.",
+    "source_deck": "Investor Day 2017 2017-06-02"
+  },
+  {
+    "order": 6,
+    "path": "ICE\\decks\\key_slides\\slide_06.png",
+    "caption": "Clearing leadership evidence: product breadth, daily cleared contract volume and clearing-house financial resources.",
+    "source_deck": "Investor Day 2017 2017-06-02"
+  },
+  {
+    "order": 7,
+    "path": "ICE\\decks\\key_slides\\slide_07.png",
+    "caption": "NYSE competitive framing versus Nasdaq: market quality, listings, ETF and trading leadership claims.",
+    "source_deck": "Investor Day 2017 2017-06-02"
+  },
+  {
+    "order": 8,
+    "path": "ICE\\decks\\key_slides\\slide_08.png",
+    "caption": "Management moat framing in 2017: being early to OTC automation, clearing, data-as-an-asset, exchange scarcity and mortgage digitization.",
+    "source_deck": "Investor Day 2017 2017-06-02"
+  },
+  {
+    "order": 9,
+    "path": "ICE\\decks\\key_slides\\slide_09.png",
+    "caption": "Original mortgage thesis: fragmented paper closings, MERS/eNotes and ICE data/connectivity as the route to a digital mortgage network.",
+    "source_deck": "Investor Day 2017 2017-06-02"
+  },
+  {
+    "order": 10,
+    "path": "ICE\\decks\\key_slides\\slide_10.png",
+    "caption": "Post-Ellie Mae mortgage platform slide: workflow coverage from lead generation through post-closing, with roughly $10B TAM versus $1.2B ICE revenue.",
+    "source_deck": "Q2 2021 2021-07-28"
+  },
+  {
+    "order": 11,
+    "path": "ICE\\decks\\key_slides\\slide_11.png",
+    "caption": "Pre-Black Knight strategy bridge: secular tailwinds across energy, FIDS and mortgage, including 85% U.S. mortgage connectivity.",
+    "source_deck": "Q2 2023 2023-08-03"
+  },
+  {
+    "order": 12,
+    "path": "ICE\\decks\\key_slides\\slide_12.png",
+    "caption": "Black Knight/Optimal Blue deal math: divestiture price and intact $200M cost plus $125M net revenue synergy targets.",
+    "source_deck": "Q2 2023 2023-08-03"
+  },
+  {
+    "order": 13,
+    "path": "ICE\\decks\\key_slides\\slide_13.png",
+    "caption": "Energy proof point: 1H20-1H25 revenue CAGR and mix across Brent, other oil, global natural gas and environmentals.",
+    "source_deck": "Q2 2025 2025-07-31"
+  },
+  {
+    "order": 14,
+    "path": "ICE\\decks\\key_slides\\slide_14.png",
+    "caption": "FIDS proof point: ASV growth plus ICE Bonds and CDS Clearing revenue CAGRs from 1H20 to 1H25.",
+    "source_deck": "Q2 2025 2025-07-31"
+  },
+  {
+    "order": 15,
+    "path": "ICE\\decks\\key_slides\\slide_15.png",
+    "caption": "Mortgage platform workflow: ICE positions data, technology and network expertise across six loan-lifecycle jobs.",
+    "source_deck": "Q2 2025 2025-07-31"
+  },
+  {
+    "order": 16,
+    "path": "ICE\\decks\\key_slides\\slide_16.png",
+    "caption": "Twenty-five-year innovation timeline linking energy, clearing, data, fixed income, mortgage, climate data and Polymarket.",
+    "source_deck": "Investor presentation 2026-04-30"
+  },
+  {
+    "order": 17,
+    "path": "ICE\\decks\\key_slides\\slide_17.png",
+    "caption": "AI roadmap across ICE: energy demand, proprietary datasets, product velocity, network capacity and mortgage automation.",
+    "source_deck": "Investor presentation 2026-04-30"
+  },
+  {
+    "order": 18,
+    "path": "ICE\\decks\\key_slides\\slide_18.png",
+    "caption": "Current long-term model: balanced recurring/transaction revenue, 62% adjusted operating margin, about 49% recurring revenue and about $4.5B adjusted FCF.",
+    "source_deck": "Investor presentation 2026-04-30"
+  },
+  {
+    "order": 19,
+    "path": "ICE\\decks\\key_slides\\slide_19.png",
+    "caption": "Current energy map and mix: global crude, gas, LNG and environmental benchmarks with roughly $2.4B TTM energy revenue.",
+    "source_deck": "Investor presentation 2026-04-30"
+  },
+  {
+    "order": 20,
+    "path": "ICE\\decks\\key_slides\\slide_20.png",
+    "caption": "FIDS KPI slide: subscription ASV growth and roughly 81% recurring segment revenue.",
+    "source_deck": "Investor presentation 2026-04-30"
+  },
+  {
+    "order": 21,
+    "path": "ICE\\decks\\key_slides\\slide_21.png",
+    "caption": "Mortgage segment economics: revenue mix by origination, closing, servicing and data/analytics, with recurring versus transaction split.",
+    "source_deck": "Investor presentation 2026-04-30"
+  },
+  {
+    "order": 22,
+    "path": "ICE\\decks\\key_slides\\slide_22.png",
+    "caption": "Capital return framework and history: dividends, buybacks, M&A pauses and the stated excess-FCF repurchase rule.",
+    "source_deck": "Investor presentation 2026-04-30"
+  },
+  {
+    "order": 23,
+    "path": "ICE\\decks\\key_slides\\slide_23.png",
+    "caption": "Current M&A framework repeats the 2017 acquisition hurdles and strategic-benefit requirements.",
+    "source_deck": "Investor presentation 2026-04-30"
+  },
+  {
+    "order": 24,
+    "path": "ICE\\decks\\key_slides\\slide_24.png",
+    "caption": "FIDS product map and revenue models across pricing/reference data, network technology, ICE Bonds and CDS clearing.",
+    "source_deck": "Investor presentation 2026-04-30"
+  },
+  {
+    "order": 25,
+    "path": "ICE\\decks\\key_slides\\slide_25.png",
+    "caption": "Mortgage product map and revenue models from Encompass and network services to MERS, MSP, DDA and Analyzer.",
+    "source_deck": "Investor presentation 2026-04-30"
+  },
+  {
+    "order": 26,
+    "path": "ICE\\decks\\key_slides\\slide_26.png",
+    "caption": "Five-year financial proof points: net revenue, adjusted operating income, EPS, operating cash flow and adjusted FCF CAGRs.",
+    "source_deck": "Investor presentation 2026-04-30"
+  },
+  {
+    "order": 27,
+    "path": "ICE\\decks\\key_slides\\slide_27.png",
+    "caption": "Current FY2026 guidance: recurring growth targets, mortgage growth target, expense range, capex/software and share count.",
+    "source_deck": "Q1 2026 2026-04-30"
+  }
+]

@@ -1,0 +1,170 @@
+[
+  {
+    "order": 1,
+    "path": "DKNG\\decks\\key_slides\\slide_01.png",
+    "caption": "Original moat checklist: brand, DFS database, marketing, vertical integration, wallet, regulatory platform, and data science.",
+    "source_deck": "Investor Day 2021 2021-03-09"
+  },
+  {
+    "order": 2,
+    "path": "DKNG\\decks\\key_slides\\slide_02.png",
+    "caption": "Original 4Cs product roadmap: control, content, connectivity, and customer experience.",
+    "source_deck": "Investor Day 2021 2021-03-09"
+  },
+  {
+    "order": 3,
+    "path": "DKNG\\decks\\key_slides\\slide_03.png",
+    "caption": "Early state-level unit economics bridge showing expected 58% gross margin at maturity.",
+    "source_deck": "Investor Day 2021 2021-03-09"
+  },
+  {
+    "order": 4,
+    "path": "DKNG\\decks\\key_slides\\slide_04.png",
+    "caption": "Initial long-term EBITDA build of $1.7B from OSB, iGaming, DFS, Canada and cost scale.",
+    "source_deck": "Investor Day 2021 2021-03-09"
+  },
+  {
+    "order": 5,
+    "path": "DKNG\\decks\\key_slides\\slide_05.png",
+    "caption": "Profitability playbook linking customer payback, state contribution profit, and enterprise EBITDA.",
+    "source_deck": "Investor Day 2022 2022-03-03"
+  },
+  {
+    "order": 6,
+    "path": "DKNG\\decks\\key_slides\\slide_06.png",
+    "caption": "State launch/profitability timeline showing expected 2-3 year contribution-profit maturation.",
+    "source_deck": "Investor Day 2022 2022-03-03"
+  },
+  {
+    "order": 7,
+    "path": "DKNG\\decks\\key_slides\\slide_07.png",
+    "caption": "Updated long-term EBITDA model raised to $2.1B before GNOG and new initiatives.",
+    "source_deck": "Investor Day 2022 2022-03-03"
+  },
+  {
+    "order": 8,
+    "path": "DKNG\\decks\\key_slides\\slide_08.png",
+    "caption": "Trough-to-inflection proof: 2018-2021 states grew revenue over 70% with contribution profit growing faster.",
+    "source_deck": "Q2 2023 2023-08-04"
+  },
+  {
+    "order": 9,
+    "path": "DKNG\\decks\\key_slides\\slide_09.png",
+    "caption": "2023 Investor Day takeaways: faster state TAM, improving paybacks, $1.4B 2026 EBITDA, and legalization upside.",
+    "source_deck": "Investor Day 2023 2023-11-14"
+  },
+  {
+    "order": 10,
+    "path": "DKNG\\decks\\key_slides\\slide_10.png",
+    "caption": "Competitive differentiation framework across product/technology, innovation velocity, scale, and brand.",
+    "source_deck": "Investor Day 2023 2023-11-14"
+  },
+  {
+    "order": 11,
+    "path": "DKNG\\decks\\key_slides\\slide_11.png",
+    "caption": "State-vintage contribution profit inflection showing old vintages strongly positive and newer vintages approaching break-even.",
+    "source_deck": "Investor Day 2023 2023-11-14"
+  },
+  {
+    "order": 12,
+    "path": "DKNG\\decks\\key_slides\\slide_12.png",
+    "caption": "OSB hold bridge attributing margin expansion to leg count, trading, and outcomes.",
+    "source_deck": "Investor Day 2023 2023-11-14"
+  },
+  {
+    "order": 13,
+    "path": "DKNG\\decks\\key_slides\\slide_13.png",
+    "caption": "Existing-state outlook targeting $1.4B 2026 and $2.1B 2028 adjusted EBITDA.",
+    "source_deck": "Investor Day 2023 2023-11-14"
+  },
+  {
+    "order": 14,
+    "path": "DKNG\\decks\\key_slides\\slide_14.png",
+    "caption": "Sportsbook hold, net revenue margin, and parlay mix continuing to rise into 2025.",
+    "source_deck": "Q3 2025 2025-11-07"
+  },
+  {
+    "order": 15,
+    "path": "DKNG\\decks\\key_slides\\slide_15.png",
+    "caption": "Early cannibalization check showing Predictions wallet share near 0-1% through January 2026 in sportsbook states.",
+    "source_deck": "Q4 2025 2026-02-13"
+  },
+  {
+    "order": 16,
+    "path": "DKNG\\decks\\key_slides\\slide_16.png",
+    "caption": "Expanded 2030 TAM framework of $55B-$80B with Sports including Sportsbook and Sports Predictions.",
+    "source_deck": "Investor Day 2026 2026-03-02"
+  },
+  {
+    "order": 17,
+    "path": "DKNG\\decks\\key_slides\\slide_17.png",
+    "caption": "Predictions vertical-integration stack from broker through FCM, exchange, clearinghouse, and market maker.",
+    "source_deck": "Investor Day 2026 2026-03-02"
+  },
+  {
+    "order": 18,
+    "path": "DKNG\\decks\\key_slides\\slide_18.png",
+    "caption": "2026 Predictions roadmap from CME launch and Crypto.com integration to market making, DCM, Super App, FCM and DCO.",
+    "source_deck": "Investor Day 2026 2026-03-02"
+  },
+  {
+    "order": 19,
+    "path": "DKNG\\decks\\key_slides\\slide_19.png",
+    "caption": "Long-term adjusted gross margin comparison: Predictions at 60%-80% versus Sportsbook at 50%+.",
+    "source_deck": "Investor Day 2026 2026-03-02"
+  },
+  {
+    "order": 20,
+    "path": "DKNG\\decks\\key_slides\\slide_20.png",
+    "caption": "Homegrown casino content proof points: $30B+ studio handle and $550M in-house studio GGR in 2025.",
+    "source_deck": "Investor Day 2026 2026-03-02"
+  },
+  {
+    "order": 21,
+    "path": "DKNG\\decks\\key_slides\\slide_21.png",
+    "caption": "Pricing and trading technology metrics: in-house content, simulations, live availability, bet success, and payout speed.",
+    "source_deck": "Investor Day 2026 2026-03-02"
+  },
+  {
+    "order": 22,
+    "path": "DKNG\\decks\\key_slides\\slide_22.png",
+    "caption": "Customer analytics and AI personalization: promotional-wager margin uplift and $400M automated/personalized promo spend.",
+    "source_deck": "Investor Day 2026 2026-03-02"
+  },
+  {
+    "order": 23,
+    "path": "DKNG\\decks\\key_slides\\slide_23.png",
+    "caption": "Marketing efficiency chart showing cumulative acquisitions above 14M and CAC down over 40% from 2020 to 2025.",
+    "source_deck": "Investor Day 2026 2026-03-02"
+  },
+  {
+    "order": 24,
+    "path": "DKNG\\decks\\key_slides\\slide_24.png",
+    "caption": "Sportsbook and casino handle, net revenue margin, and parlay mix trend from 2020 to 2025.",
+    "source_deck": "Investor Day 2026 2026-03-02"
+  },
+  {
+    "order": 25,
+    "path": "DKNG\\decks\\key_slides\\slide_25.png",
+    "caption": "Long-term adjusted EBITDA margin target of 30%+ built from cost of revenue, sales and marketing, and expense scale.",
+    "source_deck": "Investor Day 2026 2026-03-02"
+  },
+  {
+    "order": 26,
+    "path": "DKNG\\decks\\key_slides\\slide_26.png",
+    "caption": "Capital allocation framework: growth investment, capital return, and strategic M&A under low net leverage.",
+    "source_deck": "Investor Day 2026 2026-03-02"
+  },
+  {
+    "order": 27,
+    "path": "DKNG\\decks\\key_slides\\slide_27.png",
+    "caption": "Q1 2026 roadmap update with completed Prediction launch, Super App embed, Crypto.com integration and market making.",
+    "source_deck": "Q1 2026 2026-05-08"
+  },
+  {
+    "order": 28,
+    "path": "DKNG\\decks\\key_slides\\slide_28.png",
+    "caption": "Incrementality check: almost all sports volume in competitive sportsbook states remains on sportsbook and 69% of Predictions volume is from non-sportsbook states.",
+    "source_deck": "Q1 2026 2026-05-08"
+  }
+]

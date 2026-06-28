@@ -1,0 +1,122 @@
+[
+  {
+    "order": 1,
+    "path": "CSGP\\decks\\key_slides\\slide_01.png",
+    "caption": "Company overview: 37 years of data, 5,700 employees, 1B+ annual visits, $5B+ invested in research/tech, ~$30B market cap \u2014 the scale behind the data moat.",
+    "source_deck": "2023-10-24 \u00b7 Q3 2023 Investor Presentation"
+  },
+  {
+    "order": 2,
+    "path": "CSGP\\decks\\key_slides\\slide_02.png",
+    "caption": "Business-mix shift 2008\u21922023E: from 100% information/analytics (CoStar 92%) to 55% marketplaces / 45% information \u2014 the deliberate diversification into countercyclical revenue.",
+    "source_deck": "2023-10-24 \u00b7 Q3 2023 Investor Presentation"
+  },
+  {
+    "order": 3,
+    "path": "CSGP\\decks\\key_slides\\slide_03.png",
+    "caption": "Revenue by brand 2018-2023E ($1.2B\u2192$2.5B, 16% 5-yr CAGR) with per-brand CAGRs: CoStar 11%, Multifamily 18%, LoopNet 16%, Information Services 20%, Residential 23% off a tiny base.",
+    "source_deck": "2023-10-24 \u00b7 Q3 2023 Investor Presentation"
+  },
+  {
+    "order": 4,
+    "path": "CSGP\\decks\\key_slides\\slide_04.png",
+    "caption": "$40B N. American / >$100B global TAM split by brand: CoStar $4B, Apartments $9B, LoopNet $5B, Ten-X $6B, Homes.com >$15B \u2014 Homes.com is the biggest pool and least penetrated.",
+    "source_deck": "2023-10-24 \u00b7 Q3 2023 Investor Presentation"
+  },
+  {
+    "order": 5,
+    "path": "CSGP\\decks\\key_slides\\slide_05.png",
+    "caption": "The research moat quantified: 1,500 researchers, 1,000 developers, 300 canvassers, 70 economists, 50 journalists, 1,000+ drones \u2014 the human+capital scale a rival must replicate to match the CRE dataset.",
+    "source_deck": "2023-10-24 \u00b7 Q3 2023 Investor Presentation"
+  },
+  {
+    "order": 6,
+    "path": "CSGP\\decks\\key_slides\\slide_06.png",
+    "caption": "CoStar's land-and-expand engine: 13% 10-yr revenue CAGR by adding asset classes (office\u2192industrial\u2192retail\u2192land\u2192apartments\u2192hotels\u2192residential), against a $4B US TAM led by owners/investors.",
+    "source_deck": "2023-10-24 \u00b7 Q3 2023 Investor Presentation"
+  },
+  {
+    "order": 7,
+    "path": "CSGP\\decks\\key_slides\\slide_07.png",
+    "caption": "Apartments.com since the 2014 acquisition: revenue $86M\u2192$940M run-rate (~11x), traffic 4M\u219245M uniques (~11x), customers 18K\u219269K communities, rank #5\u2192#1 \u2014 the portfolio's best deal.",
+    "source_deck": "2023-10-24 \u00b7 Q3 2023 Investor Presentation"
+  },
+  {
+    "order": 8,
+    "path": "CSGP\\decks\\key_slides\\slide_08.png",
+    "caption": "Apartments.com unit economics by property size: 100+ units 39% penetrated ($772M run-rate) but 1-49 units only 1% ($60M of a $6B TAM) \u2014 the long tail is the $7B headroom.",
+    "source_deck": "2023-10-24 \u00b7 Q3 2023 Investor Presentation"
+  },
+  {
+    "order": 9,
+    "path": "CSGP\\decks\\key_slides\\slide_09.png",
+    "caption": "Apartments.com advertiser-value evidence: 2x more time per visit, 2x higher conversion, 3x more leases vs competitors \u2014 the engagement edge that supports subscription pricing.",
+    "source_deck": "2023-10-24 \u00b7 Q3 2023 Investor Presentation"
+  },
+  {
+    "order": 10,
+    "path": "CSGP\\decks\\key_slides\\slide_10.png",
+    "caption": "LoopNet's traffic dominance: ~7.7M monthly uniques vs CREXi ~1.4M \u2014 50x the average CRE-marketplace competitor and 7x the nearest, the network-effect fingerprint of the CRE marketplace moat.",
+    "source_deck": "2023-10-24 \u00b7 Q3 2023 Investor Presentation"
+  },
+  {
+    "order": 11,
+    "path": "CSGP\\decks\\key_slides\\slide_11.png",
+    "caption": "Homes.com 'Your Listing, Your Lead' model: routes consumers to the listing agent and gives free leads, rejecting the buyer-agency lead-resale model that takes a third of rivals' commissions.",
+    "source_deck": "2023-10-24 \u00b7 Q3 2023 Investor Presentation"
+  },
+  {
+    "order": 12,
+    "path": "CSGP\\decks\\key_slides\\slide_12.png",
+    "caption": "Management's moat thesis: 'marketing the property' generated $2.5B cumulative net income 2018-22 vs $1.8B losses for 'marketing the agent' rivals \u2014 the slide that frames the Homes.com bet (still loss-making itself).",
+    "source_deck": "2023-10-24 \u00b7 Q3 2023 Investor Presentation"
+  },
+  {
+    "order": 13,
+    "path": "CSGP\\decks\\key_slides\\slide_13.png",
+    "caption": "Management's self-graded capital allocation: estimated IRRs of 17-39% on its commercial deals (CoStar 27%, Apartments 33%, RE Manager 39%) vs ~10% cost of capital \u2014 but it omits every loss-making residential/recent acquisition.",
+    "source_deck": "2025-10-28 \u00b7 Q3 2025 Investor Presentation"
+  },
+  {
+    "order": 14,
+    "path": "CSGP\\decks\\key_slides\\slide_14.png",
+    "caption": "New Commercial Real Estate segment map (post Q4-2025 recast): CoStar (incl. Debt Solutions, RE Manager/Visual Lease) + LoopNet (incl. Domain CRE listings) + Other Commercial (Matterport, Ten-X, BizBuySell).",
+    "source_deck": "2026-02-24 \u00b7 Q4 & FY2025 Investor Presentation"
+  },
+  {
+    "order": 15,
+    "path": "CSGP\\decks\\key_slides\\slide_15.png",
+    "caption": "New Residential Real Estate segment map: Apartments.com, Homes.com, Domain Residential, Land.com, OnTheMarket \u2014 note Domain is split across both segments (CRE listings vs residential).",
+    "source_deck": "2026-02-24 \u00b7 Q4 & FY2025 Investor Presentation"
+  },
+  {
+    "order": 16,
+    "path": "CSGP\\decks\\key_slides\\slide_16.png",
+    "caption": "Disaggregated revenue under the new 4-line basis, quarterly 2024-2025: CoStar $1,259M, LoopNet $312M, Other Commercial $216M, Residential $1,460M; FY2025 total $3,247M.",
+    "source_deck": "2026-02-24 \u00b7 Q4 & FY2025 Investor Presentation"
+  },
+  {
+    "order": 17,
+    "path": "CSGP\\decks\\key_slides\\slide_17.png",
+    "caption": "Prior-disclosure crosswalk: maps the old geography-era six lines (Multifamily $1,185M, old Residential $218M, etc.) to the new product segments \u2014 essential so models keyed to the old lines tie out.",
+    "source_deck": "2026-02-24 \u00b7 Q4 & FY2025 Investor Presentation"
+  },
+  {
+    "order": 18,
+    "path": "CSGP\\decks\\key_slides\\slide_18.png",
+    "caption": "11-year net-new-bookings history 2015-2025: the 2022 surge ($305M), the 2023-24 fade during peak Homes.com spend ($286M\u2192$250M), and 2025's recovery to a new high ($308M).",
+    "source_deck": "2026-02-24 \u00b7 Q4 & FY2025 Investor Presentation"
+  },
+  {
+    "order": 19,
+    "path": "CSGP\\decks\\key_slides\\slide_19.png",
+    "caption": "The 2026 reinvestment agenda: 12 initiatives, +1,031 heads, each with a TAM \u2014 incl. CoStar France ($110M+), CoStar New Homes ($200M), Australia Homes.com ($750M), UK Homes.com ($500M+) \u2014 the source of the consolidated-margin drag.",
+    "source_deck": "2026-02-24 \u00b7 Q4 & FY2025 Investor Presentation"
+  },
+  {
+    "order": 20,
+    "path": "CSGP\\decks\\key_slides\\slide_20.png",
+    "caption": "Capital-allocation pivot to buybacks: prior $500M program completed in 2025, new $1.5B program (Jan 2026) with $700M planned for 2026 \u2014 targeting retirement of ~5% of shares outstanding across 2025-26.",
+    "source_deck": "2026-02-24 \u00b7 Q4 & FY2025 Investor Presentation"
+  }
+]

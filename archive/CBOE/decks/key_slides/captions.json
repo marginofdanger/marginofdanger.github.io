@@ -1,0 +1,176 @@
+[
+  {
+    "order": 1,
+    "path": "CBOE\\decks\\key_slides\\slide_01.png",
+    "caption": "Corporate scope at the 2021 peak-expansion strategy: 23 markets/exchanges, 4 asset classes, 16 locations, 1,000+ staff \u2014 the global build-out story Cboe later rationalized.",
+    "source_deck": "2021-11-16 \u00b7 Investor Day"
+  },
+  {
+    "order": 2,
+    "path": "CBOE\\decks\\key_slides\\slide_02.png",
+    "caption": "The 'climb the value ladder' map: Cash & Spot, Derivatives, and Data & Access plotted on product sophistication x platform breadth \u2014 management's core ecosystem framing.",
+    "source_deck": "2021-11-16 \u00b7 Investor Day"
+  },
+  {
+    "order": 3,
+    "path": "CBOE\\decks\\key_slides\\slide_03.png",
+    "caption": "The ecosystem flywheel: more products to more customers to more data \u2014 Cboe's network/data-flywheel moat claim, the load-bearing metaphor of the 2021 story.",
+    "source_deck": "2021-11-16 \u00b7 Investor Day"
+  },
+  {
+    "order": 4,
+    "path": "CBOE\\decks\\key_slides\\slide_04.png",
+    "caption": "Standing medium-term targets (2021 vintage): organic total net revenue 5-7%, Data & Access 7-10%, derivatives +2-4% of growth, crypto >25% market CAGR.",
+    "source_deck": "2021-11-16 \u00b7 Investor Day"
+  },
+  {
+    "order": 5,
+    "path": "CBOE\\decks\\key_slides\\slide_05.png",
+    "caption": "Global network scorecard: #1 U.S. options (exclusive SPX/VIX), #1 Pan-European equities + clearing, #1 U.S. block ATS (BIDS), plus Canada/Australia/Japan/FX \u2014 the footprint later pruned.",
+    "source_deck": "2021-11-16 \u00b7 Investor Day"
+  },
+  {
+    "order": 6,
+    "path": "CBOE\\decks\\key_slides\\slide_06.png",
+    "caption": "The 'European blueprint' for entering a region: footprint, then customer-led products, then monetize data, then expand the ecosystem \u2014 the template Cboe applied (and is now reversing in APAC).",
+    "source_deck": "2021-11-16 \u00b7 Investor Day"
+  },
+  {
+    "order": 7,
+    "path": "CBOE\\decks\\key_slides\\slide_07.png",
+    "caption": "Derivatives growth thesis: number of '40 Act funds using options rose 10 to 216 (2000-2020); derivatives net revenue 8% 5-yr CAGR; '>150mn retail accounts, <1/3 trade options' as the runway.",
+    "source_deck": "2021-11-16 \u00b7 Investor Day"
+  },
+  {
+    "order": 8,
+    "path": "CBOE\\decks\\key_slides\\slide_08.png",
+    "caption": "Diversification chart: VIX+SPX net transaction fees fell from 69% of net revenue (2016) to 33% (2021); total net revenue 21% 5-yr CAGR, Data & Access 26%. Management's moat-durability frame.",
+    "source_deck": "2021-11-16 \u00b7 Investor Day"
+  },
+  {
+    "order": 9,
+    "path": "CBOE\\decks\\key_slides\\slide_09.png",
+    "caption": "Capital-allocation framework + revealed mix since 2016: ~$4B deployed, 56% M&A/other, 23% buybacks, 21% dividends; leverage held 1.2-1.9x for investment-grade.",
+    "source_deck": "2021-11-16 \u00b7 Investor Day"
+  },
+  {
+    "order": 10,
+    "path": "CBOE\\decks\\key_slides\\slide_10.png",
+    "caption": "Management's moat-as-returns evidence: Cboe 2020 ROIC 14% vs unnamed U.S. exchange peers at 11%/10%/8%; >10% ROIC hurdle over 3-5yr, 3-yr avg ROIC 13%.",
+    "source_deck": "2021-11-16 \u00b7 Investor Day"
+  },
+  {
+    "order": 11,
+    "path": "CBOE\\decks\\key_slides\\slide_11.png",
+    "caption": "'Expanding the Toolkit' product map: SPX/VIX/XSP/Russell/0DTE/Nanos arrayed by client type (retail to institution) \u2014 how Cboe frames its proprietary-product breadth.",
+    "source_deck": "2023-08-04 \u00b7 Q2 2023 Earnings"
+  },
+  {
+    "order": 12,
+    "path": "CBOE\\decks\\key_slides\\slide_12.png",
+    "caption": "Early 0DTE adoption curve: SPX 0DTE rising as a share of SPX volume after the 2022 Tuesday/Thursday expiration launches \u2014 the start of the engine that drove 2022-2026 growth.",
+    "source_deck": "2023-08-04 \u00b7 Q2 2023 Earnings"
+  },
+  {
+    "order": 13,
+    "path": "CBOE\\decks\\key_slides\\slide_13.png",
+    "caption": "'M&A Integration Translating to Long-Term Growth' \u2014 the 2023 bridge slide between the 2021 expansion story and the 2025 rationalization; lists the deals later sold or wound down.",
+    "source_deck": "2023-08-04 \u00b7 Q2 2023 Earnings"
+  },
+  {
+    "order": 14,
+    "path": "CBOE\\decks\\key_slides\\slide_14.png",
+    "caption": "Options segment unit economics: total RPC $0.300 splitting into index options $0.923 vs multi-listed $0.068 (~14x); 98.6% index share, 24% multi-listed share \u2014 the high-RPC/low-RPC barbell.",
+    "source_deck": "2025-08-01 \u00b7 Q2 2025 Earnings"
+  },
+  {
+    "order": 15,
+    "path": "CBOE\\decks\\key_slides\\slide_15.png",
+    "caption": "The economically-thin equities leg: N.A. Equities net capture per 100 touched shares fell to $0.012 (-53% YoY) on-exchange and $0.082 (-40%) off-exchange despite huge ADV growth.",
+    "source_deck": "2025-08-01 \u00b7 Q2 2025 Earnings"
+  },
+  {
+    "order": 16,
+    "path": "CBOE\\decks\\key_slides\\slide_16.png",
+    "caption": "Europe & APAC KPIs: European equities 25.1% share / 0.261bps net capture; Cboe Clear Europe 39.5% share-cleared, 400.9mn trades cleared, \u20ac0.008 fee/trade \u2014 the clearing franchise economics.",
+    "source_deck": "2025-08-01 \u00b7 Q2 2025 Earnings"
+  },
+  {
+    "order": 17,
+    "path": "CBOE\\decks\\key_slides\\slide_17.png",
+    "caption": "Index-suite product-launch timeline + 10-yr index-options/VIX-futures ADV history: SPX ADV from ~1.0mn (2016) to 3.6mn (2025 YTD); the cadence of weeklies, variance, and VIX-futures options.",
+    "source_deck": "2025-08-01 \u00b7 Q2 2025 Earnings"
+  },
+  {
+    "order": 18,
+    "path": "CBOE\\decks\\key_slides\\slide_18.png",
+    "caption": "0DTE adds stability: SPX 0DTE ADV and % of SPX volume rising toward ~50-60%; management's evidence that 0DTE dampens rather than amplifies volume cyclicality.",
+    "source_deck": "2025-08-01 \u00b7 Q2 2025 Earnings"
+  },
+  {
+    "order": 19,
+    "path": "CBOE\\decks\\key_slides\\slide_19.png",
+    "caption": "First articulation of the strategic refocus (Donohue's debut framing): optimize core-business profitability via rigorous financial discipline, organic growth outside core, disciplined capital allocation.",
+    "source_deck": "2025-08-01 \u00b7 Q2 2025 Earnings"
+  },
+  {
+    "order": 20,
+    "path": "CBOE\\decks\\key_slides\\slide_20.png",
+    "caption": "FY2025 records: 4.6bn options contracts (record 18.4mn ADV), SPX ADV +25% to 3.9mn, 0DTE SPX +51% to 2.3mn = 59% of SPX; Europe 25% share; Derivatives +22%, Data Vantage +10%.",
+    "source_deck": "2026-02-06 \u00b7 Q4 2025 Earnings"
+  },
+  {
+    "order": 21,
+    "path": "CBOE\\decks\\key_slides\\slide_21.png",
+    "caption": "Cboe Clear Europe SFT clearing service mechanics: CCP becomes counterparty to lender and borrower, cutting bilateral RWA capital from 0-100% to 2% QCCP treatment; a regulatory-driven adjacency.",
+    "source_deck": "2026-02-06 \u00b7 Q4 2025 Earnings"
+  },
+  {
+    "order": 22,
+    "path": "CBOE\\decks\\key_slides\\slide_22.png",
+    "caption": "The 3-pillar strategy (portfolio rationalization / core optimization / emerging trends) plus the rebuilt leadership bench \u2014 incl. a Head of Retail Expansion (JJ Kinahan) for event contracts.",
+    "source_deck": "2026-02-06 \u00b7 Q4 2025 Earnings"
+  },
+  {
+    "order": 23,
+    "path": "CBOE\\decks\\key_slides\\slide_23.png",
+    "caption": "Initial 2026 guidance (Feb'26): Data Vantage mid-high-single-digit, total organic mid-single-digit, adj-opex $864-879mn (3-5% growth), tax 27.5-29.5%, capex $73-83mn \u2014 later all revised.",
+    "source_deck": "2026-02-06 \u00b7 Q4 2025 Earnings"
+  },
+  {
+    "order": 24,
+    "path": "CBOE\\decks\\key_slides\\slide_24.png",
+    "caption": "The two new growth bets, framed: Yes/No/Maybe prediction-market options on mini-SPX (tapping the much-larger securities-permissioned retail base) and SFT clearing \u2014 'extending the growth runway.'",
+    "source_deck": "2026-03-02 \u00b7 Raymond James / Investor Presentation"
+  },
+  {
+    "order": 25,
+    "path": "CBOE\\decks\\key_slides\\slide_25.png",
+    "caption": "Five-segment scorecard FY2025: Options $1.5bn (+22%), N.A. Equities $407mn (+6%), Europe/APAC $126mn (-5%), Futures $91mn (+17%), Global FX $274mn (+24%) \u2014 Options dominates the mix.",
+    "source_deck": "2026-03-02 \u00b7 Raymond James / Investor Presentation"
+  },
+  {
+    "order": 26,
+    "path": "CBOE\\decks\\key_slides\\slide_26.png",
+    "caption": "Event contracts launching June 2026: defined-risk vertical call spreads on mini-SPX (NOT all-or-nothing binaries), distributed via existing broker connectivity \u2014 the differentiated prediction-market entry.",
+    "source_deck": "2026-05-01 \u00b7 Q1 2026 Earnings"
+  },
+  {
+    "order": 27,
+    "path": "CBOE\\decks\\key_slides\\slide_27.png",
+    "caption": "The realignment laid bare: exited corporate listings/CEDX/Japan equities, agreed to sell Cboe Canada + Australia to TMX, and a ~20% total workforce reduction \u2014 the cost of the rationalization.",
+    "source_deck": "2026-05-01 \u00b7 Q1 2026 Earnings"
+  },
+  {
+    "order": 28,
+    "path": "CBOE\\decks\\key_slides\\slide_28.png",
+    "caption": "2026 guidance RAISED + opex CUT (May'26): Data Vantage to low-double-digit, total organic to low-double-to-mid-teens, adj-opex cut to $838-853mn (0-2%) on the realignment \u2014 the inflection after +19% DV growth in 1Q26.",
+    "source_deck": "2026-05-01 \u00b7 Q1 2026 Earnings"
+  },
+  {
+    "order": 29,
+    "path": "CBOE\\decks\\key_slides\\slide_29.png",
+    "caption": "1Q26 options unit economics: total RPC $0.343 (+19% YoY) \u2014 index $0.940, multi-listed $0.080 (+21%); index ADV +29% to 6.1mn \u2014 pricing power across both the proprietary and commoditized legs.",
+    "source_deck": "2026-05-01 \u00b7 Q1 2026 Earnings"
+  }
+]

@@ -1,0 +1,158 @@
+[
+  {
+    "order": 1,
+    "path": "Z\\decks\\key_slides\\slide_01.png",
+    "caption": "The abandoned plan: a hard 2025 target of $5B revenue / 45% Adj EBITDA via 6% transaction share x ~$5,200 rev/transaction. 2025 actual was $2.6B / 24%; the same numbers were later relabeled a dateless 'mid-cycle' target.",
+    "source_deck": "2022-02-09 \u00b7 Investor Presentation"
+  },
+  {
+    "order": 2,
+    "path": "Z\\decks\\key_slides\\slide_02.png",
+    "caption": "Original 'housing super app' revenue-per-transaction thesis: Zillow captured only ~$4,100 of an estimated $17,000 transaction-spend opportunity (buyer referrals + mortgage + seller + closing) \u2014 the wallet-share expansion logic that survives into today's strategy.",
+    "source_deck": "2022-02-09 \u00b7 Investor Presentation"
+  },
+  {
+    "order": 3,
+    "path": "Z\\decks\\key_slides\\slide_03.png",
+    "caption": "2022 audience lead: Zillow 63% of real-estate daily-active-app users, 3x nearest competitor (Realtor.com 20%, Redfin 13%) \u2014 the brand/distribution moat baseline to track against later years.",
+    "source_deck": "2022-02-09 \u00b7 Investor Presentation"
+  },
+  {
+    "order": 4,
+    "path": "Z\\decks\\key_slides\\slide_04.png",
+    "caption": "TAM build: $2T For Sale + Rentals TTV in 2024 implies a $168B TAM; Zillow monetized ~11 bps of TTV ($2.2B). Sets the 'grow revenue per TTV' runway by category.",
+    "source_deck": "2025-02-11 \u00b7 Investor Presentation"
+  },
+  {
+    "order": 5,
+    "path": "Z\\decks\\key_slides\\slide_05.png",
+    "caption": "Per-transaction revenue economics: $4k-$18k potential sell-side (Showcase + seller referral + loan + title/close) and $500-$5k buy-side. Integration proof points: 80% higher transaction rate when ZHL+Premier Agent combine; Real-Time Touring converts >3x.",
+    "source_deck": "2025-02-11 \u00b7 Investor Presentation"
+  },
+  {
+    "order": 6,
+    "path": "Z\\decks\\key_slides\\slide_06.png",
+    "caption": "Operating-leverage mechanism: fixed/variable/advertising cost mix; Adjusted EBITDA margin expanded 200 bps YoY to 22% in 2024 while controlling fixed costs and hiring sales/loan officers for growth.",
+    "source_deck": "2025-02-11 \u00b7 Investor Presentation"
+  },
+  {
+    "order": 7,
+    "path": "Z\\decks\\key_slides\\slide_07.png",
+    "caption": "Capital management 2021-2024: buyback price table (wtd-avg $61/$43/$45/$42), convertible-debt paydown to zero by Q2'25, and selective M&A \u2014 the disciplined-allocation framing.",
+    "source_deck": "2025-02-11 \u00b7 Investor Presentation"
+  },
+  {
+    "order": 8,
+    "path": "Z\\decks\\key_slides\\slide_08.png",
+    "caption": "The business model on one slide: four revenue categories with primary model, 2025 revenue and YoY. Residential $1,704M/+7% (Preferred post-pay + MBP pre-pay + software + Showcase + builder ads), Mortgages $199M/+37% (originations x gain-on-sale), Rentals $630M/+39% (MF subscription + app fees), Other $50M/+14%.",
+    "source_deck": "2026-02-10 \u00b7 Investor Presentation"
+  },
+  {
+    "order": 9,
+    "path": "Z\\decks\\key_slides\\slide_09.png",
+    "caption": "Revenue mix diversification 2022->2025: Buy & Sell Side fell from 66% to 52% of revenue as Rentals rose 14%->24% \u2014 the business is less dependent on agent advertising and more on the faster-growing rentals marketplace.",
+    "source_deck": "2026-02-10 \u00b7 Investor Presentation"
+  },
+  {
+    "order": 10,
+    "path": "Z\\decks\\key_slides\\slide_10.png",
+    "caption": "Mid-cycle bridge: 2024 $2.2B base + $347M incremental 2025 revenue -> path to $1.5B total incremental target + $1.3B from a normalized 6M-home housing market = $5B / 45% Adj EBITDA. Note ~54% of the gap is gated on a housing recovery Zillow does not control.",
+    "source_deck": "2026-02-10 \u00b7 Investor Presentation"
+  },
+  {
+    "order": 11,
+    "path": "Z\\decks\\key_slides\\slide_11.png",
+    "caption": "Best moat fingerprint: Zillow multifamily revenue grew +46% avg YoY (Q1'23 33% -> Q4'25 63%) while rental advertising INDUSTRY demand decelerated to +4% (+14% avg) \u2014 share gain into a softening market, not market beta.",
+    "source_deck": "2026-02-10 \u00b7 Investor Presentation"
+  },
+  {
+    "order": 12,
+    "path": "Z\\decks\\key_slides\\slide_12.png",
+    "caption": "Rentals unit economics: 49M rental units, 34% avg turnover = 17M units turned/yr; $26B TAM. Zillow listing coverage 73% longtail / 53% multifamily \u2014 the contested asset since rentals has 'no MLS' to guarantee universal coverage.",
+    "source_deck": "2026-02-10 \u00b7 Investor Presentation"
+  },
+  {
+    "order": 13,
+    "path": "Z\\decks\\key_slides\\slide_13.png",
+    "caption": "FY2025 profitability inflection: net income margin +590 bps YoY (first GAAP-positive year, $23M), Adj EBITDA margin +180 bps to 24%, solid incremental margins, and SBC expense -1,300 bps \u2014 the operating-leverage and dilution-control story quantified.",
+    "source_deck": "2026-02-10 \u00b7 Investor Presentation"
+  },
+  {
+    "order": 14,
+    "path": "Z\\decks\\key_slides\\slide_14.png",
+    "caption": "The AI moat premise: 'Zillow sees' what generic LLMs can't \u2014 saved/viewed/toured homes, Zestimate views, buyer budgets, agent conversations, transaction infrastructure. The content/context/integration argument against horizontal-LLM disruption.",
+    "source_deck": "2026-03-24 \u00b7 Zillow in the Age of AI (Investor Day)"
+  },
+  {
+    "order": 15,
+    "path": "Z\\decks\\key_slides\\slide_15.png",
+    "caption": "Integration moat quantified: ShowingTime facilitates 90% of U.S. in-person tours; 100,000 agents use Follow Up Boss daily. The embedded-workflow assets management frames as un-replicable by a generic AI.",
+    "source_deck": "2026-03-24 \u00b7 Zillow in the Age of AI (Investor Day)"
+  },
+  {
+    "order": 16,
+    "path": "Z\\decks\\key_slides\\slide_16.png",
+    "caption": "The regulatory/complexity moat: 200M+ forms & docs yearly, 1.5M agents, 100k brokers, 520 MLSs, 50 state regulators. Management's case that real estate is a licensed, regulated industry an AI layer can't simply absorb.",
+    "source_deck": "2026-03-24 \u00b7 Zillow in the Age of AI (Investor Day)"
+  },
+  {
+    "order": 17,
+    "path": "Z\\decks\\key_slides\\slide_17.png",
+    "caption": "The claimed data flywheel: high-quality media -> deeper engagement -> behavioral data -> stronger models -> better matches -> more action, spanning both movers and agents. Management's mechanism for why AI compounds Zillow's lead.",
+    "source_deck": "2026-03-24 \u00b7 Zillow in the Age of AI (Investor Day)"
+  },
+  {
+    "order": 18,
+    "path": "Z\\decks\\key_slides\\slide_18.png",
+    "caption": "Rentals as the transaction engine: marketplace + applications/leases/payments, targeting ~30% YoY growth in 2026 toward the $1B+ mid-term revenue target \u2014 the multi-billion-dollar end-to-end rentals opportunity.",
+    "source_deck": "2026-03-24 \u00b7 Zillow in the Age of AI (Investor Day)"
+  },
+  {
+    "order": 19,
+    "path": "Z\\decks\\key_slides\\slide_19.png",
+    "caption": "Zillow Pro rationale: top 20% of agents drive 80% of transactions. Zillow Pro (nationwide 2H 2026) aims to monetize ALL of an agent's clients \u2014 including the ~80% of US transactions where agents already use a Zillow product but Zillow doesn't yet monetize the lead.",
+    "source_deck": "2026-03-24 \u00b7 Zillow in the Age of AI (Investor Day)"
+  },
+  {
+    "order": 20,
+    "path": "Z\\decks\\key_slides\\slide_20.png",
+    "caption": "Operating leverage proof: organic fixed costs grew only +5% over 2023-2025 vs +6% cumulative inflation, while revenue grew 33%. $1.5B->$1.66B fixed cost base; the 'control fixed costs to drive incremental margins' thesis, quantified.",
+    "source_deck": "2026-03-24 \u00b7 Zillow in the Age of AI (Investor Day)"
+  },
+  {
+    "order": 21,
+    "path": "Z\\decks\\key_slides\\slide_21.png",
+    "caption": "Shipping velocity: +40% code shipped per engineer 2023->2025, with a long product list across For Sale (AI mode, BuyAbility, Zillow Pro) and Rentals (Credit Climb, portable applications, Redfin + Realtor.com syndication) \u2014 the disciplined-cost-while-shipping-more claim.",
+    "source_deck": "2026-03-24 \u00b7 Zillow in the Age of AI (Investor Day)"
+  },
+  {
+    "order": 22,
+    "path": "Z\\decks\\key_slides\\slide_22.png",
+    "caption": "Peer-relative execution 2024-2026E (vs $10-50B Nasdaq internet peers, per Bloomberg): revenue +34% vs +29%, Adj EBITDA +56% vs +34%, and SBC -22% vs peers' 0% \u2014 Zillow cutting dilution in absolute terms while peers hold flat.",
+    "source_deck": "2026-03-24 \u00b7 Zillow in the Age of AI (Investor Day)"
+  },
+  {
+    "order": 23,
+    "path": "Z\\decks\\key_slides\\slide_23.png",
+    "caption": "Buyback acceleration: $626M repurchased 2026-YTD (through ~March) vs $670M for all of 2025, $3,270M program-to-date, plus a NEW $1.25B authorization \u2014 opportunistic buying into stock weakness.",
+    "source_deck": "2026-03-24 \u00b7 Zillow in the Age of AI (Investor Day)"
+  },
+  {
+    "order": 24,
+    "path": "Z\\decks\\key_slides\\slide_24.png",
+    "caption": "The live bear case (debate #5): 'Horizontal LLMs will make vertical internet marketplaces obsolete, causing Zillow to be disrupted.' Management's answer: AI is an accelerator to brand/audience/strategy/workflows. The central unresolved debate for the thesis.",
+    "source_deck": "2026-03-24 \u00b7 Zillow in the Age of AI (Investor Day)"
+  },
+  {
+    "order": 25,
+    "path": "Z\\decks\\key_slides\\slide_25.png",
+    "caption": "Brand scale as moat: Zillow = 120M Comscore monthly unique visitors (Dec 2025, #25 of all US internet properties), ahead of Pinterest, Netflix, Snapchat and LinkedIn \u2014 internet-scale audience, ~80% of it direct/owned traffic (low CAC).",
+    "source_deck": "2026-03-24 \u00b7 Zillow in the Age of AI (Investor Day)"
+  },
+  {
+    "order": 26,
+    "path": "Z\\decks\\key_slides\\slide_26.png",
+    "caption": "Barton's investment rubric applied to Zillow as moat self-image: founder-engaged, BIG transactions, unique content & data, hidden depths of industry integration, and command of the consumer funnel (owned traffic, low churn, low marketing % of revenue).",
+    "source_deck": "2026-03-24 \u00b7 Zillow in the Age of AI (Investor Day)"
+  }
+]

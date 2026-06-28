@@ -1,0 +1,176 @@
+[
+  {
+    "order": 1,
+    "path": "GE\\decks\\key_slides\\slide_01.png",
+    "caption": "Pre-spin Aviation snapshot: $22B '20 revenue, 37K+ commercial / 26K+ military engines, services > equipment; through-cycle targets of high-teens-to-20% margin and 90%+ FCF conversion -- the franchise GE would become.",
+    "source_deck": "2021-11-09 \u00b7 Investor Update (three-way spin announced)"
+  },
+  {
+    "order": 2,
+    "path": "GE\\decks\\key_slides\\slide_02.png",
+    "caption": "The aftermarket annuity mechanism: ~50% of CFM56 engines had not seen a first shop visit and ~60% of widebodies no 2nd SV; workscope deepens each shop visit -- the razor-and-blade that seeds decades of services.",
+    "source_deck": "2022-03-10 \u00b7 GE Investor Day 2022"
+  },
+  {
+    "order": 3,
+    "path": "GE\\decks\\key_slides\\slide_03.png",
+    "caption": "Commercial services revenue trajectory: $15B (2019) collapsed to $8-9B in COVID, with shop-visit volume >25% growth in '22 -- quantifies the aftermarket recovery slope coming out of the pandemic.",
+    "source_deck": "2022-03-10 \u00b7 GE Investor Day 2022"
+  },
+  {
+    "order": 4,
+    "path": "GE\\decks\\key_slides\\slide_04.png",
+    "caption": "Installed-base map at the spin: ~41K commercial engines (largest, youngest fleet) + ~26K defense; ~70% services for commercial, >70% for defense -- the structural asymmetry between the two segments.",
+    "source_deck": "2023-03-09 \u00b7 GE Investor Conference"
+  },
+  {
+    "order": 5,
+    "path": "GE\\decks\\key_slides\\slide_05.png",
+    "caption": "Shop-visit economics decoded: workscope by module, SV1/SV2/SV3 timing (~5-10/10-15/15-20+ yrs), and how the contract type migrates from CSA to T&M/external as engines age -- the per-unit aftermarket grammar.",
+    "source_deck": "2023-03-09 \u00b7 GE Investor Conference"
+  },
+  {
+    "order": 6,
+    "path": "GE\\decks\\key_slides\\slide_06.png",
+    "caption": "CFM56 the cash engine: ~23K engines, nearly half of -5B/7B yet to see first shop visit, retirement age pushed to ~22 yrs; SV forecast revised UP '21->'22 -- the mature-fleet annuity that funds the LEAP ramp.",
+    "source_deck": "2023-03-09 \u00b7 GE Investor Conference"
+  },
+  {
+    "order": 7,
+    "path": "GE\\decks\\key_slides\\slide_07.png",
+    "caption": "LEAP profitability gating items: shop-visit volume, durability (time-on-wing below customer expectation at maturity but ahead of CFM56 at same age), and unit cost -- program profitable & OE breakeven only by mid-decade.",
+    "source_deck": "2023-03-09 \u00b7 GE Investor Conference"
+  },
+  {
+    "order": 8,
+    "path": "GE\\decks\\key_slides\\slide_08.png",
+    "caption": "LEAP durability fix roadmap: shroud ('18), RDS ('19), then HPT blade & nozzle and fuel-nozzle redesigns ramping into production '23-'25 -- the named engineering items behind the aftermarket-margin story.",
+    "source_deck": "2023-03-09 \u00b7 GE Investor Conference"
+  },
+  {
+    "order": 9,
+    "path": "GE\\decks\\key_slides\\slide_09.png",
+    "caption": "Standalone GE Aerospace at launch: $32B '23 revenue, ~70% services; CES $23.9B at ~70% services vs DPT $9.0B at ~55% services -- the two-segment economic split and the services-mix gap that drives the margin gap.",
+    "source_deck": "2024-03-07 \u00b7 GE Aerospace Investor Day 2024"
+  },
+  {
+    "order": 10,
+    "path": "GE\\decks\\key_slides\\slide_10.png",
+    "caption": "Through-cycle compounding: revenue 3x and operating profit 3x from 2000->2023 ($10.8B->$31.8B; $2.0B->$6.1B), installed base +60% to 70K -- the multi-decade earnings power of the installed-base annuity.",
+    "source_deck": "2024-03-07 \u00b7 GE Aerospace Investor Day 2024"
+  },
+  {
+    "order": 11,
+    "path": "GE\\decks\\key_slides\\slide_11.png",
+    "caption": "The commercial program flywheel: ~3.5x services revenue follows each fielded engine over 20+ years; SV1/2/3 each ~20/30/25% of lifecycle revenue with contract type shifting CSA->T&M -- the core economic engine.",
+    "source_deck": "2024-03-07 \u00b7 GE Aerospace Investor Day 2024"
+  },
+  {
+    "order": 12,
+    "path": "GE\\decks\\key_slides\\slide_12.png",
+    "caption": "CES platform-revenue mix: ~50% narrowbody / ~35% widebody / ~15% regional & other on ~44,000 engines, '23-'28 revenue CAGR low-double-digits -- where the commercial profit pool actually sits by airframe class.",
+    "source_deck": "2024-03-07 \u00b7 GE Aerospace Investor Day 2024"
+  },
+  {
+    "order": 13,
+    "path": "GE\\decks\\key_slides\\slide_13.png",
+    "caption": "Narrowbody share moat: ~60% LEAP-1A life-of-program win rate on A320, sole-source LEAP-1B on 737MAX; CFM56 the industry's most-utilized engine (1.2B flight hours, ~19K in service, ~45% yet to first SV).",
+    "source_deck": "2024-03-07 \u00b7 GE Aerospace Investor Day 2024"
+  },
+  {
+    "order": 14,
+    "path": "GE\\decks\\key_slides\\slide_14.png",
+    "caption": "CFM56->LEAP transition mechanics: LEAP installed base +MSD CAGR and services revenue +LDD CAGR '23-'28 as LEAP overtakes CFM56; profit mix flips toward LEAP -- the single most important multi-year driver.",
+    "source_deck": "2024-03-07 \u00b7 GE Aerospace Investor Day 2024"
+  },
+  {
+    "order": 15,
+    "path": "GE\\decks\\key_slides\\slide_15.png",
+    "caption": "Widebody share moat: ~7,200 GE engines on world widebodies; win rates ~75% GEnx/787, ~60% GE9X-vs-A350; >80% of GEnx not yet at first SV -- the next-decade widebody aftermarket runway.",
+    "source_deck": "2024-03-07 \u00b7 GE Aerospace Investor Day 2024"
+  },
+  {
+    "order": 16,
+    "path": "GE\\decks\\key_slides\\slide_16.png",
+    "caption": "LEAP OE ramp: deliveries 815(2022)->1,136(2023)->~1,700 mid-decade plus a parallel shop-visit ramp where external & CBSA shops grow to ~20-25% -- the twin OE+aftermarket ramp and the network build-out it forces.",
+    "source_deck": "2024-03-07 \u00b7 GE Aerospace Investor Day 2024"
+  },
+  {
+    "order": 17,
+    "path": "GE\\decks\\key_slides\\slide_17.png",
+    "caption": "Durability as a designed-in advantage: removal-rate per 1,000 hrs improving GE90->GEnx->LEAP across generations, with each new program seeded by prior-fleet learnings -- the technical basis for the reliability claim.",
+    "source_deck": "2024-03-07 \u00b7 GE Aerospace Investor Day 2024"
+  },
+  {
+    "order": 18,
+    "path": "GE\\decks\\key_slides\\slide_18.png",
+    "caption": "CFM RISE open-fan rationale: open fan reaches ~20% fuel-burn reduction at the same core temperature a ducted engine cannot, lowering technical risk -- the engineering logic for the next-gen narrowbody roadmap.",
+    "source_deck": "2024-03-07 \u00b7 GE Aerospace Investor Day 2024"
+  },
+  {
+    "order": 19,
+    "path": "GE\\decks\\key_slides\\slide_19.png",
+    "caption": "Defense platform map & backlog: F404/F414/F110 combat, T700/T408/T901 rotorcraft, LM2500 marine across U.S. & international fleets; $11.5B Defense RPO = 2.4x '23 revenue, 1.2x book-to-bill -- the DPT order pipeline.",
+    "source_deck": "2024-03-07 \u00b7 GE Aerospace Investor Day 2024"
+  },
+  {
+    "order": 20,
+    "path": "GE\\decks\\key_slides\\slide_20.png",
+    "caption": "LEAP cash inflection: CSA billings ~3x and shop visits ~2x from '24->'28, billings outpacing SV growth at ~30% CAGR, LEAP profit exceeds CFM56 by 2030 -- when the LEAP fleet turns from cash drain to cash engine.",
+    "source_deck": "2024-03-07 \u00b7 GE Aerospace Investor Day 2024"
+  },
+  {
+    "order": 21,
+    "path": "GE\\decks\\key_slides\\slide_21.png",
+    "caption": "Pricing power evidence: price set to outrun inflation through '25 with MSD price increases, and realized engine pricing (GEnx, LEAP) stepped up materially post-EIS pre-'18 to '22-'23 -- the financial fingerprint of the moat.",
+    "source_deck": "2024-03-07 \u00b7 GE Aerospace Investor Day 2024"
+  },
+  {
+    "order": 22,
+    "path": "GE\\decks\\key_slides\\slide_22.png",
+    "caption": "Capital-allocation framework: ~$34-36B available '24-'26 (FCF + $25B equity stakes + cash), 70-75% returned to holders, $15B buyback, dividend 30% of net income; R&D 6-8% & capex ~3% of revenue -- the standalone playbook.",
+    "source_deck": "2024-03-07 \u00b7 GE Aerospace Investor Day 2024"
+  },
+  {
+    "order": 23,
+    "path": "GE\\decks\\key_slides\\slide_23.png",
+    "caption": "Original 2028 framework set at the spin: HSD revenue CAGR '25-'28 and ~$10B operating profit with ~100% FCF conversion -- the baseline target later beaten, useful as the yardstick for the post-spin track record.",
+    "source_deck": "2024-03-07 \u00b7 GE Aerospace Investor Day 2024"
+  },
+  {
+    "order": 24,
+    "path": "GE\\decks\\key_slides\\slide_24.png",
+    "caption": "First full year as standalone: CES FY'24 revenue +13%, op profit $7.1B (+25%), margin +250bps; 4Q services +12% with internal shop visits (3)% -- early proof the services-led margin model works post-spin.",
+    "source_deck": "2025-01-23 \u00b7 Q4 2024 earnings"
+  },
+  {
+    "order": 25,
+    "path": "GE\\decks\\key_slides\\slide_25.png",
+    "caption": "Tariff & demand-management response (1Q'25): ~$0.5B tariff cost to be offset via pricing & SG&A control, FY departures cut to +LSD from +MSD with a slower 2H -- the first crack in the post-spin demand story.",
+    "source_deck": "2025-04-22 \u00b7 Q1 2025 earnings"
+  },
+  {
+    "order": 26,
+    "path": "GE\\decks\\key_slides\\slide_26.png",
+    "caption": "Supply-constrained ramp quantified (FY'25): internal shop-visit revenue +24%, spare parts >25%, LEAP deliveries record 1,802 (+28%, guided +15% in '26); >$1B MRO investment incl ~$0.5B for LEAP capacity.",
+    "source_deck": "2026-01-22 \u00b7 Q4 2025 earnings"
+  },
+  {
+    "order": 27,
+    "path": "GE\\decks\\key_slides\\slide_27.png",
+    "caption": "Raised long-term framework: FY'26 guide $9.85-10.25B op profit on +LDD revenue, with '24-'26 CAGRs of mid-teens revenue, mid-twenties adj. EPS, mid-teens FCF -- targets well above the 2024 Investor-Day baseline.",
+    "source_deck": "2026-01-22 \u00b7 Q4 2025 earnings"
+  },
+  {
+    "order": 28,
+    "path": "GE\\decks\\key_slides\\slide_28.png",
+    "caption": "2026 segment recast: CES Services moves ~$0.8B and the aeroderivative business shifts CES->DPT, lifting DPT revenue +$1.7B and trimming CES; the FY2025 segment splits restate -- a reporting-quirk trap for trend lines.",
+    "source_deck": "2026-01-22 \u00b7 Q4 2025 earnings"
+  },
+  {
+    "order": 29,
+    "path": "GE\\decks\\key_slides\\slide_29.png",
+    "caption": "Current inflection (1Q'26): Middle East departures forecast slashed from +HSD (Jan) to -LDD (Apr), global departures cut to flat/+LSD; mgmt invokes the 2008 analog (services lagged RPK by 12 months).",
+    "source_deck": "2026-04-21 \u00b7 Q1 2026 earnings"
+  }
+]

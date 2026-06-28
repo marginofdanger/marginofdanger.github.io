@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Deep Dives</title>
+<style>
+* { box-sizing: border-box; }
+body {
+  margin: 0; padding: 34px 24px 56px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  background: #0d1117; color: #e6edf3;
+}
+a { color: inherit; }
+.shell { max-width: 1180px; margin: 0 auto; }
+.topbar { margin-bottom: 26px; }
+.back { color: #58a6ff; text-decoration: none; font-size: 0.82rem; font-weight: 600; letter-spacing: 0.02em; }
+h1 { margin: 12px 0 6px; font-size: 1.8rem; line-height: 1.1; letter-spacing: -0.02em; }
+.subtitle { margin: 0; color: #8b949e; max-width: 760px; line-height: 1.5; font-size: 0.92rem; }
+.summary-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; margin: 26px 0 24px; }
+.recent-card {
+  display: flex; flex-direction: column; gap: 5px;
+  min-height: 112px; padding: 15px 16px; text-decoration: none;
+  background: #161b22; border: 1px solid #30363d; border-radius: 8px;
+  transition: border-color 0.15s, transform 0.15s, box-shadow 0.15s;
+}
+.recent-card:hover { border-color: #58a6ff; transform: translateY(-1px); box-shadow: 0 3px 10px rgba(88,166,255,0.12); }
+.recent-ticker { font-size: 1.15rem; font-weight: 700; color: #fff; }
+.recent-company { font-size: 0.9rem; font-weight: 600; }
+.recent-meta { margin-top: auto; color: #8b949e; font-size: 0.76rem; }
+.section-title { color: #58a6ff; text-transform: uppercase; letter-spacing: 0.08em; font-size: 0.78rem; font-weight: 700; margin: 30px 0 10px; }
+.table-wrap { overflow-x: auto; border: 1px solid #30363d; border-radius: 8px; background: #161b22; }
+table { width: 100%; border-collapse: collapse; min-width: 920px; }
+th, td { text-align: left; padding: 13px 14px; border-bottom: 1px solid #262c35; vertical-align: top; }
+th { background: #10161d; color: #8b949e; font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 700; }
+td { color: #c9d1d9; font-size: 0.86rem; line-height: 1.45; }
+tr:last-child td { border-bottom: 0; }
+.ticker { color: #fff; font-weight: 800; text-decoration: none; font-size: 0.96rem; }
+.ticker:hover { color: #58a6ff; }
+.model-chip { display: inline-block; padding: 3px 8px; border-radius: 999px; background: #1a2a3a; color: #58a6ff; font-size: 0.72rem; font-weight: 700; white-space: nowrap; }
+.actions { white-space: nowrap; }
+.actions a { display: inline-block; margin-right: 10px; color: #58a6ff; font-size: 0.78rem; font-weight: 700; text-decoration: none; }
+.actions a:hover { text-decoration: underline; }
+.note { color: #8b949e; font-size: 0.78rem; margin-top: 12px; line-height: 1.45; }
+@media (max-width: 900px) { .summary-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 600px) { body { padding: 24px 16px 42px; } .summary-grid { grid-template-columns: 1fr; } h1 { font-size: 1.55rem; } }
+</style>
+</head>
+<body>
+  <main class="shell">
+    <div class="topbar">
+      <a class="back" href="../">← Research Tools</a>
+      <h1>Deep Dives</h1>
+      <p class="subtitle">Recent company dossiers from the local research deep-dive pipeline. This page includes dossiers dated 2026-06-21 onward, with the target company, dossier date, and model/runner family shown for each run.</p>
+    </div>
+
+    <div class="summary-grid">
+      <a class="recent-card" href="dossiers/RCL/dossier.html">
+        <span class="recent-ticker">RCL</span>
+        <span class="recent-company">Royal Caribbean Group</span>
+        <span class="recent-meta">2026-06-26 · Claude deep-dive</span>
+      </a>      <a class="recent-card" href="dossiers/ICE_codex/dossier.html">
+        <span class="recent-ticker">ICE</span>
+        <span class="recent-company">Intercontinental Exchange</span>
+        <span class="recent-meta">2026-06-26 · Codex</span>
+      </a>      <a class="recent-card" href="dossiers/DKNG_codex/dossier.html">
+        <span class="recent-ticker">DKNG</span>
+        <span class="recent-company">DraftKings</span>
+        <span class="recent-meta">2026-06-24 · Codex</span>
+      </a>      <a class="recent-card" href="dossiers/CME/dossier.html">
+        <span class="recent-ticker">CME</span>
+        <span class="recent-company">CME Group</span>
+        <span class="recent-meta">2026-06-24 · Claude deep-dive</span>
+      </a>
+    </div>
+
+    <div class="section-title">Recent dossiers</div>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Ticker</th>
+            <th>Company</th>
+            <th>Dossier date</th>
+            <th>Model</th>
+            <th>Focus</th>
+            <th>Open</th>
+          </tr>
+        </thead>
+        <tbody>
+      <tr>
+        <td><a class="ticker" href="dossiers/RCL/dossier.html">RCL</a></td>
+        <td>Royal Caribbean Group</td>
+        <td><time datetime="2026-06-26">2026-06-26</time></td>
+        <td><span class="model-chip">Claude deep-dive</span></td>
+        <td>Cruise yield, private destinations, shipyard capacity, balance sheet recovery</td>
+        <td class="actions"><a href="dossiers/RCL/dossier.html">Dossier</a><a href="dossiers/RCL/evidence.html">Evidence</a></td>
+      </tr>      <tr>
+        <td><a class="ticker" href="dossiers/ICE_codex/dossier.html">ICE</a></td>
+        <td>Intercontinental Exchange</td>
+        <td><time datetime="2026-06-26">2026-06-26</time></td>
+        <td><span class="model-chip">Codex</span></td>
+        <td>Exchange/data/mortgage technology ecosystem and recurring data revenue</td>
+        <td class="actions"><a href="dossiers/ICE_codex/dossier.html">Dossier</a><a href="dossiers/ICE_codex/evidence.html">Evidence</a></td>
+      </tr>      <tr>
+        <td><a class="ticker" href="dossiers/DKNG_codex/dossier.html">DKNG</a></td>
+        <td>DraftKings</td>
+        <td><time datetime="2026-06-24">2026-06-24</time></td>
+        <td><span class="model-chip">Codex</span></td>
+        <td>Sportsbook/iGaming maturity, handle, hold, promo discipline, prediction markets</td>
+        <td class="actions"><a href="dossiers/DKNG_codex/dossier.html">Dossier</a><a href="dossiers/DKNG_codex/evidence.html">Evidence</a></td>
+      </tr>      <tr>
+        <td><a class="ticker" href="dossiers/CME/dossier.html">CME</a></td>
+        <td>CME Group</td>
+        <td><time datetime="2026-06-24">2026-06-24</time></td>
+        <td><span class="model-chip">Claude deep-dive</span></td>
+        <td>Futures exchange fixed-cost leverage, data, clearing, rate-cycle sensitivity</td>
+        <td class="actions"><a href="dossiers/CME/dossier.html">Dossier</a><a href="dossiers/CME/evidence.html">Evidence</a></td>
+      </tr>      <tr>
+        <td><a class="ticker" href="dossiers/CBOE/dossier.html">CBOE</a></td>
+        <td>Cboe Global Markets</td>
+        <td><time datetime="2026-06-24">2026-06-24</time></td>
+        <td><span class="model-chip">Claude deep-dive</span></td>
+        <td>SPX/VIX options franchise, data, proprietary products, exchange economics</td>
+        <td class="actions"><a href="dossiers/CBOE/dossier.html">Dossier</a><a href="dossiers/CBOE/evidence.html">Evidence</a></td>
+      </tr>      <tr>
+        <td><a class="ticker" href="dossiers/GE_codex/dossier.html">GE</a></td>
+        <td>GE Aerospace</td>
+        <td><time datetime="2026-06-23">2026-06-23</time></td>
+        <td><span class="model-chip">Codex</span></td>
+        <td>Commercial aerospace services flywheel, defense mix, engine installed base</td>
+        <td class="actions"><a href="dossiers/GE_codex/dossier.html">Dossier</a><a href="dossiers/GE_codex/evidence.html">Evidence</a></td>
+      </tr>      <tr>
+        <td><a class="ticker" href="dossiers/GE/dossier.html">GE</a></td>
+        <td>GE Aerospace</td>
+        <td><time datetime="2026-06-23">2026-06-23</time></td>
+        <td><span class="model-chip">Claude deep-dive</span></td>
+        <td>Commercial engine lifecycle economics and aerospace aftermarket quality</td>
+        <td class="actions"><a href="dossiers/GE/dossier.html">Dossier</a><a href="dossiers/GE/evidence.html">Evidence</a></td>
+      </tr>      <tr>
+        <td><a class="ticker" href="dossiers/Z/dossier.html">Z</a></td>
+        <td>Zillow Group</td>
+        <td><time datetime="2026-06-21">2026-06-21</time></td>
+        <td><span class="model-chip">Claude deep-dive</span></td>
+        <td>Residential marketplace, rentals, mortgage attach, portal monetization</td>
+        <td class="actions"><a href="dossiers/Z/dossier.html">Dossier</a><a href="dossiers/Z/evidence.html">Evidence</a></td>
+      </tr>      <tr>
+        <td><a class="ticker" href="dossiers/NFLX/dossier.html">NFLX</a></td>
+        <td>Netflix</td>
+        <td><time datetime="2026-06-21">2026-06-21</time></td>
+        <td><span class="model-chip">Claude deep-dive</span></td>
+        <td>Streaming scale economics, ads, content engine, live/events optionality</td>
+        <td class="actions"><a href="dossiers/NFLX/dossier.html">Dossier</a><a href="dossiers/NFLX/evidence.html">Evidence</a></td>
+      </tr>      <tr>
+        <td><a class="ticker" href="dossiers/CSGP/dossier.html">CSGP</a></td>
+        <td>CoStar Group</td>
+        <td><time datetime="2026-06-21">2026-06-21</time></td>
+        <td><span class="model-chip">Claude deep-dive</span></td>
+        <td>Commercial real estate, Homes.com, residential portal economics</td>
+        <td class="actions"><a href="dossiers/CSGP/dossier.html">Dossier</a><a href="dossiers/CSGP/evidence.html">Evidence</a></td>
+      </tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="note">Cutoff is based on the dossier run date when present. Render timestamps may be later than the underlying dossier date.</p>
+  </main>
+</body>
+</html>
