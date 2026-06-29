@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -278,7 +278,7 @@ function initThemeToggle() {
   const button = document.getElementById('theme-toggle');
   if (!button) return;
   const saved = localStorage.getItem('researchToolsTheme');
-  const initial = saved || 'dark';
+  const initial = saved || 'light';
 
   function applyTheme(theme) {
     root.dataset.theme = theme;
