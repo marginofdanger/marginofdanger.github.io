@@ -7,70 +7,123 @@
 <title>Research Tools</title>
 <style>
 * { margin: 0; padding: 0; box-sizing: border-box; }
+:root {
+  --bg: #0d1117;
+  --surface: #161b22;
+  --border: #30363d;
+  --section-border: #21262d;
+  --text: #e6edf3;
+  --heading: #ffffff;
+  --muted: #7d8590;
+  --muted-strong: #8b949e;
+  --accent: #58a6ff;
+  --card-shadow: rgba(88,166,255,0.12);
+  --tag-live-bg: #1a3a2a;
+  --tag-live-text: #3fb950;
+  --tag-tool-bg: #1a2a3a;
+  --tag-tool-text: #58a6ff;
+  --pano-bg: linear-gradient(135deg, #1a2433 0%, #0d1a2e 100%);
+  --pano-border: #2a3f5f;
+  --pano-shadow: rgba(88,166,255,0.18);
+}
+:root[data-theme="light"] {
+  --bg: #faf8f2;
+  --surface: #fffefa;
+  --border: #d9d4c8;
+  --section-border: #ded8cc;
+  --text: #24302e;
+  --heading: #111a18;
+  --muted: #697470;
+  --muted-strong: #5f6b67;
+  --accent: #087c73;
+  --card-shadow: rgba(40,34,24,0.08);
+  --tag-live-bg: #e3f3e7;
+  --tag-live-text: #16813b;
+  --tag-tool-bg: #e4f1ee;
+  --tag-tool-text: #087c73;
+  --pano-bg: linear-gradient(135deg, #f3f5ee 0%, #e8f0ec 100%);
+  --pano-border: #c9d7d2;
+  --pano-shadow: rgba(8,124,115,0.12);
+}
 body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-  background: #0d1117; color: #e6edf3; min-height: 100vh; padding: 32px 24px;
+  background: var(--bg); color: var(--text); min-height: 100vh; padding: 32px 24px;
+  transition: background 0.18s ease, color 0.18s ease;
 }
-h1 { font-size: 1.8rem; font-weight: 700; margin-bottom: 6px; color: #fff; }
-.subtitle { font-size: 0.9rem; color: #7d8590; margin-bottom: 28px; }
+.page-header { display: flex; align-items: flex-start; justify-content: space-between; gap: 18px; margin-bottom: 28px; }
+h1 { font-size: 1.8rem; font-weight: 700; margin-bottom: 6px; color: var(--heading); }
+.subtitle { font-size: 0.9rem; color: var(--muted); }
+.theme-toggle {
+  border: 1px solid var(--border); border-radius: 999px; background: var(--surface);
+  color: var(--text); cursor: pointer; font: inherit; font-size: 0.78rem; font-weight: 650;
+  padding: 6px 11px; box-shadow: 0 1px 6px var(--card-shadow); white-space: nowrap;
+}
+.theme-toggle:hover { border-color: var(--accent); color: var(--accent); }
 .columns { display: flex; gap: 16px; align-items: flex-start; }
 .column { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 10px; }
 .category-title {
-  font-size: 0.8rem; font-weight: 600; color: #58a6ff; text-transform: uppercase;
+  font-size: 0.8rem; font-weight: 600; color: var(--accent); text-transform: uppercase;
   letter-spacing: 0.08em; padding-left: 2px;
-  border-bottom: 1px solid #21262d; padding-bottom: 6px;
+  border-bottom: 1px solid var(--section-border); padding-bottom: 6px;
 }
 a.card {
-  display: flex; flex-direction: column; background: #161b22; border: 1px solid #30363d;
+  display: flex; flex-direction: column; background: var(--surface); border: 1px solid var(--border);
   border-radius: 8px; padding: 14px 16px; text-decoration: none;
   transition: border-color 0.15s, transform 0.15s, box-shadow 0.15s;
 }
 a.card:hover {
-  border-color: #58a6ff; transform: translateY(-1px);
-  box-shadow: 0 3px 10px rgba(88,166,255,0.12);
+  border-color: var(--accent); transform: translateY(-1px);
+  box-shadow: 0 3px 10px var(--card-shadow);
 }
 .card-icon { font-size: 1.3rem; margin-bottom: 6px; }
-.card-title { font-size: 0.95rem; font-weight: 600; color: #e6edf3; margin-bottom: 4px; }
-.card-desc { font-size: 0.8rem; color: #7d8590; line-height: 1.45; }
+.card-title { font-size: 0.95rem; font-weight: 600; color: var(--text); margin-bottom: 4px; }
+.card-desc { font-size: 0.8rem; color: var(--muted); line-height: 1.45; }
 .card-tag-wrap { margin-top: auto; padding-top: 12px; }
 .card-tag {
   display: inline-block; font-size: 0.6rem;
   padding: 2px 7px; border-radius: 8px; font-weight: 600;
   text-transform: uppercase; letter-spacing: 0.03em;
 }
-.tag-live { background: #1a3a2a; color: #3fb950; }
-.tag-tool { background: #1a2a3a; color: #58a6ff; }
+.tag-live { background: var(--tag-live-bg); color: var(--tag-live-text); }
+.tag-tool { background: var(--tag-tool-bg); color: var(--tag-tool-text); }
 @media (max-width: 800px) { .columns { flex-direction: column; } }
 
 a.panopticon-bar {
   display: flex; align-items: center; justify-content: space-between;
   margin: 56px 0 0; padding: 22px 28px;
-  background: linear-gradient(135deg, #1a2433 0%, #0d1a2e 100%);
-  border: 1px solid #2a3f5f; border-radius: 10px;
-  text-decoration: none; color: #e6edf3;
+  background: var(--pano-bg);
+  border: 1px solid var(--pano-border); border-radius: 10px;
+  text-decoration: none; color: var(--text);
   transition: border-color 0.15s, transform 0.15s, box-shadow 0.15s;
 }
 a.panopticon-bar:hover {
-  border-color: #58a6ff; transform: translateY(-1px);
-  box-shadow: 0 4px 16px rgba(88,166,255,0.18);
+  border-color: var(--accent); transform: translateY(-1px);
+  box-shadow: 0 4px 16px var(--pano-shadow);
 }
 .panopticon-bar .pano-left { display: flex; align-items: center; gap: 18px; }
 .panopticon-bar .pano-icon { font-size: 1.9rem; }
-.panopticon-bar .pano-title { font-size: 1.05rem; font-weight: 700; color: #fff; letter-spacing: .01em; }
+.panopticon-bar .pano-title { font-size: 1.05rem; font-weight: 700; color: var(--heading); letter-spacing: .01em; }
 .panopticon-bar .pano-desc {
-  font-size: 0.82rem; color: #8b949e; margin-top: 2px;
+  font-size: 0.82rem; color: var(--muted-strong); margin-top: 2px;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }
-.panopticon-bar .pano-arrow { font-size: 1.4rem; color: #58a6ff; }
+.panopticon-bar .pano-arrow { font-size: 1.4rem; color: var(--accent); }
 @media (max-width: 600px) {
+  body { padding: 24px 16px; }
+  .page-header { align-items: flex-start; }
   a.panopticon-bar { flex-direction: column; align-items: flex-start; gap: 8px; padding: 16px 18px; }
   .panopticon-bar .pano-arrow { align-self: flex-end; }
 }
 </style>
 </head>
 <body>
-<h1>Research Tools</h1>
-<p class="subtitle">Investment research dashboards and data tools</p>
+<header class="page-header">
+  <div>
+    <h1>Research Tools</h1>
+    <p class="subtitle">Investment research dashboards and data tools</p>
+  </div>
+  <button class="theme-toggle" id="theme-toggle" type="button" aria-pressed="false">Light</button>
+</header>
 
 <div class="columns">
   <div class="column">
@@ -220,6 +273,28 @@ a.panopticon-bar:hover {
 </a>
 
 <script>
+function initThemeToggle() {
+  const root = document.documentElement;
+  const button = document.getElementById('theme-toggle');
+  if (!button) return;
+  const saved = localStorage.getItem('researchToolsTheme');
+  const initial = saved || 'dark';
+
+  function applyTheme(theme) {
+    root.dataset.theme = theme;
+    button.textContent = theme === 'light' ? 'Dark' : 'Light';
+    button.setAttribute('aria-pressed', theme === 'light' ? 'true' : 'false');
+  }
+
+  applyTheme(initial);
+  button.addEventListener('click', function () {
+    const next = root.dataset.theme === 'light' ? 'dark' : 'light';
+    localStorage.setItem('researchToolsTheme', next);
+    applyTheme(next);
+    requestAnimationFrame(equalizeRows);
+  });
+}
+initThemeToggle();
 function equalizeRows() {
   const cols = document.querySelectorAll('.column');
   const maxRows = Math.max(...[...cols].map(c => c.querySelectorAll('.card').length));
@@ -235,6 +310,8 @@ window.addEventListener('resize', equalizeRows);
 </script>
 </body>
 </html>
+
+
 
 
 
