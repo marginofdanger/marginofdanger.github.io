@@ -17,6 +17,8 @@
   --muted: #8b949e;
   --accent: #58a6ff;
   --chip-bg: #1a2a3a;
+  --fable-bg: #2a1e42;
+  --fable-fg: #c4a5ff;
   --shadow: rgba(0, 0, 0, 0.2);
 }
 :root[data-theme="light"] {
@@ -30,6 +32,8 @@
   --muted: #697470;
   --accent: #087c73;
   --chip-bg: #e4f1ee;
+  --fable-bg: #efe7fb;
+  --fable-fg: #7c3aed;
   --shadow: rgba(40, 34, 24, 0.08);
 }
 body {
@@ -61,6 +65,7 @@ tr:last-child td { border-bottom: 0; }
 .ticker { color: var(--text); font-weight: 650; text-decoration: none; font-size: 0.96rem; }
 .ticker:hover { color: var(--accent); }
 .model-chip { display: inline-block; padding: 3px 8px; border-radius: 999px; background: var(--chip-bg); color: var(--accent); font-size: 0.72rem; font-weight: 600; white-space: nowrap; }
+.model-chip.fable { background: var(--fable-bg); color: var(--fable-fg); }
 .actions { white-space: nowrap; }
 .actions a { display: inline-block; margin-right: 10px; color: var(--accent); font-size: 0.78rem; font-weight: 700; text-decoration: none; }
 .actions a:hover { text-decoration: underline; }
@@ -91,6 +96,13 @@ tr:last-child td { border-bottom: 0; }
         </thead>
         <tbody>
             <tr>
+        <td><a class="ticker" href="dossiers/SPGI/dossier.html">SPGI</a></td>
+        <td>S&amp;P Global</td>
+        <td><time datetime="2026-07-02">2026-07-02</time></td>
+        <td><span class="model-chip fable">Fable</span></td>
+        <td>Ratings, indices, market intelligence, energy; issuance-geared vs recurring economics</td>
+        <td class="actions"><a href="dossiers/SPGI/dossier.html">Report</a><a href="dossiers/SPGI/evidence.html">Evidence</a></td>
+      </tr><tr>
         <td><a class="ticker" href="dossiers/NET/dossier.html">NET</a></td>
         <td>Cloudflare</td>
         <td><time datetime="2026-06-28">2026-06-28</time></td>

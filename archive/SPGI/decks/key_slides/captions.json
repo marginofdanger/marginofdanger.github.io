@@ -1,0 +1,200 @@
+[
+  {
+    "order": 1,
+    "path": "SPGI\\decks\\key_slides\\slide_01.png",
+    "caption": "Platts key facts: 12,000+ daily price assessments underpin 1,400+ exchange contracts; Brent assessment benchmarks >60% of world crude \u2014 the benchmark moat, 2014 baseline.",
+    "source_deck": "2014-03-18 \u00b7 Investor Day 2014 (McGraw Hill Financial)"
+  },
+  {
+    "order": 2,
+    "path": "SPGI\\decks\\key_slides\\slide_02.png",
+    "caption": "Capital IQ's 2014 competitive frame: 8.2B off-trading-floor market, top-10 rivals (Bloomberg, FactSet, Thomson Reuters) hold 57% \u2014 strategy of growing without displacing leaders.",
+    "source_deck": "2014-03-18 \u00b7 Investor Day 2014 (McGraw Hill Financial)"
+  },
+  {
+    "order": 3,
+    "path": "SPGI\\decks\\key_slides\\slide_03.png",
+    "caption": "Ratings revenue mix 2007-2013: structured finance collapsed 44% to 14% of revenue, corporates rose 27% to 50% \u2014 how the GFC permanently reshaped the franchise.",
+    "source_deck": "2014-03-18 \u00b7 Investor Day 2014 (McGraw Hill Financial)"
+  },
+  {
+    "order": 4,
+    "path": "SPGI\\decks\\key_slides\\slide_04.png",
+    "caption": "Ratings downside case in one slide: 2008 revenue -26% (,138M to ,583M), transaction share 49% to 30%, market issuance ,863B to ,599B \u2014 the true cyclicality bound.",
+    "source_deck": "2014-03-18 \u00b7 Investor Day 2014 (McGraw Hill Financial)"
+  },
+  {
+    "order": 5,
+    "path": "SPGI\\decks\\key_slides\\slide_05.png",
+    "caption": "The 2011-2017 journey: market cap $13B to $43B, revenue $3.8B to $6.1B, adjusted margin 30% to 47%, 26% TSR p.a. vs S&P 500's 11% \u2014 the post-breakup re-rating.",
+    "source_deck": "2018-05-24 \u00b7 Investor Day 2018"
+  },
+  {
+    "order": 6,
+    "path": "SPGI\\decks\\key_slides\\slide_06.png",
+    "caption": "China greenfield plan: 100%-owned domestic rating agency with a China-scale rating in the world's 3rd-largest bond market \u2014 a strategic bet that vanished from every later deck.",
+    "source_deck": "2018-05-24 \u00b7 Investor Day 2018"
+  },
+  {
+    "order": 7,
+    "path": "SPGI\\decks\\key_slides\\slide_07.png",
+    "caption": "Resilience evidence panel: US corporate ratings revenue stable vs GDP 2008-17, Platts grew while customers' revenues stagnated, MI renewals 90% to 95% \u2014 management's case for the 85% capital-return commitment.",
+    "source_deck": "2018-05-24 \u00b7 Investor Day 2018"
+  },
+  {
+    "order": 8,
+    "path": "SPGI\\decks\\key_slides\\slide_08.png",
+    "caption": "The capital-allocation philosophy anchor: 1pp of revenue growth creates ~5x more enterprise value than 1pp of margin (HOLT analysis) \u2014 why SPGI prioritizes top-line over margin.",
+    "source_deck": "2018-05-24 \u00b7 Investor Day 2018"
+  },
+  {
+    "order": 9,
+    "path": "SPGI\\decks\\key_slides\\slide_09.png",
+    "caption": "Merger terms: all-stock 0.2838x, IHS Markit holders get 32.25%, EV $44B at 28.2x LTM EBITDA pre-synergies (19.6x post) \u2014 the price paid for the transformation.",
+    "source_deck": "2020-11-30 \u00b7 IHS Markit merger announcement"
+  },
+  {
+    "order": 10,
+    "path": "SPGI\\decks\\key_slides\\slide_10.png",
+    "caption": "Original synergy program: ~$680M EBITA impact from ~$480M cost synergies plus ~$350M revenue synergies \u2014 the benchmark all later delivery claims measure against.",
+    "source_deck": "2020-11-30 \u00b7 IHS Markit merger announcement"
+  },
+  {
+    "order": 11,
+    "path": "SPGI\\decks\\key_slides\\slide_11.png",
+    "caption": "Pro forma 2021 division mix of the $12.4B combined company: Ratings 33.1%, MI 31.4%, Commodity Insights 13.5%, Mobility 10.1%, Indices 10.1%, Engineering 3.2% \u2014 the starting portfolio, nearly half of which is now being unwound.",
+    "source_deck": "2022-03-01 \u00b7 Merger completion investor call"
+  },
+  {
+    "order": 12,
+    "path": "SPGI\\decks\\key_slides\\slide_12.png",
+    "caption": "MI product-line revenue by merger provenance (2021 PF $3,890M): Desktop $995M all-SPGI; Data & Advisory $1,164M 76% INFO; Enterprise Solutions $1,038M 99% INFO; Credit & Risk $693M 97% SPGI \u2014 which MI businesses are IHS-heritage.",
+    "source_deck": "2022-03-01 \u00b7 Merger completion investor call"
+  },
+  {
+    "order": 13,
+    "path": "SPGI\\decks\\key_slides\\slide_13.png",
+    "caption": "The Peterson-era scorecard: share price +409% vs proxy peers +183% (Nov-2013 to Nov-2022), adjusted margin 33.7% to 45.3%, with the full acquisition/divestiture churn map.",
+    "source_deck": "2022-12-01 \u00b7 Investor Day 2022"
+  },
+  {
+    "order": 14,
+    "path": "SPGI\\decks\\key_slides\\slide_14.png",
+    "caption": "Passive runway: passive share of global investible assets 14% (2008) to 36% (2021); ETF AUM expected to double by 2026 \u2014 the secular driver behind Indices' asset-linked fees.",
+    "source_deck": "2022-12-01 \u00b7 Investor Day 2022"
+  },
+  {
+    "order": 15,
+    "path": "SPGI\\decks\\key_slides\\slide_15.png",
+    "caption": "Vitality Index defined: revenue from new/enhanced products, 8% of 2021 revenue, target >10% by 2026 \u2014 the innovation KPI later quarterly decks track (12% by 4Q25).",
+    "source_deck": "2022-12-01 \u00b7 Investor Day 2022"
+  },
+  {
+    "order": 16,
+    "path": "SPGI\\decks\\key_slides\\slide_16.png",
+    "caption": "The 2022 adjacency bets: Private Markets $600M and Sustainability & Energy Transition $800M of 2026E revenue (~34% CAGR) \u2014 private markets roughly delivered; sustainability stalled at half the target and was rehomed.",
+    "source_deck": "2022-12-01 \u00b7 Investor Day 2022"
+  },
+  {
+    "order": 17,
+    "path": "SPGI\\decks\\key_slides\\slide_17.png",
+    "caption": "First post-ChatGPT moat statement: data + Kensho + brand as the competitive advantages, and the AI data policy \u2014 proprietary data will not be released for third-party commercialization.",
+    "source_deck": "2023-07-27 \u00b7 Q2 2023 quarterly update"
+  },
+  {
+    "order": 18,
+    "path": "SPGI\\decks\\key_slides\\slide_18.png",
+    "caption": "Global refinancing study: the multi-year rated-debt maturity wall chart that anchors Ratings' medium-term growth case \u2014 the format management reissues every January and July.",
+    "source_deck": "2023-07-27 \u00b7 Q2 2023 quarterly update"
+  },
+  {
+    "order": 19,
+    "path": "SPGI\\decks\\key_slides\\slide_19.png",
+    "caption": "With Intelligence rationale: $1.8B for scaled contributory private-markets data (70k funds, 30k investors, 350k deals), high-teens growth, dilutive 2026 and accretive 2027 \u2014 the anchor asset of the private-markets push.",
+    "source_deck": "2025-10-30 \u00b7 Q3 2025 quarterly update"
+  },
+  {
+    "order": 20,
+    "path": "SPGI\\decks\\key_slides\\slide_20.png",
+    "caption": "Cheung-era strategy triad: Advance market leadership, Expand high-growth adjacencies (private markets, energy expansion), Amplify enterprise capabilities & AI \u2014 the frame all 2026 reporting maps onto.",
+    "source_deck": "2025-11-13 \u00b7 Investor Day 2025"
+  },
+  {
+    "order": 21,
+    "path": "SPGI\\decks\\key_slides\\slide_21.png",
+    "caption": "The moat-quantification slide: >95% of revenue from proprietary data, processes and tools \u2014 Benchmarks 63%, Proprietary & Curated Data 15%, Workflow Tools 13%, undifferentiated <5% (management-defined test).",
+    "source_deck": "2025-11-13 \u00b7 Investor Day 2025"
+  },
+  {
+    "order": 22,
+    "path": "SPGI\\decks\\key_slides\\slide_22.png",
+    "caption": "Ratings demand runway: $8.2T of rated corporate debt matures 2026-2028, +26% vs the $6.5T average three-year wall across 2015-2024 studies \u2014 the quantified refinancing tailwind.",
+    "source_deck": "2025-11-13 \u00b7 Investor Day 2025"
+  },
+  {
+    "order": 23,
+    "path": "SPGI\\decks\\key_slides\\slide_23.png",
+    "caption": "Enterprise data estate: 350PB+, 535 unique datasets, 10M+ data units processed by AI monthly, 400M+ companies with credit-risk insights \u2014 the scale claim behind the AI-readiness strategy.",
+    "source_deck": "2025-11-13 \u00b7 Investor Day 2025"
+  },
+  {
+    "order": 24,
+    "path": "SPGI\\decks\\key_slides\\slide_24.png",
+    "caption": "AI investment timeline: over $1B invested since 2018, from Kensho through LLM-ready APIs, MCP, Grounding Agent and hyperscaler collaborations (Anthropic, Google, Microsoft) \u2014 the foundation of the AI-distribution thesis.",
+    "source_deck": "2025-11-13 \u00b7 Investor Day 2025"
+  },
+  {
+    "order": 25,
+    "path": "SPGI\\decks\\key_slides\\slide_25.png",
+    "caption": "2022-2025 delivery: revenue $11.8B to $15.3B (9% CAGR), margin +180bp/yr, EPS +17% CAGR; 145% of adjusted FCF returned ($21B buybacks + $4B dividends vs $17B FCF) \u2014 returns exceeded the 85% framework via divestiture proceeds.",
+    "source_deck": "2025-11-13 \u00b7 Investor Day 2025"
+  },
+  {
+    "order": 26,
+    "path": "SPGI\\decks\\key_slides\\slide_26.png",
+    "caption": "New 3-5yr targets: enterprise 7-9% OCC growth, 50-75bp/yr margin expansion ex-OSTTRA, double-digit EPS growth; divisions MI 6-8%, Ratings 6-9%, Energy 6-8%, Indices 10-12% \u2014 note division margin targets were dropped after the 2022 vintage misses.",
+    "source_deck": "2025-11-13 \u00b7 Investor Day 2025"
+  },
+  {
+    "order": 27,
+    "path": "SPGI\\decks\\key_slides\\slide_27.png",
+    "caption": "2026 billed-issuance outlook: FY2025 billed issuance $4,327B (+11%) guided up low-to-mid single digits, with AI-ecosystem debt supply named as a driver \u2014 the deceleration behind Ratings' 4-7% 2026 guide.",
+    "source_deck": "2026-02-10 \u00b7 Q4/FY2025 quarterly update"
+  },
+  {
+    "order": 28,
+    "path": "SPGI\\decks\\key_slides\\slide_28.png",
+    "caption": "AI commercialization KPIs: 300+ Kensho LLM-ready API customers, API calls doubled Feb-Mar 2026, AI-product buyers' ACV growing 1.3x (MI) and 2x (Energy) vs other customers \u2014 the first hard numbers on AI monetization.",
+    "source_deck": "2026-04-28 \u00b7 Q1 2026 quarterly update"
+  },
+  {
+    "order": 29,
+    "path": "SPGI\\decks\\key_slides\\slide_29.png",
+    "caption": "MI data differentiation pyramid: 12% of MI revenue undifferentiated, 23% is redistributed Ratings content, 37% workflow tools \u2014 the divisional counterpoint to the enterprise >95%-differentiated claim.",
+    "source_deck": "2026-04-28 \u00b7 Q1 2026 quarterly update"
+  },
+  {
+    "order": 30,
+    "path": "SPGI\\decks\\key_slides\\slide_30.png",
+    "caption": "Mobility Global at a glance: FY25 revenue $1,750M (+8.5%), 40.6% adjusted EBITDA margin, 100% of top-40 OEMs, 40K+ dealers, 53M+ Car Care users \u2014 the SpinCo's carve-out baseline.",
+    "source_deck": "2026-05-12 \u00b7 Mobility Global Investor Day (spin-off)"
+  },
+  {
+    "order": 31,
+    "path": "SPGI\\decks\\key_slides\\slide_31.png",
+    "caption": "CARFAX contributory flywheel: 38B+ records from 177K+ sources (92K service shops, 6.3K police agencies), every participant contributes data and receives value back \u2014 the network-effect moat of the spin's largest business.",
+    "source_deck": "2026-05-12 \u00b7 Mobility Global Investor Day (spin-off)"
+  },
+  {
+    "order": 32,
+    "path": "SPGI\\decks\\key_slides\\slide_32.png",
+    "caption": "Mobility 2014-2025 track record: revenue $529M to $1,750M with organic growth of 9-18% in every year except 2020's -2%, against an auto industry that was flat-to-negative most years \u2014 above-market growth through three cycles.",
+    "source_deck": "2026-05-12 \u00b7 Mobility Global Investor Day (spin-off)"
+  },
+  {
+    "order": 33,
+    "path": "SPGI\\decks\\key_slides\\slide_33.png",
+    "caption": "Mobility value-creation framework: 7.5-10% organic revenue growth, 8-11% adjusted EBITDA growth, +50bp/yr margin after standalone reset, dividends 20-25% of net income, 75%+ of FCF returned \u2014 the SpinCo underwriting targets.",
+    "source_deck": "2026-05-12 \u00b7 Mobility Global Investor Day (spin-off)"
+  }
+]
