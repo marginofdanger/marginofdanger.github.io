@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>The Lost Art of Letting Wine Age - with Christopher Burr MW</title>
+  <style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background: #faf8f5;
+  color: #2c2418;
+  line-height: 1.7;
+  padding: 0 1rem 2rem;
+}
+header {
+  position: sticky;
+  top: 0;
+  background: #faf8f5;
+  z-index: 100;
+  border-bottom: 2px solid #c4956a;
+  box-shadow: 0 2px 8px rgba(44,36,24,0.08);
+  padding: 0.6rem 1rem;
+}
+.header-inner {
+  max-width: 78ch;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header-title { font-size: 1rem; color: #2c2418; }
+.header-title strong { font-size: 1.1rem; }
+.header-link {
+  font-size: 0.85rem;
+  color: #8b6d4e;
+  text-decoration: none;
+  border: 1px solid #c4956a;
+  padding: 0.2rem 0.7rem;
+  border-radius: 4px;
+}
+.header-link:hover { background: #f0ebe3; }
+main {
+  max-width: 78ch;
+  margin: 0 auto;
+  padding-top: 0.5rem;
+}
+h2 {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #2c2418;
+  margin-top: 2rem;
+  margin-bottom: 0.5rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 2px solid #c4956a;
+}
+h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #3d3225;
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+section { margin-bottom: 1.5rem; }
+ul { margin: 0.5rem 0 0.5rem 1.5rem; }
+li { margin-bottom: 0.4rem; }
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0.75rem 0;
+  font-size: 0.92rem;
+}
+thead th {
+  background: #3d3225;
+  color: #faf8f5;
+  text-transform: uppercase;
+  font-size: 0.78rem;
+  letter-spacing: 0.05em;
+  padding: 0.5rem 0.75rem;
+  text-align: left;
+  font-weight: 600;
+}
+tbody td {
+  padding: 0.45rem 0.75rem;
+  border-bottom: 1px solid #e8e0d4;
+}
+tbody tr:nth-child(even) { background: #f0ebe3; }
+tbody tr:nth-child(odd) { background: #faf8f5; }
+.key-insight {
+  border-left: 4px solid #c4956a;
+  background: #f5efe8;
+  padding: 0.75rem 1rem;
+  margin: 0.75rem 0;
+  font-size: 0.93rem;
+  border-radius: 0 6px 6px 0;
+}
+.qa-pair { margin-bottom: 1.25rem; }
+.question-box {
+  background: #f0ebe3;
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+  margin-bottom: 0.5rem;
+}
+.analyst-label {
+  display: block;
+  font-size: 0.8rem;
+  color: #8b6d4e;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  margin-bottom: 0.25rem;
+}
+.answer { padding-left: 0.25rem; }
+.loading-section { opacity: 0.5; }
+.loading-indicator {
+  font-size: 1.2rem;
+  padding: 2rem;
+  text-align: center;
+  color: #8b6d4e;
+}
+
+/* YouTube transcript reader */
+
+/* Legacy .yt-meta-card -- kept so old output files still render cleanly.
+   New output uses .header-title.yt below instead. */
+.yt-meta-card {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  margin-bottom: 1.5rem;
+  background: #f5efe8;
+  border-left: 4px solid #c4956a;
+  border-radius: 0 6px 6px 0;
+  padding: 0.9rem 1rem;
+}
+.yt-meta-card img {
+  flex: 0 0 180px;
+  height: 101px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+.yt-meta-body { flex: 1; font-size: 0.93rem; }
+.yt-meta-title { font-weight: 700; font-size: 1rem; margin-bottom: 0.25rem; }
+.yt-meta-sub { color: #8b6d4e; margin-bottom: 0.35rem; }
+.yt-meta-url { font-size: 0.85rem; color: #3d3225; }
+
+/* YouTube sticky header uses the default 78ch-capped centered
+   container so it aligns with the body text column below. The
+   buttons sit at the right edge of that centered container. */
+header:has(.header-inner.yt) { padding: 0.75rem 1rem; }
+.header-inner.yt { gap: 1rem; }
+.header-title.yt {
+  display: flex;
+  gap: 0.9rem;
+  align-items: center;
+  min-width: 0;
+  flex: 1;
+}
+.yt-header-thumb { flex: 0 0 88px; line-height: 0; }
+.yt-header-thumb img {
+  width: 88px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 3px;
+  display: block;
+}
+.yt-header-text { min-width: 0; flex: 1; }
+.yt-header-text strong {
+  display: block;
+  font-size: 1rem;
+  line-height: 1.3;
+  color: #2c2418;
+  /* Allow wrapping to 2 lines so long podcast titles show in full. */
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.yt-header-sub {
+  font-size: 0.8rem;
+  margin-top: 0.2rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.yt-header-sub .yt-channel { color: #8b6d4e; }
+.yt-header-sub .yt-date,
+.yt-header-sub .yt-dur { color: #3d3225; font-weight: 600; }
+.yt-header-sub .yt-sep { color: #c4956a; margin: 0 0.5rem; }
+
+.yt-header-actions {
+  display: flex;
+  gap: 0.4rem;
+  align-items: center;
+  flex: 0 0 auto;
+}
+/* Shared box shape for the star + share + YT buttons so they're
+   visually identical. Applies to both the <button>s and the <a> link. */
+.yt-header-actions .yt-bookmark-btn,
+.yt-header-actions .yt-share-btn,
+.yt-header-actions .header-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font: inherit;
+  font-size: 0.85rem;
+  line-height: 1;
+  color: #8b6d4e;
+  background: transparent;
+  border: 1px solid #c4956a;
+  border-radius: 4px;
+  padding: 0;
+  box-sizing: border-box;
+  width: 2.2rem;
+  height: 2.2rem;
+  white-space: nowrap;
+  text-decoration: none;
+  cursor: pointer;
+}
+.yt-header-actions .yt-bookmark-btn { font-size: 1rem; }
+.yt-header-actions .yt-share-btn { font-size: 1.05rem; }
+.yt-header-actions .yt-share-btn:disabled { opacity: 0.6; cursor: default; }
+.yt-header-actions .yt-bookmark-btn:hover,
+.yt-header-actions .yt-share-btn:hover,
+.yt-header-actions .header-link:hover {
+  background: #f0ebe3;
+  color: #3d3225;
+}
+.yt-header-actions .yt-bookmark-btn.is-bookmarked {
+  background: #c4956a;
+  color: #faf8f5;
+  border-color: #a87d5a;
+}
+.yt-header-actions .yt-bookmark-btn.is-bookmarked:hover {
+  background: #a87d5a;
+  color: #faf8f5;
+}
+
+h3.chapter {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #3d3225;
+  margin-top: 1.25rem;
+  margin-bottom: 0.4rem;
+}
+h3.chapter a {
+  font-size: 0.8rem;
+  color: #8b6d4e;
+  text-decoration: none;
+  font-weight: 400;
+}
+
+.yt-body {
+  line-height: 1.58;
+}
+.yt-body p {
+  margin-bottom: 0.9rem;
+}
+.yt-body p.q {
+  background: #f0ebe3;
+  border-left: 3px solid #c4956a;
+  border-radius: 0 6px 6px 0;
+  padding: 0.6rem 0.9rem;
+  margin-top: 1.25rem;
+  margin-bottom: 0.8rem;
+  color: #3d3225;
+  font-style: italic;
+  font-size: 0.96rem;
+}
+.yt-body p.q::before {
+  content: "Q";
+  display: inline-block;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 0.72rem;
+  color: #8b6d4e;
+  letter-spacing: 0.05em;
+  margin-right: 0.5rem;
+  padding: 0.05rem 0.4rem;
+  border: 1px solid #c4956a;
+  border-radius: 3px;
+  vertical-align: 0.1em;
+}
+.yt-body p.q a {
+  display: block;
+  text-align: right;
+  margin-top: 0.3rem;
+  font-style: normal;
+  font-size: 0.8rem;
+  color: #8b6d4e;
+  text-decoration: none;
+  white-space: nowrap;
+}
+.yt-body p.q a:hover {
+  text-decoration: underline;
+}
+
+</style>
+</head>
+<body>
+  <header>
+    <div class="header-inner yt">
+      <div class="header-title yt">
+        <a class="yt-header-thumb" href="https://www.youtube.com/watch?v=0HyKycJABGQ" target="_blank"><img src="https://i.ytimg.com/vi_webp/0HyKycJABGQ/maxresdefault.webp" alt=""></a>
+        <div class="yt-header-text">
+          <strong>The Lost Art of Letting Wine Age - with Christopher Burr MW</strong>
+          <div class="yt-header-sub">
+            <span class="yt-channel">No Sediment</span>
+            <span class="yt-sep">&middot;</span>
+            <span class="yt-date">Jun 24, 2026</span>
+            <span class="yt-sep">&middot;</span>
+            <span class="yt-dur">1h 0m</span>
+          </div>
+        </div>
+      </div>
+      <div class="yt-header-actions">
+        <button id="yt-bookmark-btn"
+                class="yt-bookmark-btn"
+                title="Bookmark"
+                aria-label="Bookmark"
+                data-filename="yt-2026-07-09-the-lost-art-of-letting-wine-age-with-christopher-burr-mw.html"
+                data-title="The Lost Art of Letting Wine Age - with Christopher Burr MW"
+                data-url="https://www.youtube.com/watch?v=0HyKycJABGQ"
+                data-date="2026-06-24T07:00:14-07:00"
+                data-channel="No Sediment"
+                onclick="toggleYtBookmark(this)">&#9734;</button>
+        <button id="yt-share-btn"
+                class="yt-share-btn"
+                title="Share"
+                aria-label="Share"
+                data-filename="yt-2026-07-09-the-lost-art-of-letting-wine-age-with-christopher-burr-mw.html"
+                onclick="shareYtPage(this)">&#8599;</button>
+        <a class="header-link" href="https://www.youtube.com/watch?v=0HyKycJABGQ" target="_blank" title="Watch on YouTube" aria-label="Watch on YouTube">YT</a>
+      </div>
+    </div>
+  </header>
+  <main>
+    <div class="yt-body">
+    <h3 class="chapter"><span>Introduction</span><a href="https://www.youtube.com/watch?v=0HyKycJABGQ&t=0s">&#x21AA; 00:00</a></h3>
+<p data-t="0">Is Bordeaux en primeur dead? I think it's dead, and I think it's well dead, and I think it should be dead. Now I'm going to be controversial. You just told that on camera. [laughter] I tell you, when I was in the auction business, some of the wonderful cellars I would visit to sell their wine were people who died.</p>
+<p data-t="18">It was so obvious that they kept their best bottles for a special occasion, and then they died and had not drunk them. I always say, don't wait for the special moment. No, I really got fed up with everybody selling and marketing very, very young wine. Nobody ever writes about the elegance and balance and the joy of mature wines.</p>
+<p data-t="44">Can we tell that on camera? Well, hi, everybody. This is Agnesa from No Sediment, and welcome to No Sediment Wine Podcast. Today, my guest is master of wine and wine educator, who claims that he's still learning about wine, of course, Christopher Burr. Did I pronounce your name correctly?</p>
+<p data-t="68">Did indeed. Lovely to be here. Thank you. Thank you for having us.</p>
+<h3 class="chapter"><span>Christopher Burr’s wine journey</span><a href="https://www.youtube.com/watch?v=0HyKycJABGQ&t=73s">&#x21AA; 01:13</a></h3>
+<p class="q" data-t="74">Before we start, could you maybe please tell us more about yourself, how your wine journey started, and why are we filming a video right here next to the Windsor Castle?<a href="https://www.youtube.com/watch?v=0HyKycJABGQ&t=74s">&#x21AA; 01:14</a></p>
+<p data-t="82">Windsor Castle. My first memory of tasting wine, I was six and a half. Can we tell that on camera? Well, I said to my father, "Father, can I join you?" And he said, "No, no, no, no, no. You're far too young." And I said, "Well, please, it's so interesting." And he said, "Well, you'll have to spit it all out. Make sure you spit it all out." So I said, "Okay, that's fine. I can do that."</p>
+<p data-t="112">He was a soldier during the war, and he fought his way up from North Africa, up through Italy, through France, and he always used to organize the officers' mess in a wine cellar because it was safer from shelling, and also the officers liked to have a glass of wine. So as kids, we used to revisit wineries on holiday, because he made friends with wineries. I remember many in Italy visiting, but when he got to Paris, the Free French, under a chap called General de Gaulle, Charles de Gaulle, joined them in Paris.</p>
+<p data-t="152">The liaison officer between the French army and the British army was a man called Victor Lo. Victor Lo happened to own a little champagne house, and so Father and he became good friends. Victor said to Father, "Look, I'm thinking of a new wine for the British market. Can you come and taste it?" So we went into his cellar. I invited myself along as a little boy, and he did what we know as the vin clair tasting.</p>
+<p data-t="184">So where he shows wines from the different grapes, the different vineyards, and then he adds in reserve wines, older wines, and he showed us the individual wines and then the final blend. I was so fascinated with that. I think that probably started my journey. I can still remember it. That's how I started.</p>
+<p data-t="209">Then, as a schoolboy after chapel, I used to invite the headmaster and his wife for a glass of sherry in my study. As a schoolboy, I used to buy old sherry or old Madeira from Berry Brothers and Rudd, when I was about 15 or 16. They were so good, the headmaster and then my housemaster said, "Can I come as well?"</p>
+<p data-t="232">So after chapel on the Sunday morning, we would have a little sherry party, and I set up a wine tasting club as a schoolboy because there was a schoolmaster who loved his wine. I used to invite winemakers to come along.</p>
+<p data-t="257">Then the university. I was lucky enough to go to Cambridge, and they had wonderful cellars. So I fell in love with old wines because they bought wines from every vintage, and we had lovely old wines there. I probably learned much more about tasting there, although I was lucky enough that Father would occasionally produce something really good.</p>
+<p data-t="275">I remember he was very fond of the '53 vintage and the '61 vintage, so when I would come home from school, I would often ask if we could have that. I was very lucky. Then I wanted to become a musician, because I played in the National Music. I played a lot of music. I was a music scholar at school.</p>
+<p data-t="302">So I went to the Royal College of Music, and I was offered my first job after that in a London symphony orchestra. I went back to my father, aged about 21 or 22, and said, "Father, I'm off your hands. I've got my first job." He said, "Okay, boy, what are you going to get paid?" I said, "Well, it's £700 a year."</p>
+<p data-t="329">And he said, "You stupid boy. That's not enough. Your flat in London cost you twice that." This is back in the early 1970s. So he said, "I'll send you to business school." So he sent me to business school. Then after that I went into my other passion, which was wine.</p>
+<p data-t="350">So I went to work for Alexis Lichine in Bordeaux, who I'd already known because I used to go and pick grapes as a schoolboy in the summer holidays. I went there and lived in Château Lascombes and worked in the vineyards and showed people around.</p>
+<p data-t="367">I remember actually, I was staying at Château Prieuré-Lichine, which was his home, and Alexis married a Hollywood film star, and he would fly in with all these Hollywood friends for the weekend unannounced. I suppose this is about 1974 or 1975. The French government gave a subsidy to the Bordeaux producers to build a reservoir because there was a time of drought, and they wanted more water, and so everybody built a swimming pool in their château, paid for by the government. [laughter]</p>
+<p data-t="407">So I would go and have a swim after working in the vineyards and working in the cellars. I'd go and have a swim, and then I would dry myself off, and he had a grand piano in his drawing room. I'd sit at the piano and play a few. I'm not really a pianist. I'm a violinist, but I play a few numbers just for fun.</p>
+<p data-t="435">I remember doing that, and Alexis, with his party from Hollywood, arrived. I was sitting there, and I was just wearing a pair of swimming trunks. All they could see was naked legs and naked top, and Alexis introduces me and said, "This is Christopher Burr. He's an Englishman who sits here and welcomes us by playing the piano." [laughter] I went completely scarlet, as you can imagine.</p>
+<p data-t="460">Anyway, I started with Alexis, and then he sold his business to Bass Brewing Company here, and I came back to work for them in East London bottling wine. In the old days, we used to bottle out of wooden casks. We shipped casks and bottled it here. Then I bottled bulk wine as well.</p>
+<p data-t="479">We had huge tanks of bulk wine, which we used to ship in bulk from Austria, Hungary, and Bulgaria, and we used to ship from Cyprus. Pretty ordinary stuff, but anyway, one had to learn how to handle it and all that.</p>
+<p data-t="498">Then I moved into the marketing team there, the sales and marketing team, and ended up marketing Bacardi rum, Rémy Martin cognac, and all sorts of other things. So I was very lucky. Then I remember, because Bass bought Hedges and Butler, the company was called, I got to sort of director level.</p>
+<p data-t="516">At Christmas, the chairman of Bass came to sit next to me for our Christmas lunch, and he said, "Christopher, we don't make much money out of wine. We make much more money out of beer. Why don't you come to the beer business?" I said, "Well, I don't know anything about brewing beer or anything like that." He said, "We'll teach you. You can keep your company car. You can keep your salary. We'll start you at the bottom."</p>
+<p data-t="535">So I started right at the bottom, selling beer to working men's clubs and pubs and everybody in the Midlands. It's the best thing I ever did, because it taught me how to sell. It taught me a whole new thing. Eventually I did quite well, only because I worked out that the working men's clubs in the Midlands here all have their committee meeting on a Sunday morning.</p>
+<p data-t="566">So I would go and see them on a Sunday morning. No other salesman goes on a Sunday morning. I'd buy them all a glass of beer, and so I got all the business. I did so well they promoted me. I became a director and ended up running two or three breweries and 11,000 or 3,000 pubs or something, a long time ago.</p>
+<p data-t="590">Then we had a prime minister called Margaret Thatcher, who decided that the beer industry was a monopoly or oligopoly. We brewed the beer, we owned the pubs, and so we made all the money. So she said, "You can only own 2,000 pubs." We'd owned 13 brewers and 11,000 pubs at Bass, and so we had to get rid of all our pubs.</p>
+<p data-t="615">When she did that, I thought, well, I'm going to go back into the wine business. I went to work for Robert Drouhin in Burgundy. I remember going to Burgundy and saying, "Robert, I don't really know much about Burgundy because I started in Bordeaux." He said, "Don't worry. Tomorrow we'll go. I'll show you around."</p>
+<p data-t="633">So he put in the boot of his car a bottle from each of his vineyards. Then he took me to each vineyard, and we opened a bottle, and he tasted the wine from each vineyard. We'd go to a place like Puligny or Chassagne or somewhere like that, and he had Puligny, and then we went into Montrachet and up into Meursault.</p>
+<p data-t="665">He opened a bottle in each one, and they're all within sight of one another, but they all taste totally different. He explained why they taste different: the soil, the exposure to the sun, the drainage, everything. In one day, I learned a huge amount about Burgundy. It's extraordinary. Anyway, that's how I started.</p>
+<p class="q" data-t="686">That's how you started. And why are we here?<a href="https://www.youtube.com/watch?v=0HyKycJABGQ&t=686s">&#x21AA; 11:26</a></p>
+<h3 class="chapter"><span>Evaluating the Royal Family’s wine cellars</span><a href="https://www.youtube.com/watch?v=0HyKycJABGQ&t=687s">&#x21AA; 11:27</a></h3>
+<p data-t="691">Why are we here? A few years ago, about six or seven years ago, I get a phone call from a chap who said, "My name's such and such. I'm the Keeper of the Privy Purse. I work in Buckingham Palace, and I want you to do a job for me." I thought he was a spoof call, so I put the phone down.</p>
+<p data-t="722">Anyway, he rings back, and he explains who he is. I said, "What do you want me to do?" Because I ran the wine department at Christie's, and I used to value valuable cellars. He said, "We've got private family cellars of members of the royal family, not for government hospitality, for entertaining, which is most of the wine. We've got family cellars in all the great family houses, from Balmoral in Scotland and Sandringham in East Anglia."</p>
+<p data-t="748">Here, I ended up here. I was looking in the cellar there, and there was some really quite interesting... I probably shouldn't tell you this, but there was some quite cheap New Zealand Sauvignon and Argentinian Malbec. But the chap said, "Come and have supper." He asked me, "Is there anything any good there?" I told him about this, and he said, "Oh, well, Her Majesty would never let Prince Philip spend any money." [laughter]</p>
+<p data-t="787">But I said, "There is also some really good stuff as well." I found a few bottles of 1834 Hochheim sent to Queen Victoria and Prince Albert for their wedding. He said, "Well, what's that worth?" I said, "Well, it's priceless. The provenance of that is very special." He said, "Well, it would be very vulgar to sell it. Why don't we try a bottle?" So we had a bottle.</p>
+<p data-t="814">Anyway, I did say, "Is there anywhere I can come?" He said, "I chose this particular house because it's got a garden and I've got some vines planted here. And I've also got a cellar, which goes under the castle hill, which was an escape route in the Middle Ages, just in case you need that." Well, it makes a good wine cellar. I think that's why I'm here.</p>
+<p class="q" data-t="838">Beautiful story, and thank you for having it. But the first time we met, you talked about your passion for mature wines. So what is it, in your view, that bottle age can give to a wine that young wines cannot deliver?<a href="https://www.youtube.com/watch?v=0HyKycJABGQ&t=838s">&#x21AA; 13:58</a></p>
+<h3 class="chapter"><span>Christopher Burr’s passion for old wines</span><a href="https://www.youtube.com/watch?v=0HyKycJABGQ&t=840s">&#x21AA; 14:00</a></h3>
+<p data-t="851">Well, firstly, I would say, not to answer your question but as a sort of preamble, I really got fed up with everybody selling and marketing very, very young wine. Even journalists writing about the latest vintage and zingy fruit. Nobody ever writes about the elegance and the maturity, the balance and the joy of mature wines.</p>
+<p data-t="884">It's very rare that you see that, and the consumer doesn't understand. They think if the wine's old, perhaps it's past its best, and someone's trying to get rid of it, or it might not be in good condition. So there's a nervousness about old wine.</p>
+<p data-t="902">But your question was, why do I love old wine? Well, take white wines to start with. Yes, fine, when they're young, they're fresh, they're fruity. We had one at lunch today with some scallops, and the lemony acidity is great with the fish. Fine. But white Burgundy, and the oldest white Burgundy I had with Robert Drouhin I think was from 1945, still fabulous. Rich, honeyed, not sweet honeyed, but just honeyed in texture and in flavor.</p>
+<p data-t="939">Not only that, when I do wine lectures for MW students like yourself, or I may do it for other people, I get on a chair and I stand on the chair and I say, "Can you imagine I was an airplane, and this wing is fruit, and this wing is acidity. This is the body of the airplane, and the kerosene is the alcohol."</p>
+<p data-t="960">If you've got too much acidity and not enough fruit, it tastes tart. If you've got not enough acidity, it tastes flabby and bland. You need intensity of body, which develops with age, slow oxidation, and you don't want to be able to tell the acidity. You don't want to be able to see the vapor trail of the airplane. They all remember the aeroplane.</p>
+<p data-t="989">So they remember about balance, and balance, for me, is one of the greatest things that even with a young wine, at least five or six years starts to bring. It's so wonderful to see Château Latour releasing their wines when they're five or six years old, because they start not only to bring balance and elegance. The tannins are starting to round out and soften, and it's starting to become more gentle.</p>
+<p data-t="1016">You're starting to get the secondary flavors from the fruit, not just primary fruit flavors. You're starting to get secondary fruit flavors. Then after 20 years, you start to get tertiary flavors. You start to get umami. And who talks about umami in wine? Umami is wonderful, rich, and it fills the mouth.</p>
+<p data-t="1044">Can you imagine an old Latour? Actually, even the poor... I did a tasting recently of '81 Latour versus '82 Latour. The '82 Château Latour is £3,000 a bottle now or something like that. The '81 Latour is less than £300 a bottle. I did a blind tasting with knowledgeable people, collectors, and I said, "Which one do you prefer?" They said, "Well, we like the first one, but we slightly prefer the '82."</p>
+<p data-t="1080">I agree with them, but they loved the '81. They said, "This is such a good wine." When I told them what it was, they said, "Well, we would never dream of buying." It's so interesting that many red wines, when they're young, they're perhaps too tannic or too acidic or slightly unbalanced, but give them a bit of time and they start to come together and they start to become lovely.</p>
+<p data-t="1104">That was a classic example. There are many, many examples of wines that have been written off by journalists, and therefore they're inexpensive, but give them 20 years and they're absolutely lovely.</p>
+<p data-t="1120">Now thank you for that tip. We will know now which bottle for. [laughter]</p>
+<p data-t="1127">Well, I started this thing called Libération Tardive, this nonprofit foundation to promote wines with age, and people are starting to realize. Jancis Robinson's very supportive, and Hugh Johnson's very supportive. A number of very good commentators realize that actually we've forgotten how wonderful wines are, and we don't talk about it.</p>
+<p data-t="1153">Consumers don't realize that, actually, unlike any other alcoholic beverage really, unless you're keeping old whisky or old brandy in a cask, but look at the price of those. They don't do it with wine. So it's a nonprofit foundation to promote wines with age, and it's starting to get some traction, thank goodness.</p>
+<h3 class="chapter"><span>The trend toward making wines more approachable in youth</span><a href="https://www.youtube.com/watch?v=0HyKycJABGQ&t=1179s">&#x21AA; 19:39</a></h3>
+<p class="q" data-t="1179">Good. That's good. But I was going to ask, do you think that maybe, current days, there's also this winemaking involved, that we make wine more ready for an early approach?<a href="https://www.youtube.com/watch?v=0HyKycJABGQ&t=1179s">&#x21AA; 19:39</a></p>
+<p data-t="1192">You're so right, and I hate that. [laughter] Well, I don't hate it. You need to make... You can learn how to manage tannins and manage... Winemaking technology has got so much better, but still, I think great wine needs time.</p>
+<p data-t="1211">I tasted a very good Barolo recently, which after five or six years was lovely to drink, and then there was an older vintage which after 30 years was still young. Barolos used to be like that, perhaps too much like that, so they weren't really very commercial. Mind you, after 40 or 50 years, they'll be lovely, but who can wait that long? I'll be dead. [laughter]</p>
+<p data-t="1242">There's undoubtedly wine technology that allows people to make a wine for drinking younger. But I still think even the wines that are made to drink younger, with better tannin management and better acidity management, and I do like acidity in wine. There's nothing wrong with that. But I still think they need perhaps four or five years, just to start to develop some more flavors and more intensity in the middle of the palate.</p>
+<p class="q" data-t="1273">Okay. So are there particular styles or regions that you feel are especially undervalued because people almost never experience them with maturity?<a href="https://www.youtube.com/watch?v=0HyKycJABGQ&t=1273s">&#x21AA; 21:13</a></p>
+<h3 class="chapter"><span>Overlooked regions: why some wines need maturity to shine</span><a href="https://www.youtube.com/watch?v=0HyKycJABGQ&t=1275s">&#x21AA; 21:15</a></h3>
+<p data-t="1286">Did I tell you that I'm still learning about wine? [laughter] I've been doing quite a lot of work in places like Serbia and Croatia, where there's still masses of grape varieties no one's ever heard of. I think since the end of communism, families have started really making good wine again. Under communism, they used to make bulk wine, but now they're starting to make really good wine.</p>
+<p data-t="1317">Funny enough, there's an island in the north of the Adriatic called Korčula, and there's a vineyard there that was originally planted by the emperor Diocletian, the Roman emperor. They still make a sweet wine from two grapes. One's called GRK. The other's called Pošip. [laughter] They make dry still wines, but they make a sweet wine which they've made traditionally for hundreds and hundreds and hundreds of years.</p>
+<p data-t="1347">I did another tasting blind against Château d'Yquem, and I asked people which they preferred, and they preferred this wine. There you go. This wine, unfortunately, is in a very cheap-looking bottle because they don't value it. I've been advising them and saying, "Well, perhaps a bit of packaging. You can put it in a better bottle and better label and stuff."</p>
+<p data-t="1381">It's a wine that they don't make very much of, but I keep coming across lots of... Have you tasted Plavac Mali? There's some wonderful old Plavac Mali, another Dalmatian grape variety.</p>
+<p data-t="1401">Interestingly, there are one or two people making very good wine now in south of Burgundy, in the Mâconnais. Making good wine there which, with 10 years of age, is serious white Burgundy. People used to write off Mâcon as being sort of cooperative type, nothing special. But actually there's some very good wines being made, because they've got a good balance of fruit and acidity. Enough acidity. That's key. It's Chardonnay.</p>
+<p data-t="1433">And making wines that will age well. Even Beaujolais now, cru Beaujolais. I don't know if you've ever tasted any cru Beaujolais from the war years. Some Morgon, Lavo, from the '40s. They made some very good wines, and I remember tasting those a few years ago. I think they'll come back. I hope so.</p>
+<p data-t="1466">I think south Burgundy was slightly neglected because everybody concentrated on the Côte d'Or, but now they're realizing, and I think probably global warming's helped a bit, that the land in Côte d'Or is so expensive, whereas they can go down to south Burgundy and buy vineyards reasonably priced. So I think that's a really interesting area to go, and most people love Burgundy. Actually, the Gamay grape, I think, with some age, is really lovely.</p>
+<p class="q" data-t="1498">Well, in your view, do you think that there are specific wine styles or regions that really should be better drunk young? So I turned this around. I'm sorry.<a href="https://www.youtube.com/watch?v=0HyKycJABGQ&t=1498s">&#x21AA; 24:58</a></p>
+<p data-t="1512">Yeah, I know. Gosh, let me think. I like old champagne, and I like old... What do I like young? Even Muscadet now, these days, is making wines which age as well. No, I think young, for me, young means five years old. So I think any good wine should be five years old.</p>
+<p data-t="1537">Interestingly, everybody keeps yabbering on about how younger people don't drink wine so much. They want cocktails, or they want spirits, or they want non-alcoholic wine, or they want something else. I think that the latest release, which is normally one or two years old, is part of the problem. I think actually it's too simple.</p>
+<p data-t="1565">The wine is just like a manufactured beverage. It's not the sort of wonderful product that develops and changes, and you can see how it develops and changes, and that brings everybody together. So they see it as a manufactured product. They don't see it as something much better, much more interesting, or something that could develop into something completely different.</p>
+<p data-t="1596">I think that's part of the issue, and I think the industry have to answer for that, because they've never promoted that. They don't talk about it. They talk about the latest release, and it's become a commercial thing, clearly. You want to shift your stock, sell it young. Nobody has wine cellars anymore. People put their boiler in the cellar.</p>
+<p data-t="1622">So people don't have wine cellars anymore, and merchants can't afford to store and mature their wine for years and years and years like they used to. I can understand why it's changed, and why people are making younger wine to be drunk younger. But still, I think we should be promoting the elegance and the beauty and the culture of wines that have the benefit of a bit of time.</p>
+<p class="q" data-t="1648">So what wines do you personally think offer the greatest pleasure with age? You're not allowed to say all. [laughter]<a href="https://www.youtube.com/watch?v=0HyKycJABGQ&t=1648s">&#x21AA; 27:28</a></p>
+<h3 class="chapter"><span>Which wines offer the greatest pleasure with age?</span><a href="https://www.youtube.com/watch?v=0HyKycJABGQ&t=1649s">&#x21AA; 27:29</a></h3>
+<p data-t="1655">No. Well, I don't believe all do. The oldest wines I've tasted, and it's not fashionable here anymore, but the oldest wines I've tasted with age are German. I thought you were saying Bordeaux. I'll come on to red wines in a minute.</p>
+<p data-t="1679">But I think sweet white wines age the best. I used to handle Schloss Johannisberg and Bernkasteler in Germany. From Schloss Johannisberg, you could find wines still wonderful back to the 1800s. The oldest wine I've tasted from the Bremer Ratskeller was 1727, and still... But they're very sweet.</p>
+<p data-t="1704">Of course, the things that keep a wine are acidity. Acidity is very important, obviously alcohol and sugar. They're great preservatives, and those German wines have all that. Certainly old Château d'Yquem, old Sauternes. Nobody drinks sweet wines anymore, sadly.</p>
+<p data-t="1724">It's sad, because they're the best thing with cheese. They're wonderful with a bit of blue cheese, something. It's absolutely perfect to drink. And foie gras. Actually, Pierre Lurton, my friend, Château d'Yquem and Sauternes, he does a dinner where you drink Sauternes with every course. So you drink Sauternes and oysters. Can you believe Sauternes and oysters? I did that in London.</p>
+<p data-t="1758">Because Sauternes has masses of acidity, and in the '20s and '30s in this country, people used to drink sweet wine with oysters, but no one does it. They all drink dry wine now. It's got the acidity to counter the oysters, but also it's got all sorts of other complexity. It works. Then we had duck, and he said, "Don't worry with the orange. The Sauternes does the bit." We had duck, and we had blue cheese. Fabulous.</p>
+<p data-t="1791">Undoubtedly, sweet white wines last the longest. Not a little bit, the longest. Bordeaux, I worked in Bordeaux. I love Bordeaux. I was involved in buying Bordeaux on the wine committee in a London club. We would buy en primeur, and we'd stick it in the cellar because we still had a cellar there. We wouldn't even think about selling it until it was 15 years old, and some a lot older than that. Some of the second wines of châteaux, which are very good, we might sell at 10 years old.</p>
+<p data-t="1834">No, I think Bordeaux are built to age because they've got tannin. I think wines with tannin... I like old Rhône, old northern Rhône wines, old Côte-Rôtie, old red Hermitage. They can age well. The wines from Hermitage in the early '80s are still drinking beautifully, and they're wonderful. So are the white wines from Hermitage from the '80s. These wines age. They're built to age, and they're a great joy.</p>
+<p data-t="1870">Incredibly, people don't value them, so you can pick them up reasonably inexpensively. The key is how they've been stored. Provenance, provenance, provenance. That's absolutely the key.</p>
+<p class="q" data-t="1883">This is my next question. First of all, there are two ways how we can enjoy mature wine. One is that we buy young wine, and then we store it ourselves, and then we open after 10, 20, 30 years. Then another option would be for me to buy an already matured bottle.<a href="https://www.youtube.com/watch?v=0HyKycJABGQ&t=1883s">&#x21AA; 31:23</a></p>
+<h3 class="chapter"><span>Buying back vintages: risks, storage, provenance, and auction houses</span><a href="https://www.youtube.com/watch?v=0HyKycJABGQ&t=1892s">&#x21AA; 31:32</a></h3>
+<p class="q" data-t="1909">So in case of buying back vintages, how important are the factors such as provenance, storage conditions, bottle condition, reliability of the seller? Which things should we really pay attention to?<a href="https://www.youtube.com/watch?v=0HyKycJABGQ&t=1909s">&#x21AA; 31:49</a></p>
+<p data-t="1924">Well, if I can turn that slightly on its head, some of the greatest old wines I've tasted have never left the place they were produced in. So if you go to Château Latour, or you go to the first growths, they have a library of old wines. I think if Bordeaux, who have been suffering, people are not drinking as much as they used to, want to really promote their wines again, they should be keeping back some of their wines.</p>
+<p data-t="1958">Particularly the vintages that don't show well on first release. Keeping them back until they're really lovely. The thing is, though, can they get the price for that wine? At the moment, they can't. So I think until the consumer understands the joy of wonderful wines with age, and they can get a decent price for holding their wine back, that's not going to happen.</p>
+<p data-t="1986">So I think the industry's job is to show the consumer how good wines with age can be. But to come back to your question, storage conditions are absolutely essential. In this country, we're very lucky in that it's pretty cold and damp. But we've got some very good warehouses, bonded warehouses, where people can store their wine.</p>
+<p data-t="2012">In fact, I was down in Kidderminster, which is in the sort of borders of Wales recently, where there was an old nuclear bomb shelter there, which is no longer needed. It's been taken over by a company called London City Bond, and it's perfect. It's built down deep into the hillside, and it's massive, and they can store massive quantities of wine, perfect conditions. They've got the right humidity. They measure the humidity, they measure the temperature. It's very constant, and it's perfect for long-term storage of wine.</p>
+<p data-t="2042">So there are places that can do it. I think storage is absolutely essential. I think the good auction houses, because I'm a bit biased because I did work for one and I still advise a couple of auction houses, you can pick up some really good old wines quite inexpensively.</p>
+<p data-t="2068">It's worth looking around, because most of them are online these days, so they can trade internationally. It's worth looking around, because there are some real snips. But you really need to pay attention to the fill height in the neck, and the color, and not worry about the label, because the labels get damaged with aging. But it's looking at the level of the neck, whether there's any seepage, because the cork is key.</p>
+<p data-t="2104">Possibly, if I was going to advise auction houses, I would say better pictures, better notes on provenance. Not always. It's not always known, because you often get stuff and you're not sure how it's been stored. But you can tell these days. I used to have a very strong light. I could shine through the bottle, see the color if it was a bit off. There are ways of telling how well the wine's been stored.</p>
+<p data-t="2130">I tell you, when I was in the auction business, some of the wonderful cellars I would visit to sell their wine were of people who died, and so the family wanted to sell off the wine. It was so obvious that they kept their better, best bottles for a special occasion, and then they died and had not drunk them. There's something very sad about that.</p>
+<p data-t="2153">I always say, don't wait for the special moment. Enjoy it. It was sad to see that. But yes, storage is absolutely critical, and I think the auction houses should be showing the condition as well as they can. But there are some really good deals for consumers there still.</p>
+<p class="q" data-t="2173">Well, I kind of need that advice because I will be honest with you, I feel a bit intimidated by the auction houses, especially the British ones. Could it be that maybe some of the generation, including myself, that we might feel a bit that this area of wine is elitist, or maybe slightly old-fashioned as well?<a href="https://www.youtube.com/watch?v=0HyKycJABGQ&t=2173s">&#x21AA; 36:13</a></p>
+<p data-t="2199">Yeah, you're right. [laughter] It has that slight feel about it. I tell you what we used to do in New York, where we were at Christie's. We would have a pre-sale tasting, and that was the best thing we ever did because people could then tell for themselves.</p>
+<p data-t="2218">We would say to the consignor, the people sending their wine in, "We just want one bottle of this parcel." So people can really see the condition it's in and taste it. I think pre-sale tastings are very important, but if it's online stuff, that's impossible. It has that feel about it. I don't know how we make it more fun. How do we make it more fun?</p>
+<p class="q" data-t="2242">I don't know. I just sometimes think, because I do buy wine on auction online, where no one can tell me, "You don't belong here." Maybe it's something in my mind, that I feel that imposter syndrome or something.<a href="https://www.youtube.com/watch?v=0HyKycJABGQ&t=2242s">&#x21AA; 37:22</a></p>
+<p data-t="2259">Well, I think it's worth trying. Don't spend too much, that's the thing. Look for the good deals.</p>
+<p class="q" data-t="2271">I will try to do that, encouraged by you. But another passion you told, for you it is about wine education and how we communicate wine. So I wanted to ask you, what should consumer wine education start with? Do you think it is the soil and appellation and winemaking? Is it story, taste, occasion, or is it completely different?<a href="https://www.youtube.com/watch?v=0HyKycJABGQ&t=2271s">&#x21AA; 37:51</a></p>
+<h3 class="chapter"><span>How should we approach consumer wine education?</span><a href="https://www.youtube.com/watch?v=0HyKycJABGQ&t=2275s">&#x21AA; 37:55</a></h3>
+<p data-t="2296">No, absolutely not. I have a bit of a gripe with the educationalists, whether it's the Wine & Spirit Education Trust or even the Institute of Masters of Wine, because we talk about the technical things and about wine faults, and it's all too technical. The consumer is not interested in that.</p>
+<p data-t="2314">We need to get the whole industry educated, because we're mainly educating people in the industry. How many times do you give a lecture about sales and marketing to consumers, and encouraging and enthusing consumers about wine? That's so important. Anybody can make great wine, but if you can't sell it, and you can't enthuse the consumer, and can't persuade the consumer that it's something that brings you together and you should have with it...</p>
+<p data-t="2353">Actually, what worries me is that we don't meet as families and as friends around the dining room table as much as we used to. I think that's part of the issue with wine. Perhaps wine can change that. Perhaps wine can bring, because it does, and for thousands of years, you read the Bible, wine has brought people together. It still does.</p>
+<p data-t="2383">So perhaps wine can bring people around the table, whether it's a family or it's your mates, your friends, and you open an interesting bottle. It's that that we need to market. We need to market the culture, the sense of place, where it comes from, the history, all that makes it interesting. It's not lager. It's not cider. It's not gin.</p>
+<p data-t="2404">This is something. This is culture. This is real culture, and it's real interest, and it changes, and it's alive, and it brings people together. That's what we should be marketing.</p>
+<p class="q" data-t="2416">So would you agree if I would say that the younger generation is not uninterested in wine, they're just uninterested in the way wine is taught to them or presented to them?<a href="https://www.youtube.com/watch?v=0HyKycJABGQ&t=2416s">&#x21AA; 40:16</a></p>
+<p data-t="2429">I think so. I think you're absolutely right. I think that's exactly the thing. They see it as just another industrial product. It's on the masses of shelves. Actually, now I'm going to be controversial. The marketing of grape varieties, I think, has been part of the problem.</p>
+<h3 class="chapter"><span>Do wine consumers need to be educated?</span><a href="https://www.youtube.com/watch?v=0HyKycJABGQ&t=2446s">&#x21AA; 40:46</a></h3>
+<p data-t="2447">Everybody wants to drink Pinot Grigio, or Sauvignon Blanc, or Malbec, or Merlot, and the culture of where it comes from, and the place, and the way it's made, is so different. It's not just another industrial product like gin or vodka or something like that. Calling it Sauvignon Blanc or Merlot is like gin or vodka. It's not like that. Wine is so much more interesting and different.</p>
+<p data-t="2479">When I was in Bordeaux, we would never dream of talking about the grape varieties. If we used a bit of Petit Verdot or a bit of Cot, Malbec, in the blend, so what? Nothing to do with you. It's still Château this, that, or the other, and we just did the best we could.</p>
+<p class="q" data-t="2508">I like that. I had never thought about that. [laughter] So if consumer wine education is the future, do you think that there is some kind of wine education still needed?<a href="https://www.youtube.com/watch?v=0HyKycJABGQ&t=2508s">&#x21AA; 41:48</a></p>
+<p data-t="2513">Oh, absolutely. I think the future of wine is about educating the consumer, and I don't mean educating them about soils or winemaking or technical things. Fine, that's okay for wine people, but not for the consumer. But I talk to so many consumers, and they really know nothing. Absolutely nothing. They're interested, but they know absolutely nothing. Then when they ask about it, they get told technical stuff.</p>
+<p data-t="2552">That's why I love doing education with consumers. I did one last week in the RAC Club in Pall Mall, and I got up on the chair and pretended to be an airplane and all that sort of stuff. They all loved that, and we talked about the complexity of age. We talked about glassware, how important that is in showing your wine.</p>
+<p data-t="2577">We talked about the oxidative process with decanting or allowing wine... We talked about some of the things that actually make wine more and more enjoyable and different from gin and tonic or some other beverage. That's what we spoke about, and they loved it.</p>
+<p class="q" data-t="2600">Nice. So did you inspire someone?<a href="https://www.youtube.com/watch?v=0HyKycJABGQ&t=2600s">&#x21AA; 43:20</a></p>
+<p data-t="2605">I hope so. You never know. They probably thought I was crazy. [laughter]</p>
+<h3 class="chapter"><span>Can only educated consumers understand expensive wine?</span><a href="https://www.youtube.com/watch?v=0HyKycJABGQ&t=2609s">&#x21AA; 43:29</a></h3>
+<p class="q" data-t="2613">I wanted to also ask you, what are your thoughts on the notion that in order to understand more expensive bottles, the consumer must first be educated? You sometimes even hear consumers say, "I don't understand."<a href="https://www.youtube.com/watch?v=0HyKycJABGQ&t=2613s">&#x21AA; 43:33</a></p>
+<p data-t="2627">Good question. What a good question. As a marketing man, and so many marketing people know that consumers believe that if it's expensive, it's going to be good. So a lot of people use price as a marketing tool to sell more. They think if it's expensive, it's going to be good.</p>
+<p data-t="2645">I have to tell you, at one stage I was marketing manager in this country for Krug champagne, and Rémi Krug used to come to me and say, "Christopher, we've got to be the most expensive on the market because otherwise people wouldn't think we're the best."</p>
+<p data-t="2657">You just told that on camera. [laughter] Well, Rémi, sorry. I apologize, Rémi, if you see this. [laughter] But he was right. It was the best. It's a beautiful champagne. It was one of the best. Although, funny enough, I've discovered Selosse in the last 20 years. Do you know Selosse from Philippe? I think that's wonderful as well. It's not quite as expensive as Krug, but its price has gone up a lot.</p>
+<p data-t="2695">The trouble is, I've got to be very careful about what I talk about. I remember in New York talking about Clos Sainte Hune, which is one of my favorite Rieslings from Alsace, and it was on sale in Christie's, and I think it was $40 a bottle or something. This was really a long time ago. I started raving about it and saying, "This is a fantastic deal." Now the price... So I've got to be careful. I shouldn't talk too much about good deals because then the price just goes up.</p>
+<p data-t="2723">But yes, it's a good question, because price has been seen as a marketing indicator. I started a few years ago an app called... What was it called? What Wine? It was called What Wine, and we used to scan the supermarket wines. I had a tasting group who tasted all the wines blind from supermarkets, and we would value them.</p>
+<p data-t="2755">There was no relationship between what was in the bottle, the wine, and the price on the shelf. Absolutely no relationship. Some of the most expensive wines were not that good, and some of the reasonably priced wines were really good. Okay, the packaging was very different. The relationship between quality and price is quite a big subject.</p>
+<h3 class="chapter"><span>Teaching consumers how to judge a wine</span><a href="https://www.youtube.com/watch?v=0HyKycJABGQ&t=2787s">&#x21AA; 46:27</a></h3>
+<p data-t="2787">I think in terms of educating the consumer, everybody says, "Well, it's what you like." Sure, it's what you like. But I was taught as a kid what was good in a wine, and I still judge a wine by those rules. The rules were balance. In other words, it doesn't taste sharp, or it doesn't taste flabby, or it doesn't taste tannic. A nice balance, but it doesn't taste too alcoholic.</p>
+<p data-t="2825">That's one of the problems recently. Alcohol levels, I think, are sometimes too high, so you get more alcohol and you don't get that balance which brings elegance. Then persistence. Is it persistent in the mouth, and does it last? A persistent wine, you only need to sip and drink a little bit. You don't need to gulp it, because with food it just does the job.</p>
+<p data-t="2855">So persistence, and then length. Balance, elegance, persistence, that's how I judge it. But do people talk about that with the consumer? Rarely. And it's not complicated. It's not complicated.</p>
+<p data-t="2878">I've got again a bit of a gripe with wine competitions, because having been to wine competitions, and there are a lot of people there, some know a lot about wine, some don't know a lot, but they're good tasters. There's no doubt about it, if you're tasting, say, 50 or 100 wines in a day, wines with a bit more alcohol stand out.</p>
+<p data-t="2896">If you're just tasting a little bit, it's not one you want to sit and drink over dinner, of course, but they stand out, and so they give them a higher score, a higher point. The winemakers know that. So there's been this trend towards higher alcohol, and they blame it on global warming. But there are all sorts of ways of keeping sugar levels down: training, cooler sites, and higher sites. You're seeing all sorts of trends in that world at the moment, which is good.</p>
+<p data-t="2926">I worry about alcohol levels going up. When I was younger and tasting wine, 10%, 11%, 11.5% was normal. If it was 12.5% or 13%, it was a very warm vintage. Now 13% is middle, and 14% up to almost 15%, sometimes 14.5%, is too much. The wines are not balanced in my view, and I don't enjoy them.</p>
+<p class="q" data-t="2956">So you're not a fan of Californian wines. We can cut that out. Don't worry. [laughter]<a href="https://www.youtube.com/watch?v=0HyKycJABGQ&t=2956s">&#x21AA; 49:16</a></p>
+<h3 class="chapter"><span>Christopher Burr on Californian wines</span><a href="https://www.youtube.com/watch?v=0HyKycJABGQ&t=2958s">&#x21AA; 49:18</a></h3>
+<p data-t="2968">Well, I used to work with Bob Mondavi. I love California wines. I think they're a bit overpriced, but I love them. There are some very fine wines. Funny enough, I was there a couple of years ago, and I was always a bit of a skeptic about Screaming Eagle, which is one of probably the most expensive wines in the world.</p>
+<p data-t="2987">I thought it was just a Bob Parker fad, big and gassy and all that. Not my thing, really. I like more subtlety and more elegance. But then I went to Screaming Eagle, and they've got a new winemaker who trained in Bordeaux there. They were dominated previously by a very lot of ripe Merlot. He's changed the assemblage. The wines are much more elegant than they used to be.</p>
+<p data-t="3020">It's really quite interesting. Actually, the guy that owns Screaming Eagle bought Bonneau du Martray. He's the guy who bought it. I rang up Jean-Charles and said, "Have you tasted Screaming Eagle?" He said, "No, but he sent me some bottles to taste." I was a bit rude about it, and then I went there and tasted it again. So I had to ring up Jean-Charles and say, "Actually, it's much better than it used to be."</p>
+<p data-t="3050">But it was quite interesting. I sat next to Bob Parker at a dinner in New York a few years ago, and he was very honest with me. We were tasting, actually, Château Latour. Artemis had bought a shareholding in Christie's, where I was working, and so we did a vertical tasting from, I think, 1861 to 1961.</p>
+<p data-t="3079">I was sitting next to Parker, and he admitted to me, he said, "I didn't really understand old wines. I've learned a lot." That was honest of him. He also said, "Actually, I'm not smelling as well as I used to," which was honest of him. So he's got people helping him. But we all do that. Our nose with age is not as acute. My little boy, he can smell everything. His nose is so acute.</p>
+<p data-t="3105">As long as it's balanced. California are very good, with higher alcohol, at actually keeping the acidity and the fruit and keeping the balance of the wine, because they've been doing it for the last couple hundred years. The best ones... Actually, interestingly, when I started with Bob, most of the vineyards were in the valley floor in Napa, and now gradually they're going up the slopes, so slightly cooler sites, because they're understanding the importance of acidity.</p>
+<h3 class="chapter"><span>The real joys of being a wine lover</span><a href="https://www.youtube.com/watch?v=0HyKycJABGQ&t=3137s">&#x21AA; 52:17</a></h3>
+<p class="q" data-t="3137">Before my last question, or second to last, is there something that you wanted to talk about and I didn't ask you or we didn't tackle?<a href="https://www.youtube.com/watch?v=0HyKycJABGQ&t=3137s">&#x21AA; 52:17</a></p>
+<p data-t="3151">No. You've asked me some very difficult questions. I think, what are the joys of wine? If you said, what are the real joys of wine, I think there are two things that stick out for me. One is that I've been doing it all my life, and I'm still learning. I'm still discovering new grapes, new places, new vintages, different winemaking. It's a fascinating subject. It's really intriguing. You can never know it all.</p>
+<p data-t="3191">That's one of the things I find interesting about the subject, and I think we should pass that on to the consumer. The consumer thinks it's just another industrial product. That's the first thing. The second thing is that it brings people together. It really works. Making friends, pulling people around the table. In the wine trade, one meets and makes so many friends because it brings you together.</p>
+<p class="q" data-t="3226">All right. So the next section is going to be very quick. I will ask you a lightning round question. So this or that, and you just answer yes or no, or this or that, which one you choose. So auction room or tasting room?<a href="https://www.youtube.com/watch?v=0HyKycJABGQ&t=3226s">&#x21AA; 53:46</a></p>
+<h3 class="chapter"><span>Lightning Round: This or That</span><a href="https://www.youtube.com/watch?v=0HyKycJABGQ&t=3227s">&#x21AA; 53:47</a></h3>
+<p data-t="3241">Tasting room.</p>
+<p class="q" data-t="3246">Burgundy or Bordeaux?<a href="https://www.youtube.com/watch?v=0HyKycJABGQ&t=3246s">&#x21AA; 54:06</a></p>
+<p data-t="3246">Well, but I'm bored. I'm sorry. I think Burgundy now as I get older. It's gentler. I like gentle wines. In fact, Bob Mondavi taught me that. He said he likes gentle wines.</p>
+<p class="q" data-t="3265">Private cellar or restaurant list?<a href="https://www.youtube.com/watch?v=0HyKycJABGQ&t=3265s">&#x21AA; 54:25</a></p>
+<p data-t="3265">Gosh. Well, who has private cellars these days? I'm lucky enough to go around some pretty wonderful private cellars. I'm very fortunate some people invite me to taste their wines. But there are some good restaurant lists. That's a difficult one.</p>
+<p data-t="3286">I think what is interesting is that sommeliers who put together the restaurant list have become very good. In fact, I think passing the master sommelier might be harder than passing the master of wine. A good sommelier puts together a very good restaurant list. So I think it's got to be restaurant list.</p>
+<p class="q" data-t="3316">The critic's view or drinker's view?<a href="https://www.youtube.com/watch?v=0HyKycJABGQ&t=3316s">&#x21AA; 55:16</a></p>
+<p data-t="3323">Well, it's got to be the drinker's view, because I'm skeptical about quite a lot of critics. We should be skeptical and should question.</p>
+<p class="q" data-t="3330">Bordeaux vintages, 1982 or 1961?<a href="https://www.youtube.com/watch?v=0HyKycJABGQ&t=3330s">&#x21AA; 55:30</a></p>
+<p data-t="3341">Difficult question. Depends on the château. And actually, big bottles. Magnums. Double magnums. If you're going to buy the greatest Bordeaux, buy big bottles.</p>
+<p class="q" data-t="3360">Another question about vintages. Bordeaux vintages, 2010 or 2016?<a href="https://www.youtube.com/watch?v=0HyKycJABGQ&t=3360s">&#x21AA; 56:00</a></p>
+<p data-t="3367">Well, 2010 because it's got more age, but I still think it's young. I'm talking about the top wines.</p>
+<p class="q" data-t="3376">Provenance or bargain?<a href="https://www.youtube.com/watch?v=0HyKycJABGQ&t=3376s">&#x21AA; 56:16</a></p>
+<p data-t="3381">Gosh, provenance has got to be so important.</p>
+<p class="q" data-t="3381">Blind tasting or informed drinking?<a href="https://www.youtube.com/watch?v=0HyKycJABGQ&t=3381s">&#x21AA; 56:21</a></p>
+<p data-t="3391">Sorry, that's the same thing, isn't it? Blind tasting. All my friends do it to me. I can't go anywhere without them putting a glass in front of me saying, "Christopher, what's this?"</p>
+<p data-t="3403">Funnily enough, there was a tasting company called Indigo Wines, I think they're called. I went a couple of weeks ago, and they had a blind tasting table there, and everybody was invited to blind taste and write what they thought and put it in the thing. I thought I got it completely wrong, but the day before yesterday, I got some champagne sent to me because I apparently got them right.</p>
+<p data-t="3427">I had no idea what they were. I obviously made a good stab at it. No, I love blind tasting because it gets the mind going. I think that's the thing about wine. You have to think about it. It's not just a beverage. It gets the mind going, particularly if you don't know what vintage it is or which. I think that intellectual stimulus is good, is important.</p>
+<p class="q" data-t="3460">Okay. So blind tasting it is. And then the last question: educating consumers or seducing consumers?<a href="https://www.youtube.com/watch?v=0HyKycJABGQ&t=3460s">&#x21AA; 57:40</a></p>
+<p data-t="3466">[laughter] Well, educating them properly. I think with a bit of seduction. So not making it boring.</p>
+<h3 class="chapter"><span>Answering the previous guest’s question</span><a href="https://www.youtube.com/watch?v=0HyKycJABGQ&t=3476s">&#x21AA; 57:56</a></h3>
+<p class="q" data-t="3480">The very last question comes from the previous guest. You will also have to have a question to the next guest. The previous guest was Sarah Jane Evans.<a href="https://www.youtube.com/watch?v=0HyKycJABGQ&t=3480s">&#x21AA; 58:00</a></p>
+<p data-t="3486">Sarah Jane. Well, Spanish wine.</p>
+<p class="q" data-t="3492">Yeah. We were talking about Cavas. So her question is: is Bordeaux en primeur dead? You can answer yes or no, or you can elaborate if you want to.<a href="https://www.youtube.com/watch?v=0HyKycJABGQ&t=3492s">&#x21AA; 58:12</a></p>
+<p data-t="3508">Let me elaborate. En primeur basically saved Bordeaux back in the '50s. It was basically started by John Avery, an English merchant, who encouraged them to do it. I remember going in there in the '60s, and a lot of the châteaux were run down, and they just weren't doing any good.</p>
+<p data-t="3534">The cash flow of en primeur saved the business, saved them. They were able to invest and make better wine through the '70s and '80s and '90s. Then they started pricing en primeur, in my view, too highly. Now you can buy mature wine cheaper than you can buy en primeur, which is loopy.</p>
+<p data-t="3560">I think now Bordeaux is making really good wine, and they've got lots of wine to sell. I think it's dead, and I think it's well dead, and I think it should be dead. If they want to sell the wine before it's bottled, fine, but sell it cheaply like it used to be.</p>
+<p data-t="3587">I think Latour have got it right, selling a wine when it starts to become more interesting after five or six years. I think that makes sense. So I think it should die.</p>
+<p class="q" data-t="3604">Okay. Thank you for your honest answer. Do you have any question for the next guest, which we don't know who is going to be?<a href="https://www.youtube.com/watch?v=0HyKycJABGQ&t=3604s">&#x21AA; 1:00:04</a></p>
+<p data-t="3610">How do we seduce the consumer?</p>
+<p data-t="3616">I love it. Okay, I will make sure to ask that of the next guest we meet. And there's a small gift, and thank you very much. I don't know if that will be of value, or maybe in the garden work. Well, I don't look like Donald Trump, do I, in this? Oh, perfect. [laughter]</p>
+    </div>
+  </main>
+  <script>
+  async function toggleYtBookmark(btn) {
+    const payload = {
+      title: btn.dataset.title,
+      url: btn.dataset.url,
+      filename: btn.dataset.filename,
+      interviewDate: btn.dataset.date,
+      source: 'YT',
+      expert: btn.dataset.channel,
+    };
+    try {
+      const resp = await fetch('/bookmark', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload),
+      });
+      const result = await resp.json();
+      setYtBookmarkState(btn, !!result.bookmarked);
+    } catch (e) {
+      console.error('Bookmark toggle failed:', e);
+    }
+  }
+  function setYtBookmarkState(btn, on) {
+    btn.classList.toggle('is-bookmarked', on);
+    btn.innerHTML = on ? '&#9733;' : '&#9734;';
+    btn.title = on ? 'Bookmarked' : 'Bookmark';
+    btn.setAttribute('aria-label', on ? 'Bookmarked' : 'Bookmark');
+  }
+  (async function initYtBookmarkState() {
+    const btn = document.getElementById('yt-bookmark-btn');
+    if (!btn || !btn.dataset.filename) return;
+    try {
+      const resp = await fetch('/bookmarks');
+      if (!resp.ok) return;
+      const list = await resp.json();
+      if (Array.isArray(list) && list.some(b => b && b.filename === btn.dataset.filename)) {
+        setYtBookmarkState(btn, true);
+      }
+    } catch (e) { /* offline -- leave default state */ }
+  })();
+
+  async function shareYtPage(btn) {
+    const original = btn.innerHTML;
+    btn.disabled = true;
+    btn.innerHTML = '&hellip;';
+    try {
+      const resp = await fetch('/share', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ filename: btn.dataset.filename }),
+      });
+      const result = await resp.json();
+      if (!result.ok) throw new Error(result.error || 'Share failed');
+      try { await navigator.clipboard.writeText(result.url); } catch (e) {}
+      btn.innerHTML = '&#10003;';
+      btn.title = 'Copied ' + result.url;
+      setTimeout(() => { btn.innerHTML = original; btn.disabled = false; btn.title = 'Share'; }, 2500);
+    } catch (e) {
+      console.error('Share failed:', e);
+      btn.innerHTML = '!';
+      btn.title = 'Share failed: ' + (e && e.message || e);
+      setTimeout(() => { btn.innerHTML = original; btn.disabled = false; btn.title = 'Share'; }, 3000);
+    }
+  }
+
+  // When the page is viewed from somewhere other than the local Reader
+  // server (e.g. a shared copy on GitHub Pages), hide the interactive
+  // buttons whose endpoints only exist on localhost.
+  (function hideLocalOnlyControls() {
+    const host = location.hostname;
+    const isLocal = host === 'localhost' || host === '127.0.0.1' || host === '';
+    if (isLocal) return;
+    const actions = document.querySelector('.yt-header-actions');
+    if (!actions) return;
+    const bookmark = actions.querySelector('#yt-bookmark-btn');
+    const share = actions.querySelector('#yt-share-btn');
+    if (bookmark) bookmark.remove();
+    if (share) share.remove();
+  })();
+  </script>
+</body>
+</html>
