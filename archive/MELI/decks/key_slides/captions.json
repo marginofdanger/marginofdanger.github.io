@@ -1,0 +1,164 @@
+[
+  {
+    "order": 1,
+    "path": "MELI\\decks\\key_slides\\slide_01.png",
+    "caption": "LatAm e-commerce TAM in 2011: online retail ~$15-28B at +22-23% CAGR, e-commerce <2% of retail - the secular runway the whole thesis rests on (Euromonitor/IDC, dated).",
+    "source_deck": "2011-10-20 \u00b7 Investor Day (San Francisco)"
+  },
+  {
+    "order": 2,
+    "path": "MELI\\decks\\key_slides\\slide_02.png",
+    "caption": "comScore 2010 traffic share: ML is the #1 e-commerce property in Brazil (20%), Argentina (30%), Mexico (35%) and LatAm (22%) - ahead of Submarino, BuscaPe and Amazon.",
+    "source_deck": "2011-10-20 \u00b7 Investor Day (San Francisco)"
+  },
+  {
+    "order": 3,
+    "path": "MELI\\decks\\key_slides\\slide_03.png",
+    "caption": "The moat framing: from auctions site to e-commerce platform - four synergistic units (Marketplace, Ads, Pago, Shops) on Property->Platform and Closed->Open axes.",
+    "source_deck": "2011-10-20 \u00b7 Investor Day (San Francisco)"
+  },
+  {
+    "order": 4,
+    "path": "MELI\\decks\\key_slides\\slide_04.png",
+    "caption": "Why payments lift commerce: trust, access to credit, payment-option multiplicity and mobile each multiply conversion 3x/6x/12x - Pago raises GMV, not just adds a fee.",
+    "source_deck": "2011-10-20 \u00b7 Investor Day (San Francisco)"
+  },
+  {
+    "order": 5,
+    "path": "MELI\\decks\\key_slides\\slide_05.png",
+    "caption": "The working-capital engine: MELI runs Mercado Pago cash-positive by discounting/selling card receivables to banks, taking no credit risk on installments (>half of TPV).",
+    "source_deck": "2011-10-20 \u00b7 Investor Day (San Francisco)"
+  },
+  {
+    "order": 6,
+    "path": "MELI\\decks\\key_slides\\slide_06.png",
+    "caption": "Technology foundation: the 2010 year-long rewrite split a monolith into ~500 interconnected cells behind one API - the platform that enabled later scaling.",
+    "source_deck": "2011-10-20 \u00b7 Investor Day (San Francisco)"
+  },
+  {
+    "order": 7,
+    "path": "MELI\\decks\\key_slides\\slide_07.png",
+    "caption": "The full monetization stack: every revenue lever and its pricing model - final-value/placement/insertion fees, off-platform & spread-on-credit, CPC/CPM ads, SaaS subscription.",
+    "source_deck": "2011-10-20 \u00b7 Investor Day (San Francisco)"
+  },
+  {
+    "order": 8,
+    "path": "MELI\\decks\\key_slides\\slide_08.png",
+    "caption": "Operating leverage delivered: opex fell from ~33% to ~22% of revenue (2007-H1'11) while protecting product development and S&M - proof the 'scale in opex' promise is real.",
+    "source_deck": "2011-10-20 \u00b7 Investor Day (San Francisco)"
+  },
+  {
+    "order": 9,
+    "path": "MELI\\decks\\key_slides\\slide_09.png",
+    "caption": "2014 competitive map by country: named rivals pre-Shopee/Shein - Netshoes, Americanas, B2W/Submarino, Magalu, OLX, Walmart, AliExpress, Linio, Dafiti, Falabella.",
+    "source_deck": "2014-10-15 \u00b7 Investor Day (New York)"
+  },
+  {
+    "order": 10,
+    "path": "MELI\\decks\\key_slides\\slide_10.png",
+    "caption": "The seven strategic initiatives (2014) - payments, mobile, MercadoEnvios logistics, brands/large retail, verticals, CX-as-advantage, developer platform. All since executed.",
+    "source_deck": "2014-10-15 \u00b7 Investor Day (New York)"
+  },
+  {
+    "order": 11,
+    "path": "MELI\\decks\\key_slides\\slide_11.png",
+    "caption": "Penetration funnel: 600M people -> 300M internet users -> 200M online shoppers in LatAm, against MELI's then-small GMV/TPV/Financing/Envios footprint.",
+    "source_deck": "2014-10-15 \u00b7 Investor Day (New York)"
+  },
+  {
+    "order": 12,
+    "path": "MELI\\decks\\key_slides\\slide_12.png",
+    "caption": "How the units stack on one market: Brazil's progression 2011->2014 in monetized marketplace, payments, financing and shipping penetration - the cross-sell flywheel in one chart.",
+    "source_deck": "2014-10-15 \u00b7 Investor Day (New York)"
+  },
+  {
+    "order": 13,
+    "path": "MELI\\decks\\key_slides\\slide_13.png",
+    "caption": "Execution velocity from the cell architecture: from 1 large deploy a week to ~5,000 small deploys a week; 25% of new listings created via the open-platform API by 2014.",
+    "source_deck": "2014-10-15 \u00b7 Investor Day (New York)"
+  },
+  {
+    "order": 14,
+    "path": "MELI\\decks\\key_slides\\slide_14.png",
+    "caption": "Financing economics: no credit risk and positive cash flow by selling receivables; ~half of TPV paid in installments - the structural funding model behind Mercado Credito.",
+    "source_deck": "2014-10-15 \u00b7 Investor Day (New York)"
+  },
+  {
+    "order": 15,
+    "path": "MELI\\decks\\key_slides\\slide_15.png",
+    "caption": "Transition to the enhanced marketplace: shipping, category expansion/official stores, and payments each lift the consolidated take rate (6.2%->6.9%, 2011-H1'14).",
+    "source_deck": "2014-10-15 \u00b7 Investor Day (New York)"
+  },
+  {
+    "order": 16,
+    "path": "MELI\\decks\\key_slides\\slide_16.png",
+    "caption": "The capital-allocation hierarchy management still follows: prioritize top-line growth, invest behind strategic lines, scale non-strategic opex, deploy aggressively to under-indexed regions/M&A.",
+    "source_deck": "2014-10-15 \u00b7 Investor Day (New York)"
+  },
+  {
+    "order": 17,
+    "path": "MELI\\decks\\key_slides\\slide_17.png",
+    "caption": "Gross-margin mechanics: the structural GM drag is the 1P first-party business plus shipping-carrier costs as the managed network expands (GM 48.6%->44.3% YoY in Q2'21).",
+    "source_deck": "2021-08-04 \u00b7 Q2 2021 earnings deck"
+  },
+  {
+    "order": 18,
+    "path": "MELI\\decks\\key_slides\\slide_18.png",
+    "caption": "Credit-policy flag: from Apr-2021 loans are written off at 360 days past due instead of 180 - a comparability break that flatters reported NPLs as the consumer/BNPL book scales.",
+    "source_deck": "2021-08-04 \u00b7 Q2 2021 earnings deck"
+  },
+  {
+    "order": 19,
+    "path": "MELI\\decks\\key_slides\\slide_19.png",
+    "caption": "Profit concentration: Brazil + Mexico generated 64% of Q2'23 Direct Contribution (up from 58%) - a profitability-by-geography read absent from the standard segment P&L.",
+    "source_deck": "2023-08-02 \u00b7 Q2 2023 earnings deck"
+  },
+  {
+    "order": 20,
+    "path": "MELI\\decks\\key_slides\\slide_20.png",
+    "caption": "Peak credit profitability: NIMAL hit 36.8% in Q2'23 with the portfolio split by book (in-store/online merchant, credit card, consumer) and per-book exposure and duration.",
+    "source_deck": "2023-08-02 \u00b7 Q2 2023 earnings deck"
+  },
+  {
+    "order": 21,
+    "path": "MELI\\decks\\key_slides\\slide_21.png",
+    "caption": "Commerce take-rate decomposition: Q2'23 3P take rate 15.1% plus 1P 3.3% = 15.6%, showing how monetization splits between asset-light 3P and gross-revenue 1P.",
+    "source_deck": "2023-08-02 \u00b7 Q2 2023 earnings deck"
+  },
+  {
+    "order": 22,
+    "path": "MELI\\decks\\key_slides\\slide_22.png",
+    "caption": "FY2025 credit book by product: credit card is now the largest at 45% (vs consumer 36%, merchant 17%, auto 2%); avg exposure $202/$433/$542/$7,087, duration 3.8/2.7/3.3/19.4 months.",
+    "source_deck": "2026-02-24 \u00b7 Q4 2025 earnings deck"
+  },
+  {
+    "order": 23,
+    "path": "MELI\\decks\\key_slides\\slide_23.png",
+    "caption": "Margin compression framed as a choice: operating margin fell to 10.1% and net margin to 6.4% in Q4'25, which management attributes to deliberate long-term growth investment.",
+    "source_deck": "2026-02-24 \u00b7 Q4 2025 earnings deck"
+  },
+  {
+    "order": 24,
+    "path": "MELI\\decks\\key_slides\\slide_24.png",
+    "caption": "Leverage climbing on credit funding: Net Debt/Adj. EBITDA LTM rose from 0.69x (Q4'24) to 1.16x (Q4'25) as the Mercado Pago credit book is funded - the binding constraint surfacing.",
+    "source_deck": "2026-02-24 \u00b7 Q4 2025 earnings deck"
+  },
+  {
+    "order": 25,
+    "path": "MELI\\decks\\key_slides\\slide_25.png",
+    "caption": "NIMAL inflection: net interest margin after losses dropped to 17.8% in Q1'26 (from 23.3% in Q4'25) on a higher credit-card mix and rising Brazil consumer provisions - below the FY2025 22.4%.",
+    "source_deck": "2026-05-07 \u00b7 Q1 2026 earnings deck"
+  },
+  {
+    "order": 26,
+    "path": "MELI\\decks\\key_slides\\slide_26.png",
+    "caption": "Q1'26 EBIT bridge (-600bps YoY to 6.9%): bad debt (-390bps) and COGS (-300bps) are the drags, partly offset by product-development and G&A scale - tying margin to the credit book.",
+    "source_deck": "2026-05-07 \u00b7 Q1 2026 earnings deck"
+  },
+  {
+    "order": 27,
+    "path": "MELI\\decks\\key_slides\\slide_27.png",
+    "caption": "Leverage at 1.46x Net Debt/Adj. EBITDA in Q1'26, up from 0.83x a year earlier; management attributes the rise specifically to funding Mercado Pago's credit operations.",
+    "source_deck": "2026-05-07 \u00b7 Q1 2026 earnings deck"
+  }
+]

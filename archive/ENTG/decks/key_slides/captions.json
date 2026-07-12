@@ -1,0 +1,170 @@
+[
+  {
+    "order": 1,
+    "path": "ENTG\\decks\\key_slides\\slide_01.png",
+    "caption": "Unit-driven thesis: silicon wafer units (MSI) compound at 6.5% vs wafer-fab-equipment spend at 2.8% (2001-2018), so consumables tied to wafers-out are steadier than the WFE cycle.",
+    "source_deck": "2015-07-14 - Analyst Meeting"
+  },
+  {
+    "order": 2,
+    "path": "ENTG\\decks\\key_slides\\slide_02.png",
+    "caption": "Diverse customer mix across equipment makers, device makers and materials suppliers; top-10 customers ~43% of sales in 2015 (rising to ~45-50% today).",
+    "source_deck": "2015-07-14 - Analyst Meeting"
+  },
+  {
+    "order": 3,
+    "path": "ENTG\\decks\\key_slides\\slide_03.png",
+    "caption": "Breadth map: market-leadership positions across the entire IC wafer-fabrication flow (litho, etch, deposition, CMP, implant, clean, fab facility) - the core breadth moat claim.",
+    "source_deck": "2015-07-14 - Analyst Meeting"
+  },
+  {
+    "order": 4,
+    "path": "ENTG\\decks\\key_slides\\slide_04.png",
+    "caption": "Switching-cost proxy: joint-development agreements with top IDMs/OEMs grew 12 to 25 to 47 to 67 over 2011-2014 as Entegris embedded into customer roadmaps.",
+    "source_deck": "2015-07-14 - Analyst Meeting"
+  },
+  {
+    "order": 5,
+    "path": "ENTG\\decks\\key_slides\\slide_05.png",
+    "caption": "Technology inflections (multi-patterning, 3D NAND, FinFET, cobalt) sized as an incremental revenue opportunity 'well in excess of $100M by 2018.'",
+    "source_deck": "2015-07-14 - Analyst Meeting"
+  },
+  {
+    "order": 6,
+    "path": "ENTG\\decks\\key_slides\\slide_06.png",
+    "caption": "Served-market map: MC in a $20B+ filtration market and SCEM in a $24B electronic-materials market; ~$3.8B total served available market (2016).",
+    "source_deck": "2017-03-20 - Analyst Meeting"
+  },
+  {
+    "order": 7,
+    "path": "ENTG\\decks\\key_slides\\slide_07.png",
+    "caption": "Competitive-advantage matrix: Entegris spans every fab-process box while each named rival plays only one or two - the clearest single view of the breadth moat.",
+    "source_deck": "2017-03-20 - Analyst Meeting"
+  },
+  {
+    "order": 8,
+    "path": "ENTG\\decks\\key_slides\\slide_08.png",
+    "caption": "Liquid filtration #1 position with named competitors Pall (Danaher), Parker Hannifin, 3M - the per-line rank/rival data the filings omit.",
+    "source_deck": "2017-03-20 - Analyst Meeting"
+  },
+  {
+    "order": 9,
+    "path": "ENTG\\decks\\key_slides\\slide_09.png",
+    "caption": "Advanced deposition materials: #1 in solid-precursor delivery, #2 in advanced precursors; competitors Versum, Praxair, Air Liquide.",
+    "source_deck": "2017-03-20 - Analyst Meeting"
+  },
+  {
+    "order": 10,
+    "path": "ENTG\\decks\\key_slides\\slide_10.png",
+    "caption": "Division portfolio: growth profiles, product lines and unit-driven vs investment-driven split (MC 79/21, AMH 45/55, SCEM 100/0).",
+    "source_deck": "2017-03-20 - Analyst Meeting"
+  },
+  {
+    "order": 11,
+    "path": "ENTG\\decks\\key_slides\\slide_11.png",
+    "caption": "Materials intensity is the growth-above-market lever: ~2x materials spend per wafer across a node (logic 28-to-7nm ~2.2x; 3D NAND 64-to-128L ~1.8x).",
+    "source_deck": "2018-03-20 - Analyst Meeting"
+  },
+  {
+    "order": 12,
+    "path": "ENTG\\decks\\key_slides\\slide_12.png",
+    "caption": "Customer economics of purity: a 1% yield gain is worth ~$150M/yr net profit in a leading-edge logic fab, ~$110M/yr in 3D NAND - why fabs pay for contamination control.",
+    "source_deck": "2018-03-20 - Analyst Meeting"
+  },
+  {
+    "order": 13,
+    "path": "ENTG\\decks\\key_slides\\slide_13.png",
+    "caption": "2017 sales mix: Fabs 48% / OEMs 16% / wafer growers 12% / chemicals 12%; of fab sales, Foundry/Logic 65%, NAND 23%, DRAM 12% (foundry-heavy skew).",
+    "source_deck": "2018-03-20 - Analyst Meeting"
+  },
+  {
+    "order": 14,
+    "path": "ENTG\\decks\\key_slides\\slide_14.png",
+    "caption": "Capital-allocation record 2013-2017 (~$2.0B): Acquisitions $843M, ER&D $463M, CapEx $349M, Debt $326M; buyback initiated Q3-2017, dividend initiated Oct-2017.",
+    "source_deck": "2018-03-20 - Analyst Meeting"
+  },
+  {
+    "order": 15,
+    "path": "ENTG\\decks\\key_slides\\slide_15.png",
+    "caption": "SAES Pure Gas acquisition (Jun 2018): $355M at ~9x EBITDA pro-forma; ~$91M revenue, ~$33M EBITDA; accretive $0.08-0.10 (2018) and $0.17-0.20 (2019).",
+    "source_deck": "2018-07-11 - Investor Update"
+  },
+  {
+    "order": 16,
+    "path": "ENTG\\decks\\key_slides\\slide_16.png",
+    "caption": "Outperformance decomposed, 2015-2020 CAGR: GDP 1% < blended market 5% < organic 9% < as-reported 11%.",
+    "source_deck": "2020-11-17 - Investor & Analyst Day"
+  },
+  {
+    "order": 17,
+    "path": "ENTG\\decks\\key_slides\\slide_17.png",
+    "caption": "Content-per-wafer scales with the node: Entegris content is highest (++++) at <5nm logic and 256L+ NAND as leading-edge share of capacity rises.",
+    "source_deck": "2020-11-17 - Investor & Analyst Day"
+  },
+  {
+    "order": 18,
+    "path": "ENTG\\decks\\key_slides\\slide_18.png",
+    "caption": "Global/Asia footprint: revenue from Asia plants 22% to 40% (2010-2020E), Asia headcount 30% to 45%; Taiwan Manufacturing Center announced (localization + supply-chain resilience).",
+    "source_deck": "2020-11-17 - Investor & Analyst Day"
+  },
+  {
+    "order": 19,
+    "path": "ENTG\\decks\\key_slides\\slide_19.png",
+    "caption": "Innovation engine: NPD stage-gate with kill-gates; project spend Breakthrough/Platform 59% / Derivative 27% / Sustaining 14%; new-product-revenue target ~$600M to ~$920M by 2023.",
+    "source_deck": "2020-11-17 - Investor & Analyst Day"
+  },
+  {
+    "order": 20,
+    "path": "ENTG\\decks\\key_slides\\slide_20.png",
+    "caption": "Standalone (pre-CMC) organic path: 2020 $1.83B / EPS $2.47 / ROIC ~16% to 2023 target $2.4B / >$3.55 / ROIC ~20% (ROIC = adj NOPAT/(invested capital - cash)).",
+    "source_deck": "2020-11-17 - Investor & Analyst Day"
+  },
+  {
+    "order": 21,
+    "path": "ENTG\\decks\\key_slides\\slide_21.png",
+    "caption": "Standalone annual target model: revenue $1.8-2.6B at ~24-28% adj operating margin, ~29-33% EBITDA, non-GAAP EPS >$2.35 to >$4.00; 40% incremental EBITDA flow-through.",
+    "source_deck": "2020-11-17 - Investor & Analyst Day"
+  },
+  {
+    "order": 22,
+    "path": "ENTG\\decks\\key_slides\\slide_22.png",
+    "caption": "Post-CMC 'at a glance': four divisions (MC 23% / AMH 21% / SCEM 28% / APS-planarization 30%), ~$4B pro-forma revenue, ~90% semi, ~80% unit-driven.",
+    "source_deck": "2022-09-22 - Investor & Analyst Update"
+  },
+  {
+    "order": 23,
+    "path": "ENTG\\decks\\key_slides\\slide_23.png",
+    "caption": "Resilient-model metrics: no single product platform >4% of sales, top-10 customers ~45%, one customer >10%, ~4,400 patents, ~440 bps average 2019-2021 outperformance.",
+    "source_deck": "2022-09-22 - Investor & Analyst Update"
+  },
+  {
+    "order": 24,
+    "path": "ENTG\\decks\\key_slides\\slide_24.png",
+    "caption": "APS = Advanced Planarization Solutions (the CMC/CMP business): $1,083M revenue in 2021 at ~25% margin - note this 'APS' differs from today's Advanced Purity Solutions.",
+    "source_deck": "2022-09-22 - Investor & Analyst Update"
+  },
+  {
+    "order": 25,
+    "path": "ENTG\\decks\\key_slides\\slide_25.png",
+    "caption": "Post-CMC debt stack: ~$6.1B total at ~5.6% blended rate, ~80% of term loan hedged; each $100M paydown is ~3.5 cents of EPS.",
+    "source_deck": "2022-09-22 - Investor & Analyst Update"
+  },
+  {
+    "order": 26,
+    "path": "ENTG\\decks\\key_slides\\slide_26.png",
+    "caption": "The 2022 'value compounder' targets: 2025 revenue ~$5.2B, EBITDA 32% margin, EPS >$6.00 - which FY2025 actuals ($3.2B / $2.75) badly missed.",
+    "source_deck": "2022-09-22 - Investor & Analyst Update"
+  },
+  {
+    "order": 27,
+    "path": "ENTG\\decks\\key_slides\\slide_27.png",
+    "caption": "Bridge vs 2021 analyst day: 22% growth outlook, mostly higher M&A (CMC) plus organic outperformance - expectations reset upward just before the 2023-24 downturn.",
+    "source_deck": "2022-09-22 - Investor & Analyst Update"
+  },
+  {
+    "order": 28,
+    "path": "ENTG\\decks\\key_slides\\slide_28.png",
+    "caption": "Current two-segment reality (recast Q4 2024): Materials Solutions $1,407M and Advanced Purity Solutions $1,799M in FY2025, at ~20.8% and ~25.0% adj segment margins.",
+    "source_deck": "2026-02-10 - Q4 2025 Earnings"
+  }
+]

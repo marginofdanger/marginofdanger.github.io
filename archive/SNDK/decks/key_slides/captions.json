@@ -1,0 +1,182 @@
+[
+  {
+    "order": 1,
+    "path": "SNDK\\decks\\key_slides\\slide_01.png",
+    "caption": "The pitch that NAND is now investable: ~$100B TAM ahead, slower/more efficient node migrations, and structurally lower industry capital investment.",
+    "source_deck": "2025-02-11 \u00b7 Investor Day 2025"
+  },
+  {
+    "order": 2,
+    "path": "SNDK\\decks\\key_slides\\slide_02.png",
+    "caption": "NAND bit demand history and forecast: +35% CAGR historically, +13% recent, high-teens forecast to 2028; GenAI/LLM-training demand growing 29%/yr (TechInsights Q4 2024).",
+    "source_deck": "2025-02-11 \u00b7 Investor Day 2025"
+  },
+  {
+    "order": 3,
+    "path": "SNDK\\decks\\key_slides\\slide_03.png",
+    "caption": "Industry NAND WFE capex and capital intensity CY2012-CY2026E: intensity peaked above 50% (2019-2022) and is cut to 26-28% in 2024E-2026E \u2014 the supply-discipline argument in one chart.",
+    "source_deck": "2025-02-11 \u00b7 Investor Day 2025"
+  },
+  {
+    "order": 4,
+    "path": "SNDK\\decks\\key_slides\\slide_04.png",
+    "caption": "Cost curve slowdown: four 2D NAND generations cut cost/bit 24%/yr vs 11%/yr for four 3D generations \u2014 management's case that scaling economics now favor price/margin over deflation.",
+    "source_deck": "2025-02-11 \u00b7 Investor Day 2025"
+  },
+  {
+    "order": 5,
+    "path": "SNDK\\decks\\key_slides\\slide_05.png",
+    "caption": "17 generations of NAND and >1,000x cost reduction (2001-2023), with world-first MLC, TLC and QLC \u2014 the technology lineage Sandisk claims from the legacy SanDisk era.",
+    "source_deck": "2025-02-11 \u00b7 Investor Day 2025"
+  },
+  {
+    "order": 6,
+    "path": "SNDK\\decks\\key_slides\\slide_06.png",
+    "caption": "Scaling-strategy map: Sandisk reaches the same GB/cm2 with materially fewer layers than competition by leading in lateral/logical scaling \u2014 fewer layers means less deposition/etch capex per bit.",
+    "source_deck": "2025-02-11 \u00b7 Investor Day 2025"
+  },
+  {
+    "order": 7,
+    "path": "SNDK\\decks\\key_slides\\slide_07.png",
+    "caption": "Capital-efficiency benchmark: industry flash capex per % petabyte output increase ran 1.44x-2.41x the Sandisk+Kioxia level (2018-2024, TrendForce) \u2014 the quantified moat claim for JV cost leadership.",
+    "source_deck": "2025-02-11 \u00b7 Investor Day 2025"
+  },
+  {
+    "order": 8,
+    "path": "SNDK\\decks\\key_slides\\slide_08.png",
+    "caption": "BiCS8 QLC vs competition: +67% IO speed, 34% lower read latency, 30% better write power efficiency vs competitor Gen8 (11%/27%/28% vs Gen9) \u2014 Sandisk estimates.",
+    "source_deck": "2025-02-11 \u00b7 Investor Day 2025"
+  },
+  {
+    "order": 9,
+    "path": "SNDK\\decks\\key_slides\\slide_09.png",
+    "caption": "Product segment strategy over the 1+ZB 2025 demand pool: aggressive growth in Data Center (298EB), sustained leadership in Client (277EB) and Consumer (59EB), deliberately selective in Mobile (372EB).",
+    "source_deck": "2025-02-11 \u00b7 Investor Day 2025"
+  },
+  {
+    "order": 10,
+    "path": "SNDK\\decks\\key_slides\\slide_10.png",
+    "caption": "Client SSD portfolio: claims 'leading supplier' with 25%+ global client market share; note the still-WD-branded Blue/Green/Black lines sold under transitional license.",
+    "source_deck": "2025-02-11 \u00b7 Investor Day 2025"
+  },
+  {
+    "order": 11,
+    "path": "SNDK\\decks\\key_slides\\slide_11.png",
+    "caption": "Client SSD technology transitions: QLC and PCIe Gen5 each ramp from near-zero in 2025 toward majority mix by 2028 \u2014 the roadmap behind client ASP/cost assumptions.",
+    "source_deck": "2025-02-11 \u00b7 Investor Day 2025"
+  },
+  {
+    "order": 12,
+    "path": "SNDK\\decks\\key_slides\\slide_12.png",
+    "caption": "Enterprise SSD capacity roadmap: 128TB (CY25) to 256TB (CY26) to 512TB to 1PB (CY27) on the UltraQLC platform.",
+    "source_deck": "2025-02-11 \u00b7 Investor Day 2025"
+  },
+  {
+    "order": 13,
+    "path": "SNDK\\decks\\key_slides\\slide_13.png",
+    "caption": "Consumer franchise economics: ~73% aided brand awareness and ~45% global revenue share in branded flash (2024 internal study) \u2014 the brand premium argument for the retail business.",
+    "source_deck": "2025-02-11 \u00b7 Investor Day 2025"
+  },
+  {
+    "order": 14,
+    "path": "SNDK\\decks\\key_slides\\slide_14.png",
+    "caption": "Flash Ventures at scale: Sandisk+Kioxia produce nearly 1/3 of all NAND bits (LTM CQ3'24); megasite capacity is 80% JV / 20% Kioxia-only, JV output split 50/50.",
+    "source_deck": "2025-02-11 \u00b7 Investor Day 2025"
+  },
+  {
+    "order": 15,
+    "path": "SNDK\\decks\\key_slides\\slide_15.png",
+    "caption": "The off-balance-sheet capex table: Sandisk's share of JV gross capex was $1,571M (16% of revenue) FY22, $1,407M (23%) FY23, $533M (8%) FY24, largely funded by subsidies/leases and tool depreciation charged through COGS.",
+    "source_deck": "2025-02-11 \u00b7 Investor Day 2025"
+  },
+  {
+    "order": 16,
+    "path": "SNDK\\decks\\key_slides\\slide_16.png",
+    "caption": "Carve-out financial history: revenue $9,754M (FY22) to $6,086M (FY23) to $6,663M (FY24); GAAP gross margin 33% / 7% / 16% / 36% (1H'FY25) \u2014 the cyclicality Sandisk inherited.",
+    "source_deck": "2025-02-11 \u00b7 Investor Day 2025"
+  },
+  {
+    "order": 17,
+    "path": "SNDK\\decks\\key_slides\\slide_17.png",
+    "caption": "Capitalization at separation: $1,339M cash vs ~$1,943M spin debt ($604M net debt); priority one is reaching net cash within four quarters, then balancing reinvestment, debt paydown and returns.",
+    "source_deck": "2025-02-11 \u00b7 Investor Day 2025"
+  },
+  {
+    "order": 18,
+    "path": "SNDK\\decks\\key_slides\\slide_18.png",
+    "caption": "The through-cycle model: bit growth with market (mid-to-high teens), low-teens cost decline/yr, ~35% non-GAAP gross margin, ~20% operating margin, mid-teens gross capex, low-teens FCF margin.",
+    "source_deck": "2025-02-11 \u00b7 Investor Day 2025"
+  },
+  {
+    "order": 19,
+    "path": "SNDK\\decks\\key_slides\\slide_19.png",
+    "caption": "Earnings power target: at $10B revenue Sandisk expects ~20% non-GAAP operating margin, $1.2B+ FCF, gross debt under $1B and net cash.",
+    "source_deck": "2025-02-11 \u00b7 Investor Day 2025"
+  },
+  {
+    "order": 20,
+    "path": "SNDK\\decks\\key_slides\\slide_20.png",
+    "caption": "BiCS8 transition plan: 10% of customer bits by end-FY25, 40-50% by end-FY26, prominent node by late FY26/early CY27 \u2014 plus CY25 gross capex guided mid-to-high teens % of revenue.",
+    "source_deck": "2025-02-11 \u00b7 Investor Day 2025"
+  },
+  {
+    "order": 21,
+    "path": "SNDK\\decks\\key_slides\\slide_21.png",
+    "caption": "The memory-wall setup for HBF: DRAM cost/GB now scaling <5%/yr and HBM rising from 48% to 68% of GPU-card BOM cost (2020-2025) \u2014 the opening Sandisk sees for flash in AI memory.",
+    "source_deck": "2025-02-11 \u00b7 Investor Day 2025"
+  },
+  {
+    "order": 22,
+    "path": "SNDK\\decks\\key_slides\\slide_22.png",
+    "caption": "Sandisk 3D Matrix Memory: DRAM-like performance at 4x capacity and 50% bit cost, CXL-compatible, with a cost advantage vs DRAM projected to widen over six years.",
+    "source_deck": "2025-02-11 \u00b7 Investor Day 2025"
+  },
+  {
+    "order": 23,
+    "path": "SNDK\\decks\\key_slides\\slide_23.png",
+    "caption": "High Bandwidth Flash (HBF): 16-die stack matching HBM bandwidth with 8-16x capacity at similar cost, enabled by BiCS+CBA and proprietary low-warpage stacking; architecture developed with major AI players.",
+    "source_deck": "2025-02-11 \u00b7 Investor Day 2025"
+  },
+  {
+    "order": 24,
+    "path": "SNDK\\decks\\key_slides\\slide_24.png",
+    "caption": "HBF generational roadmap: Gen2/Gen3 target 1.5x/2x capacity, 1.45x/2x read bandwidth and 0.8x/0.64x energy per bit vs Gen1.",
+    "source_deck": "2025-02-11 \u00b7 Investor Day 2025"
+  },
+  {
+    "order": 25,
+    "path": "SNDK\\decks\\key_slides\\slide_25.png",
+    "caption": "FY2025 true capital intensity: Sandisk share of JV gross capex $686M + PP&E $204M = $890M gross capex (12.1% of revenue), while cash capex was net negative \u2014 the recurring reconciliation of JV-funded tooling.",
+    "source_deck": "2025-08-14 \u00b7 Q4 FY2025 earnings"
+  },
+  {
+    "order": 26,
+    "path": "SNDK\\decks\\key_slides\\slide_26.png",
+    "caption": "Flash Ventures operational framework: wafers purchased at cost plus small markup, Sandisk pays JV expenses (incl. equipment depreciation) and funds equipment via loans/equity/lease guarantees \u2014 the fixed-cost obligation in both directions.",
+    "source_deck": "2025-08-14 \u00b7 Q4 FY2025 earnings"
+  },
+  {
+    "order": 27,
+    "path": "SNDK\\decks\\key_slides\\slide_27.png",
+    "caption": "Q1 FY2026 summary: revenue $2.3B, non-GAAP GM 29.9%, adjusted FCF $448M; demand outpacing supply and net cash reached ~6 months ahead of the Investor Day target.",
+    "source_deck": "2025-11-06 \u00b7 Q1 FY2026 earnings"
+  },
+  {
+    "order": 28,
+    "path": "SNDK\\decks\\key_slides\\slide_28.png",
+    "caption": "Q2 FY2026 inflection: ASP/GB up mid-30s% QoQ on bits up only low-single digits; revenue ~$3.0B, non-GAAP GM 51.1%, EPS $6.20, adjusted FCF $843M.",
+    "source_deck": "2026-01-29 \u00b7 Q2 FY2026 earnings"
+  },
+  {
+    "order": 29,
+    "path": "SNDK\\decks\\key_slides\\slide_29.png",
+    "caption": "Q3 FY2026 summary: revenue $5.95B, non-GAAP GM 78.4%, EPS $23.41, adjusted FCF $2,955M; three NBM partnerships secured (two more in Q4) and a $6B buyback after full debt repayment.",
+    "source_deck": "2026-04-30 \u00b7 Q3 FY2026 earnings"
+  },
+  {
+    "order": 30,
+    "path": "SNDK\\decks\\key_slides\\slide_30.png",
+    "caption": "The mix shift in one chart: Datacenter $1,467M (+233% QoQ), Edge $3,663M (+118%), Consumer $820M (-10%, seasonal) \u2014 Consumer falls to ~14% of revenue vs 31% in FY2025.",
+    "source_deck": "2026-04-30 \u00b7 Q3 FY2026 earnings"
+  }
+]
