@@ -193,6 +193,9 @@
   .fin-grid td:nth-child(n+12), .fin-grid th:nth-child(n+12) { background: #f8f5ef; }
   .fin-grid tr.row-hl > * { background: #f0e9da; }
   .fin-grid tr.row-b > * { font-weight: 700; }
+  /* §13.2 last-8-quarters grid: highlight op-margin + diluted-EPS rows, indent the y/y & q/q growth sub-rows */
+  .qtr-grid tr.row-hl > * { background: #f0e9da; }
+  .qtr-grid tr.row-indent td:first-child, .qtr-grid tr.row-indent th:first-child { padding-left: 1.9em; font-style: italic; color: #555; }
   /* §14 expectations table: tint Internal (2nd) + External (3rd) columns. */
   .exp-prom th:nth-child(2), .exp-prom td:nth-child(2),
   .exp-prom th:nth-child(3), .exp-prom td:nth-child(3) { background: #eef4fb; }
@@ -529,6 +532,56 @@
 </tbody>
 </table></div>
 <p>Ratings' 29.7% is on an external-revenue basis (before the $172M royalty MI pays to resell Ratings content); the $4,724M is total segment revenue. The FY23–FY25 columns are YoY growth of gross segment revenue; MI, Energy, and Mobility FY23 growth is lifted by the IHS Markit merger anniversary (closed February 2022). Roughly 79% of revenue is recurring (subscription, surveillance, asset-linked, recurring variable); the other ~21% is transaction revenue geared to debt-issuance volumes. <span class="ev-claim" data-ev="mix-market-geared-growth" role="button" tabindex="0" aria-label="Show evidence">The market-geared share did most of the recent work: of the $2,839M revenue increase from 2023 to 2025, 53% came from the ~31% of revenue that is issuance-, AUM-, or volume-linked (10-K FY2025 revenue-type table).</span><sup class="ev-pip" data-ev="mix-market-geared-growth" aria-hidden="true">❝</sup> The binding constraint on the whole company is demand-side customer activity — issuance volumes, ETF AUM, trading volumes, data budgets — with no supply-side capacity limit anywhere in the filings.</p>
+<p><strong>The demand-driver tree</strong> — The "~79% recurring" figure above understates the cyclicality, because the recurring bucket itself contains ~$1.2B of equity-market-beta asset-linked fees (falling ~6%/yr) plus issuance spillover, so the truly market-insensitive annuity is closer to two-thirds of revenue and about half of profit. Weighted by profit rather than revenue, the company reduces to three exposures, not one secular annuity: the global debt-issuance cycle (Ratings transaction), the equity-market level net of a fee leak (Indices asset-linked), and a genuine subscription annuity (Ratings surveillance plus MI and Energy data).</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Segment / driver</th>
+<th>Share of revenue / profit (FY2025)</th>
+<th>Ultimate exposure (decomposed)</th>
+<th>Realized 3-yr contribution (2023→2025)</th>
+<th>Robustness</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Ratings</td>
+<td>30% rev / 46% profit</td>
+<td>Not 'the ratings franchise': 52% is transaction = global debt-issuance $ volume × realized bps, a rate/credit-cycle bet (billed issuance $2,539B→$4,327B, +70%); 48% is a surveillance annuity, ~5.5%/yr, each rated bond paying to maturity</td>
+<td>~48% of group revenue growth; within Ratings, ~75% (+$1,045M) was the cyclical transaction line, ~25% (+$347M) the annuity; organic, no merger</td>
+<td>Half structural-cyclical (txn −45% in 2022, billed +54% in 2024), half structural-recurring; highest amplitude in the company</td>
+</tr>
+<tr>
+<td>Indices</td>
+<td>12% rev / 19% profit (~14% net of the 27% CME NCI)</td>
+<td>Not 'passive growth / GDP+': asset-linked (65% of segment) = equity-market LEVEL (ETF AUM) × a realized fee falling ~6%/yr (3.73→2.53 bps since 2018); ETD royalties (18%) = a long-volatility hedge on SPX volumes</td>
+<td>~16% of group growth; asset-linked +$347M while average AUM rose +65% (fees captured only ~half of AUM growth); market beta, not unit growth</td>
+<td>Structural franchise, but revenue is market beta minus fee compression; ETD is counter-cyclical (+38% in the down-2022 market)</td>
+</tr>
+<tr>
+<td>Market Intelligence</td>
+<td>32% rev / 15% profit</td>
+<td>Enterprise data/software budgets of banks and asset managers (~56% of ACV is IB + investment management); ~6% organic ACV, price-vs-seat split undisclosed</td>
+<td>~19% of group growth, organic ~6%/yr; but the 2022 reported step was the IHS Markit MERGER, and recent adds are partly purchased (Visible Alpha; With Intelligence $1.8B)</td>
+<td>Recurring/secular, low amplitude; the one franchise the compounder label fits, and the one carrying the AI-substitution tail</td>
+</tr>
+<tr>
+<td>Energy</td>
+<td>15% rev / 14% profit</td>
+<td>Commodity-market activity + energy-sector data budgets; the durable core is the Platts benchmark royalty (5% of segment, +16%/yr)</td>
+<td>~12% of group growth; ~88% subscription, but the 2026 guide was cut twice (sanctions/Iran) and volatility sleeves did the recent quarter's work</td>
+<td>Mostly recurring subscription; a small high-quality royalty core inside an ordinary vertical-data wrapper</td>
+</tr>
+<tr>
+<td>Mobility (spun 2026-07-01)</td>
+<td>11% rev / 6% profit</td>
+<td>US used-car transaction volume via CARFAX (65% of segment) + auto OEM/supplier data budgets</td>
+<td>~9% of group growth, recurring/organic</td>
+<td>Recurring, but REMOVED from the go-forward company by the 2026-07-01 spin</td>
+</tr>
+</tbody>
+</table></div>
+<p>Confirmed against the realized decade (§13.3), the recurring-compounder narrative did not carry the results on its own: the 2022 EPS decline (−18% GAAP) and the 2024-25 recovery were the debt-issuance cycle (Ratings transaction −45%, then billed issuance +54%/+11%), stepped up once by the 2022 IHS Markit merger and levered by the equity-market level running Indices, while the smooth annuity (Ratings surveillance plus MI subscriptions) grew steadily underneath but is only about half of profit.</p>
 <h3 id="11-ratings-the-issuer-pays-fee-on-the-worlds-debt-issuance">1.1 Ratings — the issuer-pays fee on the world's debt issuance</h3>
 <p>Debt issuers (corporations, financial institutions, sovereigns, structured-finance sponsors) pay for a new-issue rating at the point of sale and then pay annually for surveillance, relationship fees, and entity ratings. <span class="ev-claim" data-ev="biz-ratings-revenue-equation" role="button" tabindex="0" aria-label="Show evidence">The revenue equation is: transaction revenue = billed issuance × realized fee rate, plus a non-transaction annuity (surveillance, annual fees, Ratings Evaluation Services, majority-owned Crisil, and the $172M royalty MI pays to resell Ratings content). FY2025 split: transaction $2,470M (52%), non-transaction $2,254M (48%) (10-K FY2025, Ratings MD&amp;A).</span><sup class="ev-pip" data-ev="biz-ratings-revenue-equation" aria-hidden="true">❝</sup></p>
 <p>The disclosed volume-price decomposition:</p>
