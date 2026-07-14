@@ -2,193 +2,181 @@
   {
     "order": 1,
     "path": "NET\\decks\\key_slides\\slide_01.png",
-    "caption": "Founding thesis: replace the enterprise's web of 'band-aid boxes' (specialized hardware, point solutions, on-prem) with one easy-to-use, serverless global cloud platform under a unified control plane.",
-    "source_deck": "2022-05-12 \u00b7 Investor Day 2022"
+    "caption": "Product/network flywheels: early thesis that one serverless network, free adoption, and better products reinforce each other.",
+    "source_deck": "2021-05-06 · Q1 2021"
   },
   {
     "order": 2,
     "path": "NET\\decks\\key_slides\\slide_02.png",
-    "caption": "R2 object storage launched with zero egress fees and S3-compatible auto-migration \u2014 a direct attack on hyperscaler egress lock-in and the Act III developer-platform wedge.",
-    "source_deck": "2022-05-12 \u00b7 Investor Day 2022"
+    "caption": "Gross-margin architecture: commodity hardware, one software stack, ISP relationships, and idle-capacity leverage behind the early margin claim.",
+    "source_deck": "2021-05-06 · Q1 2021"
   },
   {
     "order": 3,
     "path": "NET\\decks\\key_slides\\slide_03.png",
-    "caption": "TAM expansion narrative: product innovation grew the addressable market from $32B (2018, App Services) to ~$135B by 2024 across App + Zero Trust + Network Services.",
-    "source_deck": "2022-05-12 \u00b7 Investor Day 2022"
+    "caption": "Network scale in 2022: 270+ cities, 10,500+ direct networks, and 142 Tbps capacity show the physical substrate before the SASE/developer expansion.",
+    "source_deck": "2022-05-12 · Investor Day 2022"
   },
   {
     "order": 4,
     "path": "NET\\decks\\key_slides\\slide_04.png",
-    "caption": "First long-term operating model: S&M 52%->27-29%, target 20%+ non-GAAP operating margin (vs -25% in 2019), framing operating leverage as the path to profitability.",
-    "source_deck": "2022-05-12 \u00b7 Investor Day 2022"
+    "caption": "Cloudflare One: unified Zero Trust Network-as-a-Service with quantified customer benefit claims on breach cost, attack surface, IT tickets, and onboarding.",
+    "source_deck": "2022-05-12 · Investor Day 2022"
   },
   {
     "order": 5,
     "path": "NET\\decks\\key_slides\\slide_05.png",
-    "caption": "Competitive grid: only Cloudflare and the Big-3 clouds address all application challenges, but only Cloudflare rates Strong across the board while also avoiding cloud-vendor lock-in.",
-    "source_deck": "2023-05-04 \u00b7 Investor Day 2023"
+    "caption": "R2 launch wedge: zero egress fees and S3-compatible migration directly attack hyperscaler storage lock-in.",
+    "source_deck": "2022-05-12 · Investor Day 2022"
   },
   {
     "order": 6,
     "path": "NET\\decks\\key_slides\\slide_06.png",
-    "caption": "SASE speed advantage map: Cloudflare's every-service-everywhere footprint plus backbone vs the sparser Zscaler / Netskope / Palo Alto Networks networks.",
-    "source_deck": "2023-05-04 \u00b7 Investor Day 2023"
+    "caption": "2021 attach-rate baseline: contracted-customer product adoption bands frame the early land-and-expand opportunity.",
+    "source_deck": "2022-05-12 · Investor Day 2022"
   },
   {
     "order": 7,
     "path": "NET\\decks\\key_slides\\slide_07.png",
-    "caption": "Candid GTM diagnosis: bimodal AE quota attainment shows the 2023 slowdown was performance-constrained (too many AEs missing target), not TAM, opportunity, or capacity constrained.",
-    "source_deck": "2023-05-04 \u00b7 Investor Day 2023"
+    "caption": "Named Zero Trust benchmark: Cloudflare claims 50% faster P95 response than Zscaler and 75% faster than Netskope.",
+    "source_deck": "2023-05-04 · Investor Day 2023"
   },
   {
     "order": 8,
     "path": "NET\\decks\\key_slides\\slide_08.png",
-    "caption": "The 2023 deceleration inflection: sales cycles in Q1'23 ran ~27% longer than the prior four-quarter average, most acutely in large-customer upsell, delaying ACV bookings and revenue.",
-    "source_deck": "2023-05-04 \u00b7 Investor Day 2023"
+    "caption": "Descaler program: explicit Zscaler displacement motion with bill-reduction and functionality positioning.",
+    "source_deck": "2023-05-04 · Investor Day 2023"
   },
   {
     "order": 9,
     "path": "NET\\decks\\key_slides\\slide_09.png",
-    "caption": "Unit-economics framework introduced: Unit Economic Margin = [LTR - CTB - CTS*LTR]/LTR, built from cost-to-book, cost-to-serve, and attrition; first disclosed at 42%.",
-    "source_deck": "2023-05-04 \u00b7 Investor Day 2023"
+    "caption": "Network performance benchmark: fastest TCP connection time across more networks than Google, CloudFront, Akamai, and Fastly in Cloudflare data.",
+    "source_deck": "2023-05-04 · Investor Day 2023"
   },
   {
     "order": 10,
     "path": "NET\\decks\\key_slides\\slide_10.png",
-    "caption": "Architecture scorecard: Cloudflare rates Strong on all six dimensions (everywhere, interconnected, on-ramps, consistent controls, single UI/API, end-to-end visibility) while Zscaler/Netskope/Cisco/VMware/Fortinet rate Weak on most; only Cato is close.",
-    "source_deck": "2024-05-30 \u00b7 Investor Day 2024"
+    "caption": "Act III logic: Cloudflare wants to enter earlier in the build cycle, where developer tool choice can shape stickiness before production.",
+    "source_deck": "2023-05-04 · Investor Day 2023"
   },
   {
     "order": 11,
     "path": "NET\\decks\\key_slides\\slide_11.png",
-    "caption": "AI-inference thesis: a globally distributed network is the 'Goldilocks zone' between too-far centralized clouds and too-weak end-user devices \u2014 Cloudflare's structural claim on inference.",
-    "source_deck": "2024-05-30 \u00b7 Investor Day 2024"
+    "caption": "2023 GTM inflection: Q1 sales cycles were about 27% longer than the prior four-quarter average, especially large-customer upsells.",
+    "source_deck": "2023-05-04 · Investor Day 2023"
   },
   {
     "order": 12,
     "path": "NET\\decks\\key_slides\\slide_12.png",
-    "caption": "Connectivity Cloud TCO consolidation: one platform displaces a stack of named vendors (Akamai, F5, Fastly, Imperva, Cisco, Fortinet, VMware, Palo Alto, Zscaler, Netskope, MPLS) \u2014 the platform-vs-point-product wedge.",
-    "source_deck": "2024-05-30 \u00b7 Investor Day 2024"
+    "caption": "Connectivity Cloud architecture: one end-to-end network over commodity Internet with comprehensive on-ramps and consistent security controls.",
+    "source_deck": "2024-05-30 · Investor Day 2024"
   },
   {
     "order": 13,
     "path": "NET\\decks\\key_slides\\slide_13.png",
-    "caption": "Retention by size: average customer lifetime of $1M+ customers is 70%+ longer than sub-$100K customers, evidencing switching costs that rise with platform adoption.",
-    "source_deck": "2024-05-30 \u00b7 Investor Day 2024"
+    "caption": "Developer building blocks: Workers, Pages, R2, KV, Durable Objects, Queues, D1, Hyperdrive, Vectorize, and AI Gateway as a full-stack application platform.",
+    "source_deck": "2024-05-30 · Investor Day 2024"
   },
   {
     "order": 14,
     "path": "NET\\decks\\key_slides\\slide_14.png",
-    "caption": "Whitespace math: $1.4B ARR (YE2023) against a $7.0B potential opportunity from current products inside the existing customer base \u2014 $5.6B of land-and-expand runway before any new product.",
-    "source_deck": "2024-05-30 \u00b7 Investor Day 2024"
+    "caption": "AI inference placement: Cloudflare argues a distributed network is the right zone between centralized cloud and weak end-user devices.",
+    "source_deck": "2024-05-30 · Investor Day 2024"
   },
   {
     "order": 15,
     "path": "NET\\decks\\key_slides\\slide_15.png",
-    "caption": "Core technical bet: V8 isolates (Gen-4 serverless) deliver ~10x higher price-performance vs other clouds, 0ms cold starts, and scale-to-zero with no infra management \u2014 the foundation of the developer platform.",
-    "source_deck": "2025-03-12 \u00b7 Investor Day 2025"
+    "caption": "$1M+ enterprise runway: customers over $1M represent less than 1% of paying customers, showing where enterprise penetration can still expand.",
+    "source_deck": "2024-05-30 · Investor Day 2024"
   },
   {
     "order": 16,
     "path": "NET\\decks\\key_slides\\slide_16.png",
-    "caption": "Billing-model edge: Workers bill compute-time (~7ms) not wall-clock (~207ms), so customers don't pay while code waits on I/O/LLMs \u2014 improving Cloudflare's capital efficiency and customer cost simultaneously.",
-    "source_deck": "2025-03-12 \u00b7 Investor Day 2025"
+    "caption": "Existing-base whitespace: $1.4B ARR ending 2023 versus $7.0B potential from current products inside the same customer base.",
+    "source_deck": "2024-05-30 · Investor Day 2024"
   },
   {
     "order": 17,
     "path": "NET\\decks\\key_slides\\slide_17.png",
-    "caption": "Pool-of-funds contracts are effectively ramped deals: revenue recognition is lower near-term vs ratable but accelerates as adoption expands; the net growth drag was expected to fade in 2H25.",
-    "source_deck": "2025-03-12 \u00b7 Investor Day 2025"
+    "caption": "Workers AI positioning: region-Earth deployment, 50ms proximity to about 95% of the Internet-connected population, and pay-as-you-go GPUs.",
+    "source_deck": "2025-03-12 · Investor Day 2025"
   },
   {
     "order": 18,
     "path": "NET\\decks\\key_slides\\slide_18.png",
-    "caption": "Moat fingerprint: across 2022-2024 Cloudflare runs lower cost-to-book and cost-to-serve and comparable-or-higher DNR than the broad SaaS peer group \u2014 unit economics outperform peers.",
-    "source_deck": "2025-03-12 \u00b7 Investor Day 2025"
+    "caption": "GTM operating equation: capacity, productivity, and ACV as the measurable levers in the go-to-market rebuild.",
+    "source_deck": "2025-03-12 · Investor Day 2025"
   },
   {
     "order": 19,
     "path": "NET\\decks\\key_slides\\slide_19.png",
-    "caption": "2025 long-term model: targets 20% operating margin and 25% FCF margin (from 14% / 10% in 2024), GM 75-77%, S&M 27-29% \u2014 the pre-AI version of the framework later upgraded in 2026.",
-    "source_deck": "2025-03-12 \u00b7 Investor Day 2025"
+    "caption": "Pool-of-funds mix: flexible consumption contracts grew as a share of ACV, affecting bookings and revenue-recognition shape.",
+    "source_deck": "2025-03-12 · Investor Day 2025"
   },
   {
     "order": 20,
     "path": "NET\\decks\\key_slides\\slide_20.png",
-    "caption": "Developer adoption flywheel: active developers on the platform grew from 350K (Nov 2021) to 4.5M+ (Dec 2025) to 5.5M+ (Mar 2026) \u2014 the leading indicator for the Act III/agentic build-out.",
-    "source_deck": "2026-06-09 \u00b7 Investor Day 2026"
+    "caption": "Unit-economic peer claim: Cloudflare benchmarks cost to book, cost to serve, and DNR against a SaaS peer group.",
+    "source_deck": "2025-03-12 · Investor Day 2025"
   },
   {
     "order": 21,
     "path": "NET\\decks\\key_slides\\slide_21.png",
-    "caption": "Why hyperscaler architecture won't scale for agents: serving billions of agents would need ~20x current global server-CPU production; isolates that reshare runtime are the proposed answer to the CPU-execution bottleneck.",
-    "source_deck": "2026-06-09 \u00b7 Investor Day 2026"
+    "caption": "Developer-distribution proof point: Cloudflare Vite plugin exceeded 10% of Vite global downloads in May 2025-May 2026 npm data.",
+    "source_deck": "2026-06-09 · Investor Day 2026"
   },
   {
     "order": 22,
     "path": "NET\\decks\\key_slides\\slide_22.png",
-    "caption": "Agentic TCO proof point: for agent workloads Cloudflare is ~50%+ cheaper than AWS and dramatically cheaper than Vercel (e.g. Durable Objects $1,444 vs AWS AgentCore $5,719 vs Vercel $20,201 for 1M agent sessions/mo).",
-    "source_deck": "2026-06-09 \u00b7 Investor Day 2026"
+    "caption": "Agentic compute claim: isolates can reshare runtime against many runs and run up to 100x more efficiently.",
+    "source_deck": "2026-06-09 · Investor Day 2026"
   },
   {
     "order": 23,
     "path": "NET\\decks\\key_slides\\slide_23.png",
-    "caption": "Act IV thesis: Cloudflare positions itself as the neutral 'control plane' for the Agentic Internet \u2014 supplying scarcity (Bot Mgmt), analytics, value discovery, neutrality, workflows, and a payment system (x402).",
-    "source_deck": "2026-06-09 \u00b7 Investor Day 2026"
+    "caption": "Act IV control-plane map: scarcity, analytics, value discovery, neutrality, workflows, and payments mapped to Cloudflare products.",
+    "source_deck": "2026-06-09 · Investor Day 2026"
   },
   {
     "order": 24,
     "path": "NET\\decks\\key_slides\\slide_24.png",
-    "caption": "Scale-as-moat: ~20% of the Internet, 36% of the top 10,000 sites, and 42% of the Fortune 500 run on Cloudflare \u2014 the visibility advantage that powers bot/threat intelligence.",
-    "source_deck": "2026-06-09 \u00b7 Investor Day 2026"
+    "caption": "Traffic-visibility moat: 20%+ of the Internet, 36% of top 10,000 sites, and 42% of the Fortune 500 run on Cloudflare.",
+    "source_deck": "2026-06-09 · Investor Day 2026"
   },
   {
     "order": 25,
     "path": "NET\\decks\\key_slides\\slide_25.png",
-    "caption": "Neutrality as a business model: with no frontier LLM and no publisher competition, Cloudflare can be a trusted market-maker between AI labs and content owners \u2014 crawler access already ranges up to 100x between labs.",
-    "source_deck": "2026-06-09 \u00b7 Investor Day 2026"
+    "caption": "Payment-rail scale frame: 30T+ daily Cloudflare network transactions and 500M+ per second compared with the largest payment network.",
+    "source_deck": "2026-06-09 · Investor Day 2026"
   },
   {
     "order": 26,
     "path": "NET\\decks\\key_slides\\slide_26.png",
-    "caption": "Scale framing for the payment opportunity: Cloudflare processes 30T+ network 'transactions'/day (500M+/sec) vs the largest payment network's ~900M/day (100K/sec) \u2014 the substrate for agentic commerce rails.",
-    "source_deck": "2026-06-09 \u00b7 Investor Day 2026"
+    "caption": "x402 marker: 2B+ HTTP 402 responses per day and the Coinbase/Stripe x402 Foundation place payments in the request path.",
+    "source_deck": "2026-06-09 · Investor Day 2026"
   },
   {
     "order": 27,
     "path": "NET\\decks\\key_slides\\slide_27.png",
-    "caption": "Enterprise runway: $1M+ customers (269 at YE2025) still represent under 1% of paying customers; the scatter vs SaaS peers (ServiceNow, CrowdStrike, Datadog, etc.) shows where Cloudflare sits on the $1M-customer/revenue curve.",
-    "source_deck": "2026-06-09 \u00b7 Investor Day 2026"
+    "caption": "$1M+ customer frontier: peer scatter shows Cloudflare still early in converting paying customers into million-dollar accounts.",
+    "source_deck": "2026-06-09 · Investor Day 2026"
   },
   {
     "order": 28,
     "path": "NET\\decks\\key_slides\\slide_28.png",
-    "caption": "Revenue Models 101: four monetization structures \u2014 flat-rate (self-serve), pure usage (PAYGO), pool-of-funds (committed-value), and cap model (committed-capacity with overage); the cap model is the majority of contracts.",
-    "source_deck": "2026-06-09 \u00b7 Investor Day 2026"
+    "caption": "Cap-model mechanics: most contracts use request caps, creating predictable revenue with expansion when traffic outpaces forecasts.",
+    "source_deck": "2026-06-09 · Investor Day 2026"
   },
   {
     "order": 29,
     "path": "NET\\decks\\key_slides\\slide_29.png",
-    "caption": "TAM expansion to ~$384B by 2029: App + Network + Zero Trust + Developer services, with Act IV and AI/IoT/5G/database as incremental layers ($238B in 2026 rising through 2029).",
-    "source_deck": "2026-06-09 \u00b7 Investor Day 2026"
+    "caption": "Product-attach cohorts: ARR increasingly concentrates in higher product-count cohorts, visualizing the platform adoption thesis.",
+    "source_deck": "2026-06-09 · Investor Day 2026"
   },
   {
     "order": 30,
     "path": "NET\\decks\\key_slides\\slide_30.png",
-    "caption": "Gross-margin bridge: GM trending toward ~75% is driven by higher paid-vs-free traffic mix (op-margin neutral) and fast-growing Workers not yet optimized for GM \u2014 management frames it as mix, not network inefficiency.",
-    "source_deck": "2026-06-09 \u00b7 Investor Day 2026"
-  },
-  {
-    "order": 31,
-    "path": "NET\\decks\\key_slides\\slide_31.png",
-    "caption": "Headline financial target: grow from $2.4B annualized revenue (YE2025) to $5B annualized before year-end 2028.",
-    "source_deck": "2026-06-09 \u00b7 Investor Day 2026"
-  },
-  {
-    "order": 32,
-    "path": "NET\\decks\\key_slides\\slide_32.png",
-    "caption": "Upgraded long-term model (AI-driven): operating margin target raised to 30% (from 20%) and FCF margin to 30-35% (from 25%), S&M cut to 23-25%, G&A to 3-5%; paired with GAAP profitability by 2028 at the latest.",
-    "source_deck": "2026-06-09 \u00b7 Investor Day 2026"
+    "caption": "Updated long-term model: gross margin 70-77%, S&M 23-25%, operating margin 30%+, and FCF margin 30-35%+.",
+    "source_deck": "2026-06-09 · Investor Day 2026"
   }
 ]

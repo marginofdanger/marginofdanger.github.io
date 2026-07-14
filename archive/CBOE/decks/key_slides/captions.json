@@ -20,7 +20,7 @@
   {
     "order": 4,
     "path": "CBOE\\decks\\key_slides\\slide_04.png",
-    "caption": "Standing medium-term targets (2021 vintage): organic total net revenue 5-7%, Data & Access 7-10%, derivatives +2-4% of growth, crypto >25% market CAGR.",
+    "caption": "Standing medium-term targets, set at the 2021 Investor Day and never refreshed: organic total net revenue 5-7%, Data & Access 7-10%, derivatives +2-4% of growth, crypto >25% market CAGR.",
     "source_deck": "2021-11-16 \u00b7 Investor Day"
   },
   {
@@ -68,7 +68,7 @@
   {
     "order": 12,
     "path": "CBOE\\decks\\key_slides\\slide_12.png",
-    "caption": "Early 0DTE adoption curve: SPX 0DTE rising as a share of SPX volume after the 2022 Tuesday/Thursday expiration launches \u2014 the start of the engine that drove 2022-2026 growth.",
+    "caption": "Early 0DTE adoption curve: SPX 0DTE rising as a share of SPX volume after the 2022 Tuesday/Thursday expiration launches \u2014 the start of the volume growth that ran through 2026.",
     "source_deck": "2023-08-04 \u00b7 Q2 2023 Earnings"
   },
   {
@@ -146,7 +146,7 @@
   {
     "order": 25,
     "path": "CBOE\\decks\\key_slides\\slide_25.png",
-    "caption": "Five-segment scorecard FY2025: Options $1.5bn (+22%), N.A. Equities $407mn (+6%), Europe/APAC $126mn (-5%), Futures $91mn (+17%), Global FX $274mn (+24%) \u2014 Options dominates the mix.",
+    "caption": "Five-segment scorecard FY2025, filed figures (the slide mislabels the last three rows): Options $1.5bn (+22%), N.A. Equities $407mn (+6%), Europe/APAC $273.5mn (+24%), Futures $126.2mn (-5%), Global FX $91.1mn (+17%) \u2014 Options dominates the mix.",
     "source_deck": "2026-03-02 \u00b7 Raymond James / Investor Presentation"
   },
   {
@@ -158,7 +158,7 @@
   {
     "order": 27,
     "path": "CBOE\\decks\\key_slides\\slide_27.png",
-    "caption": "The realignment laid bare: exited corporate listings/CEDX/Japan equities, agreed to sell Cboe Canada + Australia to TMX, and a ~20% total workforce reduction \u2014 the cost of the rationalization.",
+    "caption": "The realignment laid bare: exited corporate listings/CEDX/Japan equities, agreed to sell Cboe Canada + Australia to TMX, and a ~20% total workforce reduction.",
     "source_deck": "2026-05-01 \u00b7 Q1 2026 Earnings"
   },
   {
@@ -170,7 +170,7 @@
   {
     "order": 29,
     "path": "CBOE\\decks\\key_slides\\slide_29.png",
-    "caption": "1Q26 options unit economics: total RPC $0.343 (+19% YoY) \u2014 index $0.940, multi-listed $0.080 (+21%); index ADV +29% to 6.1mn \u2014 pricing power across both the proprietary and commoditized legs.",
+    "caption": "1Q26 options unit economics: total RPC $0.343 (+19% YoY); index RPC $0.940; multi-listed RPC $0.080 after a fee change (+21%); index ADV +29% to 6.1mn.",
     "source_deck": "2026-05-01 \u00b7 Q1 2026 Earnings"
   }
 ]

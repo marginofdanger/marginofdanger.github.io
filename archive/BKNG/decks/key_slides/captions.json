@@ -1,0 +1,152 @@
+[
+  {
+    "order": 1,
+    "path": "BKNG\\decks\\key_slides\\slide_01.png",
+    "caption": "Q1 2025 P&L: revenue 4.8B (+8%), Adj EBITDA 1.1B (+21%); TTM Adj EBITDA margin ramping toward 35% - earliest quarter in the deck set",
+    "source_deck": "2025-04-29 \u00b7 Q1 2025 Earnings"
+  },
+  {
+    "order": 2,
+    "path": "BKNG\\decks\\key_slides\\slide_02.png",
+    "caption": "FY2025 results: revenue 26.9B (+13%), Adj EBITDA 9.9B (+20%), Adj EPS 228.06 (+22%); GAAP net income declined 8% on EUR-debt FX remeasurement (-1.3B other expense) - the GAAP/adjusted disconnect",
+    "source_deck": "2026-02-18 \u00b7 Q4 2025 Earnings"
+  },
+  {
+    "order": 3,
+    "path": "BKNG\\decks\\key_slides\\slide_03.png",
+    "caption": "FY25 KPI mix and cost program: AA room nights about 36% of Booking.com (grew about 10%), mobile app mid-50s%, B2C direct mid-60s%, Genius L2/L3 high-50s%, connected transactions +high-20s%; Transformation Program delivered about 250M savings vs a 150M commitment",
+    "source_deck": "2026-02-18 \u00b7 Q4 2025 Earnings"
+  },
+  {
+    "order": 4,
+    "path": "BKNG\\decks\\key_slides\\slide_04.png",
+    "caption": "Initial FY2026 guide (Feb 2026): gross bookings and revenue targeted about 100bps ahead of the 8% constant-currency long-term ambition; Adj EPS growth in line with the 15% ambition (mid-teens)",
+    "source_deck": "2026-02-18 \u00b7 Q4 2025 Earnings"
+  },
+  {
+    "order": 5,
+    "path": "BKNG\\decks\\key_slides\\slide_05.png",
+    "caption": "Middle East conflict shock: Q1 2026 room-night growth 6% (vs about 8% ex-conflict); March growth collapsed to 1% on elevated cancellations and Europe-Asia transit-corridor disruption",
+    "source_deck": "2026-04-28 \u00b7 Q1 2026 Earnings"
+  },
+  {
+    "order": 6,
+    "path": "BKNG\\decks\\key_slides\\slide_06.png",
+    "caption": "FY2026 guide cut on Middle East (Apr 2026): revenue high-single-digits and Adj EPS high-single-digits, down from the mid-teens EPS guided in February; assumes disruption through June then a 2H recovery",
+    "source_deck": "2026-04-28 \u00b7 Q1 2026 Earnings"
+  },
+  {
+    "order": 7,
+    "path": "BKNG\\decks\\key_slides\\slide_07.png",
+    "caption": "Company overview: mission and global scale - 220+ countries, 40+ languages, about 4.5M accommodation properties; portfolio of Booking.com, Priceline, Agoda, KAYAK, OpenTable built around a Connected Trip vision",
+    "source_deck": "2026-04-29 \u00b7 Investor Presentation"
+  },
+  {
+    "order": 8,
+    "path": "BKNG\\decks\\key_slides\\slide_08.png",
+    "caption": "10-year history with COVID trough visible: revenue 15B (2019) to 7B (2020) to 27B (2025) at a 12% CAGR; Adj EPS about 0 in 2020 to 9.12 in 2025 at a 16% CAGR - the cyclicality of discretionary travel",
+    "source_deck": "2026-04-29 \u00b7 Investor Presentation"
+  },
+  {
+    "order": 9,
+    "path": "BKNG\\decks\\key_slides\\slide_09.png",
+    "caption": "Long-term growth algorithm: 8% gross bookings / 8% revenue / 15% Adjusted EPS constant-currency ambition, built from market growth plus reinvestment plus differentiation plus efficiencies",
+    "source_deck": "2026-04-29 \u00b7 Investor Presentation"
+  },
+  {
+    "order": 10,
+    "path": "BKNG\\decks\\key_slides\\slide_10.png",
+    "caption": "Six stated growth drivers: growing travel market, increasing online penetration, diversifying supply, enhancing customer value proposition, driving efficiencies and reinvesting, and building the Connected Trip",
+    "source_deck": "2026-04-29 \u00b7 Investor Presentation"
+  },
+  {
+    "order": 11,
+    "path": "BKNG\\decks\\key_slides\\slide_11.png",
+    "caption": "TAM framing (Euromonitor / Oxford Economics / Phocuswright 2024): total travel over 3T; accommodations about 989B, air about 750B, F&B about 900B, ground about 500B, attractions about 300B; accommodations still shifting offline to online",
+    "source_deck": "2026-04-29 \u00b7 Investor Presentation"
+  },
+  {
+    "order": 12,
+    "path": "BKNG\\decks\\key_slides\\slide_12.png",
+    "caption": "Supply breadth as of 3/31/26: about 32M reported listings (8.8M alternative-accommodation) and about 4.5M properties (4.0M AA) spanning hotels, homes, and long-tail formats",
+    "source_deck": "2026-04-29 \u00b7 Investor Presentation"
+  },
+  {
+    "order": 13,
+    "path": "BKNG\\decks\\key_slides\\slide_13.png",
+    "caption": "Penetration runway: about 32M listings x 365 = about 12B annual bookable room nights vs BKNG about 1.3B LTM - roughly 1 in 10 bookable nights captured with EXISTING partners",
+    "source_deck": "2026-04-29 \u00b7 Investor Presentation"
+  },
+  {
+    "order": 14,
+    "path": "BKNG\\decks\\key_slides\\slide_14.png",
+    "caption": "Flights as a customer-acquisition wedge: 68M tickets in 2025 = 9.1x FY2019; Q1 tickets 1.9M (Q1 2019) to 20.7M (Q1 2026); flight product live in 55+ countries",
+    "source_deck": "2026-04-29 \u00b7 Investor Presentation"
+  },
+  {
+    "order": 15,
+    "path": "BKNG\\decks\\key_slides\\slide_15.png",
+    "caption": "Two-sided marketplace value proposition: traveler direct mix mid-60s% and mobile-app mix high-50s% over the last four quarters, with integrated payments, Genius rewards, and supplier connectivity partners",
+    "source_deck": "2026-04-29 \u00b7 Investor Presentation"
+  },
+  {
+    "order": 16,
+    "path": "BKNG\\decks\\key_slides\\slide_16.png",
+    "caption": "Genius loyalty as a direct-traffic engine: L2/L3 mix in the high-50s% of Booking.com room nights and over 30% of active travelers; Genius users book direct at a meaningfully higher rate",
+    "source_deck": "2026-04-29 \u00b7 Investor Presentation"
+  },
+  {
+    "order": 17,
+    "path": "BKNG\\decks\\key_slides\\slide_17.png",
+    "caption": "Marketing leverage: marketing as a percent of gross bookings fell from 5.15% (2019) to 4.40% (2025) as direct mix rose from low-50s% to mid-50s% - the core margin-expansion lever",
+    "source_deck": "2026-04-29 \u00b7 Investor Presentation"
+  },
+  {
+    "order": 18,
+    "path": "BKNG\\decks\\key_slides\\slide_18.png",
+    "caption": "Geographic runway: U.S. is only a low-double-digit percent of room nights (growing mid-single-digits) and Asia about a quarter (growing low-double-digits) - the underpenetrated markets",
+    "source_deck": "2026-04-29 \u00b7 Investor Presentation"
+  },
+  {
+    "order": 19,
+    "path": "BKNG\\decks\\key_slides\\slide_19.png",
+    "caption": "Connected Trip scope in 2025: 1.2B room nights, 68M flights, 88M rental-car days, attraction tickets +about 80%, 60k+ OpenTable restaurants; connected transactions grew high-20s% and are a low-double-digit percent of Booking.com transactions",
+    "source_deck": "2026-04-29 \u00b7 Investor Presentation"
+  },
+  {
+    "order": 20,
+    "path": "BKNG\\decks\\key_slides\\slide_20.png",
+    "caption": "Payments / fintech: merchant gross-bookings mix reached 70% in 2025 (up about 7pp YoY); 100+ payment methods and 50+ currencies, plus BNPL partners Klarna, Affirm, PayPal Credit, Akulaku",
+    "source_deck": "2026-04-29 \u00b7 Investor Presentation"
+  },
+  {
+    "order": 21,
+    "path": "BKNG\\decks\\key_slides\\slide_21.png",
+    "caption": "Generative-AI strategy: per-brand consumer agents (Booking.com AI Trip Planner, Priceline Penny, Agoda chatbots, KAYAK AI Mode, OpenTable Concierge) plus partnerships with OpenAI, Google, Anthropic, and Amazon on agentic travel",
+    "source_deck": "2026-04-29 \u00b7 Investor Presentation"
+  },
+  {
+    "order": 22,
+    "path": "BKNG\\decks\\key_slides\\slide_22.png",
+    "caption": "Top line: room nights 1,144M (2024) to 1,235M (2025) to 1,254M LTM 3/31/26; revenue 23.7B to 26.9B to 27.7B LTM",
+    "source_deck": "2026-04-29 \u00b7 Investor Presentation"
+  },
+  {
+    "order": 23,
+    "path": "BKNG\\decks\\key_slides\\slide_23.png",
+    "caption": "Profitability: Adj net income 6.4B to 7.4B to 7.5B LTM, Adj EPS 7.48 to 9.12 to 9.32 LTM, Adj EBITDA 8.3B to 9.9B to 10.1B LTM, FCF 7.9B to 9.1B (LTM 9.0B)",
+    "source_deck": "2026-04-29 \u00b7 Investor Presentation"
+  },
+  {
+    "order": 24,
+    "path": "BKNG\\decks\\key_slides\\slide_24.png",
+    "caption": "Balance sheet turned modestly net-debt: net cash -0.5B (2024) to -1.1B (2025) to -2.1B (3/31/26) as buybacks outrun cash build; gross leverage still declined 2.1x to 1.9x to 1.8x",
+    "source_deck": "2026-04-29 \u00b7 Investor Presentation"
+  },
+  {
+    "order": 25,
+    "path": "BKNG\\decks\\key_slides\\slide_25.png",
+    "caption": "Capital structure: A3/A- rated, target about 2x gross leverage through the cycle, 18.2B buyback authorization remaining, dividend 0.42 (+9.4%), 25-for-1 split (Apr 2026); laddered mostly-EUR maturities with no near-term wall",
+    "source_deck": "2026-04-29 \u00b7 Investor Presentation"
+  }
+]

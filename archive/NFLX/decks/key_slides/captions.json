@@ -2,37 +2,37 @@
   {
     "order": 1,
     "path": "NFLX\\decks\\key_slides\\slide_01.png",
-    "caption": "Stated 2010 goal: a great Internet movie service combining DVD-by-mail with streaming, growing subscribers and EPS every year \u2014 the pre-pure-streaming strategy NFLX has since fully pivoted from.",
+    "caption": "Stated 2010 goal: a great Internet movie service combining DVD-by-mail with streaming, growing subscribers and EPS every year. Netflix has since pivoted fully to streaming.",
     "source_deck": "2010-01-27 \u00b7 Q4'09 Financial Highlights"
   },
   {
     "order": 2,
     "path": "NFLX\\decks\\key_slides\\slide_02.png",
-    "caption": "DVD-era subscriber growth: 7.5M (4Q07) to 12.3M (4Q09) \u2014 a subscriber count NFLX no longer discloses, anchoring the base before the streaming era.",
+    "caption": "DVD-era subscriber growth: 7.5M (4Q07) to 12.3M (4Q09), the base before the streaming era. Netflix no longer discloses membership counts.",
     "source_deck": "2010-01-27 \u00b7 Q4'09 Financial Highlights"
   },
   {
     "order": 3,
     "path": "NFLX\\decks\\key_slides\\slide_03.png",
-    "caption": "Monthly churn 3.9%-4.6% across 2007-2009, ending 3.9% \u2014 a retention KPI NFLX dropped over a decade ago; the only quantified churn baseline in the archive.",
+    "caption": "Monthly churn 3.9%-4.6% across 2007-2009, ending 3.9%. Netflix dropped the churn KPI over a decade ago, so this is the only quantified churn baseline in the archive.",
     "source_deck": "2010-01-27 \u00b7 Q4'09 Financial Highlights"
   },
   {
     "order": 4,
     "path": "NFLX\\decks\\key_slides\\slide_04.png",
-    "caption": "Subscriber Acquisition Cost falling from $34.58 (4Q07) to $25.23 (4Q09) \u2014 a marketing-efficiency metric long since discontinued.",
+    "caption": "Subscriber Acquisition Cost fell from $34.58 (4Q07) to $25.23 (4Q09). Netflix discontinued the metric long ago.",
     "source_deck": "2010-01-27 \u00b7 Q4'09 Financial Highlights"
   },
   {
     "order": 5,
     "path": "NFLX\\decks\\key_slides\\slide_05.png",
-    "caption": "FCF build, 4Q09: OCF $105.8M less $22.4M capex and $57.0M content-library spend = $30.2M FCF \u2014 content already ~half of operating cash even in the DVD era.",
+    "caption": "FCF build, 4Q09: OCF $105.8M less $22.4M capex and $57.0M content-library spend = $30.2M FCF. Content was already about half of operating cash in the DVD era.",
     "source_deck": "2010-01-27 \u00b7 Q4'09 Financial Highlights"
   },
   {
     "order": 6,
     "path": "NFLX\\decks\\key_slides\\slide_06.png",
-    "caption": "Summary financials 2004-2009: revenue $501M to $1,670M, operating profit $19M to $192M, EPS $0.33 to $1.98 \u2014 the pre-streaming financial base.",
+    "caption": "Summary financials 2004-2009: revenue $501M to $1,670M, operating profit $19M to $192M, EPS $0.33 to $1.98.",
     "source_deck": "2010-01-27 \u00b7 Q4'09 Financial Highlights"
   },
   {
@@ -44,13 +44,13 @@
   {
     "order": 8,
     "path": "NFLX\\decks\\key_slides\\slide_08.png",
-    "caption": "WBD transaction summary: $27.75/share ($23.25 cash + $4.50 NFLX stock, collared), cash on hand plus new debt, expected close 12-18 months \u2014 none of which happened (deal died in ~12 weeks).",
+    "caption": "WBD transaction summary: $27.75/share ($23.25 cash + $4.50 NFLX stock, collared), cash on hand plus new debt, expected close in 12-18 months. The deal was terminated on 2026-02-27, about 12 weeks after signing.",
     "source_deck": "2025-12-05 \u00b7 Warner Bros. (WBD) M&A Announcement"
   },
   {
     "order": 9,
     "path": "NFLX\\decks\\key_slides\\slide_09.png",
-    "caption": "WBD deal economics: $82.7B EV at 25.2x CY26E EBITDA pre-synergies / 14.3x post-synergies, funded by $50B new acquisition debt \u2014 the largest leverage signal in NFLX's deck history.",
+    "caption": "WBD deal economics: $82.7B EV at 25.2x CY26E EBITDA pre-synergies / 14.3x post-synergies, funded by $50B of new acquisition debt against a balance sheet carrying $5.4B of net debt (0.4x EBITDA). It is the largest leverage signal in Netflix's deck history.",
     "source_deck": "2025-12-05 \u00b7 Warner Bros. (WBD) M&A Announcement"
   },
   {
@@ -62,19 +62,19 @@
   {
     "order": 11,
     "path": "NFLX\\decks\\key_slides\\slide_11.png",
-    "caption": "Netflix committed to MAINTAIN Warner Bros.' theatrical film releases and HBO Max & HBO \u2014 a reversal of Netflix's long-standing direct-to-streaming, no-theatrical doctrine.",
+    "caption": "Netflix committed to MAINTAIN Warner Bros.' theatrical film releases and HBO Max & HBO. That reversed its long-standing direct-to-streaming, no-theatrical doctrine.",
     "source_deck": "2025-12-05 \u00b7 Warner Bros. (WBD) M&A Announcement"
   },
   {
     "order": 12,
     "path": "NFLX\\decks\\key_slides\\slide_12.png",
-    "caption": "Business-acceleration thesis: management argued WBD's IP/library would attract and retain subscribers, drive engagement and incremental operating income 'for decades' \u2014 the case for the now-dead deal.",
+    "caption": "Business-acceleration thesis: management argued WBD's IP/library would attract and retain subscribers, drive engagement and incremental operating income 'for decades'.",
     "source_deck": "2025-12-05 \u00b7 Warner Bros. (WBD) M&A Announcement"
   },
   {
     "order": 13,
     "path": "NFLX\\decks\\key_slides\\slide_13.png",
-    "caption": "Nielsen US TV viewshare, Oct 2025: YouTube 12.9%, Disney 11.4%, NBCUniversal 8.6%, FOX 8.4%, Paramount 8.2%, Netflix 8.0% \u2014 the only third-party share-of-viewing datapoint in the archive; Netflix trails YouTube and Disney in total US TV time.",
+    "caption": "Nielsen distributor-level US TV viewshare, Oct 2025: YouTube 12.9%, Disney 11.4%, NBCUniversal 8.6%, FOX 8.4%, Paramount 8.2%, Netflix 8.0%. It is the only third-party share-of-viewing datapoint in the archive, and it puts Netflix sixth.",
     "source_deck": "2025-12-08 \u00b7 UBS Global Media & Communications Conference"
   }
 ]
