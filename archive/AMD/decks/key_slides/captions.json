@@ -1,0 +1,182 @@
+[
+ {
+  "order": 1,
+  "path": "AMD\\decks\\key_slides\\slide_01.png",
+  "caption": "2012 financial model under Rory Read: 44-48% gross margin target, ~$610M quarterly opex, operating income targeted merely \"positive\", ~$200M capex - the pre-Zen baseline AMD.",
+  "source_deck": "2012-02-02 · Financial Analyst Day 2012"
+ },
+ {
+  "order": 2,
+  "path": "AMD\\decks\\key_slides\\slide_02.png",
+  "caption": "Portfolio triage at the trough: exit SeaMicro dense servers, low-end tablets and smartphones; concentrate investment on high-performance cores, gaming and datacenter.",
+  "source_deck": "2015-05-06 · Financial Analyst Day 2015"
+ },
+ {
+  "order": 3,
+  "path": "AMD\\decks\\key_slides\\slide_03.png",
+  "caption": "First public Zen disclosure: all-new high-performance x86 core with SMT and FinFET, scaling from client to enterprise, availability 2016.",
+  "source_deck": "2015-05-06 · Financial Analyst Day 2015"
+ },
+ {
+  "order": 4,
+  "path": "AMD\\decks\\key_slides\\slide_04.png",
+  "caption": "Long-term targets set at the trough: 36-40% gross margin, opex 26-30% of revenue, >10% operating margin, >$0.50 EPS - goals AMD later exceeded by an order of magnitude.",
+  "source_deck": "2015-05-06 · Financial Analyst Day 2015"
+ },
+ {
+  "order": 5,
+  "path": "AMD\\decks\\key_slides\\slide_05.png",
+  "caption": "WSA 6th amendment economics: ~$335M Q3-16 charge ($100M cash plus 75M-share Mubadala warrant) plus per-wafer payments to GF on outside-foundry purchases - the sourcing flexibility that preceded the move of CPUs to TSMC.",
+  "source_deck": "2016-08-31 · Investor Update: WSA 6th Amendment"
+ },
+ {
+  "order": 6,
+  "path": "AMD\\decks\\key_slides\\slide_06.png",
+  "caption": "FAD 2017 long-term model: double-digit revenue growth, 40-44% gross margin, >$0.75 EPS - the first post-Zen profitability frame.",
+  "source_deck": "2017-05-16 · Financial Analyst Day 2017"
+ },
+ {
+  "order": 7,
+  "path": "AMD\\decks\\key_slides\\slide_07.png",
+  "caption": "EPYC \"Naples\" server re-entry spec: 32 Zen cores, 8 memory channels, 128 PCIe lanes per socket - the no-compromise one-socket disruption pitch against Intel Xeon.",
+  "source_deck": "2017-05-16 · Financial Analyst Day 2017"
+ },
+ {
+  "order": 8,
+  "path": "AMD\\decks\\key_slides\\slide_08.png",
+  "caption": "FAD 2020 TAM: $79B total (Data Center $35B, PCs $32B, Gaming $12B) - the opportunity set as management framed it before Xilinx and before the AI buildout.",
+  "source_deck": "2020-03-05 · Financial Analyst Day 2020"
+ },
+ {
+  "order": 9,
+  "path": "AMD\\decks\\key_slides\\slide_09.png",
+  "caption": "FAD 2020 long-term model: ~20% revenue CAGR, >50% gross margin, opex 26-27% of revenue, mid-20s operating margin, >15% FCF margin - subsequently achieved or beaten on every line.",
+  "source_deck": "2020-03-05 · Financial Analyst Day 2020"
+ },
+ {
+  "order": 10,
+  "path": "AMD\\decks\\key_slides\\slide_10.png",
+  "caption": "Mix target: Data Center from 15% of 2019 revenue to >30% long-term; actual 2025 mix reached ~47% - share-gain compounding ran ahead of management plan.",
+  "source_deck": "2020-03-05 · Financial Analyst Day 2020"
+ },
+ {
+  "order": 11,
+  "path": "AMD\\decks\\key_slides\\slide_11.png",
+  "caption": "FAD 2022 TAM: ~$300B (Data Center $125B, PCs $50B, Gaming $37B, Embedded $33B, Communications $32B, Automotive $27B) - up from $79B in 2020 after Xilinx and Pensando.",
+  "source_deck": "2022-06-09 · Financial Analyst Day 2022"
+ },
+ {
+  "order": 12,
+  "path": "AMD\\decks\\key_slides\\slide_12.png",
+  "caption": "2019-2021 delivery: gross margin 43% to 48%, operating margin 12% to 25%, EPS $0.64 to $2.79, FCF $0.3B to $3.2B - the proof points behind the Xilinx-era model.",
+  "source_deck": "2022-06-09 · Financial Analyst Day 2022"
+ },
+ {
+  "order": 13,
+  "path": "AMD\\decks\\key_slides\\slide_13.png",
+  "caption": "MI300 pre-launch: first data center APU, CDNA3 plus Zen 4 with unified on-package memory, >8x expected AI training vs MI250X, available 2023 - the origin slide of the Instinct AI franchise.",
+  "source_deck": "2022-06-09 · Financial Analyst Day 2022"
+ },
+ {
+  "order": 14,
+  "path": "AMD\\decks\\key_slides\\slide_14.png",
+  "caption": "FAD 2022 long-term model (~3-4yr): ~20% CAGR off 2021 pro forma, >57% gross margin, 23-24% opex, mid-30s operating margin, >25% FCF margin - the gross margin target the AI era later walked back.",
+  "source_deck": "2022-06-09 · Financial Analyst Day 2022"
+ },
+ {
+  "order": 15,
+  "path": "AMD\\decks\\key_slides\\slide_15.png",
+  "caption": "\"Uniquely positioned in AI\" portfolio map: MI250/MI300, 4th-gen EPYC, first x86 NPU in Ryzen 7040, Versal AI Edge, Alveo - CPU+GPU+FPGA+NPU breadth as the AI claim before the MI300 ramp.",
+  "source_deck": "2023-08-01 · Q2 2023 Financial Results"
+ },
+ {
+  "order": 16,
+  "path": "AMD\\decks\\key_slides\\slide_16.png",
+  "caption": "ZT Systems close (March 31, 2025): rack-scale systems design named a key factor in scaling Instinct; manufacturing pre-agreed for sale to Sanmina - systems capability without factory capital.",
+  "source_deck": "2025-08-05 · Q2 2025 Financial Results"
+ },
+ {
+  "order": 17,
+  "path": "AMD\\decks\\key_slides\\slide_17.png",
+  "caption": "Server CPU revenue share ~40% (Mercury Q2 2025) across five EPYC generations; Data Center revenue $2B / 17% of total (2020) to >$16B / ~47% (2025e).",
+  "source_deck": "2025-11-11 · Financial Analyst Day 2025"
+ },
+ {
+  "order": 18,
+  "path": "AMD\\decks\\key_slides\\slide_18.png",
+  "caption": "2016-2025e non-GAAP arc: revenue $4B to ~$34B, gross profit $1B to ~$18B, operating profit $43M to ~$8B (79% CAGR) - the turnaround quantified end to end.",
+  "source_deck": "2025-11-11 · Financial Analyst Day 2025"
+ },
+ {
+  "order": 19,
+  "path": "AMD\\decks\\key_slides\\slide_19.png",
+  "caption": "Data center TAM claim: ~$200B 2025 to >$1T 2030 (>40% CAGR) - the demand assumption underneath every FAD 2025 target.",
+  "source_deck": "2025-11-11 · Financial Analyst Day 2025"
+ },
+ {
+  "order": 20,
+  "path": "AMD\\decks\\key_slides\\slide_20.png",
+  "caption": "Anchor deals: OpenAI 6GW of Instinct starting 2H26, 50,000-GPU MI450 zetta-scale deployment, Helios rack co-defined with Meta, Lux (MI355X) and Discovery (MI430X) US AI factories.",
+  "source_deck": "2025-11-11 · Financial Analyst Day 2025"
+ },
+ {
+  "order": 21,
+  "path": "AMD\\decks\\key_slides\\slide_21.png",
+  "caption": "Data Center AI revenue underwrite: >80% CAGR next 3-5 years, on-track to tens of billions of dollars in 2027, multiple GW-scale hyperscaler, AI-native and sovereign opportunities.",
+  "source_deck": "2025-11-11 · Financial Analyst Day 2025"
+ },
+ {
+  "order": 22,
+  "path": "AMD\\decks\\key_slides\\slide_22.png",
+  "caption": "Share targets next 3-5 years: >50% server revenue share, >40% client revenue share, >70% adaptive revenue share, >80% DC AI revenue CAGR - a majority-share endgame vs Intel stated explicitly.",
+  "source_deck": "2025-11-11 · Financial Analyst Day 2025"
+ },
+ {
+  "order": 23,
+  "path": "AMD\\decks\\key_slides\\slide_23.png",
+  "caption": "AI adds ~$30B of server CPU demand by 2030: DC CPU TAM $26B 2025 to ~$60B 2030 (AI-driven ~18% CAGR vs 4% general compute) - the CPU-attach thesis for AI clusters.",
+  "source_deck": "2025-11-11 · Financial Analyst Day 2025"
+ },
+ {
+  "order": 24,
+  "path": "AMD\\decks\\key_slides\\slide_24.png",
+  "caption": "MI450 rack vs Nvidia Vera Rubin (AMD engineering projections): 1.5x memory capacity and bandwidth, ~1x flops, 1.5x scale-out bandwidth - memory-led positioning for inference.",
+  "source_deck": "2025-11-11 · Financial Analyst Day 2025"
+ },
+ {
+  "order": 25,
+  "path": "AMD\\decks\\key_slides\\slide_25.png",
+  "caption": "Helios scale-up architecture: 72 GPUs per rack, 3.6TB/s per-GPU bandwidth, 260TB/s aggregate, shared pod memory acting as a single GPU, six parallel network planes on open Ethernet (ESUN).",
+  "source_deck": "2025-11-11 · Financial Analyst Day 2025"
+ },
+ {
+  "order": 26,
+  "path": "AMD\\decks\\key_slides\\slide_26.png",
+  "caption": "Client momentum 2023-2025e: revenue market share 15% to 20% to ~28%, processor ASP 1x to 1.1x to ~1.5x, client revenue $5B to $7B to >$10B - premium mix, not just units.",
+  "source_deck": "2025-11-11 · Financial Analyst Day 2025"
+ },
+ {
+  "order": 27,
+  "path": "AMD\\decks\\key_slides\\slide_27.png",
+  "caption": "Client revenue share target >40% by 2030 (from ~28% 2025e), growing >3x market rate - the PC share-gain runway management is underwriting.",
+  "source_deck": "2025-11-11 · Financial Analyst Day 2025"
+ },
+ {
+  "order": 28,
+  "path": "AMD\\decks\\key_slides\\slide_28.png",
+  "caption": "Embedded trajectory: grow 2x market rate through 2030, accelerating to 3x with TAM expansion; FPGA share ~55% 2025 to >70% target 2030.",
+  "source_deck": "2025-11-11 · Financial Analyst Day 2025"
+ },
+ {
+  "order": 29,
+  "path": "AMD\\decks\\key_slides\\slide_29.png",
+  "caption": "FAD 2025 long-term model: >35% revenue CAGR, 55-58% gross margin, >35% operating margin, 13-15% tax, ~25% FCF margin, >$20 EPS over 3-5 years.",
+  "source_deck": "2025-11-11 · Financial Analyst Day 2025"
+ },
+ {
+  "order": 30,
+  "path": "AMD\\decks\\key_slides\\slide_30.png",
+  "caption": "Helios at CES 2026: 43TB/s scale-out bandwidth, 31TB HBM4, 4,600 Zen 6 cores, 18,000 GPU compute units, 2.9 exaflops AI compute per rack on 2nm/3nm - the rack as the unit of product.",
+  "source_deck": "2026-01-06 · CES 2026 Keynote"
+ }
+]
