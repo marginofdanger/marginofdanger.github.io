@@ -1,0 +1,182 @@
+[
+  {
+    "order": 1,
+    "path": "TSM\\decks\\key_slides\\slide_01.png",
+    "caption": "2Q21 income statement with the prior quarter's guidance printed beside the actual. Revenue beat the top of the range but 50.0% gross margin landed 1.5pp below it, the only margin miss in the set.",
+    "source_deck": "2021-07-15 \u00b7 Q2 2021 Earnings Conference"
+  },
+  {
+    "order": 2,
+    "path": "TSM\\decks\\key_slides\\slide_02.png",
+    "caption": "2Q21 node mix (7nm 31%, 5nm 18%, 49% advanced) and the 7nm-and-below revenue chart running back to 3Q18, the earliest bar in the stitched 32-quarter leading-edge series.",
+    "source_deck": "2021-07-15 \u00b7 Q2 2021 Earnings Conference"
+  },
+  {
+    "order": 3,
+    "path": "TSM\\decks\\key_slides\\slide_03.png",
+    "caption": "2Q21 platform mix, the 'before' picture: Smartphone 42% was larger than HPC 39%, the reverse of today's 22% and 66%.",
+    "source_deck": "2021-07-15 \u00b7 Q2 2021 Earnings Conference"
+  },
+  {
+    "order": 4,
+    "path": "TSM\\decks\\key_slides\\slide_04.png",
+    "caption": "2Q21 balance sheet: asset productivity 0.9x, inventory 85 days, A/R 42 days, net PP&E 55.7% of assets. The pre-AI baseline for the capital-intensity series.",
+    "source_deck": "2021-07-15 \u00b7 Q2 2021 Earnings Conference"
+  },
+  {
+    "order": 5,
+    "path": "TSM\\decks\\key_slides\\slide_05.png",
+    "caption": "2Q21 recent events. The annual Technology Symposium cadence starts here, and the NXP FinFET design win is the only customer named in any of the six decks.",
+    "source_deck": "2021-07-15 \u00b7 Q2 2021 Earnings Conference"
+  },
+  {
+    "order": 6,
+    "path": "TSM\\decks\\key_slides\\slide_06.png",
+    "caption": "2Q23 income statement, the downturn quarter. Revenue declined 10.0% YoY and shipments 23.2%, yet gross margin still beat the top of guidance by 0.1pp and operating margin by 0.5pp.",
+    "source_deck": "2023-07-20 \u00b7 Q2 2023 Earnings Conference"
+  },
+  {
+    "order": 7,
+    "path": "TSM\\decks\\key_slides\\slide_07.png",
+    "caption": "2Q23 node mix and the 7nm-and-below chart for 1Q21-2Q23. 5nm passes 7nm (30% vs 23%) and the leading-edge total holds through the downcycle.",
+    "source_deck": "2023-07-20 \u00b7 Q2 2023 Earnings Conference"
+  },
+  {
+    "order": 8,
+    "path": "TSM\\decks\\key_slides\\slide_08.png",
+    "caption": "2Q23 platform growth. HPC declined only 5% QoQ against Smartphone -9% and IoT -11%, so HPC was already the most defensive platform three years before it became the majority of revenue. The text extraction mis-orders these bars; read the image.",
+    "source_deck": "2023-07-20 \u00b7 Q2 2023 Earnings Conference"
+  },
+  {
+    "order": 9,
+    "path": "TSM\\decks\\key_slides\\slide_09.png",
+    "caption": "2Q23 cash flows. Free cash flow went negative at -NT$83.28bn because capex ran NT$250.53bn against NT$167.25bn of operating cash. The downcycle stress case.",
+    "source_deck": "2023-07-20 \u00b7 Q2 2023 Earnings Conference"
+  },
+  {
+    "order": 10,
+    "path": "TSM\\decks\\key_slides\\slide_10.png",
+    "caption": "2Q23 recent events. The Advanced Backend Fab 6 / 3DFabric opening is the single mention of advanced packaging anywhere in the six decks.",
+    "source_deck": "2023-07-20 \u00b7 Q2 2023 Earnings Conference"
+  },
+  {
+    "order": 11,
+    "path": "TSM\\decks\\key_slides\\slide_11.png",
+    "caption": "2Q25 income statement. Revenue beat the top of guidance by 3.0% and operating margin by 0.6pp even though the NT dollar came in 4.5% stronger than the guidance assumption, worth roughly 1.4pp of margin headwind.",
+    "source_deck": "2025-07-17 \u00b7 Q2 2025 Earnings Conference"
+  },
+  {
+    "order": 12,
+    "path": "TSM\\decks\\key_slides\\slide_12.png",
+    "caption": "2Q25 node mix with 3nm added at 24%. Advanced nodes reach 74% of wafer revenue, up from 49% in 2Q21.",
+    "source_deck": "2025-07-17 \u00b7 Q2 2025 Earnings Conference"
+  },
+  {
+    "order": 13,
+    "path": "TSM\\decks\\key_slides\\slide_13.png",
+    "caption": "2Q25 platform mix and growth. HPC is 60% of revenue growing 14% QoQ while Automotive is flat at 0%.",
+    "source_deck": "2025-07-17 \u00b7 Q2 2025 Earnings Conference"
+  },
+  {
+    "order": 14,
+    "path": "TSM\\decks\\key_slides\\slide_14.png",
+    "caption": "2Q25 balance sheet. Asset productivity recovers to 1.1x and A/R days hit a low of 23, the cleanest working-capital quarter in the set.",
+    "source_deck": "2025-07-17 \u00b7 Q2 2025 Earnings Conference"
+  },
+  {
+    "order": 15,
+    "path": "TSM\\decks\\key_slides\\slide_15.png",
+    "caption": "2Q25 cash flows. NT$497.07bn operating cash against NT$297.22bn capex leaves NT$199.85bn of free cash flow, covering the dividend 1.7x.",
+    "source_deck": "2025-07-17 \u00b7 Q2 2025 Earnings Conference"
+  },
+  {
+    "order": 16,
+    "path": "TSM\\decks\\key_slides\\slide_16.png",
+    "caption": "3Q25 guidance. This is the last standalone guidance slide TSMC published; the Q4 2025, Q1 2026 and Q2 2026 decks drop it while the 6-K keeps guiding.",
+    "source_deck": "2025-07-17 \u00b7 Q2 2025 Earnings Conference"
+  },
+  {
+    "order": 17,
+    "path": "TSM\\decks\\key_slides\\slide_17.png",
+    "caption": "2Q25 recent events dating the A14 debut to the 2025 North America Technology Symposium (2025-04-24), the roadmap claim the company map flags as a marketing ceiling.",
+    "source_deck": "2025-07-17 \u00b7 Q2 2025 Earnings Conference"
+  },
+  {
+    "order": 18,
+    "path": "TSM\\decks\\key_slides\\slide_18.png",
+    "caption": "4Q25 income statement, the largest beat in the set. Gross margin came in 1.3pp above the top of guidance and operating margin 3.0pp above, so the operating-margin beat was more than double the gross-margin beat.",
+    "source_deck": "2026-01-15 \u00b7 Q4 2025 Earnings Conference"
+  },
+  {
+    "order": 19,
+    "path": "TSM\\decks\\key_slides\\slide_19.png",
+    "caption": "4Q25 node mix at 77% advanced, plus the 7nm-and-below chart for 1Q23-4Q25 showing 7nm holding a flat NT$100-120bn band while 5nm and 3nm stack on top.",
+    "source_deck": "2026-01-15 \u00b7 Q4 2025 Earnings Conference"
+  },
+  {
+    "order": 20,
+    "path": "TSM\\decks\\key_slides\\slide_20.png",
+    "caption": "FY2025 versus FY2024 node mix side by side: 3nm 18% to 24%, 7nm 17% to 14%, advanced 69% to 74%. The only annual node comparison presented on one slide.",
+    "source_deck": "2026-01-15 \u00b7 Q4 2025 Earnings Conference"
+  },
+  {
+    "order": 21,
+    "path": "TSM\\decks\\key_slides\\slide_21.png",
+    "caption": "4Q25 platform mix and growth. The seasonal reversal shows HPC at +4% QoQ against Smartphone +11%, pushing HPC's share from 60% down to 55%.",
+    "source_deck": "2026-01-15 \u00b7 Q4 2025 Earnings Conference"
+  },
+  {
+    "order": 22,
+    "path": "TSM\\decks\\key_slides\\slide_22.png",
+    "caption": "FY2025 platform growth for all six platforms: HPC +48%, Smartphone +11%, IoT +15%, Automotive +34%, DCE +0%, Others +34%. The 20-F names only the first two.",
+    "source_deck": "2026-01-15 \u00b7 Q4 2025 Earnings Conference"
+  },
+  {
+    "order": 23,
+    "path": "TSM\\decks\\key_slides\\slide_23.png",
+    "caption": "FY2025 financial highlights on one page: revenue +31.6%, gross margin 59.9%, capex NT$1,272.41bn, free cash flow NT$1,002.57bn, dividends NT$466.78bn, ROE 35.4%.",
+    "source_deck": "2026-01-15 \u00b7 Q4 2025 Earnings Conference"
+  },
+  {
+    "order": 24,
+    "path": "TSM\\decks\\key_slides\\slide_24.png",
+    "caption": "1Q26 platform growth, the panel the text extractor drops entirely. Automotive -7% QoQ, Smartphone -11%, HPC +20%. Without it the 2Q26 automotive turn looks like a flat line ticking up rather than a reversal.",
+    "source_deck": "2026-04-16 \u00b7 Q1 2026 Earnings Conference"
+  },
+  {
+    "order": 25,
+    "path": "TSM\\decks\\key_slides\\slide_25.png",
+    "caption": "2Q26 income statement. Revenue grew 36.0% YoY while cost of revenue grew only 6.1% and opex 17.1%, implying roughly 90% incremental operating margin. Non-operating items jumped to NT$95.83bn, inflating EPS and ROE.",
+    "source_deck": "2026-07-16 \u00b7 Q2 2026 Earnings Conference"
+  },
+  {
+    "order": 26,
+    "path": "TSM\\decks\\key_slides\\slide_26.png",
+    "caption": "2Q26 node mix with 2nm appearing at 3%, and the four-band 7nm-and-below chart reaching about NT$825bn. 7nm still holds about NT$120bn after 24 quarters, the clearest evidence that nodes stack rather than rotate.",
+    "source_deck": "2026-07-16 \u00b7 Q2 2026 Earnings Conference"
+  },
+  {
+    "order": 27,
+    "path": "TSM\\decks\\key_slides\\slide_27.png",
+    "caption": "2Q26 platform mix and growth. HPC at 66% grew 20% QoQ while Smartphone declined 4% for a second straight quarter and Automotive inflected +15%.",
+    "source_deck": "2026-07-16 \u00b7 Q2 2026 Earnings Conference"
+  },
+  {
+    "order": 28,
+    "path": "TSM\\decks\\key_slides\\slide_28.png",
+    "caption": "2Q26 balance sheet. Inventory 87 days and A/R 29 days build on the N2 ramp, while long-term debt declined to NT$864.27bn and liabilities/assets to 30.9%: record capex funded without leverage.",
+    "source_deck": "2026-07-16 \u00b7 Q2 2026 Earnings Conference"
+  },
+  {
+    "order": 29,
+    "path": "TSM\\decks\\key_slides\\slide_29.png",
+    "caption": "2Q26 cash flows. Record NT$783.36bn operating cash, yet free cash flow declined 17.5% QoQ because capex jumped to NT$496.00bn (US$15.70bn), thinning dividend cover to 1.85x.",
+    "source_deck": "2026-07-16 \u00b7 Q2 2026 Earnings Conference"
+  },
+  {
+    "order": 30,
+    "path": "TSM\\decks\\key_slides\\slide_30.png",
+    "caption": "2Q26 recent events. The Vanguard 8.1% disposal lands in the same quarter non-operating items tripled, Sony extends into next-generation image sensors, and A13 debuts at the 2026 symposium.",
+    "source_deck": "2026-07-16 \u00b7 Q2 2026 Earnings Conference"
+  }
+]

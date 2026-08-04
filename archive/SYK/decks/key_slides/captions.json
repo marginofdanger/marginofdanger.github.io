@@ -1,0 +1,200 @@
+[
+  {
+    "order": 1,
+    "path": "SYK\\decks\\key_slides\\slide_01.png",
+    "caption": "Where Stryker started: 2014 sales of $9.7bn with knees 14% and hips 13%, a 27% hip-and-knee concentration that management spent the next decade diluting.",
+    "source_deck": "2015-04-29 \u00b7 Annual meeting of shareholders"
+  },
+  {
+    "order": 2,
+    "path": "SYK\\decks\\key_slides\\slide_02.png",
+    "caption": "2014 geography: US 68%, developed international 24%, emerging markets 8% - the baseline against which the US share later ROSE to 74% by 2022 despite a decade of international rhetoric.",
+    "source_deck": "2015-04-29 \u00b7 Annual meeting of shareholders"
+  },
+  {
+    "order": 3,
+    "path": "SYK\\decks\\key_slides\\slide_03.png",
+    "caption": "Management's own before-and-after on 2010 vs 2016: from niche in neurotechnology and distant follower in trauma and extremities to claimed category leadership - the clearest statement of what the acquisition programme was for.",
+    "source_deck": "2016-11-09 \u00b7 Analyst meeting"
+  },
+  {
+    "order": 4,
+    "path": "SYK\\decks\\key_slides\\slide_04.png",
+    "caption": "Mako at 300 systems sold and only 200 total knees performed in 2016 - the starting point for the platform that reached 3,000+ systems and 1m+ Mako total knees by YE2025.",
+    "source_deck": "2016-11-09 \u00b7 Analyst meeting"
+  },
+  {
+    "order": 5,
+    "path": "SYK\\decks\\key_slides\\slide_05.png",
+    "caption": "The original Cost Transformation for Growth promise: 190-250bps of operating-margin improvement over five years from 2016 - the first of four margin commitments that have since been restated.",
+    "source_deck": "2016-11-09 \u00b7 Analyst meeting"
+  },
+  {
+    "order": 6,
+    "path": "SYK\\decks\\key_slides\\slide_06.png",
+    "caption": "Organic growth against the MedTech market, 2014-2017: Stryker 5.8/6.1/6.4/7.1% vs market 2.9/4.6/4.8/4.2% - the earliest quantified outgrowth series, benchmarked against 20 unnamed companies.",
+    "source_deck": "2018-05-02 \u00b7 Annual meeting of shareholders"
+  },
+  {
+    "order": 7,
+    "path": "SYK\\decks\\key_slides\\slide_07.png",
+    "caption": "2017 revenue of $12.4bn across twelve product lines, with the only company-wide competitive claim Stryker ever publishes: #1 or #2 market shares across the majority of divisions, no share number attached.",
+    "source_deck": "2018-11-08 \u00b7 Analyst meeting"
+  },
+  {
+    "order": 8,
+    "path": "SYK\\decks\\key_slides\\slide_08.png",
+    "caption": "US Foot and Ankle share in 2017: Stryker 22% tied with Wright 22%, then Synthes 14% and Arthrex 9% - competitor-level share data that appears in no filing and was never spoken on the call.",
+    "source_deck": "2018-11-08 \u00b7 Analyst meeting"
+  },
+  {
+    "order": 9,
+    "path": "SYK\\decks\\key_slides\\slide_09.png",
+    "caption": "US Shoulder share in 2017: Stryker sixth at 6% behind Zimmer 32%, Wright 22% and Synthes 17% - the gap that the Wright Medical acquisition closed, taking Stryker to a pro forma 28% and second place.",
+    "source_deck": "2018-11-08 \u00b7 Analyst meeting"
+  },
+  {
+    "order": 10,
+    "path": "SYK\\decks\\key_slides\\slide_10.png",
+    "caption": "Global Endoscopy sales 1999-2017, roughly $205m to $1,650m with one down year - the longest single-business revenue series Stryker has published and not reconstructable from the 10-Ks.",
+    "source_deck": "2018-11-08 \u00b7 Analyst meeting"
+  },
+  {
+    "order": 11,
+    "path": "SYK\\decks\\key_slides\\slide_11.png",
+    "caption": "US 73% of 2019 revenue against 27% international, with Europe growing 9-10% and emerging markets 18-20% in constant currency - strong international growth that still lost share of mix to US acquisitions.",
+    "source_deck": "2021-11-18 \u00b7 Analyst day"
+  },
+  {
+    "order": 12,
+    "path": "SYK\\decks\\key_slides\\slide_12.png",
+    "caption": "The 2016-2019 scorecard: 7.4% organic sales CAGR and 12.7% adjusted EPS CAGR, but only 131bps of cumulative operating-margin expansion against the 190-250bps promised for five years.",
+    "source_deck": "2021-11-18 \u00b7 Analyst day"
+  },
+  {
+    "order": 13,
+    "path": "SYK\\decks\\key_slides\\slide_13.png",
+    "caption": "Free cash flow averaged $1.7bn at 66% conversion over 2016-2019 - below the 70-80% target that every deck since has presented as a standing commitment and a track record.",
+    "source_deck": "2021-11-18 \u00b7 Analyst day"
+  },
+  {
+    "order": 14,
+    "path": "SYK\\decks\\key_slides\\slide_14.png",
+    "caption": "Capital deployment 2011 to 2021 YTD: $27.4bn total, M&A $18.5bn (67%), dividends $6.2bn (23%), buybacks $2.7bn (10%) - the last vintage in which buybacks were a real line.",
+    "source_deck": "2021-11-18 \u00b7 Analyst day"
+  },
+  {
+    "order": 15,
+    "path": "SYK\\decks\\key_slides\\slide_15.png",
+    "caption": "Orthopaedics and Spine $36bn addressable market decomposed to nine business units with growth bands - spine is the largest block at $13bn growing 3%, and Stryker exited US spinal implants four years later.",
+    "source_deck": "2021-11-18 \u00b7 Analyst day"
+  },
+  {
+    "order": 16,
+    "path": "SYK\\decks\\key_slides\\slide_16.png",
+    "caption": "MedSurg and Neurotechnology $36bn addressable market by business unit - the only public map of which pools grow double digit (Surgical Technologies, Sage, Neurovascular), and exactly where the 2022-2025 acquisitions landed.",
+    "source_deck": "2021-11-18 \u00b7 Analyst day"
+  },
+  {
+    "order": 17,
+    "path": "SYK\\decks\\key_slides\\slide_17.png",
+    "caption": "Revenue mix 2013 ($9.0bn) against 2022 ($18.4bn): hips and knees fell from 29% to 19% of sales while Medical doubled from 8% to 16% - the diversification that raised the served-market growth rate.",
+    "source_deck": "2023-11-08 \u00b7 Investor day"
+  },
+  {
+    "order": 18,
+    "path": "SYK\\decks\\key_slides\\slide_18.png",
+    "caption": "Endoscopy camera platform cadence 1188 (2004) to 1788 (2023): a new capital platform every three to four years, each one a fresh replacement cycle in the hospital installed base.",
+    "source_deck": "2023-11-08 \u00b7 Investor day"
+  },
+  {
+    "order": 19,
+    "path": "SYK\\decks\\key_slides\\slide_19.png",
+    "caption": "The Wright Medical payoff claimed three years after closing: #1 global category leader in Foot and Ankle and Shoulder Arthroplasty, 40+ product launches and six dedicated business units created.",
+    "source_deck": "2023-11-08 \u00b7 Investor day"
+  },
+  {
+    "order": 20,
+    "path": "SYK\\decks\\key_slides\\slide_20.png",
+    "caption": "Vocera economics: a $1bn TAM and a market-leading position with nearly 100% software renewal rate - the only recurring-software retention metric Stryker has ever published.",
+    "source_deck": "2023-11-08 \u00b7 Investor day"
+  },
+  {
+    "order": 21,
+    "path": "SYK\\decks\\key_slides\\slide_21.png",
+    "caption": "Adjusted operating margin 25.6% (2016) to 26.3% (2019) to 23.8% (2022), with a promised return to 26.3% by 2025 - the round trip that makes the 2025 achievement a recovery, not an expansion.",
+    "source_deck": "2023-11-08 \u00b7 Investor day"
+  },
+  {
+    "order": 22,
+    "path": "SYK\\decks\\key_slides\\slide_22.png",
+    "caption": "Capital allocation 2016-2022: $24bn deployed, 73% into nearly 40 acquisitions, 23% dividends and 4% buybacks, funded on BBB+/Baa1 ratings.",
+    "source_deck": "2023-11-08 \u00b7 Investor day"
+  },
+  {
+    "order": 23,
+    "path": "SYK\\decks\\key_slides\\slide_23.png",
+    "caption": "Inari terms: $80 per share for roughly $4.9bn of equity value against $603m of 2024E consensus revenue, justified by a $6bn US mechanical-thrombectomy segment growing 20%+.",
+    "source_deck": "2025-01-06 \u00b7 Inari Medical acquisition announcement"
+  },
+  {
+    "order": 24,
+    "path": "SYK\\decks\\key_slides\\slide_24.png",
+    "caption": "Inari revenue $51m (2019) to $603m (2024E) with growth printed as +38%, +29%, +22% - Stryker paid roughly 8x forward revenue for an asset whose own slide shows growth halving.",
+    "source_deck": "2025-01-06 \u00b7 Inari Medical acquisition announcement"
+  },
+  {
+    "order": 25,
+    "path": "SYK\\decks\\key_slides\\slide_25.png",
+    "caption": "The operating model: 22 business units averaging roughly $1bn of revenue each, described as the centre of gravity with high autonomy - and already showing the Q1 2026 segment recast before it was reported.",
+    "source_deck": "2025-11-13 \u00b7 Investor day"
+  },
+  {
+    "order": 26,
+    "path": "SYK\\decks\\key_slides\\slide_26.png",
+    "caption": "Annual organic sales growth 2011-2025E stepping from +4% to +10% while revenue went $8bn to $25bn - management's core claim that the growth rate rose as the base tripled.",
+    "source_deck": "2025-11-13 \u00b7 Investor day"
+  },
+  {
+    "order": 27,
+    "path": "SYK\\decks\\key_slides\\slide_27.png",
+    "caption": "Ten-year repositioning in four numbers: 14 to 22 business units, weighted-average market growth 4% to 6%, hips and knees 27% to 18% of sales, and roughly 60 acquisitions.",
+    "source_deck": "2025-11-13 \u00b7 Investor day"
+  },
+  {
+    "order": 28,
+    "path": "SYK\\decks\\key_slides\\slide_28.png",
+    "caption": "The ASC channel quantified as of September 2025: 460+ partnerships, 200+ Mako systems contracted for ASCs, 360+ deals with tailored financing and an average of seven business units per deal.",
+    "source_deck": "2025-11-13 \u00b7 Investor day"
+  },
+  {
+    "order": 29,
+    "path": "SYK\\decks\\key_slides\\slide_29.png",
+    "caption": "Every acquisition 2016-2025 colour-coded core versus adjacency - adjacencies cluster in Medical and Vascular (Sage, Physio-Control, Vocera, care.ai, Inari) while core tuck-ins stay in orthopaedics.",
+    "source_deck": "2025-11-13 \u00b7 Investor day"
+  },
+  {
+    "order": 30,
+    "path": "SYK\\decks\\key_slides\\slide_30.png",
+    "caption": "The $6bn US VTE opportunity broken down: mechanical thrombectomy is only 19% of the $2.6bn PE pool and 14% of the $3.0bn DVT pool, so 79-85% of the TAM is patients on drug therapy, not device share to win.",
+    "source_deck": "2025-11-13 \u00b7 Investor day"
+  },
+  {
+    "order": 31,
+    "path": "SYK\\decks\\key_slides\\slide_31.png",
+    "caption": "The scorecard as management presents it: +300bps and +400bps of outgrowth over an unnamed peer set, adjusted margin 26.3% to 24.2% to 26.3%, and 12.5-12.8% adjusted EPS CAGRs.",
+    "source_deck": "2025-11-13 \u00b7 Investor day"
+  },
+  {
+    "order": 32,
+    "path": "SYK\\decks\\key_slides\\slide_32.png",
+    "caption": "$28bn of capital deployed since 2016 - 69% M&A, 28% dividends, 3% buybacks - with the footnote that no buybacks have run since 2019 and there are no plans to resume.",
+    "source_deck": "2025-11-13 \u00b7 Investor day"
+  },
+  {
+    "order": 33,
+    "path": "SYK\\decks\\key_slides\\slide_33.png",
+    "caption": "The current commitments beside the 2023 set: margin expansion cut from 200bps through 2025 to 150+bps through 2028, now stated as inclusive of tuck-in M&A dilution.",
+    "source_deck": "2025-11-13 \u00b7 Investor day"
+  }
+]

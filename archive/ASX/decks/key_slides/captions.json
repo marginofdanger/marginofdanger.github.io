@@ -1,0 +1,176 @@
+[
+  {
+    "order": 1,
+    "path": "ASX\\decks\\key_slides\\slide_01.png",
+    "caption": "Sizes the export-control loss the 20-F never quantifies: 1H21 ATM revenue grew 20% YoY as reported but 48% excluding EAR-affected business, and test grew 54% ex-EAR. Also sets a rare explicit target, 25% full-year ATM gross margin.",
+    "source_deck": "2021-07-29 \u00b7 Q2 2021 Earnings Release"
+  },
+  {
+    "order": 2,
+    "path": "ASX\\decks\\key_slides\\slide_02.png",
+    "caption": "Management's own statement of the binding constraint in 2021: capacity expansion must wait on 'holistic and balanced supply continuity across the complete material/equipment/process ecosystem, earliest estimate is 2023', with long-term service agreements running to 2023.",
+    "source_deck": "2021-07-29 \u00b7 Q2 2021 Earnings Release"
+  },
+  {
+    "order": 3,
+    "path": "ASX\\decks\\key_slides\\slide_03.png",
+    "caption": "The demand pyramid, ASE's theory of why leading-edge innovation pulls total semiconductor volume up proportionally. The clearest statement of how management justifies mainstream capacity investment off an AI narrative.",
+    "source_deck": "2021-07-29 \u00b7 Q2 2021 Earnings Release"
+  },
+  {
+    "order": 4,
+    "path": "ASX\\decks\\key_slides\\slide_04.png",
+    "caption": "The other three of the '4 Tailwinds': supply-chain constraint favours open-platform foundry and OSAT, Taiwan cluster efficiency, and ASEH as 'a de facto choice and indispensable manufacturing partner'. The 2021 version of the moat claim, to compare against the 2026 version.",
+    "source_deck": "2021-07-29 \u00b7 Q2 2021 Earnings Release"
+  },
+  {
+    "order": 5,
+    "path": "ASX\\decks\\key_slides\\slide_05.png",
+    "caption": "ATM revenue by type, 1Q20-2Q21, the start of the mix series. Wirebonding share PEAKS here at 42% of ATM revenue while bump/flip-chip/WLP/SiP declines to 33%, the opposite of the 2022-26 direction and consistent with the EAR loss landing in advanced packaging.",
+    "source_deck": "2021-07-29 \u00b7 Q2 2021 Earnings Release"
+  },
+  {
+    "order": 6,
+    "path": "ASX\\decks\\key_slides\\slide_06.png",
+    "caption": "Equipment capex versus EBITDA in the pre-AI baseline: capex US$0.4-0.6bn per quarter against EBITDA of US$0.6-1.0bn, comfortably covered. The reference point for the 2026 inversion.",
+    "source_deck": "2021-07-29 \u00b7 Q2 2021 Earnings Release"
+  },
+  {
+    "order": 7,
+    "path": "ASX\\decks\\key_slides\\slide_07.png",
+    "caption": "The last time ASE guided in volume and price: 'ATM 3rd quarter 2021 volume to increase 12% with ASP holding stable'. The only quantified volume and the only ASP statement in the whole local corpus; the format was retired by 2023 and never restored.",
+    "source_deck": "2021-07-29 \u00b7 Q2 2021 Earnings Release"
+  },
+  {
+    "order": 8,
+    "path": "ASX\\decks\\key_slides\\slide_08.png",
+    "caption": "The downcycle in one chart: consolidated gross margin 21.4% to 14.8% and operating margin 12.8% to 5.9% in four quarters. This deck contains no business commentary at all, the only Q2 deck in the set that omits the mid-year recap and outlook.",
+    "source_deck": "2023-07-27 \u00b7 Q2 2023 Earnings Release"
+  },
+  {
+    "order": 9,
+    "path": "ASX\\decks\\key_slides\\slide_09.png",
+    "caption": "ATM gross margin compressed from 29.2% to 20.1% in four quarters on a 20% revenue decline, with utilization near 60%. The magnitude of operating deleverage in a downcycle, which the 2026 record margins should be judged against.",
+    "source_deck": "2023-07-27 \u00b7 Q2 2023 Earnings Release"
+  },
+  {
+    "order": 10,
+    "path": "ASX\\decks\\key_slides\\slide_10.png",
+    "caption": "ATM revenue by type through the downcycle, 1Q22-2Q23. Bump/FC/WLP/SiP holds 41-43% and wirebonding holds 33-35%, so the mix barely moved while revenue collapsed. The 2023 decline was volume, not mix.",
+    "source_deck": "2023-07-27 \u00b7 Q2 2023 Earnings Release"
+  },
+  {
+    "order": 11,
+    "path": "ASX\\decks\\key_slides\\slide_11.png",
+    "caption": "Equipment capex cut 59% from US$515m to US$209m per quarter while EBITDA held above US$780m. Evidence of how fast ASE throttles capex when loading drops, relevant to the durability of the current US$1.7bn per quarter run-rate.",
+    "source_deck": "2023-07-27 \u00b7 Q2 2023 Earnings Release"
+  },
+  {
+    "order": 12,
+    "path": "ASX\\decks\\key_slides\\slide_12.png",
+    "caption": "First disclosure of the LEAP metric and of the capex split: leading-edge advanced packaging and testing passed 10% of ATM revenue in 1H25 against 6% for FY2024, and machinery capex of US$1.9bn was accompanied by US$0.9bn of buildings, facility and automation spend the headline capex chart excludes.",
+    "source_deck": "2025-07-31 \u00b7 Q2 2025 Earnings Release"
+  },
+  {
+    "order": 13,
+    "path": "ASX\\decks\\key_slides\\slide_13.png",
+    "caption": "The first quantified LEAP target: leading-edge revenue to rise US$1bn versus 2024, contributing 10% of growth, with the general segment at mid-to-high single digits. The start of the target series that was raised four times in the next twelve months.",
+    "source_deck": "2025-07-31 \u00b7 Q2 2025 Earnings Release"
+  },
+  {
+    "order": 14,
+    "path": "ASX\\decks\\key_slides\\slide_14.png",
+    "caption": "The business-update agenda names 'Leading-edge and Taiwan Capacity Tightness' as the operating issue and forex and tariffs as the challenge. Capacity, not demand, is what management flags.",
+    "source_deck": "2025-07-31 \u00b7 Q2 2025 Earnings Release"
+  },
+  {
+    "order": 15,
+    "path": "ASX\\decks\\key_slides\\slide_15.png",
+    "caption": "ATM revenue climbed from NT$73.9bn to NT$92.6bn per quarter across six quarters while gross margin stalled at 21-23%. Margin did not respond to volume until 4Q25, so the operating leverage arrived late relative to the revenue.",
+    "source_deck": "2025-07-31 \u00b7 Q2 2025 Earnings Release"
+  },
+  {
+    "order": 16,
+    "path": "ASX\\decks\\key_slides\\slide_16.png",
+    "caption": "ATM revenue by type, 1Q24-2Q25. Bump/FC/WLP/SiP crosses 47% while wirebonding drops to 28%, the mix shift that carries the LEAP story before LEAP was disclosed as a dollar figure.",
+    "source_deck": "2025-07-31 \u00b7 Q2 2025 Earnings Release"
+  },
+  {
+    "order": 17,
+    "path": "ASX\\decks\\key_slides\\slide_17.png",
+    "caption": "Equipment capex rose 4.4x in six quarters, from US$228m in 1Q24 to US$992m in 2Q25, and exceeded EBITDA in both quarters of 2025. The AI capacity build begins here.",
+    "source_deck": "2025-07-31 \u00b7 Q2 2025 Earnings Release"
+  },
+  {
+    "order": 18,
+    "path": "ASX\\decks\\key_slides\\slide_18.png",
+    "caption": "Management's positioning statement heading into 2026: AI supercycle, physical layers via edge applications, mainstream recovery, and the Taiwan cluster's full supply chain, plus the named 'Taiwan Plus One' strategy of overseas investment for physical AI.",
+    "source_deck": "2026-02-05 \u00b7 Q4 & FY2025 Earnings Release"
+  },
+  {
+    "order": 19,
+    "path": "ASX\\decks\\key_slides\\slide_19.png",
+    "caption": "The FY2025 scorecard: LEAP services reached US$1.6bn or 13% of ATM revenue, up from US$0.6bn and 6% in 2024; testing grew 36%; machinery capex US$3.4bn plus US$2.1bn of buildings, facilities and automation, so 38% of total capex sits outside the headline chart.",
+    "source_deck": "2026-02-05 \u00b7 Q4 & FY2025 Earnings Release"
+  },
+  {
+    "order": 20,
+    "path": "ASX\\decks\\key_slides\\slide_20.png",
+    "caption": "The FY2026 guide: LEAP to double from US$1.6bn to US$3.2bn, split roughly 75% packaging and 25% testing, with ATM revenue to outperform the logic semiconductor market. This target was raised to US$3.5bn within three months and then again.",
+    "source_deck": "2026-02-05 \u00b7 Q4 & FY2025 Earnings Release"
+  },
+  {
+    "order": 21,
+    "path": "ASX\\decks\\key_slides\\slide_21.png",
+    "caption": "FY2025 ATM P&L: packaging up 17% and testing up 32%, ATM gross margin 23.5% and operating margin 11.3%. Testing grew at nearly twice packaging's rate, the clearest annual evidence of where the mix is moving.",
+    "source_deck": "2026-02-05 \u00b7 Q4 & FY2025 Earnings Release"
+  },
+  {
+    "order": 22,
+    "path": "ASX\\decks\\key_slides\\slide_22.png",
+    "caption": "ATM revenue by type through 4Q25. Wirebonding down to 24% of ATM revenue from 42% at its 2Q21 peak, testing up to 19%. The wirebonder fleet was roughly flat over the same span, so wirebond revenue is approximately flat in nominal NT$ while everything else grew.",
+    "source_deck": "2026-02-05 \u00b7 Q4 & FY2025 Earnings Release"
+  },
+  {
+    "order": 23,
+    "path": "ASX\\decks\\key_slides\\slide_23.png",
+    "caption": "FY2025 balance sheet with full-year EBITDA of NT$126.0bn, total assets NT$889bn and interest-bearing debt NT$273bn at a 0.46 net-debt-to-equity ratio. The starting point for the 20% asset expansion of the following six months.",
+    "source_deck": "2026-02-05 \u00b7 Q4 & FY2025 Earnings Release"
+  },
+  {
+    "order": 24,
+    "path": "ASX\\decks\\key_slides\\slide_24.png",
+    "caption": "Equipment capex versus EBITDA across the full 2024-25 ramp. EBITDA overtook capex in 3Q25 and 4Q25 as margins inflected, the only period of comfortable coverage in the AI build.",
+    "source_deck": "2026-02-05 \u00b7 Q4 & FY2025 Earnings Release"
+  },
+  {
+    "order": 25,
+    "path": "ASX\\decks\\key_slides\\slide_25.png",
+    "caption": "1Q26 ATM P&L: gross margin 26.0% and operating margin 14.1%, against 22.6% and 9.6% a year earlier. Operating income up 90% YoY on 30% revenue growth, showing the operating leverage the 2025 quarters did not deliver.",
+    "source_deck": "2026-04-29 \u00b7 Q1 2026 Earnings Release"
+  },
+  {
+    "order": 26,
+    "path": "ASX\\decks\\key_slides\\slide_26.png",
+    "caption": "The FY2026 guide raised again: LEAP tracking ahead of the US$3.5bn prior guidance, the general segment raised to +20% YoY from 13%, and ATM revenue to grow 35%. 1H26 capex was US$2.7bn machinery plus US$1.4bn buildings and facilities.",
+    "source_deck": "2026-07-30 \u00b7 Q2 2026 Earnings Release"
+  },
+  {
+    "order": 27,
+    "path": "ASX\\decks\\key_slides\\slide_27.png",
+    "caption": "The 2026 statement of competitive position: 'hardware infrastructure is bottleneck', 'packaging is moving up in system architecture value chain', and an advantage built on ecosystem position including 'pure-play' and first-mover advantages. Compare against the 2021 '4 Tailwinds' version to see the framing shift from cost and scale to speed and architecture.",
+    "source_deck": "2026-07-30 \u00b7 Q2 2026 Earnings Release"
+  },
+  {
+    "order": 28,
+    "path": "ASX\\decks\\key_slides\\slide_28.png",
+    "caption": "Record ATM economics: gross margin 27.3% and operating margin 15.7% on revenue up 36% YoY, with testing up 42% and packaging up 35%. The current-state benchmark against the FY2025 basis of 23.5% and 11.3%.",
+    "source_deck": "2026-07-30 \u00b7 Q2 2026 Earnings Release"
+  },
+  {
+    "order": 29,
+    "path": "ASX\\decks\\key_slides\\slide_29.png",
+    "caption": "Equipment capex of US$1,695m exceeded EBITDA of US$1,450m in 2Q26, the widest gap in the series. Adding the US$658m of facilities spend disclosed on the call but absent from this chart, total capex was about 1.6x EBITDA.",
+    "source_deck": "2026-07-30 \u00b7 Q2 2026 Earnings Release"
+  }
+]

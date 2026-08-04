@@ -1,0 +1,170 @@
+[
+  {
+    "order": 1,
+    "path": "COIN\\decks\\key_slides\\slide_01.png",
+    "caption": "Q2'21 cycle-peak baseline: 8.8M MTUs, $462B trading volume, $2.0B net revenue, $1.6B net income, $1.1B Adj EBITDA \u2014 the bull-market high-water mark later quarters are measured against.",
+    "source_deck": "2021-08-10 \u00b7 Q2 2021 Shareholder Letter"
+  },
+  {
+    "order": 2,
+    "path": "COIN\\decks\\key_slides\\slide_02.png",
+    "caption": "Q2'21 trading-volume split (69% institutional / 31% retail) and asset mix \u2014 Bitcoin down to 24% of volume as ETH and alts diversified the book.",
+    "source_deck": "2021-08-10 \u00b7 Q2 2021 Shareholder Letter"
+  },
+  {
+    "order": 3,
+    "path": "COIN\\decks\\key_slides\\slide_03.png",
+    "caption": "2021 unit economics and scenario guidance: net transaction revenue per retail MTU ran $34-45/month; full-year MTU scenarios High 8.0M / Mid 7.0M / Low 5.5M.",
+    "source_deck": "2021-08-10 \u00b7 Q2 2021 Shareholder Letter"
+  },
+  {
+    "order": 4,
+    "path": "COIN\\decks\\key_slides\\slide_04.png",
+    "caption": "Q2'23 trough turnaround: recurring opex down ~50% Y/Y and headcount 30%+, restoring positive Adjusted EBITDA ($194M) \u2014 the financial-discipline pivot.",
+    "source_deck": "2023-08-03 \u00b7 Q2 2023 Shareholder Letter"
+  },
+  {
+    "order": 5,
+    "path": "COIN\\decks\\key_slides\\slide_05.png",
+    "caption": "Crypto market cap vs 7-day rolling volatility (event-annotated): the core demand driver \u2014 transaction revenue tracks volatility, which hit multi-year lows in 2023.",
+    "source_deck": "2023-08-03 \u00b7 Q2 2023 Shareholder Letter"
+  },
+  {
+    "order": 6,
+    "path": "COIN\\decks\\key_slides\\slide_06.png",
+    "caption": "First big 'beyond trading' bets: Base reaches general availability (Aug 2023), ETF custody partnerships incl. BlackRock, and international perpetual-futures launch.",
+    "source_deck": "2023-08-03 \u00b7 Q2 2023 Shareholder Letter"
+  },
+  {
+    "order": 7,
+    "path": "COIN\\decks\\key_slides\\slide_07.png",
+    "caption": "Three-phase adoption strategy (investment then financial service then app platform) and the derivatives opportunity (~75% of global crypto volume, US a fraction); Deribit acquisition announced.",
+    "source_deck": "2025-07-31 \u00b7 Q2 2025 Shareholder Letter"
+  },
+  {
+    "order": 8,
+    "path": "COIN\\decks\\key_slides\\slide_08.png",
+    "caption": "Custody moat: custodian for >80% of US BTC/ETH ETF assets and 8 of top 10 public BTC-holders; institutional flywheel \u2014 16 of top 25 clients by revenue use Prime Financing.",
+    "source_deck": "2025-07-31 \u00b7 Q2 2025 Shareholder Letter"
+  },
+  {
+    "order": 9,
+    "path": "COIN\\decks\\key_slides\\slide_09.png",
+    "caption": "Consumer monetization beyond trading fees: Coinbase One Card (Amex, up to 4% back in BTC) and Coinbase One Basic ($4.99/mo) build a subscription funnel.",
+    "source_deck": "2025-07-31 \u00b7 Q2 2025 Shareholder Letter"
+  },
+  {
+    "order": 10,
+    "path": "COIN\\decks\\key_slides\\slide_10.png",
+    "caption": "Capital-allocation pivot: buyback authorization doubled to $2.0B and expanded to long-term debt; a $3.0B convert funded the Deribit close and an $11.9B resource base.",
+    "source_deck": "2025-10-30 \u00b7 Q3 2025 Shareholder Letter"
+  },
+  {
+    "order": 11,
+    "path": "COIN\\decks\\key_slides\\slide_11.png",
+    "caption": "'Everything Exchange' takes shape: ~90% of crypto market cap tradable via DEX integration; Deribit close makes Coinbase #1 in options; derivatives expansion into Brazil and India.",
+    "source_deck": "2025-10-30 \u00b7 Q3 2025 Shareholder Letter"
+  },
+  {
+    "order": 12,
+    "path": "COIN\\decks\\key_slides\\slide_12.png",
+    "caption": "Institutional capital efficiency: cross-margining (US futures + spot) ~2x its nearest US competitor; Coinbase One Card >$100M spend, members deposited >$200M.",
+    "source_deck": "2025-10-30 \u00b7 Q3 2025 Shareholder Letter"
+  },
+  {
+    "order": 13,
+    "path": "COIN\\decks\\key_slides\\slide_13.png",
+    "caption": "FY2025 revenue diversification: transaction $4.06B vs subscription & services $2.83B; stablecoin alone $1.35B \u2014 S&S now a structural, less-cyclical pillar.",
+    "source_deck": "2026-02-12 \u00b7 Q4 & FY 2025 Shareholder Letter"
+  },
+  {
+    "order": 14,
+    "path": "COIN\\decks\\key_slides\\slide_14.png",
+    "caption": "Asset-accumulation flywheel and product breadth: 12 products generating >$100M annualized revenue (half >$250M, two >$1B); ~12% of all crypto worldwide stored on Coinbase.",
+    "source_deck": "2026-02-12 \u00b7 Q4 & FY 2025 Shareholder Letter"
+  },
+  {
+    "order": 15,
+    "path": "COIN\\decks\\key_slides\\slide_15.png",
+    "caption": "Product velocity: equities and prediction markets (Kalshi) launched, derivatives share 4x Y/Y, BTC borrow >$1.5B, and nearly 1M Paid Coinbase One Subscribers (3x in 3 years).",
+    "source_deck": "2026-02-12 \u00b7 Q4 & FY 2025 Shareholder Letter"
+  },
+  {
+    "order": 16,
+    "path": "COIN\\decks\\key_slides\\slide_16.png",
+    "caption": "Non-operating swing and return of capital: Q4'25 net loss $667M from crypto/Circle remeasurement despite positive Adj EBITDA; $1.7B repurchased; $11.3B cash.",
+    "source_deck": "2026-02-12 \u00b7 Q4 & FY 2025 Shareholder Letter"
+  },
+  {
+    "order": 17,
+    "path": "COIN\\decks\\key_slides\\slide_17.png",
+    "caption": "TAM framing: crypto updating all financial services, AI an accelerant \u2014 trading $14T, stablecoins ->$3T, tokenized RWAs ->$16T, AI agents $3-5T of transactions by 2030.",
+    "source_deck": "2026-05-07 \u00b7 Q1 2026 Update"
+  },
+  {
+    "order": 18,
+    "path": "COIN\\decks\\key_slides\\slide_18.png",
+    "caption": "Positioning scorecard: $294B Assets on Platform (most crypto stored anywhere), #1 US spot share, $5.2T TTM volume, #1 regulated stablecoin, 12 $100M+ products, 44% S&S of net revenue.",
+    "source_deck": "2026-05-07 \u00b7 Q1 2026 Update"
+  },
+  {
+    "order": 19,
+    "path": "COIN\\decks\\key_slides\\slide_19.png",
+    "caption": "The moat thesis: shared foundations (custody, settlement, liquidity, USDC plus 5+ stablecoins, regulatory) create network effects and scale economies; Coinbase incubated Base and supports 60+ chains.",
+    "source_deck": "2026-05-07 \u00b7 Q1 2026 Update"
+  },
+  {
+    "order": 20,
+    "path": "COIN\\decks\\key_slides\\slide_20.png",
+    "caption": "USDC economics quantified: Coinbase captures ~50% of total USDC economics and holds >25% of USDC in circulation; on-platform balances up ~10x ( $2B->$19B ) vs ~2x for total supply.",
+    "source_deck": "2026-05-07 \u00b7 Q1 2026 Update"
+  },
+  {
+    "order": 21,
+    "path": "COIN\\decks\\key_slides\\slide_21.png",
+    "caption": "2026 priorities: grow the Everything Exchange (crypto, equities, prediction markets, commodities, FX), scale stablecoins & payments, and bring the world onchain.",
+    "source_deck": "2026-05-07 \u00b7 Q1 2026 Update"
+  },
+  {
+    "order": 22,
+    "path": "COIN\\decks\\key_slides\\slide_22.png",
+    "caption": "Everything-Exchange green shoots: derivatives TTM volume +169% Y/Y and retail derivatives $200M+ annualized; prediction markets hit $100M+ annualized in its first two full months live.",
+    "source_deck": "2026-05-07 \u00b7 Q1 2026 Update"
+  },
+  {
+    "order": 23,
+    "path": "COIN\\decks\\key_slides\\slide_23.png",
+    "caption": "Agentic-commerce thesis: 99%+ of agentic stablecoin volume on Base, 90%+ of onchain agentic commerce in USDC, 100M+ x402 payments \u2014 Coinbase as the settlement layer for AI agents.",
+    "source_deck": "2026-05-07 \u00b7 Q1 2026 Update"
+  },
+  {
+    "order": 24,
+    "path": "COIN\\decks\\key_slides\\slide_24.png",
+    "caption": "Product build-up over time: the named products crossing $100M annualized revenue from 2019 (2 spot products) to 2025 (12, incl. derivatives and Base); prediction markets the likely 13th.",
+    "source_deck": "2026-05-07 \u00b7 Q1 2026 Update"
+  },
+  {
+    "order": 25,
+    "path": "COIN\\decks\\key_slides\\slide_25.png",
+    "caption": "Fortress balance sheet: ~$12B available resources plus a growing own-crypto book (+80% BTC, +56% ETH units Y/Y) \u2014 a treasury bet that amplifies non-operating earnings swings.",
+    "source_deck": "2026-05-07 \u00b7 Q1 2026 Update"
+  },
+  {
+    "order": 26,
+    "path": "COIN\\decks\\key_slides\\slide_26.png",
+    "caption": "Dilution management: shares peaked at 269M (Q3'25) and fell to 263M; $1.9B+ returned, 9.3M+ shares bought, ~90% of SBC issuance offset since Q4'24, ~$2.1B authorization left.",
+    "source_deck": "2026-05-07 \u00b7 Q1 2026 Update"
+  },
+  {
+    "order": 27,
+    "path": "COIN\\decks\\key_slides\\slide_27.png",
+    "caption": "AI-native operating model: +78% Y/Y pull requests per engineer; engineering pods shrinking from 10 people to 2-3 people + AI agents, with rising integration-test coverage.",
+    "source_deck": "2026-05-07 \u00b7 Q1 2026 Update"
+  },
+  {
+    "order": 28,
+    "path": "COIN\\decks\\key_slides\\slide_28.png",
+    "caption": "2026 cost reset: ~$500M cost reduction vs 2025 exit rate and a 14% headcount cut to ~4,300 \u2014 a sharp reversal of 2025's 31% headcount growth, framed as AI-driven operating leverage.",
+    "source_deck": "2026-05-07 \u00b7 Q1 2026 Update"
+  }
+]

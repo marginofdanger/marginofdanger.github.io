@@ -1,0 +1,194 @@
+[
+  {
+    "order": 1,
+    "path": "INTC\\decks\\key_slides\\slide_01.png",
+    "caption": "Intel's 2015 plan to take non-CPU silicon from 12% to 22% of a $49bn data-center TAM via Omni-Path, silicon photonics, 3D XPoint and FPGA. Every one of those adjacencies was later wound down or divested.",
+    "source_deck": "2015-08-27 - Data Center Day"
+  },
+  {
+    "order": 2,
+    "path": "INTC\\decks\\key_slides\\slide_02.png",
+    "caption": "The DCG growth model off a $14.4bn 2014 base: server TAM growth plus network share gain plus sell-up. The data-center franchise as management underwrote it at its peak.",
+    "source_deck": "2015-08-27 - Data Center Day"
+  },
+  {
+    "order": 3,
+    "path": "INTC\\decks\\key_slides\\slide_03.png",
+    "caption": "By 2015 DCG, IoT, Memory and Software were already ~40% of revenue but ~65% of operating margin. The profit pool left the PC a decade before the PC did.",
+    "source_deck": "2015-11-19 - Investor Meeting 2015"
+  },
+  {
+    "order": 4,
+    "path": "INTC\\decks\\key_slides\\slide_04.png",
+    "caption": "Client's stated role in 2015: ~$8bn of operating profit, >80% of total units, and >50% of shared IP. The volume engine that funds Moore's Law, not a growth business.",
+    "source_deck": "2015-11-19 - Investor Meeting 2015"
+  },
+  {
+    "order": 5,
+    "path": "INTC\\decks\\key_slides\\slide_05.png",
+    "caption": "Gross margin 2005-2016, running at 60-63%. The baseline against which the fall to a 34.8% GAAP gross margin in FY2025 has to be judged.",
+    "source_deck": "2015-11-19 - Investor Meeting 2015"
+  },
+  {
+    "order": 6,
+    "path": "INTC\\decks\\key_slides\\slide_06.png",
+    "caption": "Why Intel Wins in AI: the only supplier with the end-to-end architecture and assets. The Nervana-era claim, made at the moment NVIDIA was taking the accelerator market.",
+    "source_deck": "2016-11-17 - AI Day 2016"
+  },
+  {
+    "order": 7,
+    "path": "INTC\\decks\\key_slides\\slide_07.png",
+    "caption": "The TAM-expansion pitch: from a $45bn PC-plus-server CPU market to a ~$220bn 2021 silicon TAM across data center, memory, mobile and IoT. Intel entered all of them and exited most.",
+    "source_deck": "2017-02-09 - Investor Meeting Feb 2017"
+  },
+  {
+    "order": 8,
+    "path": "INTC\\decks\\key_slides\\slide_08.png",
+    "caption": "Capital allocation as stated in 2017: capex 20% of revenue, R&D ~22%, and over 100% of free cash flow paid out over the prior ten years, ~40% dividends and ~60% buyback.",
+    "source_deck": "2017-02-09 - Investor Meeting Feb 2017"
+  },
+  {
+    "order": 9,
+    "path": "INTC\\decks\\key_slides\\slide_09.png",
+    "caption": "The 2017 three-year model: low-single-digit revenue growth, gross margins declining only modestly and staying in the top half of the historical range, operating income growing faster than revenue. None of it held.",
+    "source_deck": "2017-02-09 - Investor Meeting Feb 2017"
+  },
+  {
+    "order": 10,
+    "path": "INTC\\decks\\key_slides\\slide_10.png",
+    "caption": "The hyper-scaling bet stated in numbers: 0.46x die-area scaling on 14nm and 0.43x on 10nm, versus 0.62x on the prior nodes. This is the engineering decision that broke Intel's process lead.",
+    "source_deck": "2017-03-28 - Technology & Manufacturing Day"
+  },
+  {
+    "order": 11,
+    "path": "INTC\\decks\\key_slides\\slide_11.png",
+    "caption": "Have you lost your lead? No: 14nm is ~3 years ahead. Intel's peak-confidence claim, made months before the 10nm failure became undeniable.",
+    "source_deck": "2017-03-28 - Technology & Manufacturing Day"
+  },
+  {
+    "order": 12,
+    "path": "INTC\\decks\\key_slides\\slide_12.png",
+    "caption": "Owners of a leading-edge logic fab collapsed from 25 in 2002-03 to 4 by 2014-16. The structural case for why a surviving leading-edge fab is valuable, and why falling off it is close to terminal.",
+    "source_deck": "2017-03-28 - Technology & Manufacturing Day"
+  },
+  {
+    "order": 13,
+    "path": "INTC\\decks\\key_slides\\slide_13.png",
+    "caption": "Intel Custom Foundry, 2017: 22FFL, 14nm and 10nm offered to external customers, we are building a foundry franchise. Shut down in 2018. Today's Intel Foundry is attempt number two.",
+    "source_deck": "2017-03-28 - Technology & Manufacturing Day"
+  },
+  {
+    "order": 14,
+    "path": "INTC\\decks\\key_slides\\slide_14.png",
+    "caption": "May 2019: 7nm progressing to plan, lead product launch in 2021. The 7nm delay announcement followed 14 months later and cost the CEO his job.",
+    "source_deck": "2019-05-08 - Investor Meeting 2019"
+  },
+  {
+    "order": 15,
+    "path": "INTC\\decks\\key_slides\\slide_15.png",
+    "caption": "CCG revenue and operating income 2015-2018, from $32.2bn/$8.2bn to $37bn/$14.2bn, against a PC TAM that had already fallen ~30% from its 2011 peak. Proof of what client pricing power once was.",
+    "source_deck": "2019-05-08 - Investor Meeting 2019"
+  },
+  {
+    "order": 16,
+    "path": "INTC\\decks\\key_slides\\slide_16.png",
+    "caption": "The 2019 framing: gross margin bottoms in 2021 on the confluence of nodes, spending falls to 25% of revenue. Gross margin did not bottom in 2021; it kept falling through FY2024.",
+    "source_deck": "2019-05-08 - Investor Meeting 2019"
+  },
+  {
+    "order": 17,
+    "path": "INTC\\decks\\key_slides\\slide_17.png",
+    "caption": "The FY2019 guide: $76-78bn of revenue, ~32% non-GAAP operating margin, free cash flow above 80% of earnings. Actual FY2019 revenue was $72.0bn.",
+    "source_deck": "2019-05-08 - Investor Meeting 2019"
+  },
+  {
+    "order": 18,
+    "path": "INTC\\decks\\key_slides\\slide_18.png",
+    "caption": "Capital return 2015-2018: $7.6bn, $7.5bn, $8.7bn, then $16.3bn, with the largest buyback ($10.7bn) in 2018 near the cycle high. The same deck's policy slide says be opportunistic on buybacks.",
+    "source_deck": "2019-05-08 - Investor Meeting 2019"
+  },
+  {
+    "order": 19,
+    "path": "INTC\\decks\\key_slides\\slide_19.png",
+    "caption": "Five nodes in four years: Intel 7, 4, 3, 20A, 18A. The schedule the whole IDM 2.0 thesis rests on. Intel 20A was later cancelled outright.",
+    "source_deck": "2022-02-17 - Investor Meeting 2022"
+  },
+  {
+    "order": 20,
+    "path": "INTC\\decks\\key_slides\\slide_20.png",
+    "caption": "The 2022 path to 10-12% growth by 2026, segment by segment, including AXG at more than $1bn in 2022 ramping to almost $10bn by 2026. AXG was dissolved and the $10bn never appeared.",
+    "source_deck": "2022-02-17 - Investor Meeting 2022"
+  },
+  {
+    "order": 21,
+    "path": "INTC\\decks\\key_slides\\slide_21.png",
+    "caption": "The 2023-24 investment-phase model: mid-to-high-single-digit growth, 51-53% gross margin, ~35% net capital intensity, roughly neutral free cash flow. FY2023 revenue fell 14%.",
+    "source_deck": "2022-02-17 - Investor Meeting 2022"
+  },
+  {
+    "order": 22,
+    "path": "INTC\\decks\\key_slides\\slide_22.png",
+    "caption": "The 2025-26 long-term model: 10-12% revenue growth, 54-58% gross margin, ~25% net capital intensity, ~20% adjusted free cash flow. FY2025 delivered flat revenue, a 34.8% GAAP gross margin and a $2.2bn operating loss. Every line missed.",
+    "source_deck": "2022-02-17 - Investor Meeting 2022"
+  },
+  {
+    "order": 23,
+    "path": "INTC\\decks\\key_slides\\slide_23.png",
+    "caption": "Intel's own process scorecard: a double-plus lead at 32nm and 22nm, then a double-minus at 10nm and a minus for four straight nodes. Alongside it, net capital intensity rising from ~18% in 2014 to ~40% in 2022.",
+    "source_deck": "2023-06-21 - Internal Foundry Model webinar"
+  },
+  {
+    "order": 24,
+    "path": "INTC\\decks\\key_slides\\slide_24.png",
+    "caption": "Management's own worked example of the transfer-pricing model: the same business shows 50% GM and 10% OM under IDM 1.0, but a 45% GM / 20% OM product unit plus a -18% OM manufacturing unit under IDM 2.0. This is why CCG's 29% segment margin is not an economic margin.",
+    "source_deck": "2023-06-21 - Internal Foundry Model webinar"
+  },
+  {
+    "order": 25,
+    "path": "INTC\\decks\\key_slides\\slide_25.png",
+    "caption": "The most damaging chart Intel has published about itself: a synthetic IDM (a fabless margin stacked on a merchant-foundry margin) earned ~70% gross margin in 2022 against Intel's ~43%, a >20-point penalty for being integrated. Sourced by Intel to a Bain study, August 2022.",
+    "source_deck": "2023-06-21 - Internal Foundry Model webinar"
+  },
+  {
+    "order": 26,
+    "path": "INTC\\decks\\key_slides\\slide_26.png",
+    "caption": "The EUV Wall. For a 10K-wafer-per-week leading-edge fab: pre-EUV costs ~$12.5bn and earns ~0% margin per wafer start; EUV costs ~$25bn and earns ~40%; High-NA costs $25-30bn and earns ~50%, with only ~2 players left. The economic key to the entire foundry thesis.",
+    "source_deck": "2024-04-02 - New Segment Reporting webinar"
+  },
+  {
+    "order": 27,
+    "path": "INTC\\decks\\key_slides\\slide_27.png",
+    "caption": "The first published Intel Products vs Intel Foundry P&L: FY2023 Products $47.7bn at 24% OM, Foundry $18.9bn at -37% OM, $18.0bn of intersegment eliminations, and consolidated GAAP operating income of $0.1bn.",
+    "source_deck": "2024-04-02 - New Segment Reporting webinar"
+  },
+  {
+    "order": 28,
+    "path": "INTC\\decks\\key_slides\\slide_28.png",
+    "caption": "The foundry margin bridge, fully specified: transistor leadership 9-11pts, internal mix and scale 7-9pts, capital and cost efficiency 12-14pts, opex leverage 5-7pts, plus node gross margins of ~20% pre-EUV, 30-40% advanced packaging and 40-50% EUV.",
+    "source_deck": "2024-04-02 - New Segment Reporting webinar"
+  },
+  {
+    "order": 29,
+    "path": "INTC\\decks\\key_slides\\slide_29.png",
+    "caption": "The 2030 target: Products 57-60% GM / 37-40% OM, Foundry 35-40% / 25-30%, consolidated ~60% GM and ~40% OM, described as a margin-stacking advantage unique in the industry. FY2025 actual: 34.8% gross margin and negative operating income.",
+    "source_deck": "2024-04-02 - New Segment Reporting webinar"
+  },
+  {
+    "order": 30,
+    "path": "INTC\\decks\\key_slides\\slide_30.png",
+    "caption": "Lip-Bu Tan's five pillars, July 2025: revitalize x86, disciplined foundry, address AI, improve balance sheet, simplify operations. Leadership language is gone, replaced by measured and sensible capex. So is the dividend.",
+    "source_deck": "2025-07-24 - Q2 2025 earnings"
+  },
+  {
+    "order": 31,
+    "path": "INTC\\decks\\key_slides\\slide_31.png",
+    "caption": "Intel Foundry through FY2025: five straight quarters of $2.2-3.2bn operating losses on $4.2-4.7bn of almost entirely intersegment revenue, at -50% to -72% operating margins.",
+    "source_deck": "2026-01-22 - Q4 2025 earnings"
+  },
+  {
+    "order": 32,
+    "path": "INTC\\decks\\key_slides\\slide_32.png",
+    "caption": "The DCAI inflection: Q1 2026 revenue of $5.1bn (+22% y/y) at a 30.5% segment operating margin, up from 13.9% a year earlier. A 16.6-point margin swing in four quarters, with ASIC revenue nearly doubling.",
+    "source_deck": "2026-04-23 - Q1 2026 earnings"
+  }
+]
