@@ -1,0 +1,182 @@
+[
+  {
+    "order": 1,
+    "path": "ARM\\decks\\key_slides\\slide_01.png",
+    "caption": "The two-stage business model as ARM first drew it: an upfront licence fee, then a per-chip royalty set as a percentage of chip price, with 3-4 years from licence to first royalty and a processor that can ship for 20+ years. Every economic claim in the 2026 decks still rests on this lag.",
+    "source_deck": "2011-05-17 - Analyst & Investor Day (legacy ARM plc)"
+  },
+  {
+    "order": 2,
+    "path": "ARM\\decks\\key_slides\\slide_02.png",
+    "caption": "Royalty revenue stacked by licence vintage, 2001-2010, against a base of ~770 cumulative processor licences growing 60-90 per year. The cohort chart Arm still publishes today, at one-eighth the current scale.",
+    "source_deck": "2011-05-17 - Analyst & Investor Day (legacy ARM plc)"
+  },
+  {
+    "order": 3,
+    "path": "ARM\\decks\\key_slides\\slide_03.png",
+    "caption": "ARM's own quantification of its switching-cost moat: licensees save 60-70% of the cost of building the CPU internally. Arm has never published a more precise make-versus-buy number.",
+    "source_deck": "2011-05-17 - Analyst & Investor Day (legacy ARM plc)"
+  },
+  {
+    "order": 4,
+    "path": "ARM\\decks\\key_slides\\slide_04.png",
+    "caption": "Share by application in 2010 - smartphone apps >95%, digital TV 35%, networking 25%, automotive 10%, microcontrollers 10%, 3D graphics <1%. The fifteen-year baseline against which every later share claim can be scored.",
+    "source_deck": "2011-05-17 - Analyst & Investor Day (legacy ARM plc)"
+  },
+  {
+    "order": 5,
+    "path": "ARM\\decks\\key_slides\\slide_05.png",
+    "caption": "99.5% of 2011 royalties came from licences signed in 2008 or earlier. The single clearest statement of how long the licence-to-royalty pipe is, and why licensing growth today is a claim on royalties five to ten years out.",
+    "source_deck": "2012-05-23 - Analyst & Investor Day (legacy ARM plc)"
+  },
+  {
+    "order": 6,
+    "path": "ARM\\decks\\key_slides\\slide_06.png",
+    "caption": "Management's 2016 share targets set in 2012: servers 5-10%, microcontrollers 30-40%, mobile computer apps processors 40-60%, total 40-50%. The server target took roughly a decade rather than four years - the calibration case for today's FYE31 forecasts.",
+    "source_deck": "2012-05-23 - Analyst & Investor Day (legacy ARM plc)"
+  },
+  {
+    "order": 7,
+    "path": "ARM\\decks\\key_slides\\slide_07.png",
+    "caption": "The 2012 long-range model: 2003-2011 actuals of 14% licensing CAGR, 22% royalty CAGR, 18% revenue CAGR and operating margin from 20% to 45%, with the route from 2012 to 2020 described as royalty outperforming the industry by 10-15 points.",
+    "source_deck": "2012-05-23 - Analyst & Investor Day (legacy ARM plc)"
+  },
+  {
+    "order": 8,
+    "path": "ARM\\decks\\key_slides\\slide_08.png",
+    "caption": "The full 2013 unit TAM table by end market with ARM share in each, plus the 2007-2013 total share series rising 17% to 35%. The most granular unit-level market map ARM ever published.",
+    "source_deck": "2014-05-20 - Analyst & Investor Day (legacy ARM plc)"
+  },
+  {
+    "order": 9,
+    "path": "ARM\\decks\\key_slides\\slide_09.png",
+    "caption": "Average royalty per chip: 4.6c, 4.5c, 4.8c, 4.8c for 2010-2013, with the factors that lift it and the factors that dilute it. Arm stopped disclosing this series after the take-private; it is the only published anchor for the per-chip royalty level.",
+    "source_deck": "2014-05-20 - Analyst & Investor Day (legacy ARM plc)"
+  },
+  {
+    "order": 10,
+    "path": "ARM\\decks\\key_slides\\slide_10.png",
+    "caption": "Share by market as of 2015 - smartphone >95%, tablet >85%, storage >90%, wearables >90%, automotive infotainment >55%, microcontrollers >25%, consumer electronics >60%. The pre-SoftBank position.",
+    "source_deck": "2015-09-15 - Analyst & Investor Day (legacy ARM plc)"
+  },
+  {
+    "order": 11,
+    "path": "ARM\\decks\\key_slides\\slide_11.png",
+    "caption": "Servers: under 1% share in 2014 against a 25% target share of a $20bn 2020 TAM. Actual cloud-compute share reached about 10% by FYE23. The largest documented miss in ARM's forecasting record.",
+    "source_deck": "2015-09-15 - Analyst & Investor Day (legacy ARM plc)"
+  },
+  {
+    "order": 12,
+    "path": "ARM\\decks\\key_slides\\slide_12.png",
+    "caption": "Automotive broken into its three sub-segments with share in each: infotainment 89%, ADAS 42%, powertrain/body/chassis 15%. Arm has not published this split since; it shows where the auto share gain still has to come from.",
+    "source_deck": "2023-11-08 - Post-IPO Roadshow Presentation"
+  },
+  {
+    "order": 13,
+    "path": "ARM\\decks\\key_slides\\slide_13.png",
+    "caption": "Market value and Arm share by end market for calendar 2020 versus 2022, including cloud compute at 7% rising to 10%. The first post-IPO version of the share table that still runs in every quarterly deck.",
+    "source_deck": "2023-11-08 - Post-IPO Roadshow Presentation"
+  },
+  {
+    "order": 14,
+    "path": "ARM\\decks\\key_slides\\slide_14.png",
+    "caption": "Royalty revenue by the vintage of the product that generated it, 2011-2023: about 46% of FYE23 royalty came from products launched before 2014, and Arm was still collecting on early-1990s designs. The annuity, quantified.",
+    "source_deck": "2023-11-08 - Post-IPO Roadshow Presentation"
+  },
+  {
+    "order": 15,
+    "path": "ARM\\decks\\key_slides\\slide_15.png",
+    "caption": "The mechanics of Arm Total Access and Arm Flexible Access side by side - subscription fee, per-product licence, design win, tape-out, then per-unit royalty - with the licence counts that Arm retired as a disclosed metric after Q4 FYE26.",
+    "source_deck": "2023-11-08 - Post-IPO Roadshow Presentation"
+  },
+  {
+    "order": 16,
+    "path": "ARM\\decks\\key_slides\\slide_16.png",
+    "caption": "Licence revenue recognition disclosed plainly: roughly 40-60% of a deal's value may be recognised on signature, which is why licence revenue is lumpy and why ACV exists as the smoothed series.",
+    "source_deck": "2023-11-08 - Post-IPO Roadshow Presentation"
+  },
+  {
+    "order": 17,
+    "path": "ARM\\decks\\key_slides\\slide_17.png",
+    "caption": "The Armv9 mix in smartphones at the start of the transition - 10% of volume but 15% of value - showing that the higher Armv9 royalty rate was already visible in the value split before it showed up in units.",
+    "source_deck": "2024-03-21 - SoftBank Investor Update, Tokyo"
+  },
+  {
+    "order": 18,
+    "path": "ARM\\decks\\key_slides\\slide_18.png",
+    "caption": "The Armv9 architecture roadmap from Armv8.2-A in 2014 through Armv9.6-A in 2024 and beyond, mapping each extension to the products announced on it. The clearest picture of the annual-release cadence that lifts royalty rates.",
+    "source_deck": "2025-03-17 - SoftBank Investor Update, Tokyo"
+  },
+  {
+    "order": 19,
+    "path": "ARM\\decks\\key_slides\\slide_19.png",
+    "caption": "Royalty mix by end market, FYE16 versus FYE25: smartphone applications processors 45%, IoT and embedded 18%, consumer electronics 12%, cloud and networking 10%, other mobile 8%, automotive 7%. No equivalent disaggregation exists in the 20-F.",
+    "source_deck": "2025-07-30 - Q1 FYE26 Investor Presentation"
+  },
+  {
+    "order": 20,
+    "path": "ARM\\decks\\key_slides\\slide_20.png",
+    "caption": "The royalty-vintage cohort chart updated to FYE25, with the explicit statement that about 50% of current royalty revenue comes from products launched more than ten years ago.",
+    "source_deck": "2026-02-04 - Q3 FYE26 Investor Presentation"
+  },
+  {
+    "order": 21,
+    "path": "ARM\\decks\\key_slides\\slide_21.png",
+    "caption": "CSS as a percentage of total royalty revenue going from roughly zero in early 2025 to about 15% a year later. Arm does not disclose the CSS royalty share anywhere in the 20-F or the shareholder letters.",
+    "source_deck": "2026-03-24 - Arm Everywhere Keynote"
+  },
+  {
+    "order": 22,
+    "path": "ARM\\decks\\key_slides\\slide_22.png",
+    "caption": "The core claim behind the whole silicon strategy: a gigawatt AI data centre needs about 30m CPU cores today and about 120m once agentic workloads dominate, because agents issue more than 15x the requests of humans and the CPU orchestration layer becomes the bottleneck.",
+    "source_deck": "2026-03-24 - Arm Everywhere Keynote"
+  },
+  {
+    "order": 23,
+    "path": "ARM\\decks\\key_slides\\slide_23.png",
+    "caption": "Mobile royalty economics laid bare: CSS rises from about 25% of mobile royalty in FYE26 to the majority by FYE31 while Arm's own mobile unit-growth line runs at about 3% and turns negative in FYE27. Mobile growth is entirely a rate story, not a volume story.",
+    "source_deck": "2026-03-24 - Arm Everywhere Investor Session"
+  },
+  {
+    "order": 24,
+    "path": "ARM\\decks\\key_slides\\slide_24.png",
+    "caption": "Neoverse data-centre core shipments from FYE19 to FYE31, with 1.25bn cores cumulatively shipped and an 8-10x further increase forecast, annotated with the AWS, NVIDIA, Microsoft and Google silicon that drove each step.",
+    "source_deck": "2026-03-24 - Arm Everywhere Investor Session"
+  },
+  {
+    "order": 25,
+    "path": "ARM\\decks\\key_slides\\slide_25.png",
+    "caption": "The economics of the model shift in one chart: per $1,000 of chip ASP, IP royalty earns about $50 of gross profit (a ~5% rate), CSS about $100 (~10%), and selling the whole chip about $500 at ~50% gross margin. The first time Arm has quantified its royalty rates as a share of chip ASP.",
+    "source_deck": "2026-03-24 - Arm Everywhere Investor Session"
+  },
+  {
+    "order": 26,
+    "path": "ARM\\decks\\key_slides\\slide_26.png",
+    "caption": "How much of the forecast is already contracted: 100% of FYE26 royalty, about 85% by FYE28, and about 60% by FYE31 rests on rates already under contract - so roughly 40% of the FYE31 royalty forecast depends on rates not yet agreed.",
+    "source_deck": "2026-03-24 - Arm Everywhere Investor Session"
+  },
+  {
+    "order": 27,
+    "path": "ARM\\decks\\key_slides\\slide_27.png",
+    "caption": "The FYE31 target set: $10bn of IP/CSS revenue at above 65% non-GAAP operating margin plus $15bn of chip revenue at above 30%, for more than $9 of non-GAAP EPS. Every forward number in the deck resolves here.",
+    "source_deck": "2026-03-24 - Arm Everywhere Investor Session"
+  },
+  {
+    "order": 28,
+    "path": "ARM\\decks\\key_slides\\slide_28.png",
+    "caption": "Royalty revenue grew at about a 14% CAGR from FYE22 to FYE26; management forecasts 20% from FYE26 to FYE31. The deck asks for an acceleration, not a continuation, of the historical rate.",
+    "source_deck": "2026-07-29 - Q1 FYE27 Investor Presentation"
+  },
+  {
+    "order": 29,
+    "path": "ARM\\decks\\key_slides\\slide_29.png",
+    "caption": "Non-GAAP operating cost grew at a 26% CAGR from FYE24 to FYE26 and is forecast to grow at a mid-teens CAGR to FYE31. The entire margin expansion to above 65% depends on this deceleration holding.",
+    "source_deck": "2026-07-29 - Q1 FYE27 Investor Presentation"
+  },
+  {
+    "order": 30,
+    "path": "ARM\\decks\\key_slides\\slide_30.png",
+    "caption": "Market value and Arm share by end market, FYE22 versus FYE26, with FYE31 market sizes: cloud compute share 9% to 23% on a market rising $16bn to $50bn to about $100bn, automotive and robotics 31% to 44%, IoT and embedded 26% to 37%, mobile applications above 99% throughout.",
+    "source_deck": "2026-07-29 - Q1 FYE27 Investor Presentation"
+  }
+]
