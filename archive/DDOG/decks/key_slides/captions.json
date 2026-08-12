@@ -1,0 +1,212 @@
+[
+  {
+    "order": 1,
+    "path": "DDOG\\decks\\key_slides\\slide_01.png",
+    "caption": "The 2021 expansion map: Security drawn as the one connected adjacency, with developer workflows, IT service management and real-time business intelligence still dashed. A scorecard for everything Datadog has since entered.",
+    "source_deck": "2021-10-27 \u00b7 Datadog Investor Meeting 2021"
+  },
+  {
+    "order": 2,
+    "path": "DDOG\\decks\\key_slides\\slide_02.png",
+    "caption": "ARR by product-count cohort, Q2-18 to Q2-21: single-product ARR flat while 4+ product ARR became the whole business. The earliest disclosed proof that growth is multi-product, not multi-customer.",
+    "source_deck": "2021-10-27 \u00b7 Datadog Investor Meeting 2021"
+  },
+  {
+    "order": 3,
+    "path": "DDOG\\decks\\key_slides\\slide_03.png",
+    "caption": "Logging Without Limits: decoupling ingestion from indexing removes the cost-versus-visibility trade-off that every legacy log vendor prices around. The pricing wedge behind the log-takeout deals.",
+    "source_deck": "2021-10-27 \u00b7 Datadog Investor Meeting 2021"
+  },
+  {
+    "order": 4,
+    "path": "DDOG\\decks\\key_slides\\slide_04.png",
+    "caption": "The full price list by product: per host, per ingested GB, per indexed event, per test run, per session, per invocation, per user. Thirteen products, seven different usage meters.",
+    "source_deck": "2021-10-27 \u00b7 Datadog Investor Meeting 2021"
+  },
+  {
+    "order": 5,
+    "path": "DDOG\\decks\\key_slides\\slide_05.png",
+    "caption": "CAC payback of about 7 months versus 12 to 44 months for four unnamed competitors. Datadog has never republished this comparison in any later deck.",
+    "source_deck": "2021-10-27 \u00b7 Datadog Investor Meeting 2021"
+  },
+  {
+    "order": 6,
+    "path": "DDOG\\decks\\key_slides\\slide_06.png",
+    "caption": "Acquisitions accelerated time-to-market in five of sixteen generally available products, including Log Management (2017) and Synthetics (2018). Two of the three ARR pillars began as purchases.",
+    "source_deck": "2022-10-19 \u00b7 Investor Meeting at DASH 2022"
+  },
+  {
+    "order": 7,
+    "path": "DDOG\\decks\\key_slides\\slide_07.png",
+    "caption": "Observability TAM of $62 billion in 2026 on Gartner's IT Operations market. Compare with the $28 billion figure Datadog quotes for the same year in 2026 after switching Gartner categories.",
+    "source_deck": "2022-10-19 \u00b7 Investor Meeting at DASH 2022"
+  },
+  {
+    "order": 8,
+    "path": "DDOG\\decks\\key_slides\\slide_08.png",
+    "caption": "The August 2023 KPI baseline: 19 products, ~26,100 customers, 45% on four or more products, 120%+ net retention, 18% non-GAAP operating margin. The starting point for the three-year comparison.",
+    "source_deck": "2023-08-09 \u00b7 Investor Presentation August 2023"
+  },
+  {
+    "order": 9,
+    "path": "DDOG\\decks\\key_slides\\slide_09.png",
+    "caption": "4Q23 three-pillar ARR: Infrastructure ~$1.0bn, APM Suite ~$0.57bn, Logs ~$0.58bn. Note the footnote \u2014 APM Suite then included Synthetics and RUM, which were later moved out into DEM.",
+    "source_deck": "2024-02-15 \u00b7 Investor Day 2024"
+  },
+  {
+    "order": 10,
+    "path": "DDOG\\decks\\key_slides\\slide_10.png",
+    "caption": "The physical driver of the infrastructure line, 2019-2023: hosts +28% CAGR, containers +69%, serverless invocations +53%. Priced per unit, so unit growth is the revenue engine.",
+    "source_deck": "2024-02-15 \u00b7 Investor Day 2024"
+  },
+  {
+    "order": 11,
+    "path": "DDOG\\decks\\key_slides\\slide_11.png",
+    "caption": "Customer counts by APM-suite product, 2019-2023. Core APM leads, Synthetics close behind, and Database Monitoring barely started \u2014 the attach ladder inside the second pillar.",
+    "source_deck": "2024-02-15 \u00b7 Investor Day 2024"
+  },
+  {
+    "order": 12,
+    "path": "DDOG\\decks\\key_slides\\slide_12.png",
+    "caption": "Security attach rates at end-2023: 14% of APM customers took ASM, 8% of infrastructure customers took CSM, 19% of Logs customers took SIEM. The security cross-sell started from a very low base.",
+    "source_deck": "2024-02-15 \u00b7 Investor Day 2024"
+  },
+  {
+    "order": 13,
+    "path": "DDOG\\decks\\key_slides\\slide_13.png",
+    "caption": "Where added ARR came from, 2019-2023. Cross-sell of new products never exceeded ~21% of ARR added; the swing factor is expansion of usage inside products the customer already has.",
+    "source_deck": "2024-02-15 \u00b7 Investor Day 2024"
+  },
+  {
+    "order": 14,
+    "path": "DDOG\\decks\\key_slides\\slide_14.png",
+    "caption": "At Dec-2023, ~60% of customers used fewer than all three pillars, and three-pillar customers spent more than 10x the rest. Two years later the gap had widened to 15x.",
+    "source_deck": "2024-02-15 \u00b7 Investor Day 2024"
+  },
+  {
+    "order": 15,
+    "path": "DDOG\\decks\\key_slides\\slide_15.png",
+    "caption": "Scoring the IPO-era margin goals: gross margin, S&M and operating margin all beaten. R&D at 30% of sales has run permanently above its 22-26% goal \u2014 the one target never met, presented as a feature.",
+    "source_deck": "2024-02-15 \u00b7 Investor Day 2024"
+  },
+  {
+    "order": 16,
+    "path": "DDOG\\decks\\key_slides\\slide_16.png",
+    "caption": "The dilution target set in 2024: 2.5-3.5% a year from RSUs and PSUs, against actual dilution of 1.7-2.4% in 2020-2023. The plan was to dilute faster than history, not slower.",
+    "source_deck": "2024-02-15 \u00b7 Investor Day 2024"
+  },
+  {
+    "order": 17,
+    "path": "DDOG\\decks\\key_slides\\slide_17.png",
+    "caption": "The May 2025 snapshot: 24 products, ~30,500 customers, 51% on four or more products, high-110%s net retention, $2.83bn TTM revenue growing 26%. The trough in growth before the AI-native ramp.",
+    "source_deck": "2025-05-06 \u00b7 Investor Presentation May 2025"
+  },
+  {
+    "order": 18,
+    "path": "DDOG\\decks\\key_slides\\slide_18.png",
+    "caption": "December 2025 ARR by pillar: Infrastructure above $1.5bn, Logs $1.0bn, and APM & DEM $1.0bn combined. The much-quoted \"APM crossed $1bn\" includes Digital Experience Monitoring.",
+    "source_deck": "2026-02-12 \u00b7 Investor Day 2026"
+  },
+  {
+    "order": 19,
+    "path": "DDOG\\decks\\key_slides\\slide_19.png",
+    "caption": "Ten years of platform scale in one table: 1 product to 25, 2,060 customers to 32,700, zero $1m customers to 603, and monthly active users approaching one million.",
+    "source_deck": "2026-02-12 \u00b7 Investor Day 2026"
+  },
+  {
+    "order": 20,
+    "path": "DDOG\\decks\\key_slides\\slide_20.png",
+    "caption": "Log Management ARR grew about 7x from roughly $145m in 2020 to $1.0bn in 2025, with growth troughing near 25% in 2024 and re-accelerating as Flex Logs scaled.",
+    "source_deck": "2026-02-12 \u00b7 Investor Day 2026"
+  },
+  {
+    "order": 21,
+    "path": "DDOG\\decks\\key_slides\\slide_21.png",
+    "caption": "Digital Experience Monitoring ARR reached roughly $290m at Dec-2025, split about $170m Real User Monitoring, $110m Synthetics and $10m Product Analytics. Product Analytics is still nearly nothing.",
+    "source_deck": "2026-02-12 \u00b7 Investor Day 2026"
+  },
+  {
+    "order": 22,
+    "path": "DDOG\\decks\\key_slides\\slide_22.png",
+    "caption": "The whole security product suite \u2014 Cloud Security, Code Security, Data Security and Cloud SIEM \u2014 was roughly $107m of ARR at Dec-2025, about 2.6% of the company, against a claimed $30bn TAM.",
+    "source_deck": "2026-02-12 \u00b7 Investor Day 2026"
+  },
+  {
+    "order": 23,
+    "path": "DDOG\\decks\\key_slides\\slide_23.png",
+    "caption": "Datadog's own framing of the security gap: 70% of $1m+ customers already use a security product, but security is 2% of those customers' spend. Broad adoption, negligible wallet share.",
+    "source_deck": "2026-02-12 \u00b7 Investor Day 2026"
+  },
+  {
+    "order": 24,
+    "path": "DDOG\\decks\\key_slides\\slide_24.png",
+    "caption": "The pricing model in one chart: at one enterprise customer, indexed log volume rose about 75x while unit price collapsed, producing about 4x revenue. Volume growth deliberately outruns engineered price deflation.",
+    "source_deck": "2026-02-12 \u00b7 Investor Day 2026"
+  },
+  {
+    "order": 25,
+    "path": "DDOG\\decks\\key_slides\\slide_25.png",
+    "caption": "Non-GAAP R&D versus observability peers: roughly $970m for Datadog on TTM Sep-25 against about $305m and $285m for the two remaining independents. A third peer disappears from the chart after 2023.",
+    "source_deck": "2026-02-12 \u00b7 Investor Day 2026"
+  },
+  {
+    "order": 26,
+    "path": "DDOG\\decks\\key_slides\\slide_26.png",
+    "caption": "Added ARR by type, 2020-2025. New customers fell to about a quarter of ARR added in 2025 and expansion inside existing products rose to about 57%. Cross-sell stayed flat despite the product count tripling.",
+    "source_deck": "2026-02-12 \u00b7 Investor Day 2026"
+  },
+  {
+    "order": 27,
+    "path": "DDOG\\decks\\key_slides\\slide_27.png",
+    "caption": "AI-native customers went from 1% of revenue in 2021 to 11% in 2025. Applied to reported revenue, that cohort supplied roughly a third of the FY2025 revenue increase \u2014 and it contains the largest customer.",
+    "source_deck": "2026-02-12 \u00b7 Investor Day 2026"
+  },
+  {
+    "order": 28,
+    "path": "DDOG\\decks\\key_slides\\slide_28.png",
+    "caption": "Customer counts by ARR tier, 4Q20-4Q25, including the $10m+ tier that appears in no filing: 3 customers in 2020, 34 in 2025, a 63% compound rate.",
+    "source_deck": "2026-02-12 \u00b7 Investor Day 2026"
+  },
+  {
+    "order": 29,
+    "path": "DDOG\\decks\\key_slides\\slide_29.png",
+    "caption": "Gross dollar retention by number of products adopted, from about 87% at one or two products to about 99% at ten or more. The company-wide \"mid-to-high 90s\" is a blend of two very different businesses.",
+    "source_deck": "2026-02-12 \u00b7 Investor Day 2026"
+  },
+  {
+    "order": 30,
+    "path": "DDOG\\decks\\key_slides\\slide_30.png",
+    "caption": "Enterprise average land ARR jumped roughly 70% in 2025 to about $85k, while enterprise average ARR was nearly flat at about $505k. Much bigger new deals, a stalled installed-base average.",
+    "source_deck": "2026-02-12 \u00b7 Investor Day 2026"
+  },
+  {
+    "order": 31,
+    "path": "DDOG\\decks\\key_slides\\slide_31.png",
+    "caption": "Datadog's share of Gartner's Health & Performance market rose from 0.5% in 2016 to 14% in 2025. The 14% is measured against the redefined, smaller observability market introduced in this same deck.",
+    "source_deck": "2026-02-12 \u00b7 Investor Day 2026"
+  },
+  {
+    "order": 32,
+    "path": "DDOG\\decks\\key_slides\\slide_32.png",
+    "caption": "The restacked opportunity: about $116bn in 2025E rising to $185bn by 2029E, with Software Delivery now the largest slice \u2014 larger than observability, and the area where disclosed revenue is smallest.",
+    "source_deck": "2026-02-12 \u00b7 Investor Day 2026"
+  },
+  {
+    "order": 33,
+    "path": "DDOG\\decks\\key_slides\\slide_33.png",
+    "caption": "The margin record against the 25%+ operating margin goal set in 2024: hit once, in 2024, then given back to 22% in 2025. FY2026 guidance implies about 22.7%, a third consecutive miss.",
+    "source_deck": "2026-02-12 \u00b7 Investor Day 2026"
+  },
+  {
+    "order": 34,
+    "path": "DDOG\\decks\\key_slides\\slide_34.png",
+    "caption": "The current position at 30 June 2026: 26 products, ~33,400 customers, 58% on four or more products and 13% on ten or more, low-120%s net retention, $3.97bn TTM revenue growing 32%.",
+    "source_deck": "2026-08-06 \u00b7 Investor Presentation August 2026"
+  },
+  {
+    "order": 35,
+    "path": "DDOG\\decks\\key_slides\\slide_35.png",
+    "caption": "Multi-product adoption inflected in the year to June 2026: the six-plus, eight-plus and ten-plus buckets each gained 6-8 points after years of 2-4 point moves. The deepest part of the base broadened fastest.",
+    "source_deck": "2026-08-06 \u00b7 Investor Presentation August 2026"
+  }
+]
