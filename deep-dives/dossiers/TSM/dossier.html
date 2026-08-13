@@ -171,6 +171,14 @@
   .plotly-chart { margin-top: 28px; margin-bottom: 6px; }
   .plotly-chart .plotly-graph-div { width: 100% !important; }
   .chart-caption { font-size: 12px; color: #555; margin-top: 0; margin-bottom: 26px; font-style: italic; }
+  /* Fenced blocks: preserve line structure; let a wide tree SCROLL, not wrap.
+     The exemplar styles inline <code> with a border/background - neutralise inside <pre>. */
+  pre { width: min(1100px, 95vw); margin-left: 50%; transform: translateX(-50%);
+        overflow-x: auto; white-space: pre; background: var(--soft);
+        border: 1px solid var(--line); border-radius: 4px; padding: 10px 12px;
+        line-height: 1.45; }
+  pre code { background: none; border: 0; padding: 0; border-radius: 0;
+             font-size: 12px; white-space: pre; }
   /* SOURCE / CLARIFICATION NOTES render smaller than analysis (run-basis preambles,
      estimate-basis definitions under the multiples, peer-table basis flags, web source
      lists). Same words, smaller type: the size says "reference material, not analysis". */
@@ -638,8 +646,7 @@ shares from the Q2 2026 deck, slide 6.</p>
 book, no indexation and no take-or-pay.</span><sup class="ev-pip" data-ev="biz-pricing-mechanism" aria-hidden="true">▪</sup> The 20-F says only that TSMC "establish[s]
 pricing levels for specific periods of time with our customers, some of which are
 subject to adjustment during the course of that period to take into account market
-conditions" (20-F FY2025, Item 5). What actually moves realized price is which node a
-wafer slot is configured for, and that is TSMC's own supply decision taken five to seven
+conditions" (20-F FY2025, Item 5). Realized price moves with which node a wafer slot is configured for, and that is TSMC's own supply decision taken five to seven
 years earlier.</p>
 <p>The disclosed evidence is the blended wafer ASP series, which is the ratio of two filed
 numbers.</p>
@@ -1459,8 +1466,7 @@ semiconductor logic manufacturing" (INTC 10-K FY2025). C.C. Wei's framing on the
 call was that TSMC works with ASML on cost and maturity and decides "whether we use it or
 not." If TSMC can hold density and yield with 0.33 NA multi-patterning through 2029 while
 Intel pays for High-NA at 14A, its capital efficiency advantage widens; if it cannot,
-A14's density claim is where the strain shows first. That is the single most falsifiable
-technology call in the roadmap and it resolves around 2028.</p>
+A14's density claim is where the strain shows first. It resolves around 2028.</p>
 <p>The FY2025 20-F does not contain the string "EUV" or
 "extreme ultraviolet" once, and ASML is never named. Equipment sole-source exposure is
 disclosed only generically.</p>
@@ -2219,13 +2225,11 @@ more than usual. TSMC's own gap is 7.8 points of gross margin and 9.5 of operati
 margin, explained by loading, cost improvement and mix. Intel's Q1 2026 headline
 operating margin of −23.1% includes US$4,070m of restructuring; excluding it the quarter
 was +6.9%, the first meaningfully positive operating quarter in the series, so Intel is
-improving while remaining nowhere near TSMC. Micron is the sharpest divergence in the
-table: FY2025 gross margin 39.8% against 84.6% in the quarter ended 28 May 2026, on
+improving while remaining nowhere near TSMC. Micron shows the widest gap: FY2025 gross margin 39.8% against 84.6% in the quarter ended 28 May 2026, on
 revenue of US$41,456m that now exceeds TSMC's quarterly revenue. Any statement that TSMC
 is the most profitable semiconductor manufacturer is currently false, and management
 concedes it. Amkor's Q1 2026 gross margin of 14.2% against a 14.0% full year, on 27.5%
-revenue growth, is the clearest evidence that revenue growth in the packaging layer is not
-converting into margin for the specialists.</p>
+revenue growth, shows that revenue growth in the packaging layer is not converting into margin for the specialists.</p>
 <h3 id="is-the-gap-widening">Is the gap widening?</h3>
 <div class="table-wrap"><table>
 <thead>
@@ -2555,9 +2559,7 @@ because capacity three years out is bought today.</p>
 </tbody>
 </table></div>
 <p>TSMC's leading-edge franchise alone is 6.1x Samsung's entire foundry business across all
-nodes, 7.8x SMIC's entire business and 255x Intel Foundry's external revenue. The 2nm
-capacity comparison is the sharpest single number: a target of 100,000-140,000 wafers per
-month against Samsung's 21,000, a ratio of 4.8x to 6.7x, both figures trade press. On the design pipeline, which predicts 2028-29 share because a win
+nodes, 7.8x SMIC's entire business and 255x Intel Foundry's external revenue. TSMC targets 100,000-140,000 2nm wafers per month against Samsung's 21,000, a ratio of 4.8x to 6.7x, both figures trade press. On the design pipeline, which predicts 2028-29 share because a win
 converts to revenue two to three years later, the gap is wider than on today's revenue.
 On capital, TSMC's 2026 spend on advanced process alone is roughly 2.9-3.5x Intel's
 entire-company PP&amp;E additions in FY2025 and exceeds Samsung's whole 2026 semiconductor
@@ -2946,7 +2948,7 @@ SoIC and InFO contribution, so US$13-18bn brackets the franchise.</p>
 </tr>
 </tbody>
 </table></div>
-<p>Capital commitment is the clearest structural fact. ASE will spend US$7.0bn in 2026
+<p>ASE will spend US$7.0bn in 2026
 against roughly US$14bn of ATM revenue and Amkor US$2.5-3.0bn against roughly US$8bn,
 while TSMC's entire backend bucket — packaging plus test plus mask making plus other — is
 US$6.0-12.8bn against roughly US$25bn of Others-line revenue. On the midpoints TSMC
@@ -3218,8 +3220,7 @@ capture on the most supply-constrained input in the AI build-out is about 3-4% o
 accelerator sells for. Owning the bottleneck has not translated into owning the profit.</p>
 <p><strong>Evidence for:</strong> <span class="ev-claim" data-ev="mix-packaging-share-per-unit" role="button" tabindex="0" aria-label="Show evidence">packaging is roughly 55% of what TSMC collects per B200 (US$1,100 of
 US$2,000) against about 8% of consolidated revenue, because the consolidated figure is
-diluted by smartphone and mature-node revenue where packaging attach is low or zero.</span><sup class="ev-pip" data-ev="mix-packaging-share-per-unit" aria-hidden="true">▪</sup> On
-the products actually driving growth, the backend is several times larger a share of
+diluted by smartphone and mature-node revenue where packaging attach is low or zero.</span><sup class="ev-pip" data-ev="mix-packaging-share-per-unit" aria-hidden="true">▪</sup> On the products driving growth, the backend is several times larger a share of
 TSMC's take than the corporate mix suggests, which the Q2 2026 print of a record 16.0%
 backend share of revenue has begun to show.</p>
 <h3 id="inside-tsmcs-own-dollar">Inside TSMC's own dollar</h3>
@@ -3868,7 +3869,7 @@ and against roughly US$30,000-40,000 of street price TSMC's packaging capture is
 3-4% of what the accelerator sells for. Owning the bottleneck has not translated into
 owning the profit, and TSMC's own chief executive says so about memory. Yet packaging is
 roughly 55% of what TSMC collects per accelerator against about 8% of consolidated
-revenue, so on the products actually driving growth the backend is several times larger a
+revenue, so on the products driving growth the backend is several times larger a
 share of TSMC's take than the corporate mix suggests. That is the mechanical case for the
 backend share rising as HPC mix rises, and Q2 2026's record 16.0% backend share is the
 first quarter it is visible.</p>
@@ -7743,7 +7744,7 @@ consensus over the same window versus what happened to the multiple applied to i
 </table></div>
 <p>Seven of the eight episodes are multiple moves against flat or rising estimates. Only the
 2018-19 episode had estimates declining at all, and by 3.9%.</p>
-<p><strong>The 2022 drawdown is the decade's largest and the clearest case.</strong> Twelve-month-forward
+<p><strong>The 2022 drawdown is the decade's largest.</strong> Twelve-month-forward
 consensus EPS rose 18.4% across the drawdown, from US$4.97 to US$5.88 per ADS, while the
 forward multiple went from 28.3x to 10.3x. Nothing in the earnings expectation deteriorated
 during the fall. The dated events in that window are the October 2022 US export controls on
@@ -8172,12 +8173,13 @@ accounting basis, so every comparison to consensus below crosses that basis and 
 the model by roughly 1.2% at the earnings line.</p>
 <h3 id="structure">Structure</h3>
 <p>Five identities, in order:</p>
-<p><code>(1)  Wafer revenue (US$)  = 12-inch equivalent shipments × blended wafer revenue per wafer
+<pre><code>(1)  Wafer revenue (US$)  = 12-inch equivalent shipments × blended wafer revenue per wafer
 (2)  Total revenue (US$)  = wafer revenue ÷ (1 − Others share of net revenue)
 (3)  Total revenue (NT$)  = total revenue (US$) × USDTWD
 (4)  COGS (NT$)           = 0.94 × depreciation + 0.64 × amortisation
                             + shipments × cash cost per wafer
-(5)  Depreciation (NT$)   = ratio × trailing five-year average gross capex</code></p>
+(5)  Depreciation (NT$)   = ratio × trailing five-year average gross capex
+</code></pre>
 <p>Every input is either a disclosed KPI or a tagged assumption. The volume/price split is
 at the consolidated wafer level: node-level
 volume is undisclosed, the triangulated FY2025 leading-edge volume band is ±13% and the
