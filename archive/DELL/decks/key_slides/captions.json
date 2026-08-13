@@ -1,0 +1,212 @@
+[
+ {
+  "order": 1,
+  "path": "DELL\\decks\\key_slides\\slide_01.png",
+  "caption": "Core-vs-DFS debt bridge FY19-2QFY22: core debt $43.3B to $29.0B and core leverage 4.2x to 2.2x, with DFS debt flat to rising and described as mostly non-recourse - the deleveraging record the 2021 capital framework was built on.",
+  "source_deck": "2021-08-26 · Q2 FY22 Performance Review"
+ },
+ {
+  "order": 2,
+  "path": "DELL\\decks\\key_slides\\slide_02.png",
+  "caption": "Corporate evolution 2013 go-private, 2016 EMC, 2018 Class C listing, 2021 VMware spin - the four events that make pre-FY2022 consolidated financials non-comparable.",
+  "source_deck": "2021-09-23 · Securities Analyst Meeting"
+ },
+ {
+  "order": 3,
+  "path": "DELL\\decks\\key_slides\\slide_03.png",
+  "caption": "Pre-AI market position: 24% commercial PC unit share, 28% mainstream server revenue share, 28% external storage revenue share, with five-year gains of 5.4pts, 5.6pts and 18.1pts in HCI.",
+  "source_deck": "2021-09-23 · Securities Analyst Meeting"
+ },
+ {
+  "order": 4,
+  "path": "DELL\\decks\\key_slides\\slide_04.png",
+  "caption": "Unit versus revenue mix by PC segment - the arithmetic behind Dell targeting commercial and premium consumer while conceding mainstream and Chrome volume.",
+  "source_deck": "2021-09-23 · Securities Analyst Meeting"
+ },
+ {
+  "order": 5,
+  "path": "DELL\\decks\\key_slides\\slide_05.png",
+  "caption": "CSG revenue +7% and operating income +18% CAGR FY18-FY21, attributed to the direct sales motion and its telemetry-to-product feedback loop.",
+  "source_deck": "2021-09-23 · Securities Analyst Meeting"
+ },
+ {
+  "order": 6,
+  "path": "DELL\\decks\\key_slides\\slide_06.png",
+  "caption": "The first five-year framework: Dell Tech 3-4%, ISG 3-5%, CSG 2-3% revenue CAGR FY22-FY26. ISG was later raised twice; CSG realized -4.6%.",
+  "source_deck": "2021-09-23 · Securities Analyst Meeting"
+ },
+ {
+  "order": 7,
+  "path": "DELL\\decks\\key_slides\\slide_07.png",
+  "caption": "Capital allocation on the day the dividend was announced: return 40-60% of adjusted FCF, $5B buyback, IG rating and 1.5x core leverage target after $25B of post-EMC debt paydown.",
+  "source_deck": "2021-09-23 · Securities Analyst Meeting"
+ },
+ {
+  "order": 8,
+  "path": "DELL\\decks\\key_slides\\slide_08.png",
+  "caption": "Pre-AI customer-mix baseline: infrastructure to nearly 80% of leading cloud companies, with CSP customers roughly 20% of the ISG portfolio as of Q1 FY22.",
+  "source_deck": "2022-05-04 · Dell Technologies World"
+ },
+ {
+  "order": 9,
+  "path": "DELL\\decks\\key_slides\\slide_09.png",
+  "caption": "Mainstream server share 21% (2012) to 30% (2022) and CY22 storage share by category - the baseline against which the later share erosion and the 2025 redefinition are measured.",
+  "source_deck": "2023-08-31 · Q2 FY24 Performance Review"
+ },
+ {
+  "order": 10,
+  "path": "DELL\\decks\\key_slides\\slide_10.png",
+  "caption": "Commercial PC unit share 15% (2012) to 25% (2022), plus the ASP ratios that make the mix work: commercial 3.5x Chrome, premium consumer 2.8x mainstream consumer.",
+  "source_deck": "2023-08-31 · Q2 FY24 Performance Review"
+ },
+ {
+  "order": 11,
+  "path": "DELL\\decks\\key_slides\\slide_11.png",
+  "caption": "Seven-year ISG P&L with operating margin (FY18 9.9% to FY23 13.2%) - segment history the 10-K discloses only three years of.",
+  "source_deck": "2023-10-05 · Securities Analyst Meeting"
+ },
+ {
+  "order": 12,
+  "path": "DELL\\decks\\key_slides\\slide_12.png",
+  "caption": "Dell claims 43% of all new server industry revenue over 2012-2022, more than the top four competitors combined, with the XE9680 at $2B of backlog in its first year.",
+  "source_deck": "2023-10-05 · Securities Analyst Meeting"
+ },
+ {
+  "order": 13,
+  "path": "DELL\\decks\\key_slides\\slide_13.png",
+  "caption": "Storage: external share 27.7% (2017) to 30.2% (2022) and 38% of new industry revenue over five years - the peak of the storage-share record before the subsequent decline.",
+  "source_deck": "2023-10-05 · Securities Analyst Meeting"
+ },
+ {
+  "order": 14,
+  "path": "DELL\\decks\\key_slides\\slide_14.png",
+  "caption": "The 2023 AI TAM: $64B (2023) to $124B (2027) at 18% CAGR. Two years later Dell put the same 2027 figure at $310B.",
+  "source_deck": "2023-10-05 · Securities Analyst Meeting"
+ },
+ {
+  "order": 15,
+  "path": "DELL\\decks\\key_slides\\slide_15.png",
+  "caption": "Total revenue per unit $1,220 versus $670 for HP Inc. and Lenovo, widening from 1.6x to 1.8x.",
+  "source_deck": "2023-10-05 · Securities Analyst Meeting"
+ },
+ {
+  "order": 16,
+  "path": "DELL\\decks\\key_slides\\slide_16.png",
+  "caption": "The second framework: ISG raised to 6-8% while CSG stays at 2-3%, with the same PC-refresh and attach rationale as 2021.",
+  "source_deck": "2023-10-05 · Securities Analyst Meeting"
+ },
+ {
+  "order": 17,
+  "path": "DELL\\decks\\key_slides\\slide_17.png",
+  "caption": "The AI ramp before the step-change: shipments about $0B in 1H24, $1.6B, $9.8B, then a $20B FY26 guide, with the early quarterly orders and backlog bars.",
+  "source_deck": "2025-08-28 · Q2 FY26 Performance Review"
+ },
+ {
+  "order": 18,
+  "path": "DELL\\decks\\key_slides\\slide_18.png",
+  "caption": "Mainstream server share on the pre-restatement definition, peaking at 31% in 2022 and falling to 26% in 2023, alongside storage share versus nearest competitors and a $356B 2028 AI TAM.",
+  "source_deck": "2025-08-28 · Q2 FY26 Performance Review"
+ },
+ {
+  "order": 19,
+  "path": "DELL\\decks\\key_slides\\slide_19.png",
+  "caption": "How far the AI numbers moved in two years: capex $200B to $400B+, 2027 AI hardware and services $124B to $310B, 2028 US data-center power 245TWh to 450TWh.",
+  "source_deck": "2025-10-07 · Securities Analyst Meeting"
+ },
+ {
+  "order": 20,
+  "path": "DELL\\decks\\key_slides\\slide_20.png",
+  "caption": "The physics behind rack-scale content: power per rack 120kW to 1MW and GPU density 72 to 576 across three generations, plus the cooling, power and services Dell sells into that shift.",
+  "source_deck": "2025-10-07 · Securities Analyst Meeting"
+ },
+ {
+  "order": 21,
+  "path": "DELL\\decks\\key_slides\\slide_21.png",
+  "caption": "Nine-year ISG P&L with operating margin never above 13.2% - and the FY26E margin cell left blank while revenue and opinc on the same slide imply 11.2%.",
+  "source_deck": "2025-10-07 · Securities Analyst Meeting"
+ },
+ {
+  "order": 22,
+  "path": "DELL\\decks\\key_slides\\slide_22.png",
+  "caption": "Server share restated up three points for 2021-2023 on a new IDC definition, plus 17G consolidation ratios and ASPs up 40% in three years with 70% of the installed base still on 14G or older.",
+  "source_deck": "2025-10-07 · Securities Analyst Meeting"
+ },
+ {
+  "order": 23,
+  "path": "DELL\\decks\\key_slides\\slide_23.png",
+  "caption": "Dell-IP storage portfolio mapped to share by category versus the number two and three players - the current-period bar that replaced the share time series shown in earlier decks.",
+  "source_deck": "2025-10-07 · Securities Analyst Meeting"
+ },
+ {
+  "order": 24,
+  "path": "DELL\\decks\\key_slides\\slide_24.png",
+  "caption": "Enterprise AI adoption: over 3,000 customers who have bought AI servers, over 6,700 in a five-quarter pipeline, and the statement that enterprise margin rates run above Tier 2 CSPs.",
+  "source_deck": "2025-10-07 · Securities Analyst Meeting"
+ },
+ {
+  "order": 25,
+  "path": "DELL\\decks\\key_slides\\slide_25.png",
+  "caption": "Seven-year CSG P&L with consumer falling from 27% to 16% of the segment - and an FY26E guide of $50.0B on $3.2B opinc that reported at 5.6% four months later.",
+  "source_deck": "2025-10-07 · Securities Analyst Meeting"
+ },
+ {
+  "order": 26,
+  "path": "DELL\\decks\\key_slides\\slide_26.png",
+  "caption": "Dell up about 3pts to 26% share in commercial premium and down about 5pts to 10% in the other 74% of the PC market, which management labels an opportunity.",
+  "source_deck": "2025-10-07 · Securities Analyst Meeting"
+ },
+ {
+  "order": 27,
+  "path": "DELL\\decks\\key_slides\\slide_27.png",
+  "caption": "Management names its own problem: three actions to regain PC momentum and share, the second being to fix consumer and return it to growth.",
+  "source_deck": "2025-10-07 · Securities Analyst Meeting"
+ },
+ {
+  "order": 28,
+  "path": "DELL\\decks\\key_slides\\slide_28.png",
+  "caption": "The three frameworks side by side: revenue 3-4% to 3-4% to 7-9%, EPS 6%+ to 8%+ to 15%+, FCF return 40-60% to 80%+ - Dell's own record of moving its targets.",
+  "source_deck": "2025-10-07 · Securities Analyst Meeting"
+ },
+ {
+  "order": 29,
+  "path": "DELL\\decks\\key_slides\\slide_29.png",
+  "caption": "The segment split behind the 7-9% consolidated target: ISG 11-14% and CSG 2-3%, the third consecutive framework to set CSG at 2-3%.",
+  "source_deck": "2025-10-07 · Securities Analyst Meeting"
+ },
+ {
+  "order": 30,
+  "path": "DELL\\decks\\key_slides\\slide_30.png",
+  "caption": "Capital return through FY30: dividend growth 10%+, buybacks taking share count from 757M to 675M, and a reaffirmed 1.5x core leverage and investment-grade commitment.",
+  "source_deck": "2025-10-07 · Securities Analyst Meeting"
+ },
+ {
+  "order": 31,
+  "path": "DELL\\decks\\key_slides\\slide_31.png",
+  "caption": "AI orders, revenue and backlog by quarter through Q4 FY26, where one quarter of $34.1B in orders exceeded the prior four combined, against a $50B FY27 revenue guide.",
+  "source_deck": "2026-02-26 · Q4 FY26 Performance Review"
+ },
+ {
+  "order": 32,
+  "path": "DELL\\decks\\key_slides\\slide_32.png",
+  "caption": "Five-year scorecard: revenue 5.5% CAGR, non-GAAP EPS 16% CAGR, $18.3B returned since dividend inception, about 14% fewer diluted shares, core leverage 1.4x.",
+  "source_deck": "2026-02-26 · Q4 FY26 Performance Review"
+ },
+ {
+  "order": 33,
+  "path": "DELL\\decks\\key_slides\\slide_33.png",
+  "caption": "The full eight-quarter AI orders, revenue and backlog series with the FY27 guide raised to $60B, plus the named model and software ecosystem.",
+  "source_deck": "2026-05-28 · Q1 FY27 Performance Review"
+ },
+ {
+  "order": 34,
+  "path": "DELL\\decks\\key_slides\\slide_34.png",
+  "caption": "PowerRack: Dell claims number one in rack-scale infrastructure for CY2025 with more than 2x the rack-scale servers shipped of its closest competitor and delivery to production in just over six hours.",
+  "source_deck": "2026-05-28 · Q1 FY27 Performance Review"
+ },
+ {
+  "order": 35,
+  "path": "DELL\\decks\\key_slides\\slide_35.png",
+  "caption": "The PC share divergence widens: up about 6pts to 28% in commercial premium, down about 6pts to 9% in the rest of the market, seven months after the same slide read +3pts and -5pts.",
+  "source_deck": "2026-05-28 · Q1 FY27 Performance Review"
+ }
+]
