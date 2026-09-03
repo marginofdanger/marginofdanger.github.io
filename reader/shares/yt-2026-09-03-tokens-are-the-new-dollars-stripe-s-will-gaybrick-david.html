@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Tokens Are the New Dollars | Stripe&#39;s Will Gaybrick &amp; David George</title>
+  <style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background: #faf8f5;
+  color: #2c2418;
+  line-height: 1.7;
+  padding: 0 1rem 2rem;
+}
+header {
+  position: sticky;
+  top: 0;
+  background: #faf8f5;
+  z-index: 100;
+  border-bottom: 2px solid #c4956a;
+  box-shadow: 0 2px 8px rgba(44,36,24,0.08);
+  padding: 0.6rem 1rem;
+}
+.header-inner {
+  max-width: 78ch;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header-title { font-size: 1rem; color: #2c2418; }
+.header-title strong { font-size: 1.1rem; }
+.header-link {
+  font-size: 0.85rem;
+  color: #8b6d4e;
+  text-decoration: none;
+  border: 1px solid #c4956a;
+  padding: 0.2rem 0.7rem;
+  border-radius: 4px;
+}
+.header-link:hover { background: #f0ebe3; }
+main {
+  max-width: 78ch;
+  margin: 0 auto;
+  padding-top: 0.5rem;
+}
+h2 {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #2c2418;
+  margin-top: 2rem;
+  margin-bottom: 0.5rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 2px solid #c4956a;
+}
+h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #3d3225;
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+section { margin-bottom: 1.5rem; }
+ul { margin: 0.5rem 0 0.5rem 1.5rem; }
+li { margin-bottom: 0.4rem; }
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0.75rem 0;
+  font-size: 0.92rem;
+}
+thead th {
+  background: #3d3225;
+  color: #faf8f5;
+  text-transform: uppercase;
+  font-size: 0.78rem;
+  letter-spacing: 0.05em;
+  padding: 0.5rem 0.75rem;
+  text-align: left;
+  font-weight: 600;
+}
+tbody td {
+  padding: 0.45rem 0.75rem;
+  border-bottom: 1px solid #e8e0d4;
+}
+tbody tr:nth-child(even) { background: #f0ebe3; }
+tbody tr:nth-child(odd) { background: #faf8f5; }
+.key-insight {
+  border-left: 4px solid #c4956a;
+  background: #f5efe8;
+  padding: 0.75rem 1rem;
+  margin: 0.75rem 0;
+  font-size: 0.93rem;
+  border-radius: 0 6px 6px 0;
+}
+.qa-pair { margin-bottom: 1.25rem; }
+.question-box {
+  background: #f0ebe3;
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+  margin-bottom: 0.5rem;
+}
+.analyst-label {
+  display: block;
+  font-size: 0.8rem;
+  color: #8b6d4e;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  margin-bottom: 0.25rem;
+}
+.answer { padding-left: 0.25rem; }
+.loading-section { opacity: 0.5; }
+.loading-indicator {
+  font-size: 1.2rem;
+  padding: 2rem;
+  text-align: center;
+  color: #8b6d4e;
+}
+
+/* YouTube transcript reader */
+
+/* Legacy .yt-meta-card -- kept so old output files still render cleanly.
+   New output uses .header-title.yt below instead. */
+.yt-meta-card {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  margin-bottom: 1.5rem;
+  background: #f5efe8;
+  border-left: 4px solid #c4956a;
+  border-radius: 0 6px 6px 0;
+  padding: 0.9rem 1rem;
+}
+.yt-meta-card img {
+  flex: 0 0 180px;
+  height: 101px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+.yt-meta-body { flex: 1; font-size: 0.93rem; }
+.yt-meta-title { font-weight: 700; font-size: 1rem; margin-bottom: 0.25rem; }
+.yt-meta-sub { color: #8b6d4e; margin-bottom: 0.35rem; }
+.yt-meta-url { font-size: 0.85rem; color: #3d3225; }
+
+/* YouTube sticky header uses the default 78ch-capped centered
+   container so it aligns with the body text column below. The
+   buttons sit at the right edge of that centered container. */
+header:has(.header-inner.yt) { padding: 0.75rem 1rem; }
+.header-inner.yt { gap: 1rem; }
+.header-title.yt {
+  display: flex;
+  gap: 0.9rem;
+  align-items: center;
+  min-width: 0;
+  flex: 1;
+}
+.yt-header-thumb { flex: 0 0 88px; line-height: 0; }
+.yt-header-thumb img {
+  width: 88px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 3px;
+  display: block;
+}
+.yt-header-text { min-width: 0; flex: 1; }
+.yt-header-text strong {
+  display: block;
+  font-size: 1rem;
+  line-height: 1.3;
+  color: #2c2418;
+  /* Allow wrapping to 2 lines so long podcast titles show in full. */
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.yt-header-sub {
+  font-size: 0.8rem;
+  margin-top: 0.2rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.yt-header-sub .yt-channel { color: #8b6d4e; }
+.yt-header-sub .yt-date,
+.yt-header-sub .yt-dur { color: #3d3225; font-weight: 600; }
+.yt-header-sub .yt-sep { color: #c4956a; margin: 0 0.5rem; }
+
+.yt-header-actions {
+  display: flex;
+  gap: 0.4rem;
+  align-items: center;
+  flex: 0 0 auto;
+}
+/* Shared box shape for the star + share + YT buttons so they're
+   visually identical. Applies to both the <button>s and the <a> link. */
+.yt-header-actions .yt-bookmark-btn,
+.yt-header-actions .yt-share-btn,
+.yt-header-actions .header-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font: inherit;
+  font-size: 0.85rem;
+  line-height: 1;
+  color: #8b6d4e;
+  background: transparent;
+  border: 1px solid #c4956a;
+  border-radius: 4px;
+  padding: 0;
+  box-sizing: border-box;
+  width: 2.2rem;
+  height: 2.2rem;
+  white-space: nowrap;
+  text-decoration: none;
+  cursor: pointer;
+}
+.yt-header-actions .yt-bookmark-btn { font-size: 1rem; }
+.yt-header-actions .yt-share-btn { font-size: 1.05rem; }
+.yt-header-actions .yt-share-btn:disabled { opacity: 0.6; cursor: default; }
+.yt-header-actions .yt-bookmark-btn:hover,
+.yt-header-actions .yt-share-btn:hover,
+.yt-header-actions .header-link:hover {
+  background: #f0ebe3;
+  color: #3d3225;
+}
+.yt-header-actions .yt-bookmark-btn.is-bookmarked {
+  background: #c4956a;
+  color: #faf8f5;
+  border-color: #a87d5a;
+}
+.yt-header-actions .yt-bookmark-btn.is-bookmarked:hover {
+  background: #a87d5a;
+  color: #faf8f5;
+}
+
+h3.chapter {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #3d3225;
+  margin-top: 1.25rem;
+  margin-bottom: 0.4rem;
+}
+h3.chapter a {
+  font-size: 0.8rem;
+  color: #8b6d4e;
+  text-decoration: none;
+  font-weight: 400;
+}
+
+.yt-body {
+  line-height: 1.58;
+}
+.yt-body p {
+  margin-bottom: 0.9rem;
+}
+.yt-body p.q {
+  background: #f0ebe3;
+  border-left: 3px solid #c4956a;
+  border-radius: 0 6px 6px 0;
+  padding: 0.6rem 0.9rem;
+  margin-top: 1.25rem;
+  margin-bottom: 0.8rem;
+  color: #3d3225;
+  font-style: italic;
+  font-size: 0.96rem;
+}
+.yt-body p.q::before {
+  content: "Q";
+  display: inline-block;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 0.72rem;
+  color: #8b6d4e;
+  letter-spacing: 0.05em;
+  margin-right: 0.5rem;
+  padding: 0.05rem 0.4rem;
+  border: 1px solid #c4956a;
+  border-radius: 3px;
+  vertical-align: 0.1em;
+}
+.yt-body p.q a {
+  display: block;
+  text-align: right;
+  margin-top: 0.3rem;
+  font-style: normal;
+  font-size: 0.8rem;
+  color: #8b6d4e;
+  text-decoration: none;
+  white-space: nowrap;
+}
+.yt-body p.q a:hover {
+  text-decoration: underline;
+}
+
+</style>
+</head>
+<body>
+  <header>
+    <div class="header-inner yt">
+      <div class="header-title yt">
+        <a class="yt-header-thumb" href="https://www.youtube.com/watch?v=P5iICDVn5gc" target="_blank"><img src="https://i.ytimg.com/vi_webp/P5iICDVn5gc/maxresdefault.webp" alt=""></a>
+        <div class="yt-header-text">
+          <strong>Tokens Are the New Dollars | Stripe&#39;s Will Gaybrick &amp; David George</strong>
+          <div class="yt-header-sub">
+            <span class="yt-channel">a16z</span>
+            <span class="yt-sep">&middot;</span>
+            <span class="yt-date">Aug 17, 2026</span>
+            <span class="yt-sep">&middot;</span>
+            <span class="yt-dur">53m</span>
+          </div>
+        </div>
+      </div>
+      <div class="yt-header-actions">
+        <button id="yt-bookmark-btn"
+                class="yt-bookmark-btn"
+                title="Bookmark"
+                aria-label="Bookmark"
+                data-filename="yt-2026-09-03-tokens-are-the-new-dollars-stripe-s-will-gaybrick-david.html"
+                data-title="Tokens Are the New Dollars | Stripe&#39;s Will Gaybrick &amp; David George"
+                data-url="https://www.youtube.com/watch?v=P5iICDVn5gc"
+                data-date="2026-08-17T07:30:20-07:00"
+                data-channel="a16z"
+                onclick="toggleYtBookmark(this)">&#9734;</button>
+        <button id="yt-share-btn"
+                class="yt-share-btn"
+                title="Share"
+                aria-label="Share"
+                data-filename="yt-2026-09-03-tokens-are-the-new-dollars-stripe-s-will-gaybrick-david.html"
+                onclick="shareYtPage(this)">&#8599;</button>
+        <a class="header-link" href="https://www.youtube.com/watch?v=P5iICDVn5gc" target="_blank" title="Watch on YouTube" aria-label="Watch on YouTube">YT</a>
+      </div>
+    </div>
+  </header>
+  <main>
+    <div class="yt-body">
+    <h3 class="chapter"><span>Intro</span><a href="https://www.youtube.com/watch?v=P5iICDVn5gc&t=0s">&#x21AA; 00:00</a></h3>
+<p data-t="0">If you want to ship more and build faster, you have to create founder-like agency inside your company. A single engineer can do what two teams of engineers could do two years ago. Suddenly, the market opportunity landscape is much broader, and you can do more with software.</p>
+<p class="q" data-t="12">How do you guys ship so much product?<a href="https://www.youtube.com/watch?v=P5iICDVn5gc&t=12s">&#x21AA; 00:12</a></p>
+<p data-t="19">Companies have skewed in the direction where they’ve seen this new agentic efficiency and power as a way to optimize cost structure. Our belief—I'm being a little cheeky—is: build everything.</p>
+<p data-t="25">The Opus 4.5 Cambrian explosion moment—we haven’t had that in agentic commerce today, and I think there are a few reasons for that. One is we are merging so much more code than last year, and it is stressing every system. So we created something called Stripe Minions.</p>
+<p data-t="42">You’re not going to iterate. You’re not going to go into planning mode. You’re just going to say, “This is what I want. Go do it.” That’s where the world is going.</p>
+<p class="q" data-t="47">You guys are, I think, over two trillion in volume now. What do you think is the future state of how we all access models and tokens?<a href="https://www.youtube.com/watch?v=P5iICDVn5gc&t=47s">&#x21AA; 00:47</a></p>
+<p data-t="52">I’m very bullish on—</p>
+<h3 class="chapter"><span>What Is Stripe Today</span><a href="https://www.youtube.com/watch?v=P5iICDVn5gc&t=60s">&#x21AA; 01:00</a></h3>
+<p class="q" data-t="60">I want to start with the state of Stripe. What is Stripe today? When we originally invested, it was a payment processor, but now I think the average AI company uses 11 different Stripe products, and at Sessions, I believe, you had 288 distinct product launches. I want to talk about velocity also, but just start with: what is the state of Stripe today?<a href="https://www.youtube.com/watch?v=P5iICDVn5gc&t=60s">&#x21AA; 01:00</a></p>
+<p data-t="87">Internally, we think about Stripe as having inverted our value proposition from being a payments company with add-ons to now being this multi-product platform where everything focuses on financial infrastructure: helping you grow by reducing friction and increasing agency, to be more agile with your business model, operate in more countries, and just go faster when it comes to everything that touches revenue and cash.</p>
+<p data-t="119">Practically speaking, we went from payments to billing, subscriptions, and invoicing; Connect, if you’re a platform or marketplace; Radar for mitigating fraud, and Radar now for doing many more things than that; Tax; and somewhere around 25 or 30 products that are headlining, branded products. Then, of course, there are hundreds and thousands of features below that. But the framework we think about is really reducing friction and increasing agency.</p>
+<p data-t="148">A good example: last year, we saw a lot of users experiencing free-trial abuse for the first time. This wasn’t really an issue pre-AI because most Stripe users are software companies—the margin burden wasn’t there yet.</p>
+<p data-t="167">Yeah, so they’re wasting a little compute, but it’s negligible. It’s de minimis. But now software has a cost structure. Actually, I think Cursor was the first user where we experienced it.</p>
+<p data-t="180">I was going to say, it was our portfolio where we experienced it.</p>
+<p data-t="186">I guess internet users can be crafty. I think it was something like one in six users of free trials were abusive, so you’re just throwing money at users who are signing up for another account, another account, another account, maybe even doing model distillation and things like that.</p>
+<p data-t="203">So we got in the bunker with them and stood up, in a weekend, a pipeline where we were able to use our foundation model, look across the entire Stripe network, use our embeddings, and then put a reasoning layer on top so you could say, “We think this is a free-trial abuser because...” and point to those signals.</p>
+<p data-t="227">I think ElevenLabs recently told us that they’re blocking 2,000 free-trial abusers per day using Stripe signals.</p>
+<p data-t="233">Incredible. You think about how much money you’d be burning—or how much revenue you wouldn’t be creating if you weren’t giving these trials—because of the false positives.</p>
+<p data-t="244">Yeah, exactly. Then, on the increasing-agency side, it’s still just so hard to go global. Think about having to register, calculate, and remit taxes in so many geographies. This new crop of AI companies are digital-goods companies, and they want to go global very fast.</p>
+<p data-t="266">Ahrefs is a good example. They’re using this product, Stripe Managed Payments, where in their home markets—the U.S., let’s say, and where they have an entity in Europe—they are the seller of record. But in long-tail markets, the Kazakhstans and all over APAC, where they don’t have entities, Stripe stands in as the actual merchant of record.</p>
+<p data-t="290">We handle all tax calculation, tax remittance, and everything like that. This lets them cover 100-plus geographies compliantly.</p>
+<p data-t="302">Yeah, that’s amazing.</p>
+<p class="q" data-t="305">If you go back to the fraud example, if you identify abusive actors, there’s actually a network effect in that business, right? Which is super powerful. Obviously, we appreciate it as investors, as do many of the companies that have benefited from it.<a href="https://www.youtube.com/watch?v=P5iICDVn5gc&t=305s">&#x21AA; 05:05</a></p>
+<p class="q" data-t="322">If you look at the product set today, obviously the origin of Stripe was startups. You can very easily stand up payments and sell stuff online. Famously, part of the beauty of Stripe’s growth and business model is that you captured companies like DoorDash and Instacart when they were in YC, and then you grew with them along the way. How do you think about the product strategy as it relates to serving startups versus serving large enterprises?<a href="https://www.youtube.com/watch?v=P5iICDVn5gc&t=322s">&#x21AA; 05:22</a></p>
+<p data-t="352">I think it was Colin at Clerk who summarized our strategy nicely on X recently. I’m paraphrasing his words, but it’s: “Win all the startups, and then win them again.” To some extent, that’s just a good business model because startups are very ambitious. They typically grow into the biggest companies of tomorrow. They’re canaries for what the next opportunity is.</p>
+<p data-t="383">Another subtle reason to win all the startups and win them again is that they actually have the highest standards of all of our customers. I looked recently at the CSAT for Stripe’s reporting, and for our very, very large enterprise users, it’s, “Your reporting is great. We love the data. It’s way better than anything we get from any of our other—”</p>
+<p data-t="402">Because they’re accustomed to the incumbents.</p>
+<p data-t="404">Yeah, exactly. Then you look at it for startups, and it’s, “Your reporting is garbage. You have got to fix this. This is driving me crazy.” There’s this persistent sense that startups make us better by being the fastest, being the most demanding, and so on.</p>
+<p data-t="415">But, of course, once we start working with startups, we want to work with them forever. This pulls us upmarket and forces us to become surprisingly great. That’s the standard we try to hold ourselves to for enterprises as well as startups.</p>
+<p data-t="433">Now we’re working with—I don’t know the exact percentage today, but it’s not quite half, though we’re getting there—Fortune 500 companies. We work, of course, with the Amazons and Microsofts of the world.</p>
+<p data-t="447">At the enterprise, it’s a different sales cycle. It’s a different post-sale activation motion. A lot more is required after you’ve already signed the contract, whereas startups go live like that. But fundamentally, it’s the same thing: you stay close to the user, hear their needs, and show that you’re provably better when it comes to the metrics they care about. So it’s really both at this stage.</p>
+<p data-t="472">Yeah. Win them and then win them again. I love that. That’s a great dynamic.</p>
+<p class="q" data-t="478">I want to shift gears. I think you guys publicly said that first-half signups grew 50% year over year, and that the median 2026 cohort is generating 50% more revenue than the comparable 2025 cohort. Then I think the 2025 cohort was generating 70% more revenue than the comparable 2024 cohort. What has changed?<a href="https://www.youtube.com/watch?v=P5iICDVn5gc&t=478s">&#x21AA; 07:58</a></p>
+<h3 class="chapter"><span>The AI Cohort Explosion: 50% More Signups &amp; Software Creation Booming</span><a href="https://www.youtube.com/watch?v=P5iICDVn5gc&t=480s">&#x21AA; 08:00</a></h3>
+<p data-t="502">I think two things. One is that AI is giving rise to so much opportunity for new business creation. There are things you couldn’t do before that you can do now. You couldn’t build a Suno four years ago, or you could maybe build a much worse one. You couldn’t build a Higgsfield four years ago. There are just new things that you can do.</p>
+<p data-t="528">Suddenly, the market opportunity landscape is much broader, and you can do more with software. On the other side, the cost of doing more software has decreased a lot because you need many fewer engineers to build the things that you want to build because of agentic coding. So we’re seeing this explosion in new software creation.</p>
+<p data-t="555">When you look at the year-over-year increase in usage of Stripe Billing, it’s actually a lot higher than usage of Stripe overall because it disproportionately skews toward people creating software companies.</p>
+<p class="q" data-t="567">Yeah, that’s fantastic. That’s awesome to hear. I want to shift now to some of the products that we talked about. You have this proliferation of new products to serve all the needs of companies online. The high-level question is: how do you do that? How do you guys ship so much product?<a href="https://www.youtube.com/watch?v=P5iICDVn5gc&t=567s">&#x21AA; 09:27</a></p>
+<p data-t="592">Speed has always been near the top. Relentless focus on the user is probably the top part, but speed is right up there.</p>
+<p data-t="607">It’s interesting. I think a lot about institutional progress, and we study the great companies that have come before us and now are beside us. The Amazons are still around, of course, but you look at Stripe and say, okay, we have an adapted version of how we set goals that’s quite similar to Google’s OKRs.</p>
+<p data-t="633">Our sales team is organized pretty similarly to Microsoft’s. We have a DRI culture similar to Apple’s, and we have a product-quality standard and a way of doing product reviews that is similar to theirs. A lot of the day-to-day mechanisms I use to run the business, I’ve basically stolen from Alan Mulally, the former CEO of Ford and Boeing Commercial Airplanes.</p>
+<p data-t="659">We study these companies, and we try to bring it all into Stripe. We think about how we create an enduring institution that can outlast any of us because it’s a great container for entrepreneurship.</p>
+<p data-t="673">Then you reach today, and there’s no one to copy. What do you do when a single engineer can do what two teams of engineers could do two years ago? The theory of mind right now is that Stripe needs to become, more than it ever has been before, a platform for founders internally. It has always been a platform for founders externally.</p>
+<p data-t="695">Yeah, of course—the customers.</p>
+<p data-t="701">Exactly. Founders have always done incredibly well at Stripe. We acquired Metronome last year, and Scott Woody, the CEO, is thriving at Stripe. He’s leading all of Metronome and Billing at this point.</p>
+<p data-t="719">We acquired Privy, which is a wallet-infrastructure company, and Bridge over the last couple of years. Henry is now leading most of crypto. Zach is leading Open Issuance and Bridge, of course. Aayush from Privy is leading a lot of engineering for crypto. J.R. Farr from Lemon Squeezy is leading Stripe Treasury at this point. Founders have always done very well at Stripe.</p>
+<p data-t="741">But now you have this very interesting moment where senior engineers are just so powerful. There are a few different ways our org could be shaped going forward. It could be that we have many fewer engineers, and maybe that’s what the world would look like.</p>
+<p data-t="758">I think a lot of companies have skewed in that direction, where they’ve seen this new agentic efficiency and power as a way to optimize cost structure. You saw some layoffs. You saw companies shrinking OpEx.</p>
+<p data-t="778">Our belief is that it’s just an opportunity to—I’m being a little cheeky—build everything. The best way to optimize your cost structure is to grow more. We have reams of user asks going back many years that are unmet, and we just want to get through them all faster.</p>
+<p data-t="795">While we have more and more productivity from those senior engineers, if you want to ship more and build faster, you have to create founder-like agency inside your company. The main things holding back our progress today are actually back-office things.</p>
+<p data-t="817">We are merging so much more code than last year, and it is stressing every system. It is stressing how we get things into our seller systems, how we get things onto our pricing page, and how we actually bring things to market when we can’t train sellers on them fast enough.</p>
+<p data-t="830">We are really trying, at this stage, to optimize every single phase of what we think of as the critical path in Stripe, from the ideas behind product development and the user asks all the way to products being in users’ hands.</p>
+<p data-t="844">To your question of how you go faster, it’s really two things. One is: how do you create that agency for everyone at Stripe? How do you let everyone at Stripe be an auteur, like a founder—a creative—and not have them held back by the morass of centralized processes and overhead?</p>
+<p data-t="862">Yeah, exactly.</p>
+<h3 class="chapter"><span>Stripe Minions: From 1,200 to 7,000 PRs a Week</span><a href="https://www.youtube.com/watch?v=P5iICDVn5gc&t=865s">&#x21AA; 14:25</a></h3>
+<p data-t="868">On the other side, it’s how you, with your developer-productivity team, make the tools better and better and better. We created something called Stripe Minions, which we’ve blogged about a little bit. Of course, we’ve got tons of developer tooling to help users iterate with agents.</p>
+<p data-t="881">But for Minions, one of our most important metrics internally is how many PRs, and what percentage of our PRs, are created by Minions. The reason is that Minions are one-shot.</p>
+<p data-t="898">You give it a prompt, and it’s going to build it. Then it’s going to go through CI/CD and all of testing, and then you’re going to review it. You’re not going to iterate or go into planning mode. You’re just going to say, “This is what I want. Go do it.”</p>
+<p data-t="916">We think that’s where the world is going. It’s the one-shot or the glorified REPL loop, where you’re letting the agent be super, super powerful.</p>
+<p data-t="923">We blogged about Minions, I think, in January or February, and they were doing 1,200 PRs per week. Last week, I think 7,000 PRs came from Minions.</p>
+<p data-t="934">Wow.</p>
+<p data-t="936">Yeah, and about 30% of our PRs that week came from Minions. That developer tooling, and then the internal processes getting out of the way and making the tools amazing, is how we’re going to go fast.</p>
+<p class="q" data-t="948">That’s amazing. In terms of empowering senior engineers, who are now more powerful than ever, have you made any dramatic changes to how you organize the company internally? Obviously, the Minions example is incredible, and I assume the 30% is going to go to a very high percentage within a year or something.<a href="https://www.youtube.com/watch?v=P5iICDVn5gc&t=948s">&#x21AA; 15:48</a></p>
+<p class="q" data-t="968">Some of the things we’ve heard from other companies involve taking your most powerful engineers and putting them into business units or closer to the customers, but then you have coordination problems that come from that. How have you guys approached that empowerment?<a href="https://www.youtube.com/watch?v=P5iICDVn5gc&t=968s">&#x21AA; 16:08</a></p>
+<p data-t="989">Engineers have always been some of the most important product leaders at Stripe. We build for engineers, for technical users. Of course, we build for many personas at this point, but engineers have always been the hero ICP for Stripe. Because of that, engineers have always been some combination of engineer, PM, and designer.</p>
+<p data-t="1008">I think we’re just leaning even more into that. We’re building tools and platforms so that engineers can do a lot of the front-end development and front-end design themselves. Probably the shortest answer to your question is: flatter.</p>
+<p data-t="1028">Yeah, flatter. Smaller teams, I assume?</p>
+<p data-t="1032">Smaller teams, flatter. You had a lot of layers that were orchestrating work, and very valuably so in most cases, but you just don’t need that anymore.</p>
+<p data-t="1041">I was talking to one of our most senior engineers recently—in fact, the guy who built Stripe Projects. Stripe Projects was basically a PM and one very senior engineer for a few weeks, and a couple of other engineers who jumped in as well. I want to give them due credit, but most of the PRs came from one guy.</p>
+<p data-t="1061">He’s got Alexander now. He’s got a screen, he’s orchestrating 16 agents, and he’s going a whole lot faster.</p>
+<p class="q" data-t="1067">Yeah, that’s amazing. Do you have a standard team size for projects like this? We’ve gone around and said, okay, with one there’s no social dynamic, so maybe that doesn’t work, and four is probably the maximum size. We’ve heard everything in between. Do you have a view on it?<a href="https://www.youtube.com/watch?v=P5iICDVn5gc&t=1067s">&#x21AA; 17:47</a></p>
+<p data-t="1084">Not really. In a flatter org, you both want wider teams, because that means fewer layers of management, but then you also believe you can have fewer people because each individual is more empowered these days. I think those forces are offsetting to some extent today.</p>
+<p data-t="1107">In fact, it’s more that if you have a line-managed team of eight people, they’re just doing three times more.</p>
+<p data-t="1112">Yeah, exactly. You might have the same manager-to-IC ratio, but the team is doing three things rather than one.</p>
+<p class="q" data-t="1123">Yeah, it makes total sense. One of the things that you and I have talked about, and you touched on it, is this idea that you can do all these new things with AI. Where do you direct the efforts?<a href="https://www.youtube.com/watch?v=P5iICDVn5gc&t=1123s">&#x21AA; 18:43</a></p>
+<p class="q" data-t="1135">You guys have very clearly directed the efforts toward the front-facing stuff, building new products for customers. A lot of what is discussed in the market is back-end-facing stuff: optimizing your cost structure, saying everything is a Markdown file, mapping out everything everyone does in the organization, and optimizing it to death. Talk about your philosophy for why you want to go for the former and not the latter.<a href="https://www.youtube.com/watch?v=P5iICDVn5gc&t=1135s">&#x21AA; 18:55</a></p>
+<p data-t="1160">I think there was an early narrative, and it still lingers for sure—and there’s some truth to it—that we have agents now, we should be more efficient, and we should be able to do more with less. The main thing I actually think about on this front is making our people more productive.</p>
+<h3 class="chapter"><span>Build Everything: Going Long vs Going Short on Your Future</span><a href="https://www.youtube.com/watch?v=P5iICDVn5gc&t=1164s">&#x21AA; 19:24</a></h3>
+<p data-t="1185">We have a tool internally called Kai, which is our knowledge AI tool. We built it maybe six months ago; two people built it. Now it has 83% weekly active usage and about 60% daily active usage at Stripe. Seller productivity has increased by 20%.</p>
+<p data-t="1210">But we’re not saying, “Wow, we need fewer sellers.” We’re saying, “So we need a lot more sellers.” The payback of our sellers just got way better. We should have way more of them.</p>
+<p data-t="1221">Exactly. On the flip side, operational teams are feeling much more productive. Their day-to-day life is more enjoyable. They’re using better tools. They’re having to do less manual work. It’s almost trite in tech circles now, but Jevons paradox: as something becomes more productive, you don’t want less; you want more.</p>
+<p data-t="1238">Yeah, exactly.</p>
+<p data-t="1243">It is very much the case for us when it comes to engineers. Our engineers are magnificently more productive. I mentioned earlier making Stripe an internal platform for founders. Going forward, you could say that because engineers are so productive, there will just be fewer engineers in the world. I really don’t believe that, and that’s not what we’re seeing at all.</p>
+<p data-t="1262">You see that much more software creation. There was a narrative nine months ago about SaaS platforms and how vertical platforms were all going to struggle. Our new SaaS platform cohort is 103% larger in 2026 than it was in 2025. People are saying, “There are so many spaces that need a SaaS platform. I’m building it faster and faster and faster.”</p>
+<p data-t="1294">I think there will be more software engineers in the world. We will need fewer of them to do the things we’re already doing. Stripe then becomes, for new grads and early-career engineers, more of an incubator: come in, figure out a high-agency project that can help our users, and let’s get out of your way.</p>
+<p data-t="1316">Let’s create the paved paths. Let’s make it easy for you to go faster. We should be able to build more and more and more—not just random things, but adjacencies that compound what we’re doing today.</p>
+<p data-t="1328">Spend management is adjacent to Treasury, and that might have been roadmapped for two years from now. Instead, one engineer has picked it up as a project, and they’re just building it themselves. Actually, I wrote the first commit for it, but they’re now running with it.</p>
+<p data-t="1346">It’s in more capable hands now.</p>
+<p data-t="1348">Exactly. More capable hands. We believe the big opportunity, and the one we’re leaning into, is doing more with what we have and, over time, doing more with more.</p>
+<p data-t="1360">Yeah, I totally agree with that. I wrote a piece recently about founders being the asset class—the representation of our market of late-stage venture, which you guys are probably at the forefront of. Founders are the asset class because founders are going to be the ones who enable companies to find the next product areas.</p>
+<p data-t="1378">This idea that you have to make trade-offs today around whether to try to build new products for revenue or cut costs—I think for companies like Stripe that are run by you guys, there’s probably always going to be that next opportunity to create additional revenue opportunities and find new customer products that are a big hit. That is never going to go away. You’re always going to have the chance to build more.</p>
+<p data-t="1403">Yes, absolutely. I do think it’s a good moment for company leaders to create some resourcing back pressure, because that back pressure drives more efficient and more extensive use of new tools.</p>
+<p data-t="1415">But I also imagine that, in the years ahead, we’ll have a budgeting process that looks not that dissimilar from what it has been in the past: we’re doing so much with what we have, and we can do even more if we continue to expand resourcing.</p>
+<p data-t="1428">In this moment, I think it is a good time to say, “Let’s really do a lot with what we have today,” because you still see increases in productivity from what you already have.</p>
+<p data-t="1440">Beyond that, from a users-first standpoint, there’s so much more they want from us. We’ve heard from a lot of users that, for Stripe Tax, they want global filing. It took us a long time to get to U.S. filing on Stripe Tax, meaning that every state in the U.S. will just automatically file for you.</p>
+<p data-t="1459">It’s a hard problem because you are dealing with so many different jurisdictions that accept filing in different ways, so it took us a long time to get there. Global filing was the next task: “We just don’t want to have to think about this in any market.” We built that in about a third of the time that it took us to get to U.S. filing.</p>
+<p data-t="1477">Wow. With much greater complexity.</p>
+<p data-t="1482">Exactly, with much greater complexity. There’s an infinite list of asks and opportunities like that. If you’re relentlessly focused on users, you’re going to focus on that.</p>
+<p data-t="1494">We recently launched a product called Stripe Treasury. It’s an interesting moment in fintech because I think there is an unbundling of what banking means. Stripe is not a bank and does not aspire to be a bank, but it does aspire to provide your banking portal and help you with global money movement.</p>
+<p data-t="1510">This is something we’ve been asked for for a very long time. We built Stripe Treasury to allow our users to hold funds in dozens of currencies across many countries, and to build what the banking portal should be able to do.</p>
+<p data-t="1528">We’ve focused on bringing this experience to users extremely quickly. What we’re finding in every case is that the timelines we thought were the best doable two years ago are now being compressed again and again and again.</p>
+<p data-t="1554">It’s because the direction we’re finding, from an agent-engineering standpoint, is akin to injection molding. It’s a bit reductionist, but when you look at the growth in consumer packaged goods and toys and things like that, a lot of it exploded postwar because we got really good in the ’40s at melting plastic.</p>
+<p data-t="1579">It’s the injection-molding screw that melts plastic very evenly and injects it into a metal casting. That’s how we’re doing code production at this point. We’re creating the molds and the templates. You mentioned Markdown files; those are extremely important. You need your agent files in every repo.</p>
+<p data-t="1597">As long as you create those patterns and understand the pattern of how you integrate with financial institutions, you can hand off so much of the work to agents, and they just get it done. All the time you end up spending is on the back end, at code review. But even then, agents are doing code review even better than humans did before.</p>
+<p data-t="1622">Compressing timelines again just feels like a much bigger opportunity than optimizing cost structure.</p>
+<p data-t="1628">Yeah, I think you may be the first person to compare modern AI-based software engineering to injection molding. This is great. We’re covering new ground. I’ve actually been to an injection-molding plant before. It’s pretty amazing.</p>
+<p data-t="1640">It’s pretty amazing, especially when you think about the fact that it was probably 70 years ago that it was created. James Watson Hendry, I think—the guy in Pennsylvania.</p>
+<p data-t="1647">Yeah, there you go. That’s great.</p>
+<p data-t="1652">As an investor in Stripe, and a large investor in Stripe, another way I think about what you just described is that the opportunity to optimize cost is finite, right? You said long versus short. I really like that.</p>
+<p data-t="1663">Yeah. Optimizing cost structure is going short your own future potential, and building faster and building more is going long your future potential.</p>
+<p data-t="1674">It’s the capital-allocation equivalent of returning cash as opposed to reinvesting cash.</p>
+<p data-t="1679">Yeah, I got it.</p>
+<h3 class="chapter"><span>Agentic Commerce: The Missing Primitives</span><a href="https://www.youtube.com/watch?v=P5iICDVn5gc&t=1680s">&#x21AA; 28:00</a></h3>
+<p class="q" data-t="1682">I want to shift over to a new topic, which you guys are on the cutting edge of and which gets a lot of play, but almost in a nebulous sense. I’d like to go a little bit deeper on it with you, which is agents engaging in commerce on the internet. What is the state of where we are today? What are the bottlenecks, and how do you view a framework for how that could be done in the future?<a href="https://www.youtube.com/watch?v=P5iICDVn5gc&t=1682s">&#x21AA; 28:02</a></p>
+<p data-t="1706">We talked about the Opus 4.5 Cambrian explosion moment. We haven’t had that in agentic commerce today. There aren’t a ton of canonical use cases that you see repeated over and over again. I think there are a few reasons for that.</p>
+<p data-t="1724">One is that we’re missing primitives, and that’s something we’re very focused on. We created, with Tempo, the Machine Payments Protocol so that services can indicate what needs to be paid and how you can pay for it.</p>
+<p data-t="1742">If you’re selling an image or a piece of content online, you can request it and get a 402 response back, and it just says, “Here’s how you buy me.” That’s a primitive. We think machines will want to buy from other machines.</p>
+<p data-t="1756">There’s really a question of what checkout should look like for agents, and it’s still an open question. Browser automation is getting better, so maybe agents should just be crawling through checkout forms and filling them out. I think there are still a lot of open questions.</p>
+<p data-t="1768">That’s the skeuomorphic version. There’s going to be a native version.</p>
+<p data-t="1773">Yeah, I think that’s right. We’re at the missing-primitives phase, and we’re figuring that out. Then there’s a sociological phase: in what ways will agentic commerce be better than non-agentic commerce?</p>
+<p data-t="1790">I think there are some very non-speculative ways in which it’ll be better. Checkout pages shouldn’t exist for humans. With Stripe Link and Shop Pay, it’s very easy to get through a checkout page these days, but should you even need to go to one? Or should you just be able to say, “Buy it,” on a product-display page?</p>
+<p data-t="1808">I think checkout pages will go away. At best, I think they’ll go away. That’s a non-speculative but maybe less ambitious form of agent commerce.</p>
+<p class="q" data-t="1822">I actually think that’s interesting because they will go away for human users too. This isn’t just for agents?<a href="https://www.youtube.com/watch?v=P5iICDVn5gc&t=1822s">&#x21AA; 30:22</a></p>
+<p data-t="1828">Yes.</p>
+<p data-t="1830">Okay. Stripe Link has 400 million users, and Shop Pay probably has some comparably large number. Then you can use those and automate the whole process.</p>
+<p data-t="1839">Exactly. We recently launched the Link agent wallet, so there’s now a Link CLI. An agent can sweep up Link credentials and use them, with humans in the loop to say how they can use them.</p>
+<p data-t="1854">One of the places we’re most excited about agentic commerce is actually B2B. We launched Stripe Projects. Stripe Projects is a way to scaffold apps—that’s the narrow definition of it—but the most exciting thing about Stripe Projects is that it’s a way to provision B2B services agentically.</p>
+<p data-t="1873">An agent can go adopt Vercel for hosting, and it can do it without you needing to go to Vercel.com and do anything.</p>
+<p data-t="1884">This has actually informed our investment thesis in a few recent investments that are developer tools. We say, “Okay, assume that agents are going to be the shoppers in the future. Is this the one that the agents will want to pick?”</p>
+<p data-t="1890">Exactly. That’s a very good framework. An agent can go adopt Browserbase.</p>
+<p data-t="1902">We had a really great demo a while back at Stripe where we used Browserbase live, via an agent, to fill out an NCAA bracket.</p>
+<p data-t="1913">That’s cool. That’s great.</p>
+<p data-t="1919">I thought it was awesome because I have three brothers, and we all love sports, but I’m always too busy to engage in the family pools. It was so cool to watch the agent pick up a Browserbase session, fire up ESPN.com, do a bit of research, and just fill it out.</p>
+<p class="q" data-t="1931">How did it do?<a href="https://www.youtube.com/watch?v=P5iICDVn5gc&t=1931s">&#x21AA; 32:11</a></p>
+<p data-t="1932">I don’t actually know. I don’t think we ever ran the evals on it, but I suspect probably as well as a human.</p>
+<p data-t="1936">It’s probably better.</p>
+<p data-t="1938">Yeah, exactly. Probably better.</p>
+<p data-t="1942">I do think agents adopting B2B or B2C services that are more utilitarian will be very popular. Today, again, as a primitive, we’re trying to make it easier for agents to adopt services.</p>
+<p data-t="1960">But I do think the sociology will continue to evolve. I don’t know that we’ve figured out exactly how to do the long-running tasks on the consumer side.</p>
+<p data-t="1969">Yeah. It’s not there yet.</p>
+<p data-t="1978">The other day, I was using Claude Code to try to compose a song for my niece’s birthday. It was pretty cool. In the past, without a Suno, I definitely wouldn’t have done that. With AI, I might do that. You might do it with Higgsfield as well.</p>
+<p data-t="1996">We were talking about them earlier, but I’m not sure that I want to create a $10.99- or $9.99-a-month account with them. I just want micro-consumption for that. Along with the actual commerce primitives, I think these micro-consumption APIs need to start to exist.</p>
+<p data-t="2013">Browserbase, which we were talking about, is leaning into it. But I’m very bullish on all these services standing up not necessarily anonymous, but ephemeral or one-time consumption.</p>
+<p data-t="2025">I think that will really unlock agent commerce too, because then you won’t have to say, “I need to pay these guys 10 bucks a month, or these guys 10 bucks a month,” with all these accounts and all this stuff. Just use the service and pay: “Agent, do this. Discover the services. Your budget is $15. Go.”</p>
+<p data-t="2041">My 10-year-old has been creating rap songs, so I’m very familiar with all of these services. By the way, the quality is actually pretty good, and he posts them on Spotify. The execution maybe isn’t quite as good. The lyrics from AI are very good, and the music itself is pretty good. So I would welcome that.</p>
+<p class="q" data-t="2062">The critical thing, or one of the critical things, that you just said is this concept of micropayments or microtransactions. This has been talked about probably since the advent of the internet as an opportunity. Why do you think it could work now?<a href="https://www.youtube.com/watch?v=P5iICDVn5gc&t=2062s">&#x21AA; 34:22</a></p>
+<p data-t="2081">Agents really increase human agency. It almost sounds redundant, but talking about these applications—composing a song for your niece, filling out your NCAA bracket, whatever else—it’s really hard to do without agents. They take a lot of time. You’re creating all these different accounts.</p>
+<p data-t="2100">I’m very bullish on services leaning into saying, “You can use me ephemerally. You can use me in a very lightweight way.” To make that work, you’re going to need to support microtransactions.</p>
+<p data-t="2119">I think the case against microtransactions has always been: you’re trying to consume content, and if you’re trying to sell an article, you’re always going to be squeezed between the subscriber business model and the free business model.</p>
+<p data-t="2132">Yeah, you want to capture the excess as part of the subscription.</p>
+<p data-t="2137">Exactly. That’s the business model. Or you do it with ads, and one or the other is better than what you’re doing.</p>
+<p data-t="2142">I think that was probably true in the past. But as you give agents more complex tasks, you want them to be these little hummingbirds going around the internet, slurping up a little data here, pulling it over here, using some very transient, ephemeral storage, and doing a little compute over here.</p>
+<p data-t="2159">You don’t want the individual human to have to think about what they’re using. You want to make sure these services are secure, but you don’t want them to create accounts everywhere. I think microtransactions will be necessary for that economy—the agentic economy—to exist.</p>
+<p data-t="2180">On the flip side, they’re now eminently possible because of stablecoins. Stablecoins today are relatively inorganic. If you’re a human, you have to jump through a bunch of hoops. But if you give an agent a budget, it can easily take dollars, move into stables, or use a shared stored balance and find a way to check out. It doesn’t mind the back and forth with stables.</p>
+<p data-t="2208">Yeah, I totally agree with that. We’ve seen that transition happen in a lot of software business models today. The predominant business model was selling subscriptions and seats, and now we’ve seen a shift to consumption.</p>
+<p data-t="2225">There are probably analogies where consumers are better off because they can get access to more stuff, and businesses can access more people whom they otherwise couldn’t access with a subscription service. My hope is that that does come into play.</p>
+<p class="q" data-t="2237">On the topic of stablecoins, we’ve covered how you guys build software and move so fast in an AI-development world. We’ve talked about agentic commerce. Talk about stablecoins. You said there’s a lot of friction in the process today, but what is the state of the stablecoin market, and what do you see the opportunity being for the next, call it, five years?<a href="https://www.youtube.com/watch?v=P5iICDVn5gc&t=2237s">&#x21AA; 37:17</a></p>
+<h3 class="chapter"><span>Stablecoins &amp; the Global Money Movement Platform</span><a href="https://www.youtube.com/watch?v=P5iICDVn5gc&t=2248s">&#x21AA; 37:28</a></h3>
+<p data-t="2262">I’m an infrastructure nerd, so I’ll always go there first. Stablecoins are just a better platform for moving money than what exists otherwise.</p>
+<p data-t="2273">We strongly agree.</p>
+<p data-t="2275">They’re better for a couple of reasons. There are certain countries that have rolled out really good payment systems. Most of them are nationalized—UPI in India, for example.</p>
+<p data-t="2287">It’s interesting when you look at these economies. The percentage of sub-$5 payments in India that are on UPI, I believe, is something like 86%, whereas on U.S. cards, I think it’s in the single digits.</p>
+<p data-t="2300">There are some good, cheap, fast payment schemes that are nationalized. Pix is another one in Brazil, which has grown meteorically. But you need a Schelling point for the global economy: what can we all agree on?</p>
+<p data-t="2314">That’s where crypto rails solve this political problem, where this platform just works everywhere. If we all used it, the global financial system would work better, be faster, be cheaper, and so on.</p>
+<p data-t="2327">If we all went to sleep tonight and woke up tomorrow holding stables, it would just be a better global economy, with less friction and less cost.</p>
+<p data-t="2339">Exactly.</p>
+<p data-t="2340">Now, that might be one of those “should work this way, may never work this way” problems, so we are resolutely focused on trying to change that.</p>
+<p data-t="2350">We talked earlier about Stripe Treasury, and we decided to make stablecoins native to Stripe Treasury. You can hold a balance in stables just like you hold a balance in USD, EUR, GBP, or anything like that.</p>
+<p data-t="2369">We believe the opportunity for stables is faster money movement, cheaper money movement, and more global money movement. Right now, you can be a Stripe user in—I can’t remember the exact number—around 60 countries in fiat, but you can be a Stripe user with stablecoins in, I think, about 150 countries.</p>
+<p data-t="2389">That brings more people into the online economy in a way that allows them to transact with AI companies. As the software economy gets more and more global, bringing more people into it is more and more valuable.</p>
+<p data-t="2406">You can build a powerful AI company with two engineers in Thailand just as well as you can do it in the U.S. or Brazil. For us, stables mean higher performance and more global reach.</p>
+<p data-t="2419">Yeah, and I like the position you guys are in as it relates to stablecoins, because it’s about meeting the market where it is. People don’t want to cut over wholesale, drop all their fiat, and move over to stablecoins.</p>
+<p data-t="2437">I think the relationships you have and the comprehensive offering you have allow adoption to happen at the pace enterprises or startups want to adopt.</p>
+<p data-t="2444">Yeah. All of this works when you really lean into it. Félix Pago—Félix, I think, as they’re called now—started as a remittance company between the U.S. and Mexico and now has other corridors as well.</p>
+<p data-t="2465">They built it on stables, and a few years in, they’re now between 5% and 10% of remittances along that corridor, which is the largest remittance corridor in the world.</p>
+<p data-t="2471">It’s amazing. Think about how long it takes companies to move fiat money efficiently—how long it took initially for the Wises of the world to do this, let alone the Western Unions before them. These are great companies, but to get to 5% to 10% in just a few years is amazing.</p>
+<p data-t="2490">That’s remarkable.</p>
+<p class="q" data-t="2493">I’d love to have you talk a little bit about Tempo. Obviously, it’s a big, important project that you guys are at the center of. Talk about where that is and what the aspirations for it are.<a href="https://www.youtube.com/watch?v=P5iICDVn5gc&t=2493s">&#x21AA; 41:33</a></p>
+<p data-t="2502">I’ll play the infrastructure-nerd card again for a second. There are great blockchains, and there was no obvious need for another blockchain outside of payments. But there are a whole lot of reasons why a payments-specific blockchain can work really well.</p>
+<p data-t="2527">Privacy is one, because blockchains are generally public, and you can reverse-engineer what’s happening on blockchains. We want to make sure privacy is a first-class primitive. We also want to make sure throughput is never sacrificed.</p>
+<p data-t="2543">Blockchains are disproportionately used for trading, so when you see massive trading events happen, you’ll typically see performance degrade a lot. With transaction fees, it’s important to create a blockchain where the transaction fee is never going to spike because other blockchains have activity.</p>
+<p data-t="2561">Yeah, exactly.</p>
+<p data-t="2563">They have floating gas fees. The project is about saying: how do we move money as efficiently, consistently, and cheaply as possible?</p>
+<p data-t="2577">It’s still in the early stages of building out and getting a lot of great traction. We’re working with companies like DoorDash and making it the default, but not the only, blockchain in Stripe. We’re feeling very optimistic about it.</p>
+<p data-t="2589">That’s great. That’s awesome.</p>
+<p class="q" data-t="2593">The last topic I would love to cover with you is the token economy. It sounds a little buzzwordy, but you guys are, I think, over two trillion in volume now. You and I would probably share the belief that the token economy is going to be one of the biggest things we’ve ever seen.<a href="https://www.youtube.com/watch?v=P5iICDVn5gc&t=2593s">&#x21AA; 43:13</a></p>
+<p class="q" data-t="2613">What do you think is the state of play for accessing tokens? Obviously, there’s a lot of work that gets done in first-party applications today, but what do you think is the future state of how we all access models and tokens?<a href="https://www.youtube.com/watch?v=P5iICDVn5gc&t=2613s">&#x21AA; 43:33</a></p>
+<p data-t="2630">I’ve always loved the word “token.” The reason is that it just sounds like an approximation of money.</p>
+<p data-t="2636">Yeah.</p>
+<p data-t="2638">Increasingly, that’s just what it is. We talked earlier about free-trial abuse, multi-accounting, and the attacks we’re seeing against users whose platforms are general-purpose token consumers. You can do just about anything with tokens on Cursor. You can do just about anything with tokens on Replit.</p>
+<p data-t="2662">The attacks against these users are very sophisticated. They’re very reminiscent of what we see in terms of people trying to steal money from Stripe users. There’s this blurring between tokens and dollars.</p>
+<p data-t="2674">For us, we think about wanting to help users move money, store money, and send money safely and compliantly. We now feel this mandate to do the same thing with tokens—to protect our users in the same way.</p>
+<p data-t="2695">Over time, I think this is only going to happen more. We talk about some of these long-running agentic tasks, and a lot of them will replace services. You’ll be able to say, “Close my books.” I used to pay a human—or many humans—in dollars for that. Now I pay fewer humans, or a human in tokens, because they’re augmented by agents.</p>
+<p data-t="2724">We want to make sure that moving between tokens and dollars is as seamless and safe as moving between dollars and euros. We’re at the beginning of this journey, but we think it’s going to be a big part of the future of Stripe.</p>
+<p data-t="2735">Yeah, that’s awesome. It’s super exciting. Personally speaking, I think you guys have a real right to play a role there because of the relationship you have with so many companies, from inception all the way through to enterprise, as you said.</p>
+<p data-t="2753">It’s funny—we’re always a little careful internally about talking about rights, so we talk about mandates.</p>
+<p data-t="2759">That’s good. Win and then win it again.</p>
+<p data-t="2765">Exactly. We have a mandate to help users with this, and that’s why we’re really leaning into it.</p>
+<p data-t="2772">We’re also focusing even more on spend management for our customers. They’re using Stripe Treasury. They’re thinking a lot about how much they’re spending, how to reduce their spending, and how their spending ties through to revenue. A lot of token usage is actually in-product.</p>
+<p data-t="2784">You see two different types of token usage. One is to build things, and this is the OpEx-management side of token management. Then there’s the product-efficacy side of token management: how good is my token-oriented or token-driven product? How should I shift between different models to make it the most effective? We’re thinking about how to help users with both of these.</p>
+<p data-t="2810">Yeah, for sure. Certainly in the latter, this position as an orchestration layer that helps you effectively get the most out of tokens, while also maintaining some form of control, has never been more top of mind than it is right now.</p>
+<p data-t="2826">Yes, absolutely. It’s interesting because there’s a hypothesis that software will be severely commoditized. It’s plausible. Let’s say we’re either in the singularity or creeping toward the singularity, and it’s very hard to estimate what a future looks like where models are recursively generating models, and so on and so on.</p>
+<p data-t="2859">But we are seeing the exact opposite right now, where software creation is exploding.</p>
+<p data-t="2864">Yes, customers are monetizing faster than ever. We talked about our 2026 cohort being 50% larger and growing faster than the 2025 cohort, and that one being 70% larger and growing faster than the 2024 cohort.</p>
+<p data-t="2879">More software is being created, and it’s being adopted faster than ever before. More Stripe products are being adopted than ever before. ElevenLabs is using 14 Stripe products. I sort of wish it were 11 in a way, but actually, I’m glad it’s 14.</p>
+<p data-t="2892">Just make it 22. He got really close with Mati, and he does everything in denominations of 11, so you’ve got to shoot for 22.</p>
+<p data-t="2903">Exactly. There’s a lot more to software than just building. There’s the expertise about how abstractions should thread through your entire business and keeping those up to date. You have turnover inside your company, so you build a system internally, then it starts to degrade, that person leaves the company, and the expertise goes away.</p>
+<p data-t="2920">We think about how we can help companies across their entire revenue stack: manage cash, manage revenue, close the books faster, grow faster, and globalize faster. That opportunity, I think, is larger than it ever was before.</p>
+<p data-t="2935">Yeah, couldn’t agree more.</p>
+<h3 class="chapter"><span>Scaling Taste at Stripe</span><a href="https://www.youtube.com/watch?v=P5iICDVn5gc&t=2940s">&#x21AA; 49:00</a></h3>
+<p class="q" data-t="2942">In closing, I wanted to get your take—and I don’t want to get too deep into the role of humans versus AI—but one of the things Stripe has always been universally recognized and appreciated for, I think, is your taste. It sounds funny because you’re an infrastructure company, but I think it’s generally agreed upon. How do you continue to uphold that at such a large scale and with so much of the work you’re doing now being done by AI?<a href="https://www.youtube.com/watch?v=P5iICDVn5gc&t=2942s">&#x21AA; 49:02</a></p>
+<p data-t="2969">Yeah. It’s interesting how much the word “taste” is being used right now. The cynical view is that it’s how we’re all justifying our future value: that no one actually has taste, and we’re all just reproducing machines of things that we had previously perceived.</p>
+<p data-t="2985">Suddenly, my fingers are no longer as useful, but this nebulous notion of taste is, and models will never have taste, and so on—which is probably just not true.</p>
+<p data-t="2999">Yeah, I agree with you on that.</p>
+<p data-t="3004">But, more approximately to your question, product quality is really, really core to our culture and identity. It’s for a few reasons. One is that we want users to have amazing tools that are carefully crafted, that can make them go faster and help them enjoy the journey of building a company that much more.</p>
+<p data-t="3028">It’s not an easy journey, but if you have tools that are surprisingly great, it feels that much better. So it’s a big user lens.</p>
+<p data-t="3039">Another dimension is that it’s just more fun. You look at what you created with your team, and you’re like, “Wow, that looks amazing,” versus having janked this thing together so it barely works. It just isn’t as fun to go through the slog—the long nights, the long weekends, and so on—to build it.</p>
+<p data-t="3064">I think the single thing I would say for scaling taste—well, actually, two things. One is that I think it has to be top-down. You just have to say it over and over and over again.</p>
+<p data-t="3075">It’s like the company strategy of “Win the startups, win them again.” It’s: “Talk about quality, and talk about it again.” The other thing is just use the product, and make it easy to use the product.</p>
+<p data-t="3088">In aviation, simulation is so important. You can’t just say, “I hope the jet works.” You have to prove to yourself that it does before you ever fly it.</p>
+<p data-t="3094">With Nvidia, when they really hit escape velocity was when they went from needing to wait for the fab to give them the chips so they could try the chips, to actually simulating chip performance. So we invest a lot in simulating the usage of products.</p>
+<p data-t="3107">Yeah, wow.</p>
+<p data-t="3113">You can point to an account and say, “Give me something that looks like that, but make it completely PII-free. Randomize the growth rates so I don’t actually know how big they are, but give me the day-to-day problems they face, the ups and downs of their business, and the seasonality.”</p>
+<p data-t="3131">“Give me a sense of that, and then make it feel live. Make it feel like I’m receiving disputes from customers and refunds are happening.” Of course, these aren’t real disputes and real refunds, but it gives me the experience that user is having so I can really live in it and use that with my team.</p>
+<p data-t="3150">You have the mandate to use the product, and we really ask our EMs to lead this because they’re the ones who control the resources. They’re the ones who can say, “Wow, this does not feel good. It needs to get fixed. Our next sprint is going to be about elevating quality.”</p>
+<p data-t="3168">The other side is: how do you give people the tools to do it more easily? Scaling taste for us is culture, it is the shovel lifts, and then it is the daily rhythms of using the products and stepping into these issues.</p>
+<p data-t="3182">That’s awesome. That’s so great. Will, this was so fun—to talk to you about all these topics, covering how you’re building so much product inside Stripe, which is super unique and right on the cutting edge, and the future of how we engage in agent commerce and stablecoins.</p>
+<p data-t="3200">One of the things I think you guys have said is, “How do we ensure that we build the next Stripe inside of Stripe?”</p>
+<p data-t="3205">Yes.</p>
+<p data-t="3206">I love that in closing, and I really appreciate the time.</p>
+<p data-t="3212">Yeah. Thank you. Great to be here.</p>
+    </div>
+  </main>
+  <script>
+  async function toggleYtBookmark(btn) {
+    const payload = {
+      title: btn.dataset.title,
+      url: btn.dataset.url,
+      filename: btn.dataset.filename,
+      interviewDate: btn.dataset.date,
+      source: 'YT',
+      expert: btn.dataset.channel,
+    };
+    try {
+      const resp = await fetch('/bookmark', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload),
+      });
+      const result = await resp.json();
+      setYtBookmarkState(btn, !!result.bookmarked);
+    } catch (e) {
+      console.error('Bookmark toggle failed:', e);
+    }
+  }
+  function setYtBookmarkState(btn, on) {
+    btn.classList.toggle('is-bookmarked', on);
+    btn.innerHTML = on ? '&#9733;' : '&#9734;';
+    btn.title = on ? 'Bookmarked' : 'Bookmark';
+    btn.setAttribute('aria-label', on ? 'Bookmarked' : 'Bookmark');
+  }
+  (async function initYtBookmarkState() {
+    const btn = document.getElementById('yt-bookmark-btn');
+    if (!btn || !btn.dataset.filename) return;
+    try {
+      const resp = await fetch('/bookmarks');
+      if (!resp.ok) return;
+      const list = await resp.json();
+      if (Array.isArray(list) && list.some(b => b && b.filename === btn.dataset.filename)) {
+        setYtBookmarkState(btn, true);
+      }
+    } catch (e) { /* offline -- leave default state */ }
+  })();
+
+  async function shareYtPage(btn) {
+    const original = btn.innerHTML;
+    btn.disabled = true;
+    btn.innerHTML = '&hellip;';
+    try {
+      const resp = await fetch('/share', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ filename: btn.dataset.filename }),
+      });
+      const result = await resp.json();
+      if (!result.ok) throw new Error(result.error || 'Share failed');
+      try { await navigator.clipboard.writeText(result.url); } catch (e) {}
+      btn.innerHTML = '&#10003;';
+      btn.title = 'Copied ' + result.url;
+      setTimeout(() => { btn.innerHTML = original; btn.disabled = false; btn.title = 'Share'; }, 2500);
+    } catch (e) {
+      console.error('Share failed:', e);
+      btn.innerHTML = '!';
+      btn.title = 'Share failed: ' + (e && e.message || e);
+      setTimeout(() => { btn.innerHTML = original; btn.disabled = false; btn.title = 'Share'; }, 3000);
+    }
+  }
+
+  // When the page is viewed from somewhere other than the local Reader
+  // server (e.g. a shared copy on GitHub Pages), hide the interactive
+  // buttons whose endpoints only exist on localhost.
+  (function hideLocalOnlyControls() {
+    const host = location.hostname;
+    const isLocal = host === 'localhost' || host === '127.0.0.1' || host === '';
+    if (isLocal) return;
+    const actions = document.querySelector('.yt-header-actions');
+    if (!actions) return;
+    const bookmark = actions.querySelector('#yt-bookmark-btn');
+    const share = actions.querySelector('#yt-share-btn');
+    if (bookmark) bookmark.remove();
+    if (share) share.remove();
+  })();
+  </script>
+</body>
+</html>
