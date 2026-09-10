@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Mark Zuckerberg on Muse, Meta&#39;s biggest AI bet yet</title>
+  <style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background: #faf8f5;
+  color: #2c2418;
+  line-height: 1.7;
+  padding: 0 1rem 2rem;
+}
+header {
+  position: sticky;
+  top: 0;
+  background: #faf8f5;
+  z-index: 100;
+  border-bottom: 2px solid #c4956a;
+  box-shadow: 0 2px 8px rgba(44,36,24,0.08);
+  padding: 0.6rem 1rem;
+}
+.header-inner {
+  max-width: 78ch;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header-title { font-size: 1rem; color: #2c2418; }
+.header-title strong { font-size: 1.1rem; }
+.header-link {
+  font-size: 0.85rem;
+  color: #8b6d4e;
+  text-decoration: none;
+  border: 1px solid #c4956a;
+  padding: 0.2rem 0.7rem;
+  border-radius: 4px;
+}
+.header-link:hover { background: #f0ebe3; }
+main {
+  max-width: 78ch;
+  margin: 0 auto;
+  padding-top: 0.5rem;
+}
+h2 {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #2c2418;
+  margin-top: 2rem;
+  margin-bottom: 0.5rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 2px solid #c4956a;
+}
+h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #3d3225;
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+section { margin-bottom: 1.5rem; }
+ul { margin: 0.5rem 0 0.5rem 1.5rem; }
+li { margin-bottom: 0.4rem; }
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0.75rem 0;
+  font-size: 0.92rem;
+}
+thead th {
+  background: #3d3225;
+  color: #faf8f5;
+  text-transform: uppercase;
+  font-size: 0.78rem;
+  letter-spacing: 0.05em;
+  padding: 0.5rem 0.75rem;
+  text-align: left;
+  font-weight: 600;
+}
+tbody td {
+  padding: 0.45rem 0.75rem;
+  border-bottom: 1px solid #e8e0d4;
+}
+tbody tr:nth-child(even) { background: #f0ebe3; }
+tbody tr:nth-child(odd) { background: #faf8f5; }
+.key-insight {
+  border-left: 4px solid #c4956a;
+  background: #f5efe8;
+  padding: 0.75rem 1rem;
+  margin: 0.75rem 0;
+  font-size: 0.93rem;
+  border-radius: 0 6px 6px 0;
+}
+.qa-pair { margin-bottom: 1.25rem; }
+.question-box {
+  background: #f0ebe3;
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+  margin-bottom: 0.5rem;
+}
+.analyst-label {
+  display: block;
+  font-size: 0.8rem;
+  color: #8b6d4e;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  margin-bottom: 0.25rem;
+}
+.answer { padding-left: 0.25rem; }
+.loading-section { opacity: 0.5; }
+.loading-indicator {
+  font-size: 1.2rem;
+  padding: 2rem;
+  text-align: center;
+  color: #8b6d4e;
+}
+
+/* YouTube transcript reader */
+
+/* Legacy .yt-meta-card -- kept so old output files still render cleanly.
+   New output uses .header-title.yt below instead. */
+.yt-meta-card {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  margin-bottom: 1.5rem;
+  background: #f5efe8;
+  border-left: 4px solid #c4956a;
+  border-radius: 0 6px 6px 0;
+  padding: 0.9rem 1rem;
+}
+.yt-meta-card img {
+  flex: 0 0 180px;
+  height: 101px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+.yt-meta-body { flex: 1; font-size: 0.93rem; }
+.yt-meta-title { font-weight: 700; font-size: 1rem; margin-bottom: 0.25rem; }
+.yt-meta-sub { color: #8b6d4e; margin-bottom: 0.35rem; }
+.yt-meta-url { font-size: 0.85rem; color: #3d3225; }
+
+/* YouTube sticky header uses the default 78ch-capped centered
+   container so it aligns with the body text column below. The
+   buttons sit at the right edge of that centered container. */
+header:has(.header-inner.yt) { padding: 0.75rem 1rem; }
+.header-inner.yt { gap: 1rem; }
+.header-title.yt {
+  display: flex;
+  gap: 0.9rem;
+  align-items: center;
+  min-width: 0;
+  flex: 1;
+}
+.yt-header-thumb { flex: 0 0 88px; line-height: 0; }
+.yt-header-thumb img {
+  width: 88px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 3px;
+  display: block;
+}
+.yt-header-text { min-width: 0; flex: 1; }
+.yt-header-text strong {
+  display: block;
+  font-size: 1rem;
+  line-height: 1.3;
+  color: #2c2418;
+  /* Allow wrapping to 2 lines so long podcast titles show in full. */
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.yt-header-sub {
+  font-size: 0.8rem;
+  margin-top: 0.2rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.yt-header-sub .yt-channel { color: #8b6d4e; }
+.yt-header-sub .yt-date,
+.yt-header-sub .yt-dur { color: #3d3225; font-weight: 600; }
+.yt-header-sub .yt-sep { color: #c4956a; margin: 0 0.5rem; }
+
+.yt-header-actions {
+  display: flex;
+  gap: 0.4rem;
+  align-items: center;
+  flex: 0 0 auto;
+}
+/* Shared box shape for the star + share + YT buttons so they're
+   visually identical. Applies to both the <button>s and the <a> link. */
+.yt-header-actions .yt-bookmark-btn,
+.yt-header-actions .yt-share-btn,
+.yt-header-actions .header-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font: inherit;
+  font-size: 0.85rem;
+  line-height: 1;
+  color: #8b6d4e;
+  background: transparent;
+  border: 1px solid #c4956a;
+  border-radius: 4px;
+  padding: 0;
+  box-sizing: border-box;
+  width: 2.2rem;
+  height: 2.2rem;
+  white-space: nowrap;
+  text-decoration: none;
+  cursor: pointer;
+}
+.yt-header-actions .yt-bookmark-btn { font-size: 1rem; }
+.yt-header-actions .yt-share-btn { font-size: 1.05rem; }
+.yt-header-actions .yt-share-btn:disabled { opacity: 0.6; cursor: default; }
+.yt-header-actions .yt-bookmark-btn:hover,
+.yt-header-actions .yt-share-btn:hover,
+.yt-header-actions .header-link:hover {
+  background: #f0ebe3;
+  color: #3d3225;
+}
+.yt-header-actions .yt-bookmark-btn.is-bookmarked {
+  background: #c4956a;
+  color: #faf8f5;
+  border-color: #a87d5a;
+}
+.yt-header-actions .yt-bookmark-btn.is-bookmarked:hover {
+  background: #a87d5a;
+  color: #faf8f5;
+}
+
+h3.chapter {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #3d3225;
+  margin-top: 1.25rem;
+  margin-bottom: 0.4rem;
+}
+h3.chapter a {
+  font-size: 0.8rem;
+  color: #8b6d4e;
+  text-decoration: none;
+  font-weight: 400;
+}
+
+.yt-body {
+  line-height: 1.58;
+}
+.yt-body p {
+  margin-bottom: 0.9rem;
+}
+.yt-body p.q {
+  background: #f0ebe3;
+  border-left: 3px solid #c4956a;
+  border-radius: 0 6px 6px 0;
+  padding: 0.6rem 0.9rem;
+  margin-top: 1.25rem;
+  margin-bottom: 0.8rem;
+  color: #3d3225;
+  font-style: italic;
+  font-size: 0.96rem;
+}
+.yt-body p.q::before {
+  content: "Q";
+  display: inline-block;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 0.72rem;
+  color: #8b6d4e;
+  letter-spacing: 0.05em;
+  margin-right: 0.5rem;
+  padding: 0.05rem 0.4rem;
+  border: 1px solid #c4956a;
+  border-radius: 3px;
+  vertical-align: 0.1em;
+}
+.yt-body p.q a {
+  display: block;
+  text-align: right;
+  margin-top: 0.3rem;
+  font-style: normal;
+  font-size: 0.8rem;
+  color: #8b6d4e;
+  text-decoration: none;
+  white-space: nowrap;
+}
+.yt-body p.q a:hover {
+  text-decoration: underline;
+}
+
+</style>
+</head>
+<body>
+  <header>
+    <div class="header-inner yt">
+      <div class="header-title yt">
+        <a class="yt-header-thumb" href="https://www.youtube.com/watch?v=Lx8lrn-cytc" target="_blank"><img src="https://i.ytimg.com/vi_webp/Lx8lrn-cytc/maxresdefault.webp" alt=""></a>
+        <div class="yt-header-text">
+          <strong>Mark Zuckerberg on Muse, Meta&#39;s biggest AI bet yet</strong>
+          <div class="yt-header-sub">
+            <span class="yt-channel">Sources Podcast</span>
+            <span class="yt-sep">&middot;</span>
+            <span class="yt-date">Sep 8, 2026</span>
+            <span class="yt-sep">&middot;</span>
+            <span class="yt-dur">1h 10m</span>
+          </div>
+        </div>
+      </div>
+      <div class="yt-header-actions">
+        <button id="yt-bookmark-btn"
+                class="yt-bookmark-btn"
+                title="Bookmark"
+                aria-label="Bookmark"
+                data-filename="yt-2026-09-10-mark-zuckerberg-on-muse-meta-s-biggest-ai-bet-yet.html"
+                data-title="Mark Zuckerberg on Muse, Meta&#39;s biggest AI bet yet"
+                data-url="https://www.youtube.com/watch?v=Lx8lrn-cytc"
+                data-date="2026-09-08T15:02:43-07:00"
+                data-channel="Sources Podcast"
+                onclick="toggleYtBookmark(this)">&#9734;</button>
+        <button id="yt-share-btn"
+                class="yt-share-btn"
+                title="Share"
+                aria-label="Share"
+                data-filename="yt-2026-09-10-mark-zuckerberg-on-muse-meta-s-biggest-ai-bet-yet.html"
+                onclick="shareYtPage(this)">&#8599;</button>
+        <a class="header-link" href="https://www.youtube.com/watch?v=Lx8lrn-cytc" target="_blank" title="Watch on YouTube" aria-label="Watch on YouTube">YT</a>
+      </div>
+    </div>
+  </header>
+  <main>
+    <div class="yt-body">
+    <h3 class="chapter"><span>Zuckerberg’s Vision for AI</span><a href="https://www.youtube.com/watch?v=Lx8lrn-cytc&t=0s">&#x21AA; 00:00</a></h3>
+<p class="q" data-t="0">Mark, last time we spoke, you called me. It was on the weekend. Well, you called me through the glasses, which was the interesting part.<a href="https://www.youtube.com/watch?v=Lx8lrn-cytc&t=0s">&#x21AA; 00:00</a></p>
+<p data-t="5">Was it loud in the background? You were going to fish.</p>
+<p data-t="5">I wasn't going to say it, but yeah, it was on the weekend.</p>
+<p data-t="11">The noise cancellation actually is pretty good.</p>
+<p class="q" data-t="11">Oh, it's great. Yeah, it's great. But you wanted to talk about this essay, manifesto—I don't know what you call it. Manifesto, we'll say—that you published recently. And it's long, I'll caveat, but there's a lot in it.<a href="https://www.youtube.com/watch?v=Lx8lrn-cytc&t=11s">&#x21AA; 00:11</a></p>
+<p class="q" data-t="24">And I wanted to start there because there's a lot of big ideas in there, and they'll connect to the main thing we're talking about today. I'm curious, why write that? Because it's long. There's a lot in there.<a href="https://www.youtube.com/watch?v=Lx8lrn-cytc&t=24s">&#x21AA; 00:24</a></p>
+<p data-t="35">Well, I feel like if you're going to invest so much in building AI, then it's important that people understand what your lab stands for and what your values are. And basically, AI has so many opportunities, but there are also all these real risks. So I think it's very important that everyone who's working on it has a well-thought-out theory for how the work that they're going to do is going to lead to a positive future.</p>
+<p data-t="64">It's interesting because the different labs have some different philosophies on this, and there's a lot of things that I think have become conventional wisdom in the industry that I just strongly disagree with. And my view on this is that the path to have a positive future for everyone is to make sure that we distribute the technology as widely as possible. And that's based on three major principles that we have.</p>
+<p data-t="87">One is that empowering people is the source of prosperity in the world, and it has been throughout history.</p>
+<p data-t="93">Two is that the primary purpose for AI is going to be invention of new things, not automation.</p>
+<p data-t="101">And then the third principle is that the foundation for safety for the future is basically establishing the right checks and balances and balance of power, rather than restricting access.</p>
+<p data-t="117">These are all things that I think, oddly, are very different from a lot of the conventional wisdom, especially in Silicon Valley. A lot of people think, “Hey, this technology is very powerful. We must restrict it so that way not that many people have access to it.” I personally am much more worried about a small number of labs or people having control of something that is so capable.</p>
+<p data-t="143">And I think throughout history, what we've found is that when you put power in people's hands, most advances don't come from the incumbents or the establishment. They come from people on the periphery whose ideas aren't taken seriously. But when they get enough tools to basically be able to prove out what they're working on, that ends up being very powerful.</p>
+<p data-t="161">In Western society, the way that we've established governance and basically having a well-balanced society is through a set of checks and balances, right? And this balance of power. It's very ingrained in our society that you don't want to have one lab or two labs having access to a thing.</p>
+<p data-t="180">For some of the most recent concerns that have come up, like some of these cybersecurity concerns, I think the best antidote to someone having an AI that could potentially hack into systems is having everyone have access to an AI so they can harden their own systems first.</p>
+<p data-t="194">And that's kind of been the history of cybersecurity over the past several decades, is that open-source software, because people can see it and can scrutinize it, sort of counterintuitively, by putting it in people's hands, you end up with a more secure and more stable environment. So that's what I believe, and that's what I think is the path to a positive future, is basically distributing the technology.</p>
+<p data-t="218">That has a bunch of different implications for what we're going to do. Obviously, we want to build leading AI models, which we're doing. And Muse Spark 1.3, which we just released, it's advanced, but it's actually the latest model of a relatively smaller pre-train that we did, the internal code name Avocado.</p>
+<p data-t="241">Oh, we're going to get into the code.</p>
+<p data-t="241">Oh yeah, we'll get into that. And we have Watermelon coming soon, so that's going to be a big deal. So obviously, leading models. Probably the biggest personification, if you will, or implementation of this vision is the Muse personal agent that we're rolling out.</p>
+<p data-t="258">Basically, the idea there is give every person in the world a very capable personal agent that can understand their goals and can just work on their behalf 24/7. And then an important part of this is also just getting the technology in people's hands. We're very strong proponents of open source and making sure that the opportunities that I think are going to be massive here are not just limited to a few people or companies.</p>
+<p data-t="283">This episode is brought to you by Mercury, AI-native banking that's loved by more than 300,000 entrepreneurs, including me. Visit mercury.com to learn more. Mercury is a fintech, not a bank. Check the show notes for details.</p>
+<p data-t="296">Thanks also to Granola, the AI notepad for people in back-to-back meetings. It works everywhere you do and lets you focus on what matters. Try it at granola.ai/sources and use the code SOURCES for three months off.</p>
+<p data-t="309">This episode is also brought to you by Jira by Atlassian, where teams and agents get the context, coordination, and control to move work forward. Try it free at jira.com. That's jir.com.</p>
+<p class="q" data-t="323">I have a bunch of questions about the Muse Agent, but staying big picture for a second, because you said a lot of things there. Is open source the counter to the trend you're seeing that you described that you're worried about? Is that the main way, practically, that you counter that, or is it regulation? Is it both?<a href="https://www.youtube.com/watch?v=Lx8lrn-cytc&t=323s">&#x21AA; 05:23</a></p>
+<p data-t="343">No, I actually think probably the most important thing is actually just getting the technology in individuals' hands. So I actually think things like the Muse personal agent are perhaps even more important. I think what you're starting to see are some of the labs are training more advanced models and then not even releasing them.</p>
+<p data-t="360">Right, right.</p>
+<p data-t="360">So I think that that is quite dangerous in the sense that, basically, when you have scrutiny on something, when you put a system out there, first of all, if you put it in a lot of people's hands, you get the checks and balances. You get broad-based prosperity, which I think is important, right, for society. We can't just have one or two labs get incredibly valuable.</p>
+<p data-t="379">I think you want to make it so that billions of people can basically have prosperity in their own lives, whether it's creating small businesses, being more successful in their careers, being more productive and managing their homes, saving money in a lot of ways, advancing their health. So I think you want the benefits to be very broad-based. So that's one piece.</p>
+<p data-t="402">In terms of the competition, I do think that having multiple labs is helpful, and I think open source is quite helpful for that. So I think open source is an important part of it. The nature of open source is there's a whole community of people who do it. So I'm not saying that we're going to be the one company that does it.</p>
+<p data-t="415">I'm also not a zealot about this from the perspective it's not that everything we do is open source either, right? We release some open models. We do some closed work. I think it's important, if you're building a for-profit company, that you can build some advanced things, and you don't necessarily need to share every single thing with the world.</p>
+<p data-t="433">But I think, in general, supporting a robust open-source ecosystem is going to be key to maintaining competition and maintaining transparency and understandability of where the technology is going in a way that I think is actually going to be incredibly important for safety.</p>
+<p data-t="450">If we have a world where there's just a small number of really capable models, it's interesting, right? If you look at some of the cyber stuff, for example, the instinct, which on the one hand I can understand the instinct of, “All right, we have this capable cyber model. Let's release it that only, whatever it is, the top hundred institutions get it.”</p>
+<p data-t="469">But I think part of the issue is that there's more than a hundred important institutions in the world. So if you look at things like the Hugging Face incident that happened, Hugging Face is maybe not one of the biggest hundred institutions in the world, but it matters, right? It's an important thing that people rely on.</p>
+<p data-t="487">And so what did they do when they started detecting that there was this intrusion? They turned to open-source models because they didn't have access to some of the closed ones that were causing the issues. So I think that having a robust open-source ecosystem is one important part of having a safe and stable future.</p>
+<p data-t="505">But to me, the most important thing is just making sure that we distribute the technology widely rather than hoarding it in a small number of people's hands.</p>
+<p class="q" data-t="511">And I think there's also this ongoing debate in Silicon Valley about why people feel so negatively about AI. You talk about this in your recent letter, addressing these concerns, or trying to, but the sentiment on AI and data centers in particular, it's so negative.<a href="https://www.youtube.com/watch?v=Lx8lrn-cytc&t=511s">&#x21AA; 08:31</a></p>
+<h3 class="chapter"><span>Data Centers, Jobs and Local Communities</span><a href="https://www.youtube.com/watch?v=Lx8lrn-cytc&t=514s">&#x21AA; 08:34</a></h3>
+<p class="q" data-t="530">And it sounds like maybe an essence of your argument, correct me if I'm wrong, is if we diffuse this technology more, if we enable more people to access the things that are right now gated by some of the top labs, maybe that addresses this. I think people feel maybe disenfranchised by what's happening in AI. Is that what you're getting at?<a href="https://www.youtube.com/watch?v=Lx8lrn-cytc&t=530s">&#x21AA; 08:50</a></p>
+<p data-t="546">Well, there are many layers to it. There's so many parts of this. This is why the essay was so long, right? Fifteen pages, because we want to get through lots of different questions. People have questions about jobs in the economy.</p>
+<p data-t="558">They have questions about data centers and their local communities and the economic and environmental impacts of that. There are questions about how people might misuse AI, right? There's the cyber questions. There's bio risks that are coming up.</p>
+<p data-t="575">There are questions about how we maintain a free society. There are questions about American leadership. There are questions about maintaining control over the technology as it gets to be increasingly capable. So these are all important. So it's important not to just talk about this in generalities at a high level, because I think each of these has some different nuances.</p>
+<p data-t="592">But in general, I think one of the things that they all have in common is that if you create broad-based prosperity, and I think that one of the better ways to do that is by ensuring that there's the right balance of power around who has access to the technology, and generally making sure that the greatest balance goes towards the general population of people, as opposed to any kind of insider stakeholder or whatever you want to call it.</p>
+<p data-t="616">I think that that ends up being very important. So if you look at the data centers, what we've actually found is that when a company like Meta goes into a community and makes a commitment that we're going to invest there for decades, right, which is really what we're doing when we're building out a data center, we're able to make it so that it's very good for the community.</p>
+<p data-t="640">The tax revenue that they bring from that—in Louisiana, we had this example where the tax revenue funded these $50,000 bonuses for teachers in the community. We bring a lot of jobs. We invest in the local community a lot. That I think can be good.</p>
+<p data-t="659">I think that there's also a lot of speculation, right, where there are companies that aren't necessarily planning on running a data center for decades. They're just trying to find a plot and then trying to sell it to one of the big labs, and they don't really care as much about the local community, and they're not invested for the long term.</p>
+<p data-t="672">So if they don't care to focus on making it work for the local community, then of course people are going to get upset. So that's one of the things that can be difficult when you have these speculative—I don't even know if I'd call it a bubble, because that implies that it's overvalued or something, but there's certainly a boom, right?</p>
+<p data-t="696">So you have that. That leads to some of these short-term thinking incentives that don't necessarily lead towards helping every stakeholder, which I think is what you need to do to make this sustainable over the long term.</p>
+<p data-t="708">And at the end of the day, if we're creating a technology that, if it doesn't create jobs or doesn't create broad-based prosperity or the infrastructure that we're building doesn't help local communities, that's not going to be allowed to continue. So of course you have to design it in a way that can be helpful to people in all these ways.</p>
+<p data-t="726">Which is also part of the reason why, for people who are skeptical or have so much doom about the whole thing, one of the things that I basically think is that if we don't end up building it in a way that's positive, it just effectively won't be able to happen.</p>
+<p data-t="742">So I kind of think actually establishing the right checks and balances and distributing the benefits of this widely is sort of a precondition for being able to scale in the way that I think would be best for society over time.</p>
+<p class="q" data-t="756">I haven't heard another tech in your position talk about data centers that way, the long-term investment of it. Is this how you've always thought about it? Is this something you feel like there's more clarity that's been brought to it for you recently?<a href="https://www.youtube.com/watch?v=Lx8lrn-cytc&t=756s">&#x21AA; 12:36</a></p>
+<p data-t="774">Yeah, I think that there's been all this anti-data-center sentiment that you're talking about. So we've dug into it, because what we're trying to understand is, okay, there isn't as much of that around our project. So why is that? And then we ask a bunch of people. It's like, well, it looks like there's a pretty big dichotomy between these speculators and the companies that are focused on it for the long term.</p>
+<p data-t="793">And that kind of makes sense when you think about it. So one thing that we're doing, there's this America's Workforce Academy project that we did, which is basically, okay, we're going to build all these data centers. We're going to be doing this for a while. There isn't the volume of skilled tradespeople that you need to create this.</p>
+<p data-t="811">So we need more fiber technicians and electricians and advanced carpentry and all of these things. And there aren't enough people to do this. We need hundreds of thousands, maybe millions, of more people who can do this. And people aren't trained to do that, right?</p>
+<p data-t="822">So we created this training program to effectively do that, where we guarantee people who get through the training program a job at a place that is working on building infrastructure for Meta. And why did we do this? It's not really philanthropy, right? We need those people to be skilled and have those skills. So it's a win-win.</p>
+<p data-t="846">It's an investment that I think makes sense if you're in it for decades, but not necessarily something that you would do if you were building out one site with the intent of flipping it to a different company. So I think that a lot of problems in the world do just naturally get solved by incentive alignment when you think about them over the long term.</p>
+<p data-t="871">So I think that that ends up being an important part of this. And I guess part of the way that I think about this is that I just think that there's no way that it's going to be permitted for there to be a small number of labs that control such an important and capable technology and accumulate a lot of wealth to themselves.</p>
+<p data-t="890">I think this has to be a broad-based thing in order for it to be able to work. It has to work technologically, but it also has to work socially. And I think that those pieces have to go hand in hand.</p>
+<p class="q" data-t="902">I agree. Well, now we're landing towards Muse. Before we get there, you also wrote a year ago your personal superintelligence essay. Shorter one.<a href="https://www.youtube.com/watch?v=Lx8lrn-cytc&t=902s">&#x21AA; 15:02</a></p>
+<h3 class="chapter"><span>Why Meta Is Building Personal Superintelligence</span><a href="https://www.youtube.com/watch?v=Lx8lrn-cytc&t=903s">&#x21AA; 15:03</a></h3>
+<p data-t="909">Yeah, that was a page. I did write a one-page version of the future, too. Well, I published it in the Wall Street Journal.</p>
+<p data-t="920">I just read the long one.</p>
+<p data-t="920">Okay, yeah. So the one-page version, and there's the 15-page version.</p>
+<p class="q" data-t="925">Well, so this one you did about a year ago, personal superintelligence, I think a lot of people in my world, when they saw you write that, were like, “Oh, wow. Why is Mark writing this? What is the thing he's seeing on the other side of this?” And I think, correct me if I'm wrong, it might be Muse, what we're going to talk about, right? What you guys are releasing now.<a href="https://www.youtube.com/watch?v=Lx8lrn-cytc&t=925s">&#x21AA; 15:25</a></p>
+<p data-t="938">This is it.</p>
+<p class="q" data-t="938">So how did you come to that realization that this is the next chapter for Meta?<a href="https://www.youtube.com/watch?v=Lx8lrn-cytc&t=938s">&#x21AA; 15:38</a></p>
+<p data-t="945">It's interesting. We've never really just thought about ourselves as a social media company. We've definitely thought about ourselves as a company about connecting people and about empowering people. But I think a lot of the values that led us to build the things that we built for the first 15, 20 years of the company, around putting technology and power in individuals' hands, believing that people should be able to decide for themselves what is important in their lives.</p>
+<p data-t="973">And we've gone through a lot of social debates around this, right? A lot of the debates around content moderation and things like this have been around this question of, should people be allowed to decide and communicate for themselves what matters in their own life? And I think through that experience, it has sort of sharpened my belief that a lot of progress throughout history and through this technological age comes from empowering individuals.</p>
+<p data-t="1005">And that people really do know best about what matters in their own lives. So because of that, I have somewhat of an allergy whenever I hear people talk about, “Oh, we should just have a small number of experts allocate what AI does to big problems. Why should it do these things that people care about in their lives?”</p>
+<p data-t="1023">Well, people have a balance of things they care about. People care about health. They care about having a better life, but they also care about their relationships and showing up for their friends and family, and they care about culture. People care about things that may not, to a scientist or an engineer in the industry, feel like the biggest problems.</p>
+<p data-t="1043">But I don't know, if you ask billions of people what they care about, I think what people's aggregate answer to that question is, is what the most important things are to be worked on. And so I've always just kind of believed that when you build this superintelligence, there's this question of who decides what it's going to focus on.</p>
+<p data-t="1068">And I think that people should be able to direct it towards what matters in their own lives. It shouldn't just be directed by some so-called experts sitting at a small number of labs. So this gets back to, this is basically the foundation of this overall philosophy, which is that the way to have a positive future is to empower people, to put the technology in their hands and let people decide for themselves what matters and how they want to use it.</p>
+<p data-t="1093">And I think that when people do that, it first of all will prioritize some things that are different, right? Maybe it'll prioritize health issues, but maybe instead of prioritizing the most common things, which is what the pharma and biotech industry at large prioritizes today. Now, there's a very long tail of rare diseases and conditions that people have.</p>
+<p data-t="1118">So, okay, if you have a rare condition, you're probably going to want your personal AI to focus on that, not just something else just because it happens to be the most common thing. So I think, for example, rare diseases are disproportionately underinvested in.</p>
+<p data-t="1130">You're doing a lot of investment with your foundation.</p>
+<p data-t="1136">We're doing that at Biohub, and that's partially informed some of my views here that I think, yeah, you want to put the power in individuals' hands to determine what matters for them. But a lot of this is also, it's not necessarily the things that people would say are the big social problems.</p>
+<h3 class="chapter"><span>How Zuckerberg Uses Muse</span><a href="https://www.youtube.com/watch?v=Lx8lrn-cytc&t=1154s">&#x21AA; 19:14</a></h3>
+<p data-t="1154">A lot of it for me, when I'm using my Muse Agent, I just want it to help me be a better father and a better husband and show up better for my friends and be able to help me connect with people. And that I think is also partially a through line between the work that we've done at Meta so far and this.</p>
+<p data-t="1174">I think we're the company that just disproportionately cares about and believes that there's social value in helping people connect with the people around them. So what are the first things that I set up my own agent to do? It's like, all right, my three-year-old daughter likes baking. I don't know anything about baking, but that's a fun project that we can do.</p>
+<p data-t="1191">So I basically asked it, “All right, set up so that every weekend we have a baking project that is reasonable for a three-year-old and an adult who knows nothing about baking. And use Instacart or whatever to go get all the ingredients. Just figure out what makes sense and make sure everything is ready so that way when I show up on Sunday with my daughter, we can go make this thing.”</p>
+<p data-t="1221">And then I tell it afterwards, “How did it go? Okay, that one was too hard.” Turns out cake pops, really difficult. Surprisingly difficult.</p>
+<p data-t="1233">Nothing about baking.</p>
+<p data-t="1233">Yeah, I didn't either. I know something. Don't start with cake pops. That's the problem. There's a lot of things in baking that are pretty simple. It turns out cake pops is not one of them.</p>
+<p data-t="1244">Well, what can I tell you?</p>
+<p data-t="1244">Thank you, Muse.</p>
+<p data-t="1250">Yeah, thanks. So it kind of updates that and helps with that.</p>
+<p data-t="1256">My older daughter has gotten into climbing mountains, and some of them you need permits for. So I have it basically sit and get the permits when they become available so we can climb mountains. And that was just pretty neat.</p>
+<p data-t="1268">Okay, so then we do that, and it basically tells me, “All right, I was able to get a permit for this day.” And I was like, “All right, well, I guess I'm taking that day off from work to go climb a mountain with my daughter.” So it's kind of cool, right?</p>
+<p data-t="1280">So it does that, but it also helps keep me healthy. It helps me with my training. I put cameras up in my MMA gym, and I tell it to watch the cameras and send me feedback, and it's pretty fun. It's good feedback.</p>
+<p data-t="1292">Sometimes it's funny feedback. It finds me, and it's just like, “It looks like you really gave up.” And I was like, “Yeah, I did. I was really tired right there.” It's like, why is that the thing that you're pointing out to me?</p>
+<p data-t="1309">But no, it's good. And it's funny, the coaches laugh about it. They're like, “Yeah, this is what we didn't feel like we could tell you, but your agent's telling you.”</p>
+<p data-t="1315">Yeah, that's good.</p>
+<p class="q" data-t="1321">I didn't think about this until hearing you talk about it, but you have people that could obviously do all this for you. But how do you use something like a Muse Agent to really test the limits of how it can be helpful as an assistant, right? Were you pushing it? How have you pushed it in a way that the team is like, “Oh, okay, we got to fix this”?<a href="https://www.youtube.com/watch?v=Lx8lrn-cytc&t=1321s">&#x21AA; 22:01</a></p>
+<p data-t="1340">Part of what's interesting about it is that everyone just has such different things that they want to do with it. So in the early beta period, we handed it to a bunch of people. I gave it to someone, and within a day they're using it to help run their homeschool. And it's like, okay, wow, you just started this within a day.</p>
+<p data-t="1364">And then another person, within a day or within 12 hours, they're like, “I just planned a trip.” And it just planned this whole thing for me.</p>
+<p data-t="1370">Yeah, yeah.</p>
+<p data-t="1370">Someone else I know who's generally pretty skeptical about technology, I gave it to her, and she didn't say anything for a few days. Then she texted me and was like, “So when you do the general release, do I get to keep my Muse agent, or are you going to reset it?” I was like, “All right, this is good. I think this is working well.”</p>
+<p data-t="1387">Everyone I know who's been on the beta has very high things to say about it. High praise.</p>
+<p data-t="1392">But people do different things with it.</p>
+<p class="q" data-t="1398">Yeah. And I think we should just also say what it is more plainly for people so they understand, because I think people think of AI as Meta AI or ChatGPT. It's back-and-forth prompting. The real unlock here, and this is happening in the industry more broadly, whether it's Grokbot, Town, Instinct, there's many products doing this, but it's adding a virtual machine behind the scenes where the agent can control a computer for you and log in and do things.<a href="https://www.youtube.com/watch?v=Lx8lrn-cytc&t=1398s">&#x21AA; 23:18</a></p>
+<p class="q" data-t="1422">And that's a huge change, I think, for people who only know AI for—<a href="https://www.youtube.com/watch?v=Lx8lrn-cytc&t=1422s">&#x21AA; 23:42</a></p>
+<p data-t="1428">And it's long-lived. So basically, instead of the model with Meta AI or ChatGPT or Gemini or whatever you use, where you send one prompt and then it gives an answer, in this case what you basically do is you give it projects or you give it goals. And then it just works, and it works 24/7, and it doesn't stop until it's helped achieve the goals.</p>
+<p class="q" data-t="1447">The team was telling me it studies overnight, is what you guys call it.<a href="https://www.youtube.com/watch?v=Lx8lrn-cytc&t=1447s">&#x21AA; 24:07</a></p>
+<p data-t="1447">Oh yeah, it studies. It consolidates its reflections into memory. It basically just works on projects, and it can also suggest new projects.</p>
+<p data-t="1464">So I play the computer game Civilization with one of my daughters, and I was like, “Hey, do you want to make a strategy guide for her?” It was like, “Yeah, sure.” So it was like, “Okay, now that we have the strategy guide, do you want me to expand the strategy guide so it can also teach historical lessons about different civilizations?”</p>
+<p data-t="1483">I was like, “Yeah, sure. Why not?” So it just built a new tab in the app that it made, and that was very cool. So it can just expand, and it's proactive.</p>
+<p data-t="1489">Yeah, it suggests things.</p>
+<p data-t="1489">One of the things that I think is interesting is that it is just going to be able to make people money and save people money.</p>
+<h3 class="chapter"><span>Muse Pricing and Business Model</span><a href="https://www.youtube.com/watch?v=Lx8lrn-cytc&t=1500s">&#x21AA; 25:00</a></h3>
+<p class="q" data-t="1501">You think?<a href="https://www.youtube.com/watch?v=Lx8lrn-cytc&t=1501s">&#x21AA; 25:01</a></p>
+<p data-t="1501">Yeah. Part of what's interesting here is the economic model for how we're pricing it. You can pay for a subscription if you want to, if you basically want to have that model. But we're also just making it so that you can get a very large amount of usage for free.</p>
+<p data-t="1518">I think we're offering something, I think to start it's like a hundred million tokens a week for free, and you get this virtual machine. So it's a lot of computer.</p>
+<p data-t="1524">That's a good meme. It's a lot of computer.</p>
+<p data-t="1530">It's a lot of computer, yeah. But the reason for why we're doing this is we basically are confident in standing behind the fact that we think that this is going to effectively, for people who are going to use it for running a small business or making money or transactions or commerce in some way, we actually just think it's going to make so much money for people.</p>
+<p data-t="1548">That the business model over time that we expect is to effectively just take a very small cut of whatever the transaction is.</p>
+<p data-t="1555">Take rate business model.</p>
+<p data-t="1555">Yeah, yeah. And not even necessarily the person paying for it. It'll come from the businesses that they're working with.</p>
+<p class="q" data-t="1561">And you're working with Stripe on payments?<a href="https://www.youtube.com/watch?v=Lx8lrn-cytc&t=1561s">&#x21AA; 26:01</a></p>
+<p data-t="1561">Yeah, yeah. So my view is, we should be able to have a service that you make free for the vast, vast majority of people, which again is critical if you want to build this future for everyone where everyone has these powerful superintelligence agents. I think an important part of making something available to everyone is making it affordable.</p>
+<p data-t="1584">So we want to make it so this is free. So there's just this huge amount of usage that you get, and we're basically just standing behind that and saying we think that this thing is actually going to make you money and save you money. And that is how it's going to pay for itself.</p>
+<p class="q" data-t="1597">And Meta services can connect into it, right? So you could theoretically manage your ad spend on Instagram, all that stuff.<a href="https://www.youtube.com/watch?v=Lx8lrn-cytc&t=1597s">&#x21AA; 26:37</a></p>
+<p data-t="1608">Well, you connect it. You can connect it to whatever you want. It does work with Meta services if you want. You obviously don't have to connect it if you don't want to. If you're using it to run a business, it can basically just connect to our ad systems, and you can ask it to make something for you.</p>
+<p data-t="1621">It can help you make the product, and then it can help run the business. So all this stuff, and it can just do that in a loop and just do it forever, 24/7. And every time we release a new model, which we've been on this cadence of shipping a meaningful update every month, it's just going to get smarter, right? And get more capable and able to do more and more stuff.</p>
+<p class="q" data-t="1645">And something your team was telling me that I haven't heard this approach used elsewhere is this fleet concept, where you're letting the fleet of Muse agents learn together.<a href="https://www.youtube.com/watch?v=Lx8lrn-cytc&t=1645s">&#x21AA; 27:25</a></p>
+<p data-t="1651">Yeah, that was the ideas and suggestions thing. So you open up the app. The main tab is basically your chat with your Muse. There's a tab for basically ideas from the things that you've told it, how it can expand those.</p>
+<p data-t="1669">So that's the thing that I was saying, which is, first it helped make the strategy guide for playing Civilization with my daughter. Then it helped expand that into historical lessons. It came up with that idea, and then I was just like, “Yeah, sure, do it,” right? And it finds all these ways to basically augment itself.</p>
+<p data-t="1682">The MMA coaching thing, it comes up with ideas for how to make it better. It's like, “Would you like me to get better at finding the right frame to send to you?” It's like, “Yeah, good. Go do that.” So the ideas thing I think is important, because then you basically, across the fleet, can find people who are interested in different things.</p>
+<p data-t="1699">I guess taking a step back, one of the big issues that I think exists with AI is a lot of people don't know what to do with it. So I think if the agent can itself help you suggest things that it can do to be helpful for you, then that solves a huge part of this problem of making it so that you can get the most out of it.</p>
+<p class="q" data-t="1720">When you're introducing network-effect learning for agents, which no one's really done, where basically the agents are learning anonymized insights from the rest of the fleet. And you're the king of network effects. I'm really interested in this idea because I don't think anyone's doing this.<a href="https://www.youtube.com/watch?v=Lx8lrn-cytc&t=1720s">&#x21AA; 28:40</a></p>
+<p data-t="1737">Yeah. I think that right now most of the industry is thinking about agents as a single-player game, right? You have your agent, and you use it. And there are going to be all these interesting things that basically you can do by having the agents interact with each other.</p>
+<p data-t="1753">And we already have all these interesting examples internally where people have their agents interacting with each other. This isn't, for the most part, rolling out in this release, but it's going to be an important part of how I think this works over time. As more of the people who you know start using Muse, it just gets better, right?</p>
+<p class="q" data-t="1774">And is that the differentiator? You could buy the idea models continue to commodify at the frontier, essentially, or the products all start to look similar, similar kinds of harnesses. Is the network effects of that learning the real edge?<a href="https://www.youtube.com/watch?v=Lx8lrn-cytc&t=1774s">&#x21AA; 29:34</a></p>
+<p data-t="1785">Well, I think that there's a few things that are unique that we're doing. One is we're designing the models from the ground up, right, to basically be good for this use case, which I think really matters.</p>
+<p data-t="1797">Two is basically, I do think we have this social DNA as a company. We're helping people use the AI and agent to enhance their relationships and strengthen your relationships and get more out of the soft but very important parts of your life. I think that that's something that we're probably just going to be more attentive to as a company than any of the other labs.</p>
+<p data-t="1823">The third thing that I would say is actually going to be a major differentiator for us that I think might be surprising to some people is privacy and security. And we're investing in this just a huge, huge amount. And part of the view that we have on this is that in order for this to be useful, it needs to not just have state-of-the-art intelligence. It needs to really understand you, right?</p>
+<h3 class="chapter"><span>Privacy and Security for Personal Agents</span><a href="https://www.youtube.com/watch?v=Lx8lrn-cytc&t=1831s">&#x21AA; 30:31</a></h3>
+<p data-t="1848">In order to be able to understand your goals. So you end up connecting it to all this stuff, right? You talked about connecting to your ad system, but people connect it to messaging and email and all this stuff, health information, whatever. And in order to do that, people need to have a very high degree of confidence in the system.</p>
+<p data-t="1866">Yeah.</p>
+<p data-t="1871">Now, the good news here is that Meta has spent, at this point, more than 10 years focusing on building WhatsApp into, I think, the largest global end-to-end encrypted system. And we've designed it in a way where even Meta can't see the messages that people send. And that's been this just really transformative thing.</p>
+<p data-t="1896">I think it makes it so that people trust WhatsApp. It's also been a very important lesson for Meta to learn that that has been really important to our success with WhatsApp, that we've designed the systems that even we can't see the content.</p>
+<p data-t="1909">That means that whatever people are worried about, if they're worried about government getting access to it, a hacker getting access to it, someone at Meta doing something bad with it that they don't want, all that stuff you can take off the table if you design the system so that you can't see it. So we took that as one of the foundational lessons when we were getting started with this.</p>
+<p data-t="1923">Nat and I actually personally recruited Moxie Marlinspike.</p>
+<p data-t="1929">Founder of Signal.</p>
+<p data-t="1929">Yeah, and one of the people who helped us build WhatsApp encryption back in the day, back in 2014. He joined to specifically work on this confidential VM project, which makes it so that you can have your virtual machine and have all this information in your Muse, and we can make the commitment that even Meta cannot see the content that is in there.</p>
+<p class="q" data-t="1951">And you can do this technically. It's incredible. The commitment can be technically verified.<a href="https://www.youtube.com/watch?v=Lx8lrn-cytc&t=1951s">&#x21AA; 32:31</a></p>
+<p data-t="1963">Yeah. And that's something that we're going to publish more about in the coming weeks, as we basically get closer to rolling this out a lot more widely.</p>
+<p class="q" data-t="1969">And out of all these early VM efforts that these labs are doing with these agents, you think this is unique, what you're doing?<a href="https://www.youtube.com/watch?v=Lx8lrn-cytc&t=1969s">&#x21AA; 32:49</a></p>
+<p data-t="1974">I don't think anyone's doing it. There's a lot of other security measures that we're putting in place that I think we should talk through. Because even before this is ready, there's that, and even people who don't want to use this, it's incredibly secure because we focused on this from the beginning.</p>
+<p data-t="1993">But there's also the auto-approve. You have to see what it's doing.</p>
+<p data-t="1999">So let's get into all that stuff in a second. But I'm not aware of anyone having anything close to the confidential VM system that Muse has. And it's just, I think, a very fundamental thing, because you want to know that this is your agent, and that if you put content in there, basically you can trust that no one else is going to get access to it.</p>
+<p data-t="2022">So what are the two ways to do it? Well, a lot of people earlier in the year, when stuff like OpenClaw came out, they started getting Mac Studios. And one way to feel good about it is, well, you literally physically have your device running in your home.</p>
+<p data-t="2036">But the other way to do it is you build a— that's going to be tricky, because I don't think there are going to be billions of people who are going to buy a Mac Studio and configure it and run it at their home.</p>
+<p data-t="2042">Especially with RAM prices right now.</p>
+<p data-t="2042">Yeah, but it's also just technically difficult, right? Part of what we were trying to do with Muse is build a version of that personal agent experience that just works, that I can give to everyone in my family of various levels of technical literacy. And it just works, and then within a day it's doing all the stuff that they want in their life.</p>
+<p data-t="2064">So part of that is you don't want someone to have to set up their own computer or VM. You just want to be able to provision it in the cloud, but you want it to have the security and confidentiality that you'd have if you had the box sitting under your desk in your house. So I think that's a very fundamental thing.</p>
+<p data-t="2082">Like you said, there's other pieces too, because not everyone is going to use that. We built a secure credential store, right? There's no reason for you to just store out in the open all your credit card and your password.</p>
+<p data-t="2094">One-time card numbers.</p>
+<p data-t="2100">And so your agent shouldn't know that stuff. It should just be able to access it when it needs to because you've asked it to log into a thing, and not otherwise.</p>
+<p data-t="2106">It's actually not a single thing. You have your core agent, but we also built all these sentinel agents that basically monitor the incoming and outgoing traffic and data that your agent is sending, for the purpose of flagging to you when you might want to review something.</p>
+<p data-t="2129">So that's all that the sentinels do, is effectively they try to see if someone's trying to do a prompt injection. They look at, okay, did your Muse agent share something that is going out that is not something that you might be comfortable with? If so, then the sentinel agent is basically empowered to trigger this human-in-the-loop review.</p>
+<p data-t="2151">So if you're going to log into something, if you're going to do a payment, if you're going to transfer sensitive information, you basically each time need to approve it. And you can tell it, “I'm good with stuff like this in general. Always allow this kind of thing.” But in general, the Muse agent can't make those judgments itself. And that's built into the system and the architecture in a pretty deep way.</p>
+<p data-t="2176">And then even when we do things like all the connectors, you connect it to your email. I think some people, when they've designed this, they just make it so, okay, you connect, and now you have access to everything. But the approach that we've taken is, all right, if you connect to your email, it should start read-only, right? And then if you want to be able to have it send an email, then fine, go ask it for that specifically.</p>
+<p data-t="2201">Right, especially most people trying this have probably never tried a product like this.</p>
+<p data-t="2201">Yeah. So this is a core design principle for us, is basically least privilege, right? So yes, you're going to ask it to do a lot of things, and each step along the way, get access to the least privilege that you need, and only add to that as necessary. So this is very fundamental in the design of the product.</p>
+<p data-t="2220">And if you look at all the other agents that are out there, I think no one else is anywhere close to the level of sophistication or depth that we've built into this. And again, it's sort of informed by our experience building WhatsApp into this state-of-the-art end-to-end encrypted system around the world, and the importance of building a system where even Meta can't see the content.</p>
+<p data-t="2238">And so getting the band back together and having Moxie architect this has been, I think, one of the foundational things that in some ways it may not be what some people would think Meta would focus on. But it's interesting, we're two things. Social media is inherently about sharing, but then there's all these other things that are inherently about privacy and sensitive context.</p>
+<p data-t="2261">And we've done well at both of those. So I think that this is more the latter. It's going to be very important to just be extremely focused on how we handle that content.</p>
+<p data-t="2273">Mercury is a modern take on banking built for startups like mine. When I decided to start my media business, Mercury was by far the most straightforward, full-featured banking solution for me to set up quickly. The interface is intuitive and simple, saving me valuable time every day.</p>
+<p data-t="2291">I use Mercury to track my spending, bills, and invoicing. I love that I can delegate permissions to my team so they can keep things running for me in exactly the way I want them to. My favorite part is how forward-looking Mercury is with AI.</p>
+<p data-t="2304">Legacy banks are stuck in the past, but Mercury is built for how modern software works today. I use its built-in command assistant to analyze cash flow and help me move money. And Mercury also connects to other AI tools like ChatGPT and Claude.</p>
+<p data-t="2317">I use this feature all the time, and the folks at Mercury actually let me know that I'm one of the top users of it. So trust me, it's finally easy to get real-time financial data about your business wherever you need it. Visit mercury.com to learn more and apply online in minutes.</p>
+<p data-t="2331">Mercury is a fintech company, not an FDIC-insured bank. Banking services provided through Choice Financial Group and Column N.A., members FDIC.</p>
+<p data-t="2337">I spend a lot of time context switching between meetings, often with no time to process one before the next starts. Thankfully, Granola runs in the background the whole time. It's an easy-to-use AI notepad for meetings that works everywhere, even on phone calls.</p>
+<p data-t="2349">I use Granola to recall what was said in meetings and create helpful summaries. I use it every day to stay on top of what I need to get done with my team. It connects to my email and suggests follow-ups for me to quickly review and send, saving me valuable time.</p>
+<p data-t="2367">Granola isn't just a core part of my workflow. It's basically my second brain. Try Granola at granola.ai/sources and use the promo code SOURCES for three months off.</p>
+<p data-t="2374">AI is only as useful as the context it has. But when that context is scattered across tools, threads, and DMs, your team and your AI agents are flying blind. That's the problem Jira by Atlassian solves. What's the goal tied to your project? What got decided last week in Slack DMs?</p>
+<p data-t="2392">Atlassian's Teamwork Graph pulls all of the valuable pieces together from Jira, Confluence, GitHub, Slack, and more, so nothing falls through the cracks. You get 44% more accurate results with 48% less token usage. With Jira, you can easily share your work context with the AI agents you already love, like Claude, Cursor, and GitHub Copilot.</p>
+<p data-t="2412">Assign them work directly or connect your tools through MCP. All of this lets you spend less time digging through endless links and messages, chasing down what got decided and by who, and spend more time actually shipping. Learn more at jira.com. That's jir.com.</p>
+<p data-t="2430">Framer is the AI website builder that brings agents into the same canvas where your website is designed, managed, and published, so you can move faster without giving up your taste or control. Framer powers the Sources Podcast website at podcast.sources.news, where you can find new episodes, transcripts, and a lot more.</p>
+<p data-t="2443">Learn how you can get more out of your site from a Framer specialist, or get started building for free today at framer.com/sources for 30% off a Framer Pro annual plan. That's framer.com/sources for 30% off. Framer.com/sources. Rules and restrictions may apply.</p>
+<p class="q" data-t="2461">Do you think this is a winner-take-all market, this personal agent market?<a href="https://www.youtube.com/watch?v=Lx8lrn-cytc&t=2461s">&#x21AA; 41:01</a></p>
+<h3 class="chapter"><span>Who Will Win the Personal AI Agent Market?</span><a href="https://www.youtube.com/watch?v=Lx8lrn-cytc&t=2466s">&#x21AA; 41:06</a></h3>
+<p data-t="2467">I think that there's going to be quite a bit. Even things that people think are winner-take-all usually aren't.</p>
+<p class="q" data-t="2478">I think that's because you've dealt in this business of network effects, that they're incredibly durable. It's not winner-take-all, but it ends up being several at real scale. There's not a ton.<a href="https://www.youtube.com/watch?v=Lx8lrn-cytc&t=2478s">&#x21AA; 41:18</a></p>
+<p data-t="2489">Well, there's a lot.</p>
+<p class="q" data-t="2489">Yeah, you could probably count on two hands how many products have over two billion users, right? Scale begets scale. And I'm wondering how you're thinking about personal agents. Is this a totally different paradigm where it's going to be many, everyone has an agent?<a href="https://www.youtube.com/watch?v=Lx8lrn-cytc&t=2489s">&#x21AA; 41:29</a></p>
+<p data-t="2502">It's a very deep area to work in. So my guess is that there probably aren't going to be more than a dozen companies that have the sophistication to go do state-of-the-art work in that. So I think whether there are network effects or not, there's usually some kind of power-law distribution around, if you're the best at something, usually you end up getting a lot of the usage.</p>
+<p data-t="2526">And I think a lot of the nuance ends up coming from, well, it turns out there are all these different uses that people care about. So you can be the best at different things. And we will try to be the best at as many of these things as possible. But does building the thing that helps you with your relationships end up being a somewhat different thing than the personal agent that is the best at helping you build a small business?</p>
+<p data-t="2551">Maybe. I think I could argue maybe Meta's very well positioned to win at both of those. We serve hundreds of millions of small businesses, and we serve billions of people. So maybe we can be the best at both of those things, but there are probably categories that Meta isn't going to be the best at. And then the question is just, how big are those?</p>
+<p data-t="2573">I would guess that even with the ability to have this very secure confidential VM in the cloud, there are probably going to be some people who still want the Mac Studio at home. But how many is that going to be, right? Maybe it's millions, but I doubt it's billions. So I think there's just the question of what different people optimize for, and we'll try to make this as good as possible.</p>
+<p data-t="2592">But I do think that if we build something that ends up being just very useful for people generally in their day-to-day lives, one of the things that I think Meta is the best at is taking a product that works for consumers and distributing it to a lot of people.</p>
+<p data-t="2610">Sure.</p>
+<p data-t="2610">So that is one that I think, once we get this humming, we will be able to get this in front of many hundreds of millions of people and eventually billions of people. And I think that that's something that we can do quite well.</p>
+<p class="q" data-t="2623">And it coexists with Meta AI, or do you see those as separate?<a href="https://www.youtube.com/watch?v=Lx8lrn-cytc&t=2623s">&#x21AA; 43:43</a></p>
+<p data-t="2628">I think so. We'll see over time. I think right now they have somewhat different flavors. I use both of them. Muse is more conversational, and it interprets the questions that you ask it more as trying to understand you and what you might want over the long term.</p>
+<p data-t="2647">So it's more likely, if you ask it something, for it to just go off and work on a thing for a long time based on a thing that you said. Where sometimes you're just asking a question, right, and you want an answer to it. And so I think that's more the type of thing that I use Meta AI for.</p>
+<p data-t="2665">But we'll see. Maybe they'll converge over time, but I'm not sure.</p>
+<h3 class="chapter"><span>Rebuilding Meta’s AI Lab</span><a href="https://www.youtube.com/watch?v=Lx8lrn-cytc&t=2671s">&#x21AA; 44:31</a></h3>
+<p class="q" data-t="2671">SemiAnalysis, I'm not sure if you saw it, they had a pretty bullish piece about you in July. They said that Meta has the best shot at catching OpenAI and Anthropic on the frontier in terms of model progress. And an interesting quote, I thought, was, “What matters for MSL is the slope, not the intercept.”<a href="https://www.youtube.com/watch?v=Lx8lrn-cytc&t=2671s">&#x21AA; 44:31</a></p>
+<p class="q" data-t="2683">And then I saw there's this recent chart by Artificial Analysis, which was showing the latest model you guys have, Muse Spark, behind only Claude. I think it was Fable 5.1 and Opus 5. This was very recent. So the progress you guys are making on the models is picking up, and we've been talking about this over the last year, and you rebooted the lab last year.<a href="https://www.youtube.com/watch?v=Lx8lrn-cytc&t=2683s">&#x21AA; 44:43</a></p>
+<p class="q" data-t="2701">How has that practically happened internally? What would you attribute the gains you're seeing to? Has it been culture?<a href="https://www.youtube.com/watch?v=Lx8lrn-cytc&t=2701s">&#x21AA; 45:01</a></p>
+<p data-t="2713">Yeah, well, we rebooted the team when we created—</p>
+<p data-t="2718">Which was very public. You were hiring all those people.</p>
+<p data-t="2718">The way I thought about this is, Meta is a company that is a leader in machine learning for a long time. If you think about the feeds on Facebook or Instagram or our ad system or the integrity system that needs to find all this content that's unfit to be on the internet, those are basically all machine learning systems, and we've built state-of-the-art leading systems in those areas.</p>
+<p data-t="2741">So when LLMs started gaining traction, we had FAIR as a lab that did the early work on Llama. But we needed to productionize that and build it into this more industrial process for scaling it to be larger, as the scaling laws predicted would yield all these results.</p>
+<p data-t="2762">And I think at the time I made this mistake of just assuming that because we were good at all these other types of machine learning, the approach of building and scaling LLMs would be similar to that. And in practice, there are a lot of very different dynamics.</p>
+<p data-t="2780">So the first approach that we took through Llama 4, it got us so far. Llama 3 was a good model. I was more optimistic about where Llama 4 would go, and then when we launched that, I think we were off the trajectory that we needed to be on. So it's like, okay, we need to change something.</p>
+<p data-t="2802">But that's when I got more religion around talent density, right? This isn't just a system where you can have a thousand people working on it, running experiments. You really just want, in some ways, almost the smallest group of people that you can who can keep the thing in their head, who can work together as sort of a group science project.</p>
+<p data-t="2827">And if there's only a small number of seats on the team, then each seat, getting the very best person is incredibly important. So I ended up spending a huge amount of my own personal time doing that. And I also wanted to be closer technically to the work, so that way I could understand and help guide the company to do the things that we need to do more broadly.</p>
+<p data-t="2847">So we built out the lab. I built it out literally around where I sit in the office. So the group is around that. And we've significantly ramped up the compute investments as we've gained confidence in the quality of the work that we're doing.</p>
+<p data-t="2860">So we're building out many, many gigawatts of compute, and we expect to be leaders on that front. And we should be. We have many years of experience, decades of experience building out data centers. And unlike some of the other labs, we're an extremely profitable business, right? So it's very, very helpful for making these kinds of investments.</p>
+<p data-t="2886">So that's kind of been the journey. And then over the last year, we rebooted the research effort. Some of the larger clusters, like our gigawatt cluster in Ohio, Prometheus, came online. And we're using that to now scale the post-Watermelon models.</p>
+<p class="q" data-t="2902">We're past Watermelon?<a href="https://www.youtube.com/watch?v=Lx8lrn-cytc&t=2902s">&#x21AA; 48:22</a></p>
+<p data-t="2908">Watermelon is basically shipping soon.</p>
+<p data-t="2908">Come on.</p>
+<p class="q" data-t="2916">Well, Watermelon is the code, and we were talking about this earlier, code names. That's the code name you guys, that people know about, this big model you guys are working on.<a href="https://www.youtube.com/watch?v=Lx8lrn-cytc&t=2916s">&#x21AA; 48:36</a></p>
+<p data-t="2927">Coming soon. It is bigger than Avocado.</p>
+<p data-t="2927">A watermelon is literally bigger than an avocado.</p>
+<p data-t="2927">It is literally bigger.</p>
+<p data-t="2933">So I don't know what fruit gets bigger than a watermelon.</p>
+<p data-t="2933">Yeah, I think we might need to change conventions.</p>
+<p data-t="2938">Okay.</p>
+<p data-t="2938">So we maybe didn't have as much foresight in naming things getting bigger.</p>
+<p class="q" data-t="2944">Because you mentioned Watermelon, are you expecting full SOTA, frontier? What do we—<a href="https://www.youtube.com/watch?v=Lx8lrn-cytc&t=2944s">&#x21AA; 49:04</a></p>
+<p data-t="2952">We feel good about it. It's a very big advance. It's a significantly more advanced pre-train, and then we're going to continue doing everything that we've learned for post-training. You'll see soon. It's good. We feel good about it.</p>
+<p class="q" data-t="2971">You want the company to be pushing the frontier. It's very clear you're not content being right on the edge of the frontier, or in terms of—<a href="https://www.youtube.com/watch?v=Lx8lrn-cytc&t=2971s">&#x21AA; 49:31</a></p>
+<p data-t="2977">I think everyone wants to be doing interesting—</p>
+<p class="q" data-t="2983">Well, I think some people will go and look at your cash flow and look at all the other things you've got and go, “Well, do you have to be right at the edge? It's so expensive to do this training. Just be right behind and learn and adapt quickly and leverage.”<a href="https://www.youtube.com/watch?v=Lx8lrn-cytc&t=2983s">&#x21AA; 49:43</a></p>
+<p data-t="2990">Well, the way I think about it, no, no, no. That's not us. I think that the best way to think about Meta is that we are an end-to-end technology company, right? So even when we were primarily just building social apps, we were never just an app maker, right?</p>
+<p data-t="3010">We built the data centers, we built the chips, we built the infrastructure. All of this stuff was necessary in order to tune the end experience to be as good as it is. I think that that's obviously going to be true here too. And the most important part of the experience going forward is the model.</p>
+<p data-t="3027">And when you talk about being state-of-the-art, I think the reality is that this is a very multidimensional problem. So people publish all these benchmarks. Then you have a lot more benchmarks even internally. And there are different things that your model can be better and worse at that you can focus on, and that basically contributes to its personality.</p>
+<p data-t="3047">And there are some capabilities that I think are pretty universal, like the ability to code, I think, is very important. Because a lot of the things that you talk about, even with the personal agent, reduce to that. The MMA coaching visual pipeline, it is a coding project at the end of the day, right? It's writing code. I don't see the code, but it does that.</p>
+<p data-t="3071">Someone I gave it to in beta just mentioned to me, she had it make a little Jeopardy game for her friends that she could cast from her phone to play. And okay, that's code, right? So there's a bunch of stuff, both for Meta's own internal development across the company, for our own advancing of our research program, and as a core capability of what it needs to do. It needs to be excellent at things like that.</p>
+<p data-t="3095">But then there are other things that I think a model that's going to focus on personal superintelligence needs to be the best at that maybe others don't care as much about. So I'll give you one example: discretion, right? So you're going to tell your Muse agent, it's going to know a bunch about you, and it's going to need to go out into the world and interact to get stuff done for you.</p>
+<p data-t="3119">But not share certain stuff.</p>
+<p data-t="3119">Exactly, yeah. So let's say you have some kind of allergy or sensitivity, or you're pregnant. And okay, fine, so you're making a reservation somewhere. You don't necessarily want to say, “I'm pregnant,” but maybe you want a place that has good mocktails. I don't know, whatever it is, right?</p>
+<p data-t="3138">You want to be able to achieve your goals without having to necessarily reveal a lot about yourself. And it needs to know what is sensitive without having to ask you a million questions.</p>
+<p class="q" data-t="3145">So that's something you put into the training?<a href="https://www.youtube.com/watch?v=Lx8lrn-cytc&t=3145s">&#x21AA; 52:25</a></p>
+<p data-t="3151">That's a specific thing that we care about. And then there's all these reasons why maybe if you're making Claude Code, that's less important, right? You're working on a coding project, and you're working within a team and an enterprise. And theoretically, if you're within a company, everyone can see the project. So you don't have that need to be able to differentiate between what is sensitive and what's not.</p>
+<p data-t="3174">And so there's a lot of stuff like that that I think are pretty deep. And so then it's just how, in order to build the best Instagram feed, you don't just build the app. You build the app and the infrastructure and the machine learning research and the chips and all the stuff.</p>
+<p data-t="3192">I think similarly, if you want to build the best personal agent, I just think that there's no way that another company is just going to take something off the shelf and post-train it a little bit and be able to do something that is as good as if you designed it from the ground up and put all this data into pre-training to get the capabilities that you want.</p>
+<p data-t="3210">It's just not going to happen. We're going to definitely, as this compounds over time over several years, have models that are way more capable for those goals. But we're focused on that. We're also very focused on coding. We're very focused on the recursive improvement, because that's going to be important to stay at the frontier.</p>
+<p data-t="3230">So there are a few areas that I'd say our research agenda is overlapping with the other labs. And then there's a few areas where I think we will have a unique focus. And there may be some things that the other labs care about that we don't care about as much. And then there are going to be things that we care about more that they don't care about.</p>
+<p class="q" data-t="3248">You started this conversation talking about, “I think it's important to put it in the hands of people.” Diffusion is important. As you're seeing better models on the horizon, Watermelon and what comes after, what Anthropic and OpenAI are doing, which you alluded to, where they're holding things back. Would you feel like you need to do that if you see certain capabilities that you're like, “This is just not safe”? How do you think about that?<a href="https://www.youtube.com/watch?v=Lx8lrn-cytc&t=3248s">&#x21AA; 54:08</a></p>
+<h3 class="chapter"><span>AI Safety and Working With Government</span><a href="https://www.youtube.com/watch?v=Lx8lrn-cytc&t=3249s">&#x21AA; 54:09</a></h3>
+<p data-t="3268">Well, I think you should design it and train it in order to be safe. And I think that that's a thing that you can focus on through the process. Some of the reward-hacking stuff that all the labs are seeing, basically, when you're in the middle of the training process, you give it a goal.</p>
+<p data-t="3287">And I think that the best way to think about the state that the models are at now is that maybe six months ago, during training, you give the model some kind of problem that you're trying to ask it to solve. That's kind of like its homework, and trying to learn as part of the curriculum.</p>
+<p data-t="3306">And maybe it would do what a person would do of, if you give it a bunch of code and you're like, “Hey, there's a bug somewhere here,” the person would probably look at the code right there, and then maybe fan out over time.</p>
+<p data-t="3323">I think the new models are just intelligent enough that they would do what I think a very wise person would do, which is, okay, you give it a problem. The first thing it's going to do is understand everything about its environment and then answer your question.</p>
+<p data-t="3335">But the problem with the reward hacking that we're seeing, and that I think everyone is seeing, is that sometimes it ends up being easier to, okay, you asked me to go solve some coding problem, but actually the easiest way to do that is to—I've now examined the whole environment, and the easiest way to do this is just change this configuration of how you have your VM set up.</p>
+<p data-t="3360">To get out, to hack out, or even just to change something about the environment. And it's kind of like, no, that's not aligned. That's not the goal. We're actually trying to teach you about how to solve a specific type of problem.</p>
+<p class="q" data-t="3371">You guys don't train that way, it sounds like. You do not agree with that approach?<a href="https://www.youtube.com/watch?v=Lx8lrn-cytc&t=3371s">&#x21AA; 56:11</a></p>
+<p data-t="3378">No, no, no. I think that's kind of how everyone trains. I guess what I'm saying is, I want to be careful because the analogy can get stretched pretty quickly, but there is sort of an analogy to parenting, where you need to establish clear and firm boundaries. If your security is not strong, then it can do this reward-hacking stuff and not learn the thing that you're trying to have it learn.</p>
+<p data-t="3404">Whereas if you have good boundaries, then in some ways you're not only teaching it the curriculum that you want, you're, I think, also over time teaching it better values too. So I think that that ends up being an important piece, and I think that there's a way to do this well. But then you end up with this thing at the end that's very intelligent.</p>
+<p data-t="3420">And then the question is, what is the vision for how this ends up being positive for society? And my view for that is that the best way to do that is, A, there's more opportunity. So I think having it in people's hands, that they can capture all the opportunity from the capabilities, is good.</p>
+<p data-t="3438">And B is having checks and balances by having this balance of power, of having it widely available, is going to be probably the right way to handle this rather than just restricting it.</p>
+<p data-t="3449">And I gave a bunch of these analogies in the long piece that I wrote. If one person had a superintelligent lawyer, maybe they could win cases that they shouldn't be able to win, right, some of the time. But if everyone had a superintelligent lawyer, then it would be this very efficient sparring, and no one would be able to let a stupid argument get made and just stand.</p>
+<p data-t="3476">So you'd think that in that case justice would be served way more efficiently and way more fairly. So I think that's what you want to have in the world. You want to avoid the case where one person or a small number of people have the superintelligent lawyer and everyone else doesn't, because that ends up twisting all of these systems and institutions in ways that are just going to advantage the people who have that.</p>
+<p data-t="3500">Whereas if you put it in everyone's hands, then I think the checks and balances work out so that the systems work a lot more efficiently, and everyone benefits.</p>
+<p class="q" data-t="3507">Does the government in the U.S. have any role to play here, do you think?<a href="https://www.youtube.com/watch?v=Lx8lrn-cytc&t=3507s">&#x21AA; 58:27</a></p>
+<p data-t="3513">Oh, definitely.</p>
+<p class="q" data-t="3513">But do you want some kind of national framework? What do you think is the right approach? Because the government's very much dealing with this right now.<a href="https://www.youtube.com/watch?v=Lx8lrn-cytc&t=3513s">&#x21AA; 58:33</a></p>
+<p data-t="3519">My theory on this is that I think one thing that is interesting and difficult is that it's evolving so quickly. So I think any kind of specific rigid framework that you put in place, there is a very high chance that it is going to not be sufficient or out of date in a few months anyway.</p>
+<p data-t="3539">So our approach, what we've just done is just partner pretty closely with the government, right? I think this is an important technology. I think the government should know all the important training runs that are happening. We should work with the government proactively to make sure that they have an understanding of the capabilities that are coming, and to the extent that we can, we help prepare for it.</p>
+<p data-t="3560">And from that perspective, look, whether there's a framework in place or not, I think that's the right thing for an American company to do, is work with the American government closely. I think it actually ends up being way more effective, because instead of having this rigid framework for how you interact, the reality is the challenges just end up being different, right, over time.</p>
+<p data-t="3584">Okay, now we have the cybersecurity challenges. Maybe in six months we'll have more bio-type challenges. We need to make sure that we have the trust and bandwidth of the communication that we have with all the different parts of the government on that, to be able to address those in a way that is actually the best for people, not just checking some boxes on a process.</p>
+<p class="q" data-t="3602">So the incentives that already exist, if a Meta model got out and did a lot of damage, you're going to be liable for that, and the market's going to correct you, right? So there is that already. I think people discount that.<a href="https://www.youtube.com/watch?v=Lx8lrn-cytc&t=3602s">&#x21AA; 1:00:02</a></p>
+<p data-t="3615">Yeah. I also just think that Silicon Valley, for maybe the last 15 years, has had more of an arm's-length relationship with the government. And I just think that this stuff is intersecting more with the economy, with security, with a lot of different things that I think are relevant in ways that I think you just want to have a closer partnership.</p>
+<p data-t="3643">So that's my own theory. I think you could have a framework for how this stuff works, or you could not. I'm sure over time there will be more and more specific rules. But my guess is that whatever there is, it's kind of like when you're setting up an org.</p>
+<p data-t="3663">Inside a company, you're not trying to ship the org chart of just having one team do what it's supposed to do and another team do what it's supposed to do. You want to get the people to like each other and work together so that way you don't have all these weird seams in what you're doing.</p>
+<p data-t="3675">And I would guess that for how important AI and superintelligence are going to be for the world, you kind of just want a good knowledge exchange and real trusted dialogue more than you want a specific process, is my guess. But they're not mutually exclusive. That's at least the part that I think we've been very focused on.</p>
+<p data-t="3705">And I think if the other labs did that, which I think some of them are doing and maybe others not as much, but I think that that would be a very positive thing.</p>
+<p class="q" data-t="3710">When you think about what's going on in the news, one of the things that's happening is people are starting to see the glasses you guys make. They're going very mainstream. You're selling a lot of them. And there's this growing—I don't know what it is, I don't know how much depth there is actually to it—but there's this growing concern about, are people using them to spy?<a href="https://www.youtube.com/watch?v=Lx8lrn-cytc&t=3710s">&#x21AA; 1:01:50</a></p>
+<h3 class="chapter"><span>Smart Glasses and Privacy</span><a href="https://www.youtube.com/watch?v=Lx8lrn-cytc&t=3711s">&#x21AA; 1:01:51</a></h3>
+<p class="q" data-t="3729">I'm sure you've seen some establishments are banning people from coming in and wearing the glasses. And I'm curious how you were reacting to that, and if you think this is a moment in time that will pass, or if you feel like this is maybe something that is going to be a challenge for a while.<a href="https://www.youtube.com/watch?v=Lx8lrn-cytc&t=3729s">&#x21AA; 1:02:09</a></p>
+<p data-t="3747">So my take on this is that we designed the glasses from the beginning with these privacy considerations in mind. We built the light into it. So anytime it is recording, it's flashing a very visible light.</p>
+<p class="q" data-t="3760">And some people have tried to tamper with the light, and you guys pushed an update, I think, that—<a href="https://www.youtube.com/watch?v=Lx8lrn-cytc&t=3760s">&#x21AA; 1:02:40</a></p>
+<p data-t="3760">Yeah, we've done many things. Basically, if you try to mess with the light, we just basically brick the camera on your device. So that's a really important part of this, is basically we built the product with those questions in mind from the beginning. So we actually feel quite good about the product.</p>
+<p data-t="3781">Phones don't have a light, but people go around recording people all the time. The glasses are, I think, way better on that front than the other types of technology that people use. My take on this is that when we launched the glasses a few years back, we communicated pretty clearly about these steps that we put into it.</p>
+<p data-t="3804">But like you said, there's now many, many, many millions of people who have gotten the glasses, more than had them when we just started launching the product. So I think some of that communication that we did at the beginning, a lot of people either maybe they forgot about, or they didn't see at the beginning, or they just weren't paying attention to it because the glasses weren't a big thing.</p>
+<p data-t="3822">And now that I think we've achieved a level of mainstream, well, at a minimum, I think we need to go and make sure that we communicate about what we're doing. And that, yes, we think that this is important, and in fact so important that we designed it into the product from the very first version that we shipped multiple years ago.</p>
+<p data-t="3844">And I think we just need to make sure that people understand how fundamentally that's built into the product. But I think we let up on that a little bit and just focused on, okay, they're great-looking glasses. There's all these designs.</p>
+<p data-t="3856">That's been more of the focus. We felt like we addressed that set of concerns early on, and then since then have just been increasing the value and the utility of them and the designs. But I think we need to make sure that we communicate this piece really clearly.</p>
+<p data-t="3869">But it's something we've cared about from the beginning, and I think we're in a good position on it. But look, people care about this stuff, so it's important.</p>
+<p class="q" data-t="3874">And there was a privacy scare with phones in the early days, right? And I think any new product, once it proves that it's valuable in people's lives, people will get used to it. And I think maybe glasses are just early in that, in the sense of it's a new product, and people need to see the value for them to get over this mental hurdle of a new thing that could potentially record me.<a href="https://www.youtube.com/watch?v=Lx8lrn-cytc&t=3874s">&#x21AA; 1:04:34</a></p>
+<p class="q" data-t="3893">Because that was what phones—back in the day, I remember people were like, “What are you doing with your phone?” I don't know.<a href="https://www.youtube.com/watch?v=Lx8lrn-cytc&t=3893s">&#x21AA; 1:04:53</a></p>
+<p data-t="3899">Yeah, I think there's something like that that's true. I guess one of my reflections from building social media over the last 20 years is that I don't think we were as direct as we probably should have been about addressing some of those concerns. And it didn't necessarily stop people from using the products, but I think it colors how people think about them today.</p>
+<p data-t="3923">And I think it would have been possible to have explained along the way how seriously we took those issues. And we just didn't, because we thought, okay, well, people are showing that by using the product so much, they still like the products.</p>
+<p data-t="3940">But I actually think it's possible to get to a better state than where we've gotten with the social media products, which is both people liking it and understanding how seriously we take all of those issues. So that's what I aspire to.</p>
+<h3 class="chapter"><span>Teen Safety and Social Media Limits</span><a href="https://www.youtube.com/watch?v=Lx8lrn-cytc&t=3950s">&#x21AA; 1:05:50</a></h3>
+<p class="q" data-t="3953">Is there a through line from that to the recent settlement on all the youth safety stuff? I think a lot of people are talking about it. Is there any connection from what you just said to that? I would just be curious to hear you reflect on that and what you've learned from this process.<a href="https://www.youtube.com/watch?v=Lx8lrn-cytc&t=3953s">&#x21AA; 1:05:53</a></p>
+<p data-t="3970">Yeah. I think it's another good example like this. We've taken a lot of those safety issues seriously for a while, and we've been working on this teen account work with Instagram for a long time, and I think have done some leading work there.</p>
+<p data-t="3981">The settlement there is interesting because what we're really trying to do is create a standard and framework for the industry. And there's this real issue, which is that I actually think most of the companies that are building these products, if you basically said, “Limit usage to an hour a day for teens,” everyone, I think, would be okay with that.</p>
+<p data-t="4004">Except if you have to unilaterally do it, then you're saying, okay, if people don't use Instagram for more than an hour a day, but then their usage goes to TikTok, have we really helped anyone? And we've just hurt ourselves to not help anyone.</p>
+<p data-t="4015">And you guys have that in the piece.</p>
+<p data-t="4015">So basically, the structure for what we did was we basically said we're going to take the step of unilaterally limiting the usage. There's some things around time limits. There's some things around notifications and time when people can access it, when they're in school, when they should be sleeping, different restrictions.</p>
+<p data-t="4033">And we basically said we will take the first step, and when YouTube and TikTok sign on to the same terms, then we can all as an industry lock in and take the next step together. So I'm very hopeful that this settlement will serve as a sort of legally binding framework to bring the whole industry into alignment on some of these things, and make it so that it doesn't disadvantage any one company for taking that step.</p>
+<p data-t="4067">Now, we're basically putting ourselves a little bit out there by going first, but I think it will be better for everyone if these other companies come in too.</p>
+<p class="q" data-t="4076">Last question. You're posting on X again.<a href="https://www.youtube.com/watch?v=Lx8lrn-cytc&t=4076s">&#x21AA; 1:07:56</a></p>
+<p data-t="4082">Yeah.</p>
+<p class="q" data-t="4082">You're everywhere, but just curious to know your thinking of posting there, the bragging. Is it just part of the thing now? Because you've got Threads, you're on Threads.<a href="https://www.youtube.com/watch?v=Lx8lrn-cytc&t=4082s">&#x21AA; 1:08:02</a></p>
+<p data-t="4089">Yeah, I'm on Threads. Obviously, Threads is doing great. I think it's either bigger than X at this point or is very soon about to be. But look, there are different communities in the different places. There's a lot of AI folks on X.</p>
+<p data-t="4108">And I think part of what you try to do with social media is just communicate where people are, right? When you do a podcast or when you post, you probably don't just post in one place. You put it everywhere. So I post the same things on Threads and X, and some people are like, “Why are you posting this on X?” It's like, well, I post it there too, right?</p>
+<p data-t="4126">And I'll engage there too. So I guess I think it's all good, but I do think that to some degree some of the community is on X, and we want to be able to engage where people are. And that's a lot of what this is about, is going where people are and being able to have that dialogue.</p>
+<p data-t="4139">Yeah. Well, thanks, Mark. Thanks for this conversation.</p>
+<p data-t="4145">Yeah, happy to.</p>
+<p data-t="4145">Banking should feel like modern software. Get everything you need in one place. Visit mercury.com to learn more and apply online in minutes. Mercury is a fintech, not a bank. Check the show notes for details.</p>
+<p data-t="4157">Granola is the best AI notepad I've tried. It works everywhere, on a video or phone call, in person, or an Apple Watch. Try it now at granola.ai/sources and use the promo code SOURCES at checkout for three months off.</p>
+<p data-t="4170">Jira by Atlassian is where your team and your agents work from the same context. Try it free at jira.com. That's jir.com.</p>
+<p data-t="4176">Framer is the AI-native website builder that lets you build faster without giving up control. Visit framer.com/sources for 30% off. Rules and restrictions may apply.</p>
+    </div>
+  </main>
+  <script>
+  async function toggleYtBookmark(btn) {
+    const payload = {
+      title: btn.dataset.title,
+      url: btn.dataset.url,
+      filename: btn.dataset.filename,
+      interviewDate: btn.dataset.date,
+      source: 'YT',
+      expert: btn.dataset.channel,
+    };
+    try {
+      const resp = await fetch('/bookmark', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload),
+      });
+      const result = await resp.json();
+      setYtBookmarkState(btn, !!result.bookmarked);
+    } catch (e) {
+      console.error('Bookmark toggle failed:', e);
+    }
+  }
+  function setYtBookmarkState(btn, on) {
+    btn.classList.toggle('is-bookmarked', on);
+    btn.innerHTML = on ? '&#9733;' : '&#9734;';
+    btn.title = on ? 'Bookmarked' : 'Bookmark';
+    btn.setAttribute('aria-label', on ? 'Bookmarked' : 'Bookmark');
+  }
+  (async function initYtBookmarkState() {
+    const btn = document.getElementById('yt-bookmark-btn');
+    if (!btn || !btn.dataset.filename) return;
+    try {
+      const resp = await fetch('/bookmarks');
+      if (!resp.ok) return;
+      const list = await resp.json();
+      if (Array.isArray(list) && list.some(b => b && b.filename === btn.dataset.filename)) {
+        setYtBookmarkState(btn, true);
+      }
+    } catch (e) { /* offline -- leave default state */ }
+  })();
+
+  async function shareYtPage(btn) {
+    const original = btn.innerHTML;
+    btn.disabled = true;
+    btn.innerHTML = '&hellip;';
+    try {
+      const resp = await fetch('/share', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ filename: btn.dataset.filename }),
+      });
+      const result = await resp.json();
+      if (!result.ok) throw new Error(result.error || 'Share failed');
+      try { await navigator.clipboard.writeText(result.url); } catch (e) {}
+      btn.innerHTML = '&#10003;';
+      btn.title = 'Copied ' + result.url;
+      setTimeout(() => { btn.innerHTML = original; btn.disabled = false; btn.title = 'Share'; }, 2500);
+    } catch (e) {
+      console.error('Share failed:', e);
+      btn.innerHTML = '!';
+      btn.title = 'Share failed: ' + (e && e.message || e);
+      setTimeout(() => { btn.innerHTML = original; btn.disabled = false; btn.title = 'Share'; }, 3000);
+    }
+  }
+
+  // When the page is viewed from somewhere other than the local Reader
+  // server (e.g. a shared copy on GitHub Pages), hide the interactive
+  // buttons whose endpoints only exist on localhost.
+  (function hideLocalOnlyControls() {
+    const host = location.hostname;
+    const isLocal = host === 'localhost' || host === '127.0.0.1' || host === '';
+    if (isLocal) return;
+    const actions = document.querySelector('.yt-header-actions');
+    if (!actions) return;
+    const bookmark = actions.querySelector('#yt-bookmark-btn');
+    const share = actions.querySelector('#yt-share-btn');
+    if (bookmark) bookmark.remove();
+    if (share) share.remove();
+  })();
+  </script>
+</body>
+</html>
