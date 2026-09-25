@@ -1,0 +1,182 @@
+[
+  {
+    "order": 1,
+    "path": "MRVL\\decks\\key_slides\\slide_01.png",
+    "caption": "The starting point of the pivot: cloud and infrastructure at ~25% of revenue in the past, ~33% then, ~50% targeted; it reached 84% by Q2 FY2022 and 79% data center alone by Q2 FY2027.",
+    "source_deck": "2017-03-10 - Investor Day 2017"
+  },
+  {
+    "order": 2,
+    "path": "MRVL\\decks\\key_slides\\slide_02.png",
+    "caption": "Cavium doubled the stated addressable market from $8bn+ to $16bn+ and took combined revenue to $3.4bn annualized, the first of three SAM step-ups built by acquisition.",
+    "source_deck": "2017-11-20 - Cavium acquisition announcement"
+  },
+  {
+    "order": 3,
+    "path": "MRVL\\decks\\key_slides\\slide_03.png",
+    "caption": "The economic case for leaving consumer: infrastructure sockets are 3-5 year design cycles, 7-10+ year product lives and single-sourced, against 12-month cycles and multi-sourcing in consumer.",
+    "source_deck": "2018-10-16 - Investor Day 2018"
+  },
+  {
+    "order": 4,
+    "path": "MRVL\\decks\\key_slides\\slide_04.png",
+    "caption": "The SAM ratchet in one chart: $8bn at the 2017 investor day, $16bn on the Cavium announcement, $18bn a year later with 5G and automotive still counted as upside.",
+    "source_deck": "2018-10-16 - Investor Day 2018"
+  },
+  {
+    "order": 5,
+    "path": "MRVL\\decks\\key_slides\\slide_05.png",
+    "caption": "The first articulation of what became custom compute: Arm servers, security and network offload, and artificial intelligence named as the emerging data center compute architectures.",
+    "source_deck": "2018-10-16 - Investor Day 2018"
+  },
+  {
+    "order": 6,
+    "path": "MRVL\\decks\\key_slides\\slide_06.png",
+    "caption": "The end-FY2022 target model: 6-8% revenue CAGR, >66% gross margin, >35% operating margin, >30% FCF. Revenue growth was beaten many times over; gross margin never reached 66%.",
+    "source_deck": "2018-10-16 - Investor Day 2018"
+  },
+  {
+    "order": 7,
+    "path": "MRVL\\decks\\key_slides\\slide_07.png",
+    "caption": "The SerDes ladder from 12 Gbps in 2011 to 224/112/56 Gbps at 5nm and 3nm in 2021. This one IP block is reused across custom ASICs, optical DSPs, retimers, AECs and switches.",
+    "source_deck": "2020-10-08 - Investor Day 2020"
+  },
+  {
+    "order": 8,
+    "path": "MRVL\\decks\\key_slides\\slide_08.png",
+    "caption": "The cloud opportunity as management framed it before AI: DPU wins at four tier-one clouds, ASIC designs ramping, >$4bn cloud SAM in FY2024 and a 10-15% share target.",
+    "source_deck": "2020-10-08 - Investor Day 2020"
+  },
+  {
+    "order": 9,
+    "path": "MRVL\\decks\\key_slides\\slide_09.png",
+    "caption": "Inphi lifted the SAM from $20bn to $23bn and the growth rate from 9% to 12%, with more than 70% of Inphi revenue from cloud and 5G. This bought the electro-optics franchise now guided to grow >70% in FY2027.",
+    "source_deck": "2020-10-29 - Inphi acquisition announcement"
+  },
+  {
+    "order": 10,
+    "path": "MRVL\\decks\\key_slides\\slide_10.png",
+    "caption": "Four years of portfolio surgery in one exhibit: infrastructure moved from 38% of revenue in FY2017 to 84% by Q2 FY2022 while consumer fell from 62% to 16%.",
+    "source_deck": "2021-10-06 - Investor Day 2021"
+  },
+  {
+    "order": 11,
+    "path": "MRVL\\decks\\key_slides\\slide_11.png",
+    "caption": "Cloud design-win momentum doubled and pulled forward: incremental revenue raised from ~$400m to ~$800m and the timing moved from FY2025-26 into FY2024, three years before the AI ramp.",
+    "source_deck": "2021-10-06 - Investor Day 2021"
+  },
+  {
+    "order": 12,
+    "path": "MRVL\\decks\\key_slides\\slide_12.png",
+    "caption": "Management's own warning that the growth mix is margin-dilutive: data center sits below the corporate average gross margin, enterprise networking above it. Gross margin has declined every year since.",
+    "source_deck": "2021-10-06 - Investor Day 2021"
+  },
+  {
+    "order": 13,
+    "path": "MRVL\\decks\\key_slides\\slide_13.png",
+    "caption": "The last long-term model ever published, raised at successive investor days: 15-20% revenue CAGR, 64-66% gross margin, 38-40% operating margin. Realized FY2026 was 59.5% and 35.3%.",
+    "source_deck": "2021-10-06 - Investor Day 2021"
+  },
+  {
+    "order": 14,
+    "path": "MRVL\\decks\\key_slides\\slide_14.png",
+    "caption": "The AI revenue plan: ~$200m in FY2023 to >$2.5bn in FY2026, split connectivity versus custom compute. FY2026 data center revenue actually printed at $6.1bn.",
+    "source_deck": "2024-04-11 - AI Day 2024"
+  },
+  {
+    "order": 15,
+    "path": "MRVL\\decks\\key_slides\\slide_15.png",
+    "caption": "The data center TAM as of 2024: $21bn (CY2023) to $75bn (CY2028) at 29%, with share expectations line by line (gain in custom compute and switching, maintain in interconnect and storage) against a 20% long-term target from ~10%.",
+    "source_deck": "2024-04-11 - AI Day 2024"
+  },
+  {
+    "order": 16,
+    "path": "MRVL\\decks\\key_slides\\slide_16.png",
+    "caption": "Interconnect decomposed: $4.3bn to $13.9bn CY2023-CY2028, with AEC DSPs the fastest line at 59% and inside-data-center optical the largest at $7.1bn.",
+    "source_deck": "2024-04-11 - AI Day 2024"
+  },
+  {
+    "order": 17,
+    "path": "MRVL\\decks\\key_slides\\slide_17.png",
+    "caption": "The custom customer base before it was ever named: three lettered customers, four programs (training accelerator, inference accelerator, Arm CPU, new accelerator) and ramp years of CY2025 and CY2026, at three of four US hyperscalers.",
+    "source_deck": "2024-04-11 - AI Day 2024"
+  },
+  {
+    "order": 18,
+    "path": "MRVL\\decks\\key_slides\\slide_18.png",
+    "caption": "The TAM restatement: CY2028 raised from $75bn to $94bn in 14 months on an unchanged CY2023 base and an unchanged source list, with compute up 29% and interconnect up 37%.",
+    "source_deck": "2025-06-17 - Custom AI Investor Event"
+  },
+  {
+    "order": 19,
+    "path": "MRVL\\decks\\key_slides\\slide_19.png",
+    "caption": "Custom decomposed into XPU ($6.0bn to $40.8bn, 47% CAGR) and XPU attach ($0.6bn to $14.6bn, 90% CAGR). Attach goes from 9% to 26% of the custom market.",
+    "source_deck": "2025-06-17 - Custom AI Investor Event"
+  },
+  {
+    "order": 20,
+    "path": "MRVL\\decks\\key_slides\\slide_20.png",
+    "caption": "The only public statement of custom program economics: each XPU is multi-billion-dollar lifetime revenue over 18-24 months, each attach several hundred million over 2-4 years, across a $75bn pipeline of >50 opportunities at >10 customers.",
+    "source_deck": "2025-06-17 - Custom AI Investor Event"
+  },
+  {
+    "order": 21,
+    "path": "MRVL\\decks\\key_slides\\slide_21.png",
+    "caption": "The only disclosed split of data center revenue: FY2025's $4.2bn was ~$3.7bn cloud AI and ~$0.5bn on-premise, with custom above 25% of Q4 FY2025 and targeted above 50%.",
+    "source_deck": "2025-06-17 - Custom AI Investor Event"
+  },
+  {
+    "order": 22,
+    "path": "MRVL\\decks\\key_slides\\slide_22.png",
+    "caption": "The share path: ~10% of the data center market in CY2023, ~13% in CY2024, 20% targeted for CY2028. Twenty percent of $94bn implies $18.8bn of data center revenue alone.",
+    "source_deck": "2025-06-17 - Custom AI Investor Event"
+  },
+  {
+    "order": 23,
+    "path": "MRVL\\decks\\key_slides\\slide_23.png",
+    "caption": "How Marvell positions custom silicon against NVIDIA: a custom XPU sits under all four platform architectures, including the third-party NVLink Fusion one, with attach content rising toward full custom.",
+    "source_deck": "2025-06-17 - Custom AI Investor Event"
+  },
+  {
+    "order": 24,
+    "path": "MRVL\\decks\\key_slides\\slide_24.png",
+    "caption": "The switching-cost mechanism: 3-4 years elapse from a foundry process being enabled to a product shipping, and Marvell validates test-chip IP before customer programs start. N5P through A14.",
+    "source_deck": "2025-06-17 - Custom AI Investor Event"
+  },
+  {
+    "order": 25,
+    "path": "MRVL\\decks\\key_slides\\slide_25.png",
+    "caption": "The sharpest quantified IP claim in the deck set: custom dense SRAM at 17x the bandwidth per mm2 of the best available third-party SRAM, 50% lower area at equal bandwidth and 66% lower standby power.",
+    "source_deck": "2025-06-17 - Custom AI Investor Event"
+  },
+  {
+    "order": 26,
+    "path": "MRVL\\decks\\key_slides\\slide_26.png",
+    "caption": "The packaging generations that carry the custom roadmap: 2D at 1X density, 2.5D at 4X, 3.5D at 8X, and 4D/4.5D with integrated optics and copper at 16X.",
+    "source_deck": "2025-06-17 - Custom AI Investor Event"
+  },
+  {
+    "order": 27,
+    "path": "MRVL\\decks\\key_slides\\slide_27.png",
+    "caption": "The socket table: 18 custom compute sockets, 12 of them at the top four US hyperscalers (3 XPU plus 9 attach) and 6 at emerging hyperscalers. Concentration and the attach ratio in one exhibit.",
+    "source_deck": "2025-06-17 - Custom AI Investor Event"
+  },
+  {
+    "order": 28,
+    "path": "MRVL\\decks\\key_slides\\slide_28.png",
+    "caption": "What the $1.3bn Celestial AI acquisition bought: Photonic Fabric claimed at 30x the reach of passive copper, 4x bandwidth, 4x lower power, 4x lower latency at roughly the same cost.",
+    "source_deck": "2026-03-05 - Corporate Overview"
+  },
+  {
+    "order": 29,
+    "path": "MRVL\\decks\\key_slides\\slide_29.png",
+    "caption": "The four commercial models Marvell now sells under: buy standard, partner (Marvell design with customer IP), build (customer design with Marvell IP), and integrate build-to-spec chiplets with partner chiplets and memory.",
+    "source_deck": "2026-03-05 - Corporate Overview"
+  },
+  {
+    "order": 30,
+    "path": "MRVL\\decks\\key_slides\\slide_30.png",
+    "caption": "The current map of the franchise: scale across, out, up and in, from hundreds of kilometres to millimetres, with the product family sold at each distance. Scale-up is where Celestial AI, XConn, UALink and ESUN land.",
+    "source_deck": "2026-08-27 - Q2 FY2027 results"
+  }
+]

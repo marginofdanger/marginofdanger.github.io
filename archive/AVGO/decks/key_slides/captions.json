@@ -1,0 +1,188 @@
+[
+  {
+    "order": 1,
+    "path": "AVGO\\decks\\key_slides\\slide_01.png",
+    "caption": "The pro-forma model Avago put behind the $37bn Broadcom Corporation deal: $15.1bn combined revenue, 57% gross margin, 30% operating margin, and a long-term target of 60% GM / ~40% OM / ~43% EBITDA margin on 5% revenue CAGR. FY2025 delivered 78.6% GM and 67% non-GAAP OM on a 25% ten-year revenue CAGR, so every element of the 2015 target was passed.",
+    "source_deck": "2015-05-28 - Avago to Acquire Broadcom investor presentation"
+  },
+  {
+    "order": 2,
+    "path": "AVGO\\decks\\key_slides\\slide_02.png",
+    "caption": "The pre-AI portfolio map: four end markets (wireless, wired infrastructure, enterprise storage, industrial) built on nine named core technologies. FBAR/RF, SerDes, SAS/SATA/FC/PCIe and optics are the same technology list Broadcom still sells from in 2026.",
+    "source_deck": "2016-03-03 - Q1 FY2016 earnings slides"
+  },
+  {
+    "order": 3,
+    "path": "AVGO\\decks\\key_slides\\slide_03.png",
+    "caption": "Brocade takes Enterprise Storage from 14% to 22% of pro-forma revenue while Wired drops 56% to 51% and Wireless 25% to 22%. Broadcom kept the Fibre Channel SAN switching business and divested Brocade IP Networking and Ruckus.",
+    "source_deck": "2016-11-02 - Broadcom to Acquire Brocade investor presentation"
+  },
+  {
+    "order": 4,
+    "path": "AVGO\\decks\\key_slides\\slide_04.png",
+    "caption": "Brocade's FC SAN carried 77% gross margin and 58% operating margin against Broadcom's then-61% and 41%, and the deck used it to raise the long-term operating margin target from 40% to 45%. The acquire-high-margin-franchise-and-reset-the-target pattern repeats at CA, Symantec and VMware.",
+    "source_deck": "2016-11-02 - Broadcom to Acquire Brocade investor presentation"
+  },
+  {
+    "order": 5,
+    "path": "AVGO\\decks\\key_slides\\slide_05.png",
+    "caption": "FQ3 FY2018 revenue mix on the old four-way split: Wired Infrastructure 45%, Wireless Communications 25%, Enterprise Storage 25%, Industrial and Other 5%. This is the last quarterly deck before Broadcom stopped publishing quarterly investor decks for seven years.",
+    "source_deck": "2018-09-06 - Q3 FY2018 earnings slides"
+  },
+  {
+    "order": 6,
+    "path": "AVGO\\decks\\key_slides\\slide_06.png",
+    "caption": "Non-GAAP revenue $4.3bn (FY14) to $20.8bn (FY18E) with gross margin 56.2% to 66.4% and operating margin 35.3% to 49.5%. Margin expansion of 14 points in four years came with the LSI, Broadcom Corporation and Brocade integrations, not with organic mix.",
+    "source_deck": "2018-09-06 - Q3 FY2018 earnings slides"
+  },
+  {
+    "order": 7,
+    "path": "AVGO\\decks\\key_slides\\slide_07.png",
+    "caption": "The capital allocation policy stated in full in 2018 and unchanged since: distribute 50% of prior-year free cash flow as dividends, use the balance for buybacks and acquisitions, maintain investment grade. Dividends per share went $1.13 (FY14) to $7.00 (FY18E).",
+    "source_deck": "2018-09-06 - Q3 FY2018 earnings slides"
+  },
+  {
+    "order": 8,
+    "path": "AVGO\\decks\\key_slides\\slide_08.png",
+    "caption": "The Symantec Enterprise Security bridge: $350m standalone FY19 EBITDA plus over $1bn of run-rate cost synergies within twelve months, less a deliberate revenue-optimization reduction, equals about $1.3bn pro-forma EBITDA on $10.7bn of cash. Symantec's S&M was 24% of revenue before the deal.",
+    "source_deck": "2019-08-08 - Broadcom to Acquire Symantec Enterprise Security Business"
+  },
+  {
+    "order": 9,
+    "path": "AVGO\\decks\\key_slides\\slide_09.png",
+    "caption": "The rarely-cited sell side of the model: Broadcom sold its Wireless IoT connectivity rights to Synaptics for $250m against roughly $65m of annualized sales, transferring about 60 engineers with three years of limited exclusivity. Broadcom prunes sub-scale franchises as readily as it buys large ones.",
+    "source_deck": "2020-07-07 - Synaptics to Acquire Rights to Broadcom Wireless IoT Connectivity Business"
+  },
+  {
+    "order": 10,
+    "path": "AVGO\\decks\\key_slides\\slide_10.png",
+    "caption": "Broadband was about $3bn of FY2020 revenue, roughly 13% of the $23.9bn total. Broadcom has never sized an end market in a 10-K; this teach-in pie and its storage twin are the only franchise-level revenue figures the company has published.",
+    "source_deck": "2021-04-12 - Broadband Overview, Broadcom and Morgan Stanley teach-in"
+  },
+  {
+    "order": 11,
+    "path": "AVGO\\decks\\key_slides\\slide_11.png",
+    "caption": "The sharpest share disclosure in the archive: sole global supplier of DSL infrastructure semiconductors since 2015 and over 70% of high-performance VDSL CPE SoCs since 2010, on more than one billion installed DSL connections. Management attributes the position to analog, DSP and protocol-stack software investment.",
+    "source_deck": "2021-04-12 - Broadband Overview, Broadcom and Morgan Stanley teach-in"
+  },
+  {
+    "order": 12,
+    "path": "AVGO\\decks\\key_slides\\slide_12.png",
+    "caption": "Wi-Fi 6: over $1.3bn sold since introduction, more than 80% of infrastructure on Broadcom silicon and over 450 million Broadcom-based client devices. The same slide names the 4-5 year standard-to-volume cycle that paces the whole broadband business.",
+    "source_deck": "2021-04-12 - Broadband Overview, Broadcom and Morgan Stanley teach-in"
+  },
+  {
+    "order": 13,
+    "path": "AVGO\\decks\\key_slides\\slide_13.png",
+    "caption": "Storage and Fibre Channel together were about $4bn of FY2020 revenue, spanning enterprise server connectivity, Fibre Channel SAN and nearline HDD preamps and SoCs. The Fibre Channel wedge is drawn inside Infrastructure Software, which is where the 10-K books the Brocade hardware.",
+    "source_deck": "2021-07-21 - Storage Overview, Broadcom and Bernstein teach-in"
+  },
+  {
+    "order": 14,
+    "path": "AVGO\\decks\\key_slides\\slide_14.png",
+    "caption": "Why a declining protocol keeps paying: a 43 million-port Fibre Channel installed base on a five-year refresh cycle, about 90% of demand being replacement of existing footprint and only 10% greenfield. Revenue depends on the base refreshing at a price premium, not on the market growing.",
+    "source_deck": "2021-07-21 - Storage Overview, Broadcom and Bernstein teach-in"
+  },
+  {
+    "order": 15,
+    "path": "AVGO\\decks\\key_slides\\slide_15.png",
+    "caption": "Fibre Channel share: about 60% of host bus adapters and about 70% of switches, switch leadership held for more than ten years, on 25+ years of continuous product generations. Broadcom's storage-networking economics rest on a duopoly with Cisco in switches.",
+    "source_deck": "2021-07-21 - Storage Overview, Broadcom and Bernstein teach-in"
+  },
+  {
+    "order": 16,
+    "path": "AVGO\\decks\\key_slides\\slide_16.png",
+    "caption": "The software go-to-market in one picture: about 600 strategic accounts produce over 70% of ARR, the top 100 alone 44%, while more than 100,000 commercial accounts contribute 6%. Broadcom sells software to a few hundred buyers and lets distribution handle the rest.",
+    "source_deck": "2021-11-09 - Broadcom Investor Day 2021"
+  },
+  {
+    "order": 17,
+    "path": "AVGO\\decks\\key_slides\\slide_17.png",
+    "caption": "Software ARR went $4.96bn to $5.17bn over three quarters, up 4.2%, while renewable backlog went $12.9bn to $14.4bn, up 11.6%, on average deal duration lengthening from 1.6 to 2.3 years. Backlog grows on contract length before it grows on recurring revenue, which is the mechanism behind the $73bn software backlog reported at FY2025 year-end.",
+    "source_deck": "2021-11-09 - Broadcom Investor Day 2021"
+  },
+  {
+    "order": 18,
+    "path": "AVGO\\decks\\key_slides\\slide_18.png",
+    "caption": "The acquisition playbook quantified: CA plus Symantec Enterprise pre-deal ran ~85% gross margin, 17% R&D and 29% S&M for ~39% operating margin excluding G&A; the same assets inside Broadcom ran ~91%, ~14%, ~7% and ~70%. Cutting sales and marketing from 29% to 7% of revenue is the single largest lever.",
+    "source_deck": "2021-11-09 - Broadcom Investor Day 2021"
+  },
+  {
+    "order": 19,
+    "path": "AVGO\\decks\\key_slides\\slide_19.png",
+    "caption": "Revenue $1.5bn (FY09) to $27.5bn (FY21) with R&D $0.2bn to $4.9bn, headlined as 177x growth in operating profit and a franchise count rising from 8 to 22. The 177x is GAAP operating income against a ~$48m FY2009 base, so it doubled from the 84x cited one year earlier mostly on acquisition-intangible amortization rolling off.",
+    "source_deck": "2022-04-19 - Success in Custom Silicon Accelerators, Broadcom and Deutsche Bank teach-in"
+  },
+  {
+    "order": 20,
+    "path": "AVGO\\decks\\key_slides\\slide_20.png",
+    "caption": "The pre-AI base for the XPU business: custom ASIC revenue of roughly $2.3bn in FY2021, split about $1.5bn compute offload and $0.8bn routing/switching, each compounding 20% since FY12. Compute offload stepped from ~$0.3bn in FY16 to ~$0.8bn in FY17 when the first hyperscaler accelerator ramped.",
+    "source_deck": "2022-04-19 - Success in Custom Silicon Accelerators, Broadcom and Deutsche Bank teach-in"
+  },
+  {
+    "order": 21,
+    "path": "AVGO\\decks\\key_slides\\slide_21.png",
+    "caption": "Scale as the barrier: 90+ ASICs on 16nm, 40+ on 7nm, 20+ on 5nm and 10 on 3nm, about 60 designs running concurrently and 120 tape-outs a year, with a new technology platform roughly every two years in step with the foundry. Fixed platform cost is amortized across a design count no merchant rival matches.",
+    "source_deck": "2022-04-19 - Success in Custom Silicon Accelerators, Broadcom and Deutsche Bank teach-in"
+  },
+  {
+    "order": 22,
+    "path": "AVGO\\decks\\key_slides\\slide_22.png",
+    "caption": "Broadcom AI ASICs in production: 3 in 2018, 5 in 2020, 9 in 2022, beside Google's published TPU v4 speedups over the NVIDIA A100 of 10-74% by workload. The custom-versus-merchant argument was already being made with third-party benchmarks two years before the AI revenue inflection.",
+    "source_deck": "2022-04-19 - Success in Custom Silicon Accelerators, Broadcom and Deutsche Bank teach-in"
+  },
+  {
+    "order": 23,
+    "path": "AVGO\\decks\\key_slides\\slide_23.png",
+    "caption": "The VMware underwriting: $4.7bn standalone FY22 EBITDA to a $8.5bn pro-forma run-rate target on $61bn of equity plus $8bn of assumed net debt, via G&A elimination, R&D refocus, S&M efficiency and workload-expansion growth. The same four levers were used on CA and Symantec.",
+    "source_deck": "2022-05-26 - Broadcom to Acquire VMware investor presentation"
+  },
+  {
+    "order": 24,
+    "path": "AVGO\\decks\\key_slides\\slide_24.png",
+    "caption": "AI as a share of Semiconductor Solutions revenue: under 5% through 2021, ~10% in 2022, ~15% in 2023, and a FY2024 target revised from 25% to 35%, or over $10bn. Against the $56bn FY2026 and $100bn-plus FY2027 guidance given two years later, the 2024 target reads as the base of the curve.",
+    "source_deck": "2024-03-20 - Broadcom Investor Meeting 2024, Enabling AI Infrastructure"
+  },
+  {
+    "order": 25,
+    "path": "AVGO\\decks\\key_slides\\slide_25.png",
+    "caption": "Everything shaded red inside the AI server is Broadcom's served market: the XPUs, the PCIe switches, the NICs and the scale-up switch. The CPUs are the only silicon left to someone else, which is how Broadcom sells against an accelerator vendor rather than to one.",
+    "source_deck": "2024-03-20 - Broadcom Investor Meeting 2024, Enabling AI Infrastructure"
+  },
+  {
+    "order": 26,
+    "path": "AVGO\\decks\\key_slides\\slide_26.png",
+    "caption": "The same claim extended to the network: top-of-rack, leaf and spine switching plus the optical links between them all count as Broadcom SAM. Attach economics rather than accelerator share are what makes AI networking the higher-margin half of AI revenue.",
+    "source_deck": "2024-03-20 - Broadcom Investor Meeting 2024, Enabling AI Infrastructure"
+  },
+  {
+    "order": 27,
+    "path": "AVGO\\decks\\key_slides\\slide_27.png",
+    "caption": "The XPU division of labour, stated explicitly: the customer owns the processing-unit architecture, Broadcom owns the design flow, the HBM PHY and integration, the network IO architecture and the 2.5D/3D and silicon-photonics packaging. The customer keeps the model-specific compute core; Broadcom keeps everything that makes it a manufacturable chip.",
+    "source_deck": "2024-03-20 - Broadcom Investor Meeting 2024, Enabling AI Infrastructure"
+  },
+  {
+    "order": 28,
+    "path": "AVGO\\decks\\key_slides\\slide_28.png",
+    "caption": "Customer #1 (Google) is shown at ten years and ten co-developed XPUs, Customer #2 (Meta) at four years and four, both with the next generation already in the architecture phase. Switching costs here are measured in generations of joint architecture work, not in a contract term.",
+    "source_deck": "2024-03-20 - Broadcom Investor Meeting 2024, Enabling AI Infrastructure"
+  },
+  {
+    "order": 29,
+    "path": "AVGO\\decks\\key_slides\\slide_29.png",
+    "caption": "The first deck to name AI XPU and AI Networking as a revenue category, listed first among the six semiconductor lines in the FY2024 $51.6bn mix. No dollar figure is attached to it here or in any filing; the number lives only in earnings-call commentary.",
+    "source_deck": "2025-09-04 - Q3 FY2025 earnings slides, Broadcom Inc. Company Overview"
+  },
+  {
+    "order": 30,
+    "path": "AVGO\\decks\\key_slides\\slide_30.png",
+    "caption": "Twenty years of revenue on one axis: $1.4bn (2005) to $63.9bn (FY2025), with each acquisition marked on the timeline. The FY2024 step from $35.8bn to $51.6bn is VMware; the FY2025 step to $63.9bn is the first full year of AI scale.",
+    "source_deck": "2026-06-03 - Q2 FY2026 earnings slides, Broadcom Inc. Company Overview June 2026"
+  },
+  {
+    "order": 31,
+    "path": "AVGO\\decks\\key_slides\\slide_31.png",
+    "caption": "FY21-FY25 on management's preferred basis: revenue $27.5bn to $63.9bn, non-GAAP gross margin 74.5% to 78.6%, adjusted EBITDA $16.6bn to $43.0bn and free cash flow $13.3bn to $26.9bn. GAAP operating margin over the same FY2025 was 39.9%, about 27 points below the non-GAAP framing.",
+    "source_deck": "2026-06-03 - Q2 FY2026 earnings slides, Broadcom Inc. Company Overview June 2026"
+  }
+]

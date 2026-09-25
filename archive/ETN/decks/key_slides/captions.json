@@ -1,0 +1,212 @@
+[
+  {
+    "order": 1,
+    "path": "ETN\\decks\\key_slides\\slide_01.png",
+    "caption": "Portfolio timeline 1911-2020: how a truck-axle maker became an electrical company, ending with the Lighting and Hydraulics exits.",
+    "source_deck": "2020-03-02 \u00b7 Annual Investor Conference"
+  },
+  {
+    "order": 2,
+    "path": "ETN\\decks\\key_slides\\slide_02.png",
+    "caption": "The 2020 re-segmentation that created Electrical Americas (~$7B) and Electrical Global (~$5B) and moved connectors, Filtration and Golf Grips ($440M) into Aerospace.",
+    "source_deck": "2020-03-02 \u00b7 Annual Investor Conference"
+  },
+  {
+    "order": 3,
+    "path": "ETN\\decks\\key_slides\\slide_03.png",
+    "caption": "Segment margin targets set in 2020: Electrical Americas 21%, Global 19%, Aerospace 24%, total 20% - the baseline against which every later raise should be read.",
+    "source_deck": "2020-03-02 \u00b7 Annual Investor Conference"
+  },
+  {
+    "order": 4,
+    "path": "ETN\\decks\\key_slides\\slide_04.png",
+    "caption": "The original 2020-2025 commitments: 2-3% organic CAGR, ~20% segment margin, ~$3B free cash flow, 8-10% adjusted EPS CAGR.",
+    "source_deck": "2020-03-02 \u00b7 Annual Investor Conference"
+  },
+  {
+    "order": 5,
+    "path": "ETN\\decks\\key_slides\\slide_05.png",
+    "caption": "Electrical Sector five-year bridge: $12B (2020) to $15B organic to $18B with acquisitions by 2025. Actual FY2025 was $20.1bn.",
+    "source_deck": "2020-03-02 \u00b7 Annual Investor Conference"
+  },
+  {
+    "order": 6,
+    "path": "ETN\\decks\\key_slides\\slide_06.png",
+    "caption": "Aerospace cumulative OEM life-of-programme wins, $0.9bn (2015) to $4.4bn (2019) - the earlier half of a series the 2025 deck continues to $11bn.",
+    "source_deck": "2020-03-02 \u00b7 Annual Investor Conference"
+  },
+  {
+    "order": 7,
+    "path": "ETN\\decks\\key_slides\\slide_07.png",
+    "caption": "Management's own valuation slide in 2020: Eaton third from bottom on EV/EBITDA among thirteen peers, with ~$15 per share of upside to the peer median.",
+    "source_deck": "2020-03-02 \u00b7 Annual Investor Conference"
+  },
+  {
+    "order": 8,
+    "path": "ETN\\decks\\key_slides\\slide_08.png",
+    "caption": "The only place Eaton prices its own deals: Tripp Lite ~$1.65bn on ~$430m revenue (~11x EBITDA) and Cobham Mission Systems ~$2.83bn on ~$720m (~13x).",
+    "source_deck": "2021-03-01 \u00b7 Annual Investor Conference"
+  },
+  {
+    "order": 9,
+    "path": "ETN\\decks\\key_slides\\slide_09.png",
+    "caption": "Electrical's 2020 revenue mix by end market with five-year market growth and Eaton outgrowth assumptions for each - the pre-AI view of the same six segments.",
+    "source_deck": "2021-03-01 \u00b7 Annual Investor Conference"
+  },
+  {
+    "order": 10,
+    "path": "ETN\\decks\\key_slides\\slide_10.png",
+    "caption": "Data centres and distributed IT targeted at ~$3.4bn of revenue by 2025 on a ~12% CAGR. Actual 2025 was roughly $5.8bn.",
+    "source_deck": "2021-03-01 \u00b7 Annual Investor Conference"
+  },
+  {
+    "order": 11,
+    "path": "ETN\\decks\\key_slides\\slide_11.png",
+    "caption": "Twelve months after setting them, the five-year targets are raised to 4-6% organic, ~21% segment margin and 11-13% adjusted EPS growth; Electrical Americas to 22%.",
+    "source_deck": "2021-03-01 \u00b7 Annual Investor Conference"
+  },
+  {
+    "order": 12,
+    "path": "ETN\\decks\\key_slides\\slide_12.png",
+    "caption": "Electrical's segment-by-segment growth plan to a $16.5bn 2025 organic base, with data centres the only line credited with acquisition growth.",
+    "source_deck": "2022-03-01 \u00b7 Annual Investor Conference"
+  },
+  {
+    "order": 13,
+    "path": "ETN\\decks\\key_slides\\slide_13.png",
+    "caption": "The Electrical 2025 revenue target raised again, from $15bn originally to ~$19bn, on energy transition and digital solutions running ahead of schedule.",
+    "source_deck": "2022-03-01 \u00b7 Annual Investor Conference"
+  },
+  {
+    "order": 14,
+    "path": "ETN\\decks\\key_slides\\slide_14.png",
+    "caption": "eMobility promised $1.2bn of 2025 revenue at ~11% margin with the bar marked 87% booked. It delivered $604m and an operating loss.",
+    "source_deck": "2022-03-01 \u00b7 Annual Investor Conference"
+  },
+  {
+    "order": 15,
+    "path": "ETN\\decks\\key_slides\\slide_15.png",
+    "caption": "Aerospace mapped from $2.2bn (2020) to $4.3bn by 2025 on Souriau-Sunbank and Cobham Mission Systems. FY2025 landed at $4,249m.",
+    "source_deck": "2022-03-01 \u00b7 Annual Investor Conference"
+  },
+  {
+    "order": 16,
+    "path": "ETN\\decks\\key_slides\\slide_16.png",
+    "caption": "Mega-project announcements at $686bn cumulative since January 2021, roughly 3x the normal run rate, broken out by project type.",
+    "source_deck": "2023-08-01 \u00b7 Q2 2023 earnings"
+  },
+  {
+    "order": 17,
+    "path": "ETN\\decks\\key_slides\\slide_17.png",
+    "caption": "FY2022 end-market mix: data centres 14% of sales, Electrical ~70% and Industrial ~30% - the starting point of the mix shift to 21% by 2025.",
+    "source_deck": "2023-08-01 \u00b7 Q2 2023 earnings"
+  },
+  {
+    "order": 18,
+    "path": "ETN\\decks\\key_slides\\slide_18.png",
+    "caption": "The 2020-2025 scorecard, graded against the March 2020 targets rather than the higher ones management set in March 2021.",
+    "source_deck": "2025-03-11 \u00b7 Annual Investor Conference (ETN 2030)"
+  },
+  {
+    "order": 19,
+    "path": "ETN\\decks\\key_slides\\slide_19.png",
+    "caption": "Segment margin bridge: 17.3% (2019) to 24.0% (2024) on +670bps, then another 350-450bps to ~28% by 2030.",
+    "source_deck": "2025-03-11 \u00b7 Annual Investor Conference (ETN 2030)"
+  },
+  {
+    "order": 20,
+    "path": "ETN\\decks\\key_slides\\slide_20.png",
+    "caption": "2024 revenue by end market with the 2024-2030 growth ranking; data centres 17% and the only market tagged strong/double-digit growth.",
+    "source_deck": "2025-03-11 \u00b7 Annual Investor Conference (ETN 2030)"
+  },
+  {
+    "order": 21,
+    "path": "ETN\\decks\\key_slides\\slide_21.png",
+    "caption": "The grey space versus white space product map - the only place Eaton assigns each data-centre product to a side of the split.",
+    "source_deck": "2025-03-11 \u00b7 Annual Investor Conference (ETN 2030)"
+  },
+  {
+    "order": 22,
+    "path": "ETN\\decks\\key_slides\\slide_22.png",
+    "caption": "Eaton potential sales per megawatt: $1.2-1.5m traditional, $1.2-2.9m AI, at 6-14% of total build capex. The Q2 2026 call put the figure at ~$3.4m.",
+    "source_deck": "2025-03-11 \u00b7 Annual Investor Conference (ETN 2030)"
+  },
+  {
+    "order": 23,
+    "path": "ETN\\decks\\key_slides\\slide_23.png",
+    "caption": "Growth outlooks attached to individual products: ~50% a year for the 9395XR UPS, ~17% for the vacuum fault interrupter transformer.",
+    "source_deck": "2025-03-11 \u00b7 Annual Investor Conference (ETN 2030)"
+  },
+  {
+    "order": 24,
+    "path": "ETN\\decks\\key_slides\\slide_24.png",
+    "caption": "Fibrebond at ~$375m of trailing revenue when acquired - modular power enclosures that move electrical gear out of the revenue-generating IT floor.",
+    "source_deck": "2025-03-11 \u00b7 Annual Investor Conference (ETN 2030)"
+  },
+  {
+    "order": 25,
+    "path": "ETN\\decks\\key_slides\\slide_25.png",
+    "caption": "Aerospace content multiples by platform and cumulative life-of-programme wins rising to $11bn by 2024 from $1bn in 2019.",
+    "source_deck": "2025-03-11 \u00b7 Annual Investor Conference (ETN 2030)"
+  },
+  {
+    "order": 26,
+    "path": "ETN\\decks\\key_slides\\slide_26.png",
+    "caption": "The 2030 targets and the segment margin targets behind them: Electrical Americas ~32%, up from the 21% target set in 2020.",
+    "source_deck": "2025-03-11 \u00b7 Annual Investor Conference (ETN 2030)"
+  },
+  {
+    "order": 27,
+    "path": "ETN\\decks\\key_slides\\slide_27.png",
+    "caption": "Capital allocation to 2030: ~$21bn of cash optionality, a 30-50% dividend payout target, and $8.4bn (~18% of shares) already repurchased since 2016.",
+    "source_deck": "2025-03-11 \u00b7 Annual Investor Conference (ETN 2030)"
+  },
+  {
+    "order": 28,
+    "path": "ETN\\decks\\key_slides\\slide_28.png",
+    "caption": "Total shareholder return against the sixteen-name peer group Eaton chooses for itself: 20% annualised over ten years, 31% over five.",
+    "source_deck": "2025-03-11 \u00b7 Annual Investor Conference (ETN 2030)"
+  },
+  {
+    "order": 29,
+    "path": "ETN\\decks\\key_slides\\slide_29.png",
+    "caption": "Named partnerships: Siemens Energy for on-site generation that removes grid dependency, NVIDIA for high-voltage DC and 1MW racks, ChargePoint for EV charging.",
+    "source_deck": "2025-08-05 \u00b7 Q2 2025 earnings"
+  },
+  {
+    "order": 30,
+    "path": "ETN\\decks\\key_slides\\slide_30.png",
+    "caption": "The order book in dollars: Electrical Americas negotiations pipeline $2.4bn to $9.8bn since 2019, and seven years of backlog split between Electrical and Aerospace.",
+    "source_deck": "2026-02-03 \u00b7 Q4 2025 earnings"
+  },
+  {
+    "order": 31,
+    "path": "ETN\\decks\\key_slides\\slide_31.png",
+    "caption": "A $3.0T North America mega-project backlog with only ~16% of projects started, ~13% cancelled, and an Eaton win rate of ~40% - the undefined conversion parameter.",
+    "source_deck": "2026-02-03 \u00b7 Q4 2025 earnings"
+  },
+  {
+    "order": 32,
+    "path": "ETN\\decks\\key_slides\\slide_32.png",
+    "caption": "Separation economics: Eaton keeps $24bn of sales growing ~12% at a ~26% margin; Mobility leaves with $3bn growing ~2% at ~13%.",
+    "source_deck": "2026-02-03 \u00b7 Q4 2025 earnings"
+  },
+  {
+    "order": 33,
+    "path": "ETN\\decks\\key_slides\\slide_33.png",
+    "caption": "The Eaton Beam Rubin DSX platform built with NVIDIA: a pre-engineered grid-to-chip power and cooling blueprint that compresses build-outs from years to months.",
+    "source_deck": "2026-05-05 \u00b7 Q1 2026 earnings"
+  },
+  {
+    "order": 34,
+    "path": "ETN\\decks\\key_slides\\slide_34.png",
+    "caption": "2025 end-market mix disclosed: data centres and distributed IT at 21% of Eaton sales, up from 17% in 2024 and 14% in 2022.",
+    "source_deck": "2026-07-31 \u00b7 Q2 2026 earnings"
+  },
+  {
+    "order": 35,
+    "path": "ETN\\decks\\key_slides\\slide_35.png",
+    "caption": "Electrical Americas: backlog $10.1bn to $15.2bn and orders from -4% to +41% in six quarters, with margin still needing above 30% in the second half to make the guide.",
+    "source_deck": "2026-07-31 \u00b7 Q2 2026 earnings"
+  }
+]

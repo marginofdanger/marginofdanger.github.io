@@ -1,0 +1,98 @@
+[
+  {
+    "order": 1,
+    "path": "ROP\\decks\\key_slides\\01_2020-08-13_vertafore-acquisition-economics.png",
+    "caption": "Vertafore at $5.35B against ~$590M of 2021 revenue and ~$290M of EBITDA: 9.1x forward revenue and 18.4x forward EBITDA, the entry price for the deal that made Roper a software company.",
+    "source_deck": "2020-08-13 \u00b7 Vertafore acquisition call"
+  },
+  {
+    "order": 2,
+    "path": "ROP\\decks\\key_slides\\02_2022-08-30_frontline-acquisition-economics.png",
+    "caption": "Frontline at $3.375B net of a ~$350M tax benefit, ~19x 2023E EBITDA on ~$370M of revenue, 90%+ recurring, net working capital at (40)% of revenue and unlevered free cash flow ~100% of EBITDA.",
+    "source_deck": "2022-08-30 \u00b7 Frontline Education acquisition call"
+  },
+  {
+    "order": 3,
+    "path": "ROP\\decks\\key_slides\\03_2023-03-21_deltek-market-share-by-vertical.png",
+    "caption": "Deltek's 2023 share of each vertical it sells into: 39% of US government contracting and 69% of architecture and engineering, against 10% of construction SMB, 17% of consulting and 33% of creative.",
+    "source_deck": "2023-03-21 \u00b7 Investor Day 2023"
+  },
+  {
+    "order": 4,
+    "path": "ROP\\decks\\key_slides\\04_2023-03-21_deltek-before-after-roper.png",
+    "caption": "Deltek after seven years of Roper ownership: revenue ~$500M to ~$800M, recurring revenue 70% to 82% of the total, EBITDA margin ~35% to ~40%, gross retention 93% to 97%.",
+    "source_deck": "2023-03-21 \u00b7 Investor Day 2023"
+  },
+  {
+    "order": 5,
+    "path": "ROP\\decks\\key_slides\\05_2023-03-21_aderant-market-share-displacement.png",
+    "caption": "Aderant's US share went from 31% in 2015 to 48% in 2022; 39 AmLaw 200 firms switched in from the largest competitor and none switched out over the prior decade.",
+    "source_deck": "2023-03-21 \u00b7 Investor Day 2023"
+  },
+  {
+    "order": 6,
+    "path": "ROP\\decks\\key_slides\\06_2023-03-21_aderant-before-after-roper.png",
+    "caption": "Aderant after Roper: #2 to #1 in its market, revenue ~$100M to ~$200M, SaaS from 0% to 80% of bookings, net retention 102% to 113%, EBITDA margin 47% to 50%.",
+    "source_deck": "2023-03-21 \u00b7 Investor Day 2023"
+  },
+  {
+    "order": 7,
+    "path": "ROP\\decks\\key_slides\\07_2023-03-21_verathon-before-after-roper.png",
+    "caption": "Verathon from 2014 to 2022: revenue ~$190M to ~$350M, organic growth low-single-digit to low-double-digit, and reoccurring consumable revenue from under 15% to 53% of the business.",
+    "source_deck": "2023-03-21 \u00b7 Investor Day 2023"
+  },
+  {
+    "order": 8,
+    "path": "ROP\\decks\\key_slides\\08_2023-03-21_vertafore-market-penetration.png",
+    "caption": "Vertafore's penetration of P&C distribution: all 100 of the top 100 brokers buy something but only 66 run its agency management system, 96 of the top 100 carriers, ~85% of MGAs, and ~50% of producer-compliance transactions through Sircon.",
+    "source_deck": "2023-03-21 \u00b7 Investor Day 2023"
+  },
+  {
+    "order": 9,
+    "path": "ROP\\decks\\key_slides\\09_2023-03-21_vertafore-before-after-roper.png",
+    "caption": "Vertafore after Roper: revenue ~$550M to ~$635M, EBITDA margin 49% to 50%, gross and net retention 91%/105% to 92%/108%. The largest acquisition shows the smallest improvement of the four case studies.",
+    "source_deck": "2023-03-21 \u00b7 Investor Day 2023"
+  },
+  {
+    "order": 10,
+    "path": "ROP\\decks\\key_slides\\10_2023-03-21_dat-cash-flow-cagr-since-2004.png",
+    "caption": "DAT, acquired inside TransCore in 2004 and carved out internally, compounded pre-tax cash flow at 16% a year since acquisition. Roper's longest-dated disclosure of what one deal returned.",
+    "source_deck": "2023-03-21 \u00b7 Investor Day 2023"
+  },
+  {
+    "order": 11,
+    "path": "ROP\\decks\\key_slides\\11_2023-03-21_strata-cash-flow-cagr-since-2015.png",
+    "caption": "Strata, bought for $140M in 2015 with a $365M EPSi bolt-on in 2020: cash flow compounded 28% a year since acquisition, 23% excluding the bolt-on. The only case study that separates organic from acquired growth.",
+    "source_deck": "2023-03-21 \u00b7 Investor Day 2023"
+  },
+  {
+    "order": 12,
+    "path": "ROP\\decks\\key_slides\\12_2023-03-21_acquisition-funnel.png",
+    "caption": "The acquisition funnel in one year: ~1,200 software targets, 235 reviewed, 93 NDAs, 71 management meetings, 25 indications of interest, 16 full diligences, 6 closings.",
+    "source_deck": "2023-03-21 \u00b7 Investor Day 2023"
+  },
+  {
+    "order": 13,
+    "path": "ROP\\decks\\key_slides\\13_2023-03-21_leverage-history-vs-deals.png",
+    "caption": "Net debt to EBITDA from Q4'16 to Q4'22: every leverage peak (4.2x for Deltek, 4.7x for Vertafore) followed an acquisition and was repaid within two years. The 3.4x reached in Q2'26 followed a buyback.",
+    "source_deck": "2023-03-21 \u00b7 Investor Day 2023"
+  },
+  {
+    "order": 14,
+    "path": "ROP\\decks\\key_slides\\14_2023-03-21_long-term-growth-algorithm.png",
+    "caption": "The published long-term algorithm: double-digit revenue growth, mid-single-digit-plus organic, 45%+ operating leverage and mid-teens free cash flow compounding. FY2025 converted 36% of incremental revenue to EBITDA and FY2026 is guided to 8%+ revenue growth.",
+    "source_deck": "2023-03-21 \u00b7 Investor Day 2023"
+  },
+  {
+    "order": 15,
+    "path": "ROP\\decks\\key_slides\\15_2025-03-24_centralreach-acquisition-economics.png",
+    "caption": "CentralReach at $1.65B net of a $200M tax benefit for ~$175M of revenue and ~$75M of EBITDA: 9.4x revenue and 22x EBITDA, the highest earnings multiple of the three disclosed deals, paid for a 20%+ grower.",
+    "source_deck": "2025-03-24 \u00b7 CentralReach acquisition presentation"
+  },
+  {
+    "order": 16,
+    "path": "ROP\\decks\\key_slides\\16_2026-07-23_capital-deployment-and-buyback.png",
+    "caption": "Capital allocation after the break: 3.4x net leverage, $2.9B drawn on a $3.5B revolver, $365M of cash, 9.0M shares (over 8% of the company) repurchased for $3.2B, and $1.4B of expected Indicor proceeds.",
+    "source_deck": "2026-07-23 \u00b7 Q2 2026 financial results"
+  }
+]

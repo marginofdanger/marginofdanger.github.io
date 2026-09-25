@@ -1,0 +1,194 @@
+[
+  {
+    "order": 1,
+    "path": "RDDT\\decks\\key_slides\\slide_01.png",
+    "caption": "First letter as a public company states the only standing management financial target Reddit has published: grow revenue twice as fast as total adjusted costs. Q1 2024 grew revenue 5x costs; by Q2 2026 the ratio was 1.6x.",
+    "source_deck": "2024-05-07 - Q1 2024 shareholder letter"
+  },
+  {
+    "order": 2,
+    "path": "RDDT\\decks\\key_slides\\slide_02.png",
+    "caption": "DAUq 82.7M, up 37% YoY, with the US/international split that becomes the central tension of the model. Machine translation launches in a single language (French) as a top-of-funnel tool.",
+    "source_deck": "2024-05-07 - Q1 2024 shareholder letter"
+  },
+  {
+    "order": 3,
+    "path": "RDDT\\decks\\key_slides\\slide_03.png",
+    "caption": "Advertising growth attributed to impressions offsetting a YoY decline in ad pricing, and the first named content-licensing counterparties (Google, Cision) at a point when other revenue was $20.3M.",
+    "source_deck": "2024-05-07 - Q1 2024 shareholder letter"
+  },
+  {
+    "order": 4,
+    "path": "RDDT\\decks\\key_slides\\slide_04.png",
+    "caption": "Huffman sets the crawler policy that underwrites the licensing business: access restricted where use is not transparent, with the Google and OpenAI agreements as the paid alternative.",
+    "source_deck": "2024-08-06 - Q2 2024 shareholder letter"
+  },
+  {
+    "order": 5,
+    "path": "RDDT\\decks\\key_slides\\slide_05.png",
+    "caption": "Post and comment pages accounted for 47% of all screenviews - the inventory concentration behind Conversation Ads and ads in comments, a supply statistic the filings do not give.",
+    "source_deck": "2024-08-06 - Q2 2024 shareholder letter"
+  },
+  {
+    "order": 6,
+    "path": "RDDT\\decks\\key_slides\\slide_06.png",
+    "caption": "Dynamic Product Ads launch with 1.9x ROAS versus other conversion campaigns and the Ulta Beauty case study; OpenAI and Sprinklr added to the licensing roster.",
+    "source_deck": "2024-08-06 - Q2 2024 shareholder letter"
+  },
+  {
+    "order": 7,
+    "path": "RDDT\\decks\\key_slides\\slide_07.png",
+    "caption": "Machine translation drove 4x the incremental DAUq of the prior quarter at a cost of under 1% of revenue - the cheapest user-growth lever Reddit has disclosed.",
+    "source_deck": "2024-10-29 - Q3 2024 shareholder letter"
+  },
+  {
+    "order": 8,
+    "path": "RDDT\\decks\\key_slides\\slide_08.png",
+    "caption": "Performance (mid- and lower-funnel) revenue sized at about 60% of advertising revenue, with the Scaled mid-market and SMB channel up over 80% YoY. Reddit stopped disclosing the performance mix after Q1 2025.",
+    "source_deck": "2024-10-29 - Q3 2024 shareholder letter"
+  },
+  {
+    "order": 9,
+    "path": "RDDT\\decks\\key_slides\\slide_09.png",
+    "caption": "First publication of revenue and operating expense per headcount ($162.9k revenue per head), the productivity series management runs the cost side against.",
+    "source_deck": "2024-10-29 - Q3 2024 shareholder letter"
+  },
+  {
+    "order": 10,
+    "path": "RDDT\\decks\\key_slides\\slide_10.png",
+    "caption": "Management account of a Google algorithm swing hitting logged-out users in Q4 2024, alongside the claim that searches for the term reddit rose at the same time.",
+    "source_deck": "2025-02-12 - Q4 2024 shareholder letter"
+  },
+  {
+    "order": 11,
+    "path": "RDDT\\decks\\key_slides\\slide_11.png",
+    "caption": "Commercial-intent evidence: over 40% of internet users rank a Reddit recommendation the most influential input to a purchase, and 23% of recommendation posts move someone to a brand not previously considered.",
+    "source_deck": "2025-02-12 - Q4 2024 shareholder letter"
+  },
+  {
+    "order": 12,
+    "path": "RDDT\\decks\\key_slides\\slide_12.png",
+    "caption": "Machine translation attributed 40-50% of Q4 international user growth; 40 million daily on-platform search queries in December 2024 set the base for the search push.",
+    "source_deck": "2025-02-12 - Q4 2024 shareholder letter"
+  },
+  {
+    "order": 13,
+    "path": "RDDT\\decks\\key_slides\\slide_13.png",
+    "caption": "Revenue growing 3.5x as fast as total adjusted costs, and incremental Adjusted EBITDA margins above 70% for four straight quarters - the peak of the operating leverage.",
+    "source_deck": "2025-02-12 - Q4 2024 shareholder letter"
+  },
+  {
+    "order": 14,
+    "path": "RDDT\\decks\\key_slides\\slide_14.png",
+    "caption": "The roadmap before the mid-2025 reset: search (Reddit Answers at 1M WAUq), internationalization (13 languages) and contribution tooling, plus 400,000 weekly Developer Platform players.",
+    "source_deck": "2025-05-01 - Q1 2025 shareholder letter"
+  },
+  {
+    "order": 15,
+    "path": "RDDT\\decks\\key_slides\\slide_15.png",
+    "caption": "DAUq 108.1M with US growth already decelerating to 21%; on-platform search at 60M WAUq and roughly 50M queries a day, Reddit Answers query volume up 10x sequentially.",
+    "source_deck": "2025-05-01 - Q1 2025 shareholder letter"
+  },
+  {
+    "order": 16,
+    "path": "RDDT\\decks\\key_slides\\slide_16.png",
+    "caption": "The strategy reset: the user economy is deprioritized and resources concentrate on core product, search and international expansion. The clearest capital-allocation statement in the letter history.",
+    "source_deck": "2025-07-31 - Q2 2025 shareholder letter"
+  },
+  {
+    "order": 17,
+    "path": "RDDT\\decks\\key_slides\\slide_17.png",
+    "caption": "Profound data ranking Reddit the most cited domain in AI outputs at over 2x the next source (Wikipedia). The bar chart shows no axis values, so only the ordering and the 2x gap can be checked.",
+    "source_deck": "2025-07-31 - Q2 2025 shareholder letter"
+  },
+  {
+    "order": 18,
+    "path": "RDDT\\decks\\key_slides\\slide_18.png",
+    "caption": "US DAUq at 50.3M, roughly flat against 50.1M three quarters earlier, while international carried the growth; Reddit Answers reaches 6M WAUq from 1M.",
+    "source_deck": "2025-07-31 - Q2 2025 shareholder letter"
+  },
+  {
+    "order": 19,
+    "path": "RDDT\\decks\\key_slides\\slide_19.png",
+    "caption": "Reddit Community Intelligence introduced as the layer turning the corpus into advertiser products (Reddit Insights, Conversation Summary Add-ons); 40% of posts described as commercial in nature.",
+    "source_deck": "2025-07-31 - Q2 2025 shareholder letter"
+  },
+  {
+    "order": 20,
+    "path": "RDDT\\decks\\key_slides\\slide_20.png",
+    "caption": "Semrush ranks Reddit the third most visited US site; over 75M weekly searchers; moderator tools live in 3,000+ communities that show 30% more active moderators.",
+    "source_deck": "2025-10-30 - Q3 2025 shareholder letter"
+  },
+  {
+    "order": 21,
+    "path": "RDDT\\decks\\key_slides\\slide_21.png",
+    "caption": "Ad automation quantified across all three funnel levels alongside the local content framework - the international playbook proven in India and being copied into Australia, Brazil, Germany and France.",
+    "source_deck": "2025-10-30 - Q3 2025 shareholder letter"
+  },
+  {
+    "order": 22,
+    "path": "RDDT\\decks\\key_slides\\slide_22.png",
+    "caption": "Three decisions in one page: logged-in and logged-out reporting to be phased out, a new Chief Product Officer hired, and a $1 billion share repurchase authorized.",
+    "source_deck": "2026-02-05 - Q4 2025 shareholder letter"
+  },
+  {
+    "order": 23,
+    "path": "RDDT\\decks\\key_slides\\slide_23.png",
+    "caption": "Over 80 million weekly searchers, up from 60 million a year earlier; machine translation at 35 languages; verified profiles launched as the first step of the authenticity stack.",
+    "source_deck": "2026-02-05 - Q4 2025 shareholder letter"
+  },
+  {
+    "order": 24,
+    "path": "RDDT\\decks\\key_slides\\slide_24.png",
+    "caption": "Reddit Max, the automated campaign type, with split-test results (17% lower cost per action, 27% more conversions) and Community Intelligence decoding 24B+ posts into advertiser audience cohorts.",
+    "source_deck": "2026-02-05 - Q4 2025 shareholder letter"
+  },
+  {
+    "order": 25,
+    "path": "RDDT\\decks\\key_slides\\slide_25.png",
+    "caption": "The Rule of 115 slide, and beneath it the number that matters: revenue grew only 1.5x as fast as adjusted costs, down from 3.5x a year earlier.",
+    "source_deck": "2026-02-05 - Q4 2025 shareholder letter"
+  },
+  {
+    "order": 26,
+    "path": "RDDT\\decks\\key_slides\\slide_26.png",
+    "caption": "First disclosure of WAUq split by geography (US 196.5M, international 296.6M) beside the DAUq split - the ratio that sizes the weekly-to-daily conversion management is targeting.",
+    "source_deck": "2026-04-30 - Q1 2026 shareholder letter"
+  },
+  {
+    "order": 27,
+    "path": "RDDT\\decks\\key_slides\\slide_27.png",
+    "caption": "Huffman names the 100 million US daily user goal against roughly 53M today, says prior ways of working fell short of what the company aspired to, and describes hiring machine-learning talent from larger platforms.",
+    "source_deck": "2026-04-30 - Q1 2026 shareholder letter"
+  },
+  {
+    "order": 28,
+    "path": "RDDT\\decks\\key_slides\\slide_28.png",
+    "caption": "The 1 of 1 screen: of 300+ listed US tech companies, 21 grew 2025 revenue over 40%, 5 also cleared 30% FCF and EBITDA margins, 3 spent under $15M capex, and 1 also had over 90% gross margin.",
+    "source_deck": "2026-04-30 - Q1 2026 shareholder letter"
+  },
+  {
+    "order": 29,
+    "path": "RDDT\\decks\\key_slides\\slide_29.png",
+    "caption": "Search referrals described as choppy with visibility into referral traffic remaining low, set against new-app-user retention up 50% YoY from a small base and the 1bn global / 100M US daily user goals.",
+    "source_deck": "2026-07-30 - Q2 2026 shareholder letter"
+  },
+  {
+    "order": 30,
+    "path": "RDDT\\decks\\key_slides\\slide_30.png",
+    "caption": "Revenue per head rose from $735k to $1,077k over five quarters (trailing four quarters) while GAAP operating expense per head rose only from $611k to $681k and non-GAAP from $436k to $531k - where the operating leverage is actually coming from.",
+    "source_deck": "2026-07-30 - Q2 2026 shareholder letter"
+  },
+  {
+    "order": 31,
+    "path": "RDDT\\decks\\key_slides\\slide_31.png",
+    "caption": "Third-party ad-effectiveness validation (TransUnion 7x average ROAS for EMEA retail, Attain and Theta lifetime-value work) plus Shopping Listing Ads alpha and the Shopify integration reaching general availability.",
+    "source_deck": "2026-07-30 - Q2 2026 shareholder letter"
+  },
+  {
+    "order": 32,
+    "path": "RDDT\\decks\\key_slides\\slide_32.png",
+    "caption": "US ARPU $11.85 against international $2.26, a 5.2x gap, beside the revenue-to-cost growth ratio stuck at 1.6x for a third straight quarter.",
+    "source_deck": "2026-07-30 - Q2 2026 shareholder letter"
+  }
+]

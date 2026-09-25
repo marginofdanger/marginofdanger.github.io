@@ -1,0 +1,194 @@
+[
+  {
+    "order": 1,
+    "path": "PANW\\decks\\key_slides\\slide_01.png",
+    "caption": "The attach model priced: each cloud-delivered subscription lists at 20% of appliance list price per year and support at about 16%, support attach is roughly 100%, and Q2 FY2013 shipped more than 1.5 subscriptions per appliance.",
+    "source_deck": "2013-03-21 - Financial Analyst Day"
+  },
+  {
+    "order": 2,
+    "path": "PANW\\decks\\key_slides\\slide_02.png",
+    "caption": "The original land-and-expand grid: quarter-by-quarter repeat purchasing for the top 25 customers, who by Q2 FY2013 had bought 11.4x their initial order against 4.6x for all customers.",
+    "source_deck": "2013-03-21 - Financial Analyst Day"
+  },
+  {
+    "order": 3,
+    "path": "PANW\\decks\\key_slides\\slide_03.png",
+    "caption": "The first target operating model, set in 2013: 22-25% non-GAAP operating margin against 6.8% actual, with sales and marketing to fall from 43.4% of revenue to 30-33%.",
+    "source_deck": "2013-03-21 - Financial Analyst Day"
+  },
+  {
+    "order": 4,
+    "path": "PANW\\decks\\key_slides\\slide_04.png",
+    "caption": "The 2009 cohort decomposed: on a 1.0x initial purchase, subscription renewals added 0.85x, support renewals 0.90x and new expansion 3.55x, so renewals supplied roughly a third of the 5.3x repeat total.",
+    "source_deck": "2014-03-31 - Ignite Investor Track"
+  },
+  {
+    "order": 5,
+    "path": "PANW\\decks\\key_slides\\slide_05.png",
+    "caption": "Target model one year on: the same 22-25% operating margin, but the sales and marketing target moved out from 30-33% to 33-36% while actual spend stayed at 46.6%.",
+    "source_deck": "2014-03-31 - Ignite Investor Track"
+  },
+  {
+    "order": 6,
+    "path": "PANW\\decks\\key_slides\\slide_06.png",
+    "caption": "The account-coverage pyramid that sets the ceiling on the direct model: about 50 global, 2,000 major, 20,000 named and more than 150,000 commercial accounts, each on a different touch model.",
+    "source_deck": "2015-03-30 - Financial Analyst Day"
+  },
+  {
+    "order": 7,
+    "path": "PANW\\decks\\key_slides\\slide_07.png",
+    "caption": "Lifetime value by acquisition cohort with cohort sizes: the 2009 vintage reached 8.6x its initial order by FY2015, but each later and much larger cohort starts the same climb from 1.3x.",
+    "source_deck": "2015-03-30 - Financial Analyst Day"
+  },
+  {
+    "order": 8,
+    "path": "PANW\\decks\\key_slides\\slide_08.png",
+    "caption": "The recurring-revenue engine in three numbers: subscriptions per device rising 1.7 to 2.2, contract duration flat near 1.9 years, and renewal rates above 90% on subscriptions and about 100% on support.",
+    "source_deck": "2015-03-30 - Financial Analyst Day"
+  },
+  {
+    "order": 9,
+    "path": "PANW\\decks\\key_slides\\slide_09.png",
+    "caption": "The sales and marketing target is pushed out a second time, to 35-38%, while actual spend held at 45.8%; the 22-25% operating margin goal was left unchanged for a third year.",
+    "source_deck": "2015-03-30 - Financial Analyst Day"
+  },
+  {
+    "order": 10,
+    "path": "PANW\\decks\\key_slides\\slide_10.png",
+    "caption": "Firewall refresh economics: appliance lifespan is distributed across four to seven years, and about 65% of the 2009 install base had been refreshed by FY2016, generally onto larger boxes with larger subscriptions.",
+    "source_deck": "2016-04-04 - Investor Day"
+  },
+  {
+    "order": 11,
+    "path": "PANW\\decks\\key_slides\\slide_11.png",
+    "caption": "Attach measured per customer rather than per box: Threat Prevention at 88% and URL Filtering at 72% penetration, against WildFire 33%, GlobalProtect 10%, VM-Series 4% and Traps 1%.",
+    "source_deck": "2016-04-04 - Investor Day"
+  },
+  {
+    "order": 12,
+    "path": "PANW\\decks\\key_slides\\slide_12.png",
+    "caption": "How the sales force is paid, and what it therefore sells: most compensation sits on product plus the first year of subscription and support, multi-year is commissioned at a much lower rate, and renewals go to inside sales.",
+    "source_deck": "2016-04-04 - Investor Day"
+  },
+  {
+    "order": 13,
+    "path": "PANW\\decks\\key_slides\\slide_13.png",
+    "caption": "The install-base expansion claim, sized: applying the 2009 cohort 11.8x multiple to the 2010-2015 vintages implies more than $8bn of future orders, up from the $5bn claimed a year earlier.",
+    "source_deck": "2016-04-04 - Investor Day"
+  },
+  {
+    "order": 14,
+    "path": "PANW\\decks\\key_slides\\slide_14.png",
+    "caption": "The growth-and-profitability framework that replaced fixed targets: margin expansion is indexed to which growth band the company is in, with 100-200bp a year while revenue grows above 30%.",
+    "source_deck": "2016-04-04 - Investor Day"
+  },
+  {
+    "order": 15,
+    "path": "PANW\\decks\\key_slides\\slide_15.png",
+    "caption": "The hardware install base, valued at about $2.8bn of cumulative product billings by FY2017 - the base against which attached subscriptions, support and refresh orders are sold.",
+    "source_deck": "2017-09-27 - Investor Day"
+  },
+  {
+    "order": 16,
+    "path": "PANW\\decks\\key_slides\\slide_16.png",
+    "caption": "Product revenue against the appliance peer set on rolling six- and eight-quarter windows: Palo Alto growing 12.3%, Fortinet 11.9%, Check Point 2.8% and Juniper down 23%.",
+    "source_deck": "2017-09-27 - Investor Day"
+  },
+  {
+    "order": 17,
+    "path": "PANW\\decks\\key_slides\\slide_17.png",
+    "caption": "Nine cohorts side by side in FY2016 and FY2017, with cohort sizes: the 2009 vintage at 17.5x, the 2017 vintage at 1.3x, and every vintage stepping up year over year.",
+    "source_deck": "2017-09-27 - Investor Day"
+  },
+  {
+    "order": 18,
+    "path": "PANW\\decks\\key_slides\\slide_18.png",
+    "caption": "Network security appliance share from 3.4% in Q2 CY2012 to 14.0% in Q2 CY2017, past Check Point at 12.6% and Fortinet at 10.6% but still behind Cisco at 15.9%.",
+    "source_deck": "2017-09-27 - Investor Day"
+  },
+  {
+    "order": 19,
+    "path": "PANW\\decks\\key_slides\\slide_19.png",
+    "caption": "Revenue per customer of $41.3k against Check Point $10.3k, Cisco security $8.6k and Fortinet $4.6k - the platform claim expressed as wallet share rather than logo count.",
+    "source_deck": "2017-09-27 - Investor Day"
+  },
+  {
+    "order": 20,
+    "path": "PANW\\decks\\key_slides\\slide_20.png",
+    "caption": "Visibility before RPO existed: average contract length reached about 3.0 years and short-term deferred revenue covered roughly 45% of the next year's consensus revenue.",
+    "source_deck": "2017-09-27 - Investor Day"
+  },
+  {
+    "order": 21,
+    "path": "PANW\\decks\\key_slides\\slide_21.png",
+    "caption": "The stated acquisition playbook: acquired teams run their own plays for nine months, then the core sales force is leveraged to target a 30-40% and later a 100% improvement over the target's standalone plan.",
+    "source_deck": "2019-09-04 - Analyst Meeting"
+  },
+  {
+    "order": 22,
+    "path": "PANW\\decks\\key_slides\\slide_22.png",
+    "caption": "The FY2022 targets set in 2019: about $6.0bn of billings and $5.0bn of revenue on a 20% three-year CAGR - the scorecard management would later grade itself against.",
+    "source_deck": "2019-09-04 - Analyst Meeting"
+  },
+  {
+    "order": 23,
+    "path": "PANW\\decks\\key_slides\\slide_23.png",
+    "caption": "The speedboat go-to-market in numbers: 850+ specialist sellers added on top of a 3,200-strong core team, taking $1m accounts from 542 to 921 and $10m accounts from 18 to 43 in two years.",
+    "source_deck": "2021-09-13 - Analyst Day"
+  },
+  {
+    "order": 24,
+    "path": "PANW\\decks\\key_slides\\slide_24.png",
+    "caption": "Management grades its own 2019 targets: FY2022 billings guidance of $6.6bn beat the $6.0bn goal, while operating margin at 18.5-19% came in below the 21.5% promised.",
+    "source_deck": "2021-09-13 - Analyst Day"
+  },
+  {
+    "order": 25,
+    "path": "PANW\\decks\\key_slides\\slide_25.png",
+    "caption": "The form-factor transition quantified: software rose from 11% to 39% of firewall-as-a-platform billings in two years, with 55-60% targeted for FY2024 and only mid-single-digit product revenue growth behind it.",
+    "source_deck": "2021-09-13 - Analyst Day"
+  },
+  {
+    "order": 26,
+    "path": "PANW\\decks\\key_slides\\slide_26.png",
+    "caption": "Deferred payment plans as a share of bookings climbed steeply from FY2020, and the outlined bars show how much higher reported free cash flow margin would have been without them.",
+    "source_deck": "2023-08-18 - Q4 FY2023 Earnings and Medium Term Update"
+  },
+  {
+    "order": 27,
+    "path": "PANW\\decks\\key_slides\\slide_27.png",
+    "caption": "The addressable-market bridge management uses to justify serial acquisition: $19bn of firewall in 2018, $181bn across four categories in 2025 and $257bn including identity by 2028.",
+    "source_deck": "2025-07-30 - CyberArk Acquisition Investor Presentation"
+  },
+  {
+    "order": 28,
+    "path": "PANW\\decks\\key_slides\\slide_28.png",
+    "caption": "Platformization as the operating metric, with its definition in the footnote: about 900 platformizations, 120% net retention among platformized customers, and an FY2030 goal of 2,500-3,500 and $15bn of NGS ARR standalone.",
+    "source_deck": "2025-08-18 - Q4 FY2025 Earnings Call"
+  },
+  {
+    "order": 29,
+    "path": "PANW\\decks\\key_slides\\slide_29.png",
+    "caption": "Where the cash actually comes from: collections on deferred payment deals signed in earlier years supplied about 30% of FY2024 free cash flow, 40% of FY2025 and a guided 50% of FY2026.",
+    "source_deck": "2025-08-18 - Q4 FY2025 Earnings Call"
+  },
+  {
+    "order": 30,
+    "path": "PANW\\decks\\key_slides\\slide_30.png",
+    "caption": "Software passed 45% of trailing product revenue in Q2 FY2026 from 38% a year earlier, with software firewall ARR up about 25% and hardware revenue still growing about 10%.",
+    "source_deck": "2026-02-17 - Q2 FY2026 Earnings Call"
+  },
+  {
+    "order": 31,
+    "path": "PANW\\decks\\key_slides\\slide_31.png",
+    "caption": "Platformization after CyberArk and Chronosphere: about 2,280 counts across five platforms, roughly 120% net retention, 65% of NGS ARR from platformized customers, and the FY2030 goal raised to 4,000+ and $20bn.",
+    "source_deck": "2026-06-02 - Q3 FY2026 Earnings Call"
+  },
+  {
+    "order": 32,
+    "path": "PANW\\decks\\key_slides\\slide_32.png",
+    "caption": "The largest business at the latest reported quarter: more than $2bn of trailing firewall bookings, hardware NGFW bookings up about 40%, software firewall ARR up 25%, and SASE ARR of $1.6bn growing at twice the market.",
+    "source_deck": "2026-06-02 - Q3 FY2026 Earnings Call"
+  }
+]

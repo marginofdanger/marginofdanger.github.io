@@ -1,0 +1,194 @@
+[
+  {
+    "order": 1,
+    "path": "CRWD\\decks\\key_slides\\slide_01.png",
+    "caption": "Three cloud case studies with cloud-workload-to-endpoint ratios of 0.8:1, 4:1 and 36:1 and matching ARR uplift of ~300%, ~50% and ~3,500%: the earliest quantification of why a cloud sensor sale is worth a multiple of an endpoint sale.",
+    "source_deck": "2020-10-15 \u00b7 Investor Product Briefing: Securing the Cloud"
+  },
+  {
+    "order": 2,
+    "path": "CRWD\\decks\\key_slides\\slide_02.png",
+    "caption": "Retail customer landed on one module (Intel) in FY15 and reached seven modules and $3m ARR by FY21, 3,500%+ ARR expansion and 400%+ sensor expansion, with each step labelled by module added and sensor growth.",
+    "source_deck": "2021-04-08 \u00b7 April 2021 Investor Briefing"
+  },
+  {
+    "order": 3,
+    "path": "CRWD\\decks\\key_slides\\slide_03.png",
+    "caption": "Quarterly gross and net dollar retention from Q1 FY18 to Q4 FY21: gross retention climbed from 94% to 98%, net retention peaked at 147% in Q4 FY19 and settled at 125%. Neither series appears quarterly in the filings.",
+    "source_deck": "2021-04-08 \u00b7 April 2021 Investor Briefing"
+  },
+  {
+    "order": 4,
+    "path": "CRWD\\decks\\key_slides\\slide_04.png",
+    "caption": "FY17-FY21 actual subscription gross margin and S&M/R&D/G&A ratios laid against the IPO target model and the then-current FY25 target, showing S&M falling from 101% of revenue to 40% in four years.",
+    "source_deck": "2021-04-08 \u00b7 April 2021 Investor Briefing"
+  },
+  {
+    "order": 5,
+    "path": "CRWD\\decks\\key_slides\\slide_05.png",
+    "caption": "Subscription ARR earned per $1 of initial incident-response or proactive services spend: $3.73 in FY20, $5.51 in FY21, $5.71 in FY22. Puts a number on the claim that the loss-making services unit is a subscription lead generator.",
+    "source_deck": "2022-04-07 \u00b7 April 2022 Investor Briefing"
+  },
+  {
+    "order": 6,
+    "path": "CRWD\\decks\\key_slides\\slide_06.png",
+    "caption": "Enterprise penetration at Jan 31, 2022: 65 of the Fortune 100, 254 of the Fortune 500, 15 of the top 20 US banks and 526 of the Global 2000, each with its year-over-year gain.",
+    "source_deck": "2022-04-07 \u00b7 April 2022 Investor Briefing"
+  },
+  {
+    "order": 7,
+    "path": "CRWD\\decks\\key_slides\\slide_07.png",
+    "caption": "Module adoption on the 4+/5+/6+ basis for FY18-FY22, the series later re-based to 5+/6+/7+ and then to 6+/7+/8+; the only place the older cut is charted through FY22.",
+    "source_deck": "2022-04-07 \u00b7 April 2022 Investor Briefing"
+  },
+  {
+    "order": 8,
+    "path": "CRWD\\decks\\key_slides\\slide_08.png",
+    "caption": "Full-platform opportunity inside the existing base: $2.8bn against $1.1bn ARR at FY21 and $7.0bn against $1.7bn at FY22. The first point in a whitespace series restated at every briefing since.",
+    "source_deck": "2022-04-07 \u00b7 April 2022 Investor Briefing"
+  },
+  {
+    "order": 9,
+    "path": "CRWD\\decks\\key_slides\\slide_09.png",
+    "caption": "Modeling guidance that stock compensation would fall to the mid-teens as a percentage of revenue by FY26 and capex would normalise to 5-8% from FY24, a testable forecast against H1 FY2027 SBC of $674.6m.",
+    "source_deck": "2022-04-07 \u00b7 April 2022 Investor Briefing"
+  },
+  {
+    "order": 10,
+    "path": "CRWD\\decks\\key_slides\\slide_10.png",
+    "caption": "IDC modern-endpoint share with vendors named: CrowdStrike 17.7% at #1, other next-gen vendors 7.4% combined (VMware 4.6%, SentinelOne 2.8%), legacy signature vendors 46.7% of which Microsoft 16.4%.",
+    "source_deck": "2023-04-04 \u00b7 April 2023 Investor Briefing"
+  },
+  {
+    "order": 11,
+    "path": "CRWD\\decks\\key_slides\\slide_11.png",
+    "caption": "The arithmetic behind the $5bn+ ARR by FY26 goal: three times FY23 net new ARR, with FY24 assumed flat and growth resuming in FY25. Ending ARR reached $5.25bn at Jan 31, 2026.",
+    "source_deck": "2023-04-04 \u00b7 April 2023 Investor Briefing"
+  },
+  {
+    "order": 12,
+    "path": "CRWD\\decks\\key_slides\\slide_12.png",
+    "caption": "Minimum ARR to rank as a top-25, top-100 or top-400 account: $7.2m, $2.9m and $1.1m at FY23 against $1.1m, $298k and $60k at FY18, showing how fast the top of the account base scaled.",
+    "source_deck": "2023-04-04 \u00b7 April 2023 Investor Briefing"
+  },
+  {
+    "order": 13,
+    "path": "CRWD\\decks\\key_slides\\slide_13.png",
+    "caption": "Ending ARR split across three customer-size bands for FY18, FY22 and FY23: $1,167m from customers above $1m ARR, $975m from $100k-$1m and $417m below $100k. No filing discloses this split.",
+    "source_deck": "2023-04-04 \u00b7 April 2023 Investor Briefing"
+  },
+  {
+    "order": 14,
+    "path": "CRWD\\decks\\key_slides\\slide_14.png",
+    "caption": "Twenty-four quarters of gross and net retention through Q4 FY23, extending the FY21 chart: gross retention held at 97-98% while net retention slid from 147% to 125%.",
+    "source_deck": "2023-04-04 \u00b7 April 2023 Investor Briefing"
+  },
+  {
+    "order": 15,
+    "path": "CRWD\\decks\\key_slides\\slide_15.png",
+    "caption": "Free-cash-flow margin expectations of 30% in FY24 and FY25, 30-32% in FY26 and 32%+ thereafter. FY2026 free cash flow margin came in at 26%.",
+    "source_deck": "2023-04-04 \u00b7 April 2023 Investor Briefing"
+  },
+  {
+    "order": 16,
+    "path": "CRWD\\decks\\key_slides\\slide_16.png",
+    "caption": "The Next-Gen SIEM thesis in one page: LogScale ARR from $5.5m at launch in 1Q22 to about $100m by 2Q24, Falcon already producing ~85% of the data sitting in third-party SIEMs, and a $16bn CY28 opportunity.",
+    "source_deck": "2023-09-20 \u00b7 Fal.Con 2023 Investor Briefing"
+  },
+  {
+    "order": 17,
+    "path": "CRWD\\decks\\key_slides\\slide_17.png",
+    "caption": "Charlotte AI list pricing of $20 per endpoint per year with a query allocation plus paid query packs, one of very few published per-module price points anywhere in the disclosure record.",
+    "source_deck": "2023-09-20 \u00b7 Fal.Con 2023 Investor Briefing"
+  },
+  {
+    "order": 18,
+    "path": "CRWD\\decks\\key_slides\\slide_18.png",
+    "caption": "Customer counts against named rivals: CrowdStrike above 23,000 versus Palo Alto 80,000, Box 100,000, Salesforce 150,000, Atlassian 260,000, Trend Micro 500,000, VMware 500,000 and Fortinet 680,000.",
+    "source_deck": "2023-09-20 \u00b7 Fal.Con 2023 Investor Briefing"
+  },
+  {
+    "order": 19,
+    "path": "CRWD\\decks\\key_slides\\slide_19.png",
+    "caption": "Penetration of the three growth lines inside the installed base at 2Q24: 34% of customers on cloud security, 9% on identity, 3% on LogScale. The denominator for the cross-sell case.",
+    "source_deck": "2023-09-20 \u00b7 Fal.Con 2023 Investor Briefing"
+  },
+  {
+    "order": 20,
+    "path": "CRWD\\decks\\key_slides\\slide_20.png",
+    "caption": "Financial-services account from FY15 to FY24: landed on two modules, reached nine modules and $5m ARR, about 400% total ARR expansion, with each year split between modules added and sensor growth.",
+    "source_deck": "2023-09-20 \u00b7 Fal.Con 2023 Investor Briefing"
+  },
+  {
+    "order": 21,
+    "path": "CRWD\\decks\\key_slides\\slide_21.png",
+    "caption": "The FY29 target model as first set: 82-85% subscription gross margin, 28-32% operating margin and 34-38% free cash flow margin, with the basis-point change from the prior target on every line.",
+    "source_deck": "2023-09-20 \u00b7 Fal.Con 2023 Investor Briefing"
+  },
+  {
+    "order": 22,
+    "path": "CRWD\\decks\\key_slides\\slide_22.png",
+    "caption": "Total account value of Falcon Flex customers moving from above $185m in 4Q24 to above $500m in 1Q25 and above $700m in 2Q25, alongside the licensing terms (1-5 years, swappable modules, sized to demand).",
+    "source_deck": "2024-09-17 \u00b7 Fal.Con 2024 Investor Briefing"
+  },
+  {
+    "order": 23,
+    "path": "CRWD\\decks\\key_slides\\slide_23.png",
+    "caption": "A post-incident customer commitment package priced out: a semiconductor customer went from $0.6m to $1.1m ARR on a $3.0m 36-month contract, of which the customer funded $2.0m and CrowdStrike invested $0.6m.",
+    "source_deck": "2024-09-17 \u00b7 Fal.Con 2024 Investor Briefing"
+  },
+  {
+    "order": 24,
+    "path": "CRWD\\decks\\key_slides\\slide_24.png",
+    "caption": "Matrix mapping each commitment-package incentive (module adds, professional services, payment terms, term elongation and discounting) to its effect on ARR, revenue, gross margin and cash.",
+    "source_deck": "2024-09-17 \u00b7 Fal.Con 2024 Investor Briefing"
+  },
+  {
+    "order": 25,
+    "path": "CRWD\\decks\\key_slides\\slide_25.png",
+    "caption": "Eight years of module adoption on the 5+/6+/7+ basis, FY18 to 2Q25, ending at 65%/45%/29%. The 5+ metric was retired after Q4 FY2025, so this is the longest published run of the series.",
+    "source_deck": "2024-09-17 \u00b7 Fal.Con 2024 Investor Briefing"
+  },
+  {
+    "order": 26,
+    "path": "CRWD\\decks\\key_slides\\slide_26.png",
+    "caption": "A Fortune 500 conglomerate through two Flex cycles: $5m ARR on seven modules, then $24m on ten, then $57m on fourteen, with total contract value moving $14m to $103m to $246m.",
+    "source_deck": "2025-09-17 \u00b7 Fal.Con 2025 Investor Briefing"
+  },
+  {
+    "order": 27,
+    "path": "CRWD\\decks\\key_slides\\slide_27.png",
+    "caption": "CrowdStrike Financial Services one year after launch: $230m of cumulative loan value, over half the portfolio tied to Flex deals and 95% funding new logos or platform expansion.",
+    "source_deck": "2025-09-17 \u00b7 Fal.Con 2025 Investor Briefing"
+  },
+  {
+    "order": 28,
+    "path": "CRWD\\decks\\key_slides\\slide_28.png",
+    "caption": "The FY29 target model reaffirmed unchanged two years after it was set: 82-85% subscription gross margin, 28-32% operating margin, 34-38% free cash flow margin, against 22% non-GAAP operating margin in FY2026.",
+    "source_deck": "2025-09-17 \u00b7 Fal.Con 2025 Investor Briefing"
+  },
+  {
+    "order": 29,
+    "path": "CRWD\\decks\\key_slides\\slide_29.png",
+    "caption": "The ARR ladder extended: $4.7bn at 2Q26, $10bn by FY31 from cloud, identity and SIEM, then $20bn by FY36 at a 15% CAGR from agentic SOC and agentic-everywhere products still unbuilt.",
+    "source_deck": "2025-09-17 \u00b7 Fal.Con 2025 Investor Briefing"
+  },
+  {
+    "order": 30,
+    "path": "CRWD\\decks\\key_slides\\slide_30.png",
+    "caption": "Illustrative FY31 ARR by product line against CY30 market size: cloud $2.5-3.0bn of $49bn, identity $1.0-1.5bn of $19bn, next-gen SIEM $1.5-2.0bn of $48bn, an implied share of 3-6%.",
+    "source_deck": "2025-09-17 \u00b7 Fal.Con 2025 Investor Briefing"
+  },
+  {
+    "order": 31,
+    "path": "CRWD\\decks\\key_slides\\slide_31.png",
+    "caption": "Install-base whitespace at 2Q26: $25.2bn of total opportunity against $4.7bn of ARR. The ratio has compressed from 6.8x at 2Q24 as ARR grew faster than the module set it is measured against.",
+    "source_deck": "2025-09-17 \u00b7 Fal.Con 2025 Investor Briefing"
+  },
+  {
+    "order": 32,
+    "path": "CRWD\\decks\\key_slides\\slide_32.png",
+    "caption": "The Flex expansion ladder quantified: 40%+ average ARR uplift converting from standard to Flex, 25% on the first re-Flex and 53% for accounts that re-Flexed twice or more, with 2,900+ Flex and 630+ re-Flex customers.",
+    "source_deck": "2026-08-26 \u00b7 Q2 FY2027 Financial Results"
+  }
+]

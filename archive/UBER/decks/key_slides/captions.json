@@ -1,0 +1,200 @@
+[
+  {
+    "order": 1,
+    "path": "UBER\\decks\\key_slides\\slide_01.png",
+    "caption": "Uber Eats and Postmates compared asset by asset at announcement: 400K partnered restaurants and 111M MAPCs against 115K merchants, 10M+ customers and a subscription running 30%+ of Postmates orders.",
+    "source_deck": "2020-07-06 - M&A Announcement, Postmates"
+  },
+  {
+    "order": 2,
+    "path": "UBER\\decks\\key_slides\\slide_02.png",
+    "caption": "Uber Freight's pre-deal economics: revenue $67M in 2017 to a $1,205M Q1 2021 run rate, a 106% CAGR, with EBITDA margin improving from (60)% to (10)%.",
+    "source_deck": "2021-07-22 - Uber Freight acquisition of Transplace"
+  },
+  {
+    "order": 3,
+    "path": "UBER\\decks\\key_slides\\slide_03.png",
+    "caption": "Where managed transportation sits above brokerage in the freight value chain, and the layer Uber Freight bought into with Transplace.",
+    "source_deck": "2021-07-22 - Uber Freight acquisition of Transplace"
+  },
+  {
+    "order": 4,
+    "path": "UBER\\decks\\key_slides\\slide_04.png",
+    "caption": "Marketplace liquidity made visible: US active drivers +67% since January 2021 cut surged trips from 25% to 6% and wait times from 7.4 to 4.7 minutes.",
+    "source_deck": "2021-11-04 - Q3 2021 earnings supplement"
+  },
+  {
+    "order": 5,
+    "path": "UBER\\decks\\key_slides\\slide_05.png",
+    "caption": "Mobility take rate and segment margin by quarter from Q3 2019 with the UK driver-classification accrual stripped out; margin returned to 2019 levels on 21% lower Gross Bookings.",
+    "source_deck": "2021-11-04 - Q3 2021 earnings supplement"
+  },
+  {
+    "order": 6,
+    "path": "UBER\\decks\\key_slides\\slide_06.png",
+    "caption": "The 2019-2021 portfolio reshaping: India Eats to Zomato, JUMP to Lime, ATG to Aurora, Elevate to Joby, 15+ sub-scale delivery markets exited, against $1B of run-rate fixed-cost reduction.",
+    "source_deck": "2022-02-10 - Investor Day 2022"
+  },
+  {
+    "order": 7,
+    "path": "UBER\\decks\\key_slides\\slide_07.png",
+    "caption": "Price per US trip across the ladder: Uber Black $48, UberX $16, UberX Share $12, public transport about $2 at 7x Uber's trip volume, personal vehicles about $0.50 per mile at 6.6B weekly trips.",
+    "source_deck": "2022-02-10 - Investor Day 2022"
+  },
+  {
+    "order": 8,
+    "path": "UBER\\decks\\key_slides\\slide_08.png",
+    "caption": "Management's autonomy thesis in one chart: rideshare is under 1% of US urban vehicle miles, and a $1.00 per mile AV price would open roughly 25x that addressable base.",
+    "source_deck": "2022-02-10 - Investor Day 2022"
+  },
+  {
+    "order": 9,
+    "path": "UBER\\decks\\key_slides\\slide_09.png",
+    "caption": "Delivery at Q4 2021: $54B run-rate Gross Bookings, leading positions in 7 of the top 10 markets, and 80% of global Gross Bookings in markets that gained category position.",
+    "source_deck": "2022-02-10 - Investor Day 2022"
+  },
+  {
+    "order": 10,
+    "path": "UBER\\decks\\key_slides\\slide_10.png",
+    "caption": "Uber Freight positioned as the largest digital freight marketplace: $17B of freight under management with Transplace, claimed #1 on operational efficiency and digital fleet.",
+    "source_deck": "2022-02-10 - Investor Day 2022"
+  },
+  {
+    "order": 11,
+    "path": "UBER\\decks\\key_slides\\slide_11.png",
+    "caption": "The cross-app acquisition advantage quantified: the Uber Rides app brought in 2.1x the Delivery consumers of all paid channels combined, at 25% of paid-channel cost.",
+    "source_deck": "2022-02-10 - Investor Day 2022"
+  },
+  {
+    "order": 12,
+    "path": "UBER\\decks\\key_slides\\slide_12.png",
+    "caption": "Quarterly platform Gross Bookings per consumer in Q4 2021: $58 Mobility, $151 Delivery, $364 cross-platform.",
+    "source_deck": "2022-02-10 - Investor Day 2022"
+  },
+  {
+    "order": 13,
+    "path": "UBER\\decks\\key_slides\\slide_13.png",
+    "caption": "The origin of the advertising business: $11M of revenue in 2020, $141M in 2021, and a $1B+ target for 2024 with the ad surfaces and formats named.",
+    "source_deck": "2022-02-10 - Investor Day 2022"
+  },
+  {
+    "order": 14,
+    "path": "UBER\\decks\\key_slides\\slide_14.png",
+    "caption": "The long-term segment margin targets management has been measured against since: Mobility 25% take rate x 45% EBITDA margin = 11.25% of Gross Bookings, Delivery 15% x 30% = 4.5%.",
+    "source_deck": "2022-02-10 - Investor Day 2022"
+  },
+  {
+    "order": 15,
+    "path": "UBER\\decks\\key_slides\\slide_15.png",
+    "caption": "Unit economics of markets already at target margin: driver payments take 73% of Mobility Gross Bookings and driver plus merchant payments 82% of Delivery's, leaving 15% and 8% contribution.",
+    "source_deck": "2022-02-10 - Investor Day 2022"
+  },
+  {
+    "order": 16,
+    "path": "UBER\\decks\\key_slides\\slide_16.png",
+    "caption": "The three-year frame set in 2022: FY2018 $58B Gross Bookings at (3.7)% Adjusted EBITDA margin, FY2021 $90B at (0.9)%, FY2024 target $165-175B and about $5B.",
+    "source_deck": "2022-02-10 - Investor Day 2022"
+  },
+  {
+    "order": 17,
+    "path": "UBER\\decks\\key_slides\\slide_17.png",
+    "caption": "Uber Moto as the low-cost entry product: live in 20 countries, trips up over 100% YoY, active Moto drivers up over 60%, and 40% of Moto riders go on to another Mobility product.",
+    "source_deck": "2023-11-07 - Q3 2023 earnings supplement"
+  },
+  {
+    "order": 18,
+    "path": "UBER\\decks\\key_slides\\slide_18.png",
+    "caption": "Cross-promotion between the two apps: 31% of Delivery first trips originate in the Mobility app and 22% the reverse, at half the cost of paid channels.",
+    "source_deck": "2024-02-14 - Investor Update February 2024"
+  },
+  {
+    "order": 19,
+    "path": "UBER\\decks\\key_slides\\slide_19.png",
+    "caption": "Monthly consumer penetration by country against population 18+; matching UK penetration would add about $13B of US Gross Bookings and Mexico's would add about $11B in India.",
+    "source_deck": "2024-02-14 - Investor Update February 2024"
+  },
+  {
+    "order": 20,
+    "path": "UBER\\decks\\key_slides\\slide_20.png",
+    "caption": "How management frames Uber's value to AV developers, with the hybrid human-plus-AV network and go-to-market as the argument, and 10 live AV partnerships as of February 2024.",
+    "source_deck": "2024-02-14 - Investor Update February 2024"
+  },
+  {
+    "order": 21,
+    "path": "UBER\\decks\\key_slides\\slide_21.png",
+    "caption": "Market-level profitability: 85% of top-ten countries profitable in both segments, Mobility top ten at 7% of Gross Bookings and Delivery top ten at 2%, with most still below best-in-class.",
+    "source_deck": "2024-02-14 - Investor Update February 2024"
+  },
+  {
+    "order": 22,
+    "path": "UBER\\decks\\key_slides\\slide_22.png",
+    "caption": "What separates free cash flow from Adjusted EBITDA, including the captive insurer whose reserve growth is restricted cash driven by US Mobility trip growth and insurance cost.",
+    "source_deck": "2024-02-14 - Investor Update February 2024"
+  },
+  {
+    "order": 23,
+    "path": "UBER\\decks\\key_slides\\slide_23.png",
+    "caption": "The capital allocation framework as first published, with a ~2x gross leverage target and investment grade ratings, alongside the inaugural $7B repurchase authorization.",
+    "source_deck": "2024-02-14 - Investor Update February 2024"
+  },
+  {
+    "order": 24,
+    "path": "UBER\\decks\\key_slides\\slide_24.png",
+    "caption": "Grocery and Retail restates Delivery's addressable market: about $2T of food against about $10T of grocery and retail in markets Uber Eats already operates.",
+    "source_deck": "2025-11-04 - Q3 2025 earnings supplement"
+  },
+  {
+    "order": 25,
+    "path": "UBER\\decks\\key_slides\\slide_25.png",
+    "caption": "Grocery and Retail's platform effect: 7% of Delivery's first-time users, monthly platform frequency from 4.8 to 6.1 for adopters, and about $12B of Gross Bookings run-rate.",
+    "source_deck": "2025-11-04 - Q3 2025 earnings supplement"
+  },
+  {
+    "order": 26,
+    "path": "UBER\\decks\\key_slides\\slide_26.png",
+    "caption": "Mobility trip growth in Atlanta and Austin accelerated after AV launch relative to the US top 20 cities, with first-time riders +9pp and trips per rider +3pp.",
+    "source_deck": "2026-02-04 - Q4 2025 earnings supplement"
+  },
+  {
+    "order": 27,
+    "path": "UBER\\decks\\key_slides\\slide_27.png",
+    "caption": "The demand-variability argument against an AV-only competitor: a typical Monday is about 45% of a Saturday and daily troughs about 5% of peaks, with AVs as fixed base load and human drivers as boost supply.",
+    "source_deck": "2026-02-04 - Q4 2025 earnings supplement"
+  },
+  {
+    "order": 28,
+    "path": "UBER\\decks\\key_slides\\slide_28.png",
+    "caption": "Uber operates in 8,000+ US markets covering 95% of the population, and the top 20 cities account for only about 30% of US Mobility Gross Bookings and about 25% of US Mobility profits.",
+    "source_deck": "2026-02-04 - Q4 2025 earnings supplement"
+  },
+  {
+    "order": 29,
+    "path": "UBER\\decks\\key_slides\\slide_29.png",
+    "caption": "The Mobility barbell: low-cost products deliver 75% higher frequency, premium products 3.5x the profit dollars of standard-only users, and together over 25% of first-time Mobility users.",
+    "source_deck": "2026-05-06 - Q1 2026 earnings supplement"
+  },
+  {
+    "order": 30,
+    "path": "UBER\\decks\\key_slides\\slide_30.png",
+    "caption": "Delivery Hero terms: EUR 41.50 per share, $14.8bn equity value, about 8x EV/2027E Adjusted EBITDA including synergies, 50% plus one share minimum acceptance, H2 2027 close.",
+    "source_deck": "2026-07-16 - M&A Announcement, Delivery Hero"
+  },
+  {
+    "order": 31,
+    "path": "UBER\\decks\\key_slides\\slide_31.png",
+    "caption": "Pro forma scale on management's own peer set: $236B of 2025 Gross Bookings and $9.8B of Adjusted EBITDA, against Eternal, Lyft, Grab, Prosus, Instacart, Didi and DoorDash combined.",
+    "source_deck": "2026-07-16 - M&A Announcement, Delivery Hero"
+  },
+  {
+    "order": 32,
+    "path": "UBER\\decks\\key_slides\\slide_32.png",
+    "caption": "How the deal is financed and pared back: about EUR 14bn committed bridge, gross leverage kept below 2x, and 14 Delivery Hero markets with about $11bn of Gross Bookings sold to SSW Partners with Uber lending most of the price.",
+    "source_deck": "2026-07-16 - M&A Announcement, Delivery Hero"
+  },
+  {
+    "order": 33,
+    "path": "UBER\\decks\\key_slides\\slide_33.png",
+    "caption": "Uber One's engagement economics in mid-2026: 400K participating merchants up about 50% YoY, merchant-funded offers up about 70%, and about 40% of eligible members active across both Mobility and Delivery.",
+    "source_deck": "2026-08-05 - Q2 2026 earnings supplement"
+  }
+]
