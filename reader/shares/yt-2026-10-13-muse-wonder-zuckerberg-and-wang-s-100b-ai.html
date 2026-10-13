@@ -1,0 +1,1495 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Muse Wonder: Zuckerberg and Wang&#39;s $100B AI</title>
+  <style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background: #ffffff;
+  color: #222222;
+  line-height: 1.7;
+  padding: 0 1rem 2rem;
+}
+header {
+  position: sticky;
+  top: 0;
+  background: #ffffff;
+  z-index: 100;
+  border-bottom: 2px solid #aaaaaa;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  padding: 0.6rem 1rem;
+}
+.header-inner {
+  max-width: 78ch;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header-title { font-size: 1rem; color: #222222; }
+.header-title strong { font-size: 1.1rem; }
+.header-link {
+  font-size: 0.85rem;
+  color: #666666;
+  text-decoration: none;
+  border: 1px solid #aaaaaa;
+  padding: 0.2rem 0.7rem;
+  border-radius: 4px;
+}
+.header-link:hover { background: #f5f5f5; }
+main {
+  max-width: 78ch;
+  margin: 0 auto;
+  padding-top: 0.5rem;
+}
+h2 {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #222222;
+  margin-top: 2rem;
+  margin-bottom: 0.5rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 2px solid #aaaaaa;
+}
+h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #333333;
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+section { margin-bottom: 1.5rem; }
+ul { margin: 0.5rem 0 0.5rem 1.5rem; }
+li { margin-bottom: 0.4rem; }
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0.75rem 0;
+  font-size: 0.92rem;
+}
+thead th {
+  background: #333333;
+  color: #ffffff;
+  text-transform: uppercase;
+  font-size: 0.78rem;
+  letter-spacing: 0.05em;
+  padding: 0.5rem 0.75rem;
+  text-align: left;
+  font-weight: 600;
+}
+tbody td {
+  padding: 0.45rem 0.75rem;
+  border-bottom: 1px solid #e2e2e2;
+}
+tbody tr:nth-child(even) { background: #f5f5f5; }
+tbody tr:nth-child(odd) { background: #ffffff; }
+.key-insight {
+  border-left: 4px solid #aaaaaa;
+  background: #f5f5f5;
+  padding: 0.75rem 1rem;
+  margin: 0.75rem 0;
+  font-size: 0.93rem;
+  border-radius: 0 6px 6px 0;
+}
+.qa-pair { margin-bottom: 1.25rem; }
+.question-box {
+  background: #f5f5f5;
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+  margin-bottom: 0.5rem;
+}
+.analyst-label {
+  display: block;
+  font-size: 0.8rem;
+  color: #666666;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  margin-bottom: 0.25rem;
+}
+.answer { padding-left: 0.25rem; }
+.loading-section { opacity: 0.5; }
+.loading-indicator {
+  font-size: 1.2rem;
+  padding: 2rem;
+  text-align: center;
+  color: #666666;
+}
+
+/* YouTube transcript reader */
+
+/* Legacy .yt-meta-card -- kept so old output files still render cleanly.
+   New output uses .header-title.yt below instead. */
+.yt-meta-card {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  margin-bottom: 1.5rem;
+  background: #f5f5f5;
+  border-left: 4px solid #aaaaaa;
+  border-radius: 0 6px 6px 0;
+  padding: 0.9rem 1rem;
+}
+.yt-meta-card img {
+  flex: 0 0 180px;
+  height: 101px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+.yt-meta-body { flex: 1; font-size: 0.93rem; }
+.yt-meta-title { font-weight: 700; font-size: 1rem; margin-bottom: 0.25rem; }
+.yt-meta-sub { color: #666666; margin-bottom: 0.35rem; }
+.yt-meta-url { font-size: 0.85rem; color: #333333; }
+
+/* YouTube sticky header uses the default 78ch-capped centered
+   container so it aligns with the body text column below. The
+   buttons sit at the right edge of that centered container. */
+header:has(.header-inner.yt) { padding: 0.75rem 1rem; }
+.header-inner.yt { gap: 1rem; }
+.header-title.yt {
+  display: flex;
+  gap: 0.9rem;
+  align-items: center;
+  min-width: 0;
+  flex: 1;
+}
+.yt-header-thumb { flex: 0 0 88px; line-height: 0; }
+.yt-header-thumb img {
+  width: 88px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 3px;
+  display: block;
+}
+.yt-header-text { min-width: 0; flex: 1; }
+.yt-header-text strong {
+  display: block;
+  font-size: 1rem;
+  line-height: 1.3;
+  color: #222222;
+  /* Allow wrapping to 2 lines so long podcast titles show in full. */
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.yt-header-sub {
+  font-size: 0.8rem;
+  margin-top: 0.2rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.yt-header-sub .yt-channel { color: #666666; }
+.yt-header-sub .yt-date,
+.yt-header-sub .yt-dur { color: #333333; font-weight: 600; }
+.yt-header-sub .yt-sep { color: #aaaaaa; margin: 0 0.5rem; }
+
+.yt-header-actions {
+  display: flex;
+  gap: 0.4rem;
+  align-items: center;
+  flex: 0 0 auto;
+}
+/* Shared box shape for the star + share + YT buttons so they're
+   visually identical. Applies to both the <button>s and the <a> link. */
+.yt-header-actions .yt-bookmark-btn,
+.yt-header-actions .yt-share-btn,
+.yt-header-actions .header-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font: inherit;
+  font-size: 0.85rem;
+  line-height: 1;
+  color: #666666;
+  background: transparent;
+  border: 1px solid #aaaaaa;
+  border-radius: 4px;
+  padding: 0;
+  box-sizing: border-box;
+  width: 2.2rem;
+  height: 2.2rem;
+  white-space: nowrap;
+  text-decoration: none;
+  cursor: pointer;
+}
+.yt-header-actions .yt-bookmark-btn { font-size: 1rem; }
+.yt-header-actions .yt-share-btn { font-size: 1.05rem; }
+.yt-header-actions .yt-share-btn:disabled { opacity: 0.6; cursor: default; }
+.yt-header-actions .yt-bookmark-btn:hover,
+.yt-header-actions .yt-share-btn:hover,
+.yt-header-actions .header-link:hover {
+  background: #f5f5f5;
+  color: #333333;
+}
+.yt-header-actions .yt-bookmark-btn.is-bookmarked {
+  background: #aaaaaa;
+  color: #ffffff;
+  border-color: #888888;
+}
+.yt-header-actions .yt-bookmark-btn.is-bookmarked:hover {
+  background: #888888;
+  color: #ffffff;
+}
+
+h3.chapter {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #333333;
+  margin-top: 1.25rem;
+  margin-bottom: 0.4rem;
+}
+h3.chapter a {
+  font-size: 0.8rem;
+  color: #666666;
+  text-decoration: none;
+  font-weight: 400;
+}
+
+.yt-body {
+  line-height: 1.58;
+}
+.yt-body p {
+  margin-bottom: 0.9rem;
+}
+.yt-body p.q {
+  background: #f5f5f5;
+  border-left: 3px solid #aaaaaa;
+  border-radius: 0 6px 6px 0;
+  padding: 0.6rem 0.9rem;
+  margin-top: 1.25rem;
+  margin-bottom: 0.8rem;
+  color: #333333;
+  font-style: italic;
+  font-size: 0.96rem;
+}
+.yt-body p.q::before {
+  content: "Q";
+  display: inline-block;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 0.72rem;
+  color: #666666;
+  letter-spacing: 0.05em;
+  margin-right: 0.5rem;
+  padding: 0.05rem 0.4rem;
+  border: 1px solid #aaaaaa;
+  border-radius: 3px;
+  vertical-align: 0.1em;
+}
+.yt-body p.q a {
+  display: block;
+  text-align: right;
+  margin-top: 0.3rem;
+  font-style: normal;
+  font-size: 0.8rem;
+  color: #666666;
+  text-decoration: none;
+  white-space: nowrap;
+}
+.yt-body p.q a:hover {
+  text-decoration: underline;
+}
+
+</style>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style id="reader-presentation-style">
+/* Shared output presentation. Loaded last, including on archived templates. */
+body.reader-page {
+  --reader-paper: #ffffff; --reader-ink: #222222; --reader-muted: #737373;
+  --reader-line: #e2e2e2; --reader-accent: #444444; --reader-rail: #aaaaaa;
+  --reader-tint: #f5f5f5; --reader-header-height: 76px;
+  --reader-measure: 550px;
+  --reader-shell: 894px; --reader-sidebar: 150px; --reader-column-gap: 28px;
+  margin: 0; padding: 0; max-width: none;
+  background: var(--reader-paper); color: var(--reader-ink);
+  font: 13px/1.58 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color-scheme: light;
+}
+/* Shared neutral text and surfaces; source colors remain on the rails. */
+body.reader-page[data-reader-kind="expert"] { --reader-rail: #8aa6c0; --reader-tint: #f5f5f5; }
+body.reader-page[data-reader-kind="youtube"] { --reader-rail: #c5786d; --reader-tint: #f5f5f5; }
+.reader-page *, .reader-page *::before, .reader-page *::after { box-sizing: border-box; }
+.reader-page [hidden] { display: none !important; }
+.reader-page a { color: var(--reader-accent); text-underline-offset: 3px; }
+.reader-page a:focus-visible, .reader-page button:focus-visible, .reader-page [tabindex]:focus-visible, .reader-page summary:focus-visible { outline: 2px solid var(--reader-rail); outline-offset: 3px; }
+body.reader-page .reader-masthead {
+  position: sticky; inset: 0 0 auto; z-index: 100;
+  width: 100%; max-width: none; margin: 0; padding: 0;
+  background: var(--reader-paper); border: 0; border-bottom: 1px solid var(--reader-line);
+  box-shadow: none;
+}
+.reader-page .reader-masthead-inner {
+  display: grid;
+  grid-template-columns: var(--reader-sidebar) minmax(0, 1fr) max-content;
+  grid-template-areas: "marker heading tools" "brand facts pages";
+  gap: 4px var(--reader-column-gap); align-items: baseline;
+  /* Use the right margin for controls while keeping the title over the article. */
+  max-width: calc(var(--reader-shell) + 188px); padding: 9px 28px;
+  margin: 0 0 0 max(0px, calc((100% - var(--reader-shell)) / 2));
+}
+.reader-page .reader-brand { grid-area: brand; text-decoration: none; color: #444444; font-size: 10px; font-weight: 700; letter-spacing: .19em; text-transform: uppercase; white-space: nowrap; }
+.reader-page a.reader-brand:hover { color: var(--reader-accent); text-decoration: underline; }
+.reader-page .reader-tools { grid-area: tools; display: flex; flex-wrap: wrap; gap: 6px; justify-content: flex-end; align-items: center; }
+.reader-page .reader-tools .reader-tool {
+  display: inline-flex; align-items: center; justify-content: center; width: auto; height: 25px; min-width: 25px;
+  margin: 0; padding: 3px 8px; border: 1px solid #d4d4d4; border-radius: 4px;
+  background: transparent; color: var(--reader-accent);
+  font-family: inherit; font-size: 11px; line-height: 1.3; font-weight: 600;
+  text-decoration: none; cursor: pointer; box-shadow: none;
+}
+.reader-page .reader-tools .reader-tool:hover { background: var(--reader-tint); border-color: var(--reader-rail); }
+.reader-page .reader-tool:disabled { cursor: wait; opacity: .6; }
+.reader-page .reader-marker { grid-area: marker; border-left: 2px solid var(--reader-rail); padding-left: 8px; max-width: 120px; }
+.reader-page .reader-symbol { color: var(--reader-accent); font-size: 16px; line-height: 1.35; font-weight: 700; overflow-wrap: anywhere; }
+.reader-page .reader-source-badge { display: inline-flex; align-items: center; justify-content: center; border: 1px solid var(--reader-rail); border-radius: 3px; padding: 1px 3px; min-width: 25px; color: var(--reader-accent); background: transparent; font-size: 9px; font-weight: 650; line-height: 1.5; letter-spacing: .03em; }
+.reader-page .reader-heading { grid-area: heading; min-width: 0; line-height: 1.35; }
+.reader-page .reader-title { display: inline; color: var(--reader-ink); margin: 0; padding: 0; border: 0; font-size: 16px; font-weight: 650; letter-spacing: -.015em; line-height: 1.35; overflow-wrap: anywhere; }
+.reader-page .reader-facts { grid-area: facts; display: flex; flex-wrap: wrap; align-items: baseline; gap: 3px 14px; min-width: 0; }
+.reader-page .reader-facts:empty { display: none; }
+.reader-page .reader-metadata { display: inline; margin: 0; padding: 0; font-size: 13px; line-height: 1.4; color: var(--reader-muted); font-weight: 650; white-space: normal; overflow: visible; }
+.reader-page .reader-heading .reader-metadata { margin-left: 10px; }
+.reader-page .reader-metadata span { color: inherit; font-size: inherit; font-weight: inherit; }
+.reader-page .reader-metadata .yt-sep { margin: 0 4px; }
+.reader-page .reader-market { display: inline-flex; flex-wrap: wrap; justify-content: flex-start; justify-self: start; width: auto; gap: 5px; margin: 0; font-size: 11px; line-height: 1.4; color: var(--reader-muted); white-space: normal; font-variant-numeric: tabular-nums; }
+.reader-page .reader-market .market-sep { color: #b3b3b3; }
+.reader-page .reader-market .market-price, .reader-page .reader-market .market-cap { color: var(--reader-muted); }
+.reader-page .reader-market .market-up { color: #28734a; }
+.reader-page .reader-market .market-down { color: #a34d3d; }
+.reader-page .reader-market strong { color: inherit; font-weight: 650; }
+.reader-page .reader-page-navigation { grid-area: pages; display: flex; align-items: baseline; justify-content: flex-end; gap: 6px; white-space: nowrap; }
+.reader-page .reader-page-link { display: inline-flex; align-items: center; justify-content: center; border: 0; background: transparent; color: var(--reader-accent); border-radius: 3px; padding: 4px 6px; font: 600 11px/1.4 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; text-decoration: none; cursor: pointer; }
+.reader-page .reader-page-link:hover { background: var(--reader-tint); }
+.reader-page .reader-page-link:disabled { opacity: .35; cursor: default; background: transparent; }
+.reader-page .reader-page-position { color: var(--reader-muted); font-size: 10px; font-variant-numeric: tabular-nums; }
+.reader-page .reader-layout { display: grid; grid-template-columns: var(--reader-sidebar) minmax(0, var(--reader-measure)); gap: var(--reader-column-gap); max-width: var(--reader-shell); margin: auto; padding: 20px 28px 48px; align-items: start; }
+.reader-page .reader-layout.reader-without-contents > .reader-article { grid-column: 2; }
+.reader-page .reader-contents { position: sticky; top: calc(var(--reader-header-height) + 22px); min-width: 0; max-height: calc(100vh - var(--reader-header-height) - 44px); overflow: auto; padding: 1px 12px 12px 0; scrollbar-width: thin; }
+.reader-page .reader-contents-label { color: var(--reader-muted); font-size: 9px; font-weight: 700; letter-spacing: .13em; text-transform: uppercase; margin-bottom: 11px; }
+.reader-page .reader-contents a { display: block; padding: 6px 0 6px 11px; border-left: 1px solid var(--reader-line); color: var(--reader-muted); font-size: 11px; line-height: 1.4; text-decoration: none; }
+.reader-page .reader-contents a.reader-subsection { font-size: 10px; padding-left: 20px; }
+.reader-page .reader-contents a:hover { color: var(--reader-accent); background: var(--reader-tint); }
+.reader-page .reader-contents a[aria-current] { color: var(--reader-accent); border-left: 2px solid var(--reader-rail); padding-left: 10px; font-weight: 650; }
+.reader-page .reader-contents a.reader-subsection[aria-current] { padding-left: 19px; }
+body.reader-page .reader-article { width: 100%; min-width: 0; max-width: var(--reader-measure); margin: 0; padding: 0; font-size: 13px; line-height: 1.58; }
+.reader-page .reader-article .yt-body { line-height: inherit; }
+.reader-page .reader-article :is(h2, h3, [id]) { scroll-margin-top: calc(var(--reader-header-height) + 24px); }
+.reader-page .reader-article h2 { color: var(--reader-ink); font-size: 18px; line-height: 1.3; letter-spacing: -.02em; font-weight: 650; border: 0; border-bottom: 1px solid var(--reader-rail); padding: 0 0 8px; margin: 27px 0 15px; background: transparent; }
+.reader-page .reader-article > h2:first-child, .reader-page .reader-article > section:first-child > h2:first-child { margin-top: 0; }
+.reader-page .reader-article h3 { color: var(--reader-accent); font-size: 14px; font-weight: 650; line-height: 1.5; margin: 20px 0 8px; padding: 0; }
+.reader-page .reader-article h3.reader-section-heading { border-bottom: 1px solid var(--reader-rail); padding-bottom: 8px; }
+.reader-page .reader-article > h3.reader-section-heading:first-child, .reader-page .reader-article > section:first-child > h3.reader-section-heading:first-child { margin-top: 0; }
+.reader-page .reader-article h3 .role { font-size: 12px; font-weight: 400; color: var(--reader-muted); }
+.reader-page .reader-article h3.chapter { display: flex; justify-content: space-between; gap: 16px; border-bottom: 1px solid var(--reader-line); padding-bottom: 8px; }
+.reader-page .reader-article h3.chapter a { font-size: 11px; font-weight: 400; white-space: nowrap; }
+.reader-page .reader-article p { margin: 8px 0 11px; }
+.reader-page .reader-article ul, .reader-page .reader-article ol { margin: 8px 0 12px; padding-left: 20px; }
+.reader-page .reader-article li { margin: 0 0 5px; }
+.reader-page .reader-article strong { color: var(--reader-ink); font-weight: 650; }
+.reader-page .reader-article :is(.insight, .quote, blockquote) { color: var(--reader-ink); }
+.reader-page .reader-table-wrap { max-width: 100%; overflow-x: auto; margin: 10px 0 14px; border: 0; border-radius: 0; background: transparent; }
+.reader-page .reader-article table { width: 100%; border-collapse: collapse; border: 0; margin: 0; font-size: 12.5px; line-height: 1.5; }
+.reader-page .reader-article thead, .reader-page .reader-article th { background: transparent; color: var(--reader-accent); }
+.reader-page .reader-article th { border: 0; border-top: 1px solid var(--reader-line); border-bottom: 1px solid var(--reader-rail); padding: 8px 9px; text-align: left; text-transform: uppercase; letter-spacing: .06em; font-size: 10px; font-weight: 700; }
+.reader-page .reader-article td { border: 0; border-bottom: 1px solid var(--reader-line); padding: 6px 9px; vertical-align: top; }
+.reader-page .reader-article tbody tr:nth-child(odd) { background: transparent; }
+.reader-page .reader-article tbody tr:nth-child(even) { background: var(--reader-table-stripe, #f7f7f7); }
+.reader-page .reader-article tbody tr:hover { background: var(--reader-tint); }
+.reader-page .reader-article .key-insight { border: 0; border-left: 2px solid var(--reader-rail); border-radius: 0; background: var(--reader-tint); color: var(--reader-ink); padding: 9px 13px; margin: 14px 0 20px; font-size: 12.5px; line-height: 1.55; }
+.reader-page .reader-article .qa-block { margin: 0 0 22px; }
+.reader-page .reader-article .question, .reader-page .reader-article .yt-body p.q { border: 0; border-left: 2px solid var(--reader-rail); border-radius: 0; background: var(--reader-tint); color: var(--reader-ink); padding: 9px 13px; margin: 12px 0 9px; font-size: 13px; font-weight: 650; font-style: normal; line-height: 1.55; }
+.reader-page .reader-article .yt-body p.q { font-weight: 400; font-style: italic; }
+.reader-page .reader-article :is(.question, .yt-body p.q) :is(strong, b) { font-weight: inherit; }
+.reader-page .reader-article .question .analyst { display: block; color: var(--reader-accent); text-transform: none; letter-spacing: 0; font-size: 11px; font-weight: 650; font-style: normal; margin-bottom: 4px; }
+.reader-page .reader-article .question .analyst :is(strong, b) { font-weight: inherit; }
+.reader-page .reader-article .yt-body p.q::before { color: var(--reader-accent); border-color: var(--reader-rail); font-style: normal; }
+.reader-page .reader-article .yt-body p.q a { color: var(--reader-accent); font-style: normal; }
+.reader-page .reader-article .answer { padding: 0; }
+.reader-page .reader-article details { border: 0; border-top: 1px solid var(--reader-line); border-radius: 0; background: transparent; padding: 12px 0; margin-top: 24px; }
+.reader-page .reader-article summary { cursor: pointer; color: var(--reader-accent); }
+.reader-page .reader-article summary h2 { display: inline; border: 0; margin: 0; font-size: 15px; }
+.reader-page .reader-article hr { border: 0; border-top: 1px solid var(--reader-line); margin: 22px 0; }
+.reader-highlight { background: #f8df82; color: inherit; font: inherit; padding: 0; border-radius: 1px; cursor: pointer; box-decoration-break: clone; -webkit-box-decoration-break: clone; }
+.reader-highlight:focus-visible { outline: 2px solid #444444; outline-offset: 2px; }
+.reader-highlight-toolbar { position: fixed; z-index: 1100; display: flex; border: 1px solid #cccccc; border-radius: 5px; background: #ffffff; box-shadow: 0 3px 14px #22222226; padding: 3px; }
+.reader-highlight-toolbar[hidden] { display: none; }
+.reader-highlight-toolbar button { border: 0; border-radius: 3px; padding: 6px 10px; font: 600 12px/1.4 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; color: #444444; background: transparent; cursor: pointer; white-space: nowrap; }
+.reader-highlight-toolbar button:hover, .reader-highlight-toolbar button:focus-visible { background: #f0f0f0; }
+.reader-highlight-toolbar button:disabled { opacity: .6; cursor: wait; }
+.reader-highlight-notice { position: fixed; z-index: 1101; bottom: 18px; left: 50%; transform: translateX(-50%); max-width: calc(100vw - 32px); padding: 7px 12px; border: 1px solid #d4d4d4; border-radius: 4px; background: #ffffff; color: #444444; font: 12px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; box-shadow: 0 3px 14px #22222214; }
+.reader-highlight-notice:empty { display: none; }
+.reader-highlight-notice.is-error { color: #98453d; }
+@media print { .reader-highlight-toolbar, .reader-highlight-notice { display: none !important; } .reader-highlight { print-color-adjust: exact; -webkit-print-color-adjust: exact; } }
+@media (max-width: 840px) {
+  .reader-page .reader-masthead-inner { grid-template-columns: 82px minmax(0, 1fr) max-content; column-gap: 12px; max-width: 700px; margin: auto; padding: 8px 20px; }
+  .reader-page .reader-layout { display: block; max-width: 700px; padding: 18px 20px 40px; }
+  .reader-page .reader-contents { position: static; max-height: none; display: flex; gap: 6px; overflow-x: auto; padding: 0 0 13px; margin-bottom: 18px; border-bottom: 1px solid var(--reader-line); }
+  .reader-page .reader-contents-label { display: none; }
+  .reader-page .reader-contents a, .reader-page .reader-contents a.reader-subsection { flex: none; max-width: 230px; padding: 4px 8px; border: 0; border-radius: 3px; }
+  .reader-page .reader-contents a[aria-current], .reader-page .reader-contents a.reader-subsection[aria-current] { padding: 4px 8px; background: var(--reader-tint); border: 0; }
+}
+@media (max-width: 720px) {
+  .reader-page .reader-brand { font-size: 9px; }
+}
+@media (max-width: 560px) {
+  body.reader-page .reader-masthead { position: relative; }
+  .reader-page .reader-masthead-inner {
+    grid-template-columns: minmax(48px, max-content) minmax(0, 1fr);
+    grid-template-areas: "marker heading" "facts facts" ". tools" "brand pages";
+    gap: 4px 10px; padding: 8px 16px 10px;
+  }
+  .reader-page .reader-symbol, .reader-page .reader-title { font-size: 15px; }
+  .reader-page .reader-layout { padding: 16px 16px 32px; }
+  .reader-page .reader-article :is(h2, h3, [id]) { scroll-margin-top: 16px; }
+  .reader-page .reader-article table { min-width: 480px; }
+}
+@media print {
+  body.reader-page .reader-masthead { position: static; }
+  .reader-page .reader-tools, .reader-page .reader-contents, .reader-page .reader-page-navigation { display: none; }
+  .reader-page .reader-layout { display: block; padding: 20px 0; }
+  .reader-page .reader-masthead-inner { max-width: var(--reader-shell); margin: auto; padding: 0 0 18px; }
+  .reader-page .reader-table-wrap { overflow: visible; }
+  .reader-page .reader-article table { min-width: 0; }
+  .reader-page .reader-article tr, .reader-page .reader-article .key-insight { break-inside: avoid; }
+}
+
+</style>
+</head>
+<body>
+  <header>
+    <div class="header-inner yt">
+      <div class="header-title yt">
+        <a class="yt-header-thumb" href="https://www.youtube.com/watch?v=XfdIhd1g6EI" target="_blank"><img src="https://i.ytimg.com/vi/XfdIhd1g6EI/maxresdefault.jpg" alt=""></a>
+        <div class="yt-header-text">
+          <strong>Muse Wonder: Zuckerberg and Wang&#39;s $100B AI</strong>
+          <div class="yt-header-sub">
+            <span class="yt-channel">Cheeky Pint</span>
+            <span class="yt-sep">&middot;</span>
+            <span class="yt-date">Oct 12, 2026</span>
+            <span class="yt-sep">&middot;</span>
+            <span class="yt-dur">2h 14m</span>
+          </div>
+        </div>
+      </div>
+      <div class="yt-header-actions">
+        <button id="yt-bookmark-btn"
+                class="yt-bookmark-btn"
+                title="Bookmark"
+                aria-label="Bookmark"
+                data-filename="yt-2026-10-13-muse-wonder-zuckerberg-and-wang-s-100b-ai.html"
+                data-title="Muse Wonder: Zuckerberg and Wang&#39;s $100B AI"
+                data-url="https://www.youtube.com/watch?v=XfdIhd1g6EI"
+                data-date="2026-10-12T14:10:10-07:00"
+                data-channel="Cheeky Pint"
+                onclick="toggleYtBookmark(this)">&#9734;</button>
+        <button id="yt-share-btn"
+                class="yt-share-btn"
+                title="Share"
+                aria-label="Share"
+                data-filename="yt-2026-10-13-muse-wonder-zuckerberg-and-wang-s-100b-ai.html"
+                onclick="shareYtPage(this)">&#8599;</button>
+        <a class="header-link" href="https://www.youtube.com/watch?v=XfdIhd1g6EI" target="_blank" title="Watch on YouTube" aria-label="Watch on YouTube">YT</a>
+      </div>
+    </div>
+  </header>
+  <main>
+    <div class="yt-body">
+    <p data-t="0">At the end of last year, we're like, “All right, we haven't seen the models yet. We're going to write this check for, I don't know, $100 billion, $200 billion.” I'm like, “Alex, are you sure this is going to work?”</p>
+<p data-t="15">Cheers. Cheers. Yeah. Cheers. Cheers. Cheers.</p>
+<p class="q" data-t="24">So, give me the update on Muse.<a href="https://www.youtube.com/watch?v=XfdIhd1g6EI&t=24s">&#x21AA; 00:24</a></p>
+<p data-t="27">If you were looking at the third-party reports, you would see that this might be the fastest-growing agent or AI app that I think has existed yet.</p>
+<p class="q" data-t="41">What are your guys' personal favorite Muse use cases, either yours or other people's?<a href="https://www.youtube.com/watch?v=XfdIhd1g6EI&t=41s">&#x21AA; 00:41</a></p>
+<p data-t="41">I was actually talking about this at dinner yesterday. My favorite thing is I have my Muse, whose name is Oiler, constantly source increasingly obscure teas from increasingly obscure vendors of tea. So at this point, on a weekly basis, my Muse is buying some random tea from some farm in Taiwan or some farm in Japan and sourcing it over and bringing it back.</p>
+<p class="q" data-t="76">What's your favorite Muse use case?<a href="https://www.youtube.com/watch?v=XfdIhd1g6EI&t=76s">&#x21AA; 01:16</a></p>
+<p data-t="76">I don't know. I use it for a ton of stuff. My favorite both use case and probably eval for the product is having it coach me in MMA. So I put cameras in my gym, and it watches the cameras when I'm in there, and it gives me feedback in between the rounds.</p>
+<p data-t="95">Which is a very hard problem, it turns out, because it basically has to process all the video quickly enough, because you only get one minute in between the rounds.</p>
+<p class="q" data-t="112">Oh, it coaches you between the rounds?<a href="https://www.youtube.com/watch?v=XfdIhd1g6EI&t=112s">&#x21AA; 01:52</a></p>
+<p data-t="112">Yeah. I want feedback. I want feedback on how to win. It's like, come on.</p>
+<p class="q" data-t="112">Did you have to instruct it? I've wondered about this too, because looking at videos is a really good AI use case. It feels like you can't just give it a multi-gigabyte video file. So do you tell it how to slice stills out of it?<a href="https://www.youtube.com/watch?v=XfdIhd1g6EI&t=112s">&#x21AA; 01:52</a></p>
+<p data-t="127">No, it pulls stills. I think it figured that out by itself. It turns out that Muse has pretty good native understanding of MMA, so that's good.</p>
+<p data-t="142">So the multimodal—</p>
+<p data-t="142">The pre-training. Yeah, someone on the team knew.</p>
+<p data-t="150">Just out there in the corpus. I think it's a good test of the coding ability, because really, basically what it's doing, within the agent, I'm not seeing any code, but it basically is writing this whole video-processing, image-processing pipeline.</p>
+<p data-t="168">Yes. And I'm constantly telling it, “All right, look, you took 30 seconds to give me that feedback. I only have a 60-second break. You gotta go faster. Just optimize yourself, optimize yourself.” And it's, I think, a good example of how stuff is going to go in the future, where basically everyone is actually going to be writing tons of code. They're just not going to know that they're writing code.</p>
+<p class="q" data-t="186">What kind of MMA steers does a model give you?<a href="https://www.youtube.com/watch?v=XfdIhd1g6EI&t=186s">&#x21AA; 03:06</a></p>
+<p data-t="186">You want to see?</p>
+<p data-t="186">Yeah.</p>
+<p data-t="195">Let me see if I can pull some stuff out. But basically, it gives me a lot of stuff about balance and hip position. Or it's like, when you're in side control here, “You didn't get this underhook in this place, so you're vulnerable to getting rolled over here.” I'll pull up some stuff. You guys should try this.</p>
+<p data-t="215">It was definitely one of his first use cases, actually, of even the initial prototypes.</p>
+<p data-t="215">Yeah. I did this with OpenClaw before we even had Muse working. That's why I was saying it's become an eval for this too.</p>
+<p data-t="223">It's good. I actually didn't know that it was an eval for the product. So noted.</p>
+<p data-t="232">Yeah, there you go.</p>
+<p class="q" data-t="232">How is all this in the model's training data? The fine-grained, this is what an MMA fighter looks like when they're appropriately balanced, and this is when they're too much on the back foot. I'm wondering, how has it consumed so many images of appropriate versus inappropriate MMA posture?<a href="https://www.youtube.com/watch?v=XfdIhd1g6EI&t=232s">&#x21AA; 03:52</a></p>
+<p data-t="250">Here you can see it. It just pulls out frames from it, and it's like, too much on my back leg there.</p>
+<p class="q" data-t="257">Yeah, but is this the emergent intelligence? Again, does it know from seeing lots of images of MMA, or does it know because it understands the concept of where you're meant to be balancing? It's read books about MMA, and then it sees that you're too much on the back foot, or—<a href="https://www.youtube.com/watch?v=XfdIhd1g6EI&t=257s">&#x21AA; 04:17</a></p>
+<p data-t="273">Well, we did train the models with a lot of visual perception data. So I think that that's making good multimodal models. This gets into, I think, a core approach thing that we have, which is we're training the models end-to-end to be good personal agents, right?</p>
+<p data-t="296">So the question is, why would Meta want to build these models? First of all, I think just superintelligence overall is going to allow us to run the company better and build all kinds of different things. But for the products that we're building, there are certain capabilities and certain mixes of skills that basically are just much more applicable to these cases.</p>
+<p data-t="317">So this is one of the things that Alex focused on from the beginning: “All right, we really want to make sure that our multimodal program is good,” because that's disproportionately important for the types of things that people use all these services for.</p>
+<p class="q" data-t="323">How do you train a good multimodal model? Is this where Meta just has an advantage because you guys have so much image and video data?<a href="https://www.youtube.com/watch?v=XfdIhd1g6EI&t=323s">&#x21AA; 05:23</a></p>
+<p data-t="332">It's very helpful. Yeah. And I think ultimately, a lot of this comes down to how you're focused on it, right? I think because of the fact that we wanted to build personal superintelligence, and fundamentally, I think most people in the world really experience the world in a highly multimodal way.</p>
+<p data-t="353">They like talking to other people and listening to things and seeing videos and filming things of their own. I think most consumers have this highly multimodal experience. And especially earlier this year, there was actually a point of tension almost in the industry, because I think so much of the consensus view within the AI industry was that it was just all about coding, and coding was all that mattered.</p>
+<p data-t="379">And I think that for the success of a product like Muse and the success of a lot of these consumer use cases, it really depends on the ability to be strong in multimodal.</p>
+<p data-t="390">Yeah. I think we're just scratching the surface of that. A lot of the initial theory that we had was that most people don't actually like reading that much, right? So even the text-based interaction model, I think it's something that people do. Everyone texts.</p>
+<p data-t="406">But when you think about stuff like the glasses that we're working on, or even our other products that are very visual, the glasses basically will eventually just be a pure multimodal product, right? You can let it hear what you are listening to, and it can talk to you, and it can see what you see if you let it.</p>
+<p data-t="423">And then eventually, I don't even know if we're going to have an app store on the glasses. It'll just be a multimodal generation that creates whatever you need right in your vision. And I imagine something like that will probably end up powering a lot of the apps that we build too. But yeah, we're still in the early days of that.</p>
+<p data-t="444">But for now, the perception work has been really impressive.</p>
+<p class="q" data-t="448">I want to ask you guys about the product space here in AI and try something out on you. If I was to describe to you, say, with Stripe, what I think a winning product looks like, it would take me pages and pages to talk about, because we have the developer experience, and we have to talk about all the international heterogeneity of payment methods. Then we have to talk about stablecoins. It would take me a long time.<a href="https://www.youtube.com/watch?v=XfdIhd1g6EI&t=448s">&#x21AA; 07:28</a></p>
+<p class="q" data-t="467">Whereas I notice a phenomenon in AI where it feels like the winning products collapse very quickly onto an agreed-upon product space that everyone is pursuing. And so transformers worked, and then the chat agent UI really worked. And now we are seeing—you mentioned OpenClaw earlier—the OpenClaw persistent agent, has a computer, able to do things, computer use out there in the world view. We're collapsing on that product space.<a href="https://www.youtube.com/watch?v=XfdIhd1g6EI&t=467s">&#x21AA; 07:47</a></p>
+<p class="q" data-t="495">But there's something about AI where the winning products tend to be very simple, pursued by all the companies that are taking it seriously. You could describe on the back of a postcard, you could describe very concisely. And obviously, implementing them is massively complicated. We'll get into the new model. There's huge amounts of frontier work that goes into making a good version.<a href="https://www.youtube.com/watch?v=XfdIhd1g6EI&t=495s">&#x21AA; 08:15</a></p>
+<p class="q" data-t="512">Now you're talking about the glasses or the future versions. But somehow there's a very small number of clearly correct products in AI, as opposed to it being this very broad and complicated product space.<a href="https://www.youtube.com/watch?v=XfdIhd1g6EI&t=512s">&#x21AA; 08:32</a></p>
+<p data-t="534">I kind of disagree.</p>
+<p data-t="534">Sure.</p>
+<p data-t="537">Well, first of all, I think part of the theory from the beginning was that this kind of agent, or whatever form it took, was going to be quite a different thing from this text-based assistant, right? Every company has one of those. Ours is Meta AI. It reaches a ton of people, but it's the same thing that all these companies have.</p>
+<p data-t="556">And we, I think, specifically think that that is used for very informational purposes, but people don't think about it as a thing that gets stuff done for them.</p>
+<p data-t="566">It's retrieval, not delegation or something.</p>
+<p data-t="566">Yeah, and even when you say it has a computer, there's lots of different ways to do that, right? I think that it's only this most recent wave that gives the agent a dedicated VM, which I think is actually incredibly important for making you feel confident that the security and privacy of your information is—it's not connecting to some elastic compute that just everyone uses.</p>
+<p class="q" data-t="597">But my claim isn't that it's easy to implement, nor that it's obvious—<a href="https://www.youtube.com/watch?v=XfdIhd1g6EI&t=597s">&#x21AA; 09:57</a></p>
+<p data-t="597">I think there are going to be a lot of things.</p>
+<p class="q" data-t="597">Yeah. Okay. You think there's going to be a lot of different things? Because again, my claim is that now that people see Muse, everyone looks at that and says, “Oh yeah, that's clearly how you want the AI agent product to work,” and that the future AI agent products that we'll see will be fairly Muse-shaped.<a href="https://www.youtube.com/watch?v=XfdIhd1g6EI&t=597s">&#x21AA; 09:57</a></p>
+<p data-t="619">My take on this is, I think we're just so early in the realm of what AI products will look like that I think a lot of the interesting differentiation about the products gets collapsed in how we view the products today. I think the traditional way in which we wrote down and think about product specs, those aren't the relevant dimensions and levers and axes to consider the important design decisions on AI-native products.</p>
+<p data-t="647">And so Muse, for example, I think so much attention was put in the design of the model for the product. And there were a lot of very intentional decisions around, in all these situations, how exactly should the model behave? And what's the exact personality of the model in these situations? And how should it handle these sorts of tool-use scenarios? And these are very intentional decisions.</p>
+<p data-t="668">And probably in the same way, the full spec of how we wanted the model to behave in all these scenarios would be an extremely long document. But because of just how we think about products today, it's just AI. It's kind of like how when mobile first started happening, it was like, “Oh, it's just an app, and everything is just an app.” Well, it turns out there's a lot of nuance in what exactly an app is.</p>
+<p data-t="693">And we're in this phase where, oh, it's just AI, or it's just an agent, or it's just an agent with a VM or something like that. But the interesting differentiations we have to tease out.</p>
+<p class="q" data-t="699">Okay. So you guys think I'm making the classic mistake, which is, my domain is complex, and this domain is, again, from a product point of view, it's simple.<a href="https://www.youtube.com/watch?v=XfdIhd1g6EI&t=699s">&#x21AA; 11:39</a></p>
+<p data-t="704">All payment processors seem the same.</p>
+<p data-t="704">Yeah, no, I really agree with what you're saying. One thing that we talked about from early on is that basically there is this pattern where I think the products are getting thinner, and the model is getting to be more of the product, right? So one of the things that we say internally is, “The model is the product.”</p>
+<p data-t="726">And when you're talking about an agent, a lot of the complex product work that went into Muse is basically around the privacy and security model for handling your data and the things that get connected to it. And that, I think, is something that we're just very proud of, that we really focused on. But that's a lot of the product surface that we need to innovate on.</p>
+<p data-t="742">But the capabilities, the personality, a lot of the stuff is you're training into the model. And whether they're the people in the lab who are working on that or the people on Nat's team who are working on the product, I think when Nat is thinking about what is the key stuff that we need to make the product feel good, he's talking about post-training the model, right?</p>
+<p data-t="763">Of course the UI of the product matters too, but the most important part of the UI is the product.</p>
+<p data-t="763">Yeah, exactly. There's still very viscerally, I think from a user, a feeling of using Muse over time. And maybe some meaningful portion of that is just the reliability of Muse to handle certain tasks. But then another meaningful portion is, how is it proactive? And in what context is it proactive? And when it talks to you, how do you feel about how it talks to you?</p>
+<p data-t="794">And I'm starting to see more and more of this actually show up on the X feed, which is people are starting to tease out these: they're all proactive agents, but what are the actual meaningful differences between them? And these, I think, are the interesting product decisions. The funny thing is, how do you specify these product decisions?</p>
+<p data-t="812">Well, it's ultimately in model design decisions, which ultimately boil down to training methods or data or evals or all these things.</p>
+<p class="q" data-t="821">As we talk about product space, one notable Muse detail is that there is no model selector and no effort selector. Do you guys think that's just obviously correct in a consumer AI product, or—<a href="https://www.youtube.com/watch?v=XfdIhd1g6EI&t=821s">&#x21AA; 13:41</a></p>
+<p data-t="829">I just want to make it simple.</p>
+<p data-t="829">Yeah. I think somewhat infamously, a lot of the AI products have been designed by a highly technical group that do not have the randomly sampled American in their mental model. The naming of some of the models is so egregious.</p>
+<p class="q" data-t="851">The numbers go backwards?<a href="https://www.youtube.com/watch?v=XfdIhd1g6EI&t=851s">&#x21AA; 14:11</a></p>
+<p data-t="859">Some of the times the numbers go backwards, and sometimes it's just a totally different word, and you have another set of words. How is somebody who's not carefully reading API design specs supposed to know what they're supposed to pick? It's just far too confusing.</p>
+<p class="q" data-t="875">Okay, we're talking about models a lot. Tell me about the new model. It sounds awesome.<a href="https://www.youtube.com/watch?v=XfdIhd1g6EI&t=875s">&#x21AA; 14:35</a></p>
+<p data-t="875">Yeah, I think we're quite proud of this. The new model, Muse Wonder, it's a new class of model that is at the frontier. So we've basically been working on this since the beginning. When you're doing these pre-trains, you don't just go to whatever the biggest cluster is that you have. You want to work your way up the ladder, training models that are maybe four or five times bigger, and then you just keep on repeating that process.</p>
+<p data-t="905">So the first set of models that we've had, Muse Spark, was all based on this initial pre-training that we did in, what was it, December?</p>
+<p data-t="914">Yeah, the end of last year.</p>
+<p data-t="914">Yeah. I think we've all just been quite surprised and impressed with how much intelligence and capability the team has been able to build into a model which is frankly not that big, right? And then after that, we were working on this next model, and the pre-training has been done for a bit, and we've been working on the post-training, and now it is here.</p>
+<p data-t="940">So it's the next class of model. It is significantly bigger. So I think you will feel that in terms of the nuance in which it can think. A lot of the areas that we focused on were making it the best personal and professional agentic model. Of the different things that you can optimize for, that's it for us.</p>
+<p data-t="957">And then a lot of the basic capabilities that we focused on building in: very good memory, very good ability to persist through complicated tasks. But a ton of work went into this across the lab and the product teams and all of this. And I think it's also just a testament to the team being able to methodically figure out the process to scale these models.</p>
+<p data-t="984">So I think this is also just a milestone on the way towards—the time between each subsequently bigger class of models, I think, will now start to compress. And that's very exciting for the type of stuff that we can build.</p>
+<p class="q" data-t="1000">At Meta or in the industry generally?<a href="https://www.youtube.com/watch?v=XfdIhd1g6EI&t=1000s">&#x21AA; 16:40</a></p>
+<p data-t="1000">At Meta. I think you're seeing something like this everywhere else, but—</p>
+<p class="q" data-t="1003">Is this an RSI effect or something else?<a href="https://www.youtube.com/watch?v=XfdIhd1g6EI&t=1003s">&#x21AA; 16:43</a></p>
+<p data-t="1003">Well, I think at Meta, part of this is just, quite famously, we were not happy with the trajectory that we were on with Llama 4. We rebuilt the whole team. That's been this crazy thing over the last year and a half that we should probably spend a bunch of time on.</p>
+<p data-t="1019">Oh, we'll get to that. Yeah, some war stories.</p>
+<p data-t="1026">But the team basically had to go build up different tiers of models to get to this one. And now that we are at the frontier, now everything that we do going forward will just be pushing the frontier, as opposed to there's a lot of background work that we needed to do before that. I don't know, what would you say?</p>
+<p data-t="1045">Yeah. Well, I think we're really excited about it. We will have two models in this series that are going to be available. So there's Muse Wonder and Muse Wonder Full. Laugh? Yeah, all right, there you go.</p>
+<p data-t="1061">Yeah, very good.</p>
+<p data-t="1061">Which is basically a much higher—</p>
+<p data-t="1061">Studio band version.</p>
+<p data-t="1061">Yeah, no, a much higher-end model. It's the full version of Muse Wonder.</p>
+<p data-t="1069">I know, I got it.</p>
+<p data-t="1069">Yeah, it's two words. Wonder Full version.</p>
+<p data-t="1069">You're clearly a father.</p>
+<p data-t="1077">What's up?</p>
+<p data-t="1077">This is an excellent dad joke.</p>
+<p data-t="1077">Yeah, there you go. And the performance, we've seen incredible performance across a slate of evaluations on personal, professional agent tasks. It's state-of-the-art based on our measurement. And then there's a number of, I think, specific highlights which we're really excited about, which we've designed into the model over time.</p>
+<p data-t="1097">So active memory, like Mark mentioned, is one area where we think that to build personal, professional agents, memory is just one of the clear requirements to build reliable agents and is one of the areas where we've invested, I think, disproportionately actually compared to many of the other efforts. And we have our own internal evals of Memory Bench, which demonstrate a lot of the capabilities there.</p>
+<p class="q" data-t="1117">What does memory mean in a model to a layperson? Is it just how much stuff it can—like the working memory of, if you're working on a task, how much stuff the model can keep in its—<a href="https://www.youtube.com/watch?v=XfdIhd1g6EI&t=1117s">&#x21AA; 18:37</a></p>
+<p data-t="1127">Yeah.</p>
+<p class="q" data-t="1127">How's it different from context?<a href="https://www.youtube.com/watch?v=XfdIhd1g6EI&t=1127s">&#x21AA; 18:47</a></p>
+<p data-t="1134">I think it's in the experience of using the model. How well does it remember things that you mentioned to it over days, weeks, or months, and then leverage those in the process of doing future tasks?</p>
+<p data-t="1145">I see. This is the stuff that's buggy AF in OpenClaw. I think we're all extremely fond of OpenClaw. Very happy OpenClaw user, but it ultimately does this compaction where it has the long-term memory and the working short-term memory or whatever. And I think once people use OpenClaw for a while, they find the memory pretty buggy.</p>
+<p data-t="1162">Yeah. So we've designed basically both the model and a system for the model to use to develop a much stronger form of memory. We call it active memory.</p>
+<p data-t="1171">Yeah. In addition, as Mark mentioned on the persistence—</p>
+<p class="q" data-t="1172">But so this is outside the model? The model exists and it's—<a href="https://www.youtube.com/watch?v=XfdIhd1g6EI&t=1172s">&#x21AA; 19:32</a></p>
+<p data-t="1172">No, but some of the capabilities that you're talking about, like the compaction, are things that the model does, right? So basically being able to do this well—</p>
+<p class="q" data-t="1183">It's not a harness, it's in the model itself?<a href="https://www.youtube.com/watch?v=XfdIhd1g6EI&t=1183s">&#x21AA; 19:43</a></p>
+<p data-t="1183">Yes, it's in the model itself. Exactly, yeah. So it's aware of its memory as a core system. And it's about how it's able to leverage various sources to be able to conduct tasks in the future, as well as understand its ability to do compaction, how it should do that compaction most effectively, et cetera.</p>
+<p data-t="1207">Okay. But this is a big deal, because I think a lot of people's early experience of AI agents has been buggy memory. And so improving that is—</p>
+<p data-t="1213">And to be clear, there's still plenty of room to improve. Our evaluations show this, but this is something that we're quite proud of, and we think this is a meaningful contribution.</p>
+<p class="q" data-t="1217">Okay. So active memory is one thing.<a href="https://www.youtube.com/watch?v=XfdIhd1g6EI&t=1217s">&#x21AA; 20:17</a></p>
+<p data-t="1217">Yeah, active memory. Active focus is another, which is effectively just the ability for the model, when conducting tasks, to be able to carry them through. Especially as we've seen Muse users, as well as Muse Code users, give higher and higher complexity and more and more ambiguous and more and more complex tasks, we want the model to be able to conduct those and do those very effectively.</p>
+<p data-t="1245">And this is one of the things actually in early dogfooding and testing that a lot of people have noticed about the model that is special and stands out with respect to other models that they've tried or used. The third one is domain expertise.</p>
+<p class="q" data-t="1257">What is focus in AI terms? Is it putting a lot of compute on the task? Is it not getting distracted with other—<a href="https://www.youtube.com/watch?v=XfdIhd1g6EI&t=1257s">&#x21AA; 20:57</a></p>
+<p data-t="1264">Kind of persistence.</p>
+<p data-t="1264">Yeah, persistence. It's basically the ability to conduct complete tasks over very long horizons. And then when faced with various setbacks along the way, the ability to identify other solutions to those problems in an aligned way.</p>
+<p data-t="1284">Okay. Then there's—it's actually a big step up in coding capabilities, so frontier coding capabilities. It is actually state-of-the-art on DeepSWE and SWE-Marathon and does very well on other benchmarks like Terminal-Bench 4 and many others. So we think that users who use it for coding, which will be a minority of all of our users, but the ones who do will see a big improvement and a big step up.</p>
+<p class="q" data-t="1311">Okay, so we should also just be using Muse Wonder Full for coding at Stripe?<a href="https://www.youtube.com/watch?v=XfdIhd1g6EI&t=1311s">&#x21AA; 21:51</a></p>
+<p data-t="1311">Potentially, yeah. Let's go out there and—</p>
+<p data-t="1317">But if it's state-of-the-art on SWE-bench, yeah, we'd be missing out.</p>
+<p data-t="1317">Yeah, no, it's a big improvement on coding. Obviously, we want people to try it and see how they experience it, but we've been very pleased in our own internal testing.</p>
+<p data-t="1332">Yeah, I think people will like it for a lot of things.</p>
+<p class="q" data-t="1334">Okay, so this is both just your latest frontier model—developers can come directly to you, they can use it on OpenRouter, they can just consume it as a model—and it's also a big upgrade inside of Muse that people will just feel as active users of Muse.<a href="https://www.youtube.com/watch?v=XfdIhd1g6EI&t=1334s">&#x21AA; 22:14</a></p>
+<p data-t="1353">Yeah. Well, what we're going to do in Muse, because it's a lot bigger and it's more expensive to serve, we're going to start off primarily in paid subscriptions. So what we want to do with Muse as a product, we want it to be free for everyone to use. So we have this huge amount of free tokens that people can use with Muse Spark as the model.</p>
+<p data-t="1373">But if you want to use Wonder for most of the hard tasks, then at least for now, you'll use the paid version. But eventually, you know how quickly the field moves. And we hope to, at some point not too far from now, have a model that is as good as Wonder, but in the Spark form factor. And that will be a great thing to be able to serve hundreds of millions of people around the world.</p>
+<p class="q" data-t="1398">Okay, so you go to Muse, you subscribe to the—what's it called—the premium or pro plan, or—<a href="https://www.youtube.com/watch?v=XfdIhd1g6EI&t=1398s">&#x21AA; 23:18</a></p>
+<p data-t="1398">Pay money.</p>
+<p data-t="1398">Yeah. And just don't stop until you've taken out your credit card.</p>
+<p class="q" data-t="1406">Yeah. And then you'll be able to—you'll select it, or it'll just magically—<a href="https://www.youtube.com/watch?v=XfdIhd1g6EI&t=1406s">&#x21AA; 23:26</a></p>
+<p data-t="1406">Oh, it just gets better. It just gets better for you. Yeah.</p>
+<p data-t="1412">And then it'll also be available via API, on the Meta Model API and OpenRouter. And then it'll also be available for Muse Code users. And then Muse Wonder Full will be available to subscribers of Muse Code.</p>
+<p data-t="1431">So it's pretty exciting. As Mark mentioned, it is a much larger model. And so we're working through how to serve that most effectively to as many people as possible. But we're excited to get it in the hands of as many people as possible. It's a big step forward.</p>
+<p data-t="1445">With Muse Spark, we were very happy with the performance that we were able to deliver as we were getting up to this point. But this is the beginning of MSL being at the frontier. We feel like the models are quite competitive with the best models that are out there.</p>
+<p class="q" data-t="1458">Okay, so you think it's Astra, Fable, and Wonder altogether at the frontier?<a href="https://www.youtube.com/watch?v=XfdIhd1g6EI&t=1458s">&#x21AA; 24:18</a></p>
+<p data-t="1471">You can look at it empirically by the benchmarks. Empirically by the benchmarks, one would conclude that.</p>
+<p data-t="1471">Yes. I see. Yes.</p>
+<p data-t="1477">And I think actually one of the things that we're especially proud of is we have taken the time, as we've mentioned, to optimize models for the product form factor of Muse. So this is the state-of-the-art model. We think it really is the best model in the world for the use case of personal, professional agents.</p>
+<p class="q" data-t="1491">Yeah, people inside companies like complaining about Goodhart's Law: a metric that becomes a target ceases to become a good metric. You hear complaints that models are benchmaxed, and that at a certain point, overfitting to the benchmarks actually makes the models slightly worse. As people who actually have to train AI models, is that true? Are the benchmarks pretty good at grading models? Do you start to see weird edge failure cases from the—<a href="https://www.youtube.com/watch?v=XfdIhd1g6EI&t=1491s">&#x21AA; 24:51</a></p>
+<p data-t="1517">The benchmarks have to keep moving, right? Because it happens very quickly, but they just get saturated so quickly.</p>
+<p class="q" data-t="1527">But you think non-saturated benchmarks are fine?<a href="https://www.youtube.com/watch?v=XfdIhd1g6EI&t=1527s">&#x21AA; 25:27</a></p>
+<p data-t="1532">As we've gone on, we steer the models more towards our internal benchmarks for the use cases that we're focused on. So early on, when we were just doing the science of trying to climb the ladder, we cared more about what the external benchmarks were, just to make sure we were on the right track. And then I'd say each release that goes by, the larger share of what we're looking at are internal ones.</p>
+<p data-t="1558">And one of the things that we actually quantified in our research blog post as part of Muse Wonder is this metric for big model smell. Big model smell and feeling of benchmaxing are inverses of one another. This idea that you could just tell when you're using a really big model. You can tell. It just has nuance.</p>
+<p data-t="1571">It's got that je ne sais quoi.</p>
+<p data-t="1571">Yeah. And so the way we quantify that is actually almost explicitly what you're mentioning, which is the gap between in-distribution performance and out-of-distribution performance. We measure how well the model performs on tasks that are in distribution of our RL and post-training versus tasks that are out of distribution. And what does that gap look like between the Muse Spark line and the Muse Wonder line?</p>
+<p data-t="1600">And we actually see this huge step up from the Muse Spark to the Muse Wonder line because of, as Mark mentioned, it's just a much better base model powering this new line. And there's an entire je ne sais quoi to that, but I think we've been able to actually quantify this effect. And it's obviously a dimension that we're excited to continue improving on.</p>
+<p class="q" data-t="1620">But if you're saying that external benchmarks have ceased to become as important, and you care much more about your internal benchmarks, is that an argument against benchmaxing? That you think that just trying to get the top score on the external benchmarks that everyone talks about is maybe not going to lead you to develop a great model?<a href="https://www.youtube.com/watch?v=XfdIhd1g6EI&t=1620s">&#x21AA; 27:00</a></p>
+<p data-t="1637">Well, yeah, but also we're focused on specific things. Part of the whole strategy is personal superintelligence and just trying to build different types of products than other people are trying to build. So even if we did have the exact same evals as everyone else, it just—</p>
+<p class="q" data-t="1653">And though I would say a personal superintelligence is not a super niche interest. It's probably something that other models want to be able to do.<a href="https://www.youtube.com/watch?v=XfdIhd1g6EI&t=1653s">&#x21AA; 27:33</a></p>
+<p data-t="1660">I think that there are things that are very different about it. I think the personality probably matters more. One of the things that we talk about is this idea of discretion, right? So if you want to use the model to get something done, it needs to be able to know a lot about you and get things done in the world while disclosing as little as possible.</p>
+<p data-t="1681">So if you have an allergy or you're pregnant or something, you're trying to get a table at a restaurant, and you don't want to have to tell them your medical condition to make sure that it's going to be a good place for you. Okay, how do you handle that? Humans have common sense, and the models so far—if you're building a coding agent that works in an environment where everyone has access to the same context, discretion isn't particularly important.</p>
+<p data-t="1708">So there are all these things that I think are just more important for us. Aspects of coding where the code needs to work, but the consumers who are using it may not even ever see the code. That probably matters more in a personal superintelligence context rather than serving software developers. So I think these things are just a bit different.</p>
+<p data-t="1730">Yeah. Ultimately, we care about making useful models. So we want models, when you put them into people's hands, they have a great experience using. And I think that is the most important metric for any model that we or other people produce.</p>
+<p data-t="1744">I think that really focusing on the external benchmarks, if you really dig into the supply chain a little bit, it's some PhD student who made a benchmark as part of the course of them doing their PhD. And so you're outsourcing all of your product thinking to that PhD student who happened to make a viral benchmark, right? So clearly that's wrong.</p>
+<p data-t="1768">Yeah. And so that's why we care a lot. A huge part of what a lot of people at Meta and MSL are focused on is crafting amazing evals. And now that we have them, we can work on our own. But if you're ramping up your lab, those public ones are not a crazy place to start, but it's just not where you want to end up.</p>
+<p data-t="1781">At that point, you're just looking for signs of life. But then when you're really in this mode, as we are now, where we want to be very intentional about how we're improving our model over time to build better and better products, a lot of the cases that Mark just mentioned, these are actually detailed very rigorously in the spreadsheet of all the little capabilities and nuances of the product that we think really matter to the end user.</p>
+<p data-t="1813">And maybe each of them matters 2% to the user, but in aggregate, that's the obsession that will ultimately result in these models that feel magical.</p>
+<p class="q" data-t="1821">Can you guys describe for me just what goes into training a leading-edge frontier model? I'm just curious in that I think a lot of people listening to this have a rough idea where there's a pre-training and a post-training step. So pre-training is you ingest this huge amount of data. You look at a lot of pictures, and these are cats and these are dogs.<a href="https://www.youtube.com/watch?v=XfdIhd1g6EI&t=1821s">&#x21AA; 30:21</a></p>
+<p class="q" data-t="1840">And after a while you start to develop a sense for what is catness and what is dogness and what is fur and everything like that. And so that's the pre-training step where you just hoover up data, and maybe you can talk about the data acquisition and just what goes into that.<a href="https://www.youtube.com/watch?v=XfdIhd1g6EI&t=1840s">&#x21AA; 30:40</a></p>
+<p class="q" data-t="1854">And then there's this RL stage, which is the newish advance over the past few years of AI. And again, it sounds like that is where a lot of the specific nuance of this model has come in, where you guys have chosen better domains, better hills to climb for the model. But just at a high level, describe how many people, how long it takes, what the steps are, how you think about those—<a href="https://www.youtube.com/watch?v=XfdIhd1g6EI&t=1854s">&#x21AA; 30:54</a></p>
+<p data-t="1878">How much time do you have?</p>
+<p data-t="1878">Yeah, at a high level.</p>
+<p data-t="1887">This happens to be what we spend all of our time on.</p>
+<p data-t="1892">Exactly. And so summarizing—</p>
+<p data-t="1892">YouTube courses.</p>
+<p data-t="1892">Yeah, I think at a very high level, these are the stages. It's pre-training and post-training. Ironically, training is the superset of all of it.</p>
+<p class="q" data-t="1906">So how many people are on this whole effort, when you develop these models?<a href="https://www.youtube.com/watch?v=XfdIhd1g6EI&t=1906s">&#x21AA; 31:46</a></p>
+<p data-t="1910">So this, I think you're getting into what is interesting about MSL and the approach that we've taken. From the very beginning, when I first reached out to you, I think we were just looking at this because we were like, “Wow, okay, how far we've come.” And I pulled up the screenshot of when I first reached out to Alex. My first thing was, “Hey, do you have time to catch up and talk?”</p>
+<p data-t="1930">And then it's like, all right, we talked for—</p>
+<p data-t="1930">That's how they get you.</p>
+<p data-t="1930">Forty-four minutes or whatever. And then after that call, two days later, Alex sends me this long thing, which is, “Well, here's what I think I would do if I were in your position.” And the very first thing is that you don't need a lot of people, and talent density is the thing that matters.</p>
+<p data-t="1951">So I'd say from the beginning of the plan, this was the core of your strategy, right? Basically, you actually don't need a massive number of people, but what you do need is for each of the people to be as good as possible. Which informed this crazy recruiting push and very intense filtering that we had to take some of the best people from inside Meta, and a very intense process to get people from outside Meta.</p>
+<p data-t="1981">But I actually think a lot of what has made MSL special and why a lot of people have wanted to join is because I think in some ways it's just more fun to work on a talented, smaller effort. It feels like the startup that's operating. In some ways it has all the benefits of a startup with the stability and resources of a larger company.</p>
+<p data-t="2001">And this was this environment that I think was point one in your plan for what Alex was like, “This is what we need to go do.” So I don't know the answer of how big is a pre-training team. It doesn't need to be that big. But I think if you look at some of the other labs, it's probably quite big in some other places.</p>
+<p data-t="2020">So I think part of the reason why these models are doing well is because you have people who we're betting on, and they have a lot of resources because we're taking our compute, we're not peanut-buttering it across a lot of competing efforts. We're basically just investing in the key people, a lot of compute per researcher, and then they can do their work.</p>
+<p class="q" data-t="2042">Was Wonder the one big training effort? That was where most of the training was?<a href="https://www.youtube.com/watch?v=XfdIhd1g6EI&t=2042s">&#x21AA; 34:02</a></p>
+<p data-t="2042">It was the next pre-train. It was climbing up this ladder. So we have this tiering system. Internally, Avocado was the code name for the Muse Spark line, and then Watermelon was the code name for this one. And we're out of fruits now. We're out of fruits. Yeah, so we're going to have to switch to a new convention.</p>
+<p data-t="2064">But I think the only fruit that is technically larger is the durian, and you don't want to go to the durian.</p>
+<p data-t="2064">No, no, no. Yeah. No, you want to stay far away.</p>
+<p class="q" data-t="2072">A durian is bigger than a watermelon?<a href="https://www.youtube.com/watch?v=XfdIhd1g6EI&t=2072s">&#x21AA; 34:32</a></p>
+<p data-t="2072">I think it's definitely heavier.</p>
+<p data-t="2072">That's horrifying.</p>
+<p data-t="2072">Definitely heavier. Spikier.</p>
+<p data-t="2072">Spikier, yeah.</p>
+<p data-t="2079">But no, as Mark mentioned, each of the stages I'll describe, it's tens of people working on it at Meta versus hundreds at—</p>
+<p class="q" data-t="2088">So Meta is a huge company, but this is a really tiny effort inside of Meta.<a href="https://www.youtube.com/watch?v=XfdIhd1g6EI&t=2088s">&#x21AA; 34:48</a></p>
+<p data-t="2088">Yeah. Oh yeah, the research team is less than 200 people.</p>
+<p data-t="2096">Yeah, it's very small. It's intentionally very, very tight.</p>
+<p data-t="2098">It's closer to 100, right? And then there's a bunch of infra folks.</p>
+<p data-t="2098">Yeah. It's a lot of infra work. So I think at a very high level, to go back to the “What is it?” question, how does it happen?</p>
+<p class="q" data-t="2113">How does model happen? That's basically what I'm asking. Where do models come from?<a href="https://www.youtube.com/watch?v=XfdIhd1g6EI&t=2113s">&#x21AA; 35:13</a></p>
+<p data-t="2119">You take a huge amount of data for pre-training, and here you're—</p>
+<p class="q" data-t="2119">And here, roughly, it's all the public internet and all the books you can get your hands on, and just as much data as possible.<a href="https://www.youtube.com/watch?v=XfdIhd1g6EI&t=2119s">&#x21AA; 35:19</a></p>
+<p data-t="2128">But different types. Plus the proprietary, but also different modalities, right? So if you want it to be good at perception, then you want to make sure it has a lot of images and audio and video and this kind of stuff. If you want it to be good at certain domains, you don't just want to RL that in at the end. You want to have it have exposure to that from the beginning.</p>
+<p data-t="2153">Yeah. Yep. Yeah. And in this stage, you care a lot less exactly what the data looks like or how it's formatted or everything about it. But it's just lots and lots of data.</p>
+<p class="q" data-t="2165">When you talk about this being the best personal agent model, was there data you had to get for the pre-train where it's huge amounts of restaurant reservation, call booking? I don't know what it is, but—<a href="https://www.youtube.com/watch?v=XfdIhd1g6EI&t=2165s">&#x21AA; 36:05</a></p>
+<p data-t="2175">You just want to dump in large volumes of the modalities that people are going to care about. There were a bunch of things. I don't actually think we talked about this when we were talking about where Muse Wonder excels. But some of the areas that it's like, all right, what do people care about, right?</p>
+<p data-t="2191">There are things like shopping that people care about a lot, personal advice that people care about a lot. People have personal legal questions, personal health questions, personal tax questions. Muse Wonder is quite good at those. I don't know if there's any quantification that we want to give, but let's say it's—</p>
+<p data-t="2204">It's very good on those personal advice questions.</p>
+<p data-t="2211">Yeah, and so those types of things, you can RL them to some degree, but you just want to put in a large amount of data. You can imagine health is a very—there's a lot of data out there about health. And in pre-training, you just want it to see all these different things. And so you just put these different corpora in.</p>
+<p data-t="2231">Yeah. So as Mark was mentioning, one of the highlights of Muse Wonder actually is its ability on various domain expertises. And I think our philosophy here is that the best personal agent should feel like a team of experts in your corner. It should feel like it is your legal team and your finance team and your medical team, and, and, and.</p>
+<p data-t="2258">And so on a bunch of these domains, Muse Wonder is actually state-of-the-art on, I think, a lot of the finance evals, as well as a lot of the legal evals, the state-of-the-art model. And these domain areas, that starts in pre-training. We look for a lot of domain data to put into pre-training.</p>
+<p data-t="2278">But a lot of the art of pre-training—there's this one Rune tweet where it's like pre-training is full of the researchers who chew glass and stare out into the distance and into the abyss or whatnot. But I think there's a truth to that because it is both the highest stakes of the research areas, because we invested a huge percentage of our compute into pre-training Muse Wonder. And it was very high stakes.</p>
+<p data-t="2307">I think probably both of us at various points in that process—</p>
+<p data-t="2307">You went through troughs of sadness.</p>
+<p data-t="2312">Yeah, troughs of uncertainties. All the seven stages of grief happen while you're pre-training a model. And it is the most fundamentally scientific in an interesting way, because you just don't have very many samples. So your ability to infer exactly what will happen scientifically really depends on your ability to big-brain reason about everything that's happening in this process.</p>
+<p class="q" data-t="2338">Okay. So in the pre-training stage, everyone who's training frontier models basically is trying to get as much data as possible for the pre-train, with maybe a bent towards, if you want Muse Wonder to excel at legal and finance and tax questions and things like this, then you want to have as much of that specific corpus as possible in the pre-train.<a href="https://www.youtube.com/watch?v=XfdIhd1g6EI&t=2338s">&#x21AA; 38:58</a></p>
+<p data-t="2357">Yeah, you still want as much intentionality about where ultimately you want your model to be, but again, it just benefits from a lot more data. And this is the massive data, massive compute stage.</p>
+<p class="q" data-t="2369">Do you hit some saturation in the data you put in the pre-train, or ultimately is it just more data is better?<a href="https://www.youtube.com/watch?v=XfdIhd1g6EI&t=2369s">&#x21AA; 39:29</a></p>
+<p data-t="2375">Well, there's a relationship between if you want the model to be bigger, you need more data. Otherwise, it overfits.</p>
+<p class="q" data-t="2381">Yes, but my point is, is there data where it's like, we can't distract the model with that, we can't clutter up its brain attic with knowing that stuff? Or is it just more data is better?<a href="https://www.youtube.com/watch?v=XfdIhd1g6EI&t=2381s">&#x21AA; 39:41</a></p>
+<p data-t="2390">There are some of these effects, I think. Yeah, because this is part of the science.</p>
+<p data-t="2390">Okay, we're getting into the secret sauce. Sorry.</p>
+<p data-t="2396">No, it's not even that. I think that there are all these questions about, okay, well, we put a lot of these tokens in. Is there any zero-sumness? In a bunch of places there isn't, or it's actually positive transfer, but then depending on how it's set up, you can have some negative transfer. And so, I don't know, there are all these interesting questions.</p>
+<p data-t="2410">But in general, one of the bigger challenges of scaling bigger models is it's not just about how many FLOPs and how much compute. You want to be able to scale data with that. This is part of what, when the original scaling laws for pre-training were written, this is what came out of that.</p>
+<p data-t="2433">So if the internet isn't growing that quickly and you want to scale bigger models that can be more intelligent, I think one of the interesting problems is, all right, where's the data coming from? So I think that probably gets to the end of what we're going to talk about on that. But we could go to the other—</p>
+<p data-t="2448">Excellent CEO energy over here.</p>
+<p data-t="2455">But so post-training. I think post-training is a very exciting field now, and is an area where, almost on a continual basis, the entire field is learning about the optimal recipes to be able to post-train these models.</p>
+<p class="q" data-t="2472">And again, for people, post-training is where you give the model a task that you expect it to do, grade it on how it does. And so if it's a chess-playing model, it plays chess games, learns the—<a href="https://www.youtube.com/watch?v=XfdIhd1g6EI&t=2472s">&#x21AA; 41:12</a></p>
+<p data-t="2479">Well, there's actually two stages. There's the SFT, so there's supervised learning. So that's a lot of when you take this raw thing and you give it both the question and the answer that you would want it to have, right? If you're having a chat conversation, how would you want it to respond in this case?</p>
+<p data-t="2497">So when you're training things like personality, the SFT is actually a very important part for molding it. But then I think most of the advances in the recent years have been in RL.</p>
+<p data-t="2508">Yeah. So I think one mental model that can be helpful is SFT is where you initialize a lot of—</p>
+<p data-t="2508">SFT is supervised fine-tuning.</p>
+<p data-t="2508">Supervised fine-tuning, yeah. Where you initialize a lot of the behaviors that you want the model to be able to exhibit later on. And then maybe at the end of SFT, it has those behaviors baked in, but it'll only do it 10% of the time. And then in reinforcement learning, you really give the model reinforcement in various situations to bring the elicitation of those behaviors dramatically up.</p>
+<p data-t="2541">So I think there's a bunch of interesting things that are happening in RL and post-training. I think one is that just the scaling of RL and post-training has been one of the clear axes, just spending more compute and gathering more data.</p>
+<p class="q" data-t="2557">Just doing much more of it before you release a model.<a href="https://www.youtube.com/watch?v=XfdIhd1g6EI&t=2557s">&#x21AA; 42:37</a></p>
+<p data-t="2557">Yes, doing much more of it, especially as the pre-trains scale up, doing much more.</p>
+<p data-t="2564">It's like anything in scaling laws, it has to go with the rest of the factors or it doesn't work.</p>
+<p data-t="2564">Yeah, in general. If I were to give, say, one broad statement about AI, it's just scale everything. But in particular, you have to scale everything. Scaling one thing in isolation does not work. You technically can scale one dimension. You just will get much more optimal performance if you scale many things altogether.</p>
+<p data-t="2586">Well, so one way to think about Muse Wonder, right? All right, so we did the pre-train. We've done some RL, right? When you look at Muse Spark, version 1 to 1.1, 1.2, 1.3, we didn't change anything about pre-training. We just continued doing more RL on top of it.</p>
+<p data-t="2605">So when you think about the early versions of a model of a new class, the RL-to-pre-training ratio is going to be lower for RL than the later versions.</p>
+<p class="q" data-t="2614">That is kind of what the point releases in models are.<a href="https://www.youtube.com/watch?v=XfdIhd1g6EI&t=2614s">&#x21AA; 43:34</a></p>
+<p data-t="2622">Well, I think every company has its own convention. For us, that's what it is meant to be.</p>
+<p class="q" data-t="2625">But for a lot of companies, the big number is the pre-train, and then the—<a href="https://www.youtube.com/watch?v=XfdIhd1g6EI&t=2625s">&#x21AA; 43:45</a></p>
+<p data-t="2625">I think it lost that semantic value.</p>
+<p data-t="2625">Yeah, I think now you actually can't do that.</p>
+<p class="q" data-t="2634">Okay, but that is true at Meta at least.<a href="https://www.youtube.com/watch?v=XfdIhd1g6EI&t=2634s">&#x21AA; 43:54</a></p>
+<p data-t="2634">But we haven't even done it. We decided to not even do it.</p>
+<p data-t="2634">It's true at Muse Spark at least.</p>
+<p data-t="2634">It is true at Muse Spark and Muse Wonder. It's true that Muse Spark and Muse Wonder are different pre-trains. And we decided to kick the can down the road on this question for Muse Wonder by not giving it a number yet. But when we have our first dot release, we will have to decide that.</p>
+<p data-t="2653">Yeah. But I think the RL stage, part of what's very interesting is first, just producing the environments and producing the tasks. And I think that is one of the areas where there's a lot of intentionality in training these models. It's also one of the areas where you notice very funny things. In a lot of cases, less is actually more when it comes to data in RL.</p>
+<p data-t="2679">And so I think the feel and the science of it is pretty flipped, generally speaking, from pre-training. The other is that I think it can give very magnified instruction to the model, if that makes sense.</p>
+<p data-t="2695">So a lot of safety cases or alignment cases that we care a lot about, where you would see when you do large, high-compute RL runs on frontier models, are where you apply a lot of RL or optimization pressure in scenarios where the only way for the model to succeed is to do something misaligned or do something unsafe.</p>
+<p data-t="2716">And so that's another thing that we had to be very careful about and thoughtful about in training Muse Wonder, is ensuring that we curated the RL environments very thoughtfully to ensure that all of them were eliciting and driving towards more aligned behavior from the model.</p>
+<p data-t="2730">So the point that you're saying about quality, I think, is an important one, because I think a lot of the previous questions back and forth were about the quantity and have the flavor of, oh, you need to scale the quantity. But I do think a huge part of this is the point that you just made, of even a smaller amount of high quality.</p>
+<p data-t="2748">Yeah, I think in RL, as we've seen pretty big jumps in our Muse Spark line, these have been accompanied with real meaningful improvements to the underlying recipe. And each of these improvements in the recipe have been—I think the improvement between Muse Spark 1 to Muse Spark 1.3 feels night and day. I think probably to most people, if you ask them, “Do these feel like they came from different pre-trains?” I think they probably would say yes.</p>
+<p data-t="2784">I think it's happening industry-wide, for what it's worth. We are learning to squeeze so much capability and elicit so much agentic capability from these existing base models. Now, that's not to say—we believe scaling is very important. That's why we have the Muse Wonder line in the first place.</p>
+<p data-t="2801">But these two things are happening at the same time, which is also, by the way, for us, this is why we're seeing so much progress in general. I think it's the fact that we're scaling both pre-training and scaling our recipes in RL concurrently.</p>
+<p data-t="2810">At a nice clip.</p>
+<p data-t="2810">Yeah. And then there's these other scaling axes too. Making sure that your agent harness is good and that you can co-optimize these things is probably just another aspect of, or dimension for, scaling.</p>
+<p class="q" data-t="2828">But if I'm understanding you guys correctly, are you saying that alignment is not about coming up with some alignment-specific RL steps, and instead about making sure the entire RL process is steering the model—<a href="https://www.youtube.com/watch?v=XfdIhd1g6EI&t=2828s">&#x21AA; 47:08</a></p>
+<p data-t="2836">You have to be thoughtful about it in the entire process of RL. Yeah. So I think this is a holistic effort.</p>
+<p data-t="2846">Yeah. But also, I think different labs have very different theories. Alignment is a very philosophical concept, right, of who do you want it to be aligned to? A lot of our theory is, okay, we're trying to give people agents, right? And if you ask it to do something, you need to have a high confidence that it's going to do what you ask it to do.</p>
+<p data-t="2873">You want it to do that with high reliability. You don't want a moralizing lecture for why you're wrong for asking it to do the thing. Obviously, if you're trying to do something that's catastrophic, it needs to gracefully, without pissing you off, not do it. But in general, we view alignment as more of a question of instruction and values alignment with the person who it's intending to serve.</p>
+<p data-t="2898">And I think that that's a different mode of thinking about it. It's very different from, I think, how some of the others do.</p>
+<p data-t="2906">But one of the more interesting things, I think, that is maybe a question related to your original question is also just how long the process of training one of these models takes. Muse Wonder, in general, we've planned Muse Wonder since last August.</p>
+<p data-t="2924">Yeah, I remember the offsite when we were—so this is when they first presented this.</p>
+<p data-t="2929">Yeah. So I think all of the stages that we just talked about, you really work on them for quite a long time. And we didn't start working on Muse Wonder when we finished Muse Spark. It's that we've actually just been planning and working on this for quite a long time.</p>
+<p data-t="2946">And we really view Muse Spark, if anything, as—I think we mentioned this in the first blog post where we wrote about it—that was a stepping stone to get to Muse Wonder. And that really was how we thought about it.</p>
+<p class="q" data-t="2956">Even at the time you thought about it.<a href="https://www.youtube.com/watch?v=XfdIhd1g6EI&t=2956s">&#x21AA; 49:16</a></p>
+<p data-t="2958">Yeah. And in terms of how long it takes, we're also even just talking about the research part. There's also the compute part where we've been investing in building up, first of all, a huge amount of compute overall. But part of our philosophy on this is that you can measure the compute strength of a lab by how big its largest single computer is, supercomputer, for being able to do these large training runs.</p>
+<p data-t="2985">So we built this Prometheus cluster, we call it, in Ohio, that's scaling to larger than a gigawatt. And now we're building this Hyperion cluster in Louisiana that's going to scale to five gigawatts. And those actually predate MSL. Because building a whole data center site from scratch, at least the plans for those—they're coming online now.</p>
+<p class="q" data-t="3011">You guys thought it might be the feed, right? That you just have use for a lot of compute generally?<a href="https://www.youtube.com/watch?v=XfdIhd1g6EI&t=3011s">&#x21AA; 50:11</a></p>
+<p data-t="3011">No, no, no. This is predating, even going back to the Llama program.</p>
+<p data-t="3018">I see.</p>
+<p data-t="3018">It was probably in 2023, or either 2023, 2024, was when we basically started making the plans to build those clusters. They're now fully coming online. Well, I guess the Louisiana one will come online over a couple years.</p>
+<p data-t="3045">But if you want to go really end-to-end on doing this stuff, then obviously the full stack—Meta is a full-stack tech company. We build our own data centers, we build our own chips, we build our own low-level infrastructure. And now this is the next component, which arguably is probably the most important component in all of this for the next wave of technology, is building really good models and then delivering them to people.</p>
+<p data-t="3070">But yeah, if you want to go fully end-to-end, this is a long process.</p>
+<p data-t="3076">I do think this is—maybe it's well appreciated by folks in the tech industry, but it really feels like models are coming out constantly. So maybe you'd have the mental model that, oh, a company launches a model, and then they figure out how they're going to make the next model, or something like that. But it's actually these very long planning processes and these very long work streams that all come together at the very end and then result in these beautiful models.</p>
+<p class="q" data-t="3102">Yeah. How do you build good products when the feedback cycle is so long? Ultimately, you start planning the model in August, and you don't know until more than a year later if it's good. And Silicon Valley famously likes to run on metrics, but ultimately, do you just need someone who is the aesthete and says, “I'm sorry, I don't like it”?<a href="https://www.youtube.com/watch?v=XfdIhd1g6EI&t=3102s">&#x21AA; 51:42</a></p>
+<p data-t="3122">It's nice when you have metrics, but I think the state of being an entrepreneur is, how well do you make decisions in an information-poor environment, right?</p>
+<p class="q" data-t="3122">But this is that on steroids, right?<a href="https://www.youtube.com/watch?v=XfdIhd1g6EI&t=3122s">&#x21AA; 52:02</a></p>
+<p data-t="3133">That on mega steroids.</p>
+<p data-t="3134">Yeah. And I think Mark gets a huge amount of credit for this. Because of how long everything takes, there were many points over the past year since I've been here, but also, as you mentioned, long before that, where you have to make very large investments or make very big decisions about how you're going to invest or develop the technology, or what decisions you're going to make, long before there's proof points around whether or not even the thing is working.</p>
+<p data-t="3167">And so I think this is, in some sense, entrepreneurship on hard mode. It's the opposite of Lean Startup. Lean Startup is, yeah, you see if you get something working, and then you double down, and then you see if that works, then you double down. You cannot do that in AI. We've been investing into these data centers for years and years and years.</p>
+<p data-t="3187">And you'll be radically behind if you wait to see if things are working.</p>
+<p data-t="3191">So we have these conversations where, at the end of last year, we're like, “All right, we are quite excited about the progress.”</p>
+<p data-t="3199">Yeah, we haven't seen the models yet.</p>
+<p data-t="3201">“We're going to write this check for, I don't know, $100 billion, $200 billion.” I'm like, “Alex, are you sure this is going to work?”</p>
+<p data-t="3210">Yeah, so it was so extreme that we had the whole exec team—</p>
+<p data-t="3210">I think Susan scared you a bit.</p>
+<p data-t="3219">Yeah. Well, the joke every time we talked about it would just be, “Yeah, and we hope it's all going to work and be good.” But there were literally, at the end of last year, other than me giving a vibe report on how our research was going, and I could show some plots and whatnot, I was feeling good about it, but it was certainly not clear at all that it was going to work.</p>
+<p class="q" data-t="3243">You guys are saying that the essence of training a frontier model is you have to push your chips all in before you've been dealt the cards. You just have to decide that you're going to develop a frontier model, and you don't get to meter the inputs.<a href="https://www.youtube.com/watch?v=XfdIhd1g6EI&t=3243s">&#x21AA; 54:03</a></p>
+<p data-t="3252">At this scale. Back a few years ago, the clusters didn't have to be this big, but now they do.</p>
+<p data-t="3264">So I think this is part of the excitement of booting up a frontier lab now, right? Basically, the ante is extremely high. And I viscerally remember this. We were in Hawaii at the end of last year. The whole exec team got together.</p>
+<p data-t="3284">And yeah, Susan pulled me aside many times and was like, “I just want to tell you, if this doesn't work, this is going to be really, really bad. It's going to be very, very bad in financial terms. I really need to impress on you that this model has to work. It has to be good. If it's good, it's all good. We're great. But if it's bad, it's really, really, really bad.”</p>
+<p data-t="3302">And Susan, who you know—</p>
+<p class="q" data-t="3302">And that was useful motivation?<a href="https://www.youtube.com/watch?v=XfdIhd1g6EI&t=3302s">&#x21AA; 55:02</a></p>
+<p data-t="3302">It was. Well, it was one of these very funny moments where I was like, obviously the amounts of money are so obscenely large.</p>
+<p class="q" data-t="3320">What are the amounts of money in training? Order of magnitude, whatever you can share, but just how much are they costing?<a href="https://www.youtube.com/watch?v=XfdIhd1g6EI&t=3320s">&#x21AA; 55:20</a></p>
+<p data-t="3321">Well, you can do the classic math. A gigawatt cluster, I think what you'd see out there would be, to operate a gigawatt a year, call it on the order of $15 billion.</p>
+<p class="q" data-t="3336">Okay, so it's roughly a $15 billion effort to train a bunch of models.<a href="https://www.youtube.com/watch?v=XfdIhd1g6EI&t=3336s">&#x21AA; 55:36</a></p>
+<p data-t="3336">To operate a gigawatt cluster for a year. If you're talking about building the CapEx, you pay for it upfront, so it's probably $50 or $60 billion. But then that's just one cluster for one part of training.</p>
+<p data-t="3358">Then you have all the other parts. Research isn't just doing the run, right? Probably an equal amount of it is because for each change that you make, you're testing all the ladders all the way up to the big scale. And then there's serving the stuff.</p>
+<p class="q" data-t="3376">So tens of billions of dollars to train a frontier model now.<a href="https://www.youtube.com/watch?v=XfdIhd1g6EI&t=3376s">&#x21AA; 56:16</a></p>
+<p data-t="3383">Yeah, definitely. I've seen the financial rollups. Tens of billions of dollars is a good estimate for—</p>
+<p data-t="3383">Yeah. But then you want to do something with it, right? So I actually think some of the more complicated questions that we had were, all right, so we're training this model, and we know we want to train the model because this is key, but how much product demand do we think we're going to have? Because now it's like, all right, well, the product doesn't exist.</p>
+<p class="q" data-t="3408">And as in, you're trying to build data centers to serve Muse for a product that doesn't exist yet.<a href="https://www.youtube.com/watch?v=XfdIhd1g6EI&t=3408s">&#x21AA; 56:48</a></p>
+<p data-t="3408">Yeah. And we have to make it years in advance, right? So this is probably where, when we were talking about it last year, we were just like, huh. There was a moment where I think a bunch of people were like, “Yeah, maybe we should just be a little more conservative.” And it's like, “No, we're doing this. We're going to make it work. We're going to make it work.”</p>
+<p data-t="3427">We're going to burn the boats.</p>
+<p data-t="3427">Yeah, this is going to work.</p>
+<p data-t="3433">But I too am an entrepreneur and founder and have, at various points in my life, taken risk. I remember the visceral feeling at the time was, “This is a fuck ton of risk. I don't know if I really—”</p>
+<p data-t="3442">Oh, it's only riskier.</p>
+<p data-t="3450">Yeah. Well, I do think this is one of the things that, Mark, is very impressive about you, which is I think you have really internalized this concept of it's about how big it is when you win. Failure is okay. It's just, how big is the win when you do win?</p>
+<p data-t="3471">Mark has fully internalized power laws in a way that many people have not.</p>
+<p data-t="3471">I think quite deeply, yeah.</p>
+<p data-t="3476">Well, I think the other piece is, I don't actually think it's quite as risky as this. The numbers are big, but I think—</p>
+<p data-t="3480">Meta has a backstop in terms of how it can use compute.</p>
+<p data-t="3480">Yeah, so I think there's two things. One is, if AI works overall, plenty of other people want all our compute, right? So they're willing to pay. If the cost is whatever, $15 billion a gigawatt, we could get a lot more for that. So I think in order for it not to work out, it's not just that we have to fail, AI overall has to fail.</p>
+<p data-t="3504">And then even if that happens, we still have all these other uses to productively use compute. So in the grand scheme of things, we were definitely building out this compute for inference ahead of knowing that the product was going to be ready.</p>
+<p class="q" data-t="3521">But you were AI-pilled enough that you said GPUs online and powered will be useful to someone.<a href="https://www.youtube.com/watch?v=XfdIhd1g6EI&t=3521s">&#x21AA; 58:41</a></p>
+<p data-t="3521">Yeah, but also we believed in what we were building. And you can look at the trajectory where it's like, all right, first there's ChatGPT as the text-based assistant. Then Anthropic got coding agents to work. And no one had built the personal consumer version of that. And it just seemed like this is the thing that Meta should build in the world.</p>
+<p data-t="3551">And I think that that was just pretty clear to you and me and Nat from the beginning, right? That's what we're here to do. The real question for me on the Muse launch even was, you never know when you launch something how it's going to be received. So there's always the case where you get a home run, which in this case it was, right? And it's just extremely well received right off the bat.</p>
+<p data-t="3576">But the normal case would be it's fine, and you have to iterate a few times to get product-market fit before you really grow. In some ways, I actually think the product, we maybe could have even grown it faster, but we didn't have all the growth stuff really ready to go when we shipped it because our median expectation was, “All right, we're probably going to have to iterate on this a bit, and that'll be fine.”</p>
+<p data-t="3599">But I don't know, I think if it takes a few iterations, it's not the end of the world. That's normal. You can have launches where it's catastrophic, and then it takes a while to recover, but that's not good. But even if it took a few iterations, it would have been fine. So I guess it just seemed to me like this was going to be—yeah, the numbers were big, but it seemed like it was probably—</p>
+<p class="q" data-t="3622">Was it bonding for the executive team to be holding hands, taking this risk together? You're talking about Susan taking you aside. Is that a bonding moment?<a href="https://www.youtube.com/watch?v=XfdIhd1g6EI&t=3622s">&#x21AA; 1:00:22</a></p>
+<p data-t="3631">It's stressful. I think it was both. Both. Yeah. Being in a stressful situation together is generally bonding.</p>
+<p data-t="3639">Well, one thing that I think is quite notable about Meta is the degree to which, first of all, most of the exec team has been there quite a long time. Nat and I were really newbies. And most people have been through crazy situations many times in the past as well. And I think Meta as a company is an extremely resilient company that has been through many situations that also at the time would've seemed incredibly daunting.</p>
+<p data-t="3669">And so everyone knows the program, so to speak. This obviously on paper, and especially when Susan Li, our CFO, is pulling me aside in the meetings, does seem like a particularly scary situation. But I think most people were like, “Yeah, but we're Meta, we're going to get through it.”</p>
+<p data-t="3689">I think there was a real camaraderie around that and quite a nice energy around that, which really I did appreciate. Because I think it would be very easy for the other executives at the company who are operating and running—</p>
+<p data-t="3700">Who are paying the bills.</p>
+<p data-t="3709">Yeah, one of the greatest businesses of all time. And it'd be very easy for them to be quite annoyed by this whole endeavor. But I think everyone is also very excited about what the opportunities for the company with AI are.</p>
+<p data-t="3724">And I think, taking a step back, one of Mark's jobs as the founder and CEO of the company is to ensure that the company is always pushing towards the most ambitious and expansive version of what it can be. And I think that one of the great things about this entire MSL and AI push is that this is one of the rawest expressions of that.</p>
+<p data-t="3753">We knew that AI certainly is a very important technology, and it's one of the bigger technologies right now. But if we were able to build it effectively and properly integrate it into everything that we do, as well as, as a full-stack technology company, build it into these incredible products that we know will exist in the future, this could be immensely expansive for Meta.</p>
+<p data-t="3778">And I think this is true. I think Muse is an incredibly exciting product. It can go in a thousand different directions. I think it's one of probably the most exciting products to just, late at night, think about all the ways it can go.</p>
+<p data-t="3797">I think Nat, Mark, and I just shoot across messages late at night of, “Oh, we could do this, and we could do this, and we can make this move, and we can build this product.” And I think it's a very exciting time in technology right now.</p>
+<p data-t="3807">Yeah, it's very blue ocean in that way. Yeah.</p>
+<p class="q" data-t="3816">I'm struck by, as we talk about Muse and just how it clearly feels like the next platform, an agent operating on your behalf, you've talked for a long time about not wanting to be reliant on other platforms, and how the experience of building on Android and iOS burned you on being dependent on others.<a href="https://www.youtube.com/watch?v=XfdIhd1g6EI&t=3816s">&#x21AA; 1:03:36</a></p>
+<p class="q" data-t="3841">And often when you would talk about, say, Reality Labs, it's the importance of owning the platform of the future, and many years working on Reality Labs with the intent of owning the platform of the future. And now this new modality comes along that feels pretty clearly like how you do a lot of productive work and is the platform of the future. And now Meta is really well set up.<a href="https://www.youtube.com/watch?v=XfdIhd1g6EI&t=3841s">&#x21AA; 1:04:01</a></p>
+<p data-t="3862">Yeah. It's less about wanting to own a platform for its own sake. It's about being able to build the best things. And at some level, if you look at other social apps, for example, I think part of the reason why Meta is so much better is because we don't just build the app, right? A lot of people think about it, we're this app company. We're not an app company.</p>
+<p data-t="3885">We're a deep technology company, and we do this because we are world-class at machine learning, and all the recommendation systems are operating at a scale that basically few others are in the world. I think it's basically just us and ByteDance on that. And then, okay, we just go all the way to the metal.</p>
+<p data-t="3904">And to me, being able to also go the last mile through the device, it does come from a while of having these experiences where we couldn't build the experiences that we wanted on phones. But I just think for the future, the models are going to be by far the most important part of delivering the technology experience.</p>
+<p data-t="3925">And this is something that I think we bonded on and agreed on very early, this notion that in every generation of technology companies, there's usually not one company that wins everything. I don't think that that's how this is going to go either. But with the internet, there were five or six very big companies, and then a whole ecosystem of other companies that are great.</p>
+<p data-t="3951">The companies that did the best had the core technology to be able to serve people the best there. And I think in this next era, there are going to probably be a small handful of companies that have the ability to build frontier superintelligence. And I think that those companies are going to be the ones that effectively drive the agenda and can build the most interesting experiences for consumers, for enterprises, hardware, these different kinds of things.</p>
+<p data-t="3975">And I just look at it as, okay, is it even really a choice, right? Meta will probably exist into the future regardless of whether we do this. But if we want to be an interesting company that is inventing new things that matter to people in the future, I don't see how you can do that if you don't have the ability to build end-to-end your own superintelligence and build them into the products that people use.</p>
+<p data-t="4003">And I think that this is something that you just believed from very early on. Basically, all right, there are going to be a handful of these. There's a personal and consumer-oriented version of this. And this lane is open because everyone else seems to just be obsessed so much with just automating knowledge work, which isn't even that charismatic a version of the future, right?</p>
+<p data-t="4023">Because a big part of our belief too is that the highest use of superintelligence is invention and creation, not automation. And so it just seemed like there's a big place in there, but you need to own the stack.</p>
+<p class="q" data-t="4041">How is the Muse-mediated future going to shake out? Businesses variously need to build support for Muse, where it might try to computer-use its way in, but that might be janky in certain ways. So you want everyone to have first-class support for agents talking to things.<a href="https://www.youtube.com/watch?v=XfdIhd1g6EI&t=4041s">&#x21AA; 1:07:21</a></p>
+<p class="q" data-t="4070">Then the bigger question is they might actively try to block agents from interacting with them. And this might be because they have a misguided sense where it's actually in their interest to support agents, but they don't want to. It might actually not be in their interest to support agents.<a href="https://www.youtube.com/watch?v=XfdIhd1g6EI&t=4070s">&#x21AA; 1:07:50</a></p>
+<p class="q" data-t="4084">You can imagine where maybe they have a very thin moat, and it all comes from a business that only succeeds by consumers spending time on the site, or only succeeds by overcharging consumers. Then they should rationally not want to allow agents, because the agents are like, why?<a href="https://www.youtube.com/watch?v=XfdIhd1g6EI&t=4084s">&#x21AA; 1:08:04</a></p>
+<p data-t="4093">But those are going to get disrupted.</p>
+<p class="q" data-t="4100">Yeah. So talk me through the second-order effects of how the economy works.<a href="https://www.youtube.com/watch?v=XfdIhd1g6EI&t=4100s">&#x21AA; 1:08:20</a></p>
+<p data-t="4104">Well, I think that it starts off with—we trained into the models very good browser use, right? So that way we want to make it so that no one has to do anything to integrate with Muse. But then of course, we're just going down the list of the most important partners, and for people who want to work with us, we'll just get direct API access.</p>
+<p data-t="4126">And then it ends up being way more efficient and faster for people to use Muse. It's more efficient because now you don't have an agent crawling your website. It's just going. So anyone who wants to do that, we eventually want to get there.</p>
+<p data-t="4137">And then I think the fullness of time is that, just like today every business has a website and social media accounts and email addresses and all these things, every business is going to have agents too. And we're also building that on the other side of it. And so of course Muse agents will talk to other types of agents, but they'll work really well with our agents, right? Because we'll be able to integrate that.</p>
+<p class="q" data-t="4162">So Muse using websites is just a moment-in-time thing.<a href="https://www.youtube.com/watch?v=XfdIhd1g6EI&t=4162s">&#x21AA; 1:09:22</a></p>
+<p data-t="4162">Just to make it easy for everyone.</p>
+<p class="q" data-t="4169">You guys want to have it as a backstop so it's reliable for people using it.<a href="https://www.youtube.com/watch?v=XfdIhd1g6EI&t=4169s">&#x21AA; 1:09:29</a></p>
+<p data-t="4169">Yes, and easy for businesses to get bootstrapped. But we have way more businesses that are calling us asking to integrate deeply, and very few really who have tried to block it. And my guess is that the ones that try to block it, it will end up not being the right strategic thing for them. But we'll see. This will play out over time.</p>
+<p data-t="4186">It saves them a lot of time.</p>
+<p data-t="4194">Yeah. It saves them a lot of money. I think these are clearly good things for the consumer. So in the long arc, you'd clearly expect that demand will shift from current avenues more and more towards agentic demand. And there always will be demand that lives elsewhere, just in the same way that there's still brick-and-mortar demand in commerce, but there's a lot of e-commerce demand.</p>
+<p data-t="4217">And in the same way, I think agentic commerce demand will grow as a portion of the pie. The others will still exist, but it will grow as a portion of the pie. And I think there's these questions for businesses in the long run: do they want to participate in that slice or that portion of the economy over time?</p>
+<p data-t="4235">And I think it's an incredibly exciting area. I think it's very, very exciting to imagine what will happen in this agentic commerce future. I actually think Patrick wrote a great tweeticle. Is that what we call it these days? I don't know. Patrick has his own thing going on with tweets.</p>
+<p data-t="4250">They're buried amongst—I noticed that Brothers Karamazov was quite a good literary analysis.</p>
+<p data-t="4257">But yeah, I think clearly this is a discontinuous event for how commerce will happen, broadly speaking, or just generally speaking, how all the business pipes will work, maybe even in a broader sense. But I think you just go back to, this is clearly a lot better for the consumers. It's a lot better for the customers. So there's a natural gravity towards that reality.</p>
+<p data-t="4282">One of the exciting things, I'm curious what you guys see too, but I think Muse is one of the first products where people are fully delegating purchases to the agents. And this is a step change, right? We've been talking a lot about agentic shopping and the possibility of it, but now it's really happening. And a lot of people are trusting the agents to shop for them.</p>
+<p data-t="4305">And I think the agents are finding them, in my case, great teas, or in whoever's case, great products for them to purchase, which is quite exciting. And so I think there's clearly an exciting thing happening here.</p>
+<p data-t="4318">I think one part of the value prop for the user is just reduced friction. “Hey, I don't feel like clicking on all these websites and doing all this research to try to find the exact products.” That step is taken care of for me. And also, criteria can just be automatically applied. “Hey, I need something by Wednesday.” So the agent will only look for things that could get to me by Wednesday.</p>
+<p data-t="4338">But keyword search, it was insane that we ever relied on it, because that's a very reasonable constraint you just want to shop by.</p>
+<p data-t="4344">Yeah, exactly. And so I think the old way of searching for stuff just feels so obviously primitive now, now that you can do this. Then there's this back part of the funnel, so to speak, but just the ease of friction reduction of filling out the form, just getting it ordered, is quite nice.</p>
+<p data-t="4362">And I think the long-term thing that we're quite excited about is greater personalization. Ultimately, I think one of the exciting things about Muse is that it has this holistic context into you as a person and all of the aspects of your life. So it can holistically understand things about your family or things about your coworkers or things about your friends.</p>
+<p data-t="4386">And then help you co-optimize across all of those to get you the exact right gift for your best friend in the context of your friend group, based on what it knows about your friend group. I think there's just a lot of exciting opportunities that are somewhat new and novel when it comes to these personalizations, these recommendations.</p>
+<p data-t="4405">Because historically, a lot of these recommendation systems are quite siloed and quite isolated. And so they don't see a holistic view of you as a person. And Muse has an opportunity to offer much greater levels of personalization.</p>
+<p data-t="4421">Yeah, I think people are already seeing that. With Muse, if you ask it to buy something for you, quite frequently it'll add in some bit of context that it pulled in from a different conversation. You had a good example of this.</p>
+<p data-t="4432">Yeah. Well, so my three-year-old daughter loves baking. She loves cooking. And so I'm like, “All right, I'll start baking stuff.” I'm normally into smoking meats, but I'll do some baking in order to make Aurelia happy.</p>
+<p data-t="4451">And so we've gotten into this really cute routine where I've been playing with Muse voice mode, which isn't fully rolled out yet, but we're playing with it. And it does this great thing: it segments the voices. So it knows which one is me, and it knows which one is not me based on that. And throughout the week we're talking about what we'll want to bake that weekend.</p>
+<p data-t="4477">And she'll give it ideas, or she'll come up with crazy things that are not real recipes, but bounce it off with Muse. And then Muse will just make sure that every Saturday, when it's time to bake, I get the ingredients from Instacart, and they show up, and they're on time.</p>
+<p data-t="4504">The biggest thing is, if I were just starting the activity on Saturday, you'd have to get everything, and it would take some time. But now everything's ready whenever we're going to go sit down and do it. This weekend it knew that Watermelon was launching, so it threw a watermelon in the bag. It was very, very sweet. It was very heartwarming.</p>
+<p data-t="4521">It deduced that there was not enough, I guess, expense in it to get the delivery, so it needed something else.</p>
+<p data-t="4533">And it topped it up with a watermelon.</p>
+<p data-t="4533">It was like, “Do you want this watermelon?” I was like, “Yes. Yes, that's very cute.”</p>
+<p data-t="4533">Is that the watermelon you ate?</p>
+<p data-t="4541">Yeah, that was the one I ate on the livestream.</p>
+<p class="q" data-t="4543">Okay, but the watermelon on the livestream was—<a href="https://www.youtube.com/watch?v=XfdIhd1g6EI&t=4543s">&#x21AA; 1:15:43</a></p>
+<p data-t="4543">Muse just got it for me.</p>
+<p data-t="4547">That was a Muse—yeah, those are just—</p>
+<p data-t="4547">It just got it for me.</p>
+<p data-t="4550">That was a very memeable moment of that very memeable situation. So we have Muse to thank for it.</p>
+<p data-t="4558">But here's another interesting thing about the whole thing: I didn't really use Instacart that much before. Every once in a while, maybe twice a year, I would use Priscilla's account or something. I went and got an Instacart account to give Muse, and now I use it once or twice a week because I'm talking with Aurelia with Muse, and we're coming up with these recipes, and it's delivering them, and now it's a core part of my workflow.</p>
+<p data-t="4584">So I actually think that the opportunity here isn't just, okay, it's going to be 20% more efficient on the conversion rate. I am a new Instacart subscriber, and I just wouldn't have done this before. So I do think there's this question, which is maybe the more interesting economic question: is that Instacart account really for me, or is it for the Muse?</p>
+<p data-t="4608">Because I think over time, the question is, is the total addressable market for all of commerce just increasing dramatically? Because it's not just the people anymore. Now agents are effectively going to have accounts. And I think that's where this starts to become a really very exciting opportunity, where anyone who sits this out, I think, is going to end up feeling sad over time.</p>
+<p class="q" data-t="4630">And why did you have to sign up for an Instacart account? We're solving this at Stripe Projects for developer stuff, where your coding agent—<a href="https://www.youtube.com/watch?v=XfdIhd1g6EI&t=4630s">&#x21AA; 1:17:10</a></p>
+<p data-t="4633">The Stripe integration, by the way, is great. You guys did a great job with us on Muse. I think we're very happy.</p>
+<p data-t="4645">We have been very excited about agentic commerce for a long time, obviously, because again, it felt to us like clearly how people are going to buy things in the future. And that was both apparent because no one needs all that friction in their life from the actual buying stage, and how early product research with AI had product-market fit, even from the earliest AIs.</p>
+<p data-t="4667">It really feels like computer use was the last big unlock that we needed to make it happen, because now you can ask your Muse to buy anything, more or less. And it'll just figure it out with computer use, right? And so it's the ultimate backwards compatibility layer.</p>
+<p data-t="4679">Yeah. This is a set of things that Nat really obsessed over.</p>
+<p data-t="4682">Yeah. I think a lot of magic of Muse is the fact that a lot of this stuff just works. And so clearly, if everything was just a little bit less reliable, it would feel like a total pain in the ass, and nobody would use it, and people would just throw away the app. And so I think the fact that so much of this has gotten to the point of reliability where it just works is a huge part of the magic.</p>
+<p class="q" data-t="4704">What were you saying Nat was obsessed with?<a href="https://www.youtube.com/watch?v=XfdIhd1g6EI&t=4704s">&#x21AA; 1:18:24</a></p>
+<p data-t="4704">Oh, well, Nat's obsessed with everything.</p>
+<p data-t="4704">Yeah, well, that's generally a sexy character.</p>
+<p data-t="4704">Yeah, no, it's great. But getting this experience to be good, I think, is something that he and a core group of people on that team really focused on.</p>
+<p data-t="4712">It's kind of funny. I think I had a dinner with Patrick, I want to say it was 2023, where he was like, “What do you think we should be doing now?” I was like, “You're already way behind the eight ball on this agentic commerce stuff. You got to figure this stuff out. Agents are going to be buying things, and you're not prepared for it.”</p>
+<p class="q" data-t="4737">So you were saying this to Patrick, or Patrick was saying this to you?<a href="https://www.youtube.com/watch?v=XfdIhd1g6EI&t=4737s">&#x21AA; 1:18:57</a></p>
+<p data-t="4737">I was saying this to Patrick. Because Patrick was very politely asking, “What do you think we should be doing?” And I had this very urgent spiel. And I think it's funny how that was—</p>
+<p data-t="4746">Well, thank you for your provocation.</p>
+<p data-t="4746">Well, it was directionally correct, but three years early.</p>
+<p data-t="4754">2023, I think. And so it's very interesting to look at the agentic commerce stats at Stripe, because we started developing all this stuff, and we had a whole bunch of announcements at Sessions back in May, and then it only as of September basically started going vertical.</p>
+<p data-t="4774">Meta is building increasingly capable models, including Muse Wonder, and their models are available on OpenRouter alongside hundreds of others. Stripe has agreed to acquire OpenRouter, who's the leading model gateway. OpenRouter already routes more than 10 trillion tokens a day and handles much of the complexity of working with different models through a single API, making it easier to experiment, find competitive prices, and automatically route around provider outages. Try it for yourself at openrouter.ai.</p>
+<p data-t="4806">Hey, could you order a watermelon to Stripe's office in South San Francisco? I'm doing a podcast here. This would be funny.</p>
+<p data-t="4816">Funny podcast idea. I'll check that watermelon delivery now.</p>
+<p data-t="4816">Great. We'll see how we get on.</p>
+<p class="q" data-t="4826">Well, okay. This actually raises an interesting question. People have been trying to make the HAL 9000—<a href="https://www.youtube.com/watch?v=XfdIhd1g6EI&t=4826s">&#x21AA; 1:20:26</a></p>
+<p data-t="4834">It's working. I really like this. I think this is an awesome touch where it's clacking away at its laptop. I really like that in the app.</p>
+<p data-t="4843">We'll just leave them there, and we'll see what we get.</p>
+<p data-t="4843">Yeah, it's tough to prop up. Yeah, there we go.</p>
+<p class="q" data-t="4852">People have been trying to make the speak-to-a-computer AI vision happen for a really long time. Apple launched Siri in 2014, 2015, something like that. And obviously there's been voice mode in various AI products for a few years now. Why is it so hard?<a href="https://www.youtube.com/watch?v=XfdIhd1g6EI&t=4852s">&#x21AA; 1:20:52</a></p>
+<p class="q" data-t="4870">It's still not the case, if you were driving your car and you wanted to check on the baking or move a meeting or something like that, you actually probably wouldn't do it with the voice. Maybe almost now with the latest things.<a href="https://www.youtube.com/watch?v=XfdIhd1g6EI&t=4870s">&#x21AA; 1:21:10</a></p>
+<p data-t="4877">Yeah, well, there's a lot.</p>
+<p class="q" data-t="4877">But you wouldn't develop Siri like you're doing.<a href="https://www.youtube.com/watch?v=XfdIhd1g6EI&t=4877s">&#x21AA; 1:21:17</a></p>
+<p data-t="4877">Siri right now is actually a good example, as we're talking over each other. And when you're using different voices—</p>
+<p class="q" data-t="4884">So is it just technical limitations? That's why we haven't done it?<a href="https://www.youtube.com/watch?v=XfdIhd1g6EI&t=4884s">&#x21AA; 1:21:24</a></p>
+<p data-t="4884">Well, I think that there's a few things. And one is, you actually want it to go do stuff. So there's a question of, when you speak with it, even if it understands, how's that going to work? Then I think that there's a lot of stuff about the way that people have conversations. It isn't typically, “I will give a prompt, and now I will wait, and you will speak,” and then it just goes back and forth.</p>
+<p data-t="4909">How many of your sessions, when you're talking to an agent in voice mode, do you basically—it starts saying something, but then I feel like if I pause for three seconds, it's going to think I'm done and want to speak. And then if it starts speaking, but then I cut back in, is it going to think that it's a whole new question? I think there's a lot of stuff about the conversational dynamics that you want to get right.</p>
+<p data-t="4934">But then there's this other issue, which is that for voice overall, it's quite high bandwidth for you to communicate with voice. But in terms of consuming information, having someone speak to you is very inefficient compared to having it be visual.</p>
+<p data-t="4952">So I think that's why, partially, when we do these interfaces—I think it's working on its task. I fired it off now. So I think the ideal interface is probably not just strictly voice-voice. Although I think voice output from you is pretty useful.</p>
+<p data-t="4970">Yeah, I think there very clearly already is an explosion of voice input. I think you even see this in coding, where—</p>
+<p data-t="4974">Yeah, people are speaking to the—</p>
+<p data-t="4974">Yeah. Most of the researchers just whisper into their keyboard because, as Mark's mentioning, it's the highest bandwidth way to get your thoughts out, or usually the lowest friction way to get your thoughts out.</p>
+<p data-t="4991">I think the most extreme version of this, by the way, is how college students now use AI is maybe the most interesting. I think a very common modality of how to use AI is that they just will completely word-vomit for 10, 15 minutes, being full stream of consciousness, chain of thought of all the things.</p>
+<p data-t="5013">And then have AI clean it up and infer.</p>
+<p data-t="5013">Yeah. And have AI effectively do all of this organization of it and pulling things together and structuring everything. It's quite interesting. It's a very interesting modality of tech usage. But yeah, I think voice input has been big.</p>
+<p data-t="5029">I do think agents, that's a big step change, because I think the mental model is just very different. If it's just an informational thing that you're talking to, you will clearly get into situations where it just feels useless. Whereas now that it can do things for you, it's much closer to the experience of talking to a human, or to a person.</p>
+<p data-t="5051">And so I think there's all these interesting uncanny valleys in interacting with AIs that, until they've been able to take actions, have felt kind of strange. And now that we have agents, I think one of the cool things about Muse is this confluence of a number of things.</p>
+<p data-t="5070">I think the fact that Muse is embodied, and it is this little guy that you feel is working on your behalf, is also only possible and a coherent representation and embodiment of the product because it has persistent memory, and it has the ability to do things for you and the ability to take actions, and has a little bit of a personality.</p>
+<p data-t="5091">It's the confluence of all these things coming together that make this embodiment concept even work in the first place.</p>
+<p data-t="5099">Then it turns out, okay, actually this is the real glasses, right? A lot of people want it even with just no display or a small display. The camera and audio is enough of a useful product.</p>
+<p data-t="5112">And then we started shipping the display glasses that aren't the wide field-of-view full augmented reality, which I thought would be awesome too. But even the small display is pretty powerful. So I think you'll start getting some interesting interactions there that are fully multimodal, right? So it's voice in and out, and it'll be able to see what you see, and it'll be able to paint the pixels.</p>
+<p data-t="5139">And the other exciting thing that we've done here is Muse Gadgets, which is really, I think, unleashing the ecosystem to try cool device formats and form factors that could be really exciting. Since releasing that, we've gotten actually even a number of phone manufacturers talk to us, excited, “We're just going to integrate Muse Gadgets into our phone and see how well it works.” And we're really excited about that.</p>
+<p data-t="5164">I think part of what is cool about the current moment of technology is that it's very clear agents are really exciting. It's really clear that this should unlock lots of things.</p>
+<p class="q" data-t="5173">Will you guys come back to the household devices? This is obviously a personal device, but we actually had during COVID the Portal.<a href="https://www.youtube.com/watch?v=XfdIhd1g6EI&t=5173s">&#x21AA; 1:26:13</a></p>
+<p data-t="5178">Portal. There we go. Yeah.</p>
+<p data-t="5186">One of the gadgets that we just shipped was the little HomeLink. It's the size of a little nickel or something, but with a USB, right? So you can basically connect that, and then your Muse can connect to everything in your home.</p>
+<p data-t="5202">This is actually one of the most fun things too, just having it connect to your Sonos and connect to all your lights. I have it basically, when it's time for me to start winding down in the evening, I just have it dim all the lights across the house, and it's nice.</p>
+<p class="q" data-t="5220">How are we going to fund the AI buildout? Everyone's worried about Google went free cash flow negative. You were talking about one gigawatt and then five gigawatts and everything like this. Meta's not free cash flow negative yet, but there's always more CapEx to fund. And so what's the answer?<a href="https://www.youtube.com/watch?v=XfdIhd1g6EI&t=5220s">&#x21AA; 1:27:00</a></p>
+<p data-t="5235">Where is Susan Li?</p>
+<p data-t="5235">Exactly.</p>
+<p data-t="5239">No, look, I think that there are going to be a lot of ways to create value from this. So what we're trying to do with Muse specifically is make it so that it can be widely used, because I think that there are going to be some valuable network effects at scale as people start being able to interact with each other's, and that's going to be great.</p>
+<p data-t="5263">So I think there are all these reasons why you want it to get to large scale. Also, we were talking about partners. Partners are going to want to integrate more the more people are using it. So it will get more valuable if we can get it to scale. The best way to do that is to basically have a model where it is affordable and free for people to use.</p>
+<p data-t="5273">But there are going to be a lot of ways that I think we can scale revenue. Subscriptions is going to be a big one. Basically, just because the base version of it is free, and we want the free version to be excellent, doesn't mean that there are things that just naturally aren't going to be economical to include in that.</p>
+<p data-t="5296">We talked about this earlier. If you want to start using Muse Wonder in Muse tomorrow, then the way that you'll do that is you'll pay for a subscription. So I think that that will be a big business.</p>
+<p data-t="5311">There are a bunch of other things around commerce that we're quite excited about too, where we believe that Muse is actually going to make people money and save people money by using it. And over time, there are lots of different ways to effectively take a small cut of what you are saving or making for people, and that will end up being a very large revenue stream.</p>
+<p data-t="5331">And then there's all the other things, right?</p>
+<p class="q" data-t="5331">So you think Muse will generally just cost negative money for people, because it helps them out?<a href="https://www.youtube.com/watch?v=XfdIhd1g6EI&t=5331s">&#x21AA; 1:28:51</a></p>
+<p data-t="5338">Well, there are already all these sites that I think are interesting where people are like, “Go look through my emails, find a bunch of subscriptions I don't actually use, cancel them,” whatever. So yeah, I don't know if that's the thing that we would monetize, but you get the point.</p>
+<p data-t="5346">And where it helps you make money, one of the ideas that we talk about—this is something that I think you've been obsessed with—is making it a business in a box for small businesses. It can help them administer all these parts of what they're doing. And you can imagine that being very valuable and being very profitable, both for the business owner and for Meta.</p>
+<p data-t="5375">But I think one of the things that's interesting is, okay, if we're building the models to build the personal agents and the business agent, there is this large surplus of value because now the model, it's very general, right? So it doesn't just do those things. We'll also have the API that'll be profitable.</p>
+<p data-t="5390">A big part of why we want to start the Meta Enterprise Platform and have CJ Desai join us to build this is we have this view: traditionally Meta hasn't been an enterprise company, but we believe that a huge part of the challenge is building the leading models in the first place. And they're very general.</p>
+<p data-t="5410">And once we do that, if we make a significant investment in building an enterprise group that can provide that in the way that enterprises need to consume it, then I think a lot of enterprises are going to want to use Muse Wonder. It's going to be an excellent model and affordable. So I think that that is going to end up being a very big business too.</p>
+<p data-t="5433">And all of these things put together, coupled with the fact that we were already starting off as a very profitable business that has good credit and can underwrite these large investments, I think puts us in a pretty good position as a lab to be able to build out the compute that we need to build leading products, build up the network around this, and position the company to really lead in the area for decades to come.</p>
+<p class="q" data-t="5460">So you think ultimately there'll just be a lot of revenue from these products, and so they'll be self-funding in fairly short order?<a href="https://www.youtube.com/watch?v=XfdIhd1g6EI&t=5460s">&#x21AA; 1:31:00</a></p>
+<p data-t="5460">Yeah. That's a much shorter answer than mine.</p>
+<p class="q" data-t="5467">But you're saying people are underestimating—<a href="https://www.youtube.com/watch?v=XfdIhd1g6EI&t=5467s">&#x21AA; 1:31:07</a></p>
+<p data-t="5467">The question was, are we going to be able to make money from this? The answer better be yes.</p>
+<p data-t="5476">Yes. The answer is yes.</p>
+<p class="q" data-t="5476">But the history is very front-loaded expense, right?<a href="https://www.youtube.com/watch?v=XfdIhd1g6EI&t=5476s">&#x21AA; 1:31:16</a></p>
+<p data-t="5482">Well, the history of AI as an industry, I think, to some degree is people have always been hand-wringing about, how are these businesses going to make money? And I think every year people are generally surprised at the upside.</p>
+<p data-t="5496">That superintelligence is useful, incredibly valuable.</p>
+<p data-t="5496">Yeah, exactly. This is Meta's whole playbook, right? We build something, we get it to a billion people, then we scale the revenue, while growing our revenue primarily in the meantime by continuing to scale the things that are already at scale and growing.</p>
+<p data-t="5515">Yeah. I think this is also one of the dynamics—I think Dario's talked about this as well—but just in general, because it requires so much advance planning to build these models, if you look at the R&amp;D expense at any given time, that is an overlapping R&amp;D expense of multiple model generations at once. And they require a long time to work on.</p>
+<p data-t="5539">And then ultimately you see immense payoff when you deliver them. And this is what we saw with the Muse Spark family of models. Again, we started working on these a long time ago and are seeing incredible consumer adoption through the Muse product.</p>
+<p data-t="5554">The other thing is that we use the models to accelerate our core business, right? So you have this core business that's hundreds of billions of dollars and still growing extremely quickly. And now, if you can grow it a few percent faster by using these models to accelerate these things, then that ends up funding a huge amount of this too as you're scaling it out.</p>
+<p data-t="5573">The Meta core business is an eighth wonder of the world. It's an extremely good business. It really is quite incredible, and is growing at astonishing rates. Yeah, you guys really cooked with that one.</p>
+<p data-t="5590">Yeah, I think you're also getting at something, Alex, which is there's an interesting accounting artifact where if you go build a data center, you have CapEx, and you get to depreciate that over a useful life of many years. And people debate what that useful life is, but the point is you do get to depreciate it.</p>
+<p data-t="5600">Whereas a lot of the AI costs are also just in researcher salaries, and those salaries are being spent on model training that also has a useful life of many years, but you do not get to capitalize generally.</p>
+<p data-t="5618">And that's also a financial advantage for us building out the data centers, as opposed to a bunch of the other companies that are paying clouds, whereas they're paying the annual rate. But then at some point the GPUs will be fully depreciated, but we're probably still going to be using them for a while. The value of even an H100 at this point is higher than it was last year, right? Just because if compute continues being constrained.</p>
+<p class="q" data-t="5642">Any advice for us with OpenRouter? We have agreed to acquire them. It has not closed yet.<a href="https://www.youtube.com/watch?v=XfdIhd1g6EI&t=5642s">&#x21AA; 1:34:02</a></p>
+<p data-t="5650">Yeah, I think part of what we're starting to see in terms of the models, especially the frontier models that are being developed, like Muse Wonder versus, let's say, a Fable or an Astra, is that we actually are starting to focus in quite different directions from the other models.</p>
+<p data-t="5671">And I think there's a lot of intentionality that goes into the model development process that we've discussed in this conversation that is genuinely different from how other models are focusing. And so when these models get collapsed to the same set of benchmarks, that elides all of the interesting texture that differs between the various models.</p>
+<p data-t="5694">And so I think one thing that is an exciting opportunity for OpenRouter, generally speaking, is helping developers understand what these subtle differences are, so that they can make the most informed decisions about what models ultimately they select.</p>
+<p data-t="5710">And then also you can imagine the flip side of that, which is, you have all these developers using these models. And so those developers are great people to ask about what are the interesting textual differences between these models that are more than just tweet-length, “This model's good, this model's bad,” more than just that level of insight.</p>
+<p data-t="5731">And I think getting to the wine sommelier version or form of understanding the models and their relative strengths and weaknesses, I think, would be quite exciting.</p>
+<p class="q" data-t="5742">Okay, so based on your experience, the OpenRouter view that there will be a diversity of models in the future, and they're optimized for different tasks and—<a href="https://www.youtube.com/watch?v=XfdIhd1g6EI&t=5742s">&#x21AA; 1:35:42</a></p>
+<p data-t="5742">I agree with that. Exactly.</p>
+<p class="q" data-t="5750">That's just your guys' experience based on—<a href="https://www.youtube.com/watch?v=XfdIhd1g6EI&t=5750s">&#x21AA; 1:35:50</a></p>
+<p data-t="5750">Yeah, we are focusing on different things. We care a lot more about personal and professional agents, my observation, than the other major labs, which is good. There should be differentiation in the economy. This is the point of capitalism to some extent.</p>
+<p class="q" data-t="5765">Yeah. So you were going to say something?<a href="https://www.youtube.com/watch?v=XfdIhd1g6EI&t=5765s">&#x21AA; 1:36:05</a></p>
+<p data-t="5765">No, I just really agree with that point. I think that part of what I love about you guys working on OpenRouter and being able to scale it is just the more infrastructure that can get developed that supports a diversity of players in the ecosystem, I think, is good overall. I also, for the same reason, am quite a fan of some of the recent NVIDIA moves to support the open-source ecosystem.</p>
+<p data-t="5794">But this just goes with our whole theory and philosophy about, what does a good future look like? We think that a good future is one where you basically get prosperity by empowering people. That's the personal superintelligence thing that we're doing, but there's the whole business version.</p>
+<p data-t="5812">But for a lot of the important safety topics, our view is that the way to get there is having a diversity and having checks and balances by having a lot of different things out there and accessible to people, not just having a couple of good models that are only in a couple companies' hands. From my perspective, I think that is probably a riskier configuration for the future than lots of people having access to different things.</p>
+<p class="q" data-t="5840">Do you guys have a theory as to why that is? I feel like maybe people predicted more of a winner-takes-all dynamic in AI. A story that people told back in 2023 is that one AI lab will start to develop an advantage, and that will allow them to get recursive self-improvement going, and then they'll just pull further and further away from everyone else.<a href="https://www.youtube.com/watch?v=XfdIhd1g6EI&t=5840s">&#x21AA; 1:37:20</a></p>
+<p class="q" data-t="5863">Whereas it has remained extremely competitive, where there's multiple people at the frontier. You guys with Wonder today are coming along with your frontier-class model. Open-source models have done an impressive job of keeping up, all told. And so we had this story a few years ago that someone was just going to run away with the prize. Why hasn't that happened?<a href="https://www.youtube.com/watch?v=XfdIhd1g6EI&t=5863s">&#x21AA; 1:37:43</a></p>
+<p data-t="5886">I think there's a lot of underlying reasons and mechanics that drive this. One certainly is just execution. I think for any given frontier lab, there are periods of strong execution and weak execution. And I think that is true across all the labs. And so that starts to average itself out over time.</p>
+<p data-t="5901">Very diplomatic.</p>
+<p class="q" data-t="5911">Sorry. Is it that some of the players in the lead screwed up?<a href="https://www.youtube.com/watch?v=XfdIhd1g6EI&t=5911s">&#x21AA; 1:38:31</a></p>
+<p data-t="5915">Well, I think if all players, when they were in the lead, executed perfectly, they would probably be able to stay in the lead. So I think that's one factor. I think the power and strength of distillation is certainly another factor that's benefiting the open-source ecosystem quite a bit.</p>
+<p data-t="5923">There's an anti-hegemonic force in the phenomenon of distilling a model.</p>
+<p data-t="5936">Yeah. And this is just a quality of the technology. It's not like anyone planned for distillation to work super-duper well, but it just turns out that you can get a lot of capabilities naturally through some form of distillation. And broadly speaking, distillation is quite a good force for the entire ecosystem, because it means that you can pack very strong intelligence capabilities into smaller and smaller models, which enables us to serve them at much wider scale.</p>
+<p data-t="5965">And that's certainly one of the very exciting stories, just really small models today are much more powerful than the biggest models a year ago or two years ago.</p>
+<p data-t="5976">And then I think the last is that I actually think a lot of people in the ecosystem want this future where it is not just this one final company in all of capitalism kind of end outcome.</p>
+<p data-t="5996">Not just individuals, but companies putting dollars against things.</p>
+<p data-t="6002">Yeah. And I think this is actually one of the reasons why a lot of people were excited to join Meta and Meta Superintelligence Labs in the first place. They were just like, “I want to work at a place that is focused on giving this technology to billions of people.” That is not the stated goal necessarily of all the other frontier labs.</p>
+<p data-t="6020">And so I think there's a lot of natural forces where many people in the industry are grappling with, okay, what is the actual world state that I want to live in in the future? And there's lots of decisions that people make at all levels in terms of where they work or who they do business with or what business deals they do that drive towards a more equalized outcome.</p>
+<p class="q" data-t="6046">You get into some of the MSL startup, which I also wanted to ask about. It just seems fundamentally very hard still to—again, we talked about what goes into developing a frontier model, but also from a standing start. When was the standing start for MSL?<a href="https://www.youtube.com/watch?v=XfdIhd1g6EI&t=6046s">&#x21AA; 1:40:46</a></p>
+<p data-t="6065">Well, we launched Llama 4 on April 4th, I think it was, 2025. And then, what was it, April 20th or 21st was, I think, when I started calling people for advice on what to do.</p>
+<p data-t="6089">So I remember I was in a staff meeting, and I got the WhatsApp notification, “Have time for a call?” I was like, “Huh, interesting.”</p>
+<p class="q" data-t="6099">Okay, so MSL is a little over two years old.<a href="https://www.youtube.com/watch?v=XfdIhd1g6EI&t=6099s">&#x21AA; 1:41:39</a></p>
+<p data-t="6099">No, no, no. One year.</p>
+<p data-t="6099">One year. Is it '25? Oh, it's '26. Oh, sorry, I'm living in the future.</p>
+<p data-t="6107">Yeah, you are in the future.</p>
+<p class="q" data-t="6107">MSL is a little over one year old. What are your reflections a little over a year in on what was load-bearing, as the AIs would say, in how it came together?<a href="https://www.youtube.com/watch?v=XfdIhd1g6EI&t=6107s">&#x21AA; 1:41:47</a></p>
+<p data-t="6120">Well, I think that there was this whole thing early on, which is just, first we had to pull together this core group, right? So Nat and Alex and I, we were talking a bit up front, and at first we were brainstorming. I was talking to Nat about, is there a way that we can structure this so that way it's a win for Alex's shareholders and we can get him over here?</p>
+<p data-t="6149">And then we were talking about what would the plan be? And basically I was in this mode where I was just asking a lot of different people what we should do. And every time that we would talk, I'd come away with three more things of, “Oh yeah, this is what we should do.” Very high signal, a lot of strategic clarity. And so we were brainstorming and working on this for a bit.</p>
+<p data-t="6177">And then Nat and Daniel joined, and we pulled together a few of the initial researchers. But in the beginning, it was the supernova thing, where we just jammed a bunch of people together. And I don't think either of us slept that much for the first couple of months.</p>
+<p data-t="6193">No.</p>
+<p data-t="6193">I have this mental block almost, where I cleared my calendar for a month or two and was just meeting researchers and talking to them. And I remember even before we announced the deal where you were going to come over, you were recruiting people, and people were like, “What is going on? What is this?”</p>
+<p data-t="6219">A really hands-on data labeler.</p>
+<p data-t="6226">But that was this whole question too, where it's like, all right, if we're not happy with the trajectory of the current program, who are the right set of people to lead the program going forward? And Alex and I had spent a bunch of time talking over the years. Maybe once every few months or something we'd talk. And I was always just very impressed by how he thought about things strategically.</p>
+<p data-t="6250">And I had this view of, all right, yeah, currently he's doing this very operational data business. But it always felt to me like he was the sharpest entrepreneur of his generation, of the ones who I had had a chance to meet. And it always just struck me, all right, this is a guy who, yeah, he's running this very grindy operational business, but—</p>
+<p data-t="6272">Lovely business still, by the way.</p>
+<p data-t="6272">What's up?</p>
+<p data-t="6282">We're big investors.</p>
+<p data-t="6284">It's more commentary on the difficulty of running the business.</p>
+<p data-t="6289">When you run the eighth wonder of the world, Alex, a lot of businesses look like a grindy operational business.</p>
+<p data-t="6289">It's just my view of things. It's like, grindy, grindy.</p>
+<p data-t="6298">No, no, no. But I just had this view. I think maybe when we got started, a lot of people were like, “Okay, how is this going to work? The social media guy is working with the data guy. Are we going to build a frontier lab here or what?”</p>
+<p data-t="6327">But my really strong conviction, because I talked to all the leaders of all the labs, all the heads of research, all this stuff, and I was like, “No, Alex is the guy. He's the fucking guy.” And we're going to basically be able to go pull together a team and recruit the people that we need to go do this.</p>
+<p data-t="6348">And we need this strategic clarity that he has around the different ways that we want to approach this, the extreme focus on talent density, on the clarity of communicating the different vision, which we fashioned together over this period. And a bunch of things that I think were extreme but have basically worked, like having this very flat culture, was something that you were really obsessed with, right?</p>
+<p data-t="6385">You have, was it almost 200 direct reports? It's not quite that extreme in practice. There's team leads and all this stuff.</p>
+<p data-t="6388">My Muse helps me manage that.</p>
+<p data-t="6396">Yeah. But there were these series of things that quite early you articulated, and I was like, “Okay, this is kind of extreme, but it seems directionally right, and we should go do this.” And I went and talked to other people who were more the people you'd conventionally think of, and it was just very much what you'd expect a big company to operate. And I was like, “No, we want to do something that's—”</p>
+<p class="q" data-t="6424">As you describe this, I'll note four things that I think even other opinionated, effective founder CEOs would not have done. One, you just called the recent prior effort by a bunch of people at the company a failure and not good enough. You were more diplomatic than that, but the act of standing up—<a href="https://www.youtube.com/watch?v=XfdIhd1g6EI&t=6424s">&#x21AA; 1:47:04</a></p>
+<p data-t="6446">Off the trajectory.</p>
+<p class="q" data-t="6446">Yeah, but the act of standing up, people can read between the lines. So sometimes you have to reboot a team. That's one. Thing two is you are willing to pay ungodly amounts of money for effectively talent. You're paying a lot of money to bring Alex and some other people, but a lot of money for Alex in particular, over.<a href="https://www.youtube.com/watch?v=XfdIhd1g6EI&t=6446s">&#x21AA; 1:47:26</a></p>
+<p data-t="6472">And 49% of this very good grindy business.</p>
+<p data-t="6472">Yeah, exactly. But let's keep the story straight.</p>
+<p class="q" data-t="6481">So there's that. Thing three is, I'll note, Alex had never trained a frontier model before. And so you were taking some amount of a bet on Alex's potential to do something where he had done stuff in AI, but no offense, he just had not done the specific thing that you were being hired to do.<a href="https://www.youtube.com/watch?v=XfdIhd1g6EI&t=6481s">&#x21AA; 1:48:01</a></p>
+<p class="q" data-t="6500">And then fourth, you were saying you cleared your calendar and just only did this for two months. I think a lot of CEOs would've had the business review and would have had the board thing, and they would have had the customer stuff and things like that. Those four seem to me pretty interesting, where I think a lot of CEOs would not have done those.<a href="https://www.youtube.com/watch?v=XfdIhd1g6EI&t=6500s">&#x21AA; 1:48:20</a></p>
+<p data-t="6513">Yeah, that's interesting.</p>
+<p data-t="6520">You may not appreciate this about yourself, but I think one thing that is quite special about Mark is the degree to which, once he concludes that something is the right thing or something makes sense, he just fully shifts everything to be consistent with that belief set.</p>
+<p data-t="6538">And to your point, I think the inertia of most, even very successful founders who are opinionated and edgy or whatnot, would just be, “Oh, I still have my whole calendar, and so I'll just talk about doing this thing and hope that somebody does it” kind of situation. Whereas I think when Mark concludes that something is the thing he has to do or makes a lot of sense, then he really does—he has maybe a very high learning rate in that sense.</p>
+<p data-t="6570">He's very willing to pivot entire things to be consistent with it. And I think one very underappreciated thing is the degree to which so much of the company had to pivot to support MSL as well. While it was this more startup-y effort within a larger company, the needs of MSL were still quite large.</p>
+<p data-t="6596">We needed a huge amount of help on infrastructure. We needed these large-scale data centers to be built. We needed lots of support from many other parts of the company. And especially as Muse has been successful, we've also needed lots of deep collaboration with the rest of the company.</p>
+<p data-t="6612">And this is one thing that I think only is possible because Mark is the founder CEO, and he can ensure that we have a global optimization towards this AI-maximalist version of Meta, versus the natural inertia of an organization towards just local optimization ad infinitum.</p>
+<p data-t="6637">But it's also a lot of how we work together. It's important to me to be in the details of this work so that we can get everything around the company to go do what we need to do, right? I'll have opinions about this stuff, but I'm not the lead researcher. But I think that's a lot of how we work together well.</p>
+<p data-t="6662">We're quite in the details of all of this stuff, but running the lab is a big thing. Running the rest of the company in order to support the effort is a big thing. You almost can't really get this done, I think, without both of those pieces.</p>
+<p data-t="6678">And one thing that I think was quite important about when we set the whole thing up is Meta, the company, invested a huge amount to stand up MSL. And then we very clearly told everyone, “Hey, there's no deadlines. We are going to take things at the right pace,” which I think on the one hand could be absolutely terrifying. You've just stood up this extremely expensive unit, and you're telling everyone—</p>
+<p data-t="6699">Yeah, and you're worried inside a larger company that, okay, seven years from now maybe something will ship, right?</p>
+<p data-t="6709">Yeah, totally. But I think one of the cool things about focusing on talent density and hiring all these very brilliant people who have done so much already that's very impressive is everybody had a lot of motivation to ship, and everybody wanted to leave their mark, so to speak, on the field. And so everybody was highly self-motivated to move as quickly as possible.</p>
+<p data-t="6735">And one of the things that's been funny, and I've had to continue reminding the team of, is it is a team of a lot of insecure overachievers. So at any one point, if I ask them, “Hey, where do you think we'll be in three months?” I always get the most—</p>
+<p data-t="6753">Everyone always says it's awful.</p>
+<p data-t="6753">“It's awful. We're screwed.” Yeah, these very pessimistic answers. And then I record it, and three months later I'm like, “Hey, we just shipped this model. Let me just show you where all of you said we would be three months ago.”</p>
+<p class="q" data-t="6770">And has that caused them to get any more optimistic, or no?<a href="https://www.youtube.com/watch?v=XfdIhd1g6EI&t=6770s">&#x21AA; 1:52:50</a></p>
+<p data-t="6770">No, they're still very self-critical. I think it's not that they're pessimistic. I think that the average person seems quite optimistic about MSL and very self-critical about their own project. Which I think is actually quite a healthy dynamic. But the trend continues.</p>
+<p data-t="6793">And in many ways Muse Wonder is this incredible milestone for everyone because it is a—</p>
+<p data-t="6793">The team was very, very critical that was working on it along the way.</p>
+<p class="q" data-t="6803">When did you guys know that Muse Wonder was good?<a href="https://www.youtube.com/watch?v=XfdIhd1g6EI&t=6803s">&#x21AA; 1:53:23</a></p>
+<p data-t="6803">That's a good question. So there's all these intermediate drawings.</p>
+<p data-t="6817">You're peeking in the oven, and it's like, “I don't know, it seems kind of gooey still.”</p>
+<p data-t="6820">Yeah, going back to it, there are all these intermediate signals that you can get along the way that things are good or bad.</p>
+<p class="q" data-t="6820">And what are the intermediate signals?<a href="https://www.youtube.com/watch?v=XfdIhd1g6EI&t=6820s">&#x21AA; 1:53:40</a></p>
+<p data-t="6829">So in pre-training, you have a lot of perplexity-based evaluation. So you have a different regime of evals that can help you in pre-training. And then you have the more traditional benchmarks that can help you towards RL. But this model, as you mentioned, has been cooking for quite a while.</p>
+<p data-t="6848">I think one of the funniest things about AI research is that there's a lot of times where people just are squinting at a bunch of dots and being like, “Yeah, looks like it's good,” or, “Looks a little bit off.” One of the funniest things is the people have protractors, analog protractors that they put against a set of lines on their monitor to measure an angle.</p>
+<p data-t="6881">So AI's not come for this job yet.</p>
+<p data-t="6885">So I think there's more vibes driving—</p>
+<p class="q" data-t="6885">Okay, but when did we have this conversation where, when did you know it was good?<a href="https://www.youtube.com/watch?v=XfdIhd1g6EI&t=6885s">&#x21AA; 1:54:45</a></p>
+<p data-t="6892">Well, we had this debate after it was done pre-training, where it was, okay, how long will it take in RL before it is better than Muse Spark? And I remember the folks on the pre-training team were just trying to set expectations. They're like, “Look, sometimes this takes a while.” And then it was immediately. And so we were like, “Okay, I think we're on a good path.” That to me was sort of—</p>
+<p data-t="6927">Yeah. We've been excited. I think we've been pretty excited about it for a few months now. But there's a lot to do there.</p>
+<p data-t="6935">But going back to the beginning, I think one of the things that was very interesting and challenging in standing the thing up was you really just wanted this very high talent density effort. And we were just pulling some of the best people from Meta in and recruiting a lot of the best people.</p>
+<p data-t="6955">And you were asking before, Alex hadn't necessarily trained models like this. But to me, one of the big things was all of the best people were very excited to work with him. And I'm sure you see this in a lot of the things that you do, which is most people are not one-dimensional, right?</p>
+<p data-t="6982">Yeah, maybe you do a specific thing, but your ability to grow and expand is largely based on how effectively can you—do people who are excellent in different domains want to come work with you on different things?</p>
+<p data-t="7000">Yeah, and the great people have followership.</p>
+<p data-t="7000">Yeah. And so I think that there was a little bit of that, but also just, even for the people that don't know you yet or don't know what you're about, are you an impressive person and a compelling person that people want to come work with? Do people feel comfortable that you're going to create this environment? And I think you were very thoughtful about this early on.</p>
+<p data-t="7030">Some of the stuff I think you had fully formed as beliefs of how you thought we should do this. But I also remember when we were having the initial recruiting conversations, we were in real time shaping, okay, this construct that we're talking about with this person isn't quite going to work, but they seem good, and they have this thought. And it was really coalescing this vision about what the shape of it should be in real time.</p>
+<p data-t="7053">I'm sure you remember this, where there were some of the initial concepts. I think probably the most extreme thing was, I think you had the concept of the talent density and that piece. But I think we weren't sure up front that it was going to have to be a full reboot, right?</p>
+<p data-t="7080">That basically started when we were out talking to a lot of the best people. And we realized that, hey, in order to make this as attractive as possible, it should feel like, okay, we're starting this thing again from scratch. And yeah, we'll pull in a lot of the great people from the Llama effort and FAIR and all of that too.</p>
+<p data-t="7101">But that was a very intentional thing that we basically figured out, and that you figured out as we were out talking to the initial set of people, of what was going to make this compelling. And it ended up being really smart and making a huge difference in the culture of the lab and how it got started.</p>
+<p data-t="7117">But being able to be that dynamic about figuring out, what does the shape of this need to be? I think that's a very uncommon trait. It's a very entrepreneurial trait, right? So when I was thinking about, all right, this field is going to keep on evolving, what's the thing that's going to be important for someone who's going to run a lab well?</p>
+<p data-t="7138">It's not, are they an expert in whatever the latest modality is, or training technique for a lab? It's, is the person a clear thinker and able to dynamically update and move as an entrepreneur would? I think this is just an inherently very entrepreneurial space.</p>
+<p class="q" data-t="7158">Has this experience changed your view on the value of going external? Both your reboot, a bunch of the people you brought in were external, like Alex and Nat and Daniel and folks. But then also you're describing deciding whether you needed a reboot based on going to the outside intelligence of the aggregate views of the researchers in the industry.<a href="https://www.youtube.com/watch?v=XfdIhd1g6EI&t=7158s">&#x21AA; 1:59:18</a></p>
+<p class="q" data-t="7189">Do you feel like you'll carry forward that approach for future unrelated projects? Because obviously the risk of a large company is that everyone's like, “Oh, we got a great approach. Yeah, let me show you our hundred-page document on it.”<a href="https://www.youtube.com/watch?v=XfdIhd1g6EI&t=7189s">&#x21AA; 1:59:49</a></p>
+<p data-t="7208">Obviously, a lot of what we had to do here was rotate a lot of the rest of the company. And for things like the infrastructure team that now is building these huge clusters to support this, that's obviously a huge thing. So huge parts of the company had to pivot to do this. And obviously you can't do too many of those at the same time, right? Only one thing can be the top priority.</p>
+<p data-t="7232">But I think on balance, it has made me somewhat more optimistic. We brought in this guy Kunal Shah, who I think is one of the top entrepreneurs in India, building this great company CRED. And now he's running WhatsApp, which I always thought should do more in commerce, and we were underserved there, and India is the biggest country that we're in.</p>
+<p data-t="7257">But that's a bit of a different situation because we're not pivoting the whole company towards WhatsApp. We just wanted to bring more entrepreneurial energy there. This was a level 10 out of 10 difficulty thing. I don't want to talk about it in the past tense, as if it's done, because it's still a level 10 out of 10 difficulty thing.</p>
+<p data-t="7274">But I think the number of pieces that had to work, it was quite all-encompassing. And I think that it's both difficult for the people doing it, but I do think that that also puts some level of strain on the rest of the company, on the financial model of the company. So I wouldn't want to conflate those two pieces, right?</p>
+<p data-t="7300">It's good to have new blood, and it's good to have people who understand the context. And you were talking about people who've been around Meta for a while and understand the ups and downs. If you've worked at Meta for 10 years, you've seen some shit, right? We've gone through a lot of hard times, and I think that's important context too.</p>
+<p data-t="7323">But I think a lot of this is just, whenever you're building a team, Alex had a theory for what the team shape needed to be, and I guess I had a theory for what the shape of the leaders needed to be for it. And a year-plus in, it seems okay. First of all, it was just good to try something different, right? And then different than what everyone else was doing.</p>
+<p data-t="7352">I think there's some other dimensions here that are worth mentioning too. When deciding we had to do the full reboot, one of the main inputs was external, but also one of the inputs—I can't remember if I told you this story—but one of the first meetings I had when I joined, I was in this meeting with some of the leads of the existing effort.</p>
+<p data-t="7387">And I was like, “Okay, I think the first thing we need to do is train a really good reasoning model by some timeframe. I don't know when, but this is clearly the most important milestone.” And one of the key leads in the group, who no longer works at Meta, was like, “Oh, we don't need a reasoning model. Do any of our consumers need a reasoning model? I feel like we don't need to do a reasoning model. We could just do a normal model.”</p>
+<p data-t="7409">And I had this heart-sinking moment.</p>
+<p data-t="7419">“Oh no, I've joined the wrong company.”</p>
+<p data-t="7419">I was like, “Oh, I've got to take 10 steps back.” And I think this is a funny anecdote. I remember calling Nat after this meeting. I was like, “Nat, this is what they just said in the meeting.”</p>
+<p data-t="7435">But I think it was specifically an indicator of something that Mark, when he talked to people, certainly also started to realize, which is we needed leadership in the company to be much more AI-pilled and much more forward-leaning and front-leaning on how quickly the technology's moving, where it's going to go to, what the possibilities are. And effectively dramatically more AI-pilled.</p>
+<p data-t="7462">And I think as Mark started pivoting and shifting the whole company towards this direction, it was very clear. I think Mark got AI-pilled, and then everyone saw that he was AI-pilled, and everyone realized, “Oh, this is where the company's going.” Then I think you had a lot of the existing leaders very quickly pick it up and change.</p>
+<p data-t="7486">And Adam Mosseri, for example, who runs Instagram, has one of the most aesthetic but also effective personal vibe-code and personal mini-app setups of anyone that I've seen. I think he's really gone quite far in the direction.</p>
+<p data-t="7505">And I think a lot of the leaders at Meta who have been at Meta a long time are all very adaptive. To the prior point, they've been in a highly turbulent period of technology. Now AI is maybe five or 10 times more turbulent and faster-moving than those past waves. But I think they have adapted to new trends many times.</p>
+<p data-t="7528">And so I've been very impressed, actually, by seeing how quickly a lot of Meta leadership—if I compare the conversations I would have with them when I first joined versus the conversations I have now—</p>
+<p data-t="7536">They're now super AI-pilled.</p>
+<p data-t="7543">Yeah. And it's very impressive, honestly, for that to happen at the large scale of Meta, which is one of the largest companies in the world.</p>
+<p data-t="7551">Yeah, we got them there pretty quickly. But like you're saying, if you start coding, then it's helpful. But I think a big part of the culture that we were trying to create is also, when we were talking about how you have all these direct reports, the point of it isn't that you have the direct reports. It's the absence of non-technical managers, right?</p>
+<p data-t="7582">So I don't think you would say that you're providing a ton of managerial support to 200 people at once. That's not a feature of the thing.</p>
+<p data-t="7591">Alex, well known for career chats and emotional “How are you doing?” checking.</p>
+<p data-t="7596">But I think it's just well known among researchers that there's this common pattern. You go from being very technical to a role where you're not in the details anymore, and then you very quickly become not technical or don't understand it, much faster than you probably realize. And it's quite dangerous.</p>
+<p data-t="7615">It's such a fast-moving domain, especially.</p>
+<p data-t="7619">I think this whole thing of, you have to stay technical, people have to use the agents, people should be writing code, that has been a really important part of this whole thing.</p>
+<p class="q" data-t="7626">Have you had any very funny disagreements between the two of you guys?<a href="https://www.youtube.com/watch?v=XfdIhd1g6EI&t=7626s">&#x21AA; 2:07:06</a></p>
+<p data-t="7626">We have a lot of disagreements.</p>
+<p data-t="7635">Yeah, we were working on naming up until very recently.</p>
+<p data-t="7635">Naming is a good fight. It's one of the things I appreciate about Alex. I think it goes back to your philosophy—you were talking about this for recruiting back at Scale—is hire people who really care, right? I think there's some expletives in it, but it's fine. But Alex really cares, it turns out.</p>
+<p data-t="7659">I think that's really important, right? Part of what you get when you have the supernova of all these different talented but very strong-willed people together is you're going to have fun fights and not-fun fights. But to some degree, I'd rather have people push for things that they believe in and argue over things than just have people think that they're blindly executing something. People need to feel ownership. So yeah.</p>
+<p class="q" data-t="7688">How is Mark a different boss than you expected?<a href="https://www.youtube.com/watch?v=XfdIhd1g6EI&t=7688s">&#x21AA; 2:08:08</a></p>
+<p data-t="7688">Well, I don't have a huge comparison set.</p>
+<p data-t="7696">I think I can leave now.</p>
+<p data-t="7696">Yeah, exactly.</p>
+<p data-t="7698">I think one of the very cool things about working with Mark over the past year has just been watching the true degree of his boldness, and this trait that we were talking about before: once he internalizes certain beliefs, the speed and magnitude of willingness to change prior actions and pivot towards the worldview that is consistent with those beliefs. I think these are pretty unusual traits, generally speaking, even among this base of founders.</p>
+<p data-t="7744">Mark actually ingests new information and fully updates his worldview and then acts in accordance with the newly installed worldview.</p>
+<p data-t="7744">Very Bayesian.</p>
+<p data-t="7744">And then willing to take—</p>
+<p data-t="7744">Very Bayesian.</p>
+<p data-t="7754">Very Bayesian. I've never gotten such a nice compliment.</p>
+<p data-t="7754">What lovely priors you have.</p>
+<p data-t="7754">Yeah. Posterior.</p>
+<p data-t="7762">You're not allowed to talk about posteriors anymore after the whole incident.</p>
+<p data-t="7762">Yeah. No, but then I think also just the degree of boldness. It was actually quite puzzling to me at first, the degree to which you were willing to make these massive bets. It was something actually Nat and I would often talk about. I was like, “Wow, we're really going big here.” And both of us would be like, “Would you go this big? Would you go this big?”</p>
+<p data-t="7790">And so I think that is quite a notable trait and something I really admire. And if I look back at the history of Meta, and I imagine what the scenario would've been in all these pivotal moments, I can see how this is the movie, so to speak.</p>
+<p data-t="7815">Or this is how a lot of those situations go. The way I imagine it is, there clearly are moments where something very, very big is happening. And it may not even really be showing in the metrics, or it may not be impacting user counts or impacting revenue or whatever it might be. It's not really impacting things. But clearly, if you believe that thing is going to happen, then it has massive implications for the company and the product.</p>
+<p data-t="7847">And I think my post hoc retelling of Meta's history is that Meta is a company where every time that happens, Meta takes it extremely, extremely seriously. And that has enabled the company to innovate and continue evolving with a very fast-moving and fast-changing tech landscape.</p>
+<p data-t="7866">Mark is very Bayesian.</p>
+<p data-t="7866">Yeah, very Bayesian. So Bayesian.</p>
+<p data-t="7866">Life is short. Just do the right thing.</p>
+<p data-t="7873">Yeah. And I think AI is maybe that times a hundred or whatnot. But a lot of CEOs would've told you last summer, “Oh yeah, I think AI is the most important thing for my business.” I think maybe every CEO would say that. But then you look at what they're actually doing and how consistent are their actions with that belief. And I think this is quite a special thing about Meta and Mark.</p>
+<p class="q" data-t="7896">Last question, because we're past all of our bedtimes.<a href="https://www.youtube.com/watch?v=XfdIhd1g6EI&t=7896s">&#x21AA; 2:11:36</a></p>
+<p data-t="7904">I'm so flattered.</p>
+<p class="q" data-t="7904">Yeah. What do you make of all of Alex's deranged posting on Twitter?<a href="https://www.youtube.com/watch?v=XfdIhd1g6EI&t=7904s">&#x21AA; 2:11:44</a></p>
+<p data-t="7910">I think most of it is great, but I guess my main view—</p>
+<p data-t="7910">But it doesn't matter how much you fail. It matters how big you win when you win.</p>
+<p data-t="7921">I think with communication, it's most important to just be authentic. And I think when you're trying to be authentic, some of the things don't come out the way you want. And I think that it is better to make the trade in that direction than it is to be overly scripted and not be authentic. But most of it I just feel is hilarious.</p>
+<p data-t="7942">So yeah, what do you think about my deranged tweets?</p>
+<p data-t="7950">I'm not a heavy X user, but—</p>
+<p class="q" data-t="7950">But you are back on X now.<a href="https://www.youtube.com/watch?v=XfdIhd1g6EI&t=7950s">&#x21AA; 2:12:30</a></p>
+<p data-t="7950">I'm back to posting. A bunch of the researchers are there, and we want to be over there. But everything I post there, I also post on Threads, and it's all good. But every time I load X, I have four Alex posts, and it just cracks me up.</p>
+<p data-t="7970">We were just talking about this.</p>
+<p class="q" data-t="7970">Well, you're now a clearinghouse, I presume, where people send you good stuff.<a href="https://www.youtube.com/watch?v=XfdIhd1g6EI&t=7970s">&#x21AA; 2:12:50</a></p>
+<p data-t="7970">I was like, “Where do you come up with this stuff?”</p>
+<p class="q" data-t="7977">How does it work?<a href="https://www.youtube.com/watch?v=XfdIhd1g6EI&t=7977s">&#x21AA; 2:12:57</a></p>
+<p data-t="7981">We were talking about this with my partner yesterday, and I think one observation was just, actually probably still to this moment, my thought pattern oftentimes is, “Oh, that's funny. I wonder what Jolly would think about that.” And then you get good memes out of that.</p>
+<p data-t="8001">That being said, I have experienced the brutal metabolism of the internet and how quickly it metabolizes memes. And so you really have to stay on the cutting edge of memeing to—</p>
+<p data-t="8010">It's easy to fall behind.</p>
+<p data-t="8010">Yeah.</p>
+<p data-t="8020">Which is maybe a good summary of this conversation. It's easy to fall behind. You gotta stay at the frontier. Stay in the details.</p>
+<p data-t="8027">Yeah, stay technical and stay at the frontier.</p>
+<p data-t="8027">Yeah. Alrighty, we'll leave it there.</p>
+<p data-t="8027">All right. Awesome. Thanks, guys.</p>
+<p data-t="8027">Thank you.</p>
+<p class="q" data-t="8027">Okay, wait, so what is everyone drinking?<a href="https://www.youtube.com/watch?v=XfdIhd1g6EI&t=8027s">&#x21AA; 2:13:47</a></p>
+<p data-t="8037">Well, that. What is this?</p>
+<p data-t="8037">That's a keg of Guinness that I brought you.</p>
+<p class="q" data-t="8037">This is Guinness from?<a href="https://www.youtube.com/watch?v=XfdIhd1g6EI&t=8037s">&#x21AA; 2:13:57</a></p>
+<p data-t="8037">Dublin.</p>
+<p class="q" data-t="8045">Oh, wow. You were just there?<a href="https://www.youtube.com/watch?v=XfdIhd1g6EI&t=8045s">&#x21AA; 2:14:05</a></p>
+<p data-t="8045">Yeah, I was just there this week.</p>
+<p data-t="8045">Oh, awesome. Yeah. Well, thank you. We got the local stuff.</p>
+<p data-t="8045">Yeah, there you go. I figured this would be a good occasion to get the Guinness going.</p>
+<p data-t="8055">Yeah.</p>
+    </div>
+  </main>
+  <script>
+  async function toggleYtBookmark(btn) {
+    const payload = {
+      title: btn.dataset.title,
+      url: btn.dataset.url,
+      filename: btn.dataset.filename,
+      interviewDate: btn.dataset.date,
+      source: 'YT',
+      expert: btn.dataset.channel,
+    };
+    try {
+      const resp = await fetch('/bookmark', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload),
+      });
+      const result = await resp.json();
+      setYtBookmarkState(btn, !!result.bookmarked);
+    } catch (e) {
+      console.error('Bookmark toggle failed:', e);
+    }
+  }
+  function setYtBookmarkState(btn, on) {
+    btn.classList.toggle('is-bookmarked', on);
+    btn.innerHTML = on ? '&#9733;' : '&#9734;';
+    btn.title = on ? 'Bookmarked' : 'Bookmark';
+    btn.setAttribute('aria-label', on ? 'Bookmarked' : 'Bookmark');
+  }
+  (async function initYtBookmarkState() {
+    const btn = document.getElementById('yt-bookmark-btn');
+    if (!btn || !btn.dataset.filename) return;
+    try {
+      const resp = await fetch('/bookmarks');
+      if (!resp.ok) return;
+      const list = await resp.json();
+      if (Array.isArray(list) && list.some(b => b && b.filename === btn.dataset.filename)) {
+        setYtBookmarkState(btn, true);
+      }
+    } catch (e) { /* offline -- leave default state */ }
+  })();
+
+  async function shareYtPage(btn) {
+    const original = btn.innerHTML;
+    btn.disabled = true;
+    btn.innerHTML = '&hellip;';
+    try {
+      const resp = await fetch('/share', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ filename: btn.dataset.filename }),
+      });
+      const result = await resp.json();
+      if (!result.ok) throw new Error(result.error || 'Share failed');
+      try { await navigator.clipboard.writeText(result.url); } catch (e) {}
+      btn.innerHTML = '&#10003;';
+      btn.title = 'Copied ' + result.url;
+      setTimeout(() => { btn.innerHTML = original; btn.disabled = false; btn.title = 'Share'; }, 2500);
+    } catch (e) {
+      console.error('Share failed:', e);
+      btn.innerHTML = '!';
+      btn.title = 'Share failed: ' + (e && e.message || e);
+      setTimeout(() => { btn.innerHTML = original; btn.disabled = false; btn.title = 'Share'; }, 3000);
+    }
+  }
+
+  // When the page is viewed from somewhere other than the local Reader
+  // server (e.g. a shared copy on GitHub Pages), hide the interactive
+  // buttons whose endpoints only exist on localhost.
+  (function hideLocalOnlyControls() {
+    const host = location.hostname;
+    const isLocal = host === 'localhost' || host === '127.0.0.1' || host === '';
+    if (isLocal) return;
+    const actions = document.querySelector('.yt-header-actions');
+    if (!actions) return;
+    const bookmark = actions.querySelector('#yt-bookmark-btn');
+    const share = actions.querySelector('#yt-share-btn');
+    if (bookmark) bookmark.remove();
+    if (share) share.remove();
+  })();
+  </script>
+<script id="reader-presentation-script">
+(function () {
+const readerKind = "youtube";
+const readerStandalone = true;
+const readerFilename = "";
+const readerNavigation = null;
+const splitExpertTitle = function splitExpertTitle(title, knownTicker = '') {
+  const symbol = '[A-Z][A-Z0-9.-]{0,11}';
+  const symbols = new RegExp(`^${symbol}(?:\\s*[/,&+]\\s*${symbol})*$`);
+  const leading = title.match(new RegExp(`^(${symbol})(?:\\s*[—–:|]\\s*|\\s+-\\s+)(.+)$`));
+  if (leading) return { label: leading[1], description: leading[2] };
+
+  // Some saved interviews name a company, then its ticker, then the topic.
+  const pipes = title.split(/\s*\|\s*/);
+  if (pipes.length > 1) {
+    const tickerIndex = pipes.findIndex(part => symbols.test(part));
+    if (tickerIndex >= 0) return { label: pipes[tickerIndex], description: pipes.filter((_, i) => i !== tickerIndex).join(' · ') };
+    if (pipes[0].length <= 32) return { label: pipes[0], description: pipes.slice(1).join(' · ') };
+  }
+
+  const divided = title.match(/^(.+?)\s+[—–-]\s+(.+)$/) || title.match(/^([^:]{1,32}):\s+(.+)$/);
+  if (divided) {
+    const [, subject, topic] = divided;
+    const namedSymbols = [...subject.matchAll(/\(([^)]+)\)/g)].map(m => m[1]).filter(value => symbols.test(value));
+    if (namedSymbols.length) return { label: namedSymbols.join(' / '), description: topic };
+    if (symbols.test(topic)) return { label: topic, description: subject };
+    if (subject.length <= 32) return { label: subject, description: topic };
+  }
+  // Broad industry interviews may have no single issuer or separable heading.
+  return { label: knownTicker || 'EX', description: title };
+};
+const abbreviateEventTitle = function abbreviateEventTitle(title) {
+  return String(title || '')
+    .replace(/\bGoldman Sachs(?: Group)?\b/gi, 'GS')
+    .replace(/\b(?:Bank of America(?: Merrill Lynch| Securities)?|BofA(?: Merrill Lynch| Securities)?)\b/gi, 'BofA')
+    .replace(/\bBarclays(?: Capital| Bank| PLC)?\b/gi, 'BCA')
+    .replace(/\bJ\.?\s*P\.?\s*Morgan(?:\s+Chase)?\b/gi, 'JPM')
+    .replace(/\bWells Fargo(?: Securities)?\b/gi, 'WFC')
+    .replace(/\b(?:Citigroup|Citibank|Citi)(?:['’]s)?\b/gi, 'Citi')
+    .replace(/\bMorgan Stanley\b/gi, 'MS')
+    .replace(/\bDeutsche Bank\b/gi, 'DB')
+    .replace(/\bRBC Capital Markets\b/gi, 'RBC')
+    .replace(/\bBMO Capital Markets\b/gi, 'BMO')
+    .replace(/\bJefferies\b/gi, 'JEF')
+    .replace(/\bConferences?\b/gi, 'Conf');
+};
+// Runs after the saved page's scripts. Move real controls so their IDs, data,
+// listeners and bookmark/share payloads survive the visual upgrade.
+(function () {
+  'use strict';
+  const oldHeader = document.querySelector('body > .header, body > header, body > .sticky-header, main > .yt-meta-card');
+  const content = document.querySelector('main, body > .content');
+  if (!oldHeader || !content || oldHeader.contains(content) || document.body.classList.contains('reader-page')) return;
+
+  const make = (tag, className, text) => {
+    const element = document.createElement(tag);
+    if (className) element.className = className;
+    if (text) element.textContent = text;
+    return element;
+  };
+  const clean = value => String(value || '').replace(/\s+/g, ' ').trim();
+  const labels = { earnings: 'Earnings call', presentation: 'Presentation', expert: 'Expert call', youtube: 'YouTube' };
+  const metadataSelector = '.yt-header-sub, .yt-meta-sub, .metadata, .header-meta, .meta, .subtitle, .subline, .profile, .src-date, .header-subtitle, .date';
+  const metadataNodes = [...oldHeader.querySelectorAll(metadataSelector)].filter(node => !node.parentElement.closest(metadataSelector));
+  // Templates vary across the archive. Keep all header text, not just text in
+  // the newest title class; otherwise older dates and expert roles disappear.
+  const titleCopy = oldHeader.cloneNode(true);
+  titleCopy.querySelectorAll(`${metadataSelector}, .ticker, .market-strip, button, a, script, style`).forEach(node => node.remove());
+  let title = clean(titleCopy.textContent) || document.title;
+  let label = clean(oldHeader.querySelector('.ticker')?.textContent).replace(/^\(|\)$/g, '');
+  const market = oldHeader.querySelector('.market-strip');
+  const actions = [...oldHeader.querySelectorAll('button, a')].filter(node => !node.closest('.yt-header-thumb, .yt-meta-url') && !node.querySelector('img') && !metadataNodes.some(meta => meta.contains(node)));
+
+  if (readerKind === 'expert') {
+    const parts = splitExpertTitle(title);
+    label = parts.label;
+    title = parts.description;
+  } else if (readerKind === 'youtube') {
+    label = 'YT';
+  } else if (!label) {
+    const symbol = title.match(/\(([A-Z0-9][A-Z0-9.-]{0,11})\)/);
+    if (symbol) { label = symbol[1]; title = clean(title.replace(symbol[0], '')); }
+  }
+
+  document.body.classList.add('reader-page');
+  document.body.dataset.readerKind = readerKind;
+  const header = make('header', 'reader-masthead');
+  const inner = make('div', 'reader-masthead-inner');
+  const brand = make(readerStandalone ? 'span' : 'a', 'reader-brand', readerStandalone ? 'OC Reader' : '‹ Library');
+  if (!readerStandalone) { brand.href = '/status'; brand.title = 'Back to Library'; }
+  const tools = make('div', 'reader-tools');
+  for (const action of actions) {
+    // Q&A is already available in the article's section navigation.
+    if (/^Q\s*(?:&|and)\s*A$/i.test(clean(action.textContent))) continue;
+    action.classList.add('reader-tool');
+    if (action.matches('#bookmark-btn, #yt-bookmark-btn')) {
+      action.setAttribute('aria-label', action.title || 'Bookmark');
+    }
+    if (action.matches('#share-btn, #yt-share-btn')) action.setAttribute('aria-label', 'Share');
+    if (readerStandalone && action.matches('button')) action.hidden = true;
+    tools.append(action);
+  }
+  const marker = make('div', 'reader-marker');
+  marker.title = labels[readerKind];
+  if (label) marker.append(make('span', readerKind === 'youtube' ? 'reader-source-badge' : 'reader-symbol', label));
+  const heading = make('div', 'reader-heading');
+  heading.append(make('h1', 'reader-title', title));
+  const facts = make('div', 'reader-facts');
+  for (const metadata of metadataNodes) {
+    // Archived source-specific layout classes must not shape the shared header.
+    metadata.className = 'reader-metadata';
+    metadata.title = clean(metadata.textContent);
+    // The saved page, not its filename/feed title, determines the period.
+    if (readerKind === 'earnings' && /\bQ[1-4]\b/i.test(metadata.textContent) && !/earnings/i.test(metadata.textContent)) {
+      const period = metadata.textContent;
+      metadata.textContent = /[·|]/.test(period)
+        ? period.replace(/\s*([·|])/, ' Earnings $1') : `${period} Earnings`;
+    }
+    // A few older presentation pages put their event heading at the start of
+    // the article and only the date in the header. Include that heading here.
+    const introduction = content.firstElementChild;
+    if (readerKind === 'presentation' && /^\d{1,4}[-/]\d{1,2}[-/]\d{2,4}$/.test(clean(metadata.textContent))
+      && introduction?.tagName === 'P' && !introduction.querySelector('a, strong, b')
+      && clean(introduction.textContent).length < 180
+      && /\b(?:conference|investor (?:day|meeting)|capital markets day|fireside chat)(?:\s+20\d{2})?$/i.test(clean(introduction.textContent))) {
+      metadata.textContent = `${clean(introduction.textContent)} · ${clean(metadata.textContent)}`;
+      metadata.title = metadata.textContent;
+    }
+    if (readerKind === 'presentation') metadata.textContent = abbreviateEventTitle(metadata.textContent);
+    if (readerKind === 'earnings') metadata.textContent = metadata.textContent.replace(/\bQ([1-4])\s+20(\d{2})\b/g, '$1Q$2');
+    (readerKind === 'youtube' ? facts : heading).append(metadata);
+  }
+  if (market) { market.classList.add('reader-market'); facts.append(market); }
+  inner.append(marker, heading, tools, brand, facts);
+  if (readerNavigation && !readerStandalone) {
+    const pages = make('nav', 'reader-page-navigation');
+    pages.setAttribute('aria-label', 'Completed pages');
+    const pageLink = (target, previous) => {
+      const name = previous ? 'Previous' : 'Next';
+      const link = make(target ? 'a' : 'button', 'reader-page-link', previous ? '‹ Previous' : 'Next ›');
+      link.setAttribute('aria-label', `${name} completed page`);
+      if (target) {
+        link.href = target.href;
+        link.rel = previous ? 'prev' : 'next';
+        link.title = `${name} (${previous ? 'newer' : 'older'}): ${target.title}`;
+      } else {
+        link.disabled = true;
+        link.title = previous ? 'First completed page' : 'Last completed page';
+      }
+      return link;
+    };
+    const position = make('span', 'reader-page-position', `${readerNavigation.position.toLocaleString()} / ${readerNavigation.total.toLocaleString()}`);
+    position.title = 'Position in Completed · most recent first';
+    pages.append(pageLink(readerNavigation.previous, true), position, pageLink(readerNavigation.next, false));
+    inner.append(pages);
+  }
+  header.append(inner);
+  if (content.contains(oldHeader)) {
+    content.before(header);
+    oldHeader.remove();
+  } else oldHeader.replaceWith(header);
+
+  const layout = make('div', 'reader-layout');
+  content.before(layout);
+  content.classList.add('reader-article');
+  layout.append(content);
+  // Some historical summaries close their content wrapper before Q&A.
+  // Preserve those nodes and their order inside the article as well.
+  let next = layout.nextElementSibling;
+  while (next && next.matches('h2#qa, .qa-block')) {
+    const following = next.nextElementSibling;
+    content.append(next);
+    next = following;
+  }
+
+  // Wide tables scroll within the article instead of stretching a phone page.
+  content.querySelectorAll('table').forEach((table, index) => {
+    let wrapper = table.parentElement;
+    if (!wrapper.matches('.table-wrap, .table-wrapper, .table-scroll, .reader-table-wrap')) {
+      wrapper = make('div', 'reader-table-wrap');
+      table.before(wrapper);
+      wrapper.append(table);
+    }
+    wrapper.classList.add('reader-table-wrap');
+    wrapper.tabIndex = 0;
+    wrapper.setAttribute('role', 'region');
+    wrapper.setAttribute('aria-label', `Data table ${index + 1}`);
+  });
+
+  // Use H3 for the two standard call sections without changing their anchors
+  // or treating speaker headings as peers in the contents navigation.
+  const isCallSection = heading => /^(?:Prepared Remarks|Q\s*(?:&|and)\s*A)$/i.test(clean(heading.textContent));
+  const mainHeadings = new Set([...content.querySelectorAll('h2, h3')].filter(heading => heading.tagName === 'H2' || isCallSection(heading)));
+  for (const heading of [...mainHeadings]) {
+    if (!isCallSection(heading)) continue;
+    if (heading.tagName === 'H3') { heading.classList.add('reader-section-heading'); continue; }
+    const compact = make('h3');
+    for (const attribute of heading.attributes) compact.setAttribute(attribute.name, attribute.value);
+    compact.classList.add('reader-section-heading');
+    compact.append(...heading.childNodes);
+    heading.replaceWith(compact);
+    mainHeadings.delete(heading);
+    mainHeadings.add(compact);
+  }
+  const headings = [...content.querySelectorAll('h2, h3')].filter(heading => mainHeadings.size < 3 || mainHeadings.has(heading));
+  if (headings.length > 1) {
+    const navigation = make('nav', 'reader-contents');
+    navigation.setAttribute('aria-label', 'On this page');
+    navigation.append(make('div', 'reader-contents-label', 'On this page'));
+    const links = [];
+    headings.forEach((heading, index) => {
+      if (!heading.id) {
+        let id = `reader-section-${index + 1}`;
+        while (document.getElementById(id)) id += '-section';
+        heading.id = id;
+      }
+      const labelCopy = heading.cloneNode(true);
+      labelCopy.querySelectorAll('a, .role').forEach(node => node.remove());
+      const link = make('a', mainHeadings.size && !mainHeadings.has(heading) ? 'reader-subsection' : '', clean(labelCopy.textContent));
+      link.href = `#${encodeURIComponent(heading.id)}`;
+      link.addEventListener('click', () => {
+        let parent = heading.parentElement;
+        while (parent && parent !== content) {
+          if (parent.tagName === 'DETAILS') parent.open = true;
+          parent = parent.parentElement;
+        }
+      });
+      links.push(link);
+      navigation.append(link);
+    });
+    layout.prepend(navigation);
+    let pending = false;
+    const markSection = () => {
+      pending = false;
+      const threshold = header.getBoundingClientRect().bottom + 48;
+      let selected = 0;
+      headings.forEach((heading, index) => {
+        if (heading.getClientRects().length && heading.getBoundingClientRect().top <= threshold) selected = index;
+      });
+      links.forEach((link, index) => {
+        if (index === selected) link.setAttribute('aria-current', 'location');
+        else link.removeAttribute('aria-current');
+      });
+    };
+    window.addEventListener('scroll', () => {
+      if (!pending) { pending = true; requestAnimationFrame(markSection); }
+    }, { passive: true });
+    markSection();
+  } else layout.classList.add('reader-without-contents');
+
+  const measureHeader = () => document.body.style.setProperty('--reader-header-height', `${header.getBoundingClientRect().height}px`);
+  measureHeader();
+  new ResizeObserver(measureHeader).observe(header);
+})();
+
+
+})();
+</script>
+</body>
+</html>
