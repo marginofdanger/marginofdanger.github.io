@@ -22,9 +22,6 @@
   --tag-live-text: #3fb950;
   --tag-tool-bg: #1a2a3a;
   --tag-tool-text: #58a6ff;
-  --pano-bg: linear-gradient(135deg, #1a2433 0%, #0d1a2e 100%);
-  --pano-border: #2a3f5f;
-  --pano-shadow: rgba(88,166,255,0.18);
 }
 :root[data-theme="light"] {
   --bg: #faf8f2;
@@ -41,9 +38,6 @@
   --tag-live-text: #16813b;
   --tag-tool-bg: #e4f1ee;
   --tag-tool-text: #087c73;
-  --pano-bg: linear-gradient(135deg, #f3f5ee 0%, #e8f0ec 100%);
-  --pano-border: #c9d7d2;
-  --pano-shadow: rgba(8,124,115,0.12);
 }
 body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
@@ -88,31 +82,9 @@ a.card:hover {
 .tag-tool { background: var(--tag-tool-bg); color: var(--tag-tool-text); }
 @media (max-width: 800px) { .columns { flex-direction: column; } }
 
-a.panopticon-bar {
-  display: flex; align-items: center; justify-content: space-between;
-  margin: 56px 0 0; padding: 22px 28px;
-  background: var(--pano-bg);
-  border: 1px solid var(--pano-border); border-radius: 10px;
-  text-decoration: none; color: var(--text);
-  transition: border-color 0.15s, transform 0.15s, box-shadow 0.15s;
-}
-a.panopticon-bar:hover {
-  border-color: var(--accent); transform: translateY(-1px);
-  box-shadow: 0 4px 16px var(--pano-shadow);
-}
-.panopticon-bar .pano-left { display: flex; align-items: center; gap: 18px; }
-.panopticon-bar .pano-icon { font-size: 1.9rem; }
-.panopticon-bar .pano-title { font-size: 1.05rem; font-weight: 700; color: var(--heading); letter-spacing: .01em; }
-.panopticon-bar .pano-desc {
-  font-size: 0.82rem; color: var(--muted-strong); margin-top: 2px;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-}
-.panopticon-bar .pano-arrow { font-size: 1.4rem; color: var(--accent); }
 @media (max-width: 600px) {
   body { padding: 24px 16px; }
   .page-header { align-items: flex-start; }
-  a.panopticon-bar { flex-direction: column; align-items: flex-start; gap: 8px; padding: 16px 18px; }
-  .panopticon-bar .pano-arrow { align-self: flex-end; }
 }
 </style>
 </head>
@@ -261,17 +233,6 @@ a.panopticon-bar:hover {
     </a>
   </div>
 </div>
-
-<a class="panopticon-bar" href="https://marginofdanger.github.io/panopticon/">
-  <div class="pano-left">
-    <div class="pano-icon">&#129417;</div>
-    <div>
-      <div class="pano-title">Panopticon — last updated 2026-06-30</div>
-      <div class="pano-desc">Earnings, estimate revisions, annual filings, insider buying, 13D/13G, BDC flows, jobs, and megagrants — all in one place.</div>
-    </div>
-  </div>
-  <div class="pano-arrow">&#8594;</div>
-</a>
 
 <script>
 function initThemeToggle() {
