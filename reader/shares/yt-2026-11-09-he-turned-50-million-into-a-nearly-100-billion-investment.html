@@ -1,0 +1,1153 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>He Turned $50 Million Into a Nearly $100 Billion Investment Firm</title>
+  <style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background: #ffffff;
+  color: #222222;
+  line-height: 1.7;
+  padding: 0 1rem 2rem;
+}
+header {
+  position: sticky;
+  top: 0;
+  background: #ffffff;
+  z-index: 100;
+  border-bottom: 2px solid #aaaaaa;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  padding: 0.6rem 1rem;
+}
+.header-inner {
+  max-width: 78ch;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header-title { font-size: 1rem; color: #222222; }
+.header-title strong { font-size: 1.1rem; }
+.header-link {
+  font-size: 0.85rem;
+  color: #666666;
+  text-decoration: none;
+  border: 1px solid #aaaaaa;
+  padding: 0.2rem 0.7rem;
+  border-radius: 4px;
+}
+.header-link:hover { background: #f5f5f5; }
+main {
+  max-width: 78ch;
+  margin: 0 auto;
+  padding-top: 0.5rem;
+}
+h2 {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #222222;
+  margin-top: 2rem;
+  margin-bottom: 0.5rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 2px solid #aaaaaa;
+}
+h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #333333;
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+section { margin-bottom: 1.5rem; }
+ul { margin: 0.5rem 0 0.5rem 1.5rem; }
+li { margin-bottom: 0.4rem; }
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0.75rem 0;
+  font-size: 0.92rem;
+}
+thead th {
+  background: #333333;
+  color: #ffffff;
+  text-transform: uppercase;
+  font-size: 0.78rem;
+  letter-spacing: 0.05em;
+  padding: 0.5rem 0.75rem;
+  text-align: left;
+  font-weight: 600;
+}
+tbody td {
+  padding: 0.45rem 0.75rem;
+  border-bottom: 1px solid #e2e2e2;
+}
+tbody tr:nth-child(even) { background: #f5f5f5; }
+tbody tr:nth-child(odd) { background: #ffffff; }
+.key-insight {
+  border-left: 4px solid #aaaaaa;
+  background: #f5f5f5;
+  padding: 0.75rem 1rem;
+  margin: 0.75rem 0;
+  font-size: 0.93rem;
+  border-radius: 0 6px 6px 0;
+}
+.qa-pair { margin-bottom: 1.25rem; }
+.question-box {
+  background: #f5f5f5;
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+  margin-bottom: 0.5rem;
+}
+.analyst-label {
+  display: block;
+  font-size: 0.8rem;
+  color: #666666;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  margin-bottom: 0.25rem;
+}
+.answer { padding-left: 0.25rem; }
+.loading-section { opacity: 0.5; }
+.loading-indicator {
+  font-size: 1.2rem;
+  padding: 2rem;
+  text-align: center;
+  color: #666666;
+}
+
+/* YouTube transcript reader */
+
+/* Legacy .yt-meta-card -- kept so old output files still render cleanly.
+   New output uses .header-title.yt below instead. */
+.yt-meta-card {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  margin-bottom: 1.5rem;
+  background: #f5f5f5;
+  border-left: 4px solid #aaaaaa;
+  border-radius: 0 6px 6px 0;
+  padding: 0.9rem 1rem;
+}
+.yt-meta-card img {
+  flex: 0 0 180px;
+  height: 101px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+.yt-meta-body { flex: 1; font-size: 0.93rem; }
+.yt-meta-title { font-weight: 700; font-size: 1rem; margin-bottom: 0.25rem; }
+.yt-meta-sub { color: #666666; margin-bottom: 0.35rem; }
+.yt-meta-url { font-size: 0.85rem; color: #333333; }
+
+/* YouTube sticky header uses the default 78ch-capped centered
+   container so it aligns with the body text column below. The
+   buttons sit at the right edge of that centered container. */
+header:has(.header-inner.yt) { padding: 0.75rem 1rem; }
+.header-inner.yt { gap: 1rem; }
+.header-title.yt {
+  display: flex;
+  gap: 0.9rem;
+  align-items: center;
+  min-width: 0;
+  flex: 1;
+}
+.yt-header-thumb { flex: 0 0 88px; line-height: 0; }
+.yt-header-thumb img {
+  width: 88px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 3px;
+  display: block;
+}
+.yt-header-text { min-width: 0; flex: 1; }
+.yt-header-text strong {
+  display: block;
+  font-size: 1rem;
+  line-height: 1.3;
+  color: #222222;
+  /* Allow wrapping to 2 lines so long podcast titles show in full. */
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.yt-header-sub {
+  font-size: 0.8rem;
+  margin-top: 0.2rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.yt-header-sub .yt-channel { color: #666666; }
+.yt-header-sub .yt-date,
+.yt-header-sub .yt-dur { color: #333333; font-weight: 600; }
+.yt-header-sub .yt-sep { color: #aaaaaa; margin: 0 0.5rem; }
+
+.yt-header-actions {
+  display: flex;
+  gap: 0.4rem;
+  align-items: center;
+  flex: 0 0 auto;
+}
+/* Shared box shape for the star + share + YT buttons so they're
+   visually identical. Applies to both the <button>s and the <a> link. */
+.yt-header-actions .yt-bookmark-btn,
+.yt-header-actions .yt-share-btn,
+.yt-header-actions .header-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font: inherit;
+  font-size: 0.85rem;
+  line-height: 1;
+  color: #666666;
+  background: transparent;
+  border: 1px solid #aaaaaa;
+  border-radius: 4px;
+  padding: 0;
+  box-sizing: border-box;
+  width: 2.2rem;
+  height: 2.2rem;
+  white-space: nowrap;
+  text-decoration: none;
+  cursor: pointer;
+}
+.yt-header-actions .yt-bookmark-btn { font-size: 1rem; }
+.yt-header-actions .yt-share-btn { font-size: 1.05rem; }
+.yt-header-actions .yt-share-btn:disabled { opacity: 0.6; cursor: default; }
+.yt-header-actions .yt-bookmark-btn:hover,
+.yt-header-actions .yt-share-btn:hover,
+.yt-header-actions .header-link:hover {
+  background: #f5f5f5;
+  color: #333333;
+}
+.yt-header-actions .yt-bookmark-btn.is-bookmarked {
+  background: #aaaaaa;
+  color: #ffffff;
+  border-color: #888888;
+}
+.yt-header-actions .yt-bookmark-btn.is-bookmarked:hover {
+  background: #888888;
+  color: #ffffff;
+}
+
+h3.chapter {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #333333;
+  margin-top: 1.25rem;
+  margin-bottom: 0.4rem;
+}
+h3.chapter a {
+  font-size: 0.8rem;
+  color: #666666;
+  text-decoration: none;
+  font-weight: 400;
+}
+
+.yt-body {
+  line-height: 1.58;
+}
+.yt-body p {
+  margin-bottom: 0.9rem;
+}
+.yt-body p.q {
+  background: #f5f5f5;
+  border-left: 3px solid #aaaaaa;
+  border-radius: 0 6px 6px 0;
+  padding: 0.6rem 0.9rem;
+  margin-top: 1.25rem;
+  margin-bottom: 0.8rem;
+  color: #333333;
+  font-style: italic;
+  font-size: 0.96rem;
+}
+.yt-body p.q::before {
+  content: "Q";
+  display: inline-block;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 0.72rem;
+  color: #666666;
+  letter-spacing: 0.05em;
+  margin-right: 0.5rem;
+  padding: 0.05rem 0.4rem;
+  border: 1px solid #aaaaaa;
+  border-radius: 3px;
+  vertical-align: 0.1em;
+}
+.yt-body p.q a {
+  display: block;
+  text-align: right;
+  margin-top: 0.3rem;
+  font-style: normal;
+  font-size: 0.8rem;
+  color: #666666;
+  text-decoration: none;
+  white-space: nowrap;
+}
+.yt-body p.q a:hover {
+  text-decoration: underline;
+}
+
+</style>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style id="reader-presentation-style">
+/* Shared output presentation. Loaded last, including on archived templates. */
+body.reader-page {
+  --reader-paper: #ffffff; --reader-ink: #222222; --reader-muted: #737373;
+  --reader-line: #e2e2e2; --reader-accent: #444444; --reader-rail: #aaaaaa;
+  --reader-tint: #f5f5f5; --reader-header-height: 76px;
+  --reader-measure: 550px;
+  --reader-shell: 894px; --reader-sidebar: 150px; --reader-column-gap: 28px;
+  margin: 0; padding: 0; max-width: none;
+  background: var(--reader-paper); color: var(--reader-ink);
+  font: 13px/1.58 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color-scheme: light;
+}
+/* Shared neutral text and surfaces; source colors remain on the rails. */
+body.reader-page[data-reader-kind="expert"] { --reader-rail: #8aa6c0; --reader-tint: #f5f5f5; }
+body.reader-page[data-reader-kind="youtube"] { --reader-rail: #c5786d; --reader-tint: #f5f5f5; }
+.reader-page *, .reader-page *::before, .reader-page *::after { box-sizing: border-box; }
+.reader-page [hidden] { display: none !important; }
+.reader-page a { color: var(--reader-accent); text-underline-offset: 3px; }
+.reader-page a:focus-visible, .reader-page button:focus-visible, .reader-page [tabindex]:focus-visible, .reader-page summary:focus-visible { outline: 2px solid var(--reader-rail); outline-offset: 3px; }
+body.reader-page .reader-masthead {
+  position: sticky; inset: 0 0 auto; z-index: 100;
+  width: 100%; max-width: none; margin: 0; padding: 0;
+  background: var(--reader-paper); border: 0; border-bottom: 1px solid var(--reader-line);
+  box-shadow: none;
+}
+.reader-page .reader-masthead-inner {
+  display: grid;
+  grid-template-columns: var(--reader-sidebar) minmax(0, 1fr) max-content;
+  grid-template-areas: "marker heading tools" "brand facts pages";
+  gap: 4px var(--reader-column-gap); align-items: baseline;
+  /* Use the right margin for controls while keeping the title over the article. */
+  max-width: calc(var(--reader-shell) + 188px); padding: 9px 28px;
+  margin: 0 0 0 max(0px, calc((100% - var(--reader-shell)) / 2));
+}
+.reader-page .reader-brand { grid-area: brand; text-decoration: none; color: #444444; font-size: 10px; font-weight: 700; letter-spacing: .19em; text-transform: uppercase; white-space: nowrap; }
+.reader-page a.reader-brand:hover { color: var(--reader-accent); text-decoration: underline; }
+.reader-page .reader-tools { grid-area: tools; display: flex; flex-wrap: wrap; gap: 6px; justify-content: flex-end; align-items: center; }
+.reader-page .reader-tools .reader-tool {
+  display: inline-flex; align-items: center; justify-content: center; width: auto; height: 25px; min-width: 25px;
+  margin: 0; padding: 3px 8px; border: 1px solid #d4d4d4; border-radius: 4px;
+  background: transparent; color: var(--reader-accent);
+  font-family: inherit; font-size: 11px; line-height: 1.3; font-weight: 600;
+  text-decoration: none; cursor: pointer; box-shadow: none;
+}
+.reader-page .reader-tools .reader-tool:hover { background: var(--reader-tint); border-color: var(--reader-rail); }
+.reader-page .reader-tool:disabled { cursor: wait; opacity: .6; }
+.reader-page .reader-marker { grid-area: marker; border-left: 2px solid var(--reader-rail); padding-left: 8px; max-width: 120px; }
+.reader-page .reader-symbol { color: var(--reader-accent); font-size: 16px; line-height: 1.35; font-weight: 700; overflow-wrap: anywhere; }
+.reader-page .reader-source-badge { display: inline-flex; align-items: center; justify-content: center; border: 1px solid var(--reader-rail); border-radius: 3px; padding: 1px 3px; min-width: 25px; color: var(--reader-accent); background: transparent; font-size: 9px; font-weight: 650; line-height: 1.5; letter-spacing: .03em; }
+.reader-page .reader-heading { grid-area: heading; min-width: 0; line-height: 1.35; }
+.reader-page .reader-title { display: inline; color: var(--reader-ink); margin: 0; padding: 0; border: 0; font-size: 16px; font-weight: 650; letter-spacing: -.015em; line-height: 1.35; overflow-wrap: anywhere; }
+.reader-page .reader-facts { grid-area: facts; display: flex; flex-wrap: wrap; align-items: baseline; gap: 3px 14px; min-width: 0; }
+.reader-page .reader-facts:empty { display: none; }
+.reader-page .reader-metadata { display: inline; margin: 0; padding: 0; font-size: 13px; line-height: 1.4; color: var(--reader-muted); font-weight: 650; white-space: normal; overflow: visible; }
+.reader-page .reader-heading .reader-metadata { margin-left: 10px; }
+.reader-page .reader-metadata span { color: inherit; font-size: inherit; font-weight: inherit; }
+.reader-page .reader-metadata .yt-sep { margin: 0 4px; }
+.reader-page .reader-market { display: inline-flex; flex-wrap: wrap; justify-content: flex-start; justify-self: start; width: auto; gap: 5px; margin: 0; font-size: 11px; line-height: 1.4; color: var(--reader-muted); white-space: normal; font-variant-numeric: tabular-nums; }
+.reader-page .reader-market .market-sep { color: #b3b3b3; }
+.reader-page .reader-market .market-price, .reader-page .reader-market .market-cap { color: var(--reader-muted); }
+.reader-page .reader-market .market-up { color: #28734a; }
+.reader-page .reader-market .market-down { color: #a34d3d; }
+.reader-page .reader-market strong { color: inherit; font-weight: 650; }
+.reader-page .reader-page-navigation { grid-area: pages; display: flex; align-items: baseline; justify-content: flex-end; gap: 6px; white-space: nowrap; }
+.reader-page .reader-page-link { display: inline-flex; align-items: center; justify-content: center; border: 0; background: transparent; color: var(--reader-accent); border-radius: 3px; padding: 4px 6px; font: 600 11px/1.4 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; text-decoration: none; cursor: pointer; }
+.reader-page .reader-page-link:hover { background: var(--reader-tint); }
+.reader-page .reader-page-link:disabled { opacity: .35; cursor: default; background: transparent; }
+.reader-page .reader-page-position { color: var(--reader-muted); font-size: 10px; font-variant-numeric: tabular-nums; }
+.reader-page .reader-layout { display: grid; grid-template-columns: var(--reader-sidebar) minmax(0, var(--reader-measure)); gap: var(--reader-column-gap); max-width: var(--reader-shell); margin: auto; padding: 20px 28px 48px; align-items: start; }
+.reader-page .reader-layout.reader-without-contents > .reader-article { grid-column: 2; }
+.reader-page .reader-contents { position: sticky; top: calc(var(--reader-header-height) + 22px); min-width: 0; max-height: calc(100vh - var(--reader-header-height) - 44px); overflow: auto; padding: 1px 12px 12px 0; scrollbar-width: thin; }
+.reader-page .reader-contents-label { color: var(--reader-muted); font-size: 9px; font-weight: 700; letter-spacing: .13em; text-transform: uppercase; margin-bottom: 11px; }
+.reader-page .reader-contents a { display: block; padding: 6px 0 6px 11px; border-left: 1px solid var(--reader-line); color: var(--reader-muted); font-size: 11px; line-height: 1.4; text-decoration: none; }
+.reader-page .reader-contents a.reader-subsection { font-size: 10px; padding-left: 20px; }
+.reader-page .reader-contents a:hover { color: var(--reader-accent); background: var(--reader-tint); }
+.reader-page .reader-contents a[aria-current] { color: var(--reader-accent); border-left: 2px solid var(--reader-rail); padding-left: 10px; font-weight: 650; }
+.reader-page .reader-contents a.reader-subsection[aria-current] { padding-left: 19px; }
+body.reader-page .reader-article { width: 100%; min-width: 0; max-width: var(--reader-measure); margin: 0; padding: 0; font-size: 13px; line-height: 1.58; }
+.reader-page .reader-article .yt-body { line-height: inherit; }
+.reader-page .reader-article :is(h2, h3, [id]) { scroll-margin-top: calc(var(--reader-header-height) + 24px); }
+.reader-page .reader-article h2 { color: var(--reader-ink); font-size: 18px; line-height: 1.3; letter-spacing: -.02em; font-weight: 650; border: 0; border-bottom: 1px solid var(--reader-rail); padding: 0 0 8px; margin: 27px 0 15px; background: transparent; }
+.reader-page .reader-article > h2:first-child, .reader-page .reader-article > section:first-child > h2:first-child { margin-top: 0; }
+.reader-page .reader-article h3 { color: var(--reader-accent); font-size: 14px; font-weight: 650; line-height: 1.5; margin: 20px 0 8px; padding: 0; }
+.reader-page .reader-article h3.reader-section-heading { border-bottom: 1px solid var(--reader-rail); padding-bottom: 8px; }
+.reader-page .reader-article > h3.reader-section-heading:first-child, .reader-page .reader-article > section:first-child > h3.reader-section-heading:first-child { margin-top: 0; }
+.reader-page .reader-article h3 .role { font-size: 12px; font-weight: 400; color: var(--reader-muted); }
+.reader-page .reader-article h3.chapter { display: flex; justify-content: space-between; gap: 16px; border-bottom: 1px solid var(--reader-line); padding-bottom: 8px; }
+.reader-page .reader-article h3.chapter a { font-size: 11px; font-weight: 400; white-space: nowrap; }
+.reader-page .reader-article p { margin: 8px 0 11px; }
+.reader-page .reader-article ul, .reader-page .reader-article ol { margin: 8px 0 12px; padding-left: 20px; }
+.reader-page .reader-article li { margin: 0 0 5px; }
+.reader-page .reader-article strong { color: var(--reader-ink); font-weight: 650; }
+.reader-page .reader-article :is(.insight, .quote, blockquote) { color: var(--reader-ink); }
+.reader-page .reader-table-wrap { max-width: 100%; overflow-x: auto; margin: 10px 0 14px; border: 0; border-radius: 0; background: transparent; }
+.reader-page .reader-article table { width: 100%; border-collapse: collapse; border: 0; margin: 0; font-size: 12.5px; line-height: 1.5; }
+.reader-page .reader-article thead, .reader-page .reader-article th { background: transparent; color: var(--reader-accent); }
+.reader-page .reader-article th { border: 0; border-top: 1px solid var(--reader-line); border-bottom: 1px solid var(--reader-rail); padding: 8px 9px; text-align: left; text-transform: uppercase; letter-spacing: .06em; font-size: 10px; font-weight: 700; }
+.reader-page .reader-article td { border: 0; border-bottom: 1px solid var(--reader-line); padding: 6px 9px; vertical-align: top; }
+.reader-page .reader-article tbody tr:nth-child(odd) { background: transparent; }
+.reader-page .reader-article tbody tr:nth-child(even) { background: var(--reader-table-stripe, #f7f7f7); }
+.reader-page .reader-article tbody tr:hover { background: var(--reader-tint); }
+.reader-page .reader-article .key-insight { border: 0; border-left: 2px solid var(--reader-rail); border-radius: 0; background: var(--reader-tint); color: var(--reader-ink); padding: 9px 13px; margin: 14px 0 20px; font-size: 12.5px; line-height: 1.55; }
+.reader-page .reader-article .qa-block { margin: 0 0 22px; }
+.reader-page .reader-article .question, .reader-page .reader-article .yt-body p.q { border: 0; border-left: 2px solid var(--reader-rail); border-radius: 0; background: var(--reader-tint); color: var(--reader-ink); padding: 9px 13px; margin: 12px 0 9px; font-size: 13px; font-weight: 650; font-style: normal; line-height: 1.55; }
+.reader-page .reader-article .yt-body p.q { font-weight: 400; font-style: italic; }
+.reader-page .reader-article :is(.question, .yt-body p.q) :is(strong, b) { font-weight: inherit; }
+.reader-page .reader-article .question .analyst { display: block; color: var(--reader-accent); text-transform: none; letter-spacing: 0; font-size: 11px; font-weight: 650; font-style: normal; margin-bottom: 4px; }
+.reader-page .reader-article .question .analyst :is(strong, b) { font-weight: inherit; }
+.reader-page .reader-article .yt-body p.q::before { color: var(--reader-accent); border-color: var(--reader-rail); font-style: normal; }
+.reader-page .reader-article .yt-body p.q a { color: var(--reader-accent); font-style: normal; }
+.reader-page .reader-article .answer { padding: 0; }
+.reader-page .reader-article details { border: 0; border-top: 1px solid var(--reader-line); border-radius: 0; background: transparent; padding: 12px 0; margin-top: 24px; }
+.reader-page .reader-article summary { cursor: pointer; color: var(--reader-accent); }
+.reader-page .reader-article summary h2 { display: inline; border: 0; margin: 0; font-size: 15px; }
+.reader-page .reader-article hr { border: 0; border-top: 1px solid var(--reader-line); margin: 22px 0; }
+.reader-highlight { background: #f8df82; color: inherit; font: inherit; padding: 0; border-radius: 1px; cursor: pointer; box-decoration-break: clone; -webkit-box-decoration-break: clone; }
+.reader-highlight:focus-visible { outline: 2px solid #444444; outline-offset: 2px; }
+.reader-highlight-toolbar { position: fixed; z-index: 1100; display: flex; border: 1px solid #cccccc; border-radius: 5px; background: #ffffff; box-shadow: 0 3px 14px #22222226; padding: 3px; }
+.reader-highlight-toolbar[hidden] { display: none; }
+.reader-highlight-toolbar button { border: 0; border-radius: 3px; padding: 6px 10px; font: 600 12px/1.4 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; color: #444444; background: transparent; cursor: pointer; white-space: nowrap; }
+.reader-highlight-toolbar button:hover, .reader-highlight-toolbar button:focus-visible { background: #f0f0f0; }
+.reader-highlight-toolbar button:disabled { opacity: .6; cursor: wait; }
+.reader-highlight-notice { position: fixed; z-index: 1101; bottom: 18px; left: 50%; transform: translateX(-50%); max-width: calc(100vw - 32px); padding: 7px 12px; border: 1px solid #d4d4d4; border-radius: 4px; background: #ffffff; color: #444444; font: 12px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; box-shadow: 0 3px 14px #22222214; }
+.reader-highlight-notice:empty { display: none; }
+.reader-highlight-notice.is-error { color: #98453d; }
+.reader-share-notice { position: fixed; z-index: 1101; bottom: 18px; left: 50%; transform: translateX(-50%); max-width: calc(100vw - 32px); padding: 9px 14px; border: 1px solid #d4d4d4; border-radius: 4px; background: #ffffff; color: #444444; font: 12px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; box-shadow: 0 3px 14px #22222214; }
+.reader-share-notice a { white-space: nowrap; }
+@media print { .reader-share-notice { display: none !important; } }
+@media print { .reader-highlight-toolbar, .reader-highlight-notice { display: none !important; } .reader-highlight { print-color-adjust: exact; -webkit-print-color-adjust: exact; } }
+@media (max-width: 840px) {
+  .reader-page .reader-masthead-inner { grid-template-columns: 82px minmax(0, 1fr) max-content; column-gap: 12px; max-width: 700px; margin: auto; padding: 8px 20px; }
+  .reader-page .reader-layout { display: block; max-width: 700px; padding: 18px 20px 40px; }
+  .reader-page .reader-contents { position: static; max-height: none; display: flex; gap: 6px; overflow-x: auto; padding: 0 0 13px; margin-bottom: 18px; border-bottom: 1px solid var(--reader-line); }
+  .reader-page .reader-contents-label { display: none; }
+  .reader-page .reader-contents a, .reader-page .reader-contents a.reader-subsection { flex: none; max-width: 230px; padding: 4px 8px; border: 0; border-radius: 3px; }
+  .reader-page .reader-contents a[aria-current], .reader-page .reader-contents a.reader-subsection[aria-current] { padding: 4px 8px; background: var(--reader-tint); border: 0; }
+}
+@media (max-width: 720px) {
+  .reader-page .reader-brand { font-size: 9px; }
+}
+@media (max-width: 560px) {
+  body.reader-page .reader-masthead { position: relative; }
+  .reader-page .reader-masthead-inner {
+    grid-template-columns: minmax(48px, max-content) minmax(0, 1fr);
+    grid-template-areas: "marker heading" "facts facts" ". tools" "brand pages";
+    gap: 4px 10px; padding: 8px 16px 10px;
+  }
+  .reader-page .reader-symbol, .reader-page .reader-title { font-size: 15px; }
+  .reader-page .reader-layout { padding: 16px 16px 32px; }
+  .reader-page .reader-article :is(h2, h3, [id]) { scroll-margin-top: 16px; }
+  .reader-page .reader-article table { min-width: 480px; }
+}
+@media print {
+  body.reader-page .reader-masthead { position: static; }
+  .reader-page .reader-tools, .reader-page .reader-contents, .reader-page .reader-page-navigation { display: none; }
+  .reader-page .reader-layout { display: block; padding: 20px 0; }
+  .reader-page .reader-masthead-inner { max-width: var(--reader-shell); margin: auto; padding: 0 0 18px; }
+  .reader-page .reader-table-wrap { overflow: visible; }
+  .reader-page .reader-article table { min-width: 0; }
+  .reader-page .reader-article tr, .reader-page .reader-article .key-insight { break-inside: avoid; }
+}
+
+</style>
+</head>
+<body>
+  <header>
+    <div class="header-inner yt">
+      <div class="header-title yt">
+        <a class="yt-header-thumb" href="https://www.youtube.com/watch?v=XZJrvJS-GS4" target="_blank"><img src="https://i.ytimg.com/vi_webp/XZJrvJS-GS4/maxresdefault.webp" alt=""></a>
+        <div class="yt-header-text">
+          <strong>He Turned $50 Million Into a Nearly $100 Billion Investment Firm</strong>
+          <div class="yt-header-sub">
+            <span class="yt-channel">How Leaders Lead with David Novak</span>
+            <span class="yt-sep">&middot;</span>
+            <span class="yt-date">Nov 5, 2026</span>
+            <span class="yt-sep">&middot;</span>
+            <span class="yt-dur">1h 24m</span>
+          </div>
+        </div>
+      </div>
+      <div class="yt-header-actions">
+        <button id="yt-bookmark-btn"
+                class="yt-bookmark-btn"
+                title="Bookmark"
+                aria-label="Bookmark"
+                data-filename="yt-2026-11-09-he-turned-50-million-into-a-nearly-100-billion-investment.html"
+                data-title="He Turned $50 Million Into a Nearly $100 Billion Investment Firm"
+                data-url="https://www.youtube.com/watch?v=XZJrvJS-GS4"
+                data-date="2026-11-05T08:00:35-08:00"
+                data-channel="How Leaders Lead with David Novak"
+                onclick="toggleYtBookmark(this)">&#9734;</button>
+        <button id="yt-share-btn"
+                class="yt-share-btn"
+                title="Share"
+                aria-label="Share"
+                data-filename="yt-2026-11-09-he-turned-50-million-into-a-nearly-100-billion-investment.html"
+                onclick="shareYtPage(this)">&#8599;</button>
+        <a class="header-link" href="https://www.youtube.com/watch?v=XZJrvJS-GS4" target="_blank" title="Watch on YouTube" aria-label="Watch on YouTube">YT</a>
+      </div>
+    </div>
+  </header>
+  <main>
+    <div class="yt-body">
+    <h3 class="chapter"><span>Philippe Laffont: From $50 Million to Nearly $100 Billion</span><a href="https://www.youtube.com/watch?v=XZJrvJS-GS4&t=0s">&#x21AA; 00:00</a></h3>
+<p data-t="0">Hello, everyone, and welcome to another episode of How Leaders Lead with David Novak. Today's guest is Philippe Laffont. He's the founder of Coatue Management and one of the world's most successful technology investors. He's grown Coatue from 50 million to over a hundred billion. And he's done it by seeing opportunities others miss, making big bets, and staying willing to change his mind.</p>
+<p data-t="19">In today's episode, you'll learn how to build that same type of conviction and also recognize when it might be time to change course. Enjoy this episode with David and Philippe. And be sure to stay tuned to the end of the episode, where David and I break down some of the key learnings from this conversation.</p>
+<p class="q" data-t="44">You're French, and your wife, Anna, is from Spain. And I know you two love soccer, or football, as you would call it. What was it like around your house this year during the World Cup?<a href="https://www.youtube.com/watch?v=XZJrvJS-GS4&t=44s">&#x21AA; 00:44</a></p>
+<p data-t="55">Whoever is the guy that said, “Happy wife, happy life,” is a complete idiot. And I would have done and traded the whole happiness of my wife for France to win. And unfortunately, Spain won, but I promise you that I was not rooting for Spain, and I couldn't care less what the consequences would have been.</p>
+<p class="q" data-t="78">Did you guys go to any games?<a href="https://www.youtube.com/watch?v=XZJrvJS-GS4&t=78s">&#x21AA; 01:18</a></p>
+<p data-t="78">We saw the semifinal, and Spain crushed us. We were very poor, even though we were the heavy favorites. And then I did see the final, and I was happy that Spain won in the finals because I don't like Argentina either.</p>
+<p class="q" data-t="102">Was there a moment in the World Cup, Philippe, that stood out to you as a great example of leadership?<a href="https://www.youtube.com/watch?v=XZJrvJS-GS4&t=102s">&#x21AA; 01:42</a></p>
+<p data-t="108">I think that the way the Spanish team played throughout the World Cup is the example of leadership, in that they tied their first game against a very small team. And if you look at Spain, I bet most people couldn't even name one player on the Spanish team. But how the Spanish team plays together and manages to keep the ball for 60 or 70% of the time is incredible.</p>
+<p data-t="142">And so, you look at the French team, and everybody knows about Mbappé, but maybe Mbappé is a great individual player, but not a great team player. I don't know enough about soccer, but I do know that there was a certain cohesiveness about the Spanish team, how they play.</p>
+<p data-t="156">And I also think that it's true for money management that defense is a great offense, and that in money management, if you only play offense, you're done. Once every 10 or 15 years, you're going to disappear. And so I'm actually more drawn to the way the Spaniards played.</p>
+<p class="q" data-t="183">Well, that's a great, great point. And we're going to talk about your investment philosophy and the learnings you've had in your career as we go through this. But I want to take you back, Philippe, and take you back to where it all started. What's a story from your childhood that shaped the kind of leader you are today?<a href="https://www.youtube.com/watch?v=XZJrvJS-GS4&t=183s">&#x21AA; 03:03</a></p>
+<h3 class="chapter"><span>The Injury That Introduced Him to Computers</span><a href="https://www.youtube.com/watch?v=XZJrvJS-GS4&t=202s">&#x21AA; 03:22</a></h3>
+<p data-t="202">So I would say that when I was young, I was pretty active, lived a very protected life, probably much too much in the cocoon around school. And then I would go to the tennis club, and I played a lot of tennis, and that was it.</p>
+<p data-t="215">And I got a knee injury right around probably when I was 14 or 15, which happened to be the year that the Apple II computer was created. And funny enough, Apple's largest market outside of the US was France. Somehow there were a lot of Apple computers in France.</p>
+<p data-t="241">And I bought an Apple II computer, and I learned how to program and also how to exchange video games and all this kind of stuff. And it brought me into this brand-new world of programming and stuff like that. And so, in retrospect, it was just very lucky to, having been injured, have that pivot into the world of personal computers. And that was probably in 1980, 1981.</p>
+<p class="q" data-t="270">Just curious, what was it about you that took you into that computer world at that point? What drove your curiosity?<a href="https://www.youtube.com/watch?v=XZJrvJS-GS4&t=270s">&#x21AA; 04:30</a></p>
+<p data-t="276">I was fairly anxious and always wanted to do something. And so when I wasn't able to play tennis, it didn't occur to me that I was going to read books or talk about feelings. That was not me. I was going to do something, right? And so I just stumbled onto it, to be honest.</p>
+<p data-t="302">But I think in life you stumble on things, and then the ability to stumble multiplied by the ability to be passionate equals the ability to get something done and to do something. Well, you need to get a little bit of your stumbling mind, and then you need to get your passionate mind, and then that's when you just focus on that one thing.</p>
+<p data-t="325">Yeah, I love that. The stumble factor combined with passion. That might be a new formula for success.</p>
+<p data-t="332">Maybe. Did you ever stumble in golf, or were you always passionate about it, David?</p>
+<p data-t="332">Oh, I stumble in everything, believe me. I've stumbled my way through life. That's why I like the analogy so well.</p>
+<p class="q" data-t="339">And then, as I understand it, you moved to the United States when you were 16. Was that hard for you, or did you feel like you're starting over? What was the challenge there?<a href="https://www.youtube.com/watch?v=XZJrvJS-GS4&t=339s">&#x21AA; 05:39</a></p>
+<p data-t="350">It was not too bad because even before moving to the US, as a young kid, I would go to Nantucket every summer because my parents had this one American friend who had a house there. We went one year, we loved it, and went back again every year thereafter. And I went for 35 years to Nantucket, which is why Coatue is named Coatue, which is a particular spot on Nantucket.</p>
+<p data-t="378">So when I was 16, I was ready to come to the US. I knew about a few things. I knew about peanut butter. I knew about the marshmallow goop, that white that comes out that you can eat. Back then, I used to like that.</p>
+<p data-t="391">I knew about the Boston Red Sox, which I still know of, even though I live in New York a lot. And so I felt like I was very prepared for the US.</p>
+<p class="q" data-t="402">That's good. And fast-forward a bit. I understand you went to Chile, and you became a pretty good fisherman. What took you to Chile, and what made that happen?<a href="https://www.youtube.com/watch?v=XZJrvJS-GS4&t=402s">&#x21AA; 06:42</a></p>
+<p data-t="415">You said that you stumbled on a few things. I've also studied your career, Dave. It doesn't seem to me you stumbled that much. I, on the other hand, had some major forced and unforced stumbles.</p>
+<h3 class="chapter"><span>Apple Rejected Him Five Times</span><a href="https://www.youtube.com/watch?v=XZJrvJS-GS4&t=418s">&#x21AA; 06:58</a></h3>
+<p data-t="427">And what happened is I studied undergrad at MIT. I studied graduate at MIT, and as you know, I was a psycho fan of Apple. So I had five job interviews at Apple and five rejections. And I did not, at the time, learn the basic lesson of not putting all your eggs in one basket. All my eggs were in the one basket.</p>
+<p data-t="455">And when I could not get a job at Apple, I was so distraught, I decided to do something totally different, and I went to Chile. And I don't know why I picked Chile, but I just went there. And I had a little fake job, and I had a lot of time on my hands, and I did become a very good fisherman as a result of that.</p>
+<p data-t="473">So that was the one. And I learned how to speak Spanish. So two good things, since my wife is Spanish.</p>
+<p class="q" data-t="480">So when you think about learning how to be a great fisherman, and I understand you're not good, you're great at this, okay? What techniques or what have you learned through fishing that really applies, in your mind, towards business and leading?<a href="https://www.youtube.com/watch?v=XZJrvJS-GS4&t=480s">&#x21AA; 08:00</a></p>
+<p data-t="499">First of all, let me disagree with you. I say I'm great at things, but when a Frenchman says “great,” it means good. When he says “world-class,” it means great. And I don't know what world-class would be. Elon Musk would be world-class.</p>
+<h3 class="chapter"><span>What Fishing Taught Him About Getting Better</span><a href="https://www.youtube.com/watch?v=XZJrvJS-GS4&t=501s">&#x21AA; 08:21</a></h3>
+<p data-t="518">So I'm exaggerating a little bit, but to me, it seems at the end of the day, passion is the number one skill. Repetition is the number two, but repetition is not boring when you're passionate. And so I think fishing is a very easy sport because it does involve a lot of repetition.</p>
+<p data-t="544">And then I also think that being social is important. And in fishing, the art of fishing is to have a friend who's better than you and tells you where the fish are. Otherwise, you're throwing your rod in the empty. But if some guy whispers to you, “Hey, today you should check that one area.”</p>
+<p data-t="565">And so I do think that there's learning that you learn through other humans. And by the way, it's true in golf. It's true in many things. So I think passion, repetition, and social.</p>
+<p class="q" data-t="579">So what first drew you to investing, Philippe?<a href="https://www.youtube.com/watch?v=XZJrvJS-GS4&t=579s">&#x21AA; 09:39</a></p>
+<p data-t="585">So after Chile, I went to McKinsey, and I was an analyst, but it felt like I was also the guy getting the coffee and opening the doors. And I remember all these CEOs like you who would come in and would be worshiped by McKinsey. And I was like, “I want to be one of them. I don't want to be one of me.”</p>
+<p data-t="604">And as a result of that, for some reason, at the time, it was the early '90s, I started buying stocks thanks to my brother Thomas, who's nine years younger than me. And we had this little account with a thousand bucks at an online brokerage, and I still remember the name. It was called Jack White, and we started buying stocks.</p>
+<p data-t="632">And in my first or second year at McKinsey, I made more money buying stocks than I made at McKinsey. So I was like, “Oh, I'm done.” And I left McKinsey and came back to the US and ended up working in an investment firm. And that was lucky. That was what you call a lucky stumble.</p>
+<p class="q" data-t="652">Yeah, I understand you actually started out working for free in a small investment firm.<a href="https://www.youtube.com/watch?v=XZJrvJS-GS4&t=652s">&#x21AA; 10:52</a></p>
+<p data-t="658">Well, I didn't have any papers. So now I'm American, but back then, I didn't have any really work papers, and I still had a student—I forgot, I had some sort of visa, but I couldn't find a job. And so finally, I was like, “Okay, I'm just going to work for free because for free, someone always takes you. They have such pity and such a good deal, right?”</p>
+<h3 class="chapter"><span>Working for Free to Get His Foot in the Door</span><a href="https://www.youtube.com/watch?v=XZJrvJS-GS4&t=663s">&#x21AA; 11:03</a></h3>
+<p data-t="689">But the downside is the guy who gave me a free job, I quit on him after six months. And he also said, “Why did you quit so early?” I was like, “Pal, I haven't made a dime yet.” So it made me think that when you have too good of a deal, be careful, because the other side probably also knows it's too good of a deal.</p>
+<p data-t="705">So I ended up working for Tiger Management, and I went from working for free to working for Tiger, which at the time was one of the two largest hedge funds in the world and had a slew of really young, ambitious people, and led by this incredibly charismatic leader who I've also learned a lot from, and which I'm sure you knew pretty well, which was Julian Robertson.</p>
+<p class="q" data-t="733">Yeah, he was a big shareholder when we first came out. And I was so impressed with him and everybody at Tiger because just the questions you asked were so good. But as I understand it, when you went to Tiger and wanted to get in, you didn't get the job. Tell us that story.<a href="https://www.youtube.com/watch?v=XZJrvJS-GS4&t=733s">&#x21AA; 12:13</a></p>
+<p data-t="752">David, you have spies. Who the hell has been feeding you all this? So when I applied—which also, for me, one of the most important qualities, we've spoken about a few, right? We said stumble, we said passionate, we said repetition, we said social. Another one around repetition is more persistence, which is a prettier version of saying the same.</p>
+<h3 class="chapter"><span>How He Found His Way Into Tiger Management</span><a href="https://www.youtube.com/watch?v=XZJrvJS-GS4&t=756s">&#x21AA; 12:36</a></h3>
+<p data-t="777">I applied at Tiger, and they saw my résumé from MIT, so I got sent to the IT department, and then they rejected me. And I was like, “No, no, no. I want to apply to the investment staff, not the IT department.” And three months later, I found a back door into the investment staff and got this one interview. And the guy who interviewed me was European, and we just hit it off, and he gave me a chance.</p>
+<p class="q" data-t="811">And I understand you had a two-minute interview with Julian Robertson. Is that correct?<a href="https://www.youtube.com/watch?v=XZJrvJS-GS4&t=811s">&#x21AA; 13:31</a></p>
+<p data-t="816">Yeah, he was smart, because I got to Tiger through a friend of Julian. So most of the times, when you get résumés through friends, you can never tell, is it a good résumé, not a good résumé? So he sent me off to this other guy.</p>
+<p data-t="836">And Julian said a version of, “Look, it's great to meet you. I've heard so much about you, but why don't you go meet this guy?” And that was the interview. But luckily, the guy he made me meet—you only need to convince one guy early on, and it rarely needs to be the boss. But the boss's right hand or left hand at the beginning is more important than the boss himself.</p>
+<p class="q" data-t="863">I'm curious, Philippe, what did Julian teach you that still shapes how you think today?<a href="https://www.youtube.com/watch?v=XZJrvJS-GS4&t=863s">&#x21AA; 14:23</a></p>
+<p data-t="869">Everybody knows that with my heavy accent, I have a speech impediment. But imagine when me and this guy with this heavy North Carolina drawl would speak. I also thought he had a speech impediment because I couldn't understand half the things. And we were debating EBITDA and earnings and this business and that business, and he liked to debate things. So it was really fun.</p>
+<p data-t="899">I'd say the two things that I learned is, one, to focus on the long-term fundamentals. Not focus too much on the day-to-day stuff. Don't focus on what makes a stock move 10%. Focus on what's going to make a stock move 100%. And that's usually trying to figure out, can this business be a huge business in seven years?</p>
+<p data-t="918">I find 10 years is too long, but five maybe is not long enough. So let's say five to seven years, right? And just focus on, okay, what are the three key questions that, if we can answer these three questions, in five or seven years this will be a great investment? The simplicity of his thinking is what was most appealing.</p>
+<p class="q" data-t="948">Philippe, I understand that you said when you first started in investing that you might have confused luck with skill. Explain.<a href="https://www.youtube.com/watch?v=XZJrvJS-GS4&t=948s">&#x21AA; 15:48</a></p>
+<h3 class="chapter"><span>How to Make Your Own Luck</span><a href="https://www.youtube.com/watch?v=XZJrvJS-GS4&t=959s">&#x21AA; 15:59</a></h3>
+<p data-t="959">Well, the general Napoleon—it was actually then the emperor—he said he only wanted to have lucky generals, not smart generals. So I think luck plays, obviously, an important role.</p>
+<p data-t="982">To me, in the investing world, the way I think about things is I think about thematically what's going on. Because if you get the theme right, you are already increasing your luck, because in general, in growth investing, having the wind at your back matters. So I've always tried to simplify my investment thesis by saying, “Look, can I already have the wind at my back?”</p>
+<p data-t="1007">So for instance, dumb facts: I think since its inception, the Nasdaq has compounded at 14% per year, but the S&amp;P is only 11. Okay? But 3% over 50 years, it's an enormous amount of money. I don't know what 1.03 to the power 50 is, but it's a lot more than—maybe it's a 7x or 5x or something like that, right?</p>
+<p data-t="1035">So I think that's what I mean by luck. What I mean by luck is just trying to already get some things that roll the ball your way instead of against you.</p>
+<p class="q" data-t="1048">You then, after three and a half years at Tiger, decided you're going to go out, and you had the conviction to start Coatue. What made you do that? What was driving that decision?<a href="https://www.youtube.com/watch?v=XZJrvJS-GS4&t=1048s">&#x21AA; 17:28</a></p>
+<p data-t="1059">Well, the key thing that was driving that decision—I'd like to tell you that I had this amazing foresight, and I was going to be an amazing entrepreneur, and I knew I was going to succeed. But the truth is, it was much more simple, which is I got fired after three and a half years.</p>
+<h3 class="chapter"><span>The Mistake That Got Him Fired</span><a href="https://www.youtube.com/watch?v=XZJrvJS-GS4&t=1062s">&#x21AA; 17:42</a></h3>
+<p data-t="1078">That's a burning platform there.</p>
+<p data-t="1078">So it's like, all right. And I got fired for a total unforced error, which is there was a time where a lot of my friends and talented analysts left Tiger. And so I said, “Oh, well, there's one guy left. Maybe I should go with him, but I also really like being at Tiger.”</p>
+<p data-t="1098">So I went to J, and I said, “Look, this guy's offered me to leave with him, but I also think I really want to stay with you. But I don't know how I'm doing, and I feel like I'm not doing as well as I should.” And he was like, “You're amazing. Please stay.” And then one month later, he had found my replacement.</p>
+<p data-t="1121">And I realized that I learned a very big lesson, especially true on Wall Street, but you're either in or you're off the boat. There's no in between. And when I run my firm now, 30 years later, I hate the people who have a foot in and a foot out.</p>
+<p data-t="1133">Because sometimes we're in the business of having to make important decisions, consequential decisions, where a lot of investors' money is at play, and you have to make sure that people's heart is in it, people's mind is in it, people's commitment is in it. So anyway, lesson learned, and I stumbled onto the next thing.</p>
+<p class="q" data-t="1164">That was a good stumble. And you go out and you raise $50 million, and you stumble right into the dot-com crash. How'd you survive that?<a href="https://www.youtube.com/watch?v=XZJrvJS-GS4&t=1164s">&#x21AA; 19:24</a></p>
+<p data-t="1171">I started January 1st, 2000. I was up 20% after a month. I thought it was going to be so easy. I was annualizing my monthly returns, and obviously the Nasdaq went from 5,000 to 1,000 over three years.</p>
+<h3 class="chapter"><span>Starting a Firm in the Middle of the Dot-Com Crash</span><a href="https://www.youtube.com/watch?v=XZJrvJS-GS4&t=1174s">&#x21AA; 19:34</a></h3>
+<p data-t="1185">But in retrospect, what happens is, by having started in such a tough market—and I'll answer to you how I survived—but I basically was then ready for anything after. And all my friends, older people that I met over the years, but that started in the '80s or '90s, they had 10 or 20 years of uninterrupted success.</p>
+<p data-t="1211">And when the bubble came, they all were like, “Oh, don't worry. This is only just a one-time. It's going to go back,” right? And then it never did. And so I think what's lucky is when you start in money management at a bad time, you are not afraid to change your mind and to realize that sometimes there's very important things going on in the economy.</p>
+<p data-t="1230">And it's like a boat, and there's a big storm, and it's time to return to port. And there's some people who don't believe in returning to port. They just believe in just keep going, or maybe you can tack right or tack left and escape the storm. The truth is that in money management, there are storms, and you and I, we've lived through a number of them together.</p>
+<p data-t="1254">'08 was another one. COVID was another one. Post-COVID was another one. On average, there's one very bad event every 10 years where the market can go down 50% or more. And so three times a decade, it goes down 20% or more.</p>
+<p data-t="1272">So you've got to learn how to navigate these things. And there's no better way to navigate choppy waters than to have started navigating choppy waters.</p>
+<p class="q" data-t="1280">And you definitely had the choppy waters. How did you stay alive during that period?<a href="https://www.youtube.com/watch?v=XZJrvJS-GS4&t=1280s">&#x21AA; 21:20</a></p>
+<p data-t="1286">We said, “Look, you need to stumble. You need conviction and being passionate. You need persistence. You need to be social.” That part I solved through the social, which is that I was not all alone, even though I started and I only had two employees.</p>
+<p data-t="1310">Because I had a lot of other money managers, and I always made an effort to have a good network of people and be able to call people. And as a result of that, I had probably friends who gave me more time than I deserved, but would explain to me things that I had not figured out on my own and made me realize, “Whoa, now's not the time to necessarily be a hero.”</p>
+<p data-t="1332">And so because we, on top of that, were lucky to start with a hedge fund, we had the shorts protecting against the longs. And over the three years when the market went down 90%, we were up about 50. So we went from 100 to 150, but the market maybe had gone from 100 to 20.</p>
+<p data-t="1358">So we had created a six or seven x against the market, and that was enough to really get me going.</p>
+<p class="q" data-t="1363">Absolutely. And you had two team members at that point in time. How many people do you have in your company now, Philippe?<a href="https://www.youtube.com/watch?v=XZJrvJS-GS4&t=1363s">&#x21AA; 22:43</a></p>
+<p data-t="1369">200, 250, something like that.</p>
+<p class="q" data-t="1376">And how do you think about the culture, the work environment you're trying to create that'll drive success for your investors?<a href="https://www.youtube.com/watch?v=XZJrvJS-GS4&t=1376s">&#x21AA; 22:56</a></p>
+<p data-t="1381">The stock market affects me, and doing well and doing poorly affects me, and I am the paranoid side of the coin. Always complaining or seeing the glass half empty. But luckily, one of my co-founders, who also happens to be my brother, he is far more stable and optimistic. And I think having that yin and yang has been very helpful to me.</p>
+<p class="q" data-t="1417">Yeah, I was curious to learn that. Earlier you said you wanted to be one of those CEOs that were walking into McKinsey, but you call yourself a portfolio manager. You don't call yourself a CEO. Why is that?<a href="https://www.youtube.com/watch?v=XZJrvJS-GS4&t=1417s">&#x21AA; 23:37</a></p>
+<h3 class="chapter"><span>Why the Best Idea Should Always Win</span><a href="https://www.youtube.com/watch?v=XZJrvJS-GS4&t=1431s">&#x21AA; 23:51</a></h3>
+<p data-t="1431">I'm a portfolio manager. I'm also a founder. I'm entrepreneurial. When we started, we had 50 million. Today, we are at almost 100 billion, so we've obviously experienced a lot of growth.</p>
+<p data-t="1445">We've added a couple zeros at least, from 100 million to 1 billion to 10. So we've added three zeros. So I'm not sure I have a fourth one left in the tank, but I'm pretty happy. Three zeros is good. Maybe we'll get a fourth, but on top of it, obviously, AUM is not the way you measure success in money management.</p>
+<p data-t="1466">We can get to that later, but I like being entrepreneurial by being a founder. But I have found that I can only have about 10 or 20 people, maybe 50, around me. And one of the things that I'm so impressed that you did and others do is you're able to lead an army of thousands and thousands.</p>
+<p data-t="1484">Me, I barely remember the name of the 50 people around me, and I also like to spend time with them. Then I'm also happy with them, I'm unhappy with them, I'm screaming at them, they're screaming at me. We disagree. We re-agree.</p>
+<p data-t="1504">The money management culture, I think, for a good firm needs to be fairly combative, or at least very argumentative. Very much because it has to be one where you agree to go in a room, in an investment committee, and you put your heart out, and you debate, and it has to be that the best idea wins.</p>
+<p data-t="1525">It cannot be that seniority, experience, all this, in my mind, around, “Well, young kid, what you said is interesting, but I know better,” right? To me, these are all the ways that old people constrain young people and constrain the new way of thinking. By and large, in investing, it's all about figuring out the future, especially in what we do, which is tech investing.</p>
+<p data-t="1550">And so I like that kind of culture. And if one day I could name something, like my little 13-foot Boston Whaler, I would name it “Pugnacious” or something like that.</p>
+<p data-t="1568">Pug. There you go. You might have a new nickname I might give you there.</p>
+<p data-t="1574">Yes. People call me Pepé Le Pew, so if you call me Pugnacious, that's a big upgrade.</p>
+<p data-t="1580">I'm going to call you Pug. I like Pug. I think that's a good one.</p>
+<p data-t="1587">Sounds like a little meek dog, but fine. I'll take it.</p>
+<p data-t="1587">I don't know. Maybe it should be Pugnacious with the emphasis on the “nacious.”</p>
+<p data-t="1594">I love it.</p>
+<p class="q" data-t="1594">Now, the one thing you do do is you definitely lead some incredibly smart, highly educated people. What have you learned about leading high-IQ people like you do?<a href="https://www.youtube.com/watch?v=XZJrvJS-GS4&t=1594s">&#x21AA; 26:34</a></p>
+<p data-t="1605">Well, as you know, I've prefaced this whole thing. I told you when you invited me that you're not inviting necessarily a per se leader, right? Because I can't lead a lot of people. But the things I've tried to do is I've tried to say that, number one, people love to learn. So I think that's great.</p>
+<h3 class="chapter"><span>How to Attract and Keep Great People</span><a href="https://www.youtube.com/watch?v=XZJrvJS-GS4&t=1608s">&#x21AA; 26:48</a></h3>
+<p data-t="1624">People love to be in a meritocracy. That's also very important. And people love being in a place where the counter to you having the right to tell them that their idea is really dumb, and probably using some even worse choice words, is the fact that they have a good idea, you're willing to empower them and give them the capital to pursue that idea. So that part of the firm is what makes people very excited.</p>
+<p data-t="1659">The second part is, I hate to be so crude, but you also have to pay people way well. And you don't pay them according to seniority. You pay them according to, at the end of the day, results. I would say that's probably not the biggest one, but it's still an important one.</p>
+<p data-t="1682">And the third one is you have to give people a path for growth and success and ownership, and give them something that, at the end of the day, every day they go, “I'd rather work inside of this firm than go on my own.” And I think, to be honest there, Dave, we did not know how to do this very well over time, but we've become much better at doing it.</p>
+<p data-t="1710">We've become better around the investment committee, the culture that we've created, the people that we have. And we've also become better at that we reward people well, but in a way that also incentivizes them to be very loyal.</p>
+<p data-t="1732">And so we end up having a group of people that, let's say that I would be maybe a decent—not a good, but a decent—commander of a small SWAT team. But I would be terrible in the Army or the Navy, right? Anyway, that's my probably mediocre analogy to you.</p>
+<p class="q" data-t="1760">And you mentioned Thomas earlier, your brother, and the yin and the yang. And he's really been a big culture champion and leading the army, basically, that you've built to a certain extent. What's it like working with a brother, and how has it made your company better, in your mind?<a href="https://www.youtube.com/watch?v=XZJrvJS-GS4&t=1760s">&#x21AA; 29:20</a></p>
+<p data-t="1778">Working with my brother, the advantage is I knew that whatever the disagreement, we would always do what's best for the company. And over the years, we've had disagreements. Sometimes we've had personal reasons why we could be more or less engaged in something or something else.</p>
+<p data-t="1799">But at the end of the day, this faith that we're always going to do what's right for the business, because then it leads to the fact that we're always going to try to come up with the best decision for the business. And the best decision for business is always very simple. It's what's the best decision for our investors?</p>
+<p data-t="1818">Because at the end of the day, with investors, your long-term track record matters a lot. But investors know that you're not going to always be the number one every year, and sometimes you're going to have stumbles. What investors really care is that you always have to think about what's in their best interest, what's fair, what's ethical. And for us, that's always been very important.</p>
+<p data-t="1844">On top of that, since we were both foreigners, once we got a taste of being in America, we wanted to make sure just we could stay. So it was very easy for us to make the right decisions because we never wanted to be in a position where—see, that's why, an unrelated anecdote. Sorry, you'll learn by now that I constantly diverge.</p>
+<p data-t="1870">Keep going. I love it. I'm loving it.</p>
+<p data-t="1870">Being an immigrant has a huge advantage, which is that I never took for granted staying in the US. And I have become very, very pro-American, which drives my French friends bonkers. And so now I'm double American to piss them off even more because it's so funny to see.</p>
+<h3 class="chapter"><span>The Immigrant Mindset</span><a href="https://www.youtube.com/watch?v=XZJrvJS-GS4&t=1872s">&#x21AA; 31:12</a></h3>
+<p data-t="1892">And I never took for granted that, “Whoa, I'm here now.” Of course, I'm a citizen. My six kids are American, and my wife, who was Spanish, is also American. But it wasn't always the case.</p>
+<p data-t="1904">And still to this day today, if you ask me, am I a guest of the country? I still feel like a guest. And that drives you to need to do things extra well, and you cannot ... up. And that, I think, is an important driver.</p>
+<p data-t="1923">Hello, friends. I hope you're loving this conversation. Be sure to stay tuned to the very end of the episode. As always, David and I are going to debrief some of the concepts that he talks about with this week's guest. So stay tuned to the very end, and I will see you soon.</p>
+<p class="q" data-t="1935">I want to call some on you, okay? Because you say you're not a leader. You start out with $50 million. You're now one of the largest firms in the world. You're the acknowledged technology investment guru.<a href="https://www.youtube.com/watch?v=XZJrvJS-GS4&t=1935s">&#x21AA; 32:15</a></p>
+<h3 class="chapter"><span>Knowing What You&#39;re Not Good</span><a href="https://www.youtube.com/watch?v=XZJrvJS-GS4&t=1940s">&#x21AA; 32:20</a></h3>
+<p class="q" data-t="1954">You lead. You just articulated what you want the firm to do, how you manage high-IQ people. I have a hard time looking at you saying—and I'm not being patronizing at all—but it's hard for me to say, “Oh, this guy isn't a leader.” So what do you think of that challenge?<a href="https://www.youtube.com/watch?v=XZJrvJS-GS4&t=1954s">&#x21AA; 32:34</a></p>
+<p data-t="1975">Because the scale of our company is small, I've never considered myself a great leader. To me, there's great political leaders. I have a lot of respect for CEOs because a CEO is a very difficult job, because you're leading a lot of people, but you were not the founder.</p>
+<p data-t="1992">So it's very difficult to lead a company that you didn't found, because when you found the company, then your mistakes are, “Who cares? I created this company. Leave me alone.” And so you lead big organizations, there's a lot of downside. I'm a founder, more an entrepreneur, but I feel like at least I've surrounded myself with people who can deal with my inherent weaknesses.</p>
+<p data-t="2021">I think that's a great leadership skill. That's a great leadership skill.</p>
+<p data-t="2021">But I'm not a professional leader. But I have been willing to recognize that, look, I don't really know how to do—I got a great person in HR, okay? Why is she great? She's incredibly devoted to the firm. We've been together for many years, and I know she will go to war for me.</p>
+<p data-t="2042">So you need people like that to help you. We have an amazing person in marketing who's helped me grow the business over time. And then on the investment staff, the one big thing is, years ago, I had a very good advisor called Tony James, which I'm sure you know. I don't know if he's been on your show. He was the president of Blackstone.</p>
+<p data-t="2073">He just introduced a simple idea, which is, don't think about the different things that you do as products. Think of them as businesses. So our hedge fund is a business. Our venture is a business. Our growth is a business.</p>
+<p data-t="2085">Our credit is a business. Our hybrid capital solution is a business. And so now we've installed investors, but we've also installed business leaders. So at my very small scale, if you're not a great leader, at least figuring out the chessboard and letting other people play chess for you is important.</p>
+<p data-t="2105">And me, I focused mostly on, is this a good investment idea or a bad investment idea? And am I in a forum where I can argue violently and not upset anyone about it? That's what I try to stick to.</p>
+<p class="q" data-t="2123">Sounds like healthy debate, healthy decision to me. You've spent your career, Philippe, trying to see things before everyone else does. How do you go about recognizing the major shifts?<a href="https://www.youtube.com/watch?v=XZJrvJS-GS4&t=2123s">&#x21AA; 35:23</a></p>
+<p data-t="2136">Even though I'm an MIT undergrad in computer science and economics, and I was also MIT grad in computer science—so think of me as 50% nerd and 50% dork from the educational viewpoint—I was lucky, in part by also being an immigrant, that I was interested in history.</p>
+<p data-t="2160">I'm terrible at regular world history or US history. I think I barely passed the exam to become an American citizen because I only studied one hour before the questions, barely made it. But I was a very good historian of technology.</p>
+<p data-t="2179">And so I can tell you why there was whale oil. Why did electricity take over? What happened to the horses when the canals got created? Why, at the beginning of the car industry, was one-third steam, one-third electric, and one-third gasoline? I can tell you why the gasoline won.</p>
+<p data-t="2206">And so I got in my mind this view, literally probably from 1750 on, of all the different techs and how they diffuse and how they go up and back down, right? And in particular, talking about today, the reason why today is so important is, if I were to summarize the history of technology from 1750 to 1950, you had 200 years, which was the Industrial Revolution.</p>
+<p data-t="2239">It culminated with the war that industrialized a lot of the last big things, but before that it was Henry Ford, and before that it was agriculture and all of these things, right? In 1950, we move from the industrial age to the information age with the advent of the first semiconductor, the first mainframe.</p>
+<p data-t="2261">And basically from 1950 to 2020, we have seven of these waves within that 70-year block, which was the mainframe, the minicomputer, the PC, networking, then gave rise to the internet, then you had the mobile internet, and then you had cloud. Seven waves in 70 years. Each wave is about 10 years.</p>
+<p data-t="2290">2020—it's actually not true, it was 2022, but let's say 2020 because it started before—we get a new semiconductor piece that leads to a new gigantic age, which is the intelligence age. And in the intelligence age, the atomic unit of the intelligence age is the GPU. And the GPU is the equivalent of the neuron.</p>
+<p data-t="2316">And all the GPUs connected to others, because as you know, the power of GPUs is the more you connect one GPU to the other, the smarter the whole system gets. So all those hundreds of thousands of fiber-optical cables that connect all the GPUs together, this is a synapse.</p>
+<p data-t="2338">And the reason why this is such an interesting age is we've moved from the age of dumb semiconductors, calculator-style, that you just make smaller and smaller, faster and faster, to a brand-new architecture that mimics the brain. And the transformer model and these LLMs probably mimic more the way that a brain works.</p>
+<p data-t="2357">And so I feel, again, it's lucky, but also you have to recognize when you stumble onto either a wave or when you stumble onto an age, right? And an age is comprised of multiple waves. And we are at the beginning of, I think, this third really, really big fundamental shift in how society produces, gets organized, and everything.</p>
+<p class="q" data-t="2384">And we have this gigantic shift, and you figured it out, and you figured it out earlier than most. Then you do what you call “peel back the onion” around that big idea. Talk a little bit about that.<a href="https://www.youtube.com/watch?v=XZJrvJS-GS4&t=2384s">&#x21AA; 39:44</a></p>
+<h3 class="chapter"><span>Finding the Next Big Technology Wave</span><a href="https://www.youtube.com/watch?v=XZJrvJS-GS4&t=2403s">&#x21AA; 40:03</a></h3>
+<p data-t="2403">So we have this concept in the investment world that you don't need a lot of ideas. And in fact, you only need a few ideas, and we call them BFI. And B stands for big, I stands for idea, and F stands for—well, you can figure out what the F stands for, right?</p>
+<p data-t="2414">So you've got these big, big ideas, BFIs, and in each wave, you only need one or two or three BFIs over 10 years. And the BFI, it's almost like the grove. And then that's the BFI, the theme. The BFI is like a grove of aspen trees, and then the stocks are like trees.</p>
+<p data-t="2444">But all those—I forgot if it's the aspen or not—they're all connected to this one root, and there's this one root that connects all these trees together. And I always felt, if you think about it recently, the BFI was Nvidia. And once you figured out Nvidia, you could figure out the supply chain.</p>
+<p data-t="2463">Then you figured out that Nvidia was going to need DRAM memory, then flash memory, and then blah, blah, blah, and that was the idea, right? If you think that now the new BFI is OpenAI and Anthropic, then go figure out what hangs off BFI, what hangs over Anthropic and OpenAI.</p>
+<p data-t="2483">Back in the age of the PC, it was Wintel, it was Microsoft and Windows and Dell, right? In the age of the internet, it was Google and Facebook and Amazon, right? In the age of cloud, it turns out that it was Azure, which belongs to Microsoft. It was AWS that belongs to Amazon. So interesting, some companies have a foot on one wave and then found a way to surf the other wave.</p>
+<p data-t="2515">And then some companies, they ... up, and there's usually cultural reasons. You could say maybe IBM, they were at the pinnacle with the mainframe and the PC, but somehow they were not able to transition to the age of the internet, to the age of cloud, and things like that. And now it's not the same company it used to be, right?</p>
+<p data-t="2534">So I also think it's important—that's why I try sometimes to pivot and stuff—but it's like you're surfing these waves, and you've got to sometimes say, “This is a good wave, and I can surf it for 10 years.” But sometimes there's this one junction where you go, “I've got to get off this wave and get on that wave.” And sometimes I've managed to do that.</p>
+<p data-t="2551">And then one time, I totally missed the wave, and I missed the cloud wave, and for two or three years, we did really poorly. And in retrospect, what I've learned from this is it's never too late to change waves, and every day is a new day.</p>
+<p class="q" data-t="2569">Yeah. And I've got to ask you, now space is such a hot topic. How do you look at the money-making capability of being on the wave of space?<a href="https://www.youtube.com/watch?v=XZJrvJS-GS4&t=2569s">&#x21AA; 42:49</a></p>
+<p data-t="2584">I feel like space is one of the waves in AI. And so we said there's the AI age, and inside the AI age, there's multiple waves. So one wave was semiconductors. The world needs way more semiconductors.</p>
+<p data-t="2597">As a factoid, in 2020, the semiconductor industry had two trillion of market cap, and today it's 24 trillion, okay? It shows to you how much the semiconductor industry has grown in market cap, which can go up and down, obviously, with investor sentiment. But still, a second age is now going to be, okay, we've got a lot of semis, but we need the whole data center. We need the whole infrastructure.</p>
+<p data-t="2623">It needs to be resilient, but it also has political consequences. Do you really want all these data centers in your backyard or not? Where are the data centers going to go? Is it true that a data center makes the cost of electricity go up, or does it actually make it go down? Is it good for the US, bad for the US to have data centers, right?</p>
+<p data-t="2642">One obvious thing to me is that real estate on Earth is very valuable, and there's not a lot of it. And furthermore, it doesn't belong just to the owner of the land. There are other stakeholders in real estate. There's the government, there's the community, there's the pollution, there's all sorts of different things, right?</p>
+<p data-t="2665">If you think about the real estate in space—and “space” is far grander of a word, is a misnomer. If you think of space, you get confused because you think space is really far. The average SpaceX satellite is 200 miles away from us. That's not space. Spain is 3,600 miles away, right?</p>
+<p data-t="2696">Japan is 10,000 miles away probably, right? And I'm like, Spain, Japan, that's far, okay? But the satellite is very close. As an aside, when you're on your phone, Dave, heading out to Long Island, at one point, you might be 40 miles away from a tower, okay, on your cell phone. So it's not very far.</p>
+<p data-t="2722">So now, if you imagine that there's an Earth that's just bigger than us, another circle 50 miles around Earth, right? Satellites can probably be spaced every hundred feet, and you can probably stack satellites over 50 miles. So there's 1,600, I think, yards per mile, and let's say you put the satellites every 100 yards. So it's 16 times 50, so it's a thousand.</p>
+<p data-t="2747">So first, there's a thousand Earths above us between 200 and 250 miles. And then there's no water on Earth, whereas in Earth there's 80% water. So there's only 20% land. You can't put data centers yet on the water. So that means that there's probably 5,000 spaces between 200 and 250 miles above us.</p>
+<p data-t="2768">So for the sake of this argument, real estate is infinite in space. Furthermore, there's no permits, there's no pollution, there's abundant solar energy, and it's really cold. So I have no doubt that sooner or later, the vast majority of data center infrastructure will be in space.</p>
+<p class="q" data-t="2791">Speaking of space, I know you've spent a lot of time with the guy who's leading the way on this front, Elon Musk. What surprised you the most about being with him, learning with him?<a href="https://www.youtube.com/watch?v=XZJrvJS-GS4&t=2791s">&#x21AA; 46:31</a></p>
+<p data-t="2804">So we have a big investment in SpaceX, but we also recently made a very big commitment to Blue Origin. So I've always tried to stay impartial and invest in the best companies, and it's allowed us to be able to invest in those two. We've also been able to invest in Anthropic and OpenAI.</p>
+<h3 class="chapter"><span>What Makes Elon Musk So Unusual</span><a href="https://www.youtube.com/watch?v=XZJrvJS-GS4&t=2807s">&#x21AA; 46:47</a></h3>
+<p data-t="2828">And we try to tell each company that we can be good investors and help them and be good thought partners, and be able to invest in both. And since we're more late-stage investors, it's less problematic than if we were early-stage investors.</p>
+<p data-t="2838">Funny enough, I've only met Elon a couple times, and so I don't know him personally. And it's one of my greatest regrets. I really wish I'd been able to spend more time with him and stuff, but he's very busy, and he has created a system around him that allows him to be probably a hundred times more efficient than a normal person and a thousand times more efficient than me, for sure.</p>
+<p data-t="2872">And so it's hard to join that system that he's basically honed over many, many years. And at the same time, you can appreciate so much of what he does from afar. And so it's incredible. He's for me like two Steve Jobs in one, or three Steve Jobs in one. And Steve Jobs was my idol forever and ever, right, as you know.</p>
+<p data-t="2897">And I think at the end of the day, he is able to apply to engineering, probably in a much bigger and grander way, some of the basic principles that I tried to apply at Coatue, which is to be extremely radical, couldn't care less what other people think, and let's get at the truth. So I'd say that's one.</p>
+<p data-t="2917">And the second part is he has this uncanny and genius capability, which most engineers don't have, which is he figures out what are the true big problems of humanity, and he goes about solving them. He figured out, look, energy, pollution, electric cars, bingo. He figured out satellites. “I'm going to go to Mars,” which sounded like a whim.</p>
+<p data-t="2942">But next, out of that, he actually created Starlink, right? And that's leading his rockets to five new businesses, right? He was able to merge X and xAI, and that became something. And now Tesla randomly said, “Well, we're not going to make any more cars. We're just going to make now robotaxis.”</p>
+<p data-t="2960">And that's leading to a new business. And now we're going to make humanoids, and that leads to a new business. So he has an ability to see new businesses, to pivot, is a one-of-a-kind in the world.</p>
+<p class="q" data-t="2972">Philippe, there's so much press and opinions about AI, and you're so close to it. I'm just curious as to how you look at the doom, the naysayers on AI, and the societal issues with AI. How should we be looking at that?<a href="https://www.youtube.com/watch?v=XZJrvJS-GS4&t=2972s">&#x21AA; 49:32</a></p>
+<p data-t="2998">I will answer that. The only thing I wanted to say is there's a couple other people like Musk, and I'd say Jeff Bezos is one of them. You start Amazon, you start Blue Origin. You have these founders that are so truly remarkable. They're able to start multiple businesses at scale.</p>
+<h3 class="chapter"><span>The Jeff Bezos Taco Bell Commercial</span><a href="https://www.youtube.com/watch?v=XZJrvJS-GS4&t=3000s">&#x21AA; 50:00</a></h3>
+<p data-t="3021">And so I think there's something just around—I was even thinking for your podcast, trying to go deep in the heart of the leader. There's a side that I don't know if it's different or not, Dave, which is, what's the heart of an entrepreneur? And is that different than the heart of a leader?</p>
+<p data-t="3041">Because entrepreneurs sometimes are not always the best leaders. Or they can be leaders, but by not having the polish of normal leaders, they're able to get away with murder in some way. But they're also able to get their troops to follow them through hail and rain and snowstorms and whatever.</p>
+<p data-t="3062">And so I'd be very curious. I will answer the AI question, but at some point, insights on there's great leaders and there's great entrepreneurs, and I'm sure they're Venn diagrams, but they're not necessarily the same.</p>
+<p data-t="3079">And I have gotten close to Jeff, and he's very different. When you spend time with him, you'd be like, “I want to spend the rest of my life with this guy. He's the nicest guy in the world.” Everything you say, he always, “Oh, this is so smart. This is so interesting. Thank you for asking that.” But he's so insightful and cuts through the stuff, too. So anyway.</p>
+<p data-t="3102">By the way, Jeff Bezos did a Taco Bell commercial for me on “Think Outside the Bun.” He was sitting around a table talking to a bunch of techies about the hottest new handheld on the market. It was Taco Bell's quesadilla.</p>
+<p data-t="3115">“Handhelds? I've seen these. What do we have that's new?” “Well, this just came out.” “Interesting.” “That's the new Taco Bell chicken quesadilla. Three melted cheeses, marinated all-white-meat chicken.”</p>
+<p data-t="3126">“They're calling this the hot new handheld.” “Can I get a demo?” “Yeah, sure.” “Mmm. Wow.” Three melted cheeses, marinated all-white meat, the new chicken quesadilla. To get Taco Bell's hot new handheld, you've got to think outside the bun.</p>
+<p data-t="3145">And he was the nicest guy in the history of the world. He's absolutely there.</p>
+<p data-t="3150">But now I know why he looks so strong, is because he's been eating Taco Bell tacos.</p>
+<p data-t="3156">There you go.</p>
+<p data-t="3156">And I tell you what, I keep asking him, “How can I look this strong?” And now I know it was the tacos.</p>
+<p data-t="3162">Yeah. I'll tell you, you bring up a really good point about the entrepreneur. And the entrepreneur has a passion and a zeal for the baby that they create that nothing's going to get in the way. Nothing, okay? And then there are entrepreneurs who can only grow so far, okay?</p>
+<p data-t="3185">They have their baby, but they can't take it to the next level because of their inability to do what I think you've done. What you've done is you've surrounded yourself with people to do what maybe you don't necessarily have as your strongest suit, okay? The founders that stall don't have that capability. So they stay at 50 million. They don't go to billions.</p>
+<p data-t="3210">But they all start out with this incredibly rugged, rugged belief and passion for the idea that they have.</p>
+<p data-t="3217">I also think that entrepreneurs, sometimes the one thing that they have that really helps is, by and large—and it's exactly because of what you said—they're very authentic because it's their baby, and they're going to fight for it tooth and nail, like a parent would fight for his child.</p>
+<h3 class="chapter"><span>Why Philippe Refuses to Be a Doomer</span><a href="https://www.youtube.com/watch?v=XZJrvJS-GS4&t=3220s">&#x21AA; 53:40</a></h3>
+<p data-t="3237">And we know that the love that parents have for a child is one of the greatest, in my mind, qualities in humans. And they're very authentic. And one thing in America that I've learned is you better be authentic, because when you're authentic and you make some mistakes, by and large, people will give you many chances.</p>
+<p data-t="3254">But if you're not authentic and people feel—and so I think that's one of the things that makes Jeff or some of these other guys, the way they talk about their business and this and that, very authentic.</p>
+<p data-t="3273">Anyway, onto the world of AI, in the world of doom and gloom. I would say, first of all, I've never met a happy, successful, wealthy doomer. But I have met so many optimistic, ambitious, successful, interesting people who believe in the future.</p>
+<p data-t="3302">I also feel that America is the country where we believe in the future. And in other countries, they have other sets of values maybe that are good, but they don't have this incredible belief in the future, in building, in entrepreneurship, in capitalism and stuff like that.</p>
+<p data-t="3327">I'm actually trying to do some research on it now, but I'm sure that when we invented the nuclear world, there were a lot of people that said we're doomed. And I'm sure that around green energy, there's that. I know for a fact there's a lot of people who said we're doomed.</p>
+<p data-t="3345">And of course, we need to do with green energy. And of course, we need to move away from fossil fuels. But we can't move away from fossil fuels in a way that suddenly nobody can afford the new energy either. We need to find a really good path. And so we need to be pragmatic around how best to do that.</p>
+<p data-t="3365">I feel with AI, there's a lot of people who either are natural doomers. I feel like 30% of the people are incredibly optimistic, 50% of the people are mostly optimistic, but every now and then are not. And then 20% of the people, get rid of them. They're always pessimistic. If I have someone in my firm that's always pessimistic, that is the one sure way that we're not going to be together forever.</p>
+<p data-t="3403">You have to surround yourself around optimistic. And optimistic and reasonable can coexist, obviously, together. So I don't believe for a minute that AI is going to doom, but I strongly believe that there's a shared responsibility between the private sector, between the public sector, and between other stakeholders to make AI a success for everyone.</p>
+<p data-t="3428">Make a success around building it without messing up communities, without messing up the grid. But there's so many smart ways to build AI. There's all these old coal plants that would make great AI sites. You can turn these brownfields into data centers. You can create so many jobs with data centers and stuff like that.</p>
+<p data-t="3454">So I must tell you there, I'm highly cautious around the fact that we need to be responsible around AI. But it's outrageous to somehow think that we're going to be dominated and that soon the machines are going to take over for the humans.</p>
+<p class="q" data-t="3466">So how would you create policy around optimistic yet reasonable?<a href="https://www.youtube.com/watch?v=XZJrvJS-GS4&t=3466s">&#x21AA; 57:46</a></p>
+<p data-t="3473">The first thing that we need to show is that AI is not going to destroy jobs. There's this view that somehow with AI, there are not going to be any jobs left. And my analogy to that is that in 1900, I think 50 or 60% of the US was in agriculture, and a hundred years later, it's less than 1%.</p>
+<p data-t="3499">I'm sure that in 1900, if you said in a hundred years that agriculture will only be 1% of the people, people would have panicked. And so I think AI is going to be the same. Some job categories will go away, but some job categories will grow a lot.</p>
+<p data-t="3511">And what makes a great country is the ability to shuffle through job categories and make sure that young people and new people can find a good job, but also that people that don't have the skill can repurpose themselves and this and that. So I think that's an important thing.</p>
+<p data-t="3530">Second one, data centers are excellent for the grid because most data centers build their power. And the grid is designed as a way to provide electricity to people during peak, but peak is double the average and maybe triple the trough.</p>
+<p data-t="3552">So if we told the data centers, “Look, you can build the data center, but when it's really cold or really hot, turn your data center off, and I need the electricity,” just that would be so valuable against burnouts and stuff. And then also the data center can pay for the transmission.</p>
+<p data-t="3569">And since electric cost is the cost of producing plus the cost of transmitting, if more people share the burden of transmitting, the cost of transmitting goes down. So there are so many easy policy ways of doing it. And it's a bummer because it seems that the politics dictate that you can only think one way or another, and you cannot have the pragmatic view of things.</p>
+<p data-t="3592">But I think the industry needs to do a much better job at explaining these intricacies and finding a simple way to explain why things are good, or address why they're not and make them better.</p>
+<p data-t="3610">I love just the concept of optimistic and reasonable. I just think that's a clear way to think about something that our country's got to win at, unquestionably.</p>
+<h3 class="chapter"><span>Why AI Needs Optimism and Pragmatism</span><a href="https://www.youtube.com/watch?v=XZJrvJS-GS4&t=3613s">&#x21AA; 1:00:13</a></h3>
+<p class="q" data-t="3626">Well, Philippe, this has been a lot of fun, and I always have a lightning round, and I hope you're ready for this. Are you ready for this?<a href="https://www.youtube.com/watch?v=XZJrvJS-GS4&t=3626s">&#x21AA; 1:00:26</a></p>
+<p data-t="3631">All right, I'll try.</p>
+<p class="q" data-t="3631">What three words would your team use to describe you?<a href="https://www.youtube.com/watch?v=XZJrvJS-GS4&t=3631s">&#x21AA; 1:00:31</a></p>
+<p data-t="3637">So I suppose we have to use pugnacious as one. I would say pragmatic as another. And I would say optimistic.</p>
+<p class="q" data-t="3645">If you could be one person for a day besides yourself, who would it be?<a href="https://www.youtube.com/watch?v=XZJrvJS-GS4&t=3645s">&#x21AA; 1:00:45</a></p>
+<p data-t="3645">If it was a sports guy, it would be a soccer guy, and I would have to go with Messi because my son absolutely loves Messi. As a business person, 50% of Musk and 50% of Bezos together.</p>
+<p class="q" data-t="3666">Your biggest pet peeve?<a href="https://www.youtube.com/watch?v=XZJrvJS-GS4&t=3666s">&#x21AA; 1:01:06</a></p>
+<p data-t="3666">People who come in with a problem but without a solution. Or people who are scared about something but unwilling to just immediately say, “Look, I've got this problem, and I'm really worried about it, and this is the issue.”</p>
+<p class="q" data-t="3688">If there was going to be a Philippe Laffont roast, who would you be most nervous to have on the guest list?<a href="https://www.youtube.com/watch?v=XZJrvJS-GS4&t=3688s">&#x21AA; 1:01:28</a></p>
+<p data-t="3694">Anybody that can attest to the difference between how I perceive my golf and the reality of my golf would be extremely, extremely painful.</p>
+<p class="q" data-t="3708">Three stocks people should pay attention to.<a href="https://www.youtube.com/watch?v=XZJrvJS-GS4&t=3708s">&#x21AA; 1:01:48</a></p>
+<p data-t="3714">OpenAI and Anthropic. Could some of the providers of intelligence in the future be the largest companies in the world? The concept that all these agents are now going to be able to do stuff. So you don't really need to go to Amazon anymore.</p>
+<p data-t="3726">You just say, “Hey, Amazon, I want you to buy me the best pair of white socks to play tennis. And also go book me a trip for my wife and I to do this.” And so the concept of agentic, persistent agents is very important.</p>
+<p data-t="3751">And Facebook just came with this product called Muse. So I'm not recommending Facebook the stock, but I am recommending try the Muse app and see if it makes your life better.</p>
+<p class="q" data-t="3763">All right, we'll definitely do that. What's something you've been curious about lately that has absolutely nothing to do with work?<a href="https://www.youtube.com/watch?v=XZJrvJS-GS4&t=3763s">&#x21AA; 1:02:43</a></p>
+<p data-t="3768">This is so sad, David. But I spend so much time just juggling so many balls at work that I don't have that much time outside of work. And I would say the only thing I spend time outside of work is having six kids. There's always something a little bit off. Every now and then, there's something totally off.</p>
+<p data-t="3794">But my wife, I suppose that I must say my wife outside of work, at the end of the day, she takes care of the six kids. And that really is a joy.</p>
+<p data-t="3808">And what I do spend time on now, I'll tell you what, is when your kids get to be a certain age and they're adults, I spend time on thinking how are they going to draw their own canvas, and that they have to take risks, and they have to be themselves. Hopefully entrepreneurs, if they choose to be so, and that I cannot interfere or do anything about it.</p>
+<p data-t="3833">I've got to give them the strength to go for it.</p>
+<p class="q" data-t="3840">Absolutely. Besides your family and friends, what's your most prized possession?<a href="https://www.youtube.com/watch?v=XZJrvJS-GS4&t=3840s">&#x21AA; 1:04:00</a></p>
+<p data-t="3840">My padel tennis racket, which my wife thinks is now my illegitimate mistress. Because the one thing that keeps me sane is I try to play padel tennis every day. I play from about 7 to 8:30. That is my one non-negotiable rule. And I've already decided that I'm very close to joining the professional senior league, even though I've only played for two years.</p>
+<p class="q" data-t="3872">What's one of your daily rituals, something that you never miss?<a href="https://www.youtube.com/watch?v=XZJrvJS-GS4&t=3872s">&#x21AA; 1:04:32</a></p>
+<p data-t="3877">I try to do two things. I try to come home to dinner, to have dinner with my wife. We still have two small kids at home. And I try, if I'm really up for it, to do a one-minute cold plunge.</p>
+<p data-t="3891">All right, great. We're out of the lightning round. I have a few more questions. I'll let you go. It's been a fantastic conversation.</p>
+<p class="q" data-t="3902">You mentioned your kids, and you actually say that when people have asked you about whether you're a collector, you say you're a collector of children. Okay, I love that. What is the biggest lesson your family has taught you about leadership?<a href="https://www.youtube.com/watch?v=XZJrvJS-GS4&t=3902s">&#x21AA; 1:05:02</a></p>
+<p data-t="3913">I think that the way you lead your family is, at the end, the way one can lead a business. Now, maybe not as an emphasis on pugnacious, but the truth. Deal with the problem immediately. Never sweep anything under the carpet. The value with LPs, as I told you, the value with LPs of knowing that you're a straight shooter and stuff like that.</p>
+<h3 class="chapter"><span>The Rule He Follows at Home and Work</span><a href="https://www.youtube.com/watch?v=XZJrvJS-GS4&t=3917s">&#x21AA; 1:05:17</a></h3>
+<p data-t="3950">And I found that for me, going home to the family and having the responsibility, it's very much of a shared responsibility, where Anna plays a greater role than I, of just doing everything and trying to do everything the best way we can, and keeping things simple, and having a good laugh.</p>
+<p data-t="3972">Anna is one of nine, so she has a big family. There's something around just the ritual, and that's been very helpful for me, to spend time with her family, with my family and stuff. And it also gives you a little bit of peace and rest, that when you come back to work, you're highly energized. I find spending time with my family gives me the energy to be at the office.</p>
+<p class="q" data-t="4004">We've talked so much about the success that you've had. We really haven't talked about a failure in particular. What would you see, looking back, as maybe the biggest thing that you might have missed on, and what did you learn from it?<a href="https://www.youtube.com/watch?v=XZJrvJS-GS4&t=4004s">&#x21AA; 1:06:44</a></p>
+<p data-t="4021">Along the times that we built Coatue, we've had some very difficult times. One time, I told a friend of mine, “If you give me 7% of your business, I'll quit.” And he said, “No, but I'll give you 4%.” And I was like, “God, four?”</p>
+<h3 class="chapter"><span>The Conversation That Kept Him From Quitting</span><a href="https://www.youtube.com/watch?v=XZJrvJS-GS4&t=4024s">&#x21AA; 1:07:04</a></h3>
+<p data-t="4047">And I went to see this friend of mine who was one of my first LPs. He said, “Philippe, what's the difference between seven and four? At the end of the day, if the business does well, you'll do fabulously well. But I do want you to know one thing. If you quit, I'll never speak to you again.”</p>
+<p data-t="4059">I was like, “Whoa.” And I never quit. Do you imagine if that guy had told me, “Hey, if you don't have it, accept. Move on. Go work for someone else. I'll still be your friend. No worries about it.” Do you imagine?</p>
+<p data-t="4081">And so I've had times at Coatue where things have really not worked, and we've gone backwards a lot. We also made some very bad decisions during COVID, principally because we thought that the world would forever rearchitect around this Zoom culture and living not necessarily in cities anymore and this and that.</p>
+<p data-t="4105">And then when that didn't turn out to be right, we had some tough investment decisions to make. We had to basically replace a lot of our team. It was a very tumultuous time inside of the firm. So obviously, I've had to deal with that professionally, and then I've also had some personal things along the way to deal with.</p>
+<p data-t="4126">But I have to admit, when people ask me about tough things, I'm like, look, I do feel and recognize—and that's why I'm also thinking more and more about ways that I can now maybe be in a position to help others—because both the country has helped me a lot, but also I've not had to navigate the kind of difficulties that so many other people have to.</p>
+<p data-t="4149">And so I have to use that good luck. And so maybe you'll help me think about how to do that better.</p>
+<p class="q" data-t="4162">That's getting to maybe the legacy that you might want to leave beyond the investment returns that you've generated for so many people. Is that what you're starting to think about now?<a href="https://www.youtube.com/watch?v=XZJrvJS-GS4&t=4162s">&#x21AA; 1:09:22</a></p>
+<p data-t="4169">I think the legacy has to be, for me—well, first, Buffett still works at 96, so I'm 59. So I'm like, “God, maybe I get lucky and I've got another 30 years.” So we're in—I forget baseball. How many innings in baseball?</p>
+<p data-t="4190">Nine.</p>
+<p data-t="4190">Nine, okay. So I hope I'm at inning four and a half, right? Let's say bottom of the fourth, right? But I think the legacy needs to be more than just you're a great manager, you make a lot of money for your investors and a lot of money for yourself. And so I'm trying to define what that legacy is.</p>
+<p data-t="4212">Obviously, having a company that survives you, that maybe even one day goes public, and a company that other people can invest in, and then they make money off your company, that'd be great. But I still think that that legacy, there's a grander idea. And I'm spending a lot more time on philanthropy and trying to find maybe my own little way of doing something interesting.</p>
+<p class="q" data-t="4246">I'm sure you'll find it. And last question here: what's one piece of advice you'd give to anyone who wants to be a better leader?<a href="https://www.youtube.com/watch?v=XZJrvJS-GS4&t=4246s">&#x21AA; 1:10:46</a></p>
+<p data-t="4252">Honesty, authenticity, persistence. You've got to make a few big calls in life, and you've got to make the right calls. And so you've got to be the kind of guy that has the energy to be willing to be, every now and then, the man in the arena, and suffer both if it works or if it doesn't.</p>
+<h3 class="chapter"><span>Philippe&#39;s Advice for Anyone Who Wants to Lead</span><a href="https://www.youtube.com/watch?v=XZJrvJS-GS4&t=4255s">&#x21AA; 1:10:55</a></h3>
+<p data-t="4266">And then I would also say there's leaders that are CEOs. There's leaders that are just great family people, and they're the leader of their family. There's leaders at medium scales, small scales, big scales. Just pick to be the leader of your community, your church, your something.</p>
+<p data-t="4292">But I do think, in retrospect, having spent this hour with you, David, it's been very enjoyable for me to appreciate around finding a way to make a difference for others. The scale doesn't matter. If we all try to do that in one way or another, it will add up that our kids will be better off than we are.</p>
+<p data-t="4316">Well, I have to tell you, I've enjoyed this immensely, Philippe. It's been a great conversation, and I've enjoyed it because of the characteristics you just said leaders need to have. You've lived them. In the last hour, you're honest, okay? You're persistent.</p>
+<p data-t="4332">You've got the guts to pursue what you love, the passion that you have. You could maybe shrug off this whole thing of How Leaders Lead and “I'm not a leader,” but I'm telling you, you're a leader, and you've got the facts to back it up. And I really, really appreciate you taking the time to be with me.</p>
+<p data-t="4349">Thanks, pal. It's been great, and thank you for inviting me on this show. I've really enjoyed it.</p>
+<p class="q" data-t="4363">David, what an interview. Is this the first time we've ever had a Frenchman on the podcast?<a href="https://www.youtube.com/watch?v=XZJrvJS-GS4&t=4363s">&#x21AA; 1:12:43</a></p>
+<h3 class="chapter"><span>Key Learnings with David and Koula</span><a href="https://www.youtube.com/watch?v=XZJrvJS-GS4&t=4365s">&#x21AA; 1:12:45</a></h3>
+<p data-t="4368">I think it is. Yeah, but it won't be the last. He was great. I had a lot of fun with him.</p>
+<p data-t="4374">He was so great.</p>
+<p data-t="4374">And I learned a ton. It was great. He's a great guy, and I appreciate him taking the time to be with us because he's certainly got a lot going on.</p>
+<p data-t="4380">I loved the little bit that you two had going about Pugnacious and how you're going to start calling him Pugnacious.</p>
+<p data-t="4387">Yeah. Well, we're friends, and now I've got a nickname for my friend. I think I'm going to go all the way with Pugnacious instead of just Pug. He's the real deal. It's kind of hard to abbreviate the guy.</p>
+<p data-t="4406">And how would you like to sit around his dinner table? I loved how he responded to that question, how you lead at home. And he says, you get it out there. You don't sweep it underneath the table. It's truth. In his own way, he really defined what love and family is all about, which is great.</p>
+<p data-t="4422">Absolutely. And it's clear that he takes those same concepts into his leadership at work, too. The guy does not seem like someone who will sugarcoat anything. I love that he talked about his recipe for success.</p>
+<p data-t="4436">Yeah, I love that he kept his passion, and then he had the stumbles, and he just kept following it. And one door after another door opened. And I think by talking about the stumbles, it really showed humility.</p>
+<p data-t="4455">A lot of people, when you think of investors and hedge funds, you think all they're focused on is money. And that's not it. What he's focused on is his passion and helping other people make money through the investments he makes. And of course, he's benefited tremendously from it, but he's got a much nobler cause for his business than just making a buck.</p>
+<p class="q" data-t="4481">Well, David, I'm excited to break this conversation down and give our listeners some real tangible takeaways that they can take into their leadership and into their life. And the first concept that really stood out to me from this episode was the way that Philippe just gets to the right answer.<a href="https://www.youtube.com/watch?v=XZJrvJS-GS4&t=4481s">&#x21AA; 1:14:41</a></p>
+<p class="q" data-t="4501">And I know, David, you talk a lot about the importance of having healthy debate, which leads to a healthy decision. So what's your take on how he goes about getting there?<a href="https://www.youtube.com/watch?v=XZJrvJS-GS4&t=4501s">&#x21AA; 1:15:01</a></p>
+<p data-t="4508">Well, he wants people to come in and have a real point of view for what they believe in, and he wants people to be passionate about it. And he wants the best idea to win. I loved how he said that it doesn't matter how much seniority you have, where you stand in the company. The best idea should win.</p>
+<p data-t="4529">And he really loves the idea of letting the young flourish, the people that are coming up. He wants to hear what they have to say because they're on top of what's happening in the world, and they've got a different view and a different perspective. And he wants all those perspectives out on the table, and then from that, you get to the right answer.</p>
+<p data-t="4554">And like he said, they're making big bets for investors who believe in them. So it's not something that he takes lightly. And I think that responsibility that he has as the investor really comes through loud and clear. He wants to do a great job, and he wants all of his people to do a great job for his investors.</p>
+<p class="q" data-t="4574">One thing that really struck me was how he explained that when you have so much on the line in terms of your investors' interests, you almost have to have this combative culture, in a way, where you get everything out on the table about what you think about an idea. And if you have a conviction about something, say it. I thought that was really interesting. What do you think about that part of it?<a href="https://www.youtube.com/watch?v=XZJrvJS-GS4&t=4574s">&#x21AA; 1:16:14</a></p>
+<p data-t="4600">Well, I think no matter what kind of company you lead, you want to have the truth. You want the whole truth and nothing but the truth. And you want to have it unvarnished. And that's a huge value that he holds really high in his company, along with his brother Thomas.</p>
+<p data-t="4622">And so that quest for honesty, that quest for hearing what your opinion is, is something that I'm sure his people really value because they know that he wants to hear what they have to say. I think Sam Walton once said the most powerful way to motivate people is to listen to them.</p>
+<p data-t="4648">And I think what he basically does is he has a very high value in his company to hear the unvarnished truth and to really listen to people. And I think that's why he has a motivated team and people that are very loyal to him.</p>
+<p class="q" data-t="4661">David, the next theme that really stood out to me is that Philippe is just a guy who is who he is. He is authentic. And we talk on the show a lot about how the term authenticity is thrown around lightly in today's culture. But with Philippe, it's what you see is what you get, and he is not going to hide who he is for fear that you might judge or not like him.<a href="https://www.youtube.com/watch?v=XZJrvJS-GS4&t=4661s">&#x21AA; 1:17:41</a></p>
+<p class="q" data-t="4686">What stood out to you about the way that he showed up in that conversation and the way that he shows up at work?<a href="https://www.youtube.com/watch?v=XZJrvJS-GS4&t=4686s">&#x21AA; 1:18:06</a></p>
+<p data-t="4691">Well, I think it says a lot about Philippe when he talked about how much he values authenticity. He's around leaders all the time, and he's basically saying no matter how large a company you lead or how small it is, or what community you're in, or whatever you do, people are not going to believe in you unless you are true to who you are.</p>
+<p data-t="4712">You can't be somebody else. People will smell phonies a mile away. And I think he really gets that. And obviously, he is very true to who he is. He's French, and he talks about those French characteristics that he has, but he's also an American now who loves his country with all his heart.</p>
+<p data-t="4737">And that passion that he has for his background and our country, and really representing who he is as a person, the person Philippe Laffont really is, and how important that is to him, I think was inspiring, and I loved it.</p>
+<p class="q" data-t="4756">I did too, David. In that same vein of him being authentic, I also loved when you challenged him when he said, “I'm not a leader.” And you said, “I'm going to call BS on you. You are a leader.” And I love the way that he talks about the areas of leadership where he doesn't feel as gifted.<a href="https://www.youtube.com/watch?v=XZJrvJS-GS4&t=4756s">&#x21AA; 1:19:16</a></p>
+<p class="q" data-t="4773">He fills his gaps, and he appoints people into those roles who help round him out as a leader so that every part of the company can keep moving forward. Talk a little bit about the importance of doing that and the flavor of Philippe's leadership and how he fills his gaps.<a href="https://www.youtube.com/watch?v=XZJrvJS-GS4&t=4773s">&#x21AA; 1:19:33</a></p>
+<p data-t="4793">Well, I really appreciate Philippe's humility in the sense that he's saying—he told me before he shouldn't be on the show because he's not a leader. But the reason why I wanted to have him on the show is because he is a leader. He took a business from $50 million of investments to over a hundred billion dollars in investment. That does not happen by accident.</p>
+<p data-t="4816">A lot of founders, and he's a founder, they start out with a real good idea, and they take it to a certain level, but it stops because they don't grow as a leader. And what I give Philippe a lot of credit for is having high self-awareness. He knows what he's really great at.</p>
+<p data-t="4830">He's great at investments. He's great at seeing around corners. He's great at peeling back the onion once he identifies the big wave. These are all things that he does. But he's also great at understanding what he's not so good at.</p>
+<p data-t="4849">He was the first to give his brother credit, Thomas, for being the culture champion in the company. He talked about his HR leader, who knew so much more about what was going on in the company than him. But he talked about how he basically fills his gaps in leadership with other people.</p>
+<p data-t="4860">The other thing that I love is how he gives people a great piece of the company and gives them ownership in the company. He talked about how he organized the divisions around what people do and how they add value to the company after learning from a friend of his that that's what he had done.</p>
+<p data-t="4885">But he's obviously a leader who's extremely curious, has high self-awareness, and wants greatness, and is willing to acknowledge that he has some opportunities that need to be filled by other people. And boy, he values the heck out of that. And I think when you have a leader who knows that they have gaps and really fills the gaps, you're on your way.</p>
+<p data-t="4918">It reminds me of the movie Rocky, and I think the story goes, his brother said to him, “What do you see in Adrian?” And he goes, “She's got gaps. I've got gaps. She fills my gaps.” And I think that's what we all have to do as leaders, is find those people that fill our gaps.</p>
+<p data-t="4944">I also just really appreciate how he's so open about the fact that he doesn't resonate with the traditional role of a CEO. And he's also not trying to force himself to be something that he's not. We talked about his authenticity, but when you're running a company with over a hundred billion dollars under management, I feel like there would be a natural tendency maybe to try to be what everyone else thinks is a CEO.</p>
+<p data-t="4972">But he is true to himself, continues to fill his gaps, and that's the reason why he's been so successful.</p>
+<p data-t="4979">Koula, I really do think this was a fun, fun episode. And I think there are three things that our listeners can easily take away from this, if not more. But the three would be, number one, get to the right answer. You want the best idea to win, and create a culture where the truth comes out and you find it.</p>
+<p data-t="4998">Second thing is, as a leader, be authentic. Be who you are. You can't be anybody else. If you try, you'll be seen as a phony, and it's just not going to work. So embrace who you are. Get better in terms of who you are, but take your basic skills and go with them.</p>
+<p data-t="5032">And the third thing is that nobody has everything. We all need people to help us to be better. So we need to find those people that fill our gaps. And the best way to do that is have high self-awareness and know what you need to do to take yourself and the business to the next level, and get the talent around you to help you to do that. And I think Philippe has done that.</p>
+<p data-t="5038">So that was incredible. And I have to tell you, I love it when you see people so passionate about what they do and so deep in their knowledge. And there's a reason why he can see new trends. He's a history major. And he gave us a great history lesson today that's allowing him to carve out what's going to happen in the future.</p>
+<p data-t="5062">David, well, thanks so much for another episode of How Leaders Lead. Thanks to Philippe for spending time with us on the show. And thank you, of course, to you, our listeners. Stay tuned for another episode, and we will see you next week.</p>
+    </div>
+  </main>
+  <script>
+  async function toggleYtBookmark(btn) {
+    const payload = {
+      title: btn.dataset.title,
+      url: btn.dataset.url,
+      filename: btn.dataset.filename,
+      interviewDate: btn.dataset.date,
+      source: 'YT',
+      expert: btn.dataset.channel,
+    };
+    try {
+      const resp = await fetch('/bookmark', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload),
+      });
+      const result = await resp.json();
+      setYtBookmarkState(btn, !!result.bookmarked);
+    } catch (e) {
+      console.error('Bookmark toggle failed:', e);
+    }
+  }
+  function setYtBookmarkState(btn, on) {
+    btn.classList.toggle('is-bookmarked', on);
+    btn.innerHTML = on ? '&#9733;' : '&#9734;';
+    btn.title = on ? 'Bookmarked' : 'Bookmark';
+    btn.setAttribute('aria-label', on ? 'Bookmarked' : 'Bookmark');
+  }
+  (async function initYtBookmarkState() {
+    const btn = document.getElementById('yt-bookmark-btn');
+    if (!btn || !btn.dataset.filename) return;
+    try {
+      const resp = await fetch('/bookmarks');
+      if (!resp.ok) return;
+      const list = await resp.json();
+      if (Array.isArray(list) && list.some(b => b && b.filename === btn.dataset.filename)) {
+        setYtBookmarkState(btn, true);
+      }
+    } catch (e) { /* offline -- leave default state */ }
+  })();
+
+  async function shareYtPage(btn) {
+    const original = btn.innerHTML;
+    btn.disabled = true;
+    btn.innerHTML = '&hellip;';
+    try {
+      const resp = await fetch('/share', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ filename: btn.dataset.filename }),
+      });
+      const result = await resp.json();
+      if (!result.ok) throw new Error(result.error || 'Share failed');
+      try { await navigator.clipboard.writeText(result.url); } catch (e) {}
+      btn.innerHTML = '&#10003;';
+      btn.title = 'Copied ' + result.url;
+      setTimeout(() => { btn.innerHTML = original; btn.disabled = false; btn.title = 'Share'; }, 2500);
+    } catch (e) {
+      console.error('Share failed:', e);
+      btn.innerHTML = '!';
+      btn.title = 'Share failed: ' + (e && e.message || e);
+      setTimeout(() => { btn.innerHTML = original; btn.disabled = false; btn.title = 'Share'; }, 3000);
+    }
+  }
+
+  // When the page is viewed from somewhere other than the local Reader
+  // server (e.g. a shared copy on GitHub Pages), hide the interactive
+  // buttons whose endpoints only exist on localhost.
+  (function hideLocalOnlyControls() {
+    const host = location.hostname;
+    const isLocal = host === 'localhost' || host === '127.0.0.1' || host === '';
+    if (isLocal) return;
+    const actions = document.querySelector('.yt-header-actions');
+    if (!actions) return;
+    const bookmark = actions.querySelector('#yt-bookmark-btn');
+    const share = actions.querySelector('#yt-share-btn');
+    if (bookmark) bookmark.remove();
+    if (share) share.remove();
+  })();
+  </script>
+<script id="reader-presentation-script">
+(function () {
+const readerKind = "youtube";
+const readerStandalone = true;
+const readerFilename = "";
+const readerNavigation = null;
+const splitExpertTitle = function splitExpertTitle(title, knownTicker = '') {
+  const symbol = '[A-Z][A-Z0-9.-]{0,11}';
+  const symbols = new RegExp(`^${symbol}(?:\\s*[/,&+]\\s*${symbol})*$`);
+  const leading = title.match(new RegExp(`^(${symbol})(?:\\s*[—–:|]\\s*|\\s+-\\s+)(.+)$`));
+  if (leading) return { label: leading[1], description: leading[2] };
+
+  // Some saved interviews name a company, then its ticker, then the topic.
+  const pipes = title.split(/\s*\|\s*/);
+  if (pipes.length > 1) {
+    const tickerIndex = pipes.findIndex(part => symbols.test(part));
+    if (tickerIndex >= 0) return { label: pipes[tickerIndex], description: pipes.filter((_, i) => i !== tickerIndex).join(' · ') };
+    if (pipes[0].length <= 32) return { label: pipes[0], description: pipes.slice(1).join(' · ') };
+  }
+
+  const divided = title.match(/^(.+?)\s+[—–-]\s+(.+)$/) || title.match(/^([^:]{1,32}):\s+(.+)$/);
+  if (divided) {
+    const [, subject, topic] = divided;
+    const namedSymbols = [...subject.matchAll(/\(([^)]+)\)/g)].map(m => m[1]).filter(value => symbols.test(value));
+    if (namedSymbols.length) return { label: namedSymbols.join(' / '), description: topic };
+    if (symbols.test(topic)) return { label: topic, description: subject };
+    if (subject.length <= 32) return { label: subject, description: topic };
+  }
+  // Broad industry interviews may have no single issuer or separable heading.
+  return { label: knownTicker || 'EX', description: title };
+};
+const abbreviateEventTitle = function abbreviateEventTitle(title) {
+  return String(title || '')
+    .replace(/\bGoldman Sachs(?: Group)?\b/gi, 'GS')
+    .replace(/\b(?:Bank of America(?: Merrill Lynch| Securities)?|BofA(?: Merrill Lynch| Securities)?)\b/gi, 'BofA')
+    .replace(/\bBarclays(?: Capital| Bank| PLC)?\b/gi, 'BCA')
+    .replace(/\bJ\.?\s*P\.?\s*Morgan(?:\s+Chase)?\b/gi, 'JPM')
+    .replace(/\bWells Fargo(?: Securities)?\b/gi, 'WFC')
+    .replace(/\b(?:Citigroup|Citibank|Citi)(?:['’]s)?\b/gi, 'Citi')
+    .replace(/\bMorgan Stanley\b/gi, 'MS')
+    .replace(/\bDeutsche Bank\b/gi, 'DB')
+    .replace(/\bRBC Capital Markets\b/gi, 'RBC')
+    .replace(/\bBMO Capital Markets\b/gi, 'BMO')
+    .replace(/\bJefferies\b/gi, 'JEF')
+    .replace(/\bConferences?\b/gi, 'Conf');
+};
+// Runs after the saved page's scripts. Move real controls so their IDs, data,
+// listeners and bookmark/share payloads survive the visual upgrade.
+(function () {
+  'use strict';
+  const oldHeader = document.querySelector('body > .header, body > header, body > .sticky-header, main > .yt-meta-card');
+  const content = document.querySelector('main, body > .content');
+  if (!oldHeader || !content || oldHeader.contains(content) || document.body.classList.contains('reader-page')) return;
+
+  const make = (tag, className, text) => {
+    const element = document.createElement(tag);
+    if (className) element.className = className;
+    if (text) element.textContent = text;
+    return element;
+  };
+  const clean = value => String(value || '').replace(/\s+/g, ' ').trim();
+  const labels = { earnings: 'Earnings call', presentation: 'Presentation', expert: 'Expert call', youtube: 'YouTube' };
+  const metadataSelector = '.yt-header-sub, .yt-meta-sub, .metadata, .header-meta, .meta, .subtitle, .subline, .profile, .src-date, .header-subtitle, .date';
+  const metadataNodes = [...oldHeader.querySelectorAll(metadataSelector)].filter(node => !node.parentElement.closest(metadataSelector));
+  // Templates vary across the archive. Keep all header text, not just text in
+  // the newest title class; otherwise older dates and expert roles disappear.
+  const titleCopy = oldHeader.cloneNode(true);
+  titleCopy.querySelectorAll(`${metadataSelector}, .ticker, .market-strip, button, a, script, style`).forEach(node => node.remove());
+  let title = clean(titleCopy.textContent) || document.title;
+  let label = clean(oldHeader.querySelector('.ticker')?.textContent).replace(/^\(|\)$/g, '');
+  const market = oldHeader.querySelector('.market-strip');
+  const actions = [...oldHeader.querySelectorAll('button, a')].filter(node => !node.closest('.yt-header-thumb, .yt-meta-url') && !node.querySelector('img') && !metadataNodes.some(meta => meta.contains(node)));
+
+  if (readerKind === 'expert') {
+    const parts = splitExpertTitle(title);
+    label = parts.label;
+    title = parts.description;
+  } else if (readerKind === 'youtube') {
+    label = 'YT';
+  } else if (!label) {
+    const symbol = title.match(/\(([A-Z0-9][A-Z0-9.-]{0,11})\)/);
+    if (symbol) { label = symbol[1]; title = clean(title.replace(symbol[0], '')); }
+  }
+
+  document.body.classList.add('reader-page');
+  document.body.dataset.readerKind = readerKind;
+  const header = make('header', 'reader-masthead');
+  const inner = make('div', 'reader-masthead-inner');
+  const brand = make(readerStandalone ? 'span' : 'a', 'reader-brand', readerStandalone ? 'OC Reader' : '‹ Library');
+  if (!readerStandalone) { brand.href = '/status'; brand.title = 'Back to Library'; }
+  const tools = make('div', 'reader-tools');
+  for (const action of actions) {
+    // Q&A is already available in the article's section navigation.
+    if (/^Q\s*(?:&|and)\s*A$/i.test(clean(action.textContent))) continue;
+    action.classList.add('reader-tool');
+    if (action.matches('#bookmark-btn, #yt-bookmark-btn')) {
+      action.setAttribute('aria-label', action.title || 'Bookmark');
+    }
+    if (action.matches('#share-btn, #yt-share-btn')) action.setAttribute('aria-label', 'Share');
+    if (readerStandalone && action.matches('button')) action.hidden = true;
+    tools.append(action);
+  }
+  const marker = make('div', 'reader-marker');
+  marker.title = labels[readerKind];
+  if (label) marker.append(make('span', readerKind === 'youtube' ? 'reader-source-badge' : 'reader-symbol', label));
+  const heading = make('div', 'reader-heading');
+  heading.append(make('h1', 'reader-title', title));
+  const facts = make('div', 'reader-facts');
+  for (const metadata of metadataNodes) {
+    // Archived source-specific layout classes must not shape the shared header.
+    metadata.className = 'reader-metadata';
+    metadata.title = clean(metadata.textContent);
+    // The saved page, not its filename/feed title, determines the period.
+    if (readerKind === 'earnings' && /\bQ[1-4]\b/i.test(metadata.textContent) && !/earnings/i.test(metadata.textContent)) {
+      const period = metadata.textContent;
+      metadata.textContent = /[·|]/.test(period)
+        ? period.replace(/\s*([·|])/, ' Earnings $1') : `${period} Earnings`;
+    }
+    // A few older presentation pages put their event heading at the start of
+    // the article and only the date in the header. Include that heading here.
+    const introduction = content.firstElementChild;
+    if (readerKind === 'presentation' && /^\d{1,4}[-/]\d{1,2}[-/]\d{2,4}$/.test(clean(metadata.textContent))
+      && introduction?.tagName === 'P' && !introduction.querySelector('a, strong, b')
+      && clean(introduction.textContent).length < 180
+      && /\b(?:conference|investor (?:day|meeting)|capital markets day|fireside chat)(?:\s+20\d{2})?$/i.test(clean(introduction.textContent))) {
+      metadata.textContent = `${clean(introduction.textContent)} · ${clean(metadata.textContent)}`;
+      metadata.title = metadata.textContent;
+    }
+    if (readerKind === 'presentation') metadata.textContent = abbreviateEventTitle(metadata.textContent);
+    if (readerKind === 'earnings') metadata.textContent = metadata.textContent.replace(/\bQ([1-4])\s+20(\d{2})\b/g, '$1Q$2');
+    (readerKind === 'youtube' ? facts : heading).append(metadata);
+  }
+  if (market) { market.classList.add('reader-market'); facts.append(market); }
+  inner.append(marker, heading, tools, brand, facts);
+  if (readerNavigation && !readerStandalone) {
+    const pages = make('nav', 'reader-page-navigation');
+    pages.setAttribute('aria-label', 'Completed pages');
+    const pageLink = (target, previous) => {
+      const name = previous ? 'Previous' : 'Next';
+      const link = make(target ? 'a' : 'button', 'reader-page-link', previous ? '‹ Previous' : 'Next ›');
+      link.setAttribute('aria-label', `${name} completed page`);
+      if (target) {
+        link.href = target.href;
+        link.rel = previous ? 'prev' : 'next';
+        link.title = `${name} (${previous ? 'newer' : 'older'}): ${target.title}`;
+      } else {
+        link.disabled = true;
+        link.title = previous ? 'First completed page' : 'Last completed page';
+      }
+      return link;
+    };
+    const position = make('span', 'reader-page-position', `${readerNavigation.position.toLocaleString()} / ${readerNavigation.total.toLocaleString()}`);
+    position.title = 'Position in Completed · most recent first';
+    pages.append(pageLink(readerNavigation.previous, true), position, pageLink(readerNavigation.next, false));
+    inner.append(pages);
+  }
+  header.append(inner);
+  if (content.contains(oldHeader)) {
+    content.before(header);
+    oldHeader.remove();
+  } else oldHeader.replaceWith(header);
+
+  const layout = make('div', 'reader-layout');
+  content.before(layout);
+  content.classList.add('reader-article');
+  layout.append(content);
+  // Some historical summaries close their content wrapper before Q&A.
+  // Preserve those nodes and their order inside the article as well.
+  let next = layout.nextElementSibling;
+  while (next && next.matches('h2#qa, .qa-block')) {
+    const following = next.nextElementSibling;
+    content.append(next);
+    next = following;
+  }
+
+  // Wide tables scroll within the article instead of stretching a phone page.
+  content.querySelectorAll('table').forEach((table, index) => {
+    let wrapper = table.parentElement;
+    if (!wrapper.matches('.table-wrap, .table-wrapper, .table-scroll, .reader-table-wrap')) {
+      wrapper = make('div', 'reader-table-wrap');
+      table.before(wrapper);
+      wrapper.append(table);
+    }
+    wrapper.classList.add('reader-table-wrap');
+    wrapper.tabIndex = 0;
+    wrapper.setAttribute('role', 'region');
+    wrapper.setAttribute('aria-label', `Data table ${index + 1}`);
+  });
+
+  // Use H3 for the two standard call sections without changing their anchors
+  // or treating speaker headings as peers in the contents navigation.
+  const isCallSection = heading => /^(?:Prepared Remarks|Q\s*(?:&|and)\s*A)$/i.test(clean(heading.textContent));
+  const mainHeadings = new Set([...content.querySelectorAll('h2, h3')].filter(heading => heading.tagName === 'H2' || isCallSection(heading)));
+  for (const heading of [...mainHeadings]) {
+    if (!isCallSection(heading)) continue;
+    if (heading.tagName === 'H3') { heading.classList.add('reader-section-heading'); continue; }
+    const compact = make('h3');
+    for (const attribute of heading.attributes) compact.setAttribute(attribute.name, attribute.value);
+    compact.classList.add('reader-section-heading');
+    compact.append(...heading.childNodes);
+    heading.replaceWith(compact);
+    mainHeadings.delete(heading);
+    mainHeadings.add(compact);
+  }
+  const headings = [...content.querySelectorAll('h2, h3')].filter(heading => mainHeadings.size < 3 || mainHeadings.has(heading));
+  if (headings.length > 1) {
+    const navigation = make('nav', 'reader-contents');
+    navigation.setAttribute('aria-label', 'On this page');
+    navigation.append(make('div', 'reader-contents-label', 'On this page'));
+    const links = [];
+    headings.forEach((heading, index) => {
+      if (!heading.id) {
+        let id = `reader-section-${index + 1}`;
+        while (document.getElementById(id)) id += '-section';
+        heading.id = id;
+      }
+      const labelCopy = heading.cloneNode(true);
+      labelCopy.querySelectorAll('a, .role').forEach(node => node.remove());
+      const link = make('a', mainHeadings.size && !mainHeadings.has(heading) ? 'reader-subsection' : '', clean(labelCopy.textContent));
+      link.href = `#${encodeURIComponent(heading.id)}`;
+      link.addEventListener('click', () => {
+        let parent = heading.parentElement;
+        while (parent && parent !== content) {
+          if (parent.tagName === 'DETAILS') parent.open = true;
+          parent = parent.parentElement;
+        }
+      });
+      links.push(link);
+      navigation.append(link);
+    });
+    layout.prepend(navigation);
+    let pending = false;
+    const markSection = () => {
+      pending = false;
+      const threshold = header.getBoundingClientRect().bottom + 48;
+      let selected = 0;
+      headings.forEach((heading, index) => {
+        if (heading.getClientRects().length && heading.getBoundingClientRect().top <= threshold) selected = index;
+      });
+      links.forEach((link, index) => {
+        if (index === selected) link.setAttribute('aria-current', 'location');
+        else link.removeAttribute('aria-current');
+      });
+    };
+    window.addEventListener('scroll', () => {
+      if (!pending) { pending = true; requestAnimationFrame(markSection); }
+    }, { passive: true });
+    markSection();
+  } else layout.classList.add('reader-without-contents');
+
+  const measureHeader = () => document.body.style.setProperty('--reader-header-height', `${header.getBoundingClientRect().height}px`);
+  measureHeader();
+  new ResizeObserver(measureHeader).observe(header);
+})();
+
+
+})();
+</script>
+</body>
+</html>
