@@ -57,6 +57,7 @@ jobs:
 
       - uses: actions/upload-pages-artifact@v5
         with:
+          name: github-pages-${{ github.run_attempt }}
           path: '.'
 
       # actions/deploy-pages intermittently returns "Deployment failed, try again
@@ -68,6 +69,8 @@ jobs:
         id: deploy1
         continue-on-error: true
         uses: actions/deploy-pages@v5
+        with:
+          artifact_name: github-pages-${{ github.run_attempt }}
 
       - name: Pause before retry
         if: steps.deploy1.outcome == 'failure'
@@ -78,6 +81,8 @@ jobs:
         if: steps.deploy1.outcome == 'failure'
         continue-on-error: true
         uses: actions/deploy-pages@v5
+        with:
+          artifact_name: github-pages-${{ github.run_attempt }}
 
       - name: Pause before final retry
         if: steps.deploy1.outcome == 'failure' && steps.deploy2.outcome == 'failure'
@@ -87,3 +92,5 @@ jobs:
         id: deploy3
         if: steps.deploy1.outcome == 'failure' && steps.deploy2.outcome == 'failure'
         uses: actions/deploy-pages@v5
+        with:
+          artifact_name: github-pages-${{ github.run_attempt }}
