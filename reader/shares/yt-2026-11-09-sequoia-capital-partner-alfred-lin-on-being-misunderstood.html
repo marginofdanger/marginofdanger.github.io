@@ -1,0 +1,1128 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Sequoia Capital Partner Alfred Lin on Being Misunderstood and Lessons from FTX and Uber</title>
+  <style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background: #ffffff;
+  color: #222222;
+  line-height: 1.7;
+  padding: 0 1rem 2rem;
+}
+header {
+  position: sticky;
+  top: 0;
+  background: #ffffff;
+  z-index: 100;
+  border-bottom: 2px solid #aaaaaa;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  padding: 0.6rem 1rem;
+}
+.header-inner {
+  max-width: 78ch;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header-title { font-size: 1rem; color: #222222; }
+.header-title strong { font-size: 1.1rem; }
+.header-link {
+  font-size: 0.85rem;
+  color: #666666;
+  text-decoration: none;
+  border: 1px solid #aaaaaa;
+  padding: 0.2rem 0.7rem;
+  border-radius: 4px;
+}
+.header-link:hover { background: #f5f5f5; }
+main {
+  max-width: 78ch;
+  margin: 0 auto;
+  padding-top: 0.5rem;
+}
+h2 {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #222222;
+  margin-top: 2rem;
+  margin-bottom: 0.5rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 2px solid #aaaaaa;
+}
+h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #333333;
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+section { margin-bottom: 1.5rem; }
+ul { margin: 0.5rem 0 0.5rem 1.5rem; }
+li { margin-bottom: 0.4rem; }
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0.75rem 0;
+  font-size: 0.92rem;
+}
+thead th {
+  background: #333333;
+  color: #ffffff;
+  text-transform: uppercase;
+  font-size: 0.78rem;
+  letter-spacing: 0.05em;
+  padding: 0.5rem 0.75rem;
+  text-align: left;
+  font-weight: 600;
+}
+tbody td {
+  padding: 0.45rem 0.75rem;
+  border-bottom: 1px solid #e2e2e2;
+}
+tbody tr:nth-child(even) { background: #f5f5f5; }
+tbody tr:nth-child(odd) { background: #ffffff; }
+.key-insight {
+  border-left: 4px solid #aaaaaa;
+  background: #f5f5f5;
+  padding: 0.75rem 1rem;
+  margin: 0.75rem 0;
+  font-size: 0.93rem;
+  border-radius: 0 6px 6px 0;
+}
+.qa-pair { margin-bottom: 1.25rem; }
+.question-box {
+  background: #f5f5f5;
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+  margin-bottom: 0.5rem;
+}
+.analyst-label {
+  display: block;
+  font-size: 0.8rem;
+  color: #666666;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  margin-bottom: 0.25rem;
+}
+.answer { padding-left: 0.25rem; }
+.loading-section { opacity: 0.5; }
+.loading-indicator {
+  font-size: 1.2rem;
+  padding: 2rem;
+  text-align: center;
+  color: #666666;
+}
+
+/* YouTube transcript reader */
+
+/* Legacy .yt-meta-card -- kept so old output files still render cleanly.
+   New output uses .header-title.yt below instead. */
+.yt-meta-card {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  margin-bottom: 1.5rem;
+  background: #f5f5f5;
+  border-left: 4px solid #aaaaaa;
+  border-radius: 0 6px 6px 0;
+  padding: 0.9rem 1rem;
+}
+.yt-meta-card img {
+  flex: 0 0 180px;
+  height: 101px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+.yt-meta-body { flex: 1; font-size: 0.93rem; }
+.yt-meta-title { font-weight: 700; font-size: 1rem; margin-bottom: 0.25rem; }
+.yt-meta-sub { color: #666666; margin-bottom: 0.35rem; }
+.yt-meta-url { font-size: 0.85rem; color: #333333; }
+
+/* YouTube sticky header uses the default 78ch-capped centered
+   container so it aligns with the body text column below. The
+   buttons sit at the right edge of that centered container. */
+header:has(.header-inner.yt) { padding: 0.75rem 1rem; }
+.header-inner.yt { gap: 1rem; }
+.header-title.yt {
+  display: flex;
+  gap: 0.9rem;
+  align-items: center;
+  min-width: 0;
+  flex: 1;
+}
+.yt-header-thumb { flex: 0 0 88px; line-height: 0; }
+.yt-header-thumb img {
+  width: 88px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 3px;
+  display: block;
+}
+.yt-header-text { min-width: 0; flex: 1; }
+.yt-header-text strong {
+  display: block;
+  font-size: 1rem;
+  line-height: 1.3;
+  color: #222222;
+  /* Allow wrapping to 2 lines so long podcast titles show in full. */
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.yt-header-sub {
+  font-size: 0.8rem;
+  margin-top: 0.2rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.yt-header-sub .yt-channel { color: #666666; }
+.yt-header-sub .yt-date,
+.yt-header-sub .yt-dur { color: #333333; font-weight: 600; }
+.yt-header-sub .yt-sep { color: #aaaaaa; margin: 0 0.5rem; }
+
+.yt-header-actions {
+  display: flex;
+  gap: 0.4rem;
+  align-items: center;
+  flex: 0 0 auto;
+}
+/* Shared box shape for the star + share + YT buttons so they're
+   visually identical. Applies to both the <button>s and the <a> link. */
+.yt-header-actions .yt-bookmark-btn,
+.yt-header-actions .yt-share-btn,
+.yt-header-actions .header-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font: inherit;
+  font-size: 0.85rem;
+  line-height: 1;
+  color: #666666;
+  background: transparent;
+  border: 1px solid #aaaaaa;
+  border-radius: 4px;
+  padding: 0;
+  box-sizing: border-box;
+  width: 2.2rem;
+  height: 2.2rem;
+  white-space: nowrap;
+  text-decoration: none;
+  cursor: pointer;
+}
+.yt-header-actions .yt-bookmark-btn { font-size: 1rem; }
+.yt-header-actions .yt-share-btn { font-size: 1.05rem; }
+.yt-header-actions .yt-share-btn:disabled { opacity: 0.6; cursor: default; }
+.yt-header-actions .yt-bookmark-btn:hover,
+.yt-header-actions .yt-share-btn:hover,
+.yt-header-actions .header-link:hover {
+  background: #f5f5f5;
+  color: #333333;
+}
+.yt-header-actions .yt-bookmark-btn.is-bookmarked {
+  background: #aaaaaa;
+  color: #ffffff;
+  border-color: #888888;
+}
+.yt-header-actions .yt-bookmark-btn.is-bookmarked:hover {
+  background: #888888;
+  color: #ffffff;
+}
+
+h3.chapter {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #333333;
+  margin-top: 1.25rem;
+  margin-bottom: 0.4rem;
+}
+h3.chapter a {
+  font-size: 0.8rem;
+  color: #666666;
+  text-decoration: none;
+  font-weight: 400;
+}
+
+.yt-body {
+  line-height: 1.58;
+}
+.yt-body p {
+  margin-bottom: 0.9rem;
+}
+.yt-body p.q {
+  background: #f5f5f5;
+  border-left: 3px solid #aaaaaa;
+  border-radius: 0 6px 6px 0;
+  padding: 0.6rem 0.9rem;
+  margin-top: 1.25rem;
+  margin-bottom: 0.8rem;
+  color: #333333;
+  font-style: italic;
+  font-size: 0.96rem;
+}
+.yt-body p.q::before {
+  content: "Q";
+  display: inline-block;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 0.72rem;
+  color: #666666;
+  letter-spacing: 0.05em;
+  margin-right: 0.5rem;
+  padding: 0.05rem 0.4rem;
+  border: 1px solid #aaaaaa;
+  border-radius: 3px;
+  vertical-align: 0.1em;
+}
+.yt-body p.q a {
+  display: block;
+  text-align: right;
+  margin-top: 0.3rem;
+  font-style: normal;
+  font-size: 0.8rem;
+  color: #666666;
+  text-decoration: none;
+  white-space: nowrap;
+}
+.yt-body p.q a:hover {
+  text-decoration: underline;
+}
+
+</style>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style id="reader-presentation-style">
+/* Shared output presentation. Loaded last, including on archived templates. */
+body.reader-page {
+  --reader-paper: #ffffff; --reader-ink: #222222; --reader-muted: #737373;
+  --reader-line: #e2e2e2; --reader-accent: #444444; --reader-rail: #aaaaaa;
+  --reader-tint: #f5f5f5; --reader-header-height: 76px;
+  --reader-measure: 550px;
+  --reader-shell: 894px; --reader-sidebar: 150px; --reader-column-gap: 28px;
+  margin: 0; padding: 0; max-width: none;
+  background: var(--reader-paper); color: var(--reader-ink);
+  font: 13px/1.58 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color-scheme: light;
+}
+/* Shared neutral text and surfaces; source colors remain on the rails. */
+body.reader-page[data-reader-kind="expert"] { --reader-rail: #8aa6c0; --reader-tint: #f5f5f5; }
+body.reader-page[data-reader-kind="youtube"] { --reader-rail: #c5786d; --reader-tint: #f5f5f5; }
+.reader-page *, .reader-page *::before, .reader-page *::after { box-sizing: border-box; }
+.reader-page [hidden] { display: none !important; }
+.reader-page a { color: var(--reader-accent); text-underline-offset: 3px; }
+.reader-page a:focus-visible, .reader-page button:focus-visible, .reader-page [tabindex]:focus-visible, .reader-page summary:focus-visible { outline: 2px solid var(--reader-rail); outline-offset: 3px; }
+body.reader-page .reader-masthead {
+  position: sticky; inset: 0 0 auto; z-index: 100;
+  width: 100%; max-width: none; margin: 0; padding: 0;
+  background: var(--reader-paper); border: 0; border-bottom: 1px solid var(--reader-line);
+  box-shadow: none;
+}
+.reader-page .reader-masthead-inner {
+  display: grid;
+  grid-template-columns: var(--reader-sidebar) minmax(0, 1fr) max-content;
+  grid-template-areas: "marker heading tools" "brand facts pages";
+  gap: 4px var(--reader-column-gap); align-items: baseline;
+  /* Use the right margin for controls while keeping the title over the article. */
+  max-width: calc(var(--reader-shell) + 188px); padding: 9px 28px;
+  margin: 0 0 0 max(0px, calc((100% - var(--reader-shell)) / 2));
+}
+.reader-page .reader-brand { grid-area: brand; text-decoration: none; color: #444444; font-size: 10px; font-weight: 700; letter-spacing: .19em; text-transform: uppercase; white-space: nowrap; }
+.reader-page a.reader-brand:hover { color: var(--reader-accent); text-decoration: underline; }
+.reader-page .reader-tools { grid-area: tools; display: flex; flex-wrap: wrap; gap: 6px; justify-content: flex-end; align-items: center; }
+.reader-page .reader-tools .reader-tool {
+  display: inline-flex; align-items: center; justify-content: center; width: auto; height: 25px; min-width: 25px;
+  margin: 0; padding: 3px 8px; border: 1px solid #d4d4d4; border-radius: 4px;
+  background: transparent; color: var(--reader-accent);
+  font-family: inherit; font-size: 11px; line-height: 1.3; font-weight: 600;
+  text-decoration: none; cursor: pointer; box-shadow: none;
+}
+.reader-page .reader-tools .reader-tool:hover { background: var(--reader-tint); border-color: var(--reader-rail); }
+.reader-page .reader-tool:disabled { cursor: wait; opacity: .6; }
+.reader-page .reader-marker { grid-area: marker; border-left: 2px solid var(--reader-rail); padding-left: 8px; max-width: 120px; }
+.reader-page .reader-symbol { color: var(--reader-accent); font-size: 16px; line-height: 1.35; font-weight: 700; overflow-wrap: anywhere; }
+.reader-page .reader-source-badge { display: inline-flex; align-items: center; justify-content: center; border: 1px solid var(--reader-rail); border-radius: 3px; padding: 1px 3px; min-width: 25px; color: var(--reader-accent); background: transparent; font-size: 9px; font-weight: 650; line-height: 1.5; letter-spacing: .03em; }
+.reader-page .reader-heading { grid-area: heading; min-width: 0; line-height: 1.35; }
+.reader-page .reader-title { display: inline; color: var(--reader-ink); margin: 0; padding: 0; border: 0; font-size: 16px; font-weight: 650; letter-spacing: -.015em; line-height: 1.35; overflow-wrap: anywhere; }
+.reader-page .reader-facts { grid-area: facts; display: flex; flex-wrap: wrap; align-items: baseline; gap: 3px 14px; min-width: 0; }
+.reader-page .reader-facts:empty { display: none; }
+.reader-page .reader-metadata { display: inline; margin: 0; padding: 0; font-size: 13px; line-height: 1.4; color: var(--reader-muted); font-weight: 650; white-space: normal; overflow: visible; }
+.reader-page .reader-heading .reader-metadata { margin-left: 10px; }
+.reader-page .reader-metadata span { color: inherit; font-size: inherit; font-weight: inherit; }
+.reader-page .reader-metadata .yt-sep { margin: 0 4px; }
+.reader-page .reader-market { display: inline-flex; flex-wrap: wrap; justify-content: flex-start; justify-self: start; width: auto; gap: 5px; margin: 0; font-size: 11px; line-height: 1.4; color: var(--reader-muted); white-space: normal; font-variant-numeric: tabular-nums; }
+.reader-page .reader-market .market-sep { color: #b3b3b3; }
+.reader-page .reader-market .market-price, .reader-page .reader-market .market-cap { color: var(--reader-muted); }
+.reader-page .reader-market .market-up { color: #28734a; }
+.reader-page .reader-market .market-down { color: #a34d3d; }
+.reader-page .reader-market strong { color: inherit; font-weight: 650; }
+.reader-page .reader-page-navigation { grid-area: pages; display: flex; align-items: baseline; justify-content: flex-end; gap: 6px; white-space: nowrap; }
+.reader-page .reader-page-link { display: inline-flex; align-items: center; justify-content: center; border: 0; background: transparent; color: var(--reader-accent); border-radius: 3px; padding: 4px 6px; font: 600 11px/1.4 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; text-decoration: none; cursor: pointer; }
+.reader-page .reader-page-link:hover { background: var(--reader-tint); }
+.reader-page .reader-page-link:disabled { opacity: .35; cursor: default; background: transparent; }
+.reader-page .reader-page-position { color: var(--reader-muted); font-size: 10px; font-variant-numeric: tabular-nums; }
+.reader-page .reader-layout { display: grid; grid-template-columns: var(--reader-sidebar) minmax(0, var(--reader-measure)); gap: var(--reader-column-gap); max-width: var(--reader-shell); margin: auto; padding: 20px 28px 48px; align-items: start; }
+.reader-page .reader-layout.reader-without-contents > .reader-article { grid-column: 2; }
+.reader-page .reader-contents { position: sticky; top: calc(var(--reader-header-height) + 22px); min-width: 0; max-height: calc(100vh - var(--reader-header-height) - 44px); overflow: auto; padding: 1px 12px 12px 0; scrollbar-width: thin; }
+.reader-page .reader-contents-label { color: var(--reader-muted); font-size: 9px; font-weight: 700; letter-spacing: .13em; text-transform: uppercase; margin-bottom: 11px; }
+.reader-page .reader-contents a { display: block; padding: 6px 0 6px 11px; border-left: 1px solid var(--reader-line); color: var(--reader-muted); font-size: 11px; line-height: 1.4; text-decoration: none; }
+.reader-page .reader-contents a.reader-subsection { font-size: 10px; padding-left: 20px; }
+.reader-page .reader-contents a:hover { color: var(--reader-accent); background: var(--reader-tint); }
+.reader-page .reader-contents a[aria-current] { color: var(--reader-accent); border-left: 2px solid var(--reader-rail); padding-left: 10px; font-weight: 650; }
+.reader-page .reader-contents a.reader-subsection[aria-current] { padding-left: 19px; }
+body.reader-page .reader-article { width: 100%; min-width: 0; max-width: var(--reader-measure); margin: 0; padding: 0; font-size: 13px; line-height: 1.58; }
+.reader-page .reader-article .yt-body { line-height: inherit; }
+.reader-page .reader-article :is(h2, h3, [id]) { scroll-margin-top: calc(var(--reader-header-height) + 24px); }
+.reader-page .reader-article h2 { color: var(--reader-ink); font-size: 18px; line-height: 1.3; letter-spacing: -.02em; font-weight: 650; border: 0; border-bottom: 1px solid var(--reader-rail); padding: 0 0 8px; margin: 27px 0 15px; background: transparent; }
+.reader-page .reader-article > h2:first-child, .reader-page .reader-article > section:first-child > h2:first-child { margin-top: 0; }
+.reader-page .reader-article h3 { color: var(--reader-accent); font-size: 14px; font-weight: 650; line-height: 1.5; margin: 20px 0 8px; padding: 0; }
+.reader-page .reader-article h3.reader-section-heading { border-bottom: 1px solid var(--reader-rail); padding-bottom: 8px; }
+.reader-page .reader-article > h3.reader-section-heading:first-child, .reader-page .reader-article > section:first-child > h3.reader-section-heading:first-child { margin-top: 0; }
+.reader-page .reader-article h3 .role { font-size: 12px; font-weight: 400; color: var(--reader-muted); }
+.reader-page .reader-article h3.chapter { display: flex; justify-content: space-between; gap: 16px; border-bottom: 1px solid var(--reader-line); padding-bottom: 8px; }
+.reader-page .reader-article h3.chapter a { font-size: 11px; font-weight: 400; white-space: nowrap; }
+.reader-page .reader-article p { margin: 8px 0 11px; }
+.reader-page .reader-article ul, .reader-page .reader-article ol { margin: 8px 0 12px; padding-left: 20px; }
+.reader-page .reader-article li { margin: 0 0 5px; }
+.reader-page .reader-article strong { color: var(--reader-ink); font-weight: 650; }
+.reader-page .reader-article :is(.insight, .quote, blockquote) { color: var(--reader-ink); }
+.reader-page .reader-table-wrap { max-width: 100%; overflow-x: auto; margin: 10px 0 14px; border: 0; border-radius: 0; background: transparent; }
+.reader-page .reader-article table { width: 100%; border-collapse: collapse; border: 0; margin: 0; font-size: 12.5px; line-height: 1.5; }
+.reader-page .reader-article thead, .reader-page .reader-article th { background: transparent; color: var(--reader-accent); }
+.reader-page .reader-article th { border: 0; border-top: 1px solid var(--reader-line); border-bottom: 1px solid var(--reader-rail); padding: 8px 9px; text-align: left; text-transform: uppercase; letter-spacing: .06em; font-size: 10px; font-weight: 700; }
+.reader-page .reader-article td { border: 0; border-bottom: 1px solid var(--reader-line); padding: 6px 9px; vertical-align: top; }
+.reader-page .reader-article tbody tr:nth-child(odd) { background: transparent; }
+.reader-page .reader-article tbody tr:nth-child(even) { background: var(--reader-table-stripe, #f7f7f7); }
+.reader-page .reader-article tbody tr:hover { background: var(--reader-tint); }
+.reader-page .reader-article .key-insight { border: 0; border-left: 2px solid var(--reader-rail); border-radius: 0; background: var(--reader-tint); color: var(--reader-ink); padding: 9px 13px; margin: 14px 0 20px; font-size: 12.5px; line-height: 1.55; }
+.reader-page .reader-article .qa-block { margin: 0 0 22px; }
+.reader-page .reader-article .question, .reader-page .reader-article .yt-body p.q { border: 0; border-left: 2px solid var(--reader-rail); border-radius: 0; background: var(--reader-tint); color: var(--reader-ink); padding: 9px 13px; margin: 12px 0 9px; font-size: 13px; font-weight: 650; font-style: normal; line-height: 1.55; }
+.reader-page .reader-article .yt-body p.q { font-weight: 400; font-style: italic; }
+.reader-page .reader-article :is(.question, .yt-body p.q) :is(strong, b) { font-weight: inherit; }
+.reader-page .reader-article .question .analyst { display: block; color: var(--reader-accent); text-transform: none; letter-spacing: 0; font-size: 11px; font-weight: 650; font-style: normal; margin-bottom: 4px; }
+.reader-page .reader-article .question .analyst :is(strong, b) { font-weight: inherit; }
+.reader-page .reader-article .yt-body p.q::before { color: var(--reader-accent); border-color: var(--reader-rail); font-style: normal; }
+.reader-page .reader-article .yt-body p.q a { color: var(--reader-accent); font-style: normal; }
+.reader-page .reader-article .answer { padding: 0; }
+.reader-page .reader-article details { border: 0; border-top: 1px solid var(--reader-line); border-radius: 0; background: transparent; padding: 12px 0; margin-top: 24px; }
+.reader-page .reader-article summary { cursor: pointer; color: var(--reader-accent); }
+.reader-page .reader-article summary h2 { display: inline; border: 0; margin: 0; font-size: 15px; }
+.reader-page .reader-article hr { border: 0; border-top: 1px solid var(--reader-line); margin: 22px 0; }
+.reader-highlight { background: #f8df82; color: inherit; font: inherit; padding: 0; border-radius: 1px; cursor: pointer; box-decoration-break: clone; -webkit-box-decoration-break: clone; }
+.reader-highlight:focus-visible { outline: 2px solid #444444; outline-offset: 2px; }
+.reader-highlight-toolbar { position: fixed; z-index: 1100; display: flex; border: 1px solid #cccccc; border-radius: 5px; background: #ffffff; box-shadow: 0 3px 14px #22222226; padding: 3px; }
+.reader-highlight-toolbar[hidden] { display: none; }
+.reader-highlight-toolbar button { border: 0; border-radius: 3px; padding: 6px 10px; font: 600 12px/1.4 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; color: #444444; background: transparent; cursor: pointer; white-space: nowrap; }
+.reader-highlight-toolbar button:hover, .reader-highlight-toolbar button:focus-visible { background: #f0f0f0; }
+.reader-highlight-toolbar button:disabled { opacity: .6; cursor: wait; }
+.reader-highlight-notice { position: fixed; z-index: 1101; bottom: 18px; left: 50%; transform: translateX(-50%); max-width: calc(100vw - 32px); padding: 7px 12px; border: 1px solid #d4d4d4; border-radius: 4px; background: #ffffff; color: #444444; font: 12px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; box-shadow: 0 3px 14px #22222214; }
+.reader-highlight-notice:empty { display: none; }
+.reader-highlight-notice.is-error { color: #98453d; }
+.reader-share-notice { position: fixed; z-index: 1101; bottom: 18px; left: 50%; transform: translateX(-50%); max-width: calc(100vw - 32px); padding: 9px 14px; border: 1px solid #d4d4d4; border-radius: 4px; background: #ffffff; color: #444444; font: 12px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; box-shadow: 0 3px 14px #22222214; }
+.reader-share-notice a { white-space: nowrap; }
+@media print { .reader-share-notice { display: none !important; } }
+@media print { .reader-highlight-toolbar, .reader-highlight-notice { display: none !important; } .reader-highlight { print-color-adjust: exact; -webkit-print-color-adjust: exact; } }
+@media (max-width: 840px) {
+  .reader-page .reader-masthead-inner { grid-template-columns: 82px minmax(0, 1fr) max-content; column-gap: 12px; max-width: 700px; margin: auto; padding: 8px 20px; }
+  .reader-page .reader-layout { display: block; max-width: 700px; padding: 18px 20px 40px; }
+  .reader-page .reader-contents { position: static; max-height: none; display: flex; gap: 6px; overflow-x: auto; padding: 0 0 13px; margin-bottom: 18px; border-bottom: 1px solid var(--reader-line); }
+  .reader-page .reader-contents-label { display: none; }
+  .reader-page .reader-contents a, .reader-page .reader-contents a.reader-subsection { flex: none; max-width: 230px; padding: 4px 8px; border: 0; border-radius: 3px; }
+  .reader-page .reader-contents a[aria-current], .reader-page .reader-contents a.reader-subsection[aria-current] { padding: 4px 8px; background: var(--reader-tint); border: 0; }
+}
+@media (max-width: 720px) {
+  .reader-page .reader-brand { font-size: 9px; }
+}
+@media (max-width: 560px) {
+  body.reader-page .reader-masthead { position: relative; }
+  .reader-page .reader-masthead-inner {
+    grid-template-columns: minmax(48px, max-content) minmax(0, 1fr);
+    grid-template-areas: "marker heading" "facts facts" ". tools" "brand pages";
+    gap: 4px 10px; padding: 8px 16px 10px;
+  }
+  .reader-page .reader-symbol, .reader-page .reader-title { font-size: 15px; }
+  .reader-page .reader-layout { padding: 16px 16px 32px; }
+  .reader-page .reader-article :is(h2, h3, [id]) { scroll-margin-top: 16px; }
+  .reader-page .reader-article table { min-width: 480px; }
+}
+@media print {
+  body.reader-page .reader-masthead { position: static; }
+  .reader-page .reader-tools, .reader-page .reader-contents, .reader-page .reader-page-navigation { display: none; }
+  .reader-page .reader-layout { display: block; padding: 20px 0; }
+  .reader-page .reader-masthead-inner { max-width: var(--reader-shell); margin: auto; padding: 0 0 18px; }
+  .reader-page .reader-table-wrap { overflow: visible; }
+  .reader-page .reader-article table { min-width: 0; }
+  .reader-page .reader-article tr, .reader-page .reader-article .key-insight { break-inside: avoid; }
+}
+
+</style>
+</head>
+<body>
+  <header>
+    <div class="header-inner yt">
+      <div class="header-title yt">
+        <a class="yt-header-thumb" href="https://www.youtube.com/watch?v=OSAKv1JelDg" target="_blank"><img src="https://i.ytimg.com/vi/OSAKv1JelDg/maxresdefault.jpg" alt=""></a>
+        <div class="yt-header-text">
+          <strong>Sequoia Capital Partner Alfred Lin on Being Misunderstood and Lessons from FTX and Uber</strong>
+          <div class="yt-header-sub">
+            <span class="yt-channel">Confession with Ali Partovi</span>
+            <span class="yt-sep">&middot;</span>
+            <span class="yt-date">Nov 2, 2026</span>
+            <span class="yt-sep">&middot;</span>
+            <span class="yt-dur">57m</span>
+          </div>
+        </div>
+      </div>
+      <div class="yt-header-actions">
+        <button id="yt-bookmark-btn"
+                class="yt-bookmark-btn"
+                title="Bookmark"
+                aria-label="Bookmark"
+                data-filename="yt-2026-11-09-sequoia-capital-partner-alfred-lin-on-being-misunderstood.html"
+                data-title="Sequoia Capital Partner Alfred Lin on Being Misunderstood and Lessons from FTX and Uber"
+                data-url="https://www.youtube.com/watch?v=OSAKv1JelDg"
+                data-date="2026-11-02T00:00:32-08:00"
+                data-channel="Confession with Ali Partovi"
+                onclick="toggleYtBookmark(this)">&#9734;</button>
+        <button id="yt-share-btn"
+                class="yt-share-btn"
+                title="Share"
+                aria-label="Share"
+                data-filename="yt-2026-11-09-sequoia-capital-partner-alfred-lin-on-being-misunderstood.html"
+                onclick="shareYtPage(this)">&#8599;</button>
+        <a class="header-link" href="https://www.youtube.com/watch?v=OSAKv1JelDg" target="_blank" title="Watch on YouTube" aria-label="Watch on YouTube">YT</a>
+      </div>
+    </div>
+  </header>
+  <main>
+    <div class="yt-body">
+    <h3 class="chapter"><span>Introduction</span><a href="https://www.youtube.com/watch?v=OSAKv1JelDg&t=0s">&#x21AA; 00:00</a></h3>
+<p data-t="0">My ability to read someone on whether I can trust them.</p>
+<p class="q" data-t="0">Your gut feel about the person?<a href="https://www.youtube.com/watch?v=OSAKv1JelDg&t=0s">&#x21AA; 00:00</a></p>
+<p data-t="0">My gut feel about the person was wrong. And that was the most crushing. It isn't losing $150 million. I thought I have such a good read on people, on whether I can trust someone or not. And I did not.</p>
+<p data-t="20">Welcome to Confession, where I invite tech veterans to share their painful lessons. We all connect through shared pain. And here I offer an outlet to talk about it honestly and think about the lessons learned. I'm Ali Partovi. I run Neo, a venture fund and mentorship community for startup founders. We've coached and funded the founders of Kalshi, Cursor, Wispr Flow, and many more.</p>
+<p data-t="44">In this episode, I sit down with Alfred Lin, general partner at Sequoia Capital, and previously president and COO of Zappos. Alfred is also a dear friend of mine who I've known for 30-plus years. We went to college together. We built our first startup together.</p>
+<p data-t="56">And Alfred shares some amazing stories about the early days of the internet, some tough stories about conflict with his own parents, about investing mistakes he's made at Sequoia, some huge misses. This is Confession. Let's begin.</p>
+<p data-t="70">I'm here today with Alfred Lin. Thank you for joining us.</p>
+<p data-t="76">Thank you for having me on the show.</p>
+<p class="q" data-t="76">The goal today is to talk about painful lessons and stories that you might not have shared elsewhere, and what you learned. But I'd love to start by just getting to know you a bit better. Tell me a bit about where you were born, and what was young Alfred like?<a href="https://www.youtube.com/watch?v=OSAKv1JelDg&t=76s">&#x21AA; 01:16</a></p>
+<h3 class="chapter"><span>Early years and upbringing</span><a href="https://www.youtube.com/watch?v=OSAKv1JelDg&t=80s">&#x21AA; 01:20</a></h3>
+<p data-t="93">I was born in Taiwan. I was born to two very great parents. They both were commercial bankers. My dad worked his way through high school and college, put his sister through college as well. Started out as a teller and worked all the way up to running the bank. My mom was the youngest vice president of her bank.</p>
+<p data-t="120">Both of them cared a lot about me and my brother and making sure that we had a good education. My father came to the US to study computer science and to open up the New York agency for his bank. I was about six years old, and he was going back and forth between New York and Taiwan. And eventually we moved to New York City.</p>
+<p data-t="133">We landed in Jackson Heights and lived in an apartment building. And it was fun to be in the US, because when I was in Taiwan, I got into a lot of trouble. I got into a lot of trouble in the US too, but—</p>
+<p class="q" data-t="149">Tell me about getting into trouble in Taiwan.<a href="https://www.youtube.com/watch?v=OSAKv1JelDg&t=149s">&#x21AA; 02:29</a></p>
+<p data-t="154">My parents described me as—there's a word in Chinese called “guai,” which is obedient, and I was the opposite of that. I never listened to anything. They tell these stories about me all the time. One of the stories was when I was about two or three years old. They got a dresser delivered, and I figured out how to crawl into the dresser.</p>
+<p data-t="174">Opened up the first drawer, got into the first drawer, opened up the second drawer, crawled into the second drawer, and then got all the way to the top. And then I would jump off, and I jumped off and hurt myself. And this is the example of you being a little too smart for your own good.</p>
+<p data-t="192">And my parents were very concerned about me, that I might have blown out my eardrum and caused brain damage. And my mom would take me to the hospital often, every time I would be irritable. And eventually the doctor said, “I think your son's fine, just not obedient.”</p>
+<p data-t="212">And she's like, “Well, is there any brain damage?” Like, “Well, we won't know for another 20 or 30 years.” And she didn't like that answer at all.</p>
+<p data-t="218">The other story I was told was my mom dropped me off at my grandmother's place when she was going back to work after I was born. And most kids sleep through the night, and I would be crying throughout the day, throughout the night, and I was very feisty. And my grandmother handed me back to my mom and said, “He can come and visit. I love him. He can come and visit, but he can't stay over,” because I wouldn't sleep.</p>
+<p data-t="245">And then the other story that I was told was in kindergarten. One of the things I did was I was just never paying attention, and I loved sort of just doing things that were a little outside the box. One day we were asked to go from the second floor to the first floor, and we were supposed to bring our chairs down. And we were supposed to follow the teacher into the elevator.</p>
+<p class="q" data-t="272">Carrying the chairs?<a href="https://www.youtube.com/watch?v=OSAKv1JelDg&t=272s">&#x21AA; 04:32</a></p>
+<p data-t="278">Carrying the chairs. And we had to do this in shifts. And I got a little bored waiting, and I saw there's a slide from the second floor to the first floor, which is a pretty big slide. Big, but it's also a small building. And I decided to take the chair, put it in front of me, and just slide down.</p>
+<p data-t="292">I got down before anybody got down. So I thought that was pretty smart. And then I got suspended for doing that because I didn't follow directions.</p>
+<p class="q" data-t="304">Oh my gosh. As a kindergartener?<a href="https://www.youtube.com/watch?v=OSAKv1JelDg&t=304s">&#x21AA; 05:04</a></p>
+<p data-t="304">As a kindergartener.</p>
+<p class="q" data-t="304">Wow. You got suspended from kindergarten. Amazing. And this was in Taiwan still?<a href="https://www.youtube.com/watch?v=OSAKv1JelDg&t=304s">&#x21AA; 05:04</a></p>
+<p data-t="310">It was in Taiwan.</p>
+<p class="q" data-t="310">Did you ever get in trouble once you got to the US?<a href="https://www.youtube.com/watch?v=OSAKv1JelDg&t=310s">&#x21AA; 05:10</a></p>
+<p data-t="316">Constantly. And it was a different kind of trouble. People look at my credentials: I went to Stuyvesant High School, I went to Harvard, I went to Stanford, and just assume I was a good student. And I academically was a good student, but I would have the academic scores be, quote-unquote, “excellent,” and behavior would always be “needs improvement.”</p>
+<h3 class="chapter"><span>Learning from rebellion</span><a href="https://www.youtube.com/watch?v=OSAKv1JelDg&t=330s">&#x21AA; 05:30</a></h3>
+<p data-t="331">I didn't learn as well because I was always trying to outsmart the system. Other things that I did to outsmart the system was I wouldn't pay attention in class. If I had to do the homework, I'd do the homework in class. I don't have to do homework afterwards. I was just causing trouble.</p>
+<p data-t="351">And many people sort of dismissed it as a bad student, or some of them thought that I was mischievous. And I wasn't taken seriously when I was a child.</p>
+<p data-t="362">I went to junior high school, and I was trying to get really into computers. And I think I've told you this before. Our school, IS 25, luckily had computers. Now, it wasn't the nicest computers back then. The nicest computers was a Commodore or an Apple II. Our schools couldn't afford that. They had Radio Shack TRS-80s. They're called Trash-80s these days.</p>
+<p data-t="390">Affectionately.</p>
+<p data-t="390">You had to bring your own floppy disk and save things onto the floppy disk. And we pooled our money together so that we didn't have to bring our floppy disks. We bought a drive that hooked to all the terminals, and so we could save it onto that drive.</p>
+<p data-t="402">And I remember trying to really understand geometry, and I wanted to program a game that was equivalent of Pong. But I had to write it in BASIC. Today, you just ask Claude to do it, but it was my way of learning how to program.</p>
+<p data-t="420">Yeah.</p>
+<p data-t="420">And I wrote that program, and I started testing it and playing with it. And then, because it was saved onto this network drive, every single other kid in the lab started playing with it.</p>
+<p data-t="432">And then the principal came into the office during that time, and the only rule in that computer lab was for serious work. And he saw us all playing games. He got really mad. He's like, “Look, this computer lab is very expensive. You guys are supposed to do serious work. This is not serious work. Who is responsible for this?”</p>
+<p class="q" data-t="450">Nice. And you're the one who wrote the game?<a href="https://www.youtube.com/watch?v=OSAKv1JelDg&t=450s">&#x21AA; 07:30</a></p>
+<p data-t="457">I wrote the game, so I got sentenced to detention.</p>
+<p data-t="457">Oh my gosh.</p>
+<p data-t="457">So that was the end of my programming career. I think great teachers are underrated. I had a really good teacher, Miss Possa, who was in charge of the computer lab. She was also a math teacher. She said, “Well, you're in seventh grade. It's pretty incredible that you can do these things. I'm going to give you some math problems.”</p>
+<p data-t="477">She gave me those math problems while I was in detention. And I would just answer the question. I would just write down the answer. And she said, “Well, you got all the questions right. You put the right answer down, but we need to have you show your work.” I was like, “Why is that important? I got the answers right.”</p>
+<p data-t="497">It's like, “Well, it's partly for you, so if you ever make a mistake, you can spot it more carefully. And it's also partly so that you can be a leader, and you can teach other people how to do the problem. Because it's great that you can do all the problems, but if you're going to lead”—and at that time I was going to be on the math team.</p>
+<p data-t="514">“If you're going to lead a team, and you're going to be math team captain, maybe you should teach everybody else. It's more important to raise the average than for you to get another point.” I thought that was a very good, important lesson at that age.</p>
+<p data-t="527">And so you asked about painful lessons. It was painful to get sent to detention, but it was a great lesson that I got from this, ironically through these mischievous acts.</p>
+<p class="q" data-t="534">Even before you were a teenager, you had become accustomed to getting punished for being smarter than average, for knowing how to climb the dresser, or for getting down to the first floor faster than everyone, or for being able to write a game with the computers. Teaching yourself how to code and building a game that everyone wanted to play. That is outlier skill, and your reward was detention.<a href="https://www.youtube.com/watch?v=OSAKv1JelDg&t=534s">&#x21AA; 08:54</a></p>
+<h3 class="chapter"><span>Navigating parental conflict</span><a href="https://www.youtube.com/watch?v=OSAKv1JelDg&t=540s">&#x21AA; 09:00</a></h3>
+<p class="q" data-t="568">And it seems like for you this has been a cycle almost of, “Oh yeah, I push the envelope. I'm better than others, and I get punished.”<a href="https://www.youtube.com/watch?v=OSAKv1JelDg&t=568s">&#x21AA; 09:28</a></p>
+<p data-t="574">Well, Bezos talks about if you're going to invent, you have to be willing to be misunderstood for a long period of time. I think I was pretty misunderstood for a long period of time. I think my parents misunderstood me. My teachers misunderstood me. There were people who saw my potential, but they didn't understand why I was doing certain things.</p>
+<p data-t="595">And I think one of the lessons I've learned over time is the most useful skill is to see people clearly. And when you see people clearly, you can appreciate them better, you can understand them better, you can also mentor them better. You can give them advice better. You can say things in ways that they will understand, and they're willing to listen and hear versus rejecting it outright.</p>
+<p data-t="621">My parents were very strict, very disciplinarian. They're great in many ways, but I don't think they understood me during my early years, right? Over time, they came to understand me.</p>
+<p class="q" data-t="635">So tell me a little bit about—we went to Harvard together, although we weren't close in college other than a brief overlap in crew. But tell me about your path into tech.<a href="https://www.youtube.com/watch?v=OSAKv1JelDg&t=635s">&#x21AA; 10:35</a></p>
+<h3 class="chapter"><span>Finding a path into tech</span><a href="https://www.youtube.com/watch?v=OSAKv1JelDg&t=639s">&#x21AA; 10:39</a></h3>
+<p data-t="646">I was a bad student up until junior high school. Something changed there. I became a good student in junior high school. I went to Stuyvesant High School. I was math team captain in my junior high school. I was math team captain at Stuyvesant. And I went to Harvard, and I studied math.</p>
+<p data-t="663">But I don't think anybody really knows this, and I've told very few people this, but I got into a big fight with my parents right before going to college. My parents came to the US. The New Taiwan dollar to US dollar conversion was very bad, okay? And so they were middle class in Taiwan. They came to the US, and they said, “We're temporarily poor.”</p>
+<p data-t="695">They were like, “We're smart. We'll figure it out.” But they were constantly trying to make ends meet. And I didn't want the burden of them having to pay for college. And on paper, my father would look like someone you wouldn't give financial aid to. And so we didn't get financial aid.</p>
+<p data-t="712">But they had saved up all this money, partly a little bit from my grandparents and a little bit from them saving a lot of money so that they can put me through college. So I said to my parents, “I'm only applying to four colleges.” And they're like, “Really?” I was like, “Well, you said you'd only pay for four colleges.”</p>
+<p data-t="731">And so, “Which four colleges are those?” And it was Harvard, Yale, Stanford, MIT. I applied to all four of those. I decided to go to Harvard. And then I said, “I can do this. So instead of giving the money that you saved to Harvard, give me the money so I can start a company.” And they said, “No.”</p>
+<p data-t="750">They had promised to pay for college. I got into those four schools.</p>
+<p class="q" data-t="750">And so you're like, “The money's committed.”<a href="https://www.youtube.com/watch?v=OSAKv1JelDg&t=750s">&#x21AA; 12:30</a></p>
+<p data-t="756">“The money's committed. Just give it to me, and I won't go to college.”</p>
+<p data-t="756">“I won't go to college. I'll start a business.”</p>
+<p data-t="761">“I'll start a business.” And they're like, “Why would you ever do that?” My parents had this hierarchy of if you're smart enough, you should become a professor and contribute to the world's knowledge.</p>
+<p class="q" data-t="766">I don't think I ever knew this. And where did starting a business come into your head, that that's what you would do instead of college?<a href="https://www.youtube.com/watch?v=OSAKv1JelDg&t=766s">&#x21AA; 12:46</a></p>
+<p data-t="778">So the hierarchy was contribute to the world's knowledge. Not just be a professor. You got to do something amazing, contribute to the world's knowledge. If you can't do that, be a doctor and cure disease and help people. If you can't do that, be a lawyer, fight for justice. The lowest, lowest thing that they had on their totem pole was to be in business.</p>
+<p data-t="801">And so I have this observation later in life: we're all a function of our histories, and we're either running towards or running away from our histories. And at the beginning, I felt like I was doing these business things as a rebellion to my parents.</p>
+<p data-t="819">So I had, as every single kid had, a paper route and some sort of lemonade stand. I had a little lawn-mowing service for a period of time. I then worked in a travel agent and helped do accounting in Excel. And then I learned I was actually very interested in problem-solving.</p>
+<p data-t="839">I was just applying it to math, but I actually enjoyed the problem-solving of business problems. And again, I think my parents didn't understand that. So they're like, “No, you still have to go to college.”</p>
+<p class="q" data-t="851">Your parents didn't understand what you wanted?<a href="https://www.youtube.com/watch?v=OSAKv1JelDg&t=851s">&#x21AA; 14:11</a></p>
+<p data-t="857">They didn't understand what I wanted.</p>
+<p class="q" data-t="857">And did you feel like you had a choice?<a href="https://www.youtube.com/watch?v=OSAKv1JelDg&t=857s">&#x21AA; 14:17</a></p>
+<p data-t="857">For a long time, I was just rebelling against everything my parents wanted me to do. And over time, I saw there's some value in what they talked about. Being rebellious didn't always work, and being obedient didn't always work. I was trying to figure out along the spectrum where I wanted to be.</p>
+<p data-t="876">It's like, “Okay, well, they're paying for college anyway. I can go to college, and then we'll figure it out. And I will study applied math, and I will go to a quarter of my classes, and I'll do other business stuff.”</p>
+<p class="q" data-t="889">And they were still in New York, so you were in Boston?<a href="https://www.youtube.com/watch?v=OSAKv1JelDg&t=889s">&#x21AA; 14:49</a></p>
+<p data-t="894">I was in Boston.</p>
+<p class="q" data-t="894">How did it feel not being understood by your own parents?<a href="https://www.youtube.com/watch?v=OSAKv1JelDg&t=894s">&#x21AA; 14:54</a></p>
+<p data-t="894">I think for many people, when they feel like they're not understood, they don't feel loved. I never felt that. I knew my parents loved me. I knew that they wanted the best for me. They just didn't understand why I thought the way I did.</p>
+<p data-t="912">And I didn't really understand why they couldn't see some of this stuff. I could give them data, and they wouldn't understand it. And part of it is because I think they're very conservative. And it's not just conservative Asian parents. They have the stereotype.</p>
+<p data-t="929">At some point I realized that because they're commercial bankers, they saw all of the losses that would happen in a commercial bank lending to businesses. They actually, from their histories, thought small businesses are really tough, and they are, right? And so I began to understand from their point of view why they didn't want me to go into business, even though they were in business.</p>
+<p data-t="961">There were days in high school and junior high school where I would cry myself to sleep because I didn't feel like I was understood. But I started to try to understand from their point of view why they were having these reservations. And so I tried to understand them first.</p>
+<p data-t="981">And I've come to the realization, which is why venture capital is a lot of fun, I have a bit of a novelty gene. I want to see what's next. And my parents do not. They like doing the same thing over and over again. And so I came up with this idea that for a lot of situations in life, someone else's feature is another person's bug, and vice versa.</p>
+<p data-t="1001">After Harvard, I thought I was going to be free from my parents' thumb. And my parents really, really wanted me to go get a PhD. And I got accepted to Stanford and Berkeley. And those were the number one, number two, depending on who you ask, programs for statistics. And I got an NSF scholarship.</p>
+<p data-t="1026">My parents were like, “It's going to be free. You should go.” And I reluctantly came out here, kind of a way to escape. I wasn't going to be on the East Coast. I wanted to explore something different. And tech was happening, and people like you were studying computer science. You were going to Oracle or Microsoft, and I studied applied math.</p>
+<p data-t="1052">I was like, “Well, if I have to come out for grad school, I might as well come out for grad school, check it out, and see what happens.” And I really did not enjoy grad school. But I got to the point where I completed my qualifying exams, and I told my parents I can always go back. And then I quit to join LinkExchange, join you and Tony and Sanjay.</p>
+<p class="q" data-t="1074">So Tony and Sanjay were friends of yours from Quincy House back at Harvard. And one of my favorite stories was around the Quincy Grill, which they ran, essentially the eatery for Quincy House, offered pizza. That was their small business. But you had kind of an accidental side business.<a href="https://www.youtube.com/watch?v=OSAKv1JelDg&t=1074s">&#x21AA; 17:54</a></p>
+<h3 class="chapter"><span>The Quincy Grill experience</span><a href="https://www.youtube.com/watch?v=OSAKv1JelDg&t=1081s">&#x21AA; 18:01</a></h3>
+<p data-t="1092">Yeah. The origin story of Quincy House Grill, I think, is just interesting in the sense that the grill itself is not that interesting. The graduating seniors would sell it to the up-and-coming seniors each and every year. The grill was not that great. It was burgers and fries and shakes, and it was really a way to just hang out, which is great.</p>
+<p data-t="1119">But Tony had a different vision. Tony and Sanjay wanted to own the grill and do other things with it.</p>
+<p class="q" data-t="1126">And they're one year younger than you and me?<a href="https://www.youtube.com/watch?v=OSAKv1JelDg&t=1126s">&#x21AA; 18:46</a></p>
+<p data-t="1133">They're one year younger. And I was like, “Okay, you guys are interested in the grill. Why? It doesn't make that much money. This is not a good business.” They're like, “No, we think we can make it into a real hangout place.”</p>
+<p data-t="1145">“We're going to record movies on VHS tapes, copy them and put them in, and we're going to get a TV. We can play some movies. We can get a few video games and a pinball machine and make it fun. And then on top of that, we want to get a pizza oven and put that in.”</p>
+<p data-t="1165">I'm like, “This sounds like a lot of capital expense. How are you going to get the capital to do this?” Like, “Well, this would never make sense if you only own it for a year.” And, “Okay, well, what are you going to do? You're going to bid as an up-and-coming junior? You're going to own it for two years?” Like, “Yes, we're going to own it for two years.”</p>
+<p data-t="1181">And I asked Tony, “So how do you make sure that you win the bid?” He's like, “Well, if we own it for two years, we're probably going to make more money than anybody else owning it for a year. So it doesn't matter what the high bid is. We assume everybody's rational, because all the students are poor. They've done their homework, and they've done their math.”</p>
+<p data-t="1199">It's like, “Have you done the math and the homework?” He's like, “I don't need to.” I'm like, “Why?” It's like, “Their number in profit is going to be lower than my number because I'm running it for two years. So all I have to bid is highest bid plus $1,” which is exactly what he bid.</p>
+<p class="q" data-t="1212">So he submitted “highest bid plus one”?<a href="https://www.youtube.com/watch?v=OSAKv1JelDg&t=1212s">&#x21AA; 20:12</a></p>
+<p data-t="1219">Yeah. And I was like, “This is the type of person I would get along with because he's just as mischievous and devious as I am, and not doing the work.”</p>
+<p data-t="1225">Just going straight to the answer without showing the work.</p>
+<p data-t="1231">Exactly. “Here's the answer. This is the right answer. Who cares about the actual work?” I thought that was pretty funny. And they got it for whatever the highest bid plus $1. They ran it for two years and then started offering pizza.</p>
+<p class="q" data-t="1243">But you weren't working with them. You were just friends?<a href="https://www.youtube.com/watch?v=OSAKv1JelDg&t=1243s">&#x21AA; 20:43</a></p>
+<p data-t="1250">We were just friends.</p>
+<p class="q" data-t="1250">But I seem to remember you started earning some side income from this pizza.<a href="https://www.youtube.com/watch?v=OSAKv1JelDg&t=1250s">&#x21AA; 20:50</a></p>
+<p data-t="1250">So yes, Tony loves telling this story. He has it in his book, Delivering Happiness. And supposedly I bought pizza from him in pies and took it upstairs and sold it by the slice and made a profit. And it's kind of an interesting actual story because I didn't intend to make money. I just negotiated a discount.</p>
+<h3 class="chapter"><span>Building Link Exchange</span><a href="https://www.youtube.com/watch?v=OSAKv1JelDg&t=1251s">&#x21AA; 20:51</a></h3>
+<p data-t="1274">And so if the pizza was $2 a slice, I negotiated it so that it was $1.50 or $1.25.</p>
+<p data-t="1281">Because you're buying in bulk.</p>
+<p data-t="1286">Yeah. I brought it upstairs, like, “Can you just give me $1.25, $1.50, because that's what it comes out to?” I always got $2. And I was like, “Hey, we're all friends here. I don't need to take your money. Why are you giving me two bucks?” Like, “Oh no, quarters are prized possessions. I'm not giving you my quarters.”</p>
+<p class="q" data-t="1304">So your friends would rather give you $2 than $1.50 in order to save the quarters, because we all needed quarters for laundry back then.<a href="https://www.youtube.com/watch?v=OSAKv1JelDg&t=1304s">&#x21AA; 21:44</a></p>
+<p data-t="1315">We all needed laundry, or vending machines, the pinball machines, back when you used coins for everything.</p>
+<p data-t="1320">Yeah, nobody uses coins anymore. So it's accidental profit.</p>
+<p data-t="1326">Accidental profits is how a lot of profits get made.</p>
+<p class="q" data-t="1326">But yeah, let's go back to California. Sorry for the tangent. Tony and Sanjay, who graduated a year after you, came out to work at Oracle, but on the side started doing their own business, which was first just consultancy, building websites. But then they started LinkExchange. And I know the story since I joined LinkExchange as kind of a pseudo co-founder a few months after.<a href="https://www.youtube.com/watch?v=OSAKv1JelDg&t=1326s">&#x21AA; 22:06</a></p>
+<p class="q" data-t="1353">But when I joined, the way I remember it was it was the two of them and a whole bunch of mutual friends, some full-time, some part-time. And Alfred was the guy who showed up at 3:00 a.m. or 2:00 a.m. on a Tuesday night to do the accounting, and would do it, I don't know, into the wee hours and then leave.<a href="https://www.youtube.com/watch?v=OSAKv1JelDg&t=1353s">&#x21AA; 22:33</a></p>
+<p data-t="1374">Yeah, I was still a grad student at Stanford. I was trying to finish up my qualifying. And LinkExchange didn't even have an office. We were working out of Tony and Sanjay's condo in San Mateo. It started out as they were working at Oracle, and they figured out how to have their meetings and do all the work by noon.</p>
+<p data-t="1398">And in the afternoon, at night, they were working on this side gig that started out as building websites. It was originally called Internet Marketing Solutions. I was doing the books as a grad student just to make some money on the side. And then eventually Internet Marketing Solutions became LinkExchange. They're building these websites, but nobody would click on them, so they were trying to figure out how to link them all together and promote them.</p>
+<p data-t="1424">I did that for a bit of time, and then I was like, “Boy, the world is passing me by while I'm in grad school,” because the internet was happening. And in 1996, '97, the internet was happening. I was seeing it happen. LinkExchange, you and Tony and Sanjay got an investment from Sequoia.</p>
+<p data-t="1443">Yeah.</p>
+<p data-t="1448">Which we're here now. It was a crazy time, and I saw a lot of people leaving Stanford to join a bunch of different internet companies. I felt like I needed to quit my PhD program, and it was painful and a struggle, partly because my parents were very upset. My mom probably cried for two months.</p>
+<h3 class="chapter"><span>Leaving academia for industry</span><a href="https://www.youtube.com/watch?v=OSAKv1JelDg&t=1450s">&#x21AA; 24:10</a></h3>
+<p data-t="1472">No way.</p>
+<p data-t="1472">That I was dropping out, and I was so close because I'd done all the work to qualify. All I had to do was do the research work and the dissertation. I came to the realization that regardless of whether you're mischievous or you're obedient, you got to think for yourself, and you have to live your life the way you want to live your life.</p>
+<p data-t="1493">And I wasn't living the life that I wanted to live. I told my mom I was never going to be a professor because I don't want to be a professor. I don't want to do research for the rest of my life.</p>
+<p data-t="1510">And she did say something that was quite interesting, which is—</p>
+<p data-t="1510">“Be a doctor.” No, sorry.</p>
+<p data-t="1515">“There are plenty of people who finish their PhDs and then go work in industry. Why don't you just finish it and do it?” And her point was, later you could finish it, and after you graduate, there'll be another company.</p>
+<p data-t="1528">Right, right.</p>
+<p data-t="1528">And there are people who were in my class that did do this. It's not the only company that's going to exist. And I was a little bit more rash, and I said, “Well, the internet's happening. I want to be part of it. So I want to quit my PhD program now, join LinkExchange, because I think the internet's happening, and I want to be part of it.”</p>
+<p class="q" data-t="1553">And I guess I have two questions. First of all, obviously you had the conviction that this is what I want to do, but were you also afraid? What if this doesn't succeed? Because we didn't know we'd be successful at LinkExchange at all at that point. And then secondly, how did it feel disappointing your parents, your mom crying for two months?<a href="https://www.youtube.com/watch?v=OSAKv1JelDg&t=1553s">&#x21AA; 25:53</a></p>
+<p data-t="1576">I had worked up the courage to tell them, so I wasn't going to go back on the idea. Going back in time, when I thought about it, was it hard? Was it stressful? It was all very hard, very stressful. Everybody kind of just looked at me as, “Yeah, it's not a big deal.”</p>
+<p data-t="1590">So my friends gave me courage. You gave me courage. Tony gave me courage. Sanjay gave me courage. And other people around LinkExchange gave me courage. And I was like, “Well, they have a vested interest in me joining, so of course they're going to say that.” But the worst-case scenario is probably not as bad as you think. And it actually could be a lot worse.</p>
+<p data-t="1615">Yeah, it could fail. That's not the worst thing in the world. A lot of startups fail, and you can look at history, and there are people who their first company didn't work. They go on to their second company, and they become a huge success. And so you got to take swings.</p>
+<p data-t="1632">And I'm like, “Okay, well, if it went to zero, I could still go back and finish my PhD. There is another company I can work for. We live in the Bay Area. Technology is booming. There's always new jobs for people who want to work.” And so it isn't as bad as it looks.</p>
+<p data-t="1652">And we're just so fortunate to live in the United States. We're fortunate to live in California. We're fortunate to work in the tech industry. And if you take that perspective, then the stress kind of goes away.</p>
+<p data-t="1669">Yeah.</p>
+<p data-t="1669">And it doesn't mean that you don't want to work as hard as you can. But I think there's good stress, where it's like, “I want to make this successful,” and there's bad stress. At that time, I wasn't good at this, but I think over time I've learned that there are things that you can control, and you can do whatever you can do to make it better.</p>
+<p data-t="1689">And the things that are out of your control, you figure out how to put it in your control. Great, then do something about it. If you can't do anything about it, just let it go.</p>
+<p data-t="1701">It's interesting. We're talking about your story, but right at this point in your story is a major turning point for me. I'd say probably one of the biggest life lessons I've ever learned has to do with your role at LinkExchange. I don't know if you want me to share it, but—</p>
+<p data-t="1716">Of course.</p>
+<p data-t="1716">There you go. If I trace what's the most important through line of my career, it's been about betting on people. And specifically, what defines my company Neo today is the belief that a young person who's super smart and hardworking can outperform somebody who has more experience, who's older, who has credentials or so on.</p>
+<h3 class="chapter"><span>Betting on talent</span><a href="https://www.youtube.com/watch?v=OSAKv1JelDg&t=1721s">&#x21AA; 28:41</a></h3>
+<p data-t="1740">And this belief in betting on young talent, on unproven talent, I did not always think that way. And specifically in 1997, when Alfred Lin was joining us, my mindset was Tony and Sanjay and I were the computer programmers. We have to innovate on the tech stuff. But for the finances, why would we bet on a person who's our age, who's smart, but has never been a head of finance before?</p>
+<p data-t="1780">Because you were joining as—I'm the arrogant co-founder, and I saw you as this kind of, “He's our friend who's a part-time accountant joining us as, I think maybe, our controller.”</p>
+<p data-t="1792">Yeah.</p>
+<p data-t="1792">And I kept clashing with Tony because Tony was saying, “Alfred's brilliant. We should make him CFO and make him part of the executive team.” And I was like, “That makes no sense. If we needed a CFO, we should hire someone with gray hair who's been a CFO before. And we don't even really need that right now. Alfred's good at this kind of lower-level tier.”</p>
+<p data-t="1817">And Tony and I just argued all the time. And I'm pretty sure I clashed with you because of this. And in hindsight, I was so wrong. I had this mindset of hire people for their credentials or for their experience. It's funny because today I am so obsessed with spotting talent and unproven talent.</p>
+<p data-t="1839">And we finally reached kind of a breaking point where Tony basically told me, “Ali, shut the [ __ ] up. We have to do this.” And we made you CFO, and it was like night and day. You being in the CFO role, it lifted the whole company. The whole company's culture became 10% more competitive and serious simply because of this person showing up to various other groups, asking them questions.</p>
+<p data-t="1872">“Tell me what you're doing. What are your challenges?” It wasn't even your job to do that. But other groups were like, “Oh my gosh, that Alfred guy is so intense. We need to step up our game.” The whole company stepped up its game. And it was a real learning moment for me to realize I've been so wrong.</p>
+<p data-t="1892">I think it was six months before we made that decision. And I just realized I've been wrong this whole time and had been arguing, and turned out I learned a lesson from my younger co-founder, Tony. And I would say that belief, that switch, has really defined all of my success, whether it's investing in young founders or hiring other people who are junior and betting on them to grow. So thank you.</p>
+<p data-t="1924">Well, thank you for the kind words. But I think maybe a better way of phrasing this is you want to bet on people with high slope.</p>
+<p data-t="1935">I agree. Slope, it's the learning.</p>
+<p data-t="1935">And sometimes you don't want to start with an intercept of zero. And there are jobs where you do need—if you're going to be a general counsel, you actually have to go to law school. But slope over intercept is, I think, it defines your career, defines my career too.</p>
+<p data-t="1953">I should clarify, nothing wrong with old people. When I say I like betting on—I'm old, we're old. But betting on young people is really exactly what you said. It's recognizing that they may only have half a year of experience, but if their slope of learning is super fast, this person is going to be ahead of me one day.</p>
+<p data-t="1976">And I should bet on that and help them accomplish that rather than seeing only where they are today.</p>
+<p data-t="1981">And it's very hard to see that because you don't have a lot of data points with young people. If you had multiple years of data points of seeing their slope, then by definition they're not that young anymore.</p>
+<p class="q" data-t="1992">The story about your dad, actually, I can't believe you mentioned that after running the bank, he moved to the US and started studying computer science.<a href="https://www.youtube.com/watch?v=OSAKv1JelDg&t=1992s">&#x21AA; 33:12</a></p>
+<p data-t="2006">He didn't run the bank at the time. He started out as a teller. In high school he was a teller, and in high school he was an abacus champion. He was number two in all of Taiwan in abacus. And because he was good at the abacus, one of the things that the teller does is to make sure that they balance the books.</p>
+<p data-t="2031">This is before ATMs, and someone in the accounting department saw his talents and asked him to help with certain things in the accounting department, which was literally at that time ledgers, physical paper ledgers. And then he saw what a computer does and was like, “Wait a minute. I am basically a human calculator, human computer, and this thing is going to get more and more powerful. So I should figure out how to learn the computer system.”</p>
+<p data-t="2056">And so he ran the accounting department in his bank, and he came to the US to study computer science because he wanted to computerize his bank's accounting system.</p>
+<p data-t="2070">Right. So I'm just going to say slope over intercept is really the summary of that story there.</p>
+<p data-t="2077">Yeah. And you got to constantly reinvent yourself. And continuous learning, as you mentioned, doesn't matter what age you are. You still want to find people who are constantly learning.</p>
+<p class="q" data-t="2091">Let's talk a little bit about your time post this. LinkExchange was successful.<a href="https://www.youtube.com/watch?v=OSAKv1JelDg&t=2091s">&#x21AA; 34:51</a></p>
+<p data-t="2091">LinkExchange was fine. It got sold to Microsoft for a number that nobody cares about today, $265 million, which was the third-largest acquisition at the time by Microsoft.</p>
+<h3 class="chapter"><span>Scaling and leadership</span><a href="https://www.youtube.com/watch?v=OSAKv1JelDg&t=2091s">&#x21AA; 34:51</a></h3>
+<p class="q" data-t="2105">Yeah, yeah. That was a good number. And then you joined Tellme, which was also acquired by Microsoft.<a href="https://www.youtube.com/watch?v=OSAKv1JelDg&t=2105s">&#x21AA; 35:05</a></p>
+<p data-t="2110">It was bought by Microsoft, also the third-largest acquisition at the time by them.</p>
+<p data-t="2116">Yeah.</p>
+<p data-t="2116">Worked with your twin brother.</p>
+<p class="q" data-t="2116">Yes, with Hadi. I want to focus on where are the moments that you made a mistake or had a big loss that you learned a lesson from, or the moments where it looked like things looked better from the outside than they were on the inside? Situations where maybe there was a rosy picture on the outside, but you privately knew things are not well.<a href="https://www.youtube.com/watch?v=OSAKv1JelDg&t=2116s">&#x21AA; 35:16</a></p>
+<p data-t="2139">I've made so many mistakes. And the one thing I would say is I try not to overly think about whether it was painful or not painful, because what you want to do is not have it be painful, but learn from the lessons and move on.</p>
+<p data-t="2156">And one of the principles that I wrote down for Sequoia when Pat and I took over as co-stewards was founders, then LPs, then Sequoia, then the team, then yourself. The other one is we're only as good as our next investment. And one of the things that we always talk about is always do the right thing and do it the right way.</p>
+<p data-t="2177">And if we fail at doing that, because we're only human, just apologize, fix it, and move on. There's so many mistakes we made at LinkExchange. It wasn't just me. We decided to hire a bunch of people, and we grew the company, and we lost the culture.</p>
+<p data-t="2204">Was it successful to have sold the company for $265 million, and it was the third-largest acquisition at the time? Outside looks really successful. But I think all of us were actually in a lot of pain that we built a company that we did not recognize what it looked like 18 months later, because we didn't take care of the culture. We didn't fulfill our mission.</p>
+<h3 class="chapter"><span>Lessons from Tellme</span><a href="https://www.youtube.com/watch?v=OSAKv1JelDg&t=2217s">&#x21AA; 36:57</a></h3>
+<p data-t="2231">And so selling a company is sometimes a good decision financially and a bad decision for your soul. We didn't accomplish what we set out to do. And so that's sad.</p>
+<p data-t="2243">So then at Tellme, we started with a consumer business, and then we had to turn it into an enterprise business. And that was really painful. We hired a bunch of people that wouldn't fit in an enterprise business. We went through three rounds of layoffs.</p>
+<p data-t="2263">And so the first one was about culture. The second one was when you make a decision, be decisive and take action. And we knew that we needed to make this transition. And we did it slowly, and too slowly. And the morale for about a year, year and a half was bad because we cut three times. We should have just cut once and be done with it.</p>
+<p data-t="2287">I think because people could sense—</p>
+<p data-t="2293">Could sense that it's not yet. Your employees know better than even you the trajectory of the company. It's like a wisdom-of-crowds situation. The crowd knows better than you. You can be optimistic about the future, that you're going to figure it out with this group of people, and they somehow sense that another cut's coming. Until the third cut, I don't think the company was calm.</p>
+<p class="q" data-t="2310">Did you feel like you wanted to have more cuts, and the CEO, Mike McCue, wasn't on board? Or would you say you were part of the mistake of that, or somewhere in between?<a href="https://www.youtube.com/watch?v=OSAKv1JelDg&t=2310s">&#x21AA; 38:30</a></p>
+<p data-t="2331">I was definitely part of the mistake, because you can know something is right and not do it the right way. So one of the lines that we have is always do the right thing and do it the right way. I can come up with the numbers and say this is the right answer, but I couldn't really explain it. Do it the right way is a second part of it. I wasn't very good at that.</p>
+<p data-t="2351">And we're talking about human beings. It's not just numbers, right? Laying off your fellow people you've been working with, who are fighting in the trenches with you, is much more easily said than done. If you [ __ ] up the other direction, it's even worse, right?</p>
+<p data-t="2375">Often I think we hide behind the fact of empathy and compassion. And the opposite is also true. Having them stick around only to be let go three months later, six months later, because of the second cut or third cut isn't really good for them either.</p>
+<p data-t="2382">No, it's not. But it's just hard to make that decision.</p>
+<p data-t="2388">It's hard to make that decision. But the one thing that is true is, you overcut, you can hire them back. If you don't cut enough, you keep cutting. And I didn't realize that then.</p>
+<p class="q" data-t="2399">And was there a period where you had to portray to the rest of the company, because you were head of finance there as well, that all is well? “We've righted the ship. The layoffs are done.” But secretly realized all is not well yet?<a href="https://www.youtube.com/watch?v=OSAKv1JelDg&t=2399s">&#x21AA; 39:59</a></p>
+<p data-t="2413">Probably for me personally, that was the most painful, because you know me, I'm a straight shooter. And so trying to portray something that I didn't believe was not a good thing for me. And I've learned there's an element of disagree and commit, but there's an element of, “I don't believe, and I need to figure out the solution to tell everyone what we need to do to believe.”</p>
+<p data-t="2446">That bridge is sometimes hard, and during Tellme, that was the hardest thing for me to bridge. And eventually you do end up losing confidence in the management team, because they're kind of selling you a bill of goods. And so I did leave at some point because I didn't believe the management team had their feet on the ground.</p>
+<p data-t="2476">One of my favorite quotes from Richard Feynman, he was asked why—</p>
+<p data-t="2482">The great physicist.</p>
+<p data-t="2482">The great physicist Richard Feynman was asked why Albert Einstein is a giant. And his answer was, “Albert Einstein's a giant because he has his head in the clouds and his feet on the ground.” And I've come to believe the best management teams have someone who is a visionary. They can see the future, but there's also someone who is in the reality as of today.</p>
+<p data-t="2510">And your job is to have both of those, but also connect the dots along the way between this world and the future world for all of your employees. And when you can't bridge the two gaps, you can't really lead a group of people. People lose confidence in you if you don't have that.</p>
+<p class="q" data-t="2529">So you left Tellme and joined Zappos, reconnecting with Tony. May he rest in peace. But I was just thinking the combination of you and Tony is one person with head in the clouds and one with the feet on the ground. At least that's how I see the two of you as a pair from afar running Zappos.<a href="https://www.youtube.com/watch?v=OSAKv1JelDg&t=2529s">&#x21AA; 42:09</a></p>
+<p data-t="2553">And I think that that's the important thing. It doesn't mean that one person has to have all of it. You need a team that has those two things plus the third, which is to connect the dots.</p>
+<p data-t="2558">Connect the dots. Yeah.</p>
+<p data-t="2564">And sometimes even if you don't do that, the company's going to be successful. Tellme got sold to Microsoft for $800 million. It was successful, but it didn't reach its full potential.</p>
+<h3 class="chapter"><span>Reconnecting at Zappos</span><a href="https://www.youtube.com/watch?v=OSAKv1JelDg&t=2573s">&#x21AA; 42:53</a></h3>
+<p data-t="2575">Yeah, certainly.</p>
+<p data-t="2575">So yeah, I went to Zappos. Tony has his head in the clouds, and I have my feet on the ground. And the two of us worked very well together to turn Zappos into what was just selling shoes into a service company.</p>
+<p data-t="2589">Into a service company that just happens to sell shoes.</p>
+<p data-t="2595">And was sold to Amazon for $1.2 billion, which at the time was the largest acquisition.</p>
+<p data-t="2607">By Amazon.</p>
+<p data-t="2607">By Amazon.</p>
+<p data-t="2607">But huge. Those numbers were huge at the time and small today.</p>
+<p class="q" data-t="2612">So I want to talk a little bit about your time at Sequoia. You've now been there almost two decades.<a href="https://www.youtube.com/watch?v=OSAKv1JelDg&t=2612s">&#x21AA; 43:32</a></p>
+<p data-t="2618">Seventeen years.</p>
+<p class="q" data-t="2618">Yeah. You've been at number one on the Midas List multiple years, but surely you've also had your share of bad investments or missed investments.<a href="https://www.youtube.com/watch?v=OSAKv1JelDg&t=2618s">&#x21AA; 43:38</a></p>
+<p data-t="2625">A lot of bad investments. A lot of missed investments.</p>
+<p class="q" data-t="2631">So tell me one or two of the worst ones.<a href="https://www.youtube.com/watch?v=OSAKv1JelDg&t=2631s">&#x21AA; 43:51</a></p>
+<p data-t="2637">In this business, you can lose 1x your money. So there's a lot of investments that went to zero. The other extreme is you can make 10x, 100x, 1,000x, 5,000x. And so those are probably more painful.</p>
+<h3 class="chapter"><span>The FTX investment</span><a href="https://www.youtube.com/watch?v=OSAKv1JelDg&t=2637s">&#x21AA; 43:57</a></h3>
+<p class="q" data-t="2655">The ones you missed?<a href="https://www.youtube.com/watch?v=OSAKv1JelDg&t=2655s">&#x21AA; 44:15</a></p>
+<p data-t="2655">The ones you missed. Because, look, the one that follows me around that people talk about is FTX, and I lost $150 million for Sequoia. It's really painful. Losing money is painful in general, just period. And we work in a business, as you know, where 50% of the time we're wrong.</p>
+<p class="q" data-t="2675">And this was a big investment for you?<a href="https://www.youtube.com/watch?v=OSAKv1JelDg&t=2675s">&#x21AA; 44:35</a></p>
+<p data-t="2680">Yeah. And you can tell yourself all these things, like 50% we're going to be wrong, so you have to be okay with it and all that kind of stuff. And the first time you lose $1 million, it's like, “Oh, that's a lot to lose.” The next time you lose $10 million, that's a lot to lose.</p>
+<p data-t="2696">But it's 50%, so you're going to lose money half the time. But when you lose $50 million, $100 million, those are really painful.</p>
+<p class="q" data-t="2703">And then it's other people's money you're losing also, right?<a href="https://www.youtube.com/watch?v=OSAKv1JelDg&t=2703s">&#x21AA; 45:03</a></p>
+<p data-t="2703">It's $150 million. And it's painful also. Some people, it's like, “It's not your money, it's someone else's money.”</p>
+<p data-t="2710">But I think that's harder.</p>
+<p data-t="2717">For some people who are responsible, like you and me, we feel the responsibility. It's harder. For other people, it's like, “Not my money.” So I think it depends on the person. We ask the question, “Would you put your own money into this investment?” And some people would say yes, and some people would say no, depending on the risk tolerance. It's about you.</p>
+<p data-t="2735">But we're investors on behalf of limited partners, and losing limited partners' money for me is more painful. I'd prefer to lose my own money than to lose limited partners' money. And so, to your point, because we feel the responsibility, it's more painful.</p>
+<p data-t="2753">And on top of that, our limited partners are foundations, institutions, universities. So when you lose money for them, that means a student is not getting their scholarship, someone's not getting a vaccine, research around social justice is not being done, et cetera.</p>
+<p class="q" data-t="2766">And the FTX investment, you were not the first investor. This was 2021. It was during the kind of heady days of—<a href="https://www.youtube.com/watch?v=OSAKv1JelDg&t=2766s">&#x21AA; 46:06</a></p>
+<p data-t="2779">It was during the heady times of 2021. Crypto was on fire.</p>
+<p data-t="2784">Yeah.</p>
+<p data-t="2784">And we made that—</p>
+<p class="q" data-t="2784">And that company was getting all this press coverage. They were the belle of the ball for sure.<a href="https://www.youtube.com/watch?v=OSAKv1JelDg&t=2784s">&#x21AA; 46:24</a></p>
+<p data-t="2791">And we had looked at lots of different exchanges, and exchanges are generally good businesses. And they had built a very good crypto exchange. And we asked all sorts of questions about separation between Sam Bankman-Fried's old company, which was a hedge fund, Alameda Research, and this new company, FTX.</p>
+<p data-t="2809">And he had said all the right things. He was no longer running Alameda Research. He was running FTX. Over the years, I was like, “Hey, you need a CFO. These are large numbers that we're talking about. I know you have an exchange, and you can calculate all sorts of things, and you have your own ledger, but you need a CFO.” And he never hired one.</p>
+<p data-t="2832">Or at least an abacus. Just kidding.</p>
+<p data-t="2837">But I think that that was painful because it didn't have to go down that way. And commingling funds between the hedge fund and the exchange was what ultimately tore down FTX.</p>
+<p class="q" data-t="2856">Was there a period where you could see clouds, where you could tell something's off before—<a href="https://www.youtube.com/watch?v=OSAKv1JelDg&t=2856s">&#x21AA; 47:36</a></p>
+<p data-t="2862">We went back and looked at the due diligence. It's not something that you could very easily see. It was also during the time when we were still in lockdown. The company had started in Hong Kong. You couldn't go visit them.</p>
+<p class="q" data-t="2875">So your access is via Zoom and Slack or something?<a href="https://www.youtube.com/watch?v=OSAKv1JelDg&t=2875s">&#x21AA; 47:55</a></p>
+<p data-t="2880">Via Zoom. Everything was electronic. And sometimes I think the painful lesson to me is you do want to be able to see and meet someone and stare in their eyes. And I didn't get to do that. So I don't know whether that would have made a difference.</p>
+<p class="q" data-t="2892">Did you have at some point later a Spidey sense that, “Oh my gosh, I [ __ ] up. This might not be a good investment,” before it became obvious to the—<a href="https://www.youtube.com/watch?v=OSAKv1JelDg&t=2892s">&#x21AA; 48:12</a></p>
+<p data-t="2902">I don't think we had that, a pure Spidey sense. But the pushback on hiring a CFO I thought was quite odd. Quite odd to not want to hire a CFO for a large business with numbers, lots of flow.</p>
+<p class="q" data-t="2918">As investors, I feel this investing in startups. Essentially, it's part of my identity that I'm supposed to be able to spot winners. How did it feel for you if it's part of your identity that you're the great Alfred Lin of the famous Sequoia Capital, and one of your largest investments became a zero? And not just a zero, but a high-profile zero where the whole world talked about it.<a href="https://www.youtube.com/watch?v=OSAKv1JelDg&t=2918s">&#x21AA; 48:38</a></p>
+<p class="q" data-t="2948">Tons and tons of innocent customers lost money. Most of the blame was on Sam Bankman-Fried, but a lot of the blame also fell on you. How did you feel during that period of time?<a href="https://www.youtube.com/watch?v=OSAKv1JelDg&t=2948s">&#x21AA; 49:08</a></p>
+<p data-t="2955">I did not feel great. But back to who you are, I have a high tolerance for pain. I have a high tolerance for looking stupid if I'm ultimately right. Here's a situation where I look stupid, and I was ultimately wrong.</p>
+<p data-t="2985">And so then you kind of have to look at the fact that, was there anything I could have done differently? I could have not invested, but the business looked like it was a good business. The due diligence says that everything is right and kosher.</p>
+<p data-t="2999">The hardest thing for me was I kept searching for what could I have done differently, and if this was a repeat game, would I have done the same thing again? I wanted to answer in a way that I could find something to blame, but I couldn't. That's really hard.</p>
+<p data-t="3023">If you found a lesson in there that I was like, “Okay, I can do this better next time in the due diligence process,” I probably would have felt better. But to find out during the due diligence process, we're not perfect, but it was everything that we could do. And it came down to trust of someone, and we default from a position of trust.</p>
+<p data-t="3048">The hardest part of that whole process was it isn't the due diligence process. It's my ability to read someone on whether I can trust them.</p>
+<p class="q" data-t="3056">Your gut feel about the person?<a href="https://www.youtube.com/watch?v=OSAKv1JelDg&t=3056s">&#x21AA; 50:56</a></p>
+<h3 class="chapter"><span>The cost of misjudging trust</span><a href="https://www.youtube.com/watch?v=OSAKv1JelDg&t=3060s">&#x21AA; 51:00</a></h3>
+<p data-t="3061">My gut feel about the person was wrong. And that, to me, was the most crushing. It isn't losing $150 million. It isn't the negative press cycle. It isn't the fact that people on Twitter still call me out for making the FTX investment.</p>
+<p data-t="3081">It was, “Well, I thought I have such a good read on people, on whether I can trust someone or not.” And I did not on this particular situation.</p>
+<p class="q" data-t="3093">Interesting. So you were less bothered by someone making fun of you publicly than by this private understanding that something you thought is a strength of yours actually isn't as strong as you thought.<a href="https://www.youtube.com/watch?v=OSAKv1JelDg&t=3093s">&#x21AA; 51:33</a></p>
+<p data-t="3106">And I think the realization is we're all a function of our histories, and our identity is much more complicated than we think. Most people would be like, “Oh, this is bad press. You'd be so upset.” But I have this identity. I feel like I know how to read people.</p>
+<p data-t="3125">Back to, I said one of the most important skills is to be able to see people clearly. And I did not see the situation clearly and the person clearly.</p>
+<p class="q" data-t="3143">So it sounds like the Midas List is not your identity.<a href="https://www.youtube.com/watch?v=OSAKv1JelDg&t=3143s">&#x21AA; 52:23</a></p>
+<p data-t="3143">Midas List is not my—</p>
+<p class="q" data-t="3149">Being able to read people clearly is your identity. And that was the part that you felt, “Oh my gosh, I'm not true to who I thought I was.”<a href="https://www.youtube.com/watch?v=OSAKv1JelDg&t=3149s">&#x21AA; 52:29</a></p>
+<p data-t="3156">Yeah.</p>
+<p class="q" data-t="3156">Give me a story of one where you lost out on a deal, or missing a deal, right? You said that it's worse to miss out on a 100x than losing a 1x.<a href="https://www.youtube.com/watch?v=OSAKv1JelDg&t=3156s">&#x21AA; 52:36</a></p>
+<p data-t="3169">There's so many situations where we pass, and we were just wrong. Early on, I was a seed investor in Uber, and it took a long time to convince Sequoia.</p>
+<h3 class="chapter"><span>Reflection on missed deals</span><a href="https://www.youtube.com/watch?v=OSAKv1JelDg&t=3173s">&#x21AA; 52:53</a></h3>
+<p class="q" data-t="3176">So you personally?<a href="https://www.youtube.com/watch?v=OSAKv1JelDg&t=3176s">&#x21AA; 52:56</a></p>
+<p data-t="3176">I personally was a seed investor in Uber because I knew Travis. We were at Obama's inauguration together. He pitched the idea of Uber then because it was so hard. It was so cold in Washington, DC, during the inauguration, and he was like, “Wouldn't it be great if we just had an on-demand car?”</p>
+<p data-t="3203">He also pitched the idea of Airbnb. “Wouldn't it be great if instead of staying at this hotel and hanging out in the lobby, we could just have a house with all of our friends?” Anyway, so I became a seed investor in Uber when Garrett and Travis started Uber, and then I didn't think it was going to go anywhere.</p>
+<p data-t="3222">Travis wasn't originally going to join the company full-time. Neither was Garrett. So I was like, “The founders of the company are not joining full-time. Well, it's just a YOLO bet.” But then Travis fell in love with the business, ran it. It was a black car service at the time, and we thought the market size was too small.</p>
+<p class="q" data-t="3250">We meaning Sequoia?<a href="https://www.youtube.com/watch?v=OSAKv1JelDg&t=3250s">&#x21AA; 54:10</a></p>
+<p data-t="3250">Sequoia, yeah. We have a market size. How many black cars in the whole US? Even if you got all of them, that's not a venture-scale business.</p>
+<p data-t="3266">We have a line at Sequoia: you can't say that you have conviction if you're a wimpy sponsor. And I was a wimpy sponsor. People asked these questions on what's the size of the black car market. I didn't push, and I didn't push hard enough on the A, the B, the C, the D. Eventually we made an investment much later on.</p>
+<p data-t="3287">And so I put that on myself. And we talk about at Sequoia, you have to just take your conviction and do it with courage. And in that particular situation, I had conviction around Travis. I don't know how to answer the market-size question, but I didn't have courage. I didn't push hard.</p>
+<p class="q" data-t="3319">It's interesting because the person who takes the real risk is the entrepreneur, obviously risking their whole thing. But there is courage as an investor that I'm going to be investing other people's money. God forbid we lose it all. And courage in just convincing your partners, putting your personal reputation amongst your partners at Sequoia that Alfred believes this is the big one. And you didn't have that courage.<a href="https://www.youtube.com/watch?v=OSAKv1JelDg&t=3319s">&#x21AA; 55:19</a></p>
+<p data-t="3344">I didn't have that courage. I didn't have that courage multiple times. And the learning to me there was I became a much better investor when I realized exactly what you just said. It shouldn't be that hard for me to have courage, because the ultimate person who is taking the biggest risk is the entrepreneur.</p>
+<p data-t="3363">And so if I believe in the entrepreneur, I should have no problem having the courage to go defend the thesis and argue to make the investment. And that was a very painful lesson because today Uber is a $200 billion company. We could have owned 20%. We would have gotten diluted along the way. But man.</p>
+<p class="q" data-t="3392">Wow. So $40 billion lost, opportunity cost lost, probably.<a href="https://www.youtube.com/watch?v=OSAKv1JelDg&t=3392s">&#x21AA; 56:32</a></p>
+<p data-t="3392">It would probably be a 20.</p>
+<p data-t="3398">Because you'd be $20 billion with dilution.</p>
+<p data-t="3398">It'd probably be, if you held it all to today, it'd be worth $20 billion. The seed investment held to today and the venture investment held to today would be one of the best venture investments in history. It's not lost on me.</p>
+<p data-t="3417">Yeah.</p>
+<p data-t="3417">Good for Josh Kopelman and Bill Gurley, Benchmark. I did okay here. You can always do better.</p>
+<p data-t="3423">Well, thank you so much. We connect through these shared stories of lessons we've learned. So it's been really, really fun to hear about your past. I'm glad that you were not guai. I think it's probably a trait to look for in founders and in investors. So really, really wonderful hearing your stories.</p>
+<p data-t="3447">Thank you.</p>
+<p data-t="3447">All right. Take care.</p>
+<p data-t="3447">Take care.</p>
+<p data-t="3447">Before you go, if you're enjoying Confession, please subscribe for more and leave me feedback. What's a question that you wish I'd asked, or who do you wish I'd interview next? We've got a lot more ahead, including conversations with Shuo Wang, Ali Ghodsi, Jeff Lawson, Rose Wang, and more. I'm Ali Partovi. Thanks for joining me, and see you next Confession.</p>
+    </div>
+  </main>
+  <script>
+  async function toggleYtBookmark(btn) {
+    const payload = {
+      title: btn.dataset.title,
+      url: btn.dataset.url,
+      filename: btn.dataset.filename,
+      interviewDate: btn.dataset.date,
+      source: 'YT',
+      expert: btn.dataset.channel,
+    };
+    try {
+      const resp = await fetch('/bookmark', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload),
+      });
+      const result = await resp.json();
+      setYtBookmarkState(btn, !!result.bookmarked);
+    } catch (e) {
+      console.error('Bookmark toggle failed:', e);
+    }
+  }
+  function setYtBookmarkState(btn, on) {
+    btn.classList.toggle('is-bookmarked', on);
+    btn.innerHTML = on ? '&#9733;' : '&#9734;';
+    btn.title = on ? 'Bookmarked' : 'Bookmark';
+    btn.setAttribute('aria-label', on ? 'Bookmarked' : 'Bookmark');
+  }
+  (async function initYtBookmarkState() {
+    const btn = document.getElementById('yt-bookmark-btn');
+    if (!btn || !btn.dataset.filename) return;
+    try {
+      const resp = await fetch('/bookmarks');
+      if (!resp.ok) return;
+      const list = await resp.json();
+      if (Array.isArray(list) && list.some(b => b && b.filename === btn.dataset.filename)) {
+        setYtBookmarkState(btn, true);
+      }
+    } catch (e) { /* offline -- leave default state */ }
+  })();
+
+  async function shareYtPage(btn) {
+    const original = btn.innerHTML;
+    btn.disabled = true;
+    btn.innerHTML = '&hellip;';
+    try {
+      const resp = await fetch('/share', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ filename: btn.dataset.filename }),
+      });
+      const result = await resp.json();
+      if (!result.ok) throw new Error(result.error || 'Share failed');
+      try { await navigator.clipboard.writeText(result.url); } catch (e) {}
+      btn.innerHTML = '&#10003;';
+      btn.title = 'Copied ' + result.url;
+      setTimeout(() => { btn.innerHTML = original; btn.disabled = false; btn.title = 'Share'; }, 2500);
+    } catch (e) {
+      console.error('Share failed:', e);
+      btn.innerHTML = '!';
+      btn.title = 'Share failed: ' + (e && e.message || e);
+      setTimeout(() => { btn.innerHTML = original; btn.disabled = false; btn.title = 'Share'; }, 3000);
+    }
+  }
+
+  // When the page is viewed from somewhere other than the local Reader
+  // server (e.g. a shared copy on GitHub Pages), hide the interactive
+  // buttons whose endpoints only exist on localhost.
+  (function hideLocalOnlyControls() {
+    const host = location.hostname;
+    const isLocal = host === 'localhost' || host === '127.0.0.1' || host === '';
+    if (isLocal) return;
+    const actions = document.querySelector('.yt-header-actions');
+    if (!actions) return;
+    const bookmark = actions.querySelector('#yt-bookmark-btn');
+    const share = actions.querySelector('#yt-share-btn');
+    if (bookmark) bookmark.remove();
+    if (share) share.remove();
+  })();
+  </script>
+<script id="reader-presentation-script">
+(function () {
+const readerKind = "youtube";
+const readerStandalone = true;
+const readerFilename = "";
+const readerNavigation = null;
+const splitExpertTitle = function splitExpertTitle(title, knownTicker = '') {
+  const symbol = '[A-Z][A-Z0-9.-]{0,11}';
+  const symbols = new RegExp(`^${symbol}(?:\\s*[/,&+]\\s*${symbol})*$`);
+  const leading = title.match(new RegExp(`^(${symbol})(?:\\s*[—–:|]\\s*|\\s+-\\s+)(.+)$`));
+  if (leading) return { label: leading[1], description: leading[2] };
+
+  // Some saved interviews name a company, then its ticker, then the topic.
+  const pipes = title.split(/\s*\|\s*/);
+  if (pipes.length > 1) {
+    const tickerIndex = pipes.findIndex(part => symbols.test(part));
+    if (tickerIndex >= 0) return { label: pipes[tickerIndex], description: pipes.filter((_, i) => i !== tickerIndex).join(' · ') };
+    if (pipes[0].length <= 32) return { label: pipes[0], description: pipes.slice(1).join(' · ') };
+  }
+
+  const divided = title.match(/^(.+?)\s+[—–-]\s+(.+)$/) || title.match(/^([^:]{1,32}):\s+(.+)$/);
+  if (divided) {
+    const [, subject, topic] = divided;
+    const namedSymbols = [...subject.matchAll(/\(([^)]+)\)/g)].map(m => m[1]).filter(value => symbols.test(value));
+    if (namedSymbols.length) return { label: namedSymbols.join(' / '), description: topic };
+    if (symbols.test(topic)) return { label: topic, description: subject };
+    if (subject.length <= 32) return { label: subject, description: topic };
+  }
+  // Broad industry interviews may have no single issuer or separable heading.
+  return { label: knownTicker || 'EX', description: title };
+};
+const abbreviateEventTitle = function abbreviateEventTitle(title) {
+  return String(title || '')
+    .replace(/\bGoldman Sachs(?: Group)?\b/gi, 'GS')
+    .replace(/\b(?:Bank of America(?: Merrill Lynch| Securities)?|BofA(?: Merrill Lynch| Securities)?)\b/gi, 'BofA')
+    .replace(/\bBarclays(?: Capital| Bank| PLC)?\b/gi, 'BCA')
+    .replace(/\bJ\.?\s*P\.?\s*Morgan(?:\s+Chase)?\b/gi, 'JPM')
+    .replace(/\bWells Fargo(?: Securities)?\b/gi, 'WFC')
+    .replace(/\b(?:Citigroup|Citibank|Citi)(?:['’]s)?\b/gi, 'Citi')
+    .replace(/\bMorgan Stanley\b/gi, 'MS')
+    .replace(/\bDeutsche Bank\b/gi, 'DB')
+    .replace(/\bRBC Capital Markets\b/gi, 'RBC')
+    .replace(/\bBMO Capital Markets\b/gi, 'BMO')
+    .replace(/\bJefferies\b/gi, 'JEF')
+    .replace(/\bConferences?\b/gi, 'Conf');
+};
+// Runs after the saved page's scripts. Move real controls so their IDs, data,
+// listeners and bookmark/share payloads survive the visual upgrade.
+(function () {
+  'use strict';
+  const oldHeader = document.querySelector('body > .header, body > header, body > .sticky-header, main > .yt-meta-card');
+  const content = document.querySelector('main, body > .content');
+  if (!oldHeader || !content || oldHeader.contains(content) || document.body.classList.contains('reader-page')) return;
+
+  const make = (tag, className, text) => {
+    const element = document.createElement(tag);
+    if (className) element.className = className;
+    if (text) element.textContent = text;
+    return element;
+  };
+  const clean = value => String(value || '').replace(/\s+/g, ' ').trim();
+  const labels = { earnings: 'Earnings call', presentation: 'Presentation', expert: 'Expert call', youtube: 'YouTube' };
+  const metadataSelector = '.yt-header-sub, .yt-meta-sub, .metadata, .header-meta, .meta, .subtitle, .subline, .profile, .src-date, .header-subtitle, .date';
+  const metadataNodes = [...oldHeader.querySelectorAll(metadataSelector)].filter(node => !node.parentElement.closest(metadataSelector));
+  // Templates vary across the archive. Keep all header text, not just text in
+  // the newest title class; otherwise older dates and expert roles disappear.
+  const titleCopy = oldHeader.cloneNode(true);
+  titleCopy.querySelectorAll(`${metadataSelector}, .ticker, .market-strip, button, a, script, style`).forEach(node => node.remove());
+  let title = clean(titleCopy.textContent) || document.title;
+  let label = clean(oldHeader.querySelector('.ticker')?.textContent).replace(/^\(|\)$/g, '');
+  const market = oldHeader.querySelector('.market-strip');
+  const actions = [...oldHeader.querySelectorAll('button, a')].filter(node => !node.closest('.yt-header-thumb, .yt-meta-url') && !node.querySelector('img') && !metadataNodes.some(meta => meta.contains(node)));
+
+  if (readerKind === 'expert') {
+    const parts = splitExpertTitle(title);
+    label = parts.label;
+    title = parts.description;
+  } else if (readerKind === 'youtube') {
+    label = 'YT';
+  } else if (!label) {
+    const symbol = title.match(/\(([A-Z0-9][A-Z0-9.-]{0,11})\)/);
+    if (symbol) { label = symbol[1]; title = clean(title.replace(symbol[0], '')); }
+  }
+
+  document.body.classList.add('reader-page');
+  document.body.dataset.readerKind = readerKind;
+  const header = make('header', 'reader-masthead');
+  const inner = make('div', 'reader-masthead-inner');
+  const brand = make(readerStandalone ? 'span' : 'a', 'reader-brand', readerStandalone ? 'OC Reader' : '‹ Library');
+  if (!readerStandalone) { brand.href = '/status'; brand.title = 'Back to Library'; }
+  const tools = make('div', 'reader-tools');
+  for (const action of actions) {
+    // Q&A is already available in the article's section navigation.
+    if (/^Q\s*(?:&|and)\s*A$/i.test(clean(action.textContent))) continue;
+    action.classList.add('reader-tool');
+    if (action.matches('#bookmark-btn, #yt-bookmark-btn')) {
+      action.setAttribute('aria-label', action.title || 'Bookmark');
+    }
+    if (action.matches('#share-btn, #yt-share-btn')) action.setAttribute('aria-label', 'Share');
+    if (readerStandalone && action.matches('button')) action.hidden = true;
+    tools.append(action);
+  }
+  const marker = make('div', 'reader-marker');
+  marker.title = labels[readerKind];
+  if (label) marker.append(make('span', readerKind === 'youtube' ? 'reader-source-badge' : 'reader-symbol', label));
+  const heading = make('div', 'reader-heading');
+  heading.append(make('h1', 'reader-title', title));
+  const facts = make('div', 'reader-facts');
+  for (const metadata of metadataNodes) {
+    // Archived source-specific layout classes must not shape the shared header.
+    metadata.className = 'reader-metadata';
+    metadata.title = clean(metadata.textContent);
+    // The saved page, not its filename/feed title, determines the period.
+    if (readerKind === 'earnings' && /\bQ[1-4]\b/i.test(metadata.textContent) && !/earnings/i.test(metadata.textContent)) {
+      const period = metadata.textContent;
+      metadata.textContent = /[·|]/.test(period)
+        ? period.replace(/\s*([·|])/, ' Earnings $1') : `${period} Earnings`;
+    }
+    // A few older presentation pages put their event heading at the start of
+    // the article and only the date in the header. Include that heading here.
+    const introduction = content.firstElementChild;
+    if (readerKind === 'presentation' && /^\d{1,4}[-/]\d{1,2}[-/]\d{2,4}$/.test(clean(metadata.textContent))
+      && introduction?.tagName === 'P' && !introduction.querySelector('a, strong, b')
+      && clean(introduction.textContent).length < 180
+      && /\b(?:conference|investor (?:day|meeting)|capital markets day|fireside chat)(?:\s+20\d{2})?$/i.test(clean(introduction.textContent))) {
+      metadata.textContent = `${clean(introduction.textContent)} · ${clean(metadata.textContent)}`;
+      metadata.title = metadata.textContent;
+    }
+    if (readerKind === 'presentation') metadata.textContent = abbreviateEventTitle(metadata.textContent);
+    if (readerKind === 'earnings') metadata.textContent = metadata.textContent.replace(/\bQ([1-4])\s+20(\d{2})\b/g, '$1Q$2');
+    (readerKind === 'youtube' ? facts : heading).append(metadata);
+  }
+  if (market) { market.classList.add('reader-market'); facts.append(market); }
+  inner.append(marker, heading, tools, brand, facts);
+  if (readerNavigation && !readerStandalone) {
+    const pages = make('nav', 'reader-page-navigation');
+    pages.setAttribute('aria-label', 'Completed pages');
+    const pageLink = (target, previous) => {
+      const name = previous ? 'Previous' : 'Next';
+      const link = make(target ? 'a' : 'button', 'reader-page-link', previous ? '‹ Previous' : 'Next ›');
+      link.setAttribute('aria-label', `${name} completed page`);
+      if (target) {
+        link.href = target.href;
+        link.rel = previous ? 'prev' : 'next';
+        link.title = `${name} (${previous ? 'newer' : 'older'}): ${target.title}`;
+      } else {
+        link.disabled = true;
+        link.title = previous ? 'First completed page' : 'Last completed page';
+      }
+      return link;
+    };
+    const position = make('span', 'reader-page-position', `${readerNavigation.position.toLocaleString()} / ${readerNavigation.total.toLocaleString()}`);
+    position.title = 'Position in Completed · most recent first';
+    pages.append(pageLink(readerNavigation.previous, true), position, pageLink(readerNavigation.next, false));
+    inner.append(pages);
+  }
+  header.append(inner);
+  if (content.contains(oldHeader)) {
+    content.before(header);
+    oldHeader.remove();
+  } else oldHeader.replaceWith(header);
+
+  const layout = make('div', 'reader-layout');
+  content.before(layout);
+  content.classList.add('reader-article');
+  layout.append(content);
+  // Some historical summaries close their content wrapper before Q&A.
+  // Preserve those nodes and their order inside the article as well.
+  let next = layout.nextElementSibling;
+  while (next && next.matches('h2#qa, .qa-block')) {
+    const following = next.nextElementSibling;
+    content.append(next);
+    next = following;
+  }
+
+  // Wide tables scroll within the article instead of stretching a phone page.
+  content.querySelectorAll('table').forEach((table, index) => {
+    let wrapper = table.parentElement;
+    if (!wrapper.matches('.table-wrap, .table-wrapper, .table-scroll, .reader-table-wrap')) {
+      wrapper = make('div', 'reader-table-wrap');
+      table.before(wrapper);
+      wrapper.append(table);
+    }
+    wrapper.classList.add('reader-table-wrap');
+    wrapper.tabIndex = 0;
+    wrapper.setAttribute('role', 'region');
+    wrapper.setAttribute('aria-label', `Data table ${index + 1}`);
+  });
+
+  // Use H3 for the two standard call sections without changing their anchors
+  // or treating speaker headings as peers in the contents navigation.
+  const isCallSection = heading => /^(?:Prepared Remarks|Q\s*(?:&|and)\s*A)$/i.test(clean(heading.textContent));
+  const mainHeadings = new Set([...content.querySelectorAll('h2, h3')].filter(heading => heading.tagName === 'H2' || isCallSection(heading)));
+  for (const heading of [...mainHeadings]) {
+    if (!isCallSection(heading)) continue;
+    if (heading.tagName === 'H3') { heading.classList.add('reader-section-heading'); continue; }
+    const compact = make('h3');
+    for (const attribute of heading.attributes) compact.setAttribute(attribute.name, attribute.value);
+    compact.classList.add('reader-section-heading');
+    compact.append(...heading.childNodes);
+    heading.replaceWith(compact);
+    mainHeadings.delete(heading);
+    mainHeadings.add(compact);
+  }
+  const headings = [...content.querySelectorAll('h2, h3')].filter(heading => mainHeadings.size < 3 || mainHeadings.has(heading));
+  if (headings.length > 1) {
+    const navigation = make('nav', 'reader-contents');
+    navigation.setAttribute('aria-label', 'On this page');
+    navigation.append(make('div', 'reader-contents-label', 'On this page'));
+    const links = [];
+    headings.forEach((heading, index) => {
+      if (!heading.id) {
+        let id = `reader-section-${index + 1}`;
+        while (document.getElementById(id)) id += '-section';
+        heading.id = id;
+      }
+      const labelCopy = heading.cloneNode(true);
+      labelCopy.querySelectorAll('a, .role').forEach(node => node.remove());
+      const link = make('a', mainHeadings.size && !mainHeadings.has(heading) ? 'reader-subsection' : '', clean(labelCopy.textContent));
+      link.href = `#${encodeURIComponent(heading.id)}`;
+      link.addEventListener('click', () => {
+        let parent = heading.parentElement;
+        while (parent && parent !== content) {
+          if (parent.tagName === 'DETAILS') parent.open = true;
+          parent = parent.parentElement;
+        }
+      });
+      links.push(link);
+      navigation.append(link);
+    });
+    layout.prepend(navigation);
+    let pending = false;
+    const markSection = () => {
+      pending = false;
+      const threshold = header.getBoundingClientRect().bottom + 48;
+      let selected = 0;
+      headings.forEach((heading, index) => {
+        if (heading.getClientRects().length && heading.getBoundingClientRect().top <= threshold) selected = index;
+      });
+      links.forEach((link, index) => {
+        if (index === selected) link.setAttribute('aria-current', 'location');
+        else link.removeAttribute('aria-current');
+      });
+    };
+    window.addEventListener('scroll', () => {
+      if (!pending) { pending = true; requestAnimationFrame(markSection); }
+    }, { passive: true });
+    markSection();
+  } else layout.classList.add('reader-without-contents');
+
+  const measureHeader = () => document.body.style.setProperty('--reader-header-height', `${header.getBoundingClientRect().height}px`);
+  measureHeader();
+  new ResizeObserver(measureHeader).observe(header);
+})();
+
+
+})();
+</script>
+</body>
+</html>
