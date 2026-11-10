@@ -1,0 +1,1022 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>The AI Winners Nobody Is Talking About | Mason Morfit</title>
+  <style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background: #ffffff;
+  color: #222222;
+  line-height: 1.7;
+  padding: 0 1rem 2rem;
+}
+header {
+  position: sticky;
+  top: 0;
+  background: #ffffff;
+  z-index: 100;
+  border-bottom: 2px solid #aaaaaa;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  padding: 0.6rem 1rem;
+}
+.header-inner {
+  max-width: 78ch;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header-title { font-size: 1rem; color: #222222; }
+.header-title strong { font-size: 1.1rem; }
+.header-link {
+  font-size: 0.85rem;
+  color: #666666;
+  text-decoration: none;
+  border: 1px solid #aaaaaa;
+  padding: 0.2rem 0.7rem;
+  border-radius: 4px;
+}
+.header-link:hover { background: #f5f5f5; }
+main {
+  max-width: 78ch;
+  margin: 0 auto;
+  padding-top: 0.5rem;
+}
+h2 {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #222222;
+  margin-top: 2rem;
+  margin-bottom: 0.5rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 2px solid #aaaaaa;
+}
+h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #333333;
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+section { margin-bottom: 1.5rem; }
+ul { margin: 0.5rem 0 0.5rem 1.5rem; }
+li { margin-bottom: 0.4rem; }
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0.75rem 0;
+  font-size: 0.92rem;
+}
+thead th {
+  background: #333333;
+  color: #ffffff;
+  text-transform: uppercase;
+  font-size: 0.78rem;
+  letter-spacing: 0.05em;
+  padding: 0.5rem 0.75rem;
+  text-align: left;
+  font-weight: 600;
+}
+tbody td {
+  padding: 0.45rem 0.75rem;
+  border-bottom: 1px solid #e2e2e2;
+}
+tbody tr:nth-child(even) { background: #f5f5f5; }
+tbody tr:nth-child(odd) { background: #ffffff; }
+.key-insight {
+  border-left: 4px solid #aaaaaa;
+  background: #f5f5f5;
+  padding: 0.75rem 1rem;
+  margin: 0.75rem 0;
+  font-size: 0.93rem;
+  border-radius: 0 6px 6px 0;
+}
+.qa-pair { margin-bottom: 1.25rem; }
+.question-box {
+  background: #f5f5f5;
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+  margin-bottom: 0.5rem;
+}
+.analyst-label {
+  display: block;
+  font-size: 0.8rem;
+  color: #666666;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  margin-bottom: 0.25rem;
+}
+.answer { padding-left: 0.25rem; }
+.loading-section { opacity: 0.5; }
+.loading-indicator {
+  font-size: 1.2rem;
+  padding: 2rem;
+  text-align: center;
+  color: #666666;
+}
+
+/* YouTube transcript reader */
+
+/* Legacy .yt-meta-card -- kept so old output files still render cleanly.
+   New output uses .header-title.yt below instead. */
+.yt-meta-card {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  margin-bottom: 1.5rem;
+  background: #f5f5f5;
+  border-left: 4px solid #aaaaaa;
+  border-radius: 0 6px 6px 0;
+  padding: 0.9rem 1rem;
+}
+.yt-meta-card img {
+  flex: 0 0 180px;
+  height: 101px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+.yt-meta-body { flex: 1; font-size: 0.93rem; }
+.yt-meta-title { font-weight: 700; font-size: 1rem; margin-bottom: 0.25rem; }
+.yt-meta-sub { color: #666666; margin-bottom: 0.35rem; }
+.yt-meta-url { font-size: 0.85rem; color: #333333; }
+
+/* YouTube sticky header uses the default 78ch-capped centered
+   container so it aligns with the body text column below. The
+   buttons sit at the right edge of that centered container. */
+header:has(.header-inner.yt) { padding: 0.75rem 1rem; }
+.header-inner.yt { gap: 1rem; }
+.header-title.yt {
+  display: flex;
+  gap: 0.9rem;
+  align-items: center;
+  min-width: 0;
+  flex: 1;
+}
+.yt-header-thumb { flex: 0 0 88px; line-height: 0; }
+.yt-header-thumb img {
+  width: 88px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 3px;
+  display: block;
+}
+.yt-header-text { min-width: 0; flex: 1; }
+.yt-header-text strong {
+  display: block;
+  font-size: 1rem;
+  line-height: 1.3;
+  color: #222222;
+  /* Allow wrapping to 2 lines so long podcast titles show in full. */
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.yt-header-sub {
+  font-size: 0.8rem;
+  margin-top: 0.2rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.yt-header-sub .yt-channel { color: #666666; }
+.yt-header-sub .yt-date,
+.yt-header-sub .yt-dur { color: #333333; font-weight: 600; }
+.yt-header-sub .yt-sep { color: #aaaaaa; margin: 0 0.5rem; }
+
+.yt-header-actions {
+  display: flex;
+  gap: 0.4rem;
+  align-items: center;
+  flex: 0 0 auto;
+}
+/* Shared box shape for the star + share + YT buttons so they're
+   visually identical. Applies to both the <button>s and the <a> link. */
+.yt-header-actions .yt-bookmark-btn,
+.yt-header-actions .yt-share-btn,
+.yt-header-actions .header-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font: inherit;
+  font-size: 0.85rem;
+  line-height: 1;
+  color: #666666;
+  background: transparent;
+  border: 1px solid #aaaaaa;
+  border-radius: 4px;
+  padding: 0;
+  box-sizing: border-box;
+  width: 2.2rem;
+  height: 2.2rem;
+  white-space: nowrap;
+  text-decoration: none;
+  cursor: pointer;
+}
+.yt-header-actions .yt-bookmark-btn { font-size: 1rem; }
+.yt-header-actions .yt-share-btn { font-size: 1.05rem; }
+.yt-header-actions .yt-share-btn:disabled { opacity: 0.6; cursor: default; }
+.yt-header-actions .yt-bookmark-btn:hover,
+.yt-header-actions .yt-share-btn:hover,
+.yt-header-actions .header-link:hover {
+  background: #f5f5f5;
+  color: #333333;
+}
+.yt-header-actions .yt-bookmark-btn.is-bookmarked {
+  background: #aaaaaa;
+  color: #ffffff;
+  border-color: #888888;
+}
+.yt-header-actions .yt-bookmark-btn.is-bookmarked:hover {
+  background: #888888;
+  color: #ffffff;
+}
+
+h3.chapter {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #333333;
+  margin-top: 1.25rem;
+  margin-bottom: 0.4rem;
+}
+h3.chapter a {
+  font-size: 0.8rem;
+  color: #666666;
+  text-decoration: none;
+  font-weight: 400;
+}
+
+.yt-body {
+  line-height: 1.58;
+}
+.yt-body p {
+  margin-bottom: 0.9rem;
+}
+.yt-body p.q {
+  background: #f5f5f5;
+  border-left: 3px solid #aaaaaa;
+  border-radius: 0 6px 6px 0;
+  padding: 0.6rem 0.9rem;
+  margin-top: 1.25rem;
+  margin-bottom: 0.8rem;
+  color: #333333;
+  font-style: italic;
+  font-size: 0.96rem;
+}
+.yt-body p.q::before {
+  content: "Q";
+  display: inline-block;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 0.72rem;
+  color: #666666;
+  letter-spacing: 0.05em;
+  margin-right: 0.5rem;
+  padding: 0.05rem 0.4rem;
+  border: 1px solid #aaaaaa;
+  border-radius: 3px;
+  vertical-align: 0.1em;
+}
+.yt-body p.q a {
+  display: block;
+  text-align: right;
+  margin-top: 0.3rem;
+  font-style: normal;
+  font-size: 0.8rem;
+  color: #666666;
+  text-decoration: none;
+  white-space: nowrap;
+}
+.yt-body p.q a:hover {
+  text-decoration: underline;
+}
+
+</style>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style id="reader-presentation-style">
+/* Shared output presentation. Loaded last, including on archived templates. */
+body.reader-page {
+  --reader-paper: #ffffff; --reader-ink: #222222; --reader-muted: #737373;
+  --reader-line: #e2e2e2; --reader-accent: #444444; --reader-rail: #aaaaaa;
+  --reader-tint: #f5f5f5; --reader-header-height: 76px;
+  --reader-measure: 550px;
+  --reader-shell: 894px; --reader-sidebar: 150px; --reader-column-gap: 28px;
+  margin: 0; padding: 0; max-width: none;
+  background: var(--reader-paper); color: var(--reader-ink);
+  font: 13px/1.58 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color-scheme: light;
+}
+/* Shared neutral text and surfaces; source colors remain on the rails. */
+body.reader-page[data-reader-kind="expert"] { --reader-rail: #8aa6c0; --reader-tint: #f5f5f5; }
+body.reader-page[data-reader-kind="youtube"] { --reader-rail: #c5786d; --reader-tint: #f5f5f5; }
+.reader-page *, .reader-page *::before, .reader-page *::after { box-sizing: border-box; }
+.reader-page [hidden] { display: none !important; }
+.reader-page a { color: var(--reader-accent); text-underline-offset: 3px; }
+.reader-page a:focus-visible, .reader-page button:focus-visible, .reader-page [tabindex]:focus-visible, .reader-page summary:focus-visible { outline: 2px solid var(--reader-rail); outline-offset: 3px; }
+body.reader-page .reader-masthead {
+  position: sticky; inset: 0 0 auto; z-index: 100;
+  width: 100%; max-width: none; margin: 0; padding: 0;
+  background: var(--reader-paper); border: 0; border-bottom: 1px solid var(--reader-line);
+  box-shadow: none;
+}
+.reader-page .reader-masthead-inner {
+  display: grid;
+  grid-template-columns: var(--reader-sidebar) minmax(0, 1fr) max-content;
+  grid-template-areas: "marker heading tools" "brand facts pages";
+  gap: 4px var(--reader-column-gap); align-items: baseline;
+  /* Use the right margin for controls while keeping the title over the article. */
+  max-width: calc(var(--reader-shell) + 188px); padding: 9px 28px;
+  margin: 0 0 0 max(0px, calc((100% - var(--reader-shell)) / 2));
+}
+.reader-page .reader-brand { grid-area: brand; text-decoration: none; color: #444444; font-size: 10px; font-weight: 700; letter-spacing: .19em; text-transform: uppercase; white-space: nowrap; }
+.reader-page a.reader-brand:hover { color: var(--reader-accent); text-decoration: underline; }
+.reader-page .reader-tools { grid-area: tools; display: flex; flex-wrap: wrap; gap: 6px; justify-content: flex-end; align-items: center; }
+.reader-page .reader-tools .reader-tool {
+  display: inline-flex; align-items: center; justify-content: center; width: auto; height: 25px; min-width: 25px;
+  margin: 0; padding: 3px 8px; border: 1px solid #d4d4d4; border-radius: 4px;
+  background: transparent; color: var(--reader-accent);
+  font-family: inherit; font-size: 11px; line-height: 1.3; font-weight: 600;
+  text-decoration: none; cursor: pointer; box-shadow: none;
+}
+.reader-page .reader-tools .reader-tool:hover { background: var(--reader-tint); border-color: var(--reader-rail); }
+.reader-page .reader-tool:disabled { cursor: wait; opacity: .6; }
+.reader-page .reader-marker { grid-area: marker; border-left: 2px solid var(--reader-rail); padding-left: 8px; max-width: 120px; }
+.reader-page .reader-symbol { color: var(--reader-accent); font-size: 16px; line-height: 1.35; font-weight: 700; overflow-wrap: anywhere; }
+.reader-page .reader-source-badge { display: inline-flex; align-items: center; justify-content: center; border: 1px solid var(--reader-rail); border-radius: 3px; padding: 1px 3px; min-width: 25px; color: var(--reader-accent); background: transparent; font-size: 9px; font-weight: 650; line-height: 1.5; letter-spacing: .03em; }
+.reader-page .reader-heading { grid-area: heading; min-width: 0; line-height: 1.35; }
+.reader-page .reader-title { display: inline; color: var(--reader-ink); margin: 0; padding: 0; border: 0; font-size: 16px; font-weight: 650; letter-spacing: -.015em; line-height: 1.35; overflow-wrap: anywhere; }
+.reader-page .reader-facts { grid-area: facts; display: flex; flex-wrap: wrap; align-items: baseline; gap: 3px 14px; min-width: 0; }
+.reader-page .reader-facts:empty { display: none; }
+.reader-page .reader-metadata { display: inline; margin: 0; padding: 0; font-size: 13px; line-height: 1.4; color: var(--reader-muted); font-weight: 650; white-space: normal; overflow: visible; }
+.reader-page .reader-heading .reader-metadata { margin-left: 10px; }
+.reader-page .reader-metadata span { color: inherit; font-size: inherit; font-weight: inherit; }
+.reader-page .reader-metadata .yt-sep { margin: 0 4px; }
+.reader-page .reader-market { display: inline-flex; flex-wrap: wrap; justify-content: flex-start; justify-self: start; width: auto; gap: 5px; margin: 0; font-size: 11px; line-height: 1.4; color: var(--reader-muted); white-space: normal; font-variant-numeric: tabular-nums; }
+.reader-page .reader-market .market-sep { color: #b3b3b3; }
+.reader-page .reader-market .market-price, .reader-page .reader-market .market-cap { color: var(--reader-muted); }
+.reader-page .reader-market .market-up { color: #28734a; }
+.reader-page .reader-market .market-down { color: #a34d3d; }
+.reader-page .reader-market strong { color: inherit; font-weight: 650; }
+.reader-page .reader-page-navigation { grid-area: pages; display: flex; align-items: baseline; justify-content: flex-end; gap: 6px; white-space: nowrap; }
+.reader-page .reader-page-link { display: inline-flex; align-items: center; justify-content: center; border: 0; background: transparent; color: var(--reader-accent); border-radius: 3px; padding: 4px 6px; font: 600 11px/1.4 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; text-decoration: none; cursor: pointer; }
+.reader-page .reader-page-link:hover { background: var(--reader-tint); }
+.reader-page .reader-page-link:disabled { opacity: .35; cursor: default; background: transparent; }
+.reader-page .reader-page-position { color: var(--reader-muted); font-size: 10px; font-variant-numeric: tabular-nums; }
+.reader-page .reader-layout { display: grid; grid-template-columns: var(--reader-sidebar) minmax(0, var(--reader-measure)); gap: var(--reader-column-gap); max-width: var(--reader-shell); margin: auto; padding: 20px 28px 48px; align-items: start; }
+.reader-page .reader-layout.reader-without-contents > .reader-article { grid-column: 2; }
+.reader-page .reader-contents { position: sticky; top: calc(var(--reader-header-height) + 22px); min-width: 0; max-height: calc(100vh - var(--reader-header-height) - 44px); overflow: auto; padding: 1px 12px 12px 0; scrollbar-width: thin; }
+.reader-page .reader-contents-label { color: var(--reader-muted); font-size: 9px; font-weight: 700; letter-spacing: .13em; text-transform: uppercase; margin-bottom: 11px; }
+.reader-page .reader-contents a { display: block; padding: 6px 0 6px 11px; border-left: 1px solid var(--reader-line); color: var(--reader-muted); font-size: 11px; line-height: 1.4; text-decoration: none; }
+.reader-page .reader-contents a.reader-subsection { font-size: 10px; padding-left: 20px; }
+.reader-page .reader-contents a:hover { color: var(--reader-accent); background: var(--reader-tint); }
+.reader-page .reader-contents a[aria-current] { color: var(--reader-accent); border-left: 2px solid var(--reader-rail); padding-left: 10px; font-weight: 650; }
+.reader-page .reader-contents a.reader-subsection[aria-current] { padding-left: 19px; }
+body.reader-page .reader-article { width: 100%; min-width: 0; max-width: var(--reader-measure); margin: 0; padding: 0; font-size: 13px; line-height: 1.58; }
+.reader-page .reader-article .yt-body { line-height: inherit; }
+.reader-page .reader-article :is(h2, h3, [id]) { scroll-margin-top: calc(var(--reader-header-height) + 24px); }
+.reader-page .reader-article h2 { color: var(--reader-ink); font-size: 18px; line-height: 1.3; letter-spacing: -.02em; font-weight: 650; border: 0; border-bottom: 1px solid var(--reader-rail); padding: 0 0 8px; margin: 27px 0 15px; background: transparent; }
+.reader-page .reader-article > h2:first-child, .reader-page .reader-article > section:first-child > h2:first-child { margin-top: 0; }
+.reader-page .reader-article h3 { color: var(--reader-accent); font-size: 14px; font-weight: 650; line-height: 1.5; margin: 20px 0 8px; padding: 0; }
+.reader-page .reader-article h3.reader-section-heading { border-bottom: 1px solid var(--reader-rail); padding-bottom: 8px; }
+.reader-page .reader-article > h3.reader-section-heading:first-child, .reader-page .reader-article > section:first-child > h3.reader-section-heading:first-child { margin-top: 0; }
+.reader-page .reader-article h3 .role { font-size: 12px; font-weight: 400; color: var(--reader-muted); }
+.reader-page .reader-article h3.chapter { display: flex; justify-content: space-between; gap: 16px; border-bottom: 1px solid var(--reader-line); padding-bottom: 8px; }
+.reader-page .reader-article h3.chapter a { font-size: 11px; font-weight: 400; white-space: nowrap; }
+.reader-page .reader-article p { margin: 8px 0 11px; }
+.reader-page .reader-article ul, .reader-page .reader-article ol { margin: 8px 0 12px; padding-left: 20px; }
+.reader-page .reader-article li { margin: 0 0 5px; }
+.reader-page .reader-article strong { color: var(--reader-ink); font-weight: 650; }
+.reader-page .reader-article :is(.insight, .quote, blockquote) { color: var(--reader-ink); }
+.reader-page .reader-table-wrap { max-width: 100%; overflow-x: auto; margin: 10px 0 14px; border: 0; border-radius: 0; background: transparent; }
+.reader-page .reader-article table { width: 100%; border-collapse: collapse; border: 0; margin: 0; font-size: 12.5px; line-height: 1.5; }
+.reader-page .reader-article thead, .reader-page .reader-article th { background: transparent; color: var(--reader-accent); }
+.reader-page .reader-article th { border: 0; border-top: 1px solid var(--reader-line); border-bottom: 1px solid var(--reader-rail); padding: 8px 9px; text-align: left; text-transform: uppercase; letter-spacing: .06em; font-size: 10px; font-weight: 700; }
+.reader-page .reader-article td { border: 0; border-bottom: 1px solid var(--reader-line); padding: 6px 9px; vertical-align: top; }
+.reader-page .reader-article tbody tr:nth-child(odd) { background: transparent; }
+.reader-page .reader-article tbody tr:nth-child(even) { background: var(--reader-table-stripe, #f7f7f7); }
+.reader-page .reader-article tbody tr:hover { background: var(--reader-tint); }
+.reader-page .reader-article .key-insight { border: 0; border-left: 2px solid var(--reader-rail); border-radius: 0; background: var(--reader-tint); color: var(--reader-ink); padding: 9px 13px; margin: 14px 0 20px; font-size: 12.5px; line-height: 1.55; }
+.reader-page .reader-article .qa-block { margin: 0 0 22px; }
+.reader-page .reader-article .question, .reader-page .reader-article .yt-body p.q { border: 0; border-left: 2px solid var(--reader-rail); border-radius: 0; background: var(--reader-tint); color: var(--reader-ink); padding: 9px 13px; margin: 12px 0 9px; font-size: 13px; font-weight: 650; font-style: normal; line-height: 1.55; }
+.reader-page .reader-article .yt-body p.q { font-weight: 400; font-style: italic; }
+.reader-page .reader-article :is(.question, .yt-body p.q) :is(strong, b) { font-weight: inherit; }
+.reader-page .reader-article .question .analyst { display: block; color: var(--reader-accent); text-transform: none; letter-spacing: 0; font-size: 11px; font-weight: 650; font-style: normal; margin-bottom: 4px; }
+.reader-page .reader-article .question .analyst :is(strong, b) { font-weight: inherit; }
+.reader-page .reader-article .yt-body p.q::before { color: var(--reader-accent); border-color: var(--reader-rail); font-style: normal; }
+.reader-page .reader-article .yt-body p.q a { color: var(--reader-accent); font-style: normal; }
+.reader-page .reader-article .answer { padding: 0; }
+.reader-page .reader-article details { border: 0; border-top: 1px solid var(--reader-line); border-radius: 0; background: transparent; padding: 12px 0; margin-top: 24px; }
+.reader-page .reader-article summary { cursor: pointer; color: var(--reader-accent); }
+.reader-page .reader-article summary h2 { display: inline; border: 0; margin: 0; font-size: 15px; }
+.reader-page .reader-article hr { border: 0; border-top: 1px solid var(--reader-line); margin: 22px 0; }
+.reader-highlight { background: #f8df82; color: inherit; font: inherit; padding: 0; border-radius: 1px; cursor: pointer; box-decoration-break: clone; -webkit-box-decoration-break: clone; }
+.reader-highlight:focus-visible { outline: 2px solid #444444; outline-offset: 2px; }
+.reader-highlight-toolbar { position: fixed; z-index: 1100; display: flex; border: 1px solid #cccccc; border-radius: 5px; background: #ffffff; box-shadow: 0 3px 14px #22222226; padding: 3px; }
+.reader-highlight-toolbar[hidden] { display: none; }
+.reader-highlight-toolbar button { border: 0; border-radius: 3px; padding: 6px 10px; font: 600 12px/1.4 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; color: #444444; background: transparent; cursor: pointer; white-space: nowrap; }
+.reader-highlight-toolbar button:hover, .reader-highlight-toolbar button:focus-visible { background: #f0f0f0; }
+.reader-highlight-toolbar button:disabled { opacity: .6; cursor: wait; }
+.reader-highlight-notice { position: fixed; z-index: 1101; bottom: 18px; left: 50%; transform: translateX(-50%); max-width: calc(100vw - 32px); padding: 7px 12px; border: 1px solid #d4d4d4; border-radius: 4px; background: #ffffff; color: #444444; font: 12px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; box-shadow: 0 3px 14px #22222214; }
+.reader-highlight-notice:empty { display: none; }
+.reader-highlight-notice.is-error { color: #98453d; }
+.reader-share-notice { position: fixed; z-index: 1101; bottom: 18px; left: 50%; transform: translateX(-50%); max-width: calc(100vw - 32px); padding: 9px 14px; border: 1px solid #d4d4d4; border-radius: 4px; background: #ffffff; color: #444444; font: 12px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; box-shadow: 0 3px 14px #22222214; }
+.reader-share-notice a { white-space: nowrap; }
+@media print { .reader-share-notice { display: none !important; } }
+@media print { .reader-highlight-toolbar, .reader-highlight-notice { display: none !important; } .reader-highlight { print-color-adjust: exact; -webkit-print-color-adjust: exact; } }
+@media (max-width: 840px) {
+  .reader-page .reader-masthead-inner { grid-template-columns: 82px minmax(0, 1fr) max-content; column-gap: 12px; max-width: 700px; margin: auto; padding: 8px 20px; }
+  .reader-page .reader-layout { display: block; max-width: 700px; padding: 18px 20px 40px; }
+  .reader-page .reader-contents { position: static; max-height: none; display: flex; gap: 6px; overflow-x: auto; padding: 0 0 13px; margin-bottom: 18px; border-bottom: 1px solid var(--reader-line); }
+  .reader-page .reader-contents-label { display: none; }
+  .reader-page .reader-contents a, .reader-page .reader-contents a.reader-subsection { flex: none; max-width: 230px; padding: 4px 8px; border: 0; border-radius: 3px; }
+  .reader-page .reader-contents a[aria-current], .reader-page .reader-contents a.reader-subsection[aria-current] { padding: 4px 8px; background: var(--reader-tint); border: 0; }
+}
+@media (max-width: 720px) {
+  .reader-page .reader-brand { font-size: 9px; }
+}
+@media (max-width: 560px) {
+  body.reader-page .reader-masthead { position: relative; }
+  .reader-page .reader-masthead-inner {
+    grid-template-columns: minmax(48px, max-content) minmax(0, 1fr);
+    grid-template-areas: "marker heading" "facts facts" ". tools" "brand pages";
+    gap: 4px 10px; padding: 8px 16px 10px;
+  }
+  .reader-page .reader-symbol, .reader-page .reader-title { font-size: 15px; }
+  .reader-page .reader-layout { padding: 16px 16px 32px; }
+  .reader-page .reader-article :is(h2, h3, [id]) { scroll-margin-top: 16px; }
+  .reader-page .reader-article table { min-width: 480px; }
+}
+@media print {
+  body.reader-page .reader-masthead { position: static; }
+  .reader-page .reader-tools, .reader-page .reader-contents, .reader-page .reader-page-navigation { display: none; }
+  .reader-page .reader-layout { display: block; padding: 20px 0; }
+  .reader-page .reader-masthead-inner { max-width: var(--reader-shell); margin: auto; padding: 0 0 18px; }
+  .reader-page .reader-table-wrap { overflow: visible; }
+  .reader-page .reader-article table { min-width: 0; }
+  .reader-page .reader-article tr, .reader-page .reader-article .key-insight { break-inside: avoid; }
+}
+
+</style>
+</head>
+<body>
+  <header>
+    <div class="header-inner yt">
+      <div class="header-title yt">
+        <a class="yt-header-thumb" href="https://www.youtube.com/watch?v=RabopcVSg-E" target="_blank"><img src="https://i.ytimg.com/vi/RabopcVSg-E/maxresdefault.jpg" alt=""></a>
+        <div class="yt-header-text">
+          <strong>The AI Winners Nobody Is Talking About | Mason Morfit</strong>
+          <div class="yt-header-sub">
+            <span class="yt-channel">The Master Investor Podcast with Wilfred Frost</span>
+            <span class="yt-sep">&middot;</span>
+            <span class="yt-date">Feb 17, 2026</span>
+            <span class="yt-sep">&middot;</span>
+            <span class="yt-dur">58m</span>
+          </div>
+        </div>
+      </div>
+      <div class="yt-header-actions">
+        <button id="yt-bookmark-btn"
+                class="yt-bookmark-btn"
+                title="Bookmark"
+                aria-label="Bookmark"
+                data-filename="yt-2026-11-10-the-ai-winners-nobody-is-talking-about-mason-morfit.html"
+                data-title="The AI Winners Nobody Is Talking About | Mason Morfit"
+                data-url="https://www.youtube.com/watch?v=RabopcVSg-E"
+                data-date="2026-02-16T16:01:09-08:00"
+                data-channel="The Master Investor Podcast with Wilfred Frost"
+                onclick="toggleYtBookmark(this)">&#9734;</button>
+        <button id="yt-share-btn"
+                class="yt-share-btn"
+                title="Share"
+                aria-label="Share"
+                data-filename="yt-2026-11-10-the-ai-winners-nobody-is-talking-about-mason-morfit.html"
+                onclick="shareYtPage(this)">&#8599;</button>
+        <a class="header-link" href="https://www.youtube.com/watch?v=RabopcVSg-E" target="_blank" title="Watch on YouTube" aria-label="Watch on YouTube">YT</a>
+      </div>
+    </div>
+  </header>
+  <main>
+    <div class="yt-body">
+    <p data-t="0">If you can author software at the drop of a hat by sort of speaking it in plain English, great. You may be able to design really good functionality. But do you have the data provisioning, and are you plugged into the nervous system of the organization, as managed by the chief risk officer, the chief information officer, etc., so that business processes can be executed compliantly, repeatedly, and auditably?</p>
+<p data-t="25">I just don't think you can. And so the incumbents are hugely benefited in this. So it is always terrifying when new technology paradigms happen, but it doesn't mean that all the dinosaurs die.</p>
+<p data-t="39">We realized a long time ago, particularly waking up in San Francisco three hours behind New York, we were never going to beat people playing an information game. We just weren't going to be able to outrun them, right? And the only way that we could win was playing the understanding game, which is understanding how longer-term tectonic forces work, and then the influence game of having a voice in the system. And understanding and influence take time.</p>
+<p data-t="68">Welcome to the Master Investor podcast with me, Wilfred Frost, where we celebrate and learn from the success of the greatest investors, business leaders, and politicians in the world, giving you, our listeners, the edge. The Master Investor podcast is sponsored by BMY Investments, LSEG, and Interactive Brokers.</p>
+<p data-t="87">Please do remember the views expressed in this podcast are for general information purposes only. Nothing in the podcast constitutes a financial promotion, investment advice, or a personal recommendation. More on that in the show notes.</p>
+<p data-t="101">My guest today, Mason Morfit, is the co-CEO and CIO of ValueAct Capital, which is one of the best-known active investment funds. They have some $10 billion in assets under management. But that understates the impact that Mason and his predecessor as CEO, Jeff Ubben, have had in shaping the evolution of some of the most transformational companies of this century, from Microsoft to Disney to Morgan Stanley.</p>
+<p data-t="135">I say shaping because they take an active but not aggressive approach to investing and look to work with company management, not against them. And it is very, very rare that they do significant interviews, which is why it is a particular treat to welcome Mason Morfit to the Master Investor podcast. Mason, thanks so much for joining me.</p>
+<p data-t="157">It's great to be here. Thank you for including me in this.</p>
+<p class="q" data-t="157">I want to get into the investment approach. I want to get on to ValueAct specifically very quickly, but I want to dwell on one part of your upbringing which leaped out to me. You grew up, or spent a lot of your childhood, in Asia and went to a lot of British schools.<a href="https://www.youtube.com/watch?v=RabopcVSg-E&t=157s">&#x21AA; 02:37</a></p>
+<p data-t="174">Yes. So my mother is from Yorkshire, and I was born in Newcastle, actually. My father's American, and they're of the Quaker faith. They got married in a Quaker meeting house in Newcastle and then went to do community service work in New Delhi. And then my mother worked for the British Council, and we eventually ended up in Jakarta, Indonesia.</p>
+<p data-t="200">I went to the British International School there and spoke with a British accent until about 12 years old, when we moved back to the United States. And at that vulnerable psychological age, I assimilated very quickly to American life. But I can't tell you how impressed my mother was yesterday when I told her I was coming on this podcast.</p>
+<p data-t="224">Because I grew up in a house where we watched nothing but the BBC, as it was carried on PBS, and she couldn't be more happy about this.</p>
+<p data-t="231">Well, that is a real touching addition for you to make, but I'm delighted of that transatlantic special relationship birth aspect, which is central to this podcast so often. And that upbringing as a child of a diplomatic household maybe we'll come back to, because it might have influenced the way you approach things so constructively with your target companies.</p>
+<p class="q" data-t="255">As we work out and learn a bit more about ValueAct itself, for those that don't know, tell me about the first meeting you went to with the ValueAct founder, the former CEO who you succeeded, Jeff Ubben, because I think it's really illustrative of the approach of the company as a whole.<a href="https://www.youtube.com/watch?v=RabopcVSg-E&t=255s">&#x21AA; 04:15</a></p>
+<p data-t="277">Yeah. And just to place this in context, we're talking about the year 2000, which was the peaking moments of the dot-com bubble. I'd been working inside a big investment bank, Credit Suisse First Boston, which was a dominant tech IPO powerhouse. But what I found was that all the interactions with companies were transactional in the sense of either trying to get a banking deal or extracting some information for the purposes of trading.</p>
+<p data-t="301">Short-term product launch focus, financial focus, and also had a strange relationship sometimes where the CEOs were put up on this heroic pedestal. This was the era of Sandy Weill, Bill Gates, Jack Welch, etc. So short-term, transactional, asymmetric.</p>
+<p data-t="315">And Jeff, whose background had been at Fidelity running a fund, and it was very successful, and then they experimented with the investment strategy that became ValueAct, was hanging a shingle. And a friend of mine from school worked with them, and he sent me on a little meeting which begat some free labor for Jeff, where he dragged me along to some company meetings.</p>
+<p data-t="337">And the first ones that we went to were so different than anything I'd ever seen before in the following respect. I'll just sort of illustrate one of them. Gartner, who you guys probably know is a technology research firm, at that time had done a disastrous acquisition of something called TechRepublic, which was a website that was sort of like CNET or ZDNet.</p>
+<p data-t="366">And this you may remember from—these were the hot sort of tech media properties of that era. And it had completely sunk the stock. And rather than focus on the next quarter, Jeff really explored with the CEO, Michael, the psychological conditions under which you'd made that decision, right?</p>
+<p data-t="385">Your P/E was too high. You didn't think you could compete on the growth rate. You were envious of what was happening with CNET. Your board was putting pressure on you to grow faster. And so you made this deal that now, in hindsight, doesn't look like it's panning out.</p>
+<p data-t="396">And the unmasking of that CEO in that moment, where he was sort of confronted with—he could no longer stay in role, right, selling a story. It sort of became this authentic engagement about what are we going to do differently. And we bought a bunch of stock in that company and ended up being part of, I think, the journey towards acceptance.</p>
+<p data-t="421">Which was that this was a terrible idea and that we should get back to the focus on the core and moving forward and internalizing that. But the focus of the conversation being on the humanity of what happened, being on the long-term consequences of what happened and the long-term planning of what could go differently, and acting as a counselor and a peer, not a sycophant, was a complete shock to me.</p>
+<p data-t="447">And so I dropped what I was doing and moved over. At the time there were no assets under management, and I wasn't getting paid anything at that point. And then I got paid very little and was the backup receptionist and what have you. But it just was a thunderclap moment in my career.</p>
+<p data-t="464">And then I learned a tremendous amount basically apprenticing at Jeff's side. He used to say he duct-taped me to his leg. I prefer a more dignified articulation of it. And sort of the rest is history, which I think we'll unpack here.</p>
+<p class="q" data-t="478">Well, absolutely. And articulate how that has shaped the investment process for you today as CEO. You said there it's a full engagement with the management, but not sycophantic. I guess the other point that a lot of people would make is it's also not aggressive and necessarily critical of the management.<a href="https://www.youtube.com/watch?v=RabopcVSg-E&t=478s">&#x21AA; 07:58</a></p>
+<p data-t="504">Well, I think we approach our engagements with all these companies with sort of a generous spirit, which is we're all human beings trying the best we can in the context in which we operate. And I think we have seen, without being too pedantic, several chapters of both economic history over the last 25 years and capital markets history and management theory. And very often people get out of step or led astray.</p>
+<p data-t="528">And in some, like I articulated with this Gartner thing, the context is actually explanatory very often, rather than they're so stupid and we're so smart. And so helping understand how we got to where we got to and presenting alternative perspectives, information, and sort of a safe space to pivot is, I think, a lot more effective in getting to truth and then the right answers.</p>
+<p data-t="549">Because there's another path, which is to come in, berate, litigate, humiliate, intimidate. And my experience as a human being is that's not the best way to get people to do what you want. In fact, that's a good way to get them to circle their wagons and fight and resist and undercut and object.</p>
+<p data-t="567">And so it's all about a pathway to the best answer. And we've just chosen to take what I think is a shorter and more expeditious way to get to the right answer.</p>
+<p class="q" data-t="580">And is that influence a deal breaker for you? Obviously, you invest in public markets. If you were really into an investment story, but you weren't going to be taking a big enough position to get a place on the board or to get that deep engagement, uniquely deep engagement you get with the CEO, would you not then invest in that company?<a href="https://www.youtube.com/watch?v=RabopcVSg-E&t=580s">&#x21AA; 09:40</a></p>
+<p data-t="606">No, not at all. And I think this is a really important distinction to make because we lead with the merits of the investment first and then the engagement as an outflow. We often talk about it: we're going to invest in something where we think we have a unique insight into it, and that unique insight will birth the engagement.</p>
+<p data-t="624">Rather than working backwards from sort of an ambulance-chasing mentality of, hey, this company's had a scandal, or it's screwed up and in a moment of weakness. Can we attack them? I've seen many other firms, and we can go into the cycles of investor activism over the last 25 years. There was a bolus of firms that exploded in the first decade of the millennium that really focused on an ambulance-chasing model.</p>
+<p data-t="650">And the problem with that is you end up with a lot of very sick patients if you get there, right? So you're much better off inverting it, starting with a good investment idea and then allowing the engagement to present itself. And it will present on a spectrum from absolutely nothing to being chairman of the board and the most hands-on. But that cannot be the driver. It has to be the complement to what you're doing.</p>
+<p class="q" data-t="669">And in terms of what you look for, is the big picture, the strategic long-term vision, the key thing for a company, as opposed to, obviously, short-term earnings predictions?<a href="https://www.youtube.com/watch?v=RabopcVSg-E&t=669s">&#x21AA; 11:09</a></p>
+<p data-t="681">The number one criteria is high-quality business that's aligned to megatrends, meaning the way that the economy is reorganizing, which we can unpack in a moment here. What I think we are particularly adept at spotting is something we call the diseases of abundance, which is a fantastic business that's generated such high returns on capital and has such a halo in the capital markets very often goes astray.</p>
+<p data-t="706">The temptation to diversify into things that don't make any sense. The temptation to be lax with your performance management and your expectations of your employees. The temptation to not run your balance sheet efficiently, etc., etc., all manifest in these very, very great businesses. And then they get decadent, not in a moral sense, but in sort of a Roman Empire kind of sense, where they've overextended and lost their core identity, culture, and focus.</p>
+<p data-t="740">And so that phenomenon repeats and repeats and repeats in the economy, and we see it happening over and over again. And then there's usually a moment of shock, and that could be a capital markets collapse. It could be a regulatory shift. It could be a federal budget change, right? Something exogenous generally happens, and all of a sudden it becomes clear that the company's a little bit lost and it needs a little help sorting through where it's going to go.</p>
+<p data-t="770">And so these sound like vague conceptual ideas, but imagine after the tech bubble collapse of 2000, we did a lot of tech. When the Obama administration sequestration cut aerospace and defense budgets, we did a bunch of that stuff. When pharmaceutical stocks collapsed, we did a bunch of those things. And so there tends to be sort of a sectoral element to where we spend our time.</p>
+<p data-t="789">But the interesting thing about this job is that those sort of long arcs of history kind of keep repeating in patterned ways over and over again.</p>
+<p data-t="809">This episode of the Master Investor podcast is sponsored by BMY Investments. BMY Investments is part of BMY, a global financial services company supporting investors and institutions around the world. This sponsorship does not constitute investment advice.</p>
+<p class="q" data-t="832">Let's talk about an example where all of this came together beautifully for ValueAct and for you specifically. You weren't the CEO yet, but you played an absolutely central role in ValueAct taking a position in this company and helping it evolve to an extraordinary position that it's in today. And I'm talking about Microsoft.<a href="https://www.youtube.com/watch?v=RabopcVSg-E&t=832s">&#x21AA; 13:52</a></p>
+<p class="q" data-t="854">So you guys started to invest, started to take your position—when exactly? 2011, 2012? Talk us through what you saw and why it was struggling in your eyes at that moment in time.<a href="https://www.youtube.com/watch?v=RabopcVSg-E&t=854s">&#x21AA; 14:14</a></p>
+<p data-t="870">Yeah, it was 2013. It's hard to even imagine today, but the company was unbelievably unloved in the capital markets. Its P/E was about eight times, which is quite low. The joke at the time was that this ticker, MSFT, should have stood for “missed search, phone, and tablet” because they'd missed the three big tech trends.</p>
+<p data-t="895">They had been flailing around really since the antitrust investigations of around the year 2000 to find their footing, and had spent a lot of money acquiring things that didn't pan out or make really strategic sense. And the company was viewed to be a PC-only company that was roadkill in the mobile and cloud technical revolution.</p>
+<p data-t="914">And it almost perfectly exemplifies this phenomenon of diseases of abundance, because remember how incredibly powerful Microsoft was in the '90s. So much so that the government antitrust regulators came at it. But it had generated so much cash flow that it had diversified into tons of things. They were in your business, if you remember. They had television networks and web properties.</p>
+<p data-t="943">They had gone into video games, search engines, as we articulated. They were making PC mice and keyboards. It was an empire that was stretched in far too many different directions and had lost its soul in many respects, and the investor base was very unhappy. The company had actually sort of cloistered itself and wasn't really talking to investors very much, which is interesting to reflect upon.</p>
+<p data-t="971">But it was just sitting there, and we had this moment of insight. I went to a meeting where I saw a demo of Office 365, which was taking PC Office and moving it to the cloud. And everybody presumed that everything about Microsoft's fate was tied to the PC cycle, and that Office was only sold when a PC was sold. And PCs had just gone negative for the first time.</p>
+<p data-t="998">And there was a big meme, again, not to throw aspersions on the business media, but the meme of the day was sort of the end of the PC era, right? It was the birth of the iPad and the phone. And for the first time ever, PCs were going negative, which cast even more negativity on the company.</p>
+<p data-t="1010">But we could pick up in our data that Office sales were starting to decouple from Windows for the first time because it was becoming a cloud subscription, not adjunct to your PC purchase. So we had an insight that if they kept leaning in that direction—in other words, taking the company and decoupling it from Windows—there might be a germ of something quite interesting and an opportunity to rebirth in the cloud and mobile.</p>
+<p data-t="1033">Now, shortly after we started buying, the company bought Nokia. Now, Nokia turned out to be a terrible idea. The gist of why they did that was that they were still living in a world where Windows was the preeminent religion of the company. And I think a lot of these companies get stuck in these paradigms that become unhelpful to them.</p>
+<p data-t="1053">And if you believe that you must control the operating system, which was a 1990s mantra, then of course you can't lose to the iPhone. You have to come out with a Windows phone. And so they bought Nokia to try to drive the Windows phone.</p>
+<p data-t="1070">And the transition they had to get to was to shatter this paradigm of Windows over all and shift to Office and Azure over all, and to be willing to put Office on iOS devices, into the Chrome browser, and to embrace other operating systems like Linux, like iOS, etc. And that was a major, major, major psychological hurdle for them to get over. It violated everything they believed.</p>
+<p class="q" data-t="1098">How open were they when you pushed this idea to them? And how much rested on also getting the right leader in charge, Satya Nadella, for the decade to follow?<a href="https://www.youtube.com/watch?v=RabopcVSg-E&t=1098s">&#x21AA; 18:18</a></p>
+<p data-t="1112">At the time that we engaged, a little bit unbeknownst to us, the Steve Ballmer era was about to end. And I was allowed to participate in the CEO selection process and interviews, and then I joined the board shortly after Satya was chosen. And I think the lion's share of credit has to go to Satya. He's just been an incredible, to state the obvious, CEO.</p>
+<p data-t="1130">The journey, again, like I talked about, to release this paradigm and this sort of binding constraint that Windows had to be the center of everything took a new leader. But I also think it took a little bit of help on shining the light on what was actually happening at the company. And bear with me on this because, as I said, we don't interact by trying to attack, humiliate, litigate, etc., but rather to solve problems collaboratively.</p>
+<p data-t="1162">One of the things that had become apparent to me hanging out in Redmond and attending some of these board meetings and then following up with some of the executives was there wasn't a lot of direct transparency to where resources were going. And there were tremendous amounts of spend going into evangelizing the Windows phone, both through advertisement, through an army of people that would go out in the world and try to convince people like Uber and Spotify to build their apps on the Windows phone.</p>
+<p data-t="1188">And not to mention the losses that were happening in the hardware business. The company's financial bureaucracy was not organized to track the businesses in this way where you could see the money going into these Windows phone-related and Windows-related investments. So we created something we call the shadow P&amp;L, and this is a very important tool that we use.</p>
+<p data-t="1212">Which is, we don't have perfect information, and we don't see the ERP system, but through detective work and interviewing people, it's a little bit, without being presumptuous, kind of like what you did. But talking to the developer evangelist team and the advertising team and the R&amp;D team and the marketing team, we could sort of guesstimate how many heads were doing each function, how much media spend was going to each function, etc.</p>
+<p data-t="1236">And we created what was a matrix of P&amp;Ls for Microsoft that could show Bing's profitability, Xbox's profitability, Windows' profitability, Office, etc., etc. And in one of my first board meetings, we showed this to Satya, who was just blown away because the number that was on the screen was that the company was losing about $5 billion a year on this ill-fated devices venture.</p>
+<p data-t="1262">And imagine, $5 billion is a lot of money to spend in a year, right? And what if you could put that into Office or Azure? Oh my goodness, what could you unlock? And so he very quickly pivoted the company.</p>
+<p data-t="1274">And again, I'm not taking any credit for this other than being a thought partner and an analytical partner and a detective and a supportive shareholder and a supportive board member along for the ride that helped get to clarity on this. But I think this is a key part of what ValueAct does well, which is we enter this arena, the corporate boardroom, which is populated by very, very good people that are very, very experienced and credentialed.</p>
+<p data-t="1303">But they generally are taken from outside the industry. Unlike us, they didn't have $2 billion at stake, and they're not financial analysts, and they're not going to spend all this time doing this detective work. In addition to all the inside detective work, we were going to customer conferences and running surveys, and we were putting together a mosaic of what was actually happening at the company.</p>
+<p data-t="1320">And the power that is unlocked when you bring that analytical rigor and that intensity into a boardroom of good, well-meaning people to solve a problem collaboratively is enormous, right? And I do think that's a vacuum in the public markets. Most boards do not have an actively engaged shareholder that is relentlessly interrogating all of the facts on the ground and trying to, in a healthy and discreet and collaborative manner, solve problems.</p>
+<p data-t="1346">And that's the kinetic energy that gets released when we—</p>
+<p data-t="1352">For sure. Particularly in the US, so many chairman CEOs kind of essentially control their boards over time. I think that's really, really, really interesting. I should also mention as well, you said a $2 billion position, you've got $20 billion AUM. You often just have a focus of about 10 positions, which highlights the importance of them.</p>
+<p data-t="1378">This episode is sponsored by Interactive Brokers. Building wealth starts with the right broker, and Interactive Brokers helps you reach your goals with powerful tools, global market access, low costs, and unmatched financial strength. That's why the best-informed investors choose IBKR. Learn more at ibkr.com/masterinvestor.</p>
+<p data-t="1407">Hi guys, it's Wilf. I hope you're enjoying this episode. Just a quick reminder to please hit follow or subscribe on your podcast or video app so that you never miss an episode. And if you've got time, please do give us a five-star rating and leave us a comment. It really helps other people find the podcast too. Now back to the episode.</p>
+<p class="q" data-t="1428">I want to now get on to Salesforce, a position now which is very relevant, similar-ish in terms to Microsoft, but in a different moment in time as software is being punished at the moment. But before we get to that, you said the importance of the big themes, and these companies need to be exposed to the big themes of the next decade.<a href="https://www.youtube.com/watch?v=RabopcVSg-E&t=1428s">&#x21AA; 23:48</a></p>
+<p class="q" data-t="1448">And your current, I think I'm right in saying, big investment theme is everything digitizes, everything organizes, everything automates. Just explain that for us a little bit.<a href="https://www.youtube.com/watch?v=RabopcVSg-E&t=1448s">&#x21AA; 24:08</a></p>
+<p data-t="1459">I think every industry is moving in this direction inexorably at different rates of change. Digitizing is an obvious concept. We stream music digitally, we process work digitally, we sign documents digitally, etc. And then automation is an intuitively obvious concept, whether it's robotic or software automation, just getting things done without human intervention.</p>
+<p data-t="1486">And what we see time and again across the economy is people trying to move towards the automation, and where they get stuck is this thing we've labeled organization. And what does that mean? Well, let's think about how Spotify was born. And this is relevant because this was a big position of ours in 2022 and 2023.</p>
+<p data-t="1505">You could digitize music. Napster did it, obviously. But to organize the digital rights infrastructure with contracts with all of the record labels, and then auditable data where they could track every single stream so that Taylor Swift was paid appropriately for the number of streams that they had, all the way down to the indie artists, was an enormous task of organization.</p>
+<p data-t="1528">The entire industry had to set standards, define terms, define who was going to audit these things and make sure that nobody was monkeying around with the results before you could get to the sort of production of the streaming services, which then had automated playlists and recommendations and all kinds of interesting machine learning algorithms.</p>
+<p data-t="1555">So the bottleneck in all these things is the organizational step, and there are very often legal barriers that make that organization very complicated. And so it's my hypothesis that as we all stare into the future with our crystal balls about what the AI world will look like, not many people are digging deep into this issue.</p>
+<p data-t="1580">Because privacy regulations across the world are very different country by country. Where data can be held, in what kind of data centers geographically, is very different. How they must be cybersecured, whether I can share your credit card number or your date of birth or your medical history is wildly different. What about your payment information?</p>
+<p data-t="1598">And while LLMs are wonderful technologies, they are statistical guessers rather than absolute sources of truth. And so to get from an old world to the new world, you have to go through this digitize, organize before you can automate. And that piece of the puzzle in the middle is where we're spending a lot of time deeply understanding how it manifests in different industries, which we can talk about across the portfolio.</p>
+<p class="q" data-t="1627">That's really, really so interesting. Digitize, organize, automate, and the opportunity particularly in organize. So let's move on and talk about Salesforce then, and why you think it's super attractive. And I think we spoke about this beforehand, planning for this, that you're kind of taking some of the learnings from the Microsoft journey into Salesforce.<a href="https://www.youtube.com/watch?v=RabopcVSg-E&t=1627s">&#x21AA; 27:07</a></p>
+<p class="q" data-t="1652">But I guess at the same time, particularly at the start of this year, including today, people might question whether the Microsoft journey you went on, is this applicable today to a software-based name?<a href="https://www.youtube.com/watch?v=RabopcVSg-E&t=1652s">&#x21AA; 27:32</a></p>
+<p data-t="1667">Yeah. And if you don't mind just contextualizing for people—</p>
+<p data-t="1674">Yeah.</p>
+<p data-t="1674">It's interesting trivia. In 2016, it leaked out that Microsoft was looking at buying Salesforce. So this was when I was on the board of Microsoft, so there's some sort of long, convoluted history here. But Salesforce was founded in 1998, pioneered the SaaS business model, but also had a very unique culture.</p>
+<p data-t="1690">If you go visit one of the Salesforce towers, it looks a little bit like Disney World. There are animal characters, and it's very Hawaiian-themed. The culture has been—the word they use is “ohana,” which is the Hawaiian word for family. And it has some very interesting cultural dynamics to it that I think have served it fantastically well, but had to evolve a little bit.</p>
+<p data-t="1721">In 2022, remember that tech collapsed, stocks collapsed after a huge run-up from 2016 to 2021. And Salesforce at that time's margins were not where they ought to be. Salesforce was swarmed by a number of activist investors. We did a bunch of analysis and presented it behind the scenes to Marc, the CEO, of lessons learned from Microsoft.</p>
+<p data-t="1750">And I will put them into two simple buckets. One was this matrix of where are you making money, where are you losing money idea. And the second was the pricing and packaging advantages of bundling things into very nice packages that customers really value. The Office bundle is the most paradigmatic example of it, but it also manifests in Azure credits.</p>
+<p data-t="1774">And the idea being the more that you can kind of package together in a synergistic way, the happier the customer is, the longer you retain them, etc. Salesforce had acquired a lot of businesses, hadn't rationalized them in terms of product bundles nor cost structure, and we went to work on that issue. And to this company's credit, the results were unbelievable.</p>
+<p data-t="1792">And if you look at the stock chart, we came in in the low to mid-100s, and for the next two years it went up into the mid-300s. So it was a great run, just in time for AI to show up and hit the entire software industry on the side of the head with a two-by-four.</p>
+<p data-t="1811">In some ways, this feels exactly like the Microsoft platform shift from PC to cloud. And this is a platform shift from SaaS to AI work, and it is complicated on a number of different dimensions. But I do think that this organizing step that I talked about in the middle is super, super critical.</p>
+<p data-t="1836">And customer data is particularly regulated and protected and sensitive, for not just legal reasons, but if you mess with your customers, you're going to lose them. And so it's very precious how this stuff is handled by customers.</p>
+<p class="q" data-t="1852">The key question for me is, in the last month or two in particular, I think people look at Salesforce as perhaps the bellwether for all of SaaS in this regard and wonder: is AI going to eat its lunch? Or, as Marc Benioff would say, and I imagine you would say, is AI going to empower it from here?<a href="https://www.youtube.com/watch?v=RabopcVSg-E&t=1852s">&#x21AA; 30:52</a></p>
+<p class="q" data-t="1874">Why is the market wrong in the last six weeks, that in the recent pullback suggests SaaS is going to have its lunch eaten?<a href="https://www.youtube.com/watch?v=RabopcVSg-E&t=1874s">&#x21AA; 31:14</a></p>
+<p data-t="1880">Okay. So things that have happened in the last few months. By the way, this is a theme that started manifesting in the second half of 2025. And for all of the listeners who are listening to this five years in the future, I'll give you some context about what we're talking about here.</p>
+<p data-t="1891">Only in the last month or so have there been breakout launches like Claude Code, which seem to suggest that one can code software through laypeople language and prompting, and therefore existing software incumbents are dead. I'm going to analogize to Microsoft for a second because it is relevant, and I'm not avoiding the question here.</p>
+<p data-t="1918">But at the time that we invested in Microsoft, there were several productivity suites that had launched that seemed to be better than Office. One was Google G Suite, and there was a product called Evernote, if you remember that. And there was a product called Quip. Quip was a word processor that allowed for collaboration in real time, and Office Word couldn't do it.</p>
+<p data-t="1931">And so the belief was that because there are superior products now in market that are perfectly aligned to the new architecture of cloud, Office is dead. Well, it turned out that wasn't the case for two reasons. One is that the value of the Office suite wasn't the design of Word versus the design of Google Docs. It was the control system, the identity system, and the access and permissioning system called Active Directory that sit underneath it.</p>
+<p data-t="1968">In other words, if I work at a company, it isn't just that I have Word. It's that I can open up the Word documents that Wilfred has made, or I can't because those are private or protected or legally sensitive or what have you. And it was the management of the data and the actors in the ecosystem that was the key, not the actual productivity software.</p>
+<p data-t="1986">So if you fast-forward to today, if you can author software at the drop of a hat by sort of speaking it in plain English, great. You may be able to design really good-looking user interfaces and functionality. But do you have the data provisioning, and are you plugged into the nervous system of the organization, as managed by the chief risk officer, the chief information officer, etc., so that business processes can be executed compliantly, repeatably, and auditably?</p>
+<p data-t="2022">I just don't think you can. And so time will tell if we're right or we're wrong, but we are focusing all our attention again in this organizational stage. Is the data protected? Is the data anonymized and compliant? Is the data auditable, so later you can see why did we make this decision, was it the right thing to do or not?</p>
+<p data-t="2045">And so it very often is the oblique thing that is not just the authoring process of writing things or creating things, but the integration and coordination planes that become most important. And so the incumbents are hugely benefited in this, and they can catch up. It took years and years.</p>
+<p data-t="2063">I remember being in a meeting with Microsoft where people were like, how are we ever going to get Word to sync like Google Docs? Because we have a different code base for Windows, a different code base for iMacs, for the browser-based Windows, etc. It's just a mess. But they got there, right, because they have time.</p>
+<p data-t="2080">The incumbents have time. They have multiyear contracts. The duration of a contract at Salesforce is 10 to 15 years generally, and they're plugged into the road map of the organization. So it is always terrifying when new technology paradigms happen, but it doesn't mean that all the dinosaurs die.</p>
+<p data-t="2098">It's really compelling, that. As someone that has worked and continues to work for a number of big companies, good luck to Claude or the next AI company to suddenly get an oil tanker to shift on a dime away from their existing providers. By the way, I love that you mentioned Evernote. I really liked that product because the company I worked for at the time forced it upon us. I got used to it.</p>
+<p data-t="2128">This episode is brought to you by LSEG, the leading global financial markets infrastructure, data, and analytics provider. To learn more about how LSEG connects businesses, investors, and markets worldwide, visit lseg.com.</p>
+<p class="q" data-t="2149">There's more areas I want to get to, including your new position in BlackRock. But just before we get to that, I think I have, off the back of Salesforce, two key questions for your investment approach.<a href="https://www.youtube.com/watch?v=RabopcVSg-E&t=2149s">&#x21AA; 35:49</a></p>
+<p data-t="2160">Yeah.</p>
+<p class="q" data-t="2160">The first is time horizon. I guess you need the luxury of your investors giving you a long period of time to make these things work.<a href="https://www.youtube.com/watch?v=RabopcVSg-E&t=2160s">&#x21AA; 36:00</a></p>
+<p data-t="2174">Yes, most of our investors invest with us on a three- to five-year lockup basis, but all of them are aligned to the idea that the investment theses take time to play out. In many cases, honestly, they have a J curve. They actually lose money right off the bat, and things get worse. But the worse they get, the more the pressure builds to get things right.</p>
+<p data-t="2193">And so it's not something we're particularly terrified of. But yeah, you need to have time. And getting back to why I think we do things the way we do, we realized a long time ago, particularly waking up in San Francisco three hours behind New York, we were never going to beat people playing an information game. We just weren't going to be able to outrun them, right?</p>
+<p data-t="2219">And the only way that we could win was playing the understanding game, which is understanding how longer-term tectonic forces work, and then the influence game of having a voice in the system. And understanding and influence take time. They take trust, and they take really unpacking structural things. And so that does make our returns lumpy.</p>
+<p data-t="2237">As you said, we're very concentrated, and we might have value recognition at one of our core positions that comes very quickly and it doubles in a year, or it might J curve. And you layer all these things on, and you sort of have a very idiosyncratic-looking return path that tends to be quite good in the long run.</p>
+<p data-t="2253">But the key is that you have people who are willing. It all rhymes, right? We give our management teams time and trust, and our investors give the same to us, and the chain all winds up.</p>
+<p class="q" data-t="2265">The second follow-up question on the investment approach is, how do you make sure you don't get too close, I guess, to the companies you invest in, but perhaps more importantly to the CEOs? I think I'm right in saying you're a pretty close personal friend with Marc Benioff.<a href="https://www.youtube.com/watch?v=RabopcVSg-E&t=2265s">&#x21AA; 37:45</a></p>
+<p class="q" data-t="2277">How do you know when to say, “Do you know what, guys? We've got this wrong, or Marc's got this wrong, and we need to dump out of this position,” when you're so close to them?<a href="https://www.youtube.com/watch?v=RabopcVSg-E&t=2277s">&#x21AA; 37:57</a></p>
+<p data-t="2296">Yeah. It's so interesting because we've tried to calibrate this issue back and forth to get it correct. And every time we sell out and the stock runs, as it did with Microsoft, people are saying, “What are you doing? You had it all nailed. You should stick it out and ride it for a decade.”</p>
+<p data-t="2314">And you sold too early. And then there's the converse where you held too long. And so investing is a never-ending series of lessons learned. I will say just a few points about that. We've, over the course of our history, had roughly 150 core investments, and we only have 10 today, so it's not like we don't know how to do this.</p>
+<p data-t="2334">Many of those CEOs are now investors in the fund, and we keep them in the family as advisers and assets to us. And so that keeps them close. And all of them understand that we're in the business of running a fund, and we're in the business of making money and allocating capital and allocating time.</p>
+<p data-t="2351">And there are periods of time where our capital and our time can generate extraordinary returns. And there's times when the returns are skinnier and our role is lessened, and they get it. And so we've gotten good at that breakup conversation.</p>
+<p data-t="2370">But again, I think my, in hindsight, mistake was sticking around for the first chapter of the Microsoft story, which was not brief. It was 2013 to 2018, where they made the successful pivot to the cloud. And then I felt like the story was written and there wasn't much else to do, even though I could tell that things were going to keep going well.</p>
+<p data-t="2392">And I was better off allocating resources and time to some new project, which didn't pan out as well as we'd hoped, but we can go into that if you'd like. But with many of these large platform tech companies, chapter one begets chapter two begets chapter three begets chapter four.</p>
+<p data-t="2410">I think there's two types of businesses in the world. I call them ones that win by winning and ones that lose by winning, which sounds, I guess, like Donald Rumsfeld's “known knowns,” doesn't it? But bear with me. In many industries, mean reversion hits you. If you win, more capital floods into the industry, which compresses returns, and things collapse.</p>
+<p data-t="2434">And that is true for oil and gas or retail. There are other ones where the more you win, the more optionality you have because you have a deeper set of customer relationships that you can add new services to. And you can have Spotify start with music and add podcasts, and after podcasts add audiobooks, and after that add user-generated content that filters into it, etc.</p>
+<p data-t="2454">And Microsoft's a great win-by-winning story because the more Office you have—Word, you add Excel, you add PowerPoint, you add Teams, you add cybersecurity, you add identity, you add, etc. And so what we have been working very hard to rotate the portfolio into over the last five years, having learned this lesson from Microsoft, is that we want to have a lot of win-by-winning business models, which extends the duration.</p>
+<p data-t="2478">And that all doesn't mean that they go up every single year metronomically. You might have a big drawdown in one particular year, as we see in Salesforce. But if we think that the potential is there for these endpoints to expand and expand and add and add and grow more and more interesting and more and more fully developed, we'll stick it out and ride the downs to get to the long-term upside that we see.</p>
+<p class="q" data-t="2500">I know that we've only got sort of 10 minutes or so left, Mason. There's so many stocks I want to—I'm going to drag you kicking and screaming back for another episode because I want to talk about Citi and Morgan Stanley and Visa and Disney and Rocket, if I can have you back. But the one I did just want to dwell on before a big-picture conclusion is a new position, I think a new position in Q4.<a href="https://www.youtube.com/watch?v=RabopcVSg-E&t=2500s">&#x21AA; 41:40</a></p>
+<p class="q" data-t="2523">I don't think it's actually been talked about publicly yet, which is BlackRock.<a href="https://www.youtube.com/watch?v=RabopcVSg-E&t=2523s">&#x21AA; 42:03</a></p>
+<p data-t="2529">Yes.</p>
+<p class="q" data-t="2529">So this is not just because you think they're really good at asset management and they're the biggest player. It's deeper than that. It's the evolution of the market space, and I guess the scale that they do have allowing them to dominate the industry going forward.<a href="https://www.youtube.com/watch?v=RabopcVSg-E&t=2529s">&#x21AA; 42:09</a></p>
+<p data-t="2546">Yeah. And the quiet part should be said out loud. This is the biggest force that's going to potentially wipe out all active managers, including myself. So it's a little bit strange to invest in them and champion what they're doing. But it is so fascinating what they're doing, and it does relate to this digitize, organize, automate idea.</p>
+<p data-t="2565">With all due respect to all of us in the investment management industry, there's a lot of inefficiencies in what we do. And it is almost a perfect problem set for computer algorithms to attack. How to allocate your assets, how to tax-optimize them, how to hedge them, how to manage your life stages, etc., whether you're an individual that is middle income or wealthy or an institution. That is very programmable.</p>
+<p data-t="2599">The manufacturing of products that meet those needs has been very fragmented and bespoke. And so there's need for organization of all of this workflow. So BlackRock has historically been viewed, I think, as a diversified asset manager that's really good at making ETFs, and it's been in a price war with Vanguard on plain-vanilla ETFs for a long period of time.</p>
+<p data-t="2622">And so this S&amp;P 500 ETF price and market share war has been going on forever. But the interesting thing that piqued my attention in the last 12 months was that BlackRock is also one of the best data and software companies in the industry. It has a platform called Aladdin that manages your positions and your risks, etc.</p>
+<p data-t="2641">And it was beginning to place that software asset on the desktops of wealth managers and asset managers around the industry, and driving the adoption of something called a model portfolio, which is what I'm describing to you, right? Which is automatically, software managing your investment decisions and optimizing things far better and faster and cheaper than a human being could do it.</p>
+<p data-t="2664">And when it had that beachhead, right, and it won that landing place, it could expand and expand and expand with more and more services. And what it is pulling in now is a set of ETF products that is different than that plain-vanilla S&amp;P 500 price war set of products into more bespoke, active, and optimized products. And that means the price per unit of assets is going up for the first time in decades.</p>
+<p data-t="2698">And once they control that control plane—and I think in the AI world this concept of a control plane is going to be critically important—where does the decision-maker engage with the agents in the software, right? And if that is Aladdin and that is the BlackRock front end, they are in an incredibly advantageous position.</p>
+<p data-t="2717">Because from there they can organize the asset allocation of much of the industry and pull through their products in a way that is almost impossible to dislodge for competition unless they can kick out that software front end.</p>
+<p class="q" data-t="2730">Almost impossible to dislodge, and presumably over time going to be much higher margin.<a href="https://www.youtube.com/watch?v=RabopcVSg-E&t=2730s">&#x21AA; 45:30</a></p>
+<p data-t="2737">Yes. First of all, they do get directly paid for the software. So the business has a mix shift of just fee-based AUM with faster-growing software. Their product menu is expanding and expanding and expanding. Not to waste too much of the clock on this, but what they did with Bitcoin ETFs is truly remarkable.</p>
+<p data-t="2762">And I will call that a form of organizing. A blockchain-based traded asset that was largely inaccessible to the average person could get converted, almost like alchemy, into a traded stock called IBIT, which is by far the biggest ETF for crypto. And by organizing it in that sort of digestible wrapper, it could then fit into the model portfolio in Aladdin, and everybody could have access to Bitcoin.</p>
+<p data-t="2787">They did something very similar with Treasury bonds, which are traded on a dealer-to-dealer market that's somewhat opaque. They converted those into ETFs that could then fit into the Aladdin software that could then fit into the portfolios of everyone, really. I believe that they will do the same thing to alternative assets, many categories, private credit, real estate, etc.</p>
+<p data-t="2811">Package, format, organize, and slot into these sockets in their existing software beachheads. And all of that, yes, it means the fees will go up and up and up, tracking value delivered, because it'll make your life easier. You'll have access to products you couldn't otherwise get. All the fee leakage that you don't see that's happening in these opaque dealer-to-dealer markets gets washed away.</p>
+<p data-t="2835">And the customer ends up with an optimized, cheaper, better-managed portfolio construction process, and that is dynamically adjusted using machine learning and AI to get the best outcomes you can have. As opposed to a daisy chain of human beings using phones, batch-reported trade consults, etc., to try to, in an analog way, get to the same place.</p>
+<p class="q" data-t="2868">BlackRock's obviously the Goliath there. Really interesting to hear that take on it. I've got a couple of final big-picture questions. I know we're right up against the clock, Mason, but your performance since the year 2000, since inception, has been 13.7% per annum. Phenomenal over a 26-year period. The MSCI World, for context, over that time has been 6.8% per annum.<a href="https://www.youtube.com/watch?v=RabopcVSg-E&t=2868s">&#x21AA; 47:48</a></p>
+<p class="q" data-t="2899">I think, fair to say, over the last five years—and I know you're super long-term in your thinking—it's lagged if, say, measured against the S&amp;P 500. The markets, there's lots of questions. I know you don't like dwelling on short-term bubble-this-or-not kind of talking points, but obviously there are questions over valuation overall.<a href="https://www.youtube.com/watch?v=RabopcVSg-E&t=2899s">&#x21AA; 48:19</a></p>
+<p class="q" data-t="2926">How confident are you in the 10 or 12 big positions you have in absolute terms rather than relative terms over the next three to five years, that it will be very much positive returns for investors? Or could massive overall equity market pullbacks prevent that?<a href="https://www.youtube.com/watch?v=RabopcVSg-E&t=2926s">&#x21AA; 48:46</a></p>
+<p data-t="2941">We manage ourselves to an absolute standard, as you suggest, with a target of delivering mid-teens returns to our investors, which we've kind of delivered over any measurable period, and with very, very little loss of capital, which is an interesting thing underneath the surface of those numbers.</p>
+<p data-t="2959">Because we do invest with both a margin-of-safety attitude in terms of valuation and asset value, as well as an opportunity from these transformations that we talked about into getting more aligned with the megatrends and releasing your psychological paradigms, etc. And so I feel very, very good about where we're going from here.</p>
+<p data-t="2979">In fact, I was just reviewing our price targets to where we think they're going to be on the one- and three-year basis, and it's quite eye-popping at the moment because there's so much fear in the market and disruption happening. There's wild activity so far in 2026. I never thought businesses as high quality as Moody's and S&amp;P would plunge the way they have.</p>
+<p data-t="3003">So we're seeing interesting clustering of people hiding in consumer staple stocks and other things, and the AI physical infrastructure complex is obviously going to the moon. But sorting through all of those sector rotations and emotional swings of the market, I think it is starting to come into focus what the world is going to look like on the other side of this reorganization that we're having.</p>
+<p data-t="3026">I have a hokey metaphor. If you've seen the Jurassic Park movies, the T. rex was the apex predator of this amusement park called Jurassic Park. And then in one of the sequels, they infused it with Velociraptor DNA to create something called the Indominus rex, which was an apex predator bigger than the apex predator that we've ever seen before.</p>
+<p data-t="3051">The BlackRock story I told hopefully articulates some of the—you can see what I'm talking about here. It was already the apex predator in asset management, but with the ingestion of software DNA into its dinosaur body, it becomes even more and more powerful.</p>
+<p data-t="3063">So I think when we look out in the future, industries are going to see, in particular cases, extreme market share grabs by these new Indominus rex dinosaurs. And there are going to be new interfaces in the way the world works around certain platforms, Visa being one for payments, Meta being one for advertising, etc.</p>
+<p data-t="3088">And so, long-winded way of saying, right now there's a lot of reductionist narratives, I think, about what's going to work and what's not going to work. You see tremendous capital flooding into semiconductors and data center build-out, asset-heavy industries. But most people seem to be fearful or confused about what is the mortgage market going to look like? What is the asset management market going to look like?</p>
+<p data-t="3114">How are consumer products going to be made, marketed, and distributed to people? How are you going to buy a car? Are you going to buy a car? These are the problems that we're working through. And I think we have the advantages of relying on all those CEOs that we've invested with over the last 25 years that now invest with us.</p>
+<p data-t="3132">We have the asset of being inside the boardroom at Salesforce and watching the agentic revolution happen at all of their customers and at it as well. We didn't get into it, but we're wall-crossed under NDAs at several of our other companies to understand how creativity and media is going to shift, and what is the movie of the future going to look like, and then what is human life going to look like?</p>
+<p data-t="3161">And this sounds grandiose, but we do need to ask that question given what's happening in the world today, on the other side of this revolution. And I believe that we are picking up some of these software and services assets very cheaply that are going to be extremely relevant for this new worldview.</p>
+<p data-t="3178">And because of these vantage points we have, if we're wrong, we'll just adjust the portfolio accordingly as time goes on. Maybe we're not going to get all these right, but I feel very good about it, is the short answer.</p>
+<p class="q" data-t="3191">And you're right, we didn't get to media, and I'm going to kick myself if we don't. So I'm going to squeeze in one question very quickly on Disney. Is the sale of Warner Bros. Discovery to not Disney a big blow? And are you happy with the CEO choice?<a href="https://www.youtube.com/watch?v=RabopcVSg-E&t=3191s">&#x21AA; 53:11</a></p>
+<p data-t="3211">Very happy with the CEO choice, in part because I think his view of how IP can be used across multiple form factors is super important in a world where I do believe user-generated content and interactivity with TV shows is going to increase. And your experience on these streaming services is going to look radically different in the future. And he's got this breadth of understanding. I've met him, Josh, many times, and he's great.</p>
+<p data-t="3241">Industries have chapters in their evolution. The chapter that we engaged with Disney on, chapter one, was coming in right during the worst of the streaming wars and the worst of the creative strikes. If you remember, all the actors were on strike, the writers were on strike, and the streaming wars were a total bloodbath, and Disney was losing billions of dollars a year on Disney+.</p>
+<p data-t="3260">The idea that we had was similar to Microsoft, was that you could bundle more and more products together to create higher ARPU and lower churn. And we helped them recruit the new head of technology to the company, technology and product. You can see they integrated Hulu and Disney+ and ESPN into one app, which drove up retention, up ARPU. Profits went from losing billions of dollars to making billions of dollars, and that was a successful run.</p>
+<p data-t="3283">In my heart of hearts, I had wished that the non-Netflix coalition had then—meaning Paramount and Warner Bros. and Universal had—shout-out for Comcast family there.</p>
+<p data-t="3300">Thank you.</p>
+<p data-t="3300">Exactly. I wish they had all gotten together on the Disney+ architecture because we hired the best tech team to build the best rails to go to war against the evil empire of Netflix. That was kind of the idea circa 2023.</p>
+<p data-t="3311">Unfortunately, Disney got all of its internal assets onto one platform and had a great turnaround to Disney+, but between the Ellisons coming into Paramount and then the war for Warner Bros., it didn't coalesce into the sort of platonic ideal that I was envisioning. But we got pretty far towards it. And we'll see where things go from here.</p>
+<p data-t="3337">I don't know if you saw today's announcement in the UK. Sky, in just this region in the UK, have bundled everything, including HBO Max, which now launches here. So it's not quite the same as your dream scenario there in the US, but it's also not a million miles from it.</p>
+<p class="q" data-t="3355">We are really out of time now, Mason, and I wanted to end with the question I flagged to you that we ask all of our investors. And that is, we want to try and provide our listeners an edge. What is your overriding piece of investment advice for the Master Investor podcast listeners?<a href="https://www.youtube.com/watch?v=RabopcVSg-E&t=3355s">&#x21AA; 55:55</a></p>
+<p data-t="3372">Well, I have one that's totally impractical, but I was thinking about this question. Have a 10-year-old boy in your house. I have a son who's 10, and watching Generation Alpha engage with the universe is fascinating, from how they consume media to how they play video games. We didn't even get into our Roblox investment. That's been a very successful one for us and, I think, going to be one of the most important platforms for the future.</p>
+<p data-t="3398">And staying young, again, not the most practical recommendation. However, I can't overstate how important it has been for me to have a young kid in my house and how much fun I have with him seeing the world through his eyes.</p>
+<p data-t="3410">Well, he deserves extra love and affection because he helps you in your job as well as, I'm sure, your happiness at home. I have a two-and-a-half-year-old, so I don't think it's informing my investment decisions yet, but it's certainly driving my life. Mason—</p>
+<p data-t="3428">Launch a hedge fund in the next couple of years, and you'll hit a real sweet spot.</p>
+<p data-t="3433">Well, as you know, I started as an investor, and I'm not doing it anymore, perhaps for a reason. I like the volatility in the discussion points without having quite—</p>
+<p data-t="3444">Well, not to be too pandering, but what you do in terms of trying to dig beneath the surface and develop authentic relationships and sources and stuff, it is analogous to the spirit in which we try to do our job. Which is why I'm making this rare exception to talk to you, because it's very important to have this content out there in the way that you do it.</p>
+<p data-t="3472">Well, I really appreciate that. I particularly appreciate your time and your candor with us today. And there were a lot of stocks we didn't get to, so maybe I'll twist your arm again in the future to come on again. But for now, Mason, it's been a real pleasure having you on the Master Investor podcast. Thanks so much for joining us.</p>
+<p data-t="3489">Thank you.</p>
+<p data-t="3489">The Master Investor podcast is sponsored by BMY Investments, LSEG, and Interactive Brokers. Please do remember the views expressed in this podcast are for general information purposes only. Nothing in the podcast constitutes a financial promotion, investment advice, or a personal recommendation. More on that in the show notes.</p>
+<p data-t="3516">This podcast is produced by Paradine Productions and Master Investor Limited in association with Birdline Media. If you've enjoyed the show, please do subscribe on YouTube or click follow on your podcast platform, and you'll be automatically notified each time a new episode drops.</p>
+    </div>
+  </main>
+  <script>
+  async function toggleYtBookmark(btn) {
+    const payload = {
+      title: btn.dataset.title,
+      url: btn.dataset.url,
+      filename: btn.dataset.filename,
+      interviewDate: btn.dataset.date,
+      source: 'YT',
+      expert: btn.dataset.channel,
+    };
+    try {
+      const resp = await fetch('/bookmark', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload),
+      });
+      const result = await resp.json();
+      setYtBookmarkState(btn, !!result.bookmarked);
+    } catch (e) {
+      console.error('Bookmark toggle failed:', e);
+    }
+  }
+  function setYtBookmarkState(btn, on) {
+    btn.classList.toggle('is-bookmarked', on);
+    btn.innerHTML = on ? '&#9733;' : '&#9734;';
+    btn.title = on ? 'Bookmarked' : 'Bookmark';
+    btn.setAttribute('aria-label', on ? 'Bookmarked' : 'Bookmark');
+  }
+  (async function initYtBookmarkState() {
+    const btn = document.getElementById('yt-bookmark-btn');
+    if (!btn || !btn.dataset.filename) return;
+    try {
+      const resp = await fetch('/bookmarks');
+      if (!resp.ok) return;
+      const list = await resp.json();
+      if (Array.isArray(list) && list.some(b => b && b.filename === btn.dataset.filename)) {
+        setYtBookmarkState(btn, true);
+      }
+    } catch (e) { /* offline -- leave default state */ }
+  })();
+
+  async function shareYtPage(btn) {
+    const original = btn.innerHTML;
+    btn.disabled = true;
+    btn.innerHTML = '&hellip;';
+    try {
+      const resp = await fetch('/share', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ filename: btn.dataset.filename }),
+      });
+      const result = await resp.json();
+      if (!result.ok) throw new Error(result.error || 'Share failed');
+      try { await navigator.clipboard.writeText(result.url); } catch (e) {}
+      btn.innerHTML = '&#10003;';
+      btn.title = 'Copied ' + result.url;
+      setTimeout(() => { btn.innerHTML = original; btn.disabled = false; btn.title = 'Share'; }, 2500);
+    } catch (e) {
+      console.error('Share failed:', e);
+      btn.innerHTML = '!';
+      btn.title = 'Share failed: ' + (e && e.message || e);
+      setTimeout(() => { btn.innerHTML = original; btn.disabled = false; btn.title = 'Share'; }, 3000);
+    }
+  }
+
+  // When the page is viewed from somewhere other than the local Reader
+  // server (e.g. a shared copy on GitHub Pages), hide the interactive
+  // buttons whose endpoints only exist on localhost.
+  (function hideLocalOnlyControls() {
+    const host = location.hostname;
+    const isLocal = host === 'localhost' || host === '127.0.0.1' || host === '';
+    if (isLocal) return;
+    const actions = document.querySelector('.yt-header-actions');
+    if (!actions) return;
+    const bookmark = actions.querySelector('#yt-bookmark-btn');
+    const share = actions.querySelector('#yt-share-btn');
+    if (bookmark) bookmark.remove();
+    if (share) share.remove();
+  })();
+  </script>
+<script id="reader-presentation-script">
+(function () {
+const readerKind = "youtube";
+const readerStandalone = true;
+const readerFilename = "";
+const readerNavigation = null;
+const splitExpertTitle = function splitExpertTitle(title, knownTicker = '') {
+  const symbol = '[A-Z][A-Z0-9.-]{0,11}';
+  const symbols = new RegExp(`^${symbol}(?:\\s*[/,&+]\\s*${symbol})*$`);
+  const leading = title.match(new RegExp(`^(${symbol})(?:\\s*[—–:|]\\s*|\\s+-\\s+)(.+)$`));
+  if (leading) return { label: leading[1], description: leading[2] };
+
+  // Some saved interviews name a company, then its ticker, then the topic.
+  const pipes = title.split(/\s*\|\s*/);
+  if (pipes.length > 1) {
+    const tickerIndex = pipes.findIndex(part => symbols.test(part));
+    if (tickerIndex >= 0) return { label: pipes[tickerIndex], description: pipes.filter((_, i) => i !== tickerIndex).join(' · ') };
+    if (pipes[0].length <= 32) return { label: pipes[0], description: pipes.slice(1).join(' · ') };
+  }
+
+  const divided = title.match(/^(.+?)\s+[—–-]\s+(.+)$/) || title.match(/^([^:]{1,32}):\s+(.+)$/);
+  if (divided) {
+    const [, subject, topic] = divided;
+    const namedSymbols = [...subject.matchAll(/\(([^)]+)\)/g)].map(m => m[1]).filter(value => symbols.test(value));
+    if (namedSymbols.length) return { label: namedSymbols.join(' / '), description: topic };
+    if (symbols.test(topic)) return { label: topic, description: subject };
+    if (subject.length <= 32) return { label: subject, description: topic };
+  }
+  // Broad industry interviews may have no single issuer or separable heading.
+  return { label: knownTicker || 'EX', description: title };
+};
+const abbreviateEventTitle = function abbreviateEventTitle(title) {
+  return String(title || '')
+    .replace(/\bGoldman Sachs(?: Group)?\b/gi, 'GS')
+    .replace(/\b(?:Bank of America(?: Merrill Lynch| Securities)?|BofA(?: Merrill Lynch| Securities)?)\b/gi, 'BofA')
+    .replace(/\bBarclays(?: Capital| Bank| PLC)?\b/gi, 'BCA')
+    .replace(/\bJ\.?\s*P\.?\s*Morgan(?:\s+Chase)?\b/gi, 'JPM')
+    .replace(/\bWells Fargo(?: Securities)?\b/gi, 'WFC')
+    .replace(/\b(?:Citigroup|Citibank|Citi)(?:['’]s)?\b/gi, 'Citi')
+    .replace(/\bMorgan Stanley\b/gi, 'MS')
+    .replace(/\bDeutsche Bank\b/gi, 'DB')
+    .replace(/\bRBC Capital Markets\b/gi, 'RBC')
+    .replace(/\bBMO Capital Markets\b/gi, 'BMO')
+    .replace(/\bJefferies\b/gi, 'JEF')
+    .replace(/\bConferences?\b/gi, 'Conf');
+};
+// Runs after the saved page's scripts. Move real controls so their IDs, data,
+// listeners and bookmark/share payloads survive the visual upgrade.
+(function () {
+  'use strict';
+  const oldHeader = document.querySelector('body > .header, body > header, body > .sticky-header, main > .yt-meta-card');
+  const content = document.querySelector('main, body > .content');
+  if (!oldHeader || !content || oldHeader.contains(content) || document.body.classList.contains('reader-page')) return;
+
+  const make = (tag, className, text) => {
+    const element = document.createElement(tag);
+    if (className) element.className = className;
+    if (text) element.textContent = text;
+    return element;
+  };
+  const clean = value => String(value || '').replace(/\s+/g, ' ').trim();
+  const labels = { earnings: 'Earnings call', presentation: 'Presentation', expert: 'Expert call', youtube: 'YouTube' };
+  const metadataSelector = '.yt-header-sub, .yt-meta-sub, .metadata, .header-meta, .meta, .subtitle, .subline, .profile, .src-date, .header-subtitle, .date';
+  const metadataNodes = [...oldHeader.querySelectorAll(metadataSelector)].filter(node => !node.parentElement.closest(metadataSelector));
+  // Templates vary across the archive. Keep all header text, not just text in
+  // the newest title class; otherwise older dates and expert roles disappear.
+  const titleCopy = oldHeader.cloneNode(true);
+  titleCopy.querySelectorAll(`${metadataSelector}, .ticker, .market-strip, button, a, script, style`).forEach(node => node.remove());
+  let title = clean(titleCopy.textContent) || document.title;
+  let label = clean(oldHeader.querySelector('.ticker')?.textContent).replace(/^\(|\)$/g, '');
+  const market = oldHeader.querySelector('.market-strip');
+  const actions = [...oldHeader.querySelectorAll('button, a')].filter(node => !node.closest('.yt-header-thumb, .yt-meta-url') && !node.querySelector('img') && !metadataNodes.some(meta => meta.contains(node)));
+
+  if (readerKind === 'expert') {
+    const parts = splitExpertTitle(title);
+    label = parts.label;
+    title = parts.description;
+  } else if (readerKind === 'youtube') {
+    label = 'YT';
+  } else if (!label) {
+    const symbol = title.match(/\(([A-Z0-9][A-Z0-9.-]{0,11})\)/);
+    if (symbol) { label = symbol[1]; title = clean(title.replace(symbol[0], '')); }
+  }
+
+  document.body.classList.add('reader-page');
+  document.body.dataset.readerKind = readerKind;
+  const header = make('header', 'reader-masthead');
+  const inner = make('div', 'reader-masthead-inner');
+  const brand = make(readerStandalone ? 'span' : 'a', 'reader-brand', readerStandalone ? 'OC Reader' : '‹ Library');
+  if (!readerStandalone) { brand.href = '/status'; brand.title = 'Back to Library'; }
+  const tools = make('div', 'reader-tools');
+  for (const action of actions) {
+    // Q&A is already available in the article's section navigation.
+    if (/^Q\s*(?:&|and)\s*A$/i.test(clean(action.textContent))) continue;
+    action.classList.add('reader-tool');
+    if (action.matches('#bookmark-btn, #yt-bookmark-btn')) {
+      action.setAttribute('aria-label', action.title || 'Bookmark');
+    }
+    if (action.matches('#share-btn, #yt-share-btn')) action.setAttribute('aria-label', 'Share');
+    if (readerStandalone && action.matches('button')) action.hidden = true;
+    tools.append(action);
+  }
+  const marker = make('div', 'reader-marker');
+  marker.title = labels[readerKind];
+  if (label) marker.append(make('span', readerKind === 'youtube' ? 'reader-source-badge' : 'reader-symbol', label));
+  const heading = make('div', 'reader-heading');
+  heading.append(make('h1', 'reader-title', title));
+  const facts = make('div', 'reader-facts');
+  for (const metadata of metadataNodes) {
+    // Archived source-specific layout classes must not shape the shared header.
+    metadata.className = 'reader-metadata';
+    metadata.title = clean(metadata.textContent);
+    // The saved page, not its filename/feed title, determines the period.
+    if (readerKind === 'earnings' && /\bQ[1-4]\b/i.test(metadata.textContent) && !/earnings/i.test(metadata.textContent)) {
+      const period = metadata.textContent;
+      metadata.textContent = /[·|]/.test(period)
+        ? period.replace(/\s*([·|])/, ' Earnings $1') : `${period} Earnings`;
+    }
+    // A few older presentation pages put their event heading at the start of
+    // the article and only the date in the header. Include that heading here.
+    const introduction = content.firstElementChild;
+    if (readerKind === 'presentation' && /^\d{1,4}[-/]\d{1,2}[-/]\d{2,4}$/.test(clean(metadata.textContent))
+      && introduction?.tagName === 'P' && !introduction.querySelector('a, strong, b')
+      && clean(introduction.textContent).length < 180
+      && /\b(?:conference|investor (?:day|meeting)|capital markets day|fireside chat)(?:\s+20\d{2})?$/i.test(clean(introduction.textContent))) {
+      metadata.textContent = `${clean(introduction.textContent)} · ${clean(metadata.textContent)}`;
+      metadata.title = metadata.textContent;
+    }
+    if (readerKind === 'presentation') metadata.textContent = abbreviateEventTitle(metadata.textContent);
+    if (readerKind === 'earnings') metadata.textContent = metadata.textContent.replace(/\bQ([1-4])\s+20(\d{2})\b/g, '$1Q$2');
+    (readerKind === 'youtube' ? facts : heading).append(metadata);
+  }
+  if (market) { market.classList.add('reader-market'); facts.append(market); }
+  inner.append(marker, heading, tools, brand, facts);
+  if (readerNavigation && !readerStandalone) {
+    const pages = make('nav', 'reader-page-navigation');
+    pages.setAttribute('aria-label', 'Completed pages');
+    const pageLink = (target, previous) => {
+      const name = previous ? 'Previous' : 'Next';
+      const link = make(target ? 'a' : 'button', 'reader-page-link', previous ? '‹ Previous' : 'Next ›');
+      link.setAttribute('aria-label', `${name} completed page`);
+      if (target) {
+        link.href = target.href;
+        link.rel = previous ? 'prev' : 'next';
+        link.title = `${name} (${previous ? 'newer' : 'older'}): ${target.title}`;
+      } else {
+        link.disabled = true;
+        link.title = previous ? 'First completed page' : 'Last completed page';
+      }
+      return link;
+    };
+    const position = make('span', 'reader-page-position', `${readerNavigation.position.toLocaleString()} / ${readerNavigation.total.toLocaleString()}`);
+    position.title = 'Position in Completed · most recent first';
+    pages.append(pageLink(readerNavigation.previous, true), position, pageLink(readerNavigation.next, false));
+    inner.append(pages);
+  }
+  header.append(inner);
+  if (content.contains(oldHeader)) {
+    content.before(header);
+    oldHeader.remove();
+  } else oldHeader.replaceWith(header);
+
+  const layout = make('div', 'reader-layout');
+  content.before(layout);
+  content.classList.add('reader-article');
+  layout.append(content);
+  // Some historical summaries close their content wrapper before Q&A.
+  // Preserve those nodes and their order inside the article as well.
+  let next = layout.nextElementSibling;
+  while (next && next.matches('h2#qa, .qa-block')) {
+    const following = next.nextElementSibling;
+    content.append(next);
+    next = following;
+  }
+
+  // Wide tables scroll within the article instead of stretching a phone page.
+  content.querySelectorAll('table').forEach((table, index) => {
+    let wrapper = table.parentElement;
+    if (!wrapper.matches('.table-wrap, .table-wrapper, .table-scroll, .reader-table-wrap')) {
+      wrapper = make('div', 'reader-table-wrap');
+      table.before(wrapper);
+      wrapper.append(table);
+    }
+    wrapper.classList.add('reader-table-wrap');
+    wrapper.tabIndex = 0;
+    wrapper.setAttribute('role', 'region');
+    wrapper.setAttribute('aria-label', `Data table ${index + 1}`);
+  });
+
+  // Use H3 for the two standard call sections without changing their anchors
+  // or treating speaker headings as peers in the contents navigation.
+  const isCallSection = heading => /^(?:Prepared Remarks|Q\s*(?:&|and)\s*A)$/i.test(clean(heading.textContent));
+  const mainHeadings = new Set([...content.querySelectorAll('h2, h3')].filter(heading => heading.tagName === 'H2' || isCallSection(heading)));
+  for (const heading of [...mainHeadings]) {
+    if (!isCallSection(heading)) continue;
+    if (heading.tagName === 'H3') { heading.classList.add('reader-section-heading'); continue; }
+    const compact = make('h3');
+    for (const attribute of heading.attributes) compact.setAttribute(attribute.name, attribute.value);
+    compact.classList.add('reader-section-heading');
+    compact.append(...heading.childNodes);
+    heading.replaceWith(compact);
+    mainHeadings.delete(heading);
+    mainHeadings.add(compact);
+  }
+  const headings = [...content.querySelectorAll('h2, h3')].filter(heading => mainHeadings.size < 3 || mainHeadings.has(heading));
+  if (headings.length > 1) {
+    const navigation = make('nav', 'reader-contents');
+    navigation.setAttribute('aria-label', 'On this page');
+    navigation.append(make('div', 'reader-contents-label', 'On this page'));
+    const links = [];
+    headings.forEach((heading, index) => {
+      if (!heading.id) {
+        let id = `reader-section-${index + 1}`;
+        while (document.getElementById(id)) id += '-section';
+        heading.id = id;
+      }
+      const labelCopy = heading.cloneNode(true);
+      labelCopy.querySelectorAll('a, .role').forEach(node => node.remove());
+      const link = make('a', mainHeadings.size && !mainHeadings.has(heading) ? 'reader-subsection' : '', clean(labelCopy.textContent));
+      link.href = `#${encodeURIComponent(heading.id)}`;
+      link.addEventListener('click', () => {
+        let parent = heading.parentElement;
+        while (parent && parent !== content) {
+          if (parent.tagName === 'DETAILS') parent.open = true;
+          parent = parent.parentElement;
+        }
+      });
+      links.push(link);
+      navigation.append(link);
+    });
+    layout.prepend(navigation);
+    let pending = false;
+    const markSection = () => {
+      pending = false;
+      const threshold = header.getBoundingClientRect().bottom + 48;
+      let selected = 0;
+      headings.forEach((heading, index) => {
+        if (heading.getClientRects().length && heading.getBoundingClientRect().top <= threshold) selected = index;
+      });
+      links.forEach((link, index) => {
+        if (index === selected) link.setAttribute('aria-current', 'location');
+        else link.removeAttribute('aria-current');
+      });
+    };
+    window.addEventListener('scroll', () => {
+      if (!pending) { pending = true; requestAnimationFrame(markSection); }
+    }, { passive: true });
+    markSection();
+  } else layout.classList.add('reader-without-contents');
+
+  const measureHeader = () => document.body.style.setProperty('--reader-header-height', `${header.getBoundingClientRect().height}px`);
+  measureHeader();
+  new ResizeObserver(measureHeader).observe(header);
+})();
+
+
+})();
+</script>
+</body>
+</html>
