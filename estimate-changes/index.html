@@ -259,7 +259,7 @@ section.since h2 { font-size: 16px; font-weight: 600; margin-bottom: 8px; }
   function isNum(x) { return typeof x === 'number' && isFinite(x); }
   function signed(x, d, unit) {
     if (!isNum(x)) return '–';
-    if (d === undefined) d = Math.abs(x) >= 100 ? 0 : 1;
+    if (d === undefined) d = Math.abs(x) >= 3 ? 0 : 1;   // whole numbers from 3 up: +46%, -1.3%
     var s = Math.abs(x).toFixed(d);
     if (Number(s) === 0) return '0' + (d ? '.' + '0'.repeat(d) : '') + (unit || '');
     return (x > 0 ? '+' : '−') + s + (unit || '');
@@ -581,7 +581,7 @@ section.since h2 { font-size: 16px; font-weight: 600; margin-bottom: 8px; }
 
       var px = el('td', 'px');
       if (against(r)) { var a = el('span', 'against', 'against'); a.title = 'Estimates moved ' + r.direction + ' but the stock moved at least ' + (AGAINST_PP[state.win] || 5) + ' pp the other way against the S&P'; px.appendChild(a); }
-      px.appendChild(document.createTextNode(signed(r.px_vs_spx_pp, 1, ' pp')));
+      px.appendChild(document.createTextNode(signed(r.px_vs_spx_pp, undefined, ' pp')));
 
       var why = el('td', 'l why'), cm = r.commentary;
       if (cmOk(r)) {
@@ -634,17 +634,17 @@ section.since h2 { font-size: 16px; font-weight: 600; margin-bottom: 8px; }
     var dl = el('dl');
     function row(label, node) { add(dl, el('dt', null, label), add(el('dd'), node)); }
     function n(text) { return el('span', 'num', text); }
-    row('Share price', n(signed(r.px_pct, 1, '%')));
-    row('Versus S&P', n(signed(r.px_vs_spx_pp, 1, ' pp')));
-    row('Forward multiple', n(signed(r.multiple_chg_pct, 1, '%')));
+    row('Share price', n(signed(r.px_pct, undefined, '%')));
+    row('Versus S&P', n(signed(r.px_vs_spx_pp, undefined, ' pp')));
+    row('Forward multiple', n(signed(r.multiple_chg_pct, undefined, '%')));
     row('vs bar / vs usual', n(mult(r.size) + ' / ' + mult(r.unusual)));
     var e = r.event;
     if (e) {
       var when = (e.period ? e.period + ', ' : '') + niceDate(e.date) + (e.time ? ' ' + e.time : '');
       row('Reported', el('span', null, when));
-      row('Surprise', n('EPS ' + signed(isNum(e.eps_surprise) ? e.eps_surprise * 100 : null, 1, '%') +
-                        ', revenue ' + signed(isNum(e.rev_surprise) ? e.rev_surprise * 100 : null, 1, '%')));
-      row('Next-day move', n(signed(isNum(e.d1) ? e.d1 * 100 : null, 1, '%')));
+      row('Surprise', n('EPS ' + signed(isNum(e.eps_surprise) ? e.eps_surprise * 100 : null, undefined, '%') +
+                        ', revenue ' + signed(isNum(e.rev_surprise) ? e.rev_surprise * 100 : null, undefined, '%')));
+      row('Next-day move', n(signed(isNum(e.d1) ? e.d1 * 100 : null, undefined, '%')));
     }
     var notes = [];
     if (r.thin) notes.push('EPS base near zero, so EPS is not scored');
@@ -679,7 +679,7 @@ section.since h2 { font-size: 16px; font-weight: 600; margin-bottom: 8px; }
       var ex = isNum(s.px_since_pct) && isNum(s.spx_since_pct) ? s.px_since_pct - s.spx_since_pct : null;
       var tr = el('tr');
       add(tr, el('td', 'l tk', s.ticker), el('td', 'l', niceDate(s.flag_date, true)), el('td', 'l', s.direction || '–'),
-          el('td', 'px', signed(s.px_since_pct, 1, '%')), el('td', 'px', signed(s.spx_since_pct, 1, '%')), el('td', 'px', signed(ex, 1, ' pp')));
+          el('td', 'px', signed(s.px_since_pct, undefined, '%')), el('td', 'px', signed(s.spx_since_pct, undefined, '%')), el('td', 'px', signed(ex, undefined, ' pp')));
       tb.appendChild(tr);
     });
     t.appendChild(tb);
