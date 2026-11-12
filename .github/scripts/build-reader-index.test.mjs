@@ -1,0 +1,11 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import fs from 'node:fs';
+import os from 'node:os';
+import path from 'node:path';
+import {pageTitle,renderIndex,collectPages,pageKind} from './build-reader-index.mjs';
+test('title decoding and escaping prevent markup injection',()=>{const title=pageTitle('<title>A &amp; B &#x2014; &lt;script&gt;</title>','x.html');assert.equal(title,'A & B — <script>');const h=renderIndex([{filename:'x.html',title,kind:'Transcript',date:''}]);assert.ok(h.includes('A &amp; B — &lt;script&gt;'));assert.ok(!h.includes('<script></span>'));});
+test('filename fallback and kinds',()=>{assert.equal(pageTitle('','hello-world.html'),'hello world');assert.equal(pageKind('yt-x.html'),'YouTube');assert.equal(pageKind('EXPERT-x.html'),'Expert call');});
+test('only tracked direct shared HTML is indexed',()=>{const root=fs.mkdtempSync(path.join(os.tmpdir(),'reader-index-'));try{fs.mkdirSync(path.join(root,'reader/shares'),{recursive:true});fs.writeFileSync(path.join(root,'reader/shares/a.html'),'<title>Alpha</title>');fs.writeFileSync(path.join(root,'reader/shares/untracked.html'),'<title>Secret</title>');const git=args=>args[0]==='ls-files'?'reader/shares/a.html\0reader/shares/index.html\0reader/shares/sub/b.html\0reader/shares/data.json\0':'2026-11-12T12:00:00-05:00';const p=collectPages(root,git);assert.equal(p.length,1);assert.equal(p[0].date,'2026-11-12T17:00:00.000Z');assert.ok(!renderIndex(p).includes('Secret'));}finally{fs.rmSync(root,{recursive:true,force:true});}});
+test('links are local encoded paths and no external dependencies',()=>{const h=renderIndex([{filename:'A #1.html',title:'Test',kind:'Transcript',date:'2026-11-12T00:00:00Z'}]);assert.ok(h.includes('href="shares/A%20%231.html"'));assert.ok(!/https?:\/\//.test(h));assert.ok(h.includes('aria-live="polite"'));});
+test('empty library is clear',()=>assert.ok(renderIndex([]).includes('0 shared pages')));
